@@ -1,0 +1,74 @@
+<shortcuts>
+	<shortcut>
+        <defaultID>Movie Hub</defaultID>
+		<label2>Movies Only</label2>
+        <label>Movie Hub</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.6.image)]</thumb>
+        <action>ActivateWindow(1101)</action>
+		<visible>StringCompare(Container(300).ListItem.Property(type),movies) | Window.IsVisible(script-skinshortcuts.xml)</visible>
+    </shortcut>
+	<shortcut>
+        <defaultID>collections</defaultID>
+		<label2>Movies Only</label2>
+        <label>Collections</label>
+        <icon>special://skin/extras/icons/film.png</icon>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</thumb>
+        <action>ActivateWindow(Videos,videodb://movies/sets/?xsp=%6b%22group%22%3a%6b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%6d%2c%22order%22%3a%6b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%6d%2c%22rules%22%3a%6b%22and%22%3a%5b%6b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%6D%5D%6D%2C%22type%22%3A%22movies%22%6Ds)</action>
+		<visible>StringCompare(Container(300).ListItem.Property(type),movies) | Window.IsVisible(script-skinshortcuts.xml)</visible>
+    </shortcut>
+	  <shortcut>
+        <defaultID>TV Hub</defaultID>
+		<label2>TV Shows Only</label2>
+        <label>TV Hub</label>
+        <icon>special://skin/extras/icons/tv.png</icon>
+		<thumb>$INFO[Window(Home).Property(emby.nodes.6.image)]</thumb>
+        <action>ActivateWindow(1102)</action>
+		<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) | Window.IsVisible(script-skinshortcuts.xml)</visible>
+    </shortcut>
+		<shortcut>
+        <defaultID>nextaired</defaultID>
+		<label2>TV Shows Only</label2>
+        <label>31220</label>
+        <icon>special://skin/extras/icons/tv.png</icon>
+		<thumb>special://skin/extras/backgrounds/Airing.jpg</thumb>
+		<action>RunAddon(script.tv.show.next.aired)</action>
+		<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) | Window.IsVisible(script-skinshortcuts.xml)</visible>
+    </shortcut>
+	<shortcut>
+		<defaultID>random</defaultID>
+		<label>Random</label>
+		<label2>TV/Movies Only</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
+		<action>ActivateWindow(Video,$VAR[DefEmbyNodeRandomAction],return)</action>
+		<visible>[!StringCompare(Window(Home).Property(emby.nodes.6.type),photos) + !StringCompare(Window(Home).Property(emby.nodes.6.type),homevideos)] | Window.IsVisible(script-skinshortcuts.xml)</visible>
+	</shortcut>
+		<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-6-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.6.title)]</label>
+		<label2>Photos Only</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/backgrounds/Photos.jpg</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.6.path)]</action>
+		<visible>StringCompare(Window(Home).Property(emby.nodes.6.type),photos) | Window.IsVisible(script-skinshortcuts.xml)</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>info-window-home-property-emby-nodes-6-title</defaultID>
+		<label>$INFO[Window(Home).Property(emby.nodes.6.title)]</label>
+		<label2>Home Videos Only</label2>
+		<icon>special://skin/extras/icons/emby_diff.png</icon>
+		<thumb>special://skin/extras/backgrounds/video.jpg</thumb>
+		<action>$INFO[Window(Home).Property(emby.nodes.6.path)]</action>
+		<visible>Substring(Window(Home).Property(emby.nodes.6.type),homevideo) | Window.IsVisible(script-skinshortcuts.xml)</visible>
+	</shortcut>
+	<shortcut>
+		<defaultID>photoaddons</defaultID>
+		<label>Photo Addons</label>
+		<label2>Photos Only</label2>
+		<icon>DefaultAddonPicture.png</icon>
+		<thumb>special://skin/extras/backgrounds/Settings.jpg</thumb>
+		<action>ActivateWindow(Pictures,Addons,return)</action>
+		<visible>StringCompare(Window(Home).Property(emby.nodes.6.type),photos)| Window.IsVisible(script-skinshortcuts.xml)</visible>
+	</shortcut>
+</shortcuts>

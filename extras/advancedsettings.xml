@@ -1,0 +1,19 @@
+<advancedsettings>
+	<video>
+		<usetimeseeking>true</usetimeseeking>
+		<smallstepbackseconds>7</smallstepbackseconds>
+		<timeseekforward>27</timeseekforward>
+		<timeseekbackward>-15</timeseekbackward>
+		<timeseekforwardbig>300</timeseekforwardbig>
+		<timeseekbackwardbig>-300</timeseekbackwardbig>
+		<percentseekforward>2</percentseekforward>
+		<percentseekbackward>-2</percentseekbackward>
+		<percentseekforwardbig>10</percentseekforwardbig>
+		<percentseekbackwardbig>-10</percentseekbackwardbig>
+	</video>
+	<seeksteps>10, 15, 20, 27, 30, 40, 50, 60, 120, 240</seeksteps>
+	<pvr>
+		<minvideocachelevel>30</minvideocachelevel>
+		<minaudiocachelevel>30</minaudiocachelevel>
+	</pvr>
+</advancedsettings>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include name="ShiftPosterThumbs">
+		<control type="image">
+			<posx>-12</posx>
+			<posy>130</posy>
+			<width>340</width>
+			<height>510</height>
+			<aspectratio scalediffuse="false" aligny="bottom">keep</aspectratio>
+			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+			<bordersize>20</bordersize>
+			<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
+		</control>
+		<control type="image">
+			<posx>-12</posx>
+			<posy>130</posy>
+			<width>340</width>
+			<height>510</height>
+			<aspectratio scalediffuse="false" aligny="bottom">scale</aspectratio>
+			<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
+			<bordersize>20</bordersize>
+			<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
+		</control>
+		<control type="image">
+			<posx>8</posx>
+			<posy>621</posy>
+			<width>300</width>
+			<height>450</height>
+			<aspectratio aligny="top" scalediffuse="false">keep</aspectratio>
+			<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true" aligny="top">$VAR[PosterImage]</texture>
+			<animation effect="fade" start="100" end="30" time="160">Focus</animation>
+			<animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
+		</control>
+		<control type="group">
+			<control type="progress">
+				<width>300</width>
+				<height>14</height>
+				<left>8</left>
+				<top>607</top>
+				<info>ListItem.PercentPlayed</info>
+				<overlaytexture>-</overlaytexture>
+				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+				<visible>ListItem.IsResumable</visible>
+			</control>
+			<control type="image">
+				<right>10</right>
+				<top>152</top>
+				<width>29</width>
+				<height>29</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[PosterPercentWatched]</texture>
+			</control>
+			<control type="image">
+				<right>10</right>
+				<top>152</top>
+				<width>29</width>
+				<height>29</height>
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true">$VAR[PosterPercentWatched]</texture>
+				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			</control>
+			<control type="group">
+				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<control type="image">
+					<right>10</right>
+					<top>152</top>
+					<height>29</height>
+					<width>29</width>
+					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<right>9</right>
+					<top>152</top>
+					<height>29</height>
+					<width>30</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+					<font>Micro</font>
+					<size>18</size>
+					<scroll>false</scroll>
+					<textcolor>White</textcolor>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="View_514_PosterShift">
+		<control type="group">
+			<visible>Control.IsVisible(514)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<include>Animation.Common</include>
+			<control type="group">
+				<visible>!Window.IsActive(addoninformation)</visible>
+				<control type="fixedlist" id="514">
+					<posx>-120</posx>
+					<posy>240</posy>
+					<width>2100</width>
+					<height>750</height>
+					<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
+					<ondown>60</ondown>
+					<orientation>horizontal</orientation>
+					<viewtype label="31757">Poster Shift</viewtype>
+					<pagecontrol>60</pagecontrol>
+					<preloaditems>2</preloaditems>
+					<scrolltime tween="quadratic">200</scrolltime>
+					<focusposition>1</focusposition>
+					<visible>!container.content(episodes)</visible>
+					<itemlayout width="315" height="750">
+						<include>ShiftPosterThumbs</include>
+					</itemlayout>
+					<focusedlayout width="315" height="770">
+						<control type="group">
+							<control type="button">
+								<texturefocus>-</texturefocus>
+								<texturenofocus>-</texturenofocus>
+								<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+								<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+							</control>
+							<animation effect="zoom" center="auto" start="100" end="130" time="160" tween="quadratic">Focus</animation>
+							<animation effect="zoom" center="auto" start="130" end="100" time="160" tween="quadratic">Unfocus</animation>
+							<control type="image">
+								<!--cdart image -->
+								<width>290</width>
+								<height>290</height>
+								<posy>20</posy>
+								<posx>15</posx>
+								<texture background="true">$INFO[ListItem.Art(discart)]</texture>
+								<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
+								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
+								<animation effect="rotate" end="-360" center="auto" time="12000" loop="true" reversible="false" condition="Skin.HasSetting(AnimateDiscArt)">Conditional</animation>
+								<visible>Skin.HasSetting(views.discart) + !IsEmpty(ListItem.Art(discart))</visible>
+							</control>
+							<control type="image">
+								<width>290</width>
+								<height>290</height>
+								<posy>20</posy>
+								<posx>15</posx>
+								<texture diffuse="cdart/cdart-mask.png">$INFO[ListItem.Art(poster)]</texture>
+								<aspectratio aligny="center">keep</aspectratio>
+								<visible>Skin.HasSetting(views.discart)</visible>
+								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart))</visible>
+							</control>
+							<control type="image">
+								<width>290</width>
+								<height>290</height>
+								<posy>20</posy>
+								<posx>15</posx>
+								<texture background="true">$VAR[FakeDiscArtOverlay]</texture>
+								<aspectratio aligny="center">keep</aspectratio>
+								<visible>Skin.HasSetting(views.discart)</visible>
+								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + [IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))]</visible>
+							</control>
+							<control type="image">
+								<width>290</width>
+								<height>290</height>
+								<posy>20</posy>
+								<posx>15</posx>
+								<texture background="true">$VAR[FakeDischandcolor]</texture>
+								<aspectratio aligny="center">keep</aspectratio>
+								<visible>Skin.HasSetting(views.discart)</visible>
+								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)]  + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster))</visible>
+							</control>
+							<control type="textbox">
+								<width>190</width>
+								<height>190</height>
+								<posy>70</posy>
+								<posx>65</posx>
+								<font>Hand_20</font>
+								<align>center</align>
+								<aligny>top</aligny>
+								<visible>Skin.HasSetting(views.discart)</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + IsEmpty(ListItem.Art(clearlogo))</visible>
+								<label> $INFO[ListItem.Label]</label>
+								<textcolor>Black</textcolor>
+								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
+							</control>
+							<control type="group">
+								<visible>Skin.HasSetting(views.discart)</visible>
+								<visible>[container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)] + IsEmpty(ListItem.Art(discart)) + !IsEmpty(ListItem.Art(poster)) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+								<animation effect="slide" start="0,200" end="0" tween="cubic" easing="inout" time="1200" delay="800">Focus</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="800" pulse="false">Focus</animation>
+								<control type="image">
+									<height>40</height>
+									<width>150</width>
+									<posy>60</posy>
+									<posx>85</posx>
+									<align>center</align>
+									<aligny>center</aligny>
+									<aspectratio aligny="bottom">keep</aspectratio>
+									<texture background="true" fallback="empty.png">$INFO[ListItem.Art(clearlogo)]</texture>
+								</control>
+							</control>
+							<include>ShiftPosterThumbs</include>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="group">
+				<animation effect="fade" condition="!Control.HasFocus(60)" time="200" start="100" end="0">Conditional</animation>
+				<include>Furniture_Scrollbar_Horizontal</include>
+			</control>
+		</control>
+	</include>
+</includes>

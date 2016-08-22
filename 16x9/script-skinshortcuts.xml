@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">401</defaultcontrol>
+    <controls>
+        <include>GlobalOverlay</include>
+        <control type="group">
+            <include>Animation.FadeIn.Slide</include>
+            <centerleft>50%</centerleft>
+            <centertop>50%</centertop>
+            <width>1550</width>
+            <height>914</height>
+            <control type="image">
+                <description>background image</description>
+                <top>-8</top>
+                <bottom>-8</bottom>
+                <left>-8</left>
+                <right>-8</right>
+                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+            </control>
+            <control type="label" id="500">
+                <description>header label</description>
+                <left>22</left>
+                <right>22</right>
+                <font>SmallBold</font>
+                <align>left</align>
+                <textcolor>Black70</textcolor>
+            </control>
+			<!-- <control type="label">
+                <description>header label</description>
+                <left>22</left>
+                <right>22</right>
+                <font>SmallBold</font>
+                <align>left</align>
+                <textcolor>Black70</textcolor>
+				<visible>IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+				<label>Loading Menu...</label>
+            </control> -->
+			<control type="label">
+                <description>Current Path</description>
+                <bottom>10</bottom>
+				<left>10</left>
+                <font>Tiny</font>
+                <align>left</align>
+                <textcolor>Black70</textcolor>
+				<label>$VAR[SkinShortcutPath]</label>
+            </control>
+            <!-- Left List: Current Shortcuts -->
+            <control type="list" id="211">
+                <description>Rules List Control</description>
+                <left>15</left>
+                <top>65</top>
+                <width>640</width>
+                <height>759</height>
+                <onup>211</onup>
+                <onleft>211</onleft>
+                <onright>9100</onright>
+                <ondown>211</ondown>
+                <itemlayout width="640" height="83">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture border="5" colordiffuse="Black12">common/box.png</texture>
+                    </control>
+                    <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label]</label>
+						<top>-10</top>
+                    </control>
+					 <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label2]</label>
+						<font>Micro</font>
+						<bottom>-5</bottom>
+                    </control>
+                    <control type="image">
+                        <right>0</right>
+                        <top>5</top>
+                        <width>66</width>
+                        <height>66</height>
+                        <texture colordiffuse="Black30">$INFO[ListItem.Icon]</texture>
+						<visible>substring(ListItem.Icon,icons)</visible>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="640" height="83">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                        <visible>Control.HasFocus(211)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>100%</width>
+                        <height>80</height>
+                        <texture colordiffuse="Dark1">common/white.png</texture>
+                        <visible>!Control.HasFocus(211)</visible>
+                    </control>
+                     <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+						<top>-10</top>
+                    </control>
+					 <control type="label">
+                        <left>30</left>
+                        <right>30</right>
+                        <label>$INFO[ListItem.Label2]</label>
+						<textcolor>$VAR[ColourSelected]</textcolor>
+						<font>Micro</font>
+						<bottom>-5</bottom>
+                    </control>
+                    <control type="image">
+                        <right>0</right>
+                        <top>5</top>
+                        <width>66</width>
+                        <height>66</height>
+                        <texture colordiffuse="$VAR[ColourSelected]">$INFO[ListItem.Icon]</texture>
+						 <visible>substring(ListItem.Icon,icons)</visible>
+                    </control>
+                </focusedlayout>
+            </control>
+			<!-- Testing -->
+			<control type="group" id="9876">
+				<height>759</height>
+				<onleft>9100</onleft>
+				<right>15</right>
+				<width>420</width>	
+				<control type="grouplist" >
+					<height>450</height>
+					<onleft>9100</onleft>
+					<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+					<control type="label">
+						<description>header label</description>
+						<left>22</left>
+						<right>22</right>
+						<font>SmallBold</font>
+						<align>center</align>
+						<textcolor>Black70</textcolor>
+						<label>Widgets</label>
+					</control>
+					<!-- Main widget -->
+					 <control type="button" id="312" description="Main Widget">
+						<width>100%</width>
+						<height>66</height>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+					</control>
+					<control type="button" id="8777" description="Right Widget1">
+						<label>Right Widget 1</label>
+						<width>100%</width>
+						<height>66</height>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>SetProperty(widgetID,right1)</onclick>
+						<onclick>SendClick(312)</onclick>
+					</control>
+					<control type="button" id="8778" description="Right Widget2">
+						<label>Right Widget 2</label>
+						<width>100%</width>
+						<height>66</height>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>SetProperty(widgetID,right2)</onclick>
+						<onclick>SendClick(312)</onclick>
+					</control>
+					<control type="button" id="8779" description="Right Widget3">
+						<label>Right Widget 3</label>
+						<width>100%</width>
+						<height>66</height>
+						<visible>!IsEmpty(Container(211).ListItem.Label) + StringCompare(Window.Property(groupname),mainmenu)</visible>
+						<visible>!StringCompare(Container(211).ListItem.Property(defaultID),weather) + !StringCompare(Container(211).ListItem.Property(defaultID),settings) + !StringCompare(Container(211).ListItem.Property(defaultID),music) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>SetProperty(widgetID,right3)</onclick>
+						<onclick>SendClick(312)</onclick>
+					</control>
+				</control>
+				<control type="group">
+					<top>460</top>
+					<height>299</height>
+					<control type="label">
+						<description>header label</description>
+						<left>22</left>
+						<right>22</right>
+						<height>69</height>
+						<font>SmallBold</font>
+						<align>center</align>
+						<textcolor>Black70</textcolor>
+						<label>Background</label>
+						<visible>!IsEmpty(Container(211).ListItem.Label)</visible>
+					</control>
+					<!-- background -->
+					<control type="image">
+						<top>69</top>
+						<height>220</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[GlobalFanart]</texture>
+						<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+					<control type="image">
+						<top>69</top>
+						<height>220</height>
+						<aspectratio>keep</aspectratio>
+						<texture>$VAR[SkinShortcutsSubMenuThumb]</texture>
+						<visible>!StringCompare(Window.Property(groupname),mainmenu)</visible>
+					</control>
+				</control>
+			</control>
+            <!-- Right Buttons -->
+            <control type="grouplist" id="9100">
+                <onleft>211</onleft>
+                <onright>312</onright>
+                <onup>9100</onup>
+                <ondown>9100</ondown>
+                <left>675</left>
+                <top>65</top>
+                <width>420</width>
+                <height>759</height>
+                <orientation>vertical</orientation>
+                <itemgap>3</itemgap>       
+				<control type="button" id="401" description="Alt chooser">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="307" description="Custom">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="305" description="Set Label">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+               <!--  <control type="button" id="312" description="Widget">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                </control> -->
+                <control type="button" id="310" description="Background">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+					<visible>!IsEmpty(Container(211).ListItem.Label)</visible>
+                    <include>DefDialogButtons</include>
+                </control>
+               <!--  <control type="button" id="311" description="Select Icon">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31181</label>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+					<visible>!IsEmpty(Container(211).ListItem.Label)</visible>
+					<visible>!stringcompare(Window.Property(groupname),mainmenu)</visible>
+                </control> -->
+                <control type="button" id="405" description="Set Submenu">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31112</label>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>!stringcompare(Container(211).ListItem.Label2,MovieHub) + !stringcompare(Container(211).ListItem.Label2,TVHub) + !IsEmpty(Container(211).ListItem.Label) + !StringCompare(Container(211).ListItem.Property(defaultID),collection)</visible>
+                </control>
+                <control type="button" id="9301" description="Set MovieHub">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31178</label>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>stringcompare(Container(211).ListItem.Label2,MovieHub)</visible>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=movieshub)</onclick>
+                </control>
+                <control type="button" id="9302" description="Set TVHub">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>31178</label>
+                    <visible>stringcompare(Window.Property(groupname),mainmenu)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <visible>stringcompare(Container(211).ListItem.Label2,TVHub)</visible>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
+                </control>
+                <control type="button" id="303" description="Up">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="304" description="Down">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="301" description="Add">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+                <control type="button" id="302" description="Delete">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control> 
+                <control type="button" id="308" description="Reset">
+                    <width>100%</width>
+                    <height>66</height>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                </control>
+				<control type="button" id="9898" description="Emby Mode">
+					<width>100%</width>
+					<height>66</height>
+					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+					<label>Add Emby Nodes</label>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.0.path))">Skin.ToggleSetting(menu.ShowEmbyNode0)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.1.path))">Skin.ToggleSetting(menu.ShowEmbyNode1)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.2.path))">Skin.ToggleSetting(menu.ShowEmbyNode2)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.3.path))">Skin.ToggleSetting(menu.ShowEmbyNode3)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.4.path))">Skin.ToggleSetting(menu.ShowEmbyNode4)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.5.path))">Skin.ToggleSetting(menu.ShowEmbyNode5)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.6.path))">Skin.ToggleSetting(menu.ShowEmbyNode6)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.7.path))">Skin.ToggleSetting(menu.ShowEmbyNode7)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.8.path))">Skin.ToggleSetting(menu.ShowEmbyNode8)</onclick>
+					<onclick condition="!IsEmpty(Window(Home).Property(emby.nodes.9.path))">Skin.ToggleSetting(menu.ShowEmbyNode9)</onclick>
+					<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
+					<onclick>Back</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<visible>Skin.HasSetting(menu.noemby) + stringcompare(Window.Property(groupname),mainmenu) + System.HasAddon(plugin.video.emby) + !IsEmpty(Container(211).ListItem.Label)</visible>
+				</control>
+				<control type="button" id="9899" description="Emby Mode Off">
+					<width>100%</width>
+					<height>66</height>
+					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+					<label>Hide Emby Nodes</label>
+					<onclick>Skin.Reset(menu.ShowEmbyNode0)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode1)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode2)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode3)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode4)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode5)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode6)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode7)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode8)</onclick>
+					<onclick>Skin.Reset(menu.ShowEmbyNode9)</onclick>
+					<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
+					<onclick>Back</onclick>
+					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+					<visible>!Skin.HasSetting(menu.noemby) + stringcompare(Window.Property(groupname),mainmenu) + System.HasAddon(plugin.video.emby) + !IsEmpty(Container(211).ListItem.Label)</visible>
+				</control>
+            </control> 
+        </control>
+    </controls>
+</window>

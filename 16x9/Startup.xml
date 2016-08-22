@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<window>
+    <defaultcontrol always="true">9315</defaultcontrol>
+    <onload>SetProperty(SkinInitStarted,1,home)</onload>
+    <controls>
+        <control type="image" description="Background">
+            <include>Dimensions_Fullscreen</include>
+            <texture colordiffuse="Dark2">special://skin/extras/backgrounds/Emby.jpg</texture>
+            <animation effect="fade" start="100" end="0" time="1250" tween="quadratic">WindowClose</animation>
+        </control>
+        <control type="button" id="9315">
+            <visible allowhiddenfocus="true">false</visible>
+            <onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service) + System.HasAddon(plugin.video.emby)">Skin.SetBool(SmartShortcuts.emby)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.favorites)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.playlists)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onfocus>
+            <onfocus condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onfocus>
+            <!-- <onfocus condition="!Player.HasVideo">ReplaceWindow($INFO[System.StartupWindow])</onfocus> -->
+            <onfocus>AlarmClock(GoHome,ReplaceWindow($INFO[System.StartupWindow]),00:01,silent,false)</onfocus>
+        </control>
+       <!--  <control type="label">
+            <description>Loading</description>
+            <width>100%</width>
+            <height>100%</height>
+            <align>center</align>
+            <aligny>center</aligny>
+            <label>[COLOR=EmbyGreen]Emby[/COLOR] For Kodi</label>
+            <font>EpisodeNumber</font>
+            <textcolor>Dark1</textcolor>
+            <animation effect="fade" start="100" end="0" time="1000" tween="quadratic">WindowClose</animation>
+        </control> -->
+    </controls>
+</window>

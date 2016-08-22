@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="DefSettingsOnRight">
+		<value condition="Window.IsVisible(AppearanceSettings)">ReplaceWindow(VideosSettings)</value>
+		<value condition="Window.IsVisible(VideosSettings)">ReplaceWindow(MusicSettings)</value>
+		<value condition="Window.IsVisible(MusicSettings)">ReplaceWindow(PicturesSettings)</value>
+		<value condition="Window.IsVisible(PicturesSettings)">ReplaceWindow(WeatherSettings)</value>
+		<value condition="Window.IsVisible(WeatherSettings)">ReplaceWindow(NetworkSettings)</value>
+		<value condition="Window.IsVisible(NetworkSettings)">ReplaceWindow(SystemSettings)</value>
+		<value condition="Window.IsVisible(SystemSettings)">ReplaceWindow(PvrSettings)</value>
+		<value condition="Window.IsVisible(PvrSettings)">ReplaceWindow(SkinSettings)</value>
+		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(AppearanceSettings)</value>
+	</variable>
+	<variable name="DefSettingsOnLeft">
+		<value condition="Window.IsVisible(AppearanceSettings)">ReplaceWindow(SkinSettings)</value>
+		<value condition="Window.IsVisible(VideosSettings)">ReplaceWindow(AppearanceSettings)</value>
+		<value condition="Window.IsVisible(MusicSettings)">ReplaceWindow(VideosSettings)</value>
+		<value condition="Window.IsVisible(PicturesSettings)">ReplaceWindow(MusicSettings)</value>
+		<value condition="Window.IsVisible(WeatherSettings)">ReplaceWindow(PicturesSettings)</value>
+		<value condition="Window.IsVisible(NetworkSettings)">ReplaceWindow(WeatherSettings)</value>
+		<value condition="Window.IsVisible(SystemSettings)">ReplaceWindow(NetworkSettings)</value>
+		<value condition="Window.IsVisible(PvrSettings)">ReplaceWindow(SystemSettings)</value>
+		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(PvrSettings)</value>
+	</variable>
+	<variable name="EmbyHomeItemPath">
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.FileNameAndPath]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.FileNameAndPath]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeTVShowTitle">
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.TVShowTitle]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.TVShowTitle]</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeDBType">
+		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.DBTYPE)">$INFO[Container(4016).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Property(type)]</value>
+		<value condition="Control.HasFocus(4017) + !IsEmpty(Container(4017).ListItem.DBTYPE)">$INFO[Container(4017).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Property(type)]</value>
+		<value condition="Control.HasFocus(4018) + !IsEmpty(Container(4018).ListItem.DBTYPE)">$INFO[Container(4018).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Property(type)]</value>
+		<value condition="Control.HasFocus(4012) + !IsEmpty(Container(4019).ListItem.DBTYPE)">$INFO[Container(4019).ListItem.DBTYPE]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Property(type)]</value>
+		<value>none</value>
+	</variable>
+	<variable name="EmbyHomeDBID">
+		<value condition="Control.HasFocus(4016) + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4016).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4017) + IntegerGreaterThan(Container(4017).ListItem.DBID,-1)">$INFO[Container(4017).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4018).ListItem.DBID,-1)">$INFO[Container(4018).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4012) + IntegerGreaterThan(Container(4019).ListItem.DBID,-1)">$INFO[Container(4019).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Property(DBID)]</value>
+		<value>-1</value>
+	</variable>
+	<variable name="EmbyWidgetFocusBoxHeight">
+		<value>221</value>
+	</variable>
+	<variable name="EmbyWidgetFocusBoxWidth">
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">190</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">300</value>
+		<value>300</value>
+	</variable>
+	<variable name="EmbyWidgetItemHeight">
+		<value>180</value>
+	</variable>
+	<variable name="EmbyWidgetHeight">
+		<value>253</value>
+	</variable>
+	<variable name="EmbyWidgetItemHeight">
+		<value>180</value>
+	</variable>
+	<variable name="EmbyWidgetWidth">
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">200</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">310</value>
+		<value>310</value>
+	</variable>
+	<variable name="EmbyWidgetItemWidth">
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">180</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">290</value>
+		<value>290</value>
+	</variable>
+	<variable name="EmbyHomeContent">
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">pictures</value>	
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/emby_channels.xml)">videos</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">embytv</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">embymovies</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">emby</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">tvshows</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">movies</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">livetv</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),script.hdhomerun.view)">livetv</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">music</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">homevideos</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">weather</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">programs</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">settings</value>	
+		<value>videos</value>
+	</variable>
+	<variable name="EmbyHomeRightWidgetContent">
+		<value>EmbyWidget1Content</value>
+	</variable>
+	<variable name="EmbyBottomTileAction1">
+		<!-- Home videos -->
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$INFO[Container(300).ListItem.Property(Path)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(Videos,TVShowTitles,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,MovieTitles,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + System.HasAddon(script.hdhomerun.view)">RunAddon(script.hdhomerun.view)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvchannels)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(MusicLibrary,musicdb://artists/,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos) ">ActivateWindow(pictures,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">ActivateWindow(Programs,Addons,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather)</value>
+		<value>ActivateWindow(Videos,return)</value>
+	</variable>
+	<variable name="EmbyBottomTileAction2">
+		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">RunScript(script.extendedinfo)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">ActivateWindow(Favourites)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9003).NumItems,0)">ActivateWindow(Videos,videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,videodb://movies/genres/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">ActivateWindow(1102)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,videodb://movies/sets/,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvguide)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(MusicLibrary,musicdb://albums/,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">ActivateWindow(Pictures,Addons,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">ActivateWindow(Videos,$VAR[EmbyNodeRecommended],return)</value>		
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">RunAddon(plugin.video.emby)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">System.LogOff</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weathersettings)</value>
+		<value>RunScript(script.extendedinfo)</value>
+	</variable>
+	<variable name="EmbyBottomTileAction3">
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(1102)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">ActivateWindow(1101)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(1102)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(1101)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvrecordings)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(music,genres,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(shutdownmenu)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)"> </value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)"> </value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">ActivateWindow(AddonBrowser)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),videos)">ActivateWindow(10025,library://video/emby_channels.xml,return)</value>
+		<value>ActivateWindow(10025,library://video/emby_channels.xml,return)</value>
+	</variable>
+	<variable name="EmbyCollectionSource">
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds</value>
+		<value>videodb://movies/sets/</value>
+	</variable>
+	<include name="DefSideBrowserButton">
+		<radioposx>400</radioposx>
+		<width>100%</width>
+		<height>64</height>
+		<font>Tiny</font>
+		<textcolor>Dark2</textcolor>
+		<focusedcolor>Light1</focusedcolor>
+		<alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/box.png</alttexturefocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/box.png</texturefocus>
+	</include>
+	<include name="DefNextAiredWidget">
+		<content>
+			<item id="1">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.1.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.1.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.1.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.1.AirTime)]$INFO[Window.Property(NextAired.1.Network), - ,]$INFO[Window.Property(NextAired.1.Status), - ,]$INFO[Window.Property(NextAired.1.Classification),[CR],]$INFO[Window.Property(NextAired.1.Genre), - ,]$INFO[Window.Property(NextAired.1.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.1.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.1.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.1.NextNumber)]$INFO[Window.Property(NextAired.1.NextTitle), ,]$INFO[Window.Property(NextAired.1.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.1.Label))</visible>
+			</item>
+			<item id="2">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.2.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.2.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.2.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.2.AirTime),, - ]$INFO[Window.Property(NextAired.2.Network)]$INFO[Window.Property(NextAired.2.Status), - ,]$INFO[Window.Property(NextAired.2.Classification),[CR],]$INFO[Window.Property(NextAired.2.Genre), - ,]$INFO[Window.Property(NextAired.2.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.2.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.2.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.2.NextNumber)]$INFO[Window.Property(NextAired.2.NextTitle), ,]$INFO[Window.Property(NextAired.2.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.2.Label))</visible>
+			</item>
+			<item id="3">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.3.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.3.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.3.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.3.AirTime),, - ]$INFO[Window.Property(NextAired.3.Network)]$INFO[Window.Property(NextAired.3.Status), - ,]$INFO[Window.Property(NextAired.3.Classification),[CR],]$INFO[Window.Property(NextAired.3.Genre), - ,]$INFO[Window.Property(NextAired.3.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.3.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.3.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.3.NextNumber)]$INFO[Window.Property(NextAired.3.NextTitle), ,]$INFO[Window.Property(NextAired.3.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.3.Label))</visible>
+			</item>
+			<item id="4">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.4.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.4.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.4.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.4.AirTime),, - ]$INFO[Window.Property(NextAired.4.Network)]$INFO[Window.Property(NextAired.4.Status), - ,]$INFO[Window.Property(NextAired.4.Classification),[CR],]$INFO[Window.Property(NextAired.4.Genre), - ,]$INFO[Window.Property(NextAired.4.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.4.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.4.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.4.NextNumber)]$INFO[Window.Property(NextAired.4.NextTitle), ,]$INFO[Window.Property(NextAired.4.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.4.Label))</visible>
+			</item>
+			<item id="5">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.5.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.5.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.5.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.5.AirTime),, - ]$INFO[Window.Property(NextAired.5.Network)]$INFO[Window.Property(NextAired.5.Status), - ,]$INFO[Window.Property(NextAired.5.Classification),[CR],]$INFO[Window.Property(NextAired.5.Genre), - ,]$INFO[Window.Property(NextAired.5.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.5.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.5.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.5.NextNumber)]$INFO[Window.Property(NextAired.5.NextTitle), ,]$INFO[Window.Property(NextAired.5.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.5.Label))</visible>
+			</item>
+			<item id="6">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.6.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.6.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.6.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.6.AirTime),, - ]$INFO[Window.Property(NextAired.6.Network)]$INFO[Window.Property(NextAired.6.Status), - ,]$INFO[Window.Property(NextAired.6.Classification),[CR],]$INFO[Window.Property(NextAired.6.Genre), - ,]$INFO[Window.Property(NextAired.6.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.6.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.6.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.6.NextNumber)]$INFO[Window.Property(NextAired.6.NextTitle), ,]$INFO[Window.Property(NextAired.6.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.6.Label))</visible>
+			</item>
+			<item id="7">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.7.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.7.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.7.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.7.AirTime),, - ]$INFO[Window.Property(NextAired.7.Network)]$INFO[Window.Property(NextAired.7.Status), - ,]$INFO[Window.Property(NextAired.7.Classification),[CR],]$INFO[Window.Property(NextAired.7.Genre), - ,]$INFO[Window.Property(NextAired.7.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.7.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.7.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.7.NextNumber)]$INFO[Window.Property(NextAired.7.NextTitle), ,]$INFO[Window.Property(NextAired.7.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.7.Label))</visible>
+			</item>
+			<item id="8">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.8.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.8.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.8.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.8.AirTime),, - ]$INFO[Window.Property(NextAired.8.Network)]$INFO[Window.Property(NextAired.8.Status), - ,]$INFO[Window.Property(NextAired.8.Classification),[CR],]$INFO[Window.Property(NextAired.8.Genre), - ,]$INFO[Window.Property(NextAired.8.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.8.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.8.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.8.NextNumber)]$INFO[Window.Property(NextAired.8.NextTitle), ,]$INFO[Window.Property(NextAired.8.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.8.Label))</visible>
+			</item>
+			<item id="9">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.9.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.9.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.9.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.9.AirTime),, - ]$INFO[Window.Property(NextAired.9.Network)]$INFO[Window.Property(NextAired.9.Status), - ,]$INFO[Window.Property(NextAired.9.Classification),[CR],]$INFO[Window.Property(NextAired.9.Genre), - ,]$INFO[Window.Property(NextAired.9.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.9.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.9.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.9.NextNumber)]$INFO[Window.Property(NextAired.9.NextTitle), ,]$INFO[Window.Property(NextAired.9.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.9.Label))</visible>
+			</item>
+			<item id="10">
+				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.10.Library)],return)</onclick>
+				<property name="Fanart">$INFO[Window.Property(NextAired.10.Art(fanart))]</property>
+				<icon>$INFO[Window.Property(NextAired.10.Art(poster))]</icon>
+				<property name="Plot">$INFO[Window.Property(NextAired.10.AirTime),, - ]$INFO[Window.Property(NextAired.10.Network)]$INFO[Window.Property(NextAired.10.Status), - ,]$INFO[Window.Property(NextAired.10.Classification),[CR],]$INFO[Window.Property(NextAired.10.Genre), - ,]$INFO[Window.Property(NextAired.10.Runtime),[CR], $LOCALIZE[12391]]</property>
+				<property name="Logo">$INFO[Window.Property(NextAired.10.Art(clearlogo))]</property>
+				<label>$INFO[Window.Property(NextAired.10.Label)]</label>
+				<label2>$INFO[Window.Property(NextAired.10.NextNumber)]$INFO[Window.Property(NextAired.10.NextTitle), ,]$INFO[Window.Property(NextAired.10.NextDate), • ,]</label2>
+				<visible>!IsEmpty(Window.Property(NextAired.10.Label))</visible>
+			</item>
+		</content>
+	</include>
+	<include name="DefFavouritesWidget">
+		<item id="11" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.1.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.1.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.1.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.1.path)]</onclick>
+		</item>
+		<item id="12" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.2.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.2.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.2.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.2.path)]</onclick>
+		</item>
+		<item id="13" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.3.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.3.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.3.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.3.path)]</onclick>
+		</item>
+		<item id="14" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.4.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.4.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.4.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.4.path)]</onclick>
+		</item>
+		<item id="15" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.5.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.5.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.5.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.5.path)]</onclick>
+		</item>
+		<item id="16" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.6.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.6.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.6.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.6.path)]</onclick>
+		</item>
+		<item id="17" description="AutoFavourite">
+			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !IsEmpty(Window(Home).Property(favourite.7.path))</visible>
+			<label>$INFO[Window(Home).Property(favourite.7.name)]</label>
+			<icon>$INFO[Window(Home).Property(favourite.7.thumb)]</icon>
+			<property name="ItemType">$LOCALIZE[1036]</property>
+			<onclick>$INFO[Window(Home).Property(favourite.7.path)]</onclick>
+		</item>
+	</include>
+	<include name="DefWeatherMaps">
+		<content>
+		<item>
+			<label>$INFO[Window(weather).Property(Map.1.Heading)]</label>
+			<label2>$INFO[Window(weather).Property(Map.1.Legend)]</label2>
+			<icon>$INFO[Window(weather).Property(Map.1.Area)]</icon>
+			<property name="Layer">$INFO[Window(weather).Property(Map.1.Layer)]</property>
+			<onclick>ShowPicture(Window(weather).Property(Map.1.Area))</onclick>
+			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.1.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Map.2.Heading)]</label>
+			<label2>$INFO[Window(weather).Property(Map.2.Legend)]</label2>
+			<icon>$INFO[Window(weather).Property(Map.2.Area)]</icon>
+			<property name="Layer">$INFO[Window(weather).Property(Map.2.Layer)]</property>
+			<onclick>ShowPicture(Window(weather).Property(Map.2.Area))</onclick>
+			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.2.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Map.3.Heading)]</label>
+			<label2>$INFO[Window(weather).Property(Map.3.Legend)]</label2>
+			<icon>$INFO[Window(weather).Property(Map.3.Area)]</icon>
+			<property name="Layer">$INFO[Window(weather).Property(Map.3.Layer)]</property>
+			<onclick>ShowPicture(Window(weather).Property(Map.3.Area))</onclick>
+			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.3.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Map.4.Heading)]</label>
+			<label2>$INFO[Window(weather).Property(Map.4.Legend)]</label2>
+			<icon>$INFO[Window(weather).Property(Map.4.Area)]</icon>
+			<property name="Layer">$INFO[Window(weather).Property(Map.4.Layer)]</property>
+			<onclick>ShowPicture(Window(weather).Property(Map.4.Area))</onclick>
+			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.4.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+		</item>
+		<item>
+			<label>$INFO[Window(weather).Property(Map.5.Heading)]</label>
+			<label2>$INFO[Window(weather).Property(Map.5.Legend)]</label2>
+			<icon>$INFO[Window(weather).Property(Map.5.Area)]</icon>
+			<property name="Layer">$INFO[Window(weather).Property(Map.5.Layer)]</property>
+			<onclick>ShowPicture(Window(weather).Property(Map.5.Area))</onclick>
+			<visible>Weather.IsFetched + !IsEmpty(Window(weather).Property(Map.5.Area)) + !IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+		</item>
+		</content>
+	</include>
+	<include name="DefWidgetSelector">
+		<align>center</align>
+		<aligny>center</aligny>
+		<width>293</width>
+		<onclick>SetFocus(301)</onclick>
+		<top>0</top>
+		<height>64</height>
+		<centerleft>50%</centerleft>
+		<textcolor>Dark3</textcolor>
+		<focusedcolor>Dark1</focusedcolor>
+		<font>WidgetSelector</font>
+		<texturefocus>noop</texturefocus>
+	</include>
+	<include name="DefDialogButtons">
+		<width>300</width>
+		<font>Button</font>
+		<textcolor>Black70</textcolor>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+	</include>
+	<include name="DefDialogInfoButtons">
+		<width>300</width>
+		<font>Button</font>
+		<textcolor>Black70</textcolor>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+	</include>
+	<include name="DefDialogInfoPanel">
+		<include>Animation.FadeIn.Slide</include>
+		<include>Animation.FadeOut</include>
+		<centerleft>50%</centerleft>
+		<posy>120</posy>
+		<width>1320</width>
+		<height>840</height>
+		<control type="image">
+			<left>-8</left>
+			<right>-8</right>
+			<top>-8</top>
+			<bottom>-8</bottom>
+			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+		</control>
+	</include>
+	<include name="DefDialogInfoPanelFanart">
+		<include>Animation.FadeIn.Slide</include>
+		<include>Animation.FadeOut</include>
+		<centerleft>50%</centerleft>
+		<posy>120</posy>
+		<width>1320</width>
+		<height>840</height>
+		<control type="image">
+			<left>-8</left>
+			<right>-8</right>
+			<top>-8</top>
+			<bottom>-8</bottom>
+			<colordiffuse>DialogFanartFade</colordiffuse>
+			<aspectratio>scale</aspectratio>
+			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+		</control>
+	</include>
+	<include name="DefDialogInfoHeader">
+		<left>30</left>
+		<right>320</right>
+		<posy>18</posy>
+		<font>MediumBold</font>
+		<align>left</align>
+		<textcolor>Black70</textcolor>
+		<textureradiofocus colordiffuse="Black70">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
+	</include>
+	<include name="DefDialogHeader">
+		<description>header label</description>
+		<centerleft>50%</centerleft>
+		<posy>15</posy>
+		<width>990</width>
+		<align>center</align>
+		<font>MediumBold</font>
+		<textcolor>Black70</textcolor>
+	</include>
+	<include name="DefDialogBackground">
+		<include>Animation.ZoomIn</include>
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<height>900</height>
+		<width>1080</width>
+		<control type="image">
+			<width>1080</width>
+			<height>900</height>
+			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+		</control>
+	</include>
+	<include name="DefDialogOK">
+		<centerleft>50%</centerleft>
+		<posy>360</posy>
+		<width>900</width>
+		<include>Animation.FadeIn.Slide</include>
+		<control type="image">
+			<posx>-30</posx>
+			<posy>-30</posy>
+			<width>960</width>
+			<height>444</height>
+			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+		</control>
+		<control type="label" id="1">
+			<description>Heading</description>
+			<centerleft>50%</centerleft>
+			<width>885</width>
+			<font>MediumBold</font>
+			<align>center</align>
+		</control>
+		<control type="textbox" id="9">
+			<description>Line 1</description>
+			<left>15</left>
+			<right>15</right>
+			<posy>108</posy>
+			<height>300</height>
+		</control>
+	</include>
+	<include name="DefPVRDialogButton">
+		<width>600</width>
+		<height>66</height>
+		<align>left</align>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+		<radioposx>540</radioposx>
+		<textcolor>Black70</textcolor>
+	</include>
+	<include name="DefKeyboardKeys">
+		<width>85</width>
+		<height>75</height>
+		<texturenofocus border="5" colordiffuse="Black12">common/box.png</texturenofocus>
+		<texturefocus border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+		<textoffsetx>0</textoffsetx>
+		<textcolor>Black70</textcolor>
+		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
+		<radioposx>320</radioposx>
+		<radioposy>22</radioposy>
+	</include>
+	<include name="DefContextButton">
+		<radioposx>400</radioposx>
+		<width>430</width>
+		<height>70</height>
+		<font>Tiny</font>
+		<textcolor>Black70</textcolor>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
+		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
+		<alttexturefocus colordiffuse="Dark1" border="16">common/white.png</alttexturefocus>
+		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
+	</include>
+	<include name="DefContextButton2">
+		<radioposx>400</radioposx>
+		<width>430</width>
+		<height>55</height>
+		<font>Mini</font>
+		<textcolor>Black70</textcolor>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
+		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
+		<alttexturefocus colordiffuse="Dark1" border="16">common/white.png</alttexturefocus>
+		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
+	</include>
+	<include name="DefSettingsButton">
+		<align>left</align>
+		<font>Small</font>
+		<textcolor>PanelWhite100</textcolor>
+		<disabledcolor>PanelWhite12</disabledcolor>
+		<height>70</height>
+		<textureup flipy="true" colordiffuse="PanelWhite30">buttons/spin-down.png</textureup>
+		<texturedown colordiffuse="PanelWhite30">buttons/spin-down.png</texturedown>
+		<textureupfocus flipy="true" colordiffuse="PanelWhite100">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="PanelWhite100">buttons/spin-down.png</texturedownfocus>
+		<textureradiofocus colordiffuse="PanelWhite70">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="PanelWhite12">buttons/radio-off.png</textureradionofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
+		<alttexturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturefocus>
+	</include>
+	<include name="DefSettingsButton2">
+		<align>left</align>
+		<font>Small</font>
+		<textcolor>PanelWhite100</textcolor>
+		<disabledcolor>PanelWhite12</disabledcolor>
+		<height>70</height>
+		<textureup flipy="true" colordiffuse="PanelWhite30">buttons/spin-down.png</textureup>
+		<texturedown colordiffuse="PanelWhite30">buttons/spin-down.png</texturedown>
+		<textureupfocus flipy="true" colordiffuse="PanelWhite100">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="PanelWhite100">buttons/spin-down.png</texturedownfocus>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="PanelWhite12">buttons/radio-off.png</textureradionofocus>
+		<texturefocus colordiffuse="Dark1">common/white.png</texturefocus>
+		<alttexturefocus colordiffuse="Dark1">common/white.png</alttexturefocus>
+		<alttexturenofocus colordiffuse="Light1">common/white.png</alttexturenofocus>
+	</include>
+	<include name="DefSettingsOKCancelButton">
+		<font>Button</font>
+		<texturenofocus colordiffuse="White12" border="16">common/white.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/white.png</texturefocus>
+		<height>66</height>
+		<width>270</width>
+	</include>
+	<include name="Def9000GroupList">
+		<left>0</left>
+		<top>115</top>
+		<width>455</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<itemgap>0</itemgap>
+		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>View Options</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+			<align>left</align>
+		</control>
+	</include>
+	<include name="Def9000SettingsMenu">
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
+		</control>
+		<control type="group">
+			<include>Def9000SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<onleft condition="Window.IsVisible(SettingsCategory.xml)">3</onleft>
+				<onleft condition="!Window.IsVisible(SettingsCategory.xml)">9101</onleft>
+				<onright condition="Window.IsVisible(SettingsCategory.xml)">5</onright>
+				<onright condition="!Window.IsVisible(SettingsCategory.xml)">9101</onright>
+				<onback condition="Window.IsVisible(SettingsCategory.xml)">3</onback>
+				<onback condition="!Window.IsVisible(SettingsCategory.xml)">9101</onback>
+				<include>Def9000GroupList</include>
+				<control type="button" id="9001">
+					<onclick>ReplaceWindow(AppearanceSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>480</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9002">
+					<onclick>ReplaceWindow(VideosSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>3</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9003">
+					<onclick>ReplaceWindow(MusicSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>2</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9004">
+					<onclick>ReplaceWindow(AddonBrowser)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>24001</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9005">
+					<onclick>ReplaceWindow(PicturesSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>1</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9006">
+					<onclick>ReplaceWindow(WeatherSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>8</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9007">
+					<onclick>ReplaceWindow(NetworkSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>705</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9008">
+					<onclick>ReplaceWindow(SystemSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>13000</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9009">
+					<onclick>ReplaceWindow(Profiles)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<align>left</align>
+					<label>13200</label>
+				</control>
+				<control type="button" id="9010">
+					<onclick>ReplaceWindow(PVRSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>19191</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9011">
+					<onclick>ReplaceWindow(7)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>130</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9012">
+					<onclick>ReplaceWindow(SkinSettings)</onclick>
+					<include>DefContextButton</include>
+					<label>20077</label>
+					<align>left</align>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="Def9000Arrows">
+		<control type="group">
+			<control type="image">
+				<description>arrow image</description>
+				<centerleft>50%</centerleft>
+				<posy>-16</posy>
+				<width>16</width>
+				<height>16</height>
+				<texture colordiffuse="White70" flipy="true">common/arrow-small.png</texture>
+			</control>
+			<control type="image">
+				<description>arrow image</description>
+				<centerleft>50%</centerleft>
+				<posy>382</posy>
+				<width>16</width>
+				<height>16</height>
+				<texture colordiffuse="White70" flipy="false">common/arrow-small.png</texture>
+			</control>
+		</control>
+	</include>
+	<include name="Def9000Background">
+		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
+		<include>Animation.ZoomIn</include>
+		<include>Animation.FadeOut</include>
+		<top>184</top>
+		<centerleft>50%</centerleft>
+		<height>382</height>
+		<width>466</width>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>466</width>
+			<height>100%</height>
+			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+		</control>
+	</include>
+	<include name="Def9000Background2">
+		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | Control.HasFocus(7000) | Control.HasFocus(6000)</visible>
+		<include>Animation.ZoomIn</include>
+		<include>Animation.FadeOut</include>
+		<centerleft>50%</centerleft>
+		<height>1080</height>
+		<width>466</width>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>466</width>
+			<height>100%</height>
+			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+		</control>
+	</include>
+	<include name="Def9000SideBladeLeft">
+		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
+		<include>Animation.SideSlide</include>
+		<control type="button">
+			<left>-12</left>
+			<top>-12</top>
+			<width>455</width>
+			<height>1104</height>
+			<texturefocus border="12">common/rounded-shadow8.png</texturefocus>
+			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
+			<colordiffuse>White100</colordiffuse>
+		</control>
+		<!-- <control type="image">
+			<description>LOGO</description>
+			<left>0</left>
+			<top>25</top>
+			<width>400</width>
+			<height>70</height>
+			<aspectratio>keep</aspectratio>
+			<texture>logo.png</texture>
+			<colordiffuse>$VAR[ColourHighlight2]</colordiffuse>
+		</control> -->
+		<control type="group">
+			<control type="image">
+				<left>10</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<aligny>center</aligny>
+				<texture diffuse="common/circle.png" border="1">$VAR[SystemAvatar]</texture>
+				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				<aspectratio>keep</aspectratio>
+				<align>left</align>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<aligny>center</aligny>
+				<texture colordiffuse="$VAR[ColourHighlight]" border="0">special://skin/extras/icons/logout.png</texture>
+				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				<aspectratio>keep</aspectratio>
+				<align>left</align>
+				<visible>Control.HasFocus(9265)</visible>
+			</control>
+			<control type="label">
+				<label>$INFO[System.ProfileName]</label>
+				<left>100</left>
+				<top>25</top>
+			</control>
+		</control>
+	</include>
+	<include name="Def9000MediaMenuTop">
+		<left>0</left>
+		<top>115</top>
+		<width>455</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
+		<onright condition="Window.IsVisible(tvguide)">10</onright>
+		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<itemgap>0</itemgap>
+		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>View Options</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="9326">
+			<description>View</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>View: $INFO[Container.Viewmode]</label>
+			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
+		</control>
+		<control type="button" id="3">
+			<description>Sort</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control>
+		<control type="togglebutton" id="4">
+			<description>Ascending</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>584</label>
+			<altlabel>585</altlabel>
+		</control>
+		<control type="radiobutton" id="9030" description="Plot Overlay">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31255</label>
+			<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
+			<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
+		</control>
+		<control type="radiobutton" id="9001" description="Low List (50)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31142</label>
+			<selected>Skin.HasSetting(50list.low)</selected>
+			<onclick>Skin.ToggleSetting(50list.low)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(50)</visible>
+		</control>
+		<control type="radiobutton" id="9009" description="Low List (50)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + !Skin.HasSetting(50list.low)</visible>
+		</control>
+		<control type="radiobutton" id="9002" description="No Wrap (53)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31148</label>
+			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
+			<onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
+		<control type="radiobutton" id="9003" description="Info Wall (55)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>!Skin.HasSetting(55wall.hideinfo)</selected>
+			<onclick>Skin.Reset(55wall.showposter)</onclick>
+			<onclick>Skin.ToggleSetting(55wall.hideinfo)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(55)</visible>
+		</control>
+		<control type="radiobutton" id="9004" description="Poster Wall (55)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31185</label>
+			<selected>Skin.HasSetting(55wall.showposter)</selected>
+			<onclick>Skin.SetBool(55wall.hideinfo)</onclick>
+			<onclick>Skin.ToggleSetting(55wall.showposter)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(55)</visible>
+		</control>
+		<control type="radiobutton" id="9005" description="Info Media (56)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(56media.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(56media.showinfo)</onclick>
+			<onclick>Skin.Reset(56media.low)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(56)</visible>
+		</control>
+		<control type="radiobutton" id="9006" description="Low List Media (56)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31142</label>
+			<selected>Skin.HasSetting(56media.low)</selected>
+			<onclick>Skin.ToggleSetting(56media.low)</onclick>
+			<onclick>Skin.Reset(56media.showinfo)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(56)</visible>
+		</control>
+		<control type="radiobutton" id="9007" description="Low List (57)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31142</label>
+			<selected>Skin.HasSetting(57list.low)</selected>
+			<onclick>Skin.ToggleSetting(57list.low)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(57)</visible>
+		</control>
+		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
+			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9014" description="Big Wide Classic (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31245</label>
+			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
+			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9011" description="Banner show poster (54)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(54banner.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(54banner.showinfo)</onclick>
+			<visible>Control.IsVisible(54) + !Container.Content(seasons)</visible>
+		</control>
+		<control type="radiobutton" id="9012" description="Big List Double Pane (52)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31235</label>
+			<selected>!Skin.HasSetting(52biglist.singlepane)</selected>
+			<onclick>Skin.ToggleSetting(52biglist.singlepane)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(52)</visible>
+		</control>
+		<control type="radiobutton" id="9016" description="Discart (513,514)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show DiscArt</label>
+			<selected>Skin.HasSetting(views.discart)</selected>
+			<onclick>Skin.ToggleSetting(views.discart)</onclick>
+			<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
+		</control>
+		<control type="radiobutton" id="9017" description="Animate Discart (513,514)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label> - Rotate DiscArt</label>
+			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
+			<onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick>
+			<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
+			<visible>Skin.HasSetting(views.discart)</visible>
+		</control>
+		<control type="radiobutton" id="9022" description="Title Overlay (515)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show title overlay</label>
+			<selected>Skin.HasSetting(views.titleoverlay)</selected>
+			<onclick>Skin.ToggleSetting(views.titleoverlay)</onclick>
+			<visible>Control.IsVisible(515)</visible>
+		</control>
+		<control type="radiobutton" id="9023" description="Prefer Fanart (500)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show Fanart Image</label>
+			<selected>Skin.HasSetting(views.500.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.500.showfanart)</onclick>
+			<visible>Control.IsVisible(500)</visible>
+		</control>
+		<control type="radiobutton" id="9024" description="Prefer Fanart (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show Fanart Image</label>
+			<selected>Skin.HasSetting(views.51.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.51.showfanart)</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9025" description="Prefer Fanart (55)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show Fanart Image</label>
+			<selected>Skin.HasSetting(views.55.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.55.showfanart)</onclick>
+			<visible>Control.IsVisible(55)</visible>
+		</control>
+		<control type="radiobutton" id="9026" description="Prefer Fanart (56)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show Fanart Image</label>
+			<selected>Skin.HasSetting(views.56.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.56.showfanart)</onclick>
+			<visible>Control.IsVisible(56)</visible>
+		</control>
+		<control type="radiobutton" id="9027" description="Prefer Fanart (57)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Show Fanart Image</label>
+			<selected>Skin.HasSetting(views.57.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.57.showfanart)</onclick>
+			<visible>Control.IsVisible(57)</visible>
+		</control>
+		<control type="radiobutton" id="9028" description="Show Tick (155)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Hide Watched/Unwatched Indicator</label>
+			<selected>Skin.HasSetting(views.155.showtick)</selected>
+			<onclick>Skin.ToggleSetting(views.155.showtick)</onclick>
+			<visible>Control.IsVisible(155)</visible>
+		</control>
+		<control type="radiobutton" id="9029" description="Show Tick (156)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Hide Watched/Unwatched Indicator</label>
+			<selected>Skin.HasSetting(views.156.showtick)</selected>
+			<onclick>Skin.ToggleSetting(views.156.showtick)</onclick>
+			<visible>Control.IsVisible(156)</visible>
+		</control>
+	</include>
+	<include name="Def9000MusicSide">
+		<left>0</left>
+		<top>115</top>
+		<width>455</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
+		<onright condition="Window.IsVisible(tvguide)">10</onright>
+		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<itemgap>0</itemgap>
+		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>View Options</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="2">
+			<description>View</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control>
+		<control type="button" id="3">
+			<description>Sort</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control>
+		<control type="togglebutton" id="4">
+			<description>Ascending</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>584</label>
+			<altlabel>585</altlabel>
+		</control>
+		<control type="button" id="7">
+			<description>Playlist</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>136</label>
+			<onclick>SetFocus(50)</onclick>
+			<visible>Window.IsVisible(MyMusicSongs.xml)</visible>
+			<visible>!stringcompare(Container.FolderPath,special://musicplaylists/)</visible>
+		</control>
+		<control type="button" id="9098">
+			<description>Now Playing</description>
+			<include>DefContextButton2</include>
+			<label>13350</label>
+			<align>left</align>
+			<onclick>ActivateWindow(MusicPlaylist)</onclick>
+			<visible>IntegerGreaterThan(Playlist.Length(music),1)</visible>
+		</control>
+		<control type="radiobutton" id="9007" description="Low List (57)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31142</label>
+			<selected>Skin.HasSetting(57list.low)</selected>
+			<onclick>Skin.ToggleSetting(57list.low)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(57)</visible>
+		</control>
+		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+	</include>
+	<include name="DefDialogSelectManual6">
+		<posx>738</posx>
+		<posy>120</posy>
+		<width>300</width>
+		<height>70</height>
+		<align>center</align>
+		<label>368</label>
+		<onleft>3</onleft>
+		<onright>3</onright>
+		<onup>3</onup>
+		<ondown>3</ondown>
+		<font>Button</font>
+		<textcolor>Black70</textcolor>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+	</include>
+	<include name="DefDialogSelectManual3">
+		<description>Manual</description>
+		<right>18</right>
+		<posy>18</posy>
+		<width>100</width>
+		<height>70</height>
+		<align>center</align>
+		<label>368</label>
+		<onleft>3</onleft>
+		<onright>3</onright>
+		<onup>3</onup>
+		<ondown>3</ondown>
+		<font>Button</font>
+		<textcolor>Black70</textcolor>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+		<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+	</include>
+	<include name="DefVideoInfoCastWithDirector">
+		<top>171</top>
+		<height>639</height>
+	</include>
+	<include name="DefVideoInfoCastWithoutDirector">
+		<top>100</top>
+		<height>710</height>
+	</include>
+	<include name="DefHomeRight520">
+		<right>520</right>
+	</include>
+	<include name="DefHomeRightSidePad">
+		<right>SidePad</right>
+	</include>
+	<variable name="DefTVHubWidget">
+		<value condition="!IsEmpty(SKin.String(TVHubWidget))">$INFO[Skin.String(TVHubWidget)]</value>
+		<value>special://skin/extras/playlists/RandomEpisodes.xsp</value>
+	</variable>
+	<variable name="DefMovieHubWidget">
+		<value condition="!IsEmpty(Skin.String(MovieHubWidget))">$INFO[Skin.String(MovieHubWidget)]</value>
+		<value>special://skin/extras/playlists/RandomMovies.xsp</value>
+	</variable>
+	<variable name="DefDirectorWindowContent">
+		<value condition="stringcompare(Window(1103).Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[Window(home).Property(ExtStudio)]</value>
+		<value condition="stringcompare(Window(1103).Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Window(home).Property(ExtDBID)]</value>
+		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[Window(home).Property(ExtDirector)]</value>
+	</variable>
+	<variable name="DefDirectorInfoWindowContent">
+		<value condition="stringcompare(Window.Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</value>
+		<value condition="stringcompare(Window.Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[ListItem.Director]</value>
+	</variable>
+	<variable name="DefMovieDBMoviesContent">
+		<value condition="stringcompare(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
+		<value condition="stringcompare(Window(1104).Property(content),2)">plugin://script.extendedinfo?info=popularmovies</value>
+		<value condition="stringcompare(Window(1104).Property(content),3)">plugin://script.extendedinfo?info=comingsoonmovies</value>
+		<value>plugin://script.extendedinfo?info=incinemamovies</value>
+	</variable>
+	<variable name="DefMovieDBEpisodesContent">
+		<value condition="stringcompare(Window(1105).Property(content),1)">plugin://script.extendedinfo?info=topratedtvshows</value>
+		<value condition="stringcompare(Window(1105).Property(content),2)">plugin://script.extendedinfo?info=populartvshows</value>
+		<value condition="stringcompare(Window(1105).Property(content),3)">plugin://script.extendedinfo?info=onairtvshows</value>
+		<value>plugin://script.extendedinfo?info=airingtodaytvshows</value>
+	</variable>
+	<include name="DefInfoButtons">
+		<font>Button</font>
+		<textcolor>Dark2</textcolor>
+		<width>313</width>
+		<height>68</height>
+		<onfocus>ClearProperty(content)</onfocus>
+		<texturenofocus colordiffuse="Dark4" border="5">common/box.png</texturenofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+		<alttexturenofocus colordiffuse="Dark4" border="5">common/box.png</alttexturenofocus>
+		<alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</alttexturefocus>
+	</include>
+	<include name="KodiFlixButtonsValues">
+		<height>35</height>
+		<width>901</width>
+		<textoffsetx>15</textoffsetx>
+		<aligny>top</aligny>
+		<font>Netflix</font>
+		<textcolor>Dark2</textcolor>
+		<focusedcolor>Dark2</focusedcolor>
+		<onclick>noop</onclick>
+	</include>
+	<include name="YoutubeItemLayout">
+		<control type="group">
+			<posx>75</posx>
+			<control type="image">
+				<posx>15</posx>
+				<width>410</width>
+				<height>240</height>
+				<texture border="10">common/nofocus-shadow10.png</texture>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<width>390</width>
+				<height>220</height>
+				<fadetime>200</fadetime>
+				<aspectratio aligny="center">scale</aspectratio>
+				<texture diffuse="diffuse/wall.png" background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<posx>35</posx>
+				<posy>215</posy>
+				<width>440</width>
+				<label>$INFO[ListItem.Label2]</label>
+				<font>Small</font>
+				<textcolor>Dark1</textcolor>
+			</control>
+			<control type="image">
+				<posx>280</posx>
+				<posy>218</posy>
+				<width>130</width>
+				<height>30</height>
+				<texture colordiffuse="Dark1">$INFO[ListItem.Rating,stars/,.png]</texture>
+			</control>
+			<control type="textbox">
+				<posx>20</posx>
+				<posy>242</posy>
+				<height>104</height>
+				<width>400</width>
+				<label>$INFO[ListItem.Label]</label>
+				<align>center</align>
+				<font>Small</font>
+				<textcolor>Dark2</textcolor>
+			</control>
+			<control type="label">
+				<posx>30</posx>
+				<posy>-15</posy>
+				<width>380</width>
+				<height>5</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Date]</label>
+				<font>Tiny</font>
+				<textcolor>Dark3</textcolor>
+			</control>
+		</control>
+	</include>
+	<include name="YoutubeFocusedLayout">
+		<control type="group">
+			<posx>75</posx>
+			<animation type="Focus">
+				<effect type="zoom" time="150" start="95" end="100" center="245,260" />
+				<effect type="zoom" time="150" start="105" end="100" delay="150" center="245,260" />
+			</animation>
+			<control type="image">
+				<posx>15</posx>
+				<width>410</width>
+				<height>240</height>
+				<texture border="10">common/nofocus-shadow10.png</texture>
+			</control>
+			<control type="image">
+				<posx>25</posx>
+				<width>390</width>
+				<height>220</height>
+				<aspectratio aligny="center">scale</aspectratio>
+				<texture diffuse="diffuse/wall.png" background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<posx>35</posx>
+				<posy>215</posy>
+				<width>440</width>
+				<label>$INFO[ListItem.Label2]</label>
+				<font>Small</font>
+				<textcolor>Light1</textcolor>
+			</control>
+			<control type="image">
+				<posx>280</posx>
+				<posy>218</posy>
+				<width>130</width>
+				<height>30</height>
+				<texture colordiffuse="Light1">$INFO[ListItem.Rating,stars/,.png]</texture>
+			</control>
+			<control type="textbox">
+				<posx>20</posx>
+				<posy>242</posy>
+				<height>104</height>
+				<width>400</width>
+				<align>center</align>
+				<label>$INFO[ListItem.Label]</label>
+				<animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
+				<animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
+				<font>Small</font>
+				<textcolor>Light2</textcolor>
+			</control>
+			<control type="label">
+				<posx>30</posx>
+				<posy>-15</posy>
+				<width>380</width>
+				<height>5</height>
+				<align>center</align>
+				<label>$INFO[ListItem.Date]</label>
+				<font>Tiny</font>
+				<textcolor>Light3</textcolor>
+			</control>
+		</control>
+	</include>
+	<!-- New Emby widgets -->
+	<!-- Main Widget Selection -->
+	<variable name="DefWidgetMainContent">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
+	</variable>
+	<variable name="DefWidgetMainSelection">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(211).ListItem.Property(widgetPath)]</value>
+	</variable>
+	<variable name="DefWidgetRight1Content">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1))">$INFO[Container(300).ListItem.Property(widgetPath.right1)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.nextepisodes))">$INFO[Container(300).ListItem.Property(widgetPath.right1.nextepisodes)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.inprogress))">$INFO[Container(300).ListItem.Property(widgetPath.right1.inprogress)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.recent))">$INFO[Container(300).ListItem.Property(widgetPath.right1.recent)]</value>
+	</variable>
+	<variable name="DefWidgetRight1Selection">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1))">$INFO[Container(211).ListItem.Property(widgetPath.right1)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.nextepisodes))">$INFO[Container(211).ListItem.Property(widgetPath.right1.nextepisodes)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.inprogress))">$INFO[Container(211).ListItem.Property(widgetPath.right1.inprogress)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.recent))">$INFO[Container(211).ListItem.Property(widgetPath.right1.recent)]</value>
+	</variable>
+	<variable name="DefWidgetRight2Content">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right2))">$INFO[Container(300).ListItem.Property(widgetPath.right2)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(300).ListItem.Property(widgetPath.right2.unwatched)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended)) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos)">$INFO[Container(300).ListItem.Property(widgetPath.right2.recommended)]</value>
+	</variable>
+	<variable name="DefWidgetRight2Selection">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right2))">$INFO[Container(211).ListItem.Property(widgetPath.right2)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(211).ListItem.Property(widgetPath.right2.unwatched)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right2.recommended)) + !StringCompare(Container(211).ListItem.Property(type),photos) + !StringCompare(Container(211).ListItem.Property(type),homevideos)">$INFO[Container(211).ListItem.Property(widgetPath.right2.recommended)]</value>
+	</variable>
+	<variable name="DefWidgetRight3Content">
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right3))">$INFO[Container(300).ListItem.Property(widgetPath.right3)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right3.recentepisodes))">$INFO[Container(300).ListItem.Property(widgetPath.right3.recentepisodes)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right3.recent)) + [!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.nextepisodes)) | !IsEmpty(Container(300).ListItem.Property(widgetPath.right1.inprogress))]">$INFO[Container(300).ListItem.Property(widgetPath.right3.recent)]</value>
+	</variable>
+	<variable name="DefWidgetRight3Selection">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right3))">$INFO[Container(211).ListItem.Property(widgetPath.right3)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right3.recentepisodes))">$INFO[Container(211).ListItem.Property(widgetPath.right3.recentepisodes)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right3.recent)) + [!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.nextepisodes)) | !IsEmpty(Container(211).ListItem.Property(widgetPath.right1.inprogress))]">$INFO[Container(211).ListItem.Property(widgetPath.right3.recent)]</value>
+	</variable>
+	<variable name="DefEmbyNodeRandomAction">
+		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Property(type)]&amp;folderid=random&amp;limit=25</value>
+	</variable>
+	<variable name="EmbyNodeNumber">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">0</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">1</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">2</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">3</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">4</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">5</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">6</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">7</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">8</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">9</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">10</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">11</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">12</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">13</value>	
+	</variable>
+	<variable name="EmbyNode">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.content)]</value>	
+	</variable>
+	<variable name="EmbyNodeRecommended">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recommended.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recommended.content)]</value>	
+	</variable>
+	<variable name="EmbyNodeRecent">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recent.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recent.content)]</value>	
+	</variable>
+	<variable name="EmbyNodeRecentEpisodes">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recentepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recentepisodes.content)]</value>	
+	</variable>
+	<variable name="EmbyNodeInProgress">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.inprogress.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.inprogress.content)]</value>	
+	</variable>
+	<variable name="EmbyNodeUnwatched">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.unwatched.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.unwatched.content)]</value>	
+	</variable>
+	<variable name="EmbyNodeNextEpisodes">
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.nextepisodes.content)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.nextepisodes.content)]</value>	
+	</variable>
+	<include name="OldEmbyMovies">		videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22year%22%2C%22direction%22%3A%22ascending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%220%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D
+	</include>
+	<include name="HighRatedEmbyMovies">		videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D
+	</include>
+</includes>

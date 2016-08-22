@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<include name="View_58_Cards">
+		<description>List View (id=58)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(58)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<control type="group">
+				<control type="panel" id="58">
+					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<top>206</top>
+					<height>760</height>
+					<left>70</left>
+					<right>70</right>
+					<onup>58</onup>
+					<ondown>58</ondown>
+					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+					<onright>60</onright>
+					<orientation>vertical</orientation>
+					<pagecontrol>60</pagecontrol>
+					<preloaditems>2</preloaditems>
+					<viewtype label="31198">list</viewtype>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<itemlayout width="890" height="380" condition="!Container.Content(episodes)">
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<texture colordiffuse="Dark4" border="5">common/box.png</texture>
+						</control>
+						<control type="image">
+							<right>24</right>
+							<top>29</top>
+							<width>40</width>
+							<height>40</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture background="true">$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>230</width>
+							<height>360</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="diffuse/cardposter.png" background="true">$VAR[PosterImage]</texture>
+						</control>
+						<control type="group">
+							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<control type="image">
+								<right>24</right>
+								<top>29</top>
+								<height>40</height>
+								<width>40</width>
+								<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+							<control type="label">
+								<right>24</right>
+								<top>29</top>
+								<height>40</height>
+								<width>40</width>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+								<font>Tiny</font>
+								<scroll>false</scroll>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
+						<control type="progress">
+							<bottom>10</bottom>
+							<width>230</width>
+							<height>12</height>
+							<left>10</left>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="label">
+							<left>250</left>
+							<right>64</right>
+							<top>20</top>
+							<height>50</height>
+							<align>left</align>
+							<font>SmallBold</font>
+							<textcolor>Dark1</textcolor>
+							<selectedcolor>Dark1</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="textbox">
+							<left>250</left>
+							<right>30</right>
+							<top>70</top>
+							<height>202</height>
+							<align>justify</align>
+							<font>Tiny</font>
+							<autoscroll>false</autoscroll>
+							<textcolor>Dark1</textcolor>
+							<selectedcolor>Dark1</selectedcolor>
+							<label>$VAR[LabelPlotBox]</label>
+						</control>
+						<control type="label">
+							<left>250</left>
+							<right>30</right>
+							<bottom>20</bottom>
+							<aligny>center</aligny>
+							<height>38</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>Dark1</textcolor>
+							<selectedcolor>Dark1</selectedcolor>
+							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
+						</control>
+					</itemlayout>
+					<itemlayout width="890" height="380" condition="Container.Content(episodes)">
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<texture colordiffuse="Dark4" border="5">common/box.png</texture>
+						</control>
+						<control type="image">
+							<right>20</right>
+							<top>20</top>
+							<width>40</width>
+							<height>40</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture background="true">$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="image">
+							<left>14</left>
+							<top>55</top>
+							<height>330</height>
+							<width>520</width>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture diffuse="diffuse/cardthumb.png" background="true" align="left">$VAR[FanartImage]</texture>
+						</control>
+						<control type="progress">
+							<bottom>14</bottom>
+							<width>520</width>
+							<height>12</height>
+							<left>14</left>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="label">
+							<font>EpisodeNumber</font>
+							<top>60</top>
+							<left>30</left>
+							<width>180</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$VAR[LabelEpisodeZero]$INFO[ListItem.Episode]</label>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<top>15</top>
+							<height>50</height>
+							<align>left</align>
+							<font>SmallBold</font>
+							<textcolor>Dark1</textcolor>
+							<selectedcolor>Dark1</selectedcolor>
+							<label>$VAR[LabelTitle]</label>
+							<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<top>15</top>
+							<height>50</height>
+							<align>left</align>
+							<font>SmallBold</font>
+							<textcolor>Dark2</textcolor>
+							<selectedcolor>Dark2</selectedcolor>
+							<label>$VAR[LabelTitle]</label>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="textbox">
+							<left>540</left>
+							<right>30</right>
+							<top>65</top>
+							<height>300</height>
+							<align>justify</align>
+							<font>Tiny</font>
+							<textcolor>Dark1</textcolor>
+							<selectedcolor>Dark1</selectedcolor>
+							<label>$VAR[LabelPlotBoxLong]</label>
+							<autoscroll></autoscroll>
+							<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="textbox">
+							<left>540</left>
+							<right>30</right>
+							<top>65</top>
+							<height>300</height>
+							<align>justify</align>
+							<font>Tiny</font>
+							<textcolor>Dark3</textcolor>
+							<selectedcolor>Dark3</selectedcolor>
+							<label>$VAR[LabelPlotBoxLong]</label>
+							<autoscroll></autoscroll>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="label">
+							<left>400</left>
+							<right>80</right>
+							<top>20</top>
+							<aligny>center</aligny>
+							<height>38</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>Dark3</textcolor>
+							<selectedcolor>Dark3</selectedcolor>
+							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
+							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+						<control type="label">
+							<left>400</left>
+							<right>80</right>
+							<top>20</top>
+							<aligny>center</aligny>
+							<height>38</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>Dark1</textcolor>
+							<selectedcolor>Dark1</selectedcolor>
+							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
+							<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+						</control>
+					</itemlayout>
+					<focusedlayout width="890" height="380" condition="!Container.Content(episodes)">
+						<control type="button">
+							<texturefocus>-</texturefocus>
+							<texturenofocus>-</texturenofocus>
+							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
+							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<texture colordiffuse="Dark1" border="5">common/box.png</texture>
+						</control>
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<width>230</width>
+							<height>360</height>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<texture diffuse="diffuse/cardposter.png" background="true">$VAR[PosterImage]</texture>
+						</control>
+						<control type="progress">
+							<bottom>10</bottom>
+							<width>230</width>
+							<height>12</height>
+							<left>10</left>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="image">
+							<right>24</right>
+							<top>29</top>
+							<width>40</width>
+							<height>40</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture background="true">$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="group">
+							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<control type="image">
+								<right>24</right>
+								<top>29</top>
+								<height>40</height>
+								<width>40</width>
+								<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+								<aspectratio align="center" aligny="center">keep</aspectratio>
+							</control>
+							<control type="label">
+								<right>24</right>
+								<top>29</top>
+								<height>40</height>
+								<width>40</width>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+								<font>Tiny</font>
+								<scroll>false</scroll>
+								<textcolor>White</textcolor>
+							</control>
+						</control>
+						<control type="label">
+							<left>250</left>
+							<right>74</right>
+							<top>20</top>
+							<height>50</height>
+							<align>left</align>
+							<font>SmallBold</font>
+							<textcolor>Light1</textcolor>
+							<selectedcolor>Light1</selectedcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="textbox">
+							<left>250</left>
+							<right>30</right>
+							<top>70</top>
+							<height>202</height>
+							<align>justify</align>
+							<font>Tiny</font>
+							<textcolor>Light1</textcolor>
+							<selectedcolor>Light1</selectedcolor>
+							<label>$VAR[LabelPlotBox]</label>
+						</control>
+						<control type="label">
+							<left>250</left>
+							<right>30</right>
+							<bottom>20</bottom>
+							<aligny>center</aligny>
+							<height>38</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>Light1</textcolor>
+							<selectedcolor>Light1</selectedcolor>
+							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
+						</control>
+					</focusedlayout>
+					<focusedlayout width="890" height="380" condition="Container.Content(episodes)">
+						<control type="image">
+							<left>10</left>
+							<top>10</top>
+							<right>10</right>
+							<bottom>10</bottom>
+							<texture colordiffuse="Dark1" border="5">common/box.png</texture>
+						</control>
+						<control type="image">
+							<right>20</right>
+							<top>20</top>
+							<width>40</width>
+							<height>40</height>
+							<aspectratio aligny="top">keep</aspectratio>
+							<texture background="true">$VAR[PercentWatched]</texture>
+							<visible>!stringcompare(ListItem.Label,..)</visible>
+						</control>
+						<control type="image">
+							<left>14</left>
+							<top>55</top>
+							<height>330</height>
+							<width>520</width>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture diffuse="diffuse/cardthumb.png" background="true" align="left">$VAR[FanartImage]</texture>
+						</control>
+						<control type="progress">
+							<bottom>14</bottom>
+							<width>520</width>
+							<height>12</height>
+							<left>14</left>
+							<info>ListItem.PercentPlayed</info>
+							<overlaytexture>-</overlaytexture>
+							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
+							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
+							<visible>ListItem.IsResumable</visible>
+						</control>
+						<control type="label">
+							<font>EpisodeNumber</font>
+							<top>60</top>
+							<left>30</left>
+							<width>180</width>
+							<height>40</height>
+							<align>left</align>
+							<aligny>top</aligny>
+							<label>$VAR[LabelEpisodeZero]$INFO[ListItem.Episode]</label>
+							<textcolor>White</textcolor>
+							<selectedcolor>White</selectedcolor>
+						</control>
+						<control type="label">
+							<left>20</left>
+							<top>15</top>
+							<height>50</height>
+							<align>left</align>
+							<font>SmallBold</font>
+							<textcolor>Light1</textcolor>
+							<selectedcolor>Light1</selectedcolor>
+							<label>$VAR[LabelTitle]</label>
+						</control>
+						<control type="textbox">
+							<left>540</left>
+							<right>30</right>
+							<top>65</top>
+							<height>300</height>
+							<align>justify</align>
+							<font>Tiny</font>
+							<textcolor>Light1</textcolor>
+							<selectedcolor>Light1</selectedcolor>
+							<label>$VAR[LabelPlotBoxLong]</label>
+							<autoscroll></autoscroll>
+						</control>
+						<control type="label">
+							<left>400</left>
+							<right>80</right>
+							<top>20</top>
+							<aligny>center</aligny>
+							<height>38</height>
+							<align>right</align>
+							<font>Tiny</font>
+							<textcolor>Light1</textcolor>
+							<selectedcolor>Light1</selectedcolor>
+							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
+						</control>
+					</focusedlayout>
+				</control>
+				<include>Furniture_Scrollbar</include>
+			</control>
+		</control>
+	</include>
+</includes>

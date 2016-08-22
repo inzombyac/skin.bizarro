@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+    id="skin.arctic.zephyr.emby"
+    version="1.3.0.0"
+    name="AZ: Emby"
+    provider-name="jurialmunkey - im85288 - badaas - inzombyac">
+    <requires>
+        <import addon="xbmc.gui" version="5.10.0"/>
+        <import addon="script.skinshortcuts" version="0.4.0"/>
+        <import addon="script.extendedinfo" version="2.0.3"/>
+        <import addon="script.skin.helper.service" version="1.0.0"/>
+		<import addon="script.toolbox" version="1.0.0"/>
+        <import addon="script.artwork.downloader" version="12.0.2"/>
+        <import addon="script.playalbum" version="0.0.6"/>
+        <import addon="script.artistslideshow" version="1.3.2"/>
+        <import addon="script.tv.show.next.aired" version="6.0.14"/>
+        <import addon="resource.images.studios.white" version="0.0.1"/>
+        <import addon="resource.images.moviegenreicons.coloured" version="0.0.1"/>
+        <import addon="resource.images.musicgenreicons.text" version="0.0.1"/>
+        <import addon="resource.images.recordlabels.white" version="0.0.1"/>
+		<import addon="plugin.video.youtube" version="5.1.8"/>
+		<import addon="service.library.data.provider" version="0.0.1"/>
+		<import addon="script.image.resource.select" version="0.0.1"/>
+    </requires>
+    <extension point="xbmc.gui.skin" effectslowdown="1.00" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9" />
+	</extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Emby mod Arctic Zephyr skin</summary>
+        <description lang="en">Emby mod Arctic Zephyr skin</description>
+        <platform>all</platform>
+		<assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>_screenshots/screenshot001.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>

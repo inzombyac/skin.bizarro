@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>programs</label2>
+        <label>Emby</label>
+        <icon>special://skin/extras/icons/emby2.png</icon>
+		<thumb>special://skin/extras/backgrounds/Emby.jpg</thumb>
+        <action>ActivateWindow(10025,"plugin://plugin.video.emby",return)</action>
+		<visible>System.HasAddon(plugin.video.emby)</visible>
+    </shortcut>
+	<shortcut>
+        <label2>programs</label2>
+        <label>Advanced Launcher</label>
+        <icon>special://skin/extras/icons/addtile.png</icon>
+		<thumb>special://skin/extras/backgrounds/Gamesystems.jpg</thumb>
+        <action>ActivateWindow(10001,"plugin://plugin.program.advanced.launcher",return)</action>
+		<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>
+    </shortcut>
+	<shortcut>
+        <label2>programs</label2>
+        <label>Add-ons</label>
+        <icon>special://skin/extras/icons/addtile.png</icon>
+		<thumb>special://skin/extras/backgrounds/Settings.jpg</thumb>
+        <action>ActivateWindow(AddonBrowser)</action>
+    </shortcut>
+</shortcuts>

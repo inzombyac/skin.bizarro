@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <defaultID>hdhomerun</defaultID>
+		<label2>livetv</label2>
+        <label>HDHomerun View</label>
+        <action>RunAddon(script.hdhomerun.view)</action>
+        <icon>special://skin/extras/backgrounds/HDHomeRun.jpg</icon>
+		<thumb>special://skin/extras/backgrounds/HDHomeRun.jpg</thumb>
+		<visible>System.HasAddon(script.hdhomerun.view)</visible>
+    </shortcut>
+	<shortcut>
+        <defaultID>tvguide</defaultID>
+		<label2>livetv</label2>
+        <label>19069</label>
+        <action>ActivateWindow(tvguide)</action>
+        <icon>special://skin/extras/icons/tvguide.png</icon>
+		<thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>
+    </shortcut>
+    <shortcut>
+        <defaultID>recordings</defaultID>
+		<label2>livetv</label2>
+        <label>19163</label>
+        <action>ActivateWindow(tvrecordings)</action>
+        <icon>special://skin/extras/icons/bookmark.png</icon>
+		<thumb>special://skin/extras/backgrounds/Family.jpg</thumb>
+    </shortcut>
+    <shortcut>
+        <defualtID>timers</defualtID>
+		<label2>livetv</label2>
+        <label>19040</label>
+        <action>ActivateWindow(tvtimers)</action>
+        <icon>special://skin/extras/icons/timer.png</icon>
+		<thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>
+    </shortcut>
+</shortcuts>

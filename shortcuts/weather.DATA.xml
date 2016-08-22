@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+    <shortcut>
+        <label2>weather</label2>
+        <label>Weather</label>
+        <icon>special://skin/extras/icons/sun.png</icon>
+		<thumb>special://skin/extras/backgrounds/space.jpg</thumb>
+        <action>ActivateWindow(Weather)</action>
+    </shortcut>
+	<shortcut>
+        <label2>weather</label2>
+        <label>Settings</label>
+        <icon>special://skin/extras/icons/settings.png</icon>
+		<thumb>special://skin/extras/backgrounds/Settings.jpg</thumb>
+       <action>ActivateWindow(Weathersettings)</action>
+    </shortcut>
+</shortcuts>

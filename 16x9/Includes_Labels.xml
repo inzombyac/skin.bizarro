@@ -1,0 +1,944 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="LabelTitle">
+		<value condition="Container.Content(episodes) + !IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="LabelYear">
+		<value condition="Container.Content(tvshows) + stringcompare(Container.SortMethod,$LOCALIZE[20360])">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(episodes)] + stringcompare(Container.SortMethod,$LOCALIZE[568])">$INFO[ListItem.LastPlayed]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Premiered]</value>
+		<value condition="!IsEmpty(Container(3012).ListItem.Year)">$INFO[Container(3012).ListItem.Year]</value>
+		<value condition="!IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
+		<value condition="[Container.Content(tvshows) | Container.Content(episodes)| Container.Content(seasons)]">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
+	</variable>
+	<variable name="LabelEpisodeZero">
+        <value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
+        <value condition="IsEmpty(ListItem.Episode)">$NUMBER[0]$NUMBER[0]</value>
+    </variable>      
+    <variable name="LabelEpisodeZero2">
+        <value condition="!VideoPlayer.HasInfo + !IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="Control.HasFocus(301) + !IntegerGreaterThan(Container(301).ListItem.Episode,9) + !substring(Container(301).ListItem.Episode,S) + !IsEmpty(Container(301).ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="Control.HasFocus(9500) + !IntegerGreaterThan(Container(9500).ListItem.Episode,9) + !substring(Container(9500).ListItem.Episode,S) + !IsEmpty(Container(9500).ListItem.Episode)">$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4016) + !IntegerGreaterThan(Container(4016).ListItem.Episode,9) + !substring(Container(4016).ListItem.Episode,S) + !IsEmpty(Container(4016).ListItem.Episode)">$NUMBER[0]</value>		
+		<value condition="Control.HasFocus(4017) + !IntegerGreaterThan(Container(4017).ListItem.Episode,9) + !substring(Container(4017).ListItem.Episode,S) + !IsEmpty(Container(4017).ListItem.Episode)">$NUMBER[0]</value>	
+		<value condition="Control.HasFocus(4018) + !IntegerGreaterThan(Container(4018).ListItem.Episode,9) + !substring(Container(4018).ListItem.Episode,S) + !IsEmpty(Container(4018).ListItem.Episode)">$NUMBER[0]</value>	
+        <value condition="VideoPlayer.HasInfo + !IntegerGreaterThan(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
+    </variable>  
+    <variable name="LabelSeasonZero">
+        <value condition="!VideoPlayer.HasInfo + !IntegerGreaterThan(ListItem.Season,9) + !substring(ListItem.Season,S) + !IsEmpty(ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="Control.HasFocus(301) + !IntegerGreaterThan(Container(301).ListItem.Season,9) + !substring(Container(301).ListItem.Season,S) + !IsEmpty(Container(301).ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="Control.HasFocus(9500) + !IntegerGreaterThan(Container(9500).ListItem.Season,9) + !substring(Container(9500).ListItem.Season,S) + !IsEmpty(Container(9500).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4016) + !IntegerGreaterThan(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !IsEmpty(Container(4016).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4016) + IntegerGreaterThan(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !IsEmpty(Container(4016).ListItem.Season)">S</value>
+        <value condition="Control.HasFocus(4017) + !IntegerGreaterThan(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !IsEmpty(Container(4017).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4017) + IntegerGreaterThan(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !IsEmpty(Container(4017).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4018) + !IntegerGreaterThan(Container(4018).ListItem.Season,9) + !substring(Container(4018).ListItem.Season,S) + !IsEmpty(Container(4018).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4018).ListItem.Season,9) + !substring(Container(4018).ListItem.Season,S) + !IsEmpty(Container(4018).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4012) + !IntegerGreaterThan(Container(4019).ListItem.Season,9) + !substring(Container(4019).ListItem.Season,S) + !IsEmpty(Container(4019).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4012) + IntegerGreaterThan(Container(4019).ListItem.Season,9) + !substring(Container(4019).ListItem.Season,S) + !IsEmpty(Container(4019).ListItem.Season)">S</value>
+        <value condition="VideoPlayer.HasInfo + !IntegerGreaterThan(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
+		 <value condition="VideoPlayer.HasInfo + IntegerGreaterThan(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !IsEmpty(VideoPlayer.Season)">S</value>
+    </variable>    
+	<variable name="LabelDirector">
+		<value condition="Container.Content(movies)">$INFO[ListItem.Label]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Label]</value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="!IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.Director))">$INFO[Window(home).Property(Set.Movies.Director)]</value>
+		<value>$LOCALIZE[19055]</value>
+	</variable>
+	<variable name="LabelGenre">
+		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[ListItem.Studio, • ]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[31102]]</value>
+		<value condition="!IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
+		<value>$LOCALIZE[19055]</value>
+	</variable>
+	<variable name="LabelDuration">
+		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[20368])">$INFO[ListItem.Date]</value>
+		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[552])">$INFO[ListItem.Date]</value>
+		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[20074])">$INFO[ListItem.MPAA]</value>
+		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[570])">$INFO[ListItem.DateAdded]</value>
+		<value condition="stringcompare(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
+		<value condition="!IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
+		<value condition="Window.IsVisible(Home.xml) + !IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="Window.IsVisible(Home.xml) + !IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
+		<value condition="Window.IsVisible(Home.xml) + !IsEmpty(Container(4012).ListItem.Duration)">$INFO[Container(4012).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="Window.IsVisible(Home.xml) + !IsEmpty(Container(4012).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4012).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
+		<value condition="Window.IsVisible(Home.xml) + StringCompare(Container(300).ListItem.Property(type),livetv) + IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4012).ListItem.Property(Rating)]</value>
+		<value condition="Window.IsVisible(Home.xml) + StringCompare(Container(300).ListItem.Property(type),videos)">$INFO[Container(4019).ListItem.Year]</value>
+		<value></value>
+	</variable>
+	<variable name="LabelPlotBox">
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]</value>
+		<value condition="Container.Content(episodes) + !Skin.HasSetting(osd.hidespoilers)">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
+		<value condition="!IsEmpty(ListItem.Plot) + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Title,[B],[/B][CR],]...</value>
+		<value condition="!IsEmpty(ListItem.Plot) + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + ![stringcompare(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Title,[B],[/B][CR],]$INFO[ListItem.Plot]</value>
+		<value condition="!IsEmpty(Container(515).ListItem.Plot)">$INFO[Container(515).ListItem.Plot]</value>
+		<value>$INFO[ListItem.Plot]</value>
+	</variable>
+	<variable name="LabelPlotBoxLong">
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]</value>
+		<value condition="Container.Content(episodes) + !Skin.HasSetting(osd.hidespoilers)">$INFO[ListItem.Plot]</value>
+		<value condition="!IsEmpty(ListItem.Plot) + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">...</value>
+		<value condition="!IsEmpty(ListItem.Plot) + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + ![stringcompare(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Plot]</value>
+		<value>$INFO[ListItem.Plot]</value>
+	</variable>
+	<variable name="LabelAudioChannels">
+		<value condition="stringcompare(ListItem.AudioChannels,8)">7.1</value>
+		<value condition="stringcompare(ListItem.AudioChannels,6)">5.1</value>
+		<value condition="stringcompare(ListItem.AudioChannels,5)">4.1</value>
+		<value condition="stringcompare(ListItem.AudioChannels,4)">4.0</value>
+		<value condition="stringcompare(ListItem.AudioChannels,3)">2.1</value>
+		<value condition="stringcompare(ListItem.AudioChannels,2)">2.0</value>
+		<value condition="stringcompare(ListItem.AudioChannels,1)">1.0</value>
+		<value>???</value>
+	</variable>
+	<variable name="LabelHubAudioChannels">
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,8)">7.1</value>
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,6)">5.1</value>
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,5)">4.1</value>
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,4)">4.0</value>
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,3)">2.1</value>
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,2)">2.0</value>
+		<value condition="stringcompare(Container(9500).ListItem.AudioChannels,1)">1.0</value>
+		<value>???</value>
+	</variable>
+	<variable name="LabelOSDAudioChannels">
+		<value condition="stringcompare(VideoPlayer.AudioChannels,8)">7.1</value>
+		<value condition="stringcompare(VideoPlayer.AudioChannels,6)">5.1</value>
+		<value condition="stringcompare(VideoPlayer.AudioChannels,5)">4.1</value>
+		<value condition="stringcompare(VideoPlayer.AudioChannels,4)">4.0</value>
+		<value condition="stringcompare(VideoPlayer.AudioChannels,3)">2.1</value>
+		<value condition="stringcompare(VideoPlayer.AudioChannels,2)">2.0</value>
+		<value condition="stringcompare(VideoPlayer.AudioChannels,1)">1.0</value>
+		<value>???</value>
+	</variable>
+	<variable name="LabelOverlayPlot">
+		<value condition="!IsEmpty(Window(home).Property(Set.Movies.ExtendedPlot)) + [Container.Content(Sets) | substring(ListItem.Path,videodb://movies/sets,left)]">$INFO[Window(home).Property(Set.Movies.ExtendedPlot)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition="!IsEmpty(ListItem.Property(Addon.Description))">$INFO[ListItem.Property(Addon.Description)]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Artist,[B],[/B][CR]]$INFO[ListItem.Album]$INFO[ListItem.Year,  (,)]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Title,[B],[/B][CR][CR],]$INFO[ListItem.Plot]</value>
+		<value>$INFO[ListItem.Tagline,[B],[/B][CR][CR]]$INFO[ListItem.Plot]</value>
+	</variable>
+	<variable name="LabelOverlayTitle">
+		<value condition="[Container.Content(episodes) | Container.Content(seasons)] + !IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="Label_SettingsHeader">
+		<value condition="Window.IsActive(systeminfo)">$LOCALIZE[130]</value>
+		<value condition="Window.IsActive(weathersettings)">$LOCALIZE[8]</value>
+		<value condition="Window.IsActive(systemsettings)">$LOCALIZE[13000]</value>
+		<value condition="Window.IsActive(pvrsettings)">$LOCALIZE[19020]</value>
+		<value condition="Window.IsActive(skinsettings)">$LOCALIZE[166]</value>
+		<value condition="Window.IsActive(picturessettings)">$LOCALIZE[1]</value>
+		<value condition="Window.IsActive(addonbrowser)">$LOCALIZE[24001]</value>
+		<value condition="Window.IsActive(musicsettings)">$LOCALIZE[2]</value>
+		<value condition="Window.IsActive(profiles)">$LOCALIZE[13200]</value>
+		<value condition="Window.IsActive(videossettings)">$LOCALIZE[157]</value>
+		<value condition="Window.IsActive(servicesettings)">$LOCALIZE[14036]</value>
+		<value>$LOCALIZE[480]</value>
+	</variable>
+	<variable name="EmbyWidgetLabel">
+		<value condition="Container(300).Scrolling |[Container(4019).IsUpdating + System.IdleTime(0)]">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">Collections</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">Weather</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Add-Ons</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Kodi Information</value>
+	</variable>
+	<variable name="EmbyWidgetContentLabel">
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Kodi $INFO[System.BuildVersion]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(4019).ListItem.TVShowTitle,,]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Artist,, • ]$INFO[Container(4019).ListItem.Label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="!IsEmpty(Container(4019).ListItem.Label)">$INFO[Container(4019).ListItem.Label]</value>
+		<value>$INFO[Container(4012).ListItem.Label]</value>
+	</variable>
+	<variable name="EmbyWidgetContentLabel2">
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),collection)">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Year]</value>
+		<value condition="!StringCompare(Container(300).ListItem.Property(type),livetv)">$VAR[LabelDuration]</value>
+	</variable>
+	<variable name="WidgetMainSelectionLabel">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widget))">$INFO[Container(211).ListItem.Property(widget)]</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(defaultID),settings)">Kodi Information</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
+	</variable>
+	<variable name="WidgetRight1SelectionLabel">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetName.right1))">$INFO[Container(211).ListItem.Property(widgetName.right1)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.nextepisodes))">$INFO[Container(211).ListItem.Property(widgetName.right1.nextepisodes)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.inprogress))">$INFO[Container(211).ListItem.Property(widgetName.right1.inprogress)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.recent))">$INFO[Container(211).ListItem.Property(widgetName.right1.recent)]</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(defaultID),settings)">System Information</value>
+		<value condition="StringCompare(Container(211).ListItem.Property(defaultID),weather)">Extended Forecast</value>
+	</variable>
+	<variable name="WidgetRight2SelectionLabel">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetName.right2))">$INFO[Container(211).ListItem.Property(widgetName.right2)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(211).ListItem.Property(widgetName.right2.unwatched)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right2.recommended))">$INFO[Container(211).ListItem.Property(widgetName.right2.recommended)]</value>
+	</variable>
+	<variable name="WidgetRight3SelectionLabel">
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetName.right3))">$INFO[Container(211).ListItem.Property(widgetName.right3)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right3.recentepisodes))">$INFO[Container(211).ListItem.Property(widgetName.right3.recentepisodes)]</value>
+		<value condition="!IsEmpty(Container(211).ListItem.Property(widgetPath.right3.recent)) + [!IsEmpty(Container(211).ListItem.Property(widgetPath.right1.nextepisodes)) | !IsEmpty(Container(211).ListItem.Property(widgetPath.right1.inprogress))]">$INFO[Container(211).ListItem.Property(widgetName.right3.recent)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget1Label">
+		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.right1))">$INFO[Container(300).ListItem.Property(widgetName.right1)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.nextepisodes))">$INFO[Container(300).ListItem.Property(widgetName.right1.nextepisodes)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.inprogress))">$INFO[Container(300).ListItem.Property(widgetName.right1.inprogress)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.recent))">$INFO[Container(300).ListItem.Property(widgetName.right1.recent)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),settings)">Kodi Information</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),weather)">Weather</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),livetv)">TV Channels</value>
+	</variable>
+	<variable name="EmbyHomeWidget2Label">
+		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.right2))">$INFO[Container(300).ListItem.Property(widgetName.right2)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(300).ListItem.Property(widgetName.right2.unwatched)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended))">$INFO[Container(300).ListItem.Property(widgetName.right2.recommended)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget3Label">
+		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">[CR]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetName.right3))">$INFO[Container(300).ListItem.Property(widgetName.right3)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right3.recentepisodes))">$INFO[Container(300).ListItem.Property(widgetName.right3.recentepisodes)]</value>
+		<value condition="!IsEmpty(Container(300).ListItem.Property(widgetPath.right3.recent)) + [!IsEmpty(Container(300).ListItem.Property(widgetPath.right1.nextepisodes)) | !IsEmpty(Container(300).ListItem.Property(widgetPath.right1.inprogress))]">$INFO[Container(300).ListItem.Property(widgetName.right3.recent)]</value>
+	</variable>
+	<variable name="EmbyWidget1ContentLabel">
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="!StringCompare(ListItem.Label, Get more...) + !IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle,  ,]</value>
+		<value condition="!StringCompare(ListItem.Label, Get more...)">$INFO[ListItem.Label,  ,]</value>
+		<value>[CR]</value>
+	</variable>
+	<variable name="EmbyBottomTileLabel1">
+		<value condition="Container(300).Scrolling ">[CR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$INFO[Container(300).ListItem.label]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[20343]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Movies</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + System.HasAddon(script.hdhomerun.view)">HDHomeRun View</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Channels</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Artists</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">Pictures</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Programs</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Settings</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">Weather</value>
+		<value>Videos</value>
+	</variable>
+	<variable name="EmbyButton2Label">
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">Extended Info</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9003).NumItems,0)">Collections</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Genres</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31193]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">Collections</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">TV Guide</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Albums</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">Picture Add-Ons</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Emby</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Log Out</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">Settings</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Recommended</value>
+		<value>Extended Info</value>
+	</variable>
+	<variable name="EmbyButton3Label">
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">Favorites</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31193]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31192]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">Recorded TV</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">Genres</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">Add-Ons</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">Power Menu</value>
+		<value>Emby Channels</value>
+	</variable>
+	<variable name="EmbyFooterLabel">
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(Background)]</value>
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
+		<!--<value>|$INFO[Window(Home).Property(EmbyHomeLabelStripped)]|</value>-->
+		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight2]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">$INFO[Pvr.BackendChannels] channels • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendRecordings] recordings[/COLOR]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
+		<value condition="IntegerGreaterThan(Container(9025).NumItems,0) + Substring(Container(300).ListItem.Property(Path),emby)">$INFO[Container(9025).NumItems] items</value>
+		<value></value>
+	</variable>
+	<variable name="EmbyHomeSelectedTitle">
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4018).ListItem.DBTYPE]</value>
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(302).ListItem.Property(defaultID)] / $INFO[Container(302).ListItem.Property(Background)] / $INFO[Container(302).ListItem.Thumb]</value> -->
+		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.DBID] / $INFO[Container(4019).ListItem.FileNameAndPath]</value> -->
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<!-- Tv Shows -->
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4019).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Label,,][/COLOR]$INFO[Container(4019).ListItem.Season, • , Seasons]$INFO[Container(4019).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4019).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4019).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4019).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight2]]$INFO[Container(4019).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4016).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4016).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight2]]$INFO[Container(4016).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4017).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4017).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight2]]$INFO[Container(4017).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),tvshows) + StringCompare(Container(4018).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4018).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4018).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4018).ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[Container(4018).ListItem.Episode,, • ][COLOR=$VAR[ColourHighlight2]]$INFO[Container(4018).ListItem.Title][/COLOR]</value>
+		<!-- Movies -->
+		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Label,, •][/COLOR] $INFO[Container(4019).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4016) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,, •][/COLOR] $INFO[Container(4016).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4017) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,, •][/COLOR] $INFO[Container(4017).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4018) + StringCompare(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,, •][/COLOR] $INFO[Container(4018).ListItem.Year]</value>
+		<!-- Music -->
+		<value condition="Control.HasFocus(4012) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4017) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Artist,, •][/COLOR] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4016) + Substring(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
+		<!-- Default -->
+		<value condition="Control.HasFocus(4012) + !IsEmpty(Container(4019).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4019).ListItem.Label,,][/COLOR]$INFO[Container(4019).ListItem.Season, • , Seasons]$INFO[Container(4019).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Label,,]$INFO[Container(4019).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4017) + !IsEmpty(Container(4017).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4018) + !IsEmpty(Container(4018).ListItem.TVShowTitle)">[COLOR=$VAR[ColourHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Label,,]$INFO[Container(4018).ListItem.Year, • ,]</value>
+		<!--<value>$INFO[Skin.String(HomeItemDBID)] / $INFO[Skin.String(HomeItemTVShowTitle)] / $INFO[Skin.String(HomeItemDBType)] / $INFO[Skin.String(HomeItemPath)]</value>-->
+	</variable>
+	<variable name="EmbyHomeSelectedMenu">
+		<value condition="!IsEmpty(Window(Home).Property(EmbyHomeLabelStripped)) + Substring(Container(300).ListItem.label,-)">$INFO[Window(Home).Property(EmbyHomeLabelStripped)]</value>
+		<value>$INFO[Container(300).ListItem.label]</value>
+	</variable>
+	<variable name="EmbyHomeMenuLabel">
+		<value condition="!IsEmpty(ListItem.label)">$INFO[ListItem.label]</value>
+		<value>$INFO[ListItem.label2]</value>
+	</variable>
+	<variable name="WidgetTitle">
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.Title]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),Weather)">$INFO[Weather.Temperature]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),NextAired) | StringCompare(Container(300).ListItem.Property(widget),Favourites)">$INFO[Container(301).ListItem.Label]</value>
+		<value condition="!StringCompare(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Season,,x]$INFO[Container(301).ListItem.Episode,,. ]$INFO[Container(301).ListItem.Title]</value>
+		<value condition="StringCompare(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) +!IsEmpty(Container(301).ListItem.Title)">$INFO[Container(301).ListItem.Title]</value>
+		<value>$INFO[Container(301).ListItem.Label]</value>
+	</variable>
+	<variable name="WidgetPlot">
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">$INFO[Container(301).ListItem.ChannelNumberLabel,,. ]$INFO[Container(301).ListItem.ChannelName,,[CR]]$INFO[Container(301).ListItem.Plot]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),NextAired)">$INFO[Container(301).ListItem.Label2,,[CR]]$INFO[Container(301).ListItem.Property(Plot)]</value>
+		<value condition="substring(Container(300).ListItem.Property(widget),Album)">$INFO[Container(301).ListItem.Property(Album_Description)]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),Weather)">$INFO[Weather.Conditions]</value>
+		<value condition="!IsEmpty(Container(301).ListItem.Plot) + Skin.HasSetting(osd.hidespoilers) + !IsEmpty(Container(301).ListItem.TvShowTitle)"></value>
+		<value condition="!IsEmpty(Container(301).ListItem.Plot)">$INFO[Container(301).ListItem.Plot]</value>
+		<value condition="!IsEmpty(Container(301).ListItem.Property(Addon.Description))">$INFO[Container(301).ListItem.Property(Addon.Description)]</value>
+		<value>$LOCALIZE[19055]</value>
+	</variable>
+	<variable name="WidgetSubLabel">
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),LiveTV)">[COLOR=Dark2]$INFO[Container(301).ListItem.StartTime]$INFO[Container(301).ListItem.EndTime, - ,][/COLOR]$INFO[Container(301).ListItem.Title,  ,    ][COLOR=Dark2]$LOCALIZE[515][/COLOR]$INFO[Container(301).ListItem.Genre,  ,][CR][COLOR=Dark2]$INFO[Container(301).ListItem.NextStartTime]$INFO[Container(301).ListItem.NextEndTime, - ,][/COLOR]$INFO[Container(301).ListItem.NextTitle,  ,    ][COLOR=Dark2]$LOCALIZE[515][/COLOR]$INFO[Container(301).ListItem.NextGenre,  ,]</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(widget),NextAired)"></value>
+		<value condition="substring(Container(300).ListItem.Property(widget),Album)">$INFO[Container(301).ListItem.Artist]$INFO[Container(301).ListItem.Year, • ,]</value>
+		<value condition="!StringCompare(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) + !IsEmpty(Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.TvShowTitle]$INFO[Container(301).ListItem.Premiered, • ,]$INFO[Container(301).ListItem.Duration, • , $LOCALIZE[31102]]$INFO[Container(301).ListItem.Rating, • ,]</value>
+		<value condition="!StringCompare(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) + IsEmpty(Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Year]$INFO[Container(301).ListItem.Duration, • , $LOCALIZE[31102]]$INFO[Container(301).ListItem.Rating, • ,]</value>
+		<value condition="StringCompare(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Episode,, $LOCALIZE[20360]]$INFO[Container(301).ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[Container(301).ListItem.Duration, • , $LOCALIZE[31102]]$INFO[Container(301).ListItem.Rating, • ,]</value>
+	</variable>
+	<variable name="PVRInfoStatus">
+		<value condition="ListItem.IsRecording">$LOCALIZE[19158]</value>
+		<value condition="ListItem.HasTimer">$LOCALIZE[19058]</value>
+		<value>$LOCALIZE[31113]</value>
+	</variable>
+	<variable name="PlayerStatus">
+		<value condition="Player.Caching">$LOCALIZE[439] $INFO[Player.CacheLevel,,%]</value>
+		<value condition="Player.Forwarding32x">FF 32x</value>
+		<value condition="Player.Forwarding16x">FF 16x</value>
+		<value condition="Player.Forwarding8x">FF 8x</value>
+		<value condition="Player.Forwarding4x">FF 4x</value>
+		<value condition="Player.Forwarding2x">FF 2x</value>
+		<value condition="Player.Forwarding">FF</value>
+		<value condition="Player.Rewinding32x">RW 32x</value>
+		<value condition="Player.Rewinding16x">RW 16x</value>
+		<value condition="Player.Rewinding8x">RW 8x</value>
+		<value condition="Player.Rewinding4x">RW 4x</value>
+		<value condition="Player.Rewinding2x">RW 2x</value>
+		<value condition="Player.Rewinding">RW</value>
+		<value condition="[Player.Seeking | Player.DisplayAfterSeek] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekOffset, ,]</value>
+		<value condition="Player.Seeking + IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
+		<value condition="Player.Paused">$LOCALIZE[112]</value>
+		<value condition="!Player.HasVideo + !IsEmpty(MusicPlayer.offset(1).Title)">[B]$LOCALIZE[209]...  [/B]$INFO[MusicPlayer.offset(1).Title]</value>
+		<value condition="Player.Playing">$LOCALIZE[31236]</value>
+		<value>$INFO[Player.FinishTime,$LOCALIZE[31106] ,]</value>
+	</variable>
+	<variable name="LabelNextRecordingHeader">
+		<value condition="Pvr.HasTimer">$LOCALIZE[19157]...</value>
+	</variable>
+	<variable name="LabelNowRecordingHeader">
+		<value condition="Pvr.IsRecording">$LOCALIZE[19158]...</value>
+	</variable>
+	<variable name="LabelNextRecording">
+		<value condition="Pvr.HasTimer">[COLOR=$VAR[ColourHighlight]]$INFO[Pvr.NextRecordingTitle][/COLOR]$INFO[Pvr.NextRecordingDateTime, ,]</value>
+	</variable>
+	<variable name="LabelNowRecording">
+		<value condition="Pvr.IsRecording">[COLOR=$VAR[ColourHighlight]]$INFO[Pvr.NowRecordingTitle][/COLOR]$INFO[Pvr.NowRecordingChannel, ,]</value>
+	</variable>
+	<variable name="HDSD">
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(UnWatchedEpisodes)]</value>
+	</variable>
+	<variable name="PlayerTitle">
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.TrackNumber,,. ]$INFO[MusicPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="VideoPlayer.Content(movies) + !IsEmpty(VideoPlayer.Tagline)">$INFO[VideoPlayer.Tagline]</value>
+		<value condition="VideoPlayer.Content(episodes)">$VAR[LabelSeasonZero]$INFO[VideoPlayer.Season,,E]$VAR[LabelEpisodeZero2]$INFO[VideoPlayer.Episode,, • ]$INFO[Player.Title]$INFO[VideoPlayer.Premiered, • ,] </value>
+		<value condition="substring(Player.Filenameandpath,http)">$LOCALIZE[31107]</value>
+		<value>$LOCALIZE[291]</value>
+	</variable>
+	<variable name="PlayerBigTitle">
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Artist]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
+		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title,[B],[/B]]$INFO[VideoPlayer.EpisodeName, (,)]</value>
+		<value>$INFO[VideoPlayer.Title]</value>
+	</variable>
+	<variable name="PlayerPlotBox">
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year,(,)]</value>
+		<value condition="Player.HasVideo + Skin.HasSetting(osd.hidespoilers) + VideoPlayer.Content(episodes)">...</value>
+		<value>$INFO[VideoPlayer.Plot]</value>
+	</variable>
+	<variable name="LabelNextAiredDetails">
+		<value condition="!IsEmpty(Window(Home).Property(NextAired.NextDate))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.NextTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
+		<value condition="IsEmpty(Window(Home).Property(NextAired.NextDate)) + !IsEmpty(Window(Home).Property(NextAired.LatestTitle))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.LatestTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
+	</variable>
+	<variable name="BottomClearLogoText">
+		<value condition="Container.Content(Seasons)">$INFO[ListItem.TVShowTitle]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="ColourHighlight">
+		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
+		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>
+	</variable>
+	<variable name="ColourPosterHighlight">
+		<value condition="stringcompare(ListItem.Overlay,OverlayWatched.png)">Red</value>
+		<value condition="Skin.HasSetting(ColourHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
+		<value condition="!Skin.HasSetting(ColourHighlight)">Highlight</value>
+	</variable>
+	<variable name="ColourHighlight2">
+		<value condition="Skin.HasSetting(ColourHighlight2)">$INFO[Skin.String(focuscolor2.name)]</value>
+		<value condition="!Skin.HasSetting(ColourHighlight2)">Highlight2</value>
+	</variable>
+	<variable name="ColourSelected">
+		<value condition="Skin.HasSetting(ColourSelected)">$INFO[Skin.String(selectedcolor.name)]</value>
+		<value condition="!Skin.HasSetting(ColourSelected)">Selected</value>
+	</variable>
+	<variable name="Plot">
+		<value condition="[!IsEmpty(ListItem.PlotOutline) | !IsEmpty(ListItem.Plot)] + Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [stringcompare(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">...</value>
+		<value condition="!IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
+		<value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+	</variable>
+	<variable name="VideoInfoLabel">
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(movies) + !IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+		<value>$INFO[ListItem.Title]</value>
+	</variable>
+	<variable name="CastList">
+		<value condition="!IsEmpty(Window(movieinformation).Property(Actor3))">$INFO[Window(movieinformation).Property(Actor1)], $INFO[Window(movieinformation).Property(Actor2)], $INFO[Window(movieinformation).Property(Actor3)]</value>
+		<value condition="!IsEmpty(Window(movieinformation).Property(Actor2))">$INFO[Window(movieinformation).Property(Actor1)], $INFO[Window(movieinformation).Property(Actor2)]</value>
+		<value condition="!IsEmpty(Window(movieinformation).Property(Actor1))">$INFO[Window(movieinformation).Property(Actor1)]</value>
+	</variable>
+	<variable name="CastList2">
+		<value condition="!IsEmpty(Container(1000).ListItemNoWrap(2).Label)">$INFO[Container(1000).ListItemNoWrap(0).Label], $INFO[Container(1000).ListItemNoWrap(1).Label], $INFO[Container(1000).ListItemNoWrap(2).Label]</value>
+		<value condition="!IsEmpty(Container(1000).ListItemNoWrap(1).Label)">$INFO[Container(1000).ListItemNoWrap(0).Label], $INFO[Container(1000).ListItemNoWrap(1).Label]</value>
+		<value condition="!IsEmpty(Container(1000).ListItemNoWrap(0).Label)">$INFO[Container(1000).ListItemNoWrap(0).Label]</value>
+	</variable>
+	<variable name="VideoInfoButton8">
+		<value condition="ListItem.IsResumable">Watch Now</value>
+		<value condition="IntegerGreaterThan(ListItem.PlayCount,0)">Replay</value>
+		<value>?</value>
+	</variable>
+	<variable name="SimilarVideos">
+		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="!IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
+	</variable>
+	<variable name="FanartFadeLabel">
+		<value condition="Stringcompare(Skin.String(FanartFade),Darkest)">FanartFade6</value>
+		<value condition="Stringcompare(Skin.String(FanartFade),Dark)">FanartFade5</value>
+		<value condition="Stringcompare(Skin.String(FanartFade),Normal)">FanartFade</value>
+		<value condition="Stringcompare(Skin.String(FanartFade),Bright)">FanartFade2</value>
+		<value condition="Stringcompare(Skin.String(FanartFade),Brighter)">FanartFade3</value>
+		<value condition="Stringcompare(Skin.String(FanartFade),Brightest)">FanartFade4</value>
+		<value>FanartFade</value>
+	</variable>
+	<variable name="VideoInfoBlurLevel">
+		<value condition="!IsEmpty(Skin.String(VideoInfoBlur))">$INFO[Skin.String(VideoInfoBlur)]</value>
+		<value>10</value>
+	</variable>
+	<variable name="Duration">
+		<value condition="StringCompare(ListItem.Duration,1)">1 minute</value>
+		<value condition="StringCompare(ListItem.Duration,2)">2 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,3)">3 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,4)">4 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,5)">5 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,6)">6 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,7)">7 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,8)">8 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,9)">9 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,10)">10 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,11)">11 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,12)">12 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,13)">13 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,14)">14 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,15)">15 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,16)">16 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,17)">17 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,18)">18 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,19)">19 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,20)">20 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,21)">21 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,22)">22 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,23)">23 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,24)">24 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,25)">25 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,26)">26 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,27)">27 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,28)">28 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,29)">29 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,30)">30 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,31)">31 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,32)">32 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,33)">33 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,34)">34 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,35)">35 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,36)">36 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,37)">37 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,38)">38 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,39)">39 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,40)">40 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,41)">41 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,42)">42 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,43)">43 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,44)">44 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,45)">45 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,46)">46 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,47)">47 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,48)">48 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,49)">49 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,50)">50 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,51)">51 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,52)">52 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,53)">53 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,54)">54 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,55)">55 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,56)">56 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,57)">57 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,58)">58 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,59)">59 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,60)">1 hour</value>
+		<value condition="StringCompare(ListItem.Duration,61)">1 hour 1 minute</value>
+		<value condition="StringCompare(ListItem.Duration,62)">1 hour 2 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,63)">1 hour 3 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,64)">1 hour 4 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,65)">1 hour 5 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,66)">1 hour 6 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,67)">1 hour 7 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,68)">1 hour 8 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,69)">1 hour 9 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,70)">1 hour 10 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,71)">1 hour 11 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,72)">1 hour 12 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,73)">1 hour 13 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,74)">1 hour 14 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,75)">1 hour 15 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,76)">1 hour 16 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,77)">1 hour 17 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,78)">1 hour 18 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,79)">1 hour 19 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,80)">1 hour 20 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,81)">1 hour 21 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,82)">1 hour 22 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,83)">1 hour 23 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,84)">1 hour 24 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,85)">1 hour 25 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,86)">1 hour 26 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,87)">1 hour 27 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,88)">1 hour 28 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,89)">1 hour 29 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,90)">1 hour 30 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,91)">1 hour 31 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,92)">1 hour 32 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,93)">1 hour 33 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,94)">1 hour 34 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,95)">1 hour 35 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,96)">1 hour 36 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,97)">1 hour 37 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,98)">1 hour 38 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,99)">1 hour 39 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,100)">1 hour 40 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,101)">1 hour 41 minute</value>
+		<value condition="StringCompare(ListItem.Duration,102)">1 hour 42 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,103)">1 hour 43 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,104)">1 hour 44 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,105)">1 hour 45 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,106)">1 hour 46 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,107)">1 hour 47 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,108)">1 hour 48 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,109)">1 hour 49 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,110)">1 hour 50 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,111)">1 hour 51 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,112)">1 hour 52 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,113)">1 hour 53 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,114)">1 hour 54 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,115)">1 hour 55 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,116)">1 hour 56 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,117)">1 hour 57 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,118)">1 hour 58 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,119)">1 hour 59 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,120)">2 hours</value>
+		<value condition="StringCompare(ListItem.Duration,121)">2 hours 1 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,122)">2 hours 2 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,123)">2 hours 3 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,124)">2 hours 4 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,125)">2 hours 5 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,126)">2 hours 6 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,127)">2 hours 7 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,128)">2 hours 8 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,129)">2 hours 9 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,130)">2 hours 10 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,131)">2 hours 11 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,132)">2 hours 12 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,133)">2 hours 13 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,134)">2 hours 14 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,135)">2 hours 15 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,136)">2 hours 16 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,137)">2 hours 17 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,138)">2 hours 18 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,139)">2 hours 19 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,140)">2 hours 20 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,141)">2 hours 21 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,142)">2 hours 22 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,143)">2 hours 23 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,144)">2 hours 24 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,145)">2 hours 25 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,146)">2 hours 26 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,147)">2 hours 27 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,148)">2 hours 28 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,149)">2 hours 29 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,150)">2 hours 30 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,151)">2 hours 31 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,152)">2 hours 32 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,153)">2 hours 33 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,154)">2 hours 34 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,155)">2 hours 35 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,156)">2 hours 36 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,157)">2 hours 37 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,158)">2 hours 38 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,159)">2 hours 39 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,160)">2 hours 40 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,161)">2 hours 41 minute</value>
+		<value condition="StringCompare(ListItem.Duration,162)">2 hours 42 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,163)">2 hours 43 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,164)">2 hours 44 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,165)">2 hours 45 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,166)">2 hours 46 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,167)">2 hours 47 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,168)">2 hours 48 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,169)">2 hours 49 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,170)">2 hours 50 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,171)">2 hours 51 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,172)">2 hours 52 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,173)">2 hours 53 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,174)">2 hours 54 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,175)">2 hours 55 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,176)">2 hours 56 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,177)">2 hours 57 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,178)">2 hours 58 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,179)">2 hours 59 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,180)">3 hours</value>
+		<value condition="StringCompare(ListItem.Duration,181)">3 hours 1 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,182)">3 hours 2 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,183)">3 hours 3 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,184)">3 hours 4 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,185)">3 hours 5 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,186)">3 hours 6 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,187)">3 hours 7 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,188)">3 hours 8 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,189)">3 hours 9 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,190)">3 hours 10 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,191)">3 hours 11 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,192)">3 hours 12 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,193)">3 hours 13 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,194)">3 hours 14 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,195)">3 hours 15 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,196)">3 hours 16 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,197)">3 hours 17 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,198)">3 hours 18 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,199)">3 hours 19 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,200)">3 hours 20 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,201)">3 hours 21 minute</value>
+		<value condition="StringCompare(ListItem.Duration,202)">3 hours 22 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,203)">3 hours 23 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,204)">3 hours 24 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,205)">3 hours 25 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,206)">3 hours 26 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,207)">3 hours 27 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,208)">3 hours 28 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,209)">3 hours 29 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,210)">3 hours 30 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,211)">3 hours 31 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,212)">3 hours 32 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,213)">3 hours 33 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,214)">3 hours 34 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,215)">3 hours 35 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,216)">3 hours 36 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,217)">3 hours 37 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,218)">3 hours 38 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,219)">3 hours 39 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,220)">3 hours 40 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,221)">3 hours 41 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,222)">3 hours 42 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,223)">3 hours 43 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,224)">3 hours 44 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,225)">3 hours 45 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,226)">3 hours 46 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,227)">3 hours 47 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,228)">3 hours 48 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,229)">3 hours 49 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,230)">3 hours 50 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,231)">3 hours 51 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,232)">3 hours 52 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,233)">3 hours 53 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,234)">3 hours 54 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,235)">3 hours 55 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,236)">3 hours 56 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,237)">3 hours 57 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,238)">3 hours 58 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,239)">3 hours 59 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,240)">4 hours</value>
+		<value condition="StringCompare(ListItem.Duration,241)">4 hours 1 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,242)">4 hours 2 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,243)">4 hours 3 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,244)">4 hours 4 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,245)">4 hours 5 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,246)">4 hours 6 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,247)">4 hours 7 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,248)">4 hours 8 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,249)">4 hours 9 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,250)">4 hours 10 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,251)">4 hours 11 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,252)">4 hours 12 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,253)">4 hours 13 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,254)">4 hours 14 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,255)">4 hours 15 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,256)">4 hours 16 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,257)">4 hours 17 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,258)">4 hours 18 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,259)">4 hours 19 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,260)">4 hours 20 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,261)">4 hours 21 minute</value>
+		<value condition="StringCompare(ListItem.Duration,262)">4 hours 22 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,263)">4 hours 23 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,264)">4 hours 24 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,265)">4 hours 25 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,266)">4 hours 26 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,267)">4 hours 27 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,268)">4 hours 28 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,269)">4 hours 29 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,270)">4 hours 30 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,271)">4 hours 31 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,272)">4 hours 32 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,273)">4 hours 33 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,274)">4 hours 34 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,275)">4 hours 35 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,276)">4 hours 36 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,277)">4 hours 37 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,278)">4 hours 38 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,279)">4 hours 39 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,280)">4 hours 40 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,281)">4 hours 41 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,282)">4 hours 42 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,283)">4 hours 43 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,284)">4 hours 44 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,285)">4 hours 45 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,286)">4 hours 46 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,287)">4 hours 47 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,288)">4 hours 48 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,289)">4 hours 49 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,290)">4 hours 50 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,291)">4 hours 51 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,292)">4 hours 52 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,293)">4 hours 53 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,294)">4 hours 54 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,295)">4 hours 55 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,296)">4 hours 56 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,297)">4 hours 57 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,298)">4 hours 58 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,299)">4 hours 59 minutes</value>
+		<value condition="StringCompare(ListItem.Duration,300)">5 hours</value>
+	</variable>
+	<variable name="MusicInfoLabel">
+		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
+		<value>$INFO[ListItem.Artist]</value>
+	</variable>
+	<variable name="MusicInfoDescription">
+		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Description)]</value>
+		<value>$INFO[ListItem.Property(Artist_Description)]</value>
+	</variable>
+	<variable name="MovieList">
+		<value condition="!IsEmpty(Container(150).ListItemNoWrap(2).Label)">$INFO[Container(150).ListItemNoWrap(0).Label], $INFO[Container(150).ListItemNoWrap(1).Label], $INFO[Container(150).ListItemNoWrap(2).Label]</value>
+		<value condition="!IsEmpty(Container(150).ListItemNoWrap(1).Label)">$INFO[Container(150).ListItemNoWrap(0).Label], $INFO[Container(150).ListItemNoWrap(1).Label]</value>
+		<value condition="!IsEmpty(Container(150).ListItemNoWrap(0).Label)">$INFO[Container(150).ListItemNoWrap(0).Label]</value>
+	</variable>
+	<variable name="LabelVideoInfoCastDirector">
+		<value condition="StringCompare(Window.Property(content),1)">$INFO[ListItem.Studio,$LOCALIZE[31205] ,]</value>
+		<value condition="StringCompare(Window.Property(content),2)">$INFO[ListItem.Title,$LOCALIZE[31204] ,]</value>
+		<value condition="StringCompare(Window.Property(content),3) + !Control.IsVisible(50)">$INFO[ListItem.Director,$LOCALIZE[31191] ,]</value>
+		<value condition="Control.IsVisible(50)">$INFO[ListItem.Title,, $LOCALIZE[206]]</value>
+		<value condition="!IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+	</variable>
+	<variable name="EmbyLeftColourHighlight">
+		<value condition="Skin.HasSetting(emby.left.colour)">$INFO[Skin.String(emby.left.colour.name)]</value>
+		<value>EmbyLeft</value>
+	</variable>
+	<variable name="EmbyRightColourHighlight">
+		<value condition="Skin.HasSetting(emby.right.colour)">$INFO[Skin.String(emby.right.colour.name)]</value>
+		<value>EmbyRight</value>
+	</variable>
+	<variable name="EmbyMiddleColourHighlight">
+		<value condition="Skin.HasSetting(emby.middle.colour)">$INFO[Skin.String(emby.middle.colour.name)]</value>
+		<value>EmbyCenter</value>
+	</variable>
+	<variable name="EmbyEndTimeSymbol">
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [[!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)] | [!IsEmpty(Container(3016).ListItem.EndTime) + Control.HasFocus(3016)] | [!IsEmpty(Container(3017).ListItem.EndTime) + Control.HasFocus(3017)] | [!IsEmpty(Container(4012).ListItem.EndTime) + Control.HasFocus(4012)] | [!IsEmpty(Container(4016).ListItem.EndTime) + Control.HasFocus(4016)] | [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(4017)] | [!IsEmpty(Container(4018).ListItem.EndTime) + Control.HasFocus(4018)] | [!IsEmpty(Container(9017).ListItem.EndTime) + Control.HasFocus(9017)] | [!IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)] | [!IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)] | [!IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]]"></value>
+	</variable>
+	<variable name="EmbyEndTimeLabel">
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(3012).ListItem.EndTime) + Control.HasFocus(3012)]">$INFO[Container(3012).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(3016).ListItem.EndTime) + Control.HasFocus(3016)]">$INFO[Container(3016).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(3017).ListItem.EndTime) + Control.HasFocus(3017)]">$INFO[Container(3017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4012).ListItem.EndTime) + Control.HasFocus(4012)]">$INFO[Container(4012).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4016).ListItem.EndTime) + Control.HasFocus(4016)]">$INFO[Container(4016).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4017).ListItem.EndTime) + Control.HasFocus(4017)]">$INFO[Container(4017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(4018).ListItem.EndTime) + Control.HasFocus(4018)]">$INFO[Container(4018).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(9017).ListItem.EndTime) + Control.HasFocus(9017)]">$INFO[Container(9017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)]">$INFO[Container(10017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)]">$INFO[Container(14017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]">$INFO[Container(15017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!container.content(tvshows) + !container.content(seasons) + !IsEmpty(ListItem.EndTime)">$INFO[ListItem.EndTime(hh:mm)]</value>
+	</variable>
+	<variable name="KodiFlix.Label">
+		<value condition="ListItem.IsPlaying">[COLOR=$VAR[ColourHighlight]]$INFO[ListItem.Label][/COLOR]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="VideoInfoButton8T">
+		<value condition="ListItem.IsResumable">$INFO[ListItem.PercentPlayed,Resume (,%)]</value>
+		<value condition="IntegerGreaterThan(ListItem.PlayCount,0)">Watch Again</value>
+		<value>Watch Now</value>
+	</variable>
+	<variable name="ListItemSeasonVar">
+		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,0]</value>
+		<value>$INFO[ListItem.Season]</value>
+	</variable>
+	<variable name="ListItemEpisodeVar">
+		<value condition="!IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Episode,0]</value>
+		<value>$INFO[ListItem.Episode]</value>
+	</variable>
+	<variable name="SourceFlagVar">
+		<value condition="StringCompare(ListItem.FileExtension,iso) | StringCompare(ListItem.FileExtension,ifo)">dvd</value>
+		<value>$INFO[ListItem.VideoCodec]</value>
+	</variable>
+	<variable name="DurationLong">
+        <value condition="!Skin.HasSetting(furniture.alternate.duration) + !StringCompare(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
+		<value>$INFO[ListItem.Duration,,min]</value>
+	</variable>
+	<variable name="DurationLongVideoInfo">
+		<value condition="!Skin.HasSetting(furniture.alternate.duration) + !StringCompare(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours), ,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
+		<value>$INFO[ListItem.Duration,,min]</value>
+	</variable>
+	<variable name="DurationHomeLong">
+		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(home).Property(Duration), ,min]</value>
+		<value>$INFO[Container(301).ListItem.Duration,,min]</value>
+	</variable>
+	<variable name="EmbyDurationHomeLong">
+		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Duration,,min]</value>
+	</variable>
+	<variable name="MPAA">
+		<value condition="SubString(ListItem.Mpaa,gb-pg)">PG</value>
+		<value condition="SubString(ListItem.Mpaa,gb-12A)">12A</value>
+		<value condition="SubString(ListItem.Mpaa,gb-12)">12</value>
+		<value condition="SubString(ListItem.Mpaa,gb-15)">15</value>
+		<value condition="SubString(ListItem.Mpaa,gb-18)">18</value>
+		<value condition="SubString(ListItem.Mpaa,gb-u)">U</value>
+		<value condition="SubString(ListItem.Mpaa,gb-r18)">R18</value>
+		<value>$INFO[ListItem.Mpaa]</value>
+	</variable>
+	<variable name="MPAA_Home">
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-pgpg)">PG</value>
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-12A12A)">12A</value>
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-12)">12</value>
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-15)">15</value>
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-18)">18</value>
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-u)">U</value>
+		<value condition="SubString(Container(301).ListItem.Mpaa,gb-r18)">R18</value>
+		<value>$INFO[Container(301).ListItem.Mpaa]</value>
+	</variable>
+	<variable name="DefaultMusicLabel">
+		<value condition="Stringcompare(ListItem.Icon,DefaultAddonMusic.png)">?</value>
+		<value condition="Stringcompare(ListItem.Icon,DefaultAlbumCover.png)">?</value>
+		<value condition="Stringcompare(ListItem.Icon,DefaultMusicRecentlyPlayed.png)">?</value>
+		<value condition="Stringcompare(ListItem.Icon,DefaultMusicSongs.png)">?</value>
+		<value condition="Stringcompare(ListItem.Icon,xxDefaultAlbumCover.png)">PG</value>
+		<value condition="Substring(ListItem.Icon,Default,left) | [IsEmpty(ListItem.Title) + IsEmpty(ListItem.Icon)]">?</value>
+		<value>?</value>
+	</variable>
+	<variable name="ExtendedInfoTrailerLabel">
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 9)">Trailer 10</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 8)">Trailer 9</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 7)">Trailer 8</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 6)">Trailer 7</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 5)">Trailer 6</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 4)">Trailer 5</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 3)">Trailer 4</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 2)">Trailer 3</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 1)">Trailer 2</value>
+		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 0)">Trailer 1</value>
+		<value condition="Substring(Listitem.Label, 5)">Trailer 5</value>
+		<value condition="Substring(Listitem.Label, 4)">Trailer 4</value>
+		<value condition="Substring(Listitem.Label, 3)">Trailer 3</value>
+		<value condition="Substring(Listitem.Label, 2)">Trailer 2</value>
+		<value condition="Substring(Listitem.Label, 1)">Trailer 1</value>
+		<value>Trailer</value>
+	</variable>
+	<variable name="ListItemLabel">
+		<value condition="Container.Content(episodes)">$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</value>
+		<value condition="Container.Content(tvshows)">$INFO[ListItem.TVShowTitle]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="SkinShortcutPath">
+		<value condition="Control.HasFocus(312)">$VAR[WidgetMainSelectionLabel]: $VAR[DefWidgetMainSelection]</value>
+		<value condition="Control.HasFocus(310) + !StringCompare(Window.Property(groupname),mainmenu)">$VAR[SkinShortcutsSubMenuThumb]</value>
+		<value condition="Control.HasFocus(310)">$INFO[Container(211).ListItem.Property(background)]</value>
+		<value condition="Control.HasFocus(8777)">$VAR[WidgetRight1SelectionLabel]: $VAR[DefWidgetRight1Selection]</value>
+		<value condition="Control.HasFocus(8778)">$VAR[WidgetRight2SelectionLabel]: $VAR[DefWidgetRight2Selection]</value>
+		<value condition="Control.HasFocus(8779)">$VAR[WidgetRight3SelectionLabel]: $VAR[DefWidgetRight3Selection]</value>
+		<value>$INFO[Container(211).ListItem.Property(path)]</value>
+	</variable>
+</includes>

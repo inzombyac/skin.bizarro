@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+        <defaultID>Movie Hub</defaultID>
+		<label2>movies</label2>
+        <label>31192</label>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</thumb>
+		<icon>special://skin/extras/icons/film.png</icon>
+        <action>ActivateWindow(1101)</action>
+    </shortcut>
+	<shortcut>
+        <defaultID>collections</defaultID>
+		<label2>movies</label2>
+        <label>Collections</label>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</thumb>
+		<icon>special://skin/extras/icons/sets.png</icon>
+        <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
+    </shortcut>
+	<shortcut>
+        <defaultID>random</defaultID>
+		<label2>movies</label2>
+        <label>Random Movie</label>
+		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
+        <icon>special://skin/extras/icons/film.png</icon>
+       <action>PlayMedia(special://skin/extras/playlists/RandomMovie.xsp,return)</action>
+    </shortcut>
+</shortcuts>
