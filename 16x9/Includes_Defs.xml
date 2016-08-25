@@ -112,7 +112,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,MovieTitles,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + System.HasAddon(script.hdhomerun.view)">RunAddon(script.hdhomerun.view)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvchannels)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(MusicLibrary,musicdb://artists/,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://artists/,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos) ">ActivateWindow(pictures,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">ActivateWindow(Programs,Addons,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings)</value>
@@ -129,7 +129,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,videodb://movies/sets/,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvguide)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(MusicLibrary,musicdb://albums/,return)</value>
+		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">ActivateWindow(Pictures,Addons,return)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">ActivateWindow(Videos,$VAR[EmbyNodeRecommended],return)</value>		
 		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">RunAddon(plugin.video.emby)</value>

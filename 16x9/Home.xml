@@ -23,7 +23,6 @@
 		<control type="group">	
 			<include>HomeEmbyRow</include>
 			<include>HomeEmbyWidgetInfo</include>
-			<include>HomeEmbySubMenu</include>
 		</control>
 		<control type="group" description="Side Menu">
 			<include>Def9000SideBladeLeft</include>

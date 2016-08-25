@@ -51,7 +51,7 @@
           <deactivate>-</deactivate>
         </window>
         <window>
-          <name>infodialog</name>
+          <name>notification</name>
           <activate>switch.wav</activate>
           <deactivate>switch.wav</deactivate>
         </window>

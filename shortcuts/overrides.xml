@@ -480,24 +480,6 @@
 	<propertydefault labelID="collection" group="mainmenu" property="type">collection</propertydefault>
 	
 	<propertyfallback property="type">videos</propertyfallback>
-	
-    <!-- Override Actions Because Im A Dummy Who Doesnt Know The Correct Window IDs To Use -->
-    <override action="ActivateWindow(3201)">
-        <condition>true</condition>
-        <action>ActivateWindow(1101)</action>
-    </override>
-    <override action="ActivateWindow(3202)">
-        <condition>true</condition>
-        <action>ActivateWindow(1102)</action>
-    </override>
-    <override action="ActivateWindow(3204)">
-        <condition>true</condition>
-        <action>ActivateWindow(1104)</action>
-    </override>
-    <override action="ActivateWindow(3205)">
-        <condition>true</condition>
-        <action>ActivateWindow(1105)</action>
-    </override>
     
     <!-- Browse for Backgrounds -->
     <background label="::PLAYLIST::">playlistBackground</background>

@@ -12,27 +12,27 @@
         <label>In Theaters</label>
         <icon>special://skin/extras/icons/film.png</icon>
 		<thumb>special://skin/extras/backgrounds/Theater.jpg</thumb>
-        <action>ActivateWindow(VideoLibrary,"plugin://script.extendedinfo?info=incinemamovies",return)</action>
+        <action>ActivateWindow(Videos,"plugin://script.extendedinfo?info=incinemamovies",return)</action>
     </shortcut>
 	<shortcut>
         <label2>Upcoming</label2>
         <label>Upcoming</label>
         <icon>special://skin/extras/icons/film.png</icon>
 		<thumb>special://skin/extras/backgrounds/Trailers.jpg</thumb>
-        <action>ActivateWindow(VideoLibrary,"plugin://script.extendedinfo?info=upcomingmovies",return)</action>
+        <action>ActivateWindow(Videos,"plugin://script.extendedinfo?info=upcomingmovies",return)</action>
     </shortcut>
 	<shortcut>
         <label2>Popular</label2>
         <label>Popular</label>
         <icon>special://skin/extras/icons/film.png</icon>
 		<thumb>special://skin/extras/backgrounds/favorites.jpg</thumb>
-        <action>ActivateWindow(VideoLibrary,"plugin://script.extendedinfo?info=popularmovies",return)</action>
+        <action>ActivateWindow(Videos,"plugin://script.extendedinfo?info=popularmovies",return)</action>
     </shortcut>
 	<shortcut>
         <label2>Top Rated</label2>
         <label>Top Rated</label>
         <icon>special://skin/extras/icons/film.png</icon>
 		<thumb>special://skin/extras/backgrounds/Family.jpg</thumb>
-        <action>ActivateWindow(VideoLibrary,"plugin://script.extendedinfo?info=topratedmovies",return)</action>
+        <action>ActivateWindow(Videos,"plugin://script.extendedinfo?info=topratedmovies",return)</action>
     </shortcut>
 </shortcuts>
