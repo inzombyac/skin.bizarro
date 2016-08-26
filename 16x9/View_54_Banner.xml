@@ -131,7 +131,7 @@
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ,]$INFO[ListItem.Rating, • ,]</label>
+								<label fallback="19055">$INFO[ListItem.Season,Season , • ]$VAR[LabelYear]$VAR[LabelDuration, • ,]$INFO[ListItem.Rating, • ,]</label>
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
 								<selectedcolor>Dark2</selectedcolor>
@@ -540,7 +540,7 @@
 								<height>40</height>
 								<align>left</align>
 								<aligny>top</aligny>
-								<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ,]$INFO[ListItem.Rating, • ,]</label>
+								<label fallback="19055">$INFO[ListItem.Season,Season , • ]$VAR[LabelYear]$VAR[LabelDuration, • ,]$INFO[ListItem.Rating, • ,]</label>
 								<font>Tiny</font>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
