@@ -4,10 +4,9 @@
 	<include name="View_505_506_Wall">
 		<control type="group">
 			<include>Animation.Common</include>
-			<visible>Control.IsVisible(505)</visible>
+			<visible>Control.IsVisible(505) + !Skin.HasSetting(505wall.noposter)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<control type="panel" id="505">
-				<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos)</visible>
 				<top>206</top>
 				<right>70</right>
 				<width>1120</width>
@@ -100,6 +99,7 @@
 			</control>
 			<include>Furniture_Scrollbar</include>
 			<control type="group" description="Poster">
+				<visible>!Skin.HasSetting(505wall.showposter) + !Skin.HasSetting(505wall.noposter)</visible>
 				<left>SidePad</left>
 				<top>PosterPad</top>
 				<width>PosterH</width>
@@ -159,17 +159,17 @@
 		</control>
 		<control type="group">
 			<include>Animation.Common</include>
-			<visible>Control.IsVisible(506)</visible>
-			<control type="panel" id="506">
-				<visible>Container.Content(musicvideos) | Container.Content(albums)</visible>
+			<visible>Control.IsVisible(505) + Skin.HasSetting(505wall.showposter)</visible>
+			<control type="panel" id="505">
+				<visible>Container.Content(artists) | Container.Content(albums) | Container.Content(musicvideos) | Container.Content(songs)</visible>
 				<top>206</top>
 				<right>70</right>
 				<width>1120</width>
 				<height>660</height>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
-				<onup>506</onup>
-				<ondown>506</ondown>
+				<onup>505</onup>
+				<ondown>505</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31791">list</viewtype>
@@ -261,20 +261,22 @@
 					<texture border="32">common/shadow-24.png</texture>
 				</control>
 			</control>
-		</control>
+		</control> 
+	</include>
+	<include name="View_505_Wall_No_Poster">
+		<!-- Wall No Poster -->
 		<control type="group">
 			<include>Animation.Common</include>
-			<visible>Control.IsVisible(507)</visible>
-			<control type="panel" id="507">
-				<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(albums)</visible>
+			<visible>Control.IsVisible(505) + Skin.HasSetting(505wall.noposter)</visible>
+			<control type="panel" id="505">
 				<top>206</top>
 				<right>70</right>
 				<left>70</left>
 				<height>674</height>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
-				<onup>507</onup>
-				<ondown>507</ondown>
+				<onup>505</onup>
+				<ondown>505</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31791">list</viewtype>

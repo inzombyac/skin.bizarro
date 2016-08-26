@@ -3,8 +3,7 @@
 <window id="502">
     <menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">50</defaultcontrol>
-    
-    <views>50,505,506,507,500,503,54,57,51</views>
+    <views>50,500,53,54,51,52,537,505</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
@@ -14,12 +13,13 @@
         <include>View_50_List_Square</include>
         <include condition="!Skin.HasSetting(51bigwide.showinfo)">View_51_BigWide</include>
         <include condition="Skin.HasSetting(51bigwide.showinfo)">View_51_BigWide_Info</include>
+		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
+		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
         <include>View_500_Thumbnails</include>
-        <include>View_503_Poster_Square</include>
-        <include>View_505_506_Wall</include>
+        <!-- <include>View_503_Poster_Square</include> -->
+        <include condition="!Skin.HasSetting(505wall.noposter)">View_505_506_Wall</include>
+		<include condition="Skin.HasSetting(505wall.noposter)">View_505_Wall_No_Poster</include>
         <include>View_54_Banner</include>
-        <include condition="!Skin.HasSetting(57list.low)">View_57_ExtraInfo</include>
-        <include condition="Skin.HasSetting(57list.low)">View_57_ExtraInfo_LowList</include>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>

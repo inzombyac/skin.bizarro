@@ -279,7 +279,7 @@
 		<value>Emby Channels</value>
 	</variable>
 	<variable name="EmbyFooterLabel">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(Background)]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.Rating]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$VAR[DefWidgetRight3Content]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(300).ListItem.Property(defaultID)] | $INFO[Container(300).ListItem.Property(type)] | $VAR[EmbyNodeNumber] | $VAR[DefWidgetRight3Content]</value> -->
@@ -295,7 +295,7 @@
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4018).ListItem.DBTYPE]</value>
+		<value condition="Skin.HasSetting(debug.mode)">$INFO[ListItem.Rating]</value>
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(302).ListItem.Property(defaultID)] / $INFO[Container(302).ListItem.Property(Background)] / $INFO[Container(302).ListItem.Thumb]</value> -->
 		<!-- <value condition="Skin.HasSetting(debug.mode)">$INFO[Container(4019).ListItem.DBID] / $INFO[Container(4019).ListItem.FileNameAndPath]</value> -->
 		<value condition="Control.HasFocus(4012) + StringCompare(Container(300).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>

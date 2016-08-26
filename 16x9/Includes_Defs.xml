@@ -1060,10 +1060,12 @@
 			<textcolor>$VAR[ColourHighlight]</textcolor>
 			<aligny>center</aligny>
 		</control>
-		<control type="button" id="2">
+		<control type="button" id="9326">
 			<description>View</description>
 			<include>DefContextButton2</include>
 			<align>left</align>
+			<label>View: $INFO[Container.Viewmode]</label>
+			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
 		</control>
 		<control type="button" id="3">
 			<description>Sort</description>
@@ -1076,6 +1078,64 @@
 			<align>left</align>
 			<label>584</label>
 			<altlabel>585</altlabel>
+		</control>
+		<control type="radiobutton" id="9002" description="No Wrap (53)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31148</label>
+			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
+			<onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
+		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
+			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9014" description="Big Wide Classic (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31245</label>
+			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
+			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9012" description="Big List Double Pane (52)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31235</label>
+			<selected>!Skin.HasSetting(52biglist.singlepane)</selected>
+			<onclick>Skin.ToggleSetting(52biglist.singlepane)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(52)</visible>
+		</control>
+		<control type="radiobutton" id="9004" description="Wall Big Poster(505)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31185</label>
+			<selected>Skin.HasSetting(505wall.showposter)</selected>
+			<onclick>Skin.ToggleSetting(505wall.showposter)</onclick>
+			<onclick>Skin.Reset(505wall.noposter)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(505)</visible>
+		</control>
+		<control type="radiobutton" id="9005" description="Wall No Poster(505)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31779</label>
+			<selected>Skin.HasSetting(505wall.noposter)</selected>
+			<onclick>Skin.ToggleSetting(505wall.noposter)</onclick>
+			<onclick>Skin.Reset(505wall.showposter)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(505)</visible>
 		</control>
 		<control type="button" id="7">
 			<description>Playlist</description>

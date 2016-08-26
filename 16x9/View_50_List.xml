@@ -730,7 +730,7 @@
 			<texture colordiffuse="Light1">common/white.png</texture>
 		</control>
 		<control type="image">
-			<right>500</right>
+			<left>25</left>
 			<centertop>32</centertop>
 			<width>32</width>
 			<height>32</height>
