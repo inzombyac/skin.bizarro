@@ -39,15 +39,9 @@
 					<align>left</align>
 					<label>24034</label>
 				</control>
-				<control type="radiobutton" id="5">
-					<description>Enable auto-updates</description>
-					<label>24063</label>
-					<align>left</align>
-					<include>DefContextButton2</include>
-				</control>
-				<control type="radiobutton" id="6">
-					<description>No notifications</description>
-					<label>25000</label>
+				<control type="button" id="5">
+					<description>Settings</description>
+					<label>10004</label>
 					<align>left</align>
 					<include>DefContextButton2</include>
 				</control>
@@ -56,12 +50,14 @@
 					<align>left</align>
 					<label>25001</label>
 					<include>DefContextButton2</include>
+					<visible>Control.IsEnabled(7)</visible>
 				</control>
 				<control type="radiobutton" id="8">
 					<description>Hide broken</description>
 					<align>left</align>
 					<label>24999</label>
 					<include>DefContextButton2</include>
+					<visible>Control.IsEnabled(8)</visible>
 				</control>
 				<control type="label" id="202">
 					<height>42</height>
