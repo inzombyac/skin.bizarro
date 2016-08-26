@@ -81,7 +81,7 @@
 								<label>$VAR[LabelEpisodeZero]$INFO[ListItem.Episode]</label>
 								<textcolor>Dark3</textcolor>
 								<selectedcolor>Dark3</selectedcolor>
-								<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 							<control type="label">
 								<font>EpisodeNumber</font>
@@ -94,7 +94,7 @@
 								<label>$VAR[LabelEpisodeZero]$INFO[ListItem.Episode]</label>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 							<control type="label">
 								<top>47</top>
@@ -107,8 +107,8 @@
 								<font>SmallBold</font>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<animation effect="slide" start="0" end="50" condition="Integer.IsGreater(ListItem.Episode,99)">Conditional</animation>
+								<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 							<control type="label">
 								<top>47</top>
@@ -121,8 +121,8 @@
 								<font>SmallBold</font>
 								<textcolor>Dark3</textcolor>
 								<selectedcolor>Dark3</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<animation effect="slide" start="0" end="50" condition="Integer.IsGreater(ListItem.Episode,99)">Conditional</animation>
+								<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 							<control type="label">
 								<top>85</top>
@@ -135,8 +135,8 @@
 								<font>Tiny</font>
 								<textcolor>Dark2</textcolor>
 								<selectedcolor>Dark2</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<animation effect="slide" start="0" end="50" condition="Integer.IsGreater(ListItem.Episode,99)">Conditional</animation>
+								<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 							<control type="label">
 								<top>85</top>
@@ -149,8 +149,8 @@
 								<font>Tiny</font>
 								<textcolor>Dark4</textcolor>
 								<selectedcolor>Dark4</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
-								<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+								<animation effect="slide" start="0" end="50" condition="Integer.IsGreater(ListItem.Episode,99)">Conditional</animation>
+								<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 							</control>
 						</control>
 					</itemlayout>
@@ -197,7 +197,7 @@
 								<label>$NUMBER[0]$NUMBER[0]</label>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
+								<visible>!Integer.IsGreater(ListItem.TrackNumber,0)</visible>
 							</control>
 							<control type="label">
 								<font>EpisodeNumber</font>
@@ -210,7 +210,7 @@
 								<label>0$INFO[ListItem.TrackNumber]</label>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,9) + IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
+								<visible>!Integer.IsGreater(ListItem.TrackNumber,9) + Integer.IsGreater(ListItem.TrackNumber,0)</visible>
 							</control>
 							<control type="label">
 								<font>EpisodeNumber</font>
@@ -223,7 +223,7 @@
 								<label>$INFO[ListItem.TrackNumber]</label>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<visible>IntegerGreaterThan(ListItem.TrackNumber,9)</visible>
+								<visible>Integer.IsGreater(ListItem.TrackNumber,9)</visible>
 							</control>
 							<control type="label">
 								<top>47</top>
@@ -295,7 +295,7 @@
 							<texture background="true">$VAR[PosterPercentWatched]</texture>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<right>124</right>
 								<top>29</top>
@@ -353,7 +353,7 @@
 							<label fallback="19055">$VAR[LabelYear]$VAR[LabelDuration, • ,]$INFO[ListItem.Rating, • ,]</label>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="label">
 								<left>227</left>
 								<height>38</height>
@@ -395,7 +395,7 @@
 							<aspectratio scalediffuse="false">scale</aspectratio>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<right>32</right>
 								<top>32</top>
@@ -531,7 +531,7 @@
 								<font>SmallBold</font>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
+								<animation effect="slide" start="0" end="50" condition="Integer.IsGreater(ListItem.Episode,99)">Conditional</animation>
 							</control>
 							<control type="label">
 								<top>85</top>
@@ -544,7 +544,7 @@
 								<font>Tiny</font>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
-								<animation effect="slide" start="0" end="50" condition="IntegerGreaterThan(ListItem.Episode,99)">Conditional</animation>
+								<animation effect="slide" start="0" end="50" condition="Integer.IsGreater(ListItem.Episode,99)">Conditional</animation>
 							</control>
 							<control type="textbox">
 								<top>130</top>
@@ -657,7 +657,7 @@
 								<label>$NUMBER[0]$NUMBER[0]</label>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
+								<visible>!Integer.IsGreater(ListItem.TrackNumber,0)</visible>
 							</control>
 							<control type="label">
 								<font>EpisodeNumber</font>
@@ -670,7 +670,7 @@
 								<label>0$INFO[ListItem.TrackNumber]</label>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
-								<visible>!IntegerGreaterThan(ListItem.TrackNumber,9) + IntegerGreaterThan(ListItem.TrackNumber,0)</visible>
+								<visible>!Integer.IsGreater(ListItem.TrackNumber,9) + Integer.IsGreater(ListItem.TrackNumber,0)</visible>
 							</control>
 							<control type="label">
 								<font>EpisodeNumber</font>
@@ -683,7 +683,7 @@
 								<label>$INFO[ListItem.TrackNumber]</label>
 								<textcolor>Light1</textcolor>
 								<selectedcolor>Light1</selectedcolor>
-								<visible>IntegerGreaterThan(ListItem.TrackNumber,9)</visible>
+								<visible>Integer.IsGreater(ListItem.TrackNumber,9)</visible>
 							</control>
 							<control type="label">
 								<top>47</top>

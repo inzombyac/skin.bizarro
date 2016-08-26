@@ -75,7 +75,7 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="group">
-				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<control type="image">
 					<left>442</left>
 					<top>5</top>
@@ -1394,7 +1394,7 @@
 				<width>36</width>
 				<height>20</height>
 				<texture>views/arrow_up.png</texture>
-				<visible>Control.IsVisible(4000) + IntegerGreaterThan(Container(4001).CurrentPage,1)</visible>
+				<visible>Control.IsVisible(4000) + Integer.IsGreater(Container(4001).CurrentPage,1)</visible>
 				<animation delay="80" effect="fade" end="100" start="0" time="120">Visible</animation>
 				<animation delay="80" effect="fade" end="0" start="100" time="120">Hidden</animation>
 			</control>

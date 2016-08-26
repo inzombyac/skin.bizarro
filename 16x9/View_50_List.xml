@@ -203,10 +203,10 @@
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
 					<texture background="true">$VAR[PosterPercentWatched]</texture>
-					<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				</control>
 				<control type="group">
-					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					<control type="image">
 						<left>378</left>
 						<centertop>40</centertop>
@@ -460,7 +460,7 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Light1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 		<control type="label">
 			<right>30</right>
@@ -627,7 +627,7 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Dark1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 		<control type="label">
 			<right>30</right>

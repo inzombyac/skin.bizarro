@@ -49,7 +49,7 @@
 							<texture diffuse="diffuse/cardposter.png" background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<right>24</right>
 								<top>29</top>
@@ -290,7 +290,7 @@
 							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<right>24</right>
 								<top>29</top>

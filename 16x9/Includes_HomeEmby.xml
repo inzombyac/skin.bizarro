@@ -8,7 +8,7 @@
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-				<visible>IntegerGreaterThan(Container(300).NumItems,6)</visible>
+				<visible>Integer.IsGreater(Container(300).NumItems,6)</visible>
 				<bottom>885</bottom>
 				<left>52</left>
 				<width>16</width>
@@ -19,7 +19,7 @@
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-				<visible>IntegerGreaterThan(Container(300).NumItems,6)</visible>
+				<visible>Integer.IsGreater(Container(300).NumItems,6)</visible>
 				<bottom>885</bottom>
 				<right>52</right>
 				<width>16</width>
@@ -109,11 +109,11 @@
 		<include>EmbyFooter</include>
 		<!-- Widget Info -->
 		<control type="group">
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,3)+IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4016).NumItems,3) + IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[IntegerGreaterThan(Container(4016).NumItems,3)+!IntegerGreaterThan(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).NumItems,3) + !IntegerGreaterThan(Container(4017).NumItems,2) + IntegerGreaterThan(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4016).NumItems,0) + !IntegerGreaterThan(Container(4016).NumItems,3) + !IntegerGreaterThan(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [Integer.IsGreater(Container(4016).NumItems,3)+Integer.IsGreater(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [Integer.IsGreater(Container(4016).NumItems,0) + !Integer.IsGreater(Container(4016).NumItems,3) + Integer.IsGreater(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[Integer.IsGreater(Container(4016).NumItems,3)+!Integer.IsGreater(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4016).NumItems,3) + !Integer.IsGreater(Container(4017).NumItems,2) + Integer.IsGreater(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4016).NumItems,0) + !Integer.IsGreater(Container(4016).NumItems,3) + !Integer.IsGreater(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + !StringCompare(Container(300).ListItem.Property(type),music) + [Control.IsVisible(4017) | Control.IsVisible(4018)]" time="200">Conditional</animation>
 			<animation effect="slide" start="0" end="-300,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017)] + StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation type="WindowClose">
@@ -335,7 +335,7 @@
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
 				<include>EmbyHomeInfoActions</include>
-				<onclick condition="IntegerGreaterThan(Container(4019).ListItem.DBID, -1) + !StringCompare(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),settings)">PlayMedia($VAR[EmbyHomeItemPath])</onclick>
+				<onclick condition="Integer.IsGreater(Container(4019).ListItem.DBID, -1) + !StringCompare(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),settings)">PlayMedia($VAR[EmbyHomeItemPath])</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
 				<onclick condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Container(4019).ListItem.DBID],return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
@@ -343,7 +343,7 @@
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),photos) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),channels) + !IntegerGreaterThan(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),channels) + !Integer.IsGreater(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
 			</control>	
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
@@ -376,7 +376,7 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-				<visible>IntegerGreaterThan(Container(4019).ListItem.PercentPlayed,0)</visible>
+				<visible>Integer.IsGreater(Container(4019).ListItem.PercentPlayed,0)</visible>
 			</control>
 			<!-- Live TV -->
 			<control type="image">
@@ -444,7 +444,7 @@
 				<info>Container(4019).ListItem.Progress</info>
 				<colordiffuse>Dark1</colordiffuse>
 				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-				<visible>IntegerGreaterThan(Container(4019).ListItem.Progress,0)</visible>
+				<visible>Integer.IsGreater(Container(4019).ListItem.Progress,0)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="label">
@@ -549,7 +549,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
-				<visible>[IntegerGreaterThan(Container(40016).NumItems,0) + !Container(40016).IsUpdating] | StringCompare(Container(300).ListItem.Property(type),weather) | StringCompare(Container(300).ListItem.Property(type),settings)</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating] | StringCompare(Container(300).ListItem.Property(type),weather) | StringCompare(Container(300).ListItem.Property(type),settings)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -588,7 +588,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + !Container(40016).IsUpdating + IntegerGreaterThan(Container(40017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !StringCompare(Container(300).ListItem.Property(type),collection) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating + Integer.IsGreater(Container(40017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !StringCompare(Container(300).ListItem.Property(type),collection) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control> -->
@@ -613,7 +613,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + !Container(40016).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + !Container(40016).IsUpdating</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.DelayFadeIn</include>
 			</control>
@@ -637,7 +637,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3)	+ !Container(40016).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)	+ !Container(40016).IsUpdating</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.DelayFadeIn</include>
 			</control>
@@ -667,7 +667,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25">$VAR[DefWidgetRight1Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !Container(40016).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -751,7 +751,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -770,8 +770,8 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>Integer.IsGreater(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -789,8 +789,8 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -808,8 +808,8 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>Integer.IsGreater(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -827,8 +827,8 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3)</visible>
+				<visible>Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -846,8 +846,8 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>IntegerGreaterThan(Container(40017).NumItems,0)</visible>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -864,7 +864,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,6)</visible>
+				<visible>Control.IsVisible(4017) + Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,6)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
@@ -878,7 +878,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,6)</visible>
+				<visible>Control.IsVisible(4017) + Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,6)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
@@ -892,7 +892,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>Control.IsVisible(4017) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40016).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
@@ -906,7 +906,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4017) + !IntegerGreaterThan(Container(40016).NumItems,0)</visible>
+				<visible>Control.IsVisible(4017) + !Integer.IsGreater(Container(40016).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
             </control>
@@ -950,7 +950,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -983,7 +983,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1016,7 +1016,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1048,7 +1048,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1080,7 +1080,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1112,7 +1112,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1144,7 +1144,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1175,7 +1175,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1206,7 +1206,7 @@
 					<param name="item_height">345</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
@@ -1298,7 +1298,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1315,7 +1315,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>[IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)]</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,2) + Integer.IsGreater(Container(40017).NumItems,0)]</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1332,7 +1332,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>[IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)]</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,4)]</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1349,7 +1349,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>[IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)]</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)]</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1366,7 +1366,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,2) + Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1383,7 +1383,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1400,7 +1400,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1417,7 +1417,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1434,7 +1434,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1451,7 +1451,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1468,7 +1468,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget3Label]</label>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>![Container(4019).IsUpdating + System.IdleTime(0)] + !Container(300).Scrolling</visible>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1485,7 +1485,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: Double / Right 2: Single / Right 3: Double-->
@@ -1498,7 +1498,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: Single / Right 2: Triple / Right 3: Single-->
@@ -1511,7 +1511,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: Single / Right 2: Double / Right 3: Double-->
@@ -1524,7 +1524,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,4) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,4) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: Single / Right 2: Single / Right 3: Double-->
@@ -1537,7 +1537,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,2) + Integer.IsGreater(Container(40017).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: None / Right 2: Triple / Right 3: Single-->
@@ -1550,7 +1550,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + !IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>Control.IsVisible(4018) + !Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
@@ -1563,7 +1563,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + !IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,4) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Control.IsVisible(4018) + !Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,4) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
@@ -1576,7 +1576,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + !IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2) + IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Control.IsVisible(4018) + !Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2) + Integer.IsGreater(Container(40017).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: Double / Right 2: None / Right 3: Double-->
@@ -1589,7 +1589,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Right 1: Single / Right 2: None / Right 3: Triple-->
@@ -1602,7 +1602,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4018) + IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Control.IsVisible(4018) + Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4018)">Conditional</animation>
             </control>
 			<!-- Widgets -->
@@ -1611,7 +1611,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_3]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1631,9 +1631,9 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>!Container(300).Scrolling</visible>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(4016).NumItems,0)</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 				<visible>Control.IsVisible(4016) + Control.IsVisible(4017)</visible>
@@ -1643,7 +1643,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_8]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1663,9 +1663,9 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>[IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,2)]</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,2)]</visible>
 				<visible>!Container(300).Scrolling</visible>
-				<visible>IntegerGreaterThan(Container(4016).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(4016).NumItems,0)</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 				<visible>Control.IsVisible(4016) + Control.IsVisible(4017)</visible>
@@ -1675,7 +1675,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1695,7 +1695,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1706,7 +1706,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1726,7 +1726,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1737,7 +1737,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_7]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1757,7 +1757,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>Control.IsVisible(4016) + Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Right 1: None / Right 2: Single / Right 3: Double-->
@@ -1765,7 +1765,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_5]</left>
 				<width>$PARAM[triple_widget_width]</width>
@@ -1785,7 +1785,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,2)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
@@ -1793,7 +1793,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_4]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1813,7 +1813,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,2) + !IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Right 1: None / Right 2: Triple / Right 3: Single-->
@@ -1821,7 +1821,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_0]</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -1841,7 +1841,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + IntegerGreaterThan(Container(40017).NumItems,4)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
 				<visible>Control.IsVisible(4017)</visible>
 			</control>
 			<!-- Right 1: Double / Right 2: None / Right 3: Double-->
@@ -1849,7 +1849,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_10]</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -1869,7 +1869,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>Control.IsVisible(4016)</visible>
 			</control>
 			<!-- Right 1: Single / Right 2: None / Right 3: Triple-->
@@ -1877,7 +1877,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_9]</left>
 				<width>$PARAM[triple_widget_width]</width>
@@ -1897,7 +1897,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40016).NumItems,3) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>Control.IsVisible(4016)</visible>
 			</control>
 			<!-- Right 1: None / Right 2: None / Right 3: Quad -->
@@ -1905,7 +1905,7 @@
 				<description>Widget</description>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
 				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
-				<visible>IntegerGreaterThan(Container(40018).NumItems,0)</visible>
+				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_11]</left>
 				<width>$PARAM[quadruple_widget_width]</width>
@@ -1925,7 +1925,7 @@
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="12" target="videos">$VAR[DefWidgetRight3Content]</content>
-				<visible>!IntegerGreaterThan(Container(40016).NumItems,0) + !IntegerGreaterThan(Container(40017).NumItems,0)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017)</visible>
 			</control>
 		</definition>
@@ -2064,7 +2064,7 @@
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
-				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0) + !Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0) + !Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -2107,7 +2107,7 @@
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+				<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 			</control>
 			<control type="image">
@@ -2153,7 +2153,7 @@
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
-				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<include>Animation.Focus</include>
 			</control>
 			<control type="image">
@@ -2259,58 +2259,58 @@
 		</content>		
 	</include>
 	<variable name="EmbyHomeFlagstar1">
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,1)">star10</value>
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,0)">star5</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,1)">star10</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,0)">star5</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,1)">star10</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,0)">star5</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,1)">star10</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,0)">star5</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,1)">star10</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,0)">star5</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,1)">star10</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,0)">star5</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,1)">star10</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,0)">star5</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,1)">star10</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,0)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar2">
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,3)">star10</value>
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,2)">star5</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,3)">star10</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,2)">star5</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,3)">star10</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,2)">star5</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,3)">star10</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,2)">star5</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,3)">star10</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,2)">star5</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,3)">star10</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,2)">star5</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,3)">star10</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,2)">star5</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,3)">star10</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,2)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar3">
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,5)">star10</value>
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,4)">star5</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,5)">star10</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,4)">star5</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,5)">star10</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,4)">star5</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,5)">star10</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,4)">star5</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,5)">star10</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,4)">star5</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,5)">star10</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,4)">star5</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,5)">star10</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,4)">star5</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,5)">star10</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,4)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar4">
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,7)">star10</value>
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,6)">star5</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,7)">star10</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,6)">star5</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,7)">star10</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,6)">star5</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,7)">star10</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,6)">star5</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,7)">star10</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,6)">star5</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,7)">star10</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,6)">star5</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,7)">star10</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,6)">star5</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,7)">star10</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,6)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeFlagstar5">
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,9)">star10</value>
-		<value condition="Control.HasFocus(4019)+IntegerGreaterThan(Container(4019).ListItem.Rating,8)">star5</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,9)">star10</value>
-		<value condition="Control.HasFocus(4018)+IntegerGreaterThan(Container(4018).ListItem.Rating,8)">star5</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,9)">star10</value>
-		<value condition="Control.HasFocus(4017)+IntegerGreaterThan(Container(4017).ListItem.Rating,8)">star5</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,9)">star10</value>
-		<value condition="Control.HasFocus(4016)+IntegerGreaterThan(Container(4016).ListItem.Rating,8)">star5</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,9)">star10</value>
+		<value condition="Control.HasFocus(4019)+Integer.IsGreater(Container(4019).ListItem.Rating,8)">star5</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,9)">star10</value>
+		<value condition="Control.HasFocus(4018)+Integer.IsGreater(Container(4018).ListItem.Rating,8)">star5</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,9)">star10</value>
+		<value condition="Control.HasFocus(4017)+Integer.IsGreater(Container(4017).ListItem.Rating,8)">star5</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,9)">star10</value>
+		<value condition="Control.HasFocus(4016)+Integer.IsGreater(Container(4016).ListItem.Rating,8)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeClearArt">

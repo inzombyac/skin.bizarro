@@ -122,7 +122,7 @@
 				<textcolor>Black70</textcolor>
 				<font>Medium</font>
 			</control>
-			<visible>stringcompare(Container.NumItems,0)</visible>
+			<visible>Integer.IsEqual(Container.NumItems,0)</visible>
 		</control>
     </controls>
 </window>

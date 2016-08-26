@@ -134,7 +134,7 @@
                             </control>
 							<control type="group" id="99">
                                 <width>280</width>
-                                <visible>!String.IsEmpty(Window.Property(DBID)) + IntegerGreaterThan(Window.Property(PercentPlayed),0)</visible>
+                                <visible>!String.IsEmpty(Window.Property(DBID)) + Integer.IsGreater(Window.Property(PercentPlayed),0)</visible>
                                 <control type="button" id="9">
                                     <label>$LOCALIZE[13404] $INFO[Window.Property(PercentPlayed),(,%)]</label>
                                     <width>280</width>
@@ -232,7 +232,7 @@
                                 <radioheight>44</radioheight>
 								<onclick>PlayMedia($INFO[Skin.String(HomeItemPath)])</onclick>
 								<onclick>Back</onclick>
-                                <visible>[SubString(Skin.String(HomeItemDBTYPE),episode)|[String.IsEmpty(Skin.String(HomeItemDBTYPE)) + !IsVisible(Control.IsVisible(120)) + !IsVisible(Control.IsVisible(8))]] + IntegerGreaterThan(Skin.String(HomeItemDBID),1)</visible>
+                                <visible>[SubString(Skin.String(HomeItemDBTYPE),episode)|[String.IsEmpty(Skin.String(HomeItemDBTYPE)) + !IsVisible(Control.IsVisible(120)) + !IsVisible(Control.IsVisible(8))]] + Integer.IsGreater(Skin.String(HomeItemDBID),1)</visible>
                             </control>
 							<control id="1150" type="panel">
 								<visible>!Stringcompare(Window.Property(Type),tvshow)</visible>
@@ -435,7 +435,7 @@
 					</control>
 					<!-- Actor -->
 					<control type="group" id="50111">
-                        <visible>IntegerGreaterThan(Container(1000).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(1000).NumItems,0)</visible>
                         <height>530</height>
                         <control type="label">
                             <posx>25</posx>
@@ -569,7 +569,7 @@
                         </control>
                     </control>
                     <!--<control type="group" id="54111">
-                        <visible>IntegerGreaterThan(Container(750).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(750).NumItems,0)</visible>
                         <height>530</height>
                         <control type="label">
                             <posx>25</posx>
@@ -763,7 +763,7 @@
                         </control>
                     </control>
                     <control type="group" id="50112">
-                        <visible>IntegerGreaterThan(Container(150).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(150).NumItems,0)</visible>
                         <height>500</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1005,7 +1005,7 @@
                     </control>
                     <control type="group" id="50113">
                         <height>500</height>
-                        <visible>IntegerGreaterThan(Container(250).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(250).NumItems,0)</visible>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -1192,7 +1192,7 @@
                     </control>
 					<!-- Youtube -->
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(350).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(350).NumItems,0)</visible>
                         <height>460</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1322,7 +1322,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(550).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(550).NumItems,0)</visible>
                         <height>300</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1439,7 +1439,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(1450).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(1450).NumItems,0)</visible>
                         <height>300</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1556,7 +1556,7 @@
                         </control>
                     </control>
 					<!--<control type="group">
-                        <visible>IntegerGreaterThan(Container(650).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(650).NumItems,0)</visible>
                         <height>450</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1680,7 +1680,7 @@
                         </control>
                     </control>-->
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(850).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(850).NumItems,0)</visible>
                         <height>180</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1764,7 +1764,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(1050).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(1050).NumItems,0)</visible>
                         <height>430</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1847,7 +1847,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(950).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(950).NumItems,0)</visible>
                         <height>330</height>
                         <control type="label">
                             <posx>25</posx>
@@ -1931,7 +1931,7 @@
                     </control>
                     <control type="group">
                         <height>450</height>
-                        <visible>IntegerGreaterThan(Container(1250).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(1250).NumItems,0)</visible>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -2038,7 +2038,7 @@
                     </control>
                     <control type="group">
                         <height>450</height>
-                        <visible>IntegerGreaterThan(Container(1350).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(1350).NumItems,0)</visible>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -2145,7 +2145,7 @@
                     </control>
                     <control type="group" id="50215">
                         <height>600</height>
-                        <visible>IntegerGreaterThan(Container(450).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(450).NumItems,0)</visible>
                         <control type="label">
                             <posx>25</posx>
                             <posy>6</posy>
@@ -2312,7 +2312,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <visible>IntegerGreaterThan(Container(2000).NumItems,0)</visible>
+                        <visible>Integer.IsGreater(Container(2000).NumItems,0)</visible>
                         <height>896</height>
                         <control type="label">
                             <posx>25</posx>

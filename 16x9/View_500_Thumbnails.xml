@@ -100,10 +100,10 @@
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PercentWatched]</texture>
 							<visible>!ListItem.IsParentFolder</visible>
-							<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<centerright>42</centerright>
 								<centertop>42</centertop>
@@ -213,7 +213,7 @@
 							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<centerright>42</centerright>
 								<centertop>42</centertop>

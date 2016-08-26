@@ -85,7 +85,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(211) + IntegerGreaterThan(Container(211).NumItems,4)</visible>
+                            <visible>Control.HasFocus(211) + Integer.IsGreater(Container(211).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -118,7 +118,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(111) + IntegerGreaterThan(Container(111).NumItems,4)</visible>
+                            <visible>Control.HasFocus(111) + Integer.IsGreater(Container(111).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -151,7 +151,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(121) + IntegerGreaterThan(Container(121).NumItems,4)</visible>
+                            <visible>Control.HasFocus(121) + Integer.IsGreater(Container(121).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -184,7 +184,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(131) + IntegerGreaterThan(Container(131).NumItems,4)</visible>
+                            <visible>Control.HasFocus(131) + Integer.IsGreater(Container(131).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -217,7 +217,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(141) + IntegerGreaterThan(Container(141).NumItems,4)</visible>
+                            <visible>Control.HasFocus(141) + Integer.IsGreater(Container(141).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -250,7 +250,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(151) + IntegerGreaterThan(Container(151).NumItems,4)</visible>
+                            <visible>Control.HasFocus(151) + Integer.IsGreater(Container(151).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -283,7 +283,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(161) + IntegerGreaterThan(Container(161).NumItems,4)</visible>
+                            <visible>Control.HasFocus(161) + Integer.IsGreater(Container(161).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -316,7 +316,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(171) + IntegerGreaterThan(Container(171).NumItems,4)</visible>
+                            <visible>Control.HasFocus(171) + Integer.IsGreater(Container(171).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>
@@ -349,7 +349,7 @@
                         <control type="group">
                             <include>Animation.DelayFadeIn</include>
                             <include>Animation.FadeOut</include>
-                            <visible>Control.HasFocus(181) + IntegerGreaterThan(Container(181).NumItems,4)</visible>
+                            <visible>Control.HasFocus(181) + Integer.IsGreater(Container(181).NumItems,4)</visible>
                             <control type="image">
                                 <include>GlobalSearchLeftArrow</include>
                             </control>

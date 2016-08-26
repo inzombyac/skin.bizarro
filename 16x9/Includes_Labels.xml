@@ -13,33 +13,33 @@
 		<value condition="[Container.Content(tvshows) | Container.Content(episodes)| Container.Content(seasons)]">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
 	</variable>
 	<variable name="LabelEpisodeZero">
-        <value condition="!IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
-		<value condition="!IntegerGreaterThan(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
+        <value condition="!Integer.IsGreater(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+		<value condition="!Integer.IsGreater(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
         <value condition="String.IsEmpty(ListItem.Episode)">$NUMBER[0]$NUMBER[0]</value>
     </variable>      
     <variable name="LabelEpisodeZero2">
-        <value condition="!VideoPlayer.HasInfo + !IntegerGreaterThan(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
-        <value condition="Control.HasFocus(301) + !IntegerGreaterThan(Container(301).ListItem.Episode,9) + !substring(Container(301).ListItem.Episode,S) + !String.IsEmpty(Container(301).ListItem.Episode)">$NUMBER[0]</value>
-        <value condition="Control.HasFocus(9500) + !IntegerGreaterThan(Container(9500).ListItem.Episode,9) + !substring(Container(9500).ListItem.Episode,S) + !String.IsEmpty(Container(9500).ListItem.Episode)">$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4016) + !IntegerGreaterThan(Container(4016).ListItem.Episode,9) + !substring(Container(4016).ListItem.Episode,S) + !String.IsEmpty(Container(4016).ListItem.Episode)">$NUMBER[0]</value>		
-		<value condition="Control.HasFocus(4017) + !IntegerGreaterThan(Container(4017).ListItem.Episode,9) + !substring(Container(4017).ListItem.Episode,S) + !String.IsEmpty(Container(4017).ListItem.Episode)">$NUMBER[0]</value>	
-		<value condition="Control.HasFocus(4018) + !IntegerGreaterThan(Container(4018).ListItem.Episode,9) + !substring(Container(4018).ListItem.Episode,S) + !String.IsEmpty(Container(4018).ListItem.Episode)">$NUMBER[0]</value>	
-        <value condition="VideoPlayer.HasInfo + !IntegerGreaterThan(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
+        <value condition="!VideoPlayer.HasInfo + !Integer.IsGreater(ListItem.Episode,9) + !substring(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="Control.HasFocus(301) + !Integer.IsGreater(Container(301).ListItem.Episode,9) + !substring(Container(301).ListItem.Episode,S) + !String.IsEmpty(Container(301).ListItem.Episode)">$NUMBER[0]</value>
+        <value condition="Control.HasFocus(9500) + !Integer.IsGreater(Container(9500).ListItem.Episode,9) + !substring(Container(9500).ListItem.Episode,S) + !String.IsEmpty(Container(9500).ListItem.Episode)">$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4016) + !Integer.IsGreater(Container(4016).ListItem.Episode,9) + !substring(Container(4016).ListItem.Episode,S) + !String.IsEmpty(Container(4016).ListItem.Episode)">$NUMBER[0]</value>		
+		<value condition="Control.HasFocus(4017) + !Integer.IsGreater(Container(4017).ListItem.Episode,9) + !substring(Container(4017).ListItem.Episode,S) + !String.IsEmpty(Container(4017).ListItem.Episode)">$NUMBER[0]</value>	
+		<value condition="Control.HasFocus(4018) + !Integer.IsGreater(Container(4018).ListItem.Episode,9) + !substring(Container(4018).ListItem.Episode,S) + !String.IsEmpty(Container(4018).ListItem.Episode)">$NUMBER[0]</value>	
+        <value condition="VideoPlayer.HasInfo + !Integer.IsGreater(VideoPlayer.Episode,9) + !substring(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">$NUMBER[0]</value>
     </variable>  
     <variable name="LabelSeasonZero">
-        <value condition="!VideoPlayer.HasInfo + !IntegerGreaterThan(ListItem.Season,9) + !substring(ListItem.Season,S) + !String.IsEmpty(ListItem.Season)">S$NUMBER[0]</value>
-        <value condition="Control.HasFocus(301) + !IntegerGreaterThan(Container(301).ListItem.Season,9) + !substring(Container(301).ListItem.Season,S) + !String.IsEmpty(Container(301).ListItem.Season)">S$NUMBER[0]</value>
-        <value condition="Control.HasFocus(9500) + !IntegerGreaterThan(Container(9500).ListItem.Season,9) + !substring(Container(9500).ListItem.Season,S) + !String.IsEmpty(Container(9500).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4016) + !IntegerGreaterThan(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !String.IsEmpty(Container(4016).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4016) + IntegerGreaterThan(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !String.IsEmpty(Container(4016).ListItem.Season)">S</value>
-        <value condition="Control.HasFocus(4017) + !IntegerGreaterThan(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !String.IsEmpty(Container(4017).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4017) + IntegerGreaterThan(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !String.IsEmpty(Container(4017).ListItem.Season)">S</value>
-		<value condition="Control.HasFocus(4018) + !IntegerGreaterThan(Container(4018).ListItem.Season,9) + !substring(Container(4018).ListItem.Season,S) + !String.IsEmpty(Container(4018).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4018).ListItem.Season,9) + !substring(Container(4018).ListItem.Season,S) + !String.IsEmpty(Container(4018).ListItem.Season)">S</value>
-		<value condition="Control.HasFocus(4012) + !IntegerGreaterThan(Container(4019).ListItem.Season,9) + !substring(Container(4019).ListItem.Season,S) + !String.IsEmpty(Container(4019).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4012) + IntegerGreaterThan(Container(4019).ListItem.Season,9) + !substring(Container(4019).ListItem.Season,S) + !String.IsEmpty(Container(4019).ListItem.Season)">S</value>
-        <value condition="VideoPlayer.HasInfo + !IntegerGreaterThan(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
-		 <value condition="VideoPlayer.HasInfo + IntegerGreaterThan(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S</value>
+        <value condition="!VideoPlayer.HasInfo + !Integer.IsGreater(ListItem.Season,9) + !substring(ListItem.Season,S) + !String.IsEmpty(ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="Control.HasFocus(301) + !Integer.IsGreater(Container(301).ListItem.Season,9) + !substring(Container(301).ListItem.Season,S) + !String.IsEmpty(Container(301).ListItem.Season)">S$NUMBER[0]</value>
+        <value condition="Control.HasFocus(9500) + !Integer.IsGreater(Container(9500).ListItem.Season,9) + !substring(Container(9500).ListItem.Season,S) + !String.IsEmpty(Container(9500).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4016) + !Integer.IsGreater(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !String.IsEmpty(Container(4016).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).ListItem.Season,9) + !substring(Container(4016).ListItem.Season,S) + !String.IsEmpty(Container(4016).ListItem.Season)">S</value>
+        <value condition="Control.HasFocus(4017) + !Integer.IsGreater(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !String.IsEmpty(Container(4017).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4017) + Integer.IsGreater(Container(4017).ListItem.Season,9) + !substring(Container(4017).ListItem.Season,S) + !String.IsEmpty(Container(4017).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4018) + !Integer.IsGreater(Container(4018).ListItem.Season,9) + !substring(Container(4018).ListItem.Season,S) + !String.IsEmpty(Container(4018).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4018).ListItem.Season,9) + !substring(Container(4018).ListItem.Season,S) + !String.IsEmpty(Container(4018).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4012) + !Integer.IsGreater(Container(4019).ListItem.Season,9) + !substring(Container(4019).ListItem.Season,S) + !String.IsEmpty(Container(4019).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4012) + Integer.IsGreater(Container(4019).ListItem.Season,9) + !substring(Container(4019).ListItem.Season,S) + !String.IsEmpty(Container(4019).ListItem.Season)">S</value>
+        <value condition="VideoPlayer.HasInfo + !Integer.IsGreater(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
+		 <value condition="VideoPlayer.HasInfo + Integer.IsGreater(VideoPlayer.Season,9) + !substring(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S</value>
     </variable>    
 	<variable name="LabelDirector">
 		<value condition="Container.Content(movies)">$INFO[ListItem.Label]</value>
@@ -253,7 +253,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),favourites)">Favorites</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">Extended Info</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9003).NumItems,0)">Collections</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + Integer.IsGreater(Container(9003).NumItems,0)">Collections</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">Genres</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31193]</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
@@ -291,7 +291,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">$INFO[Window(Home).Property(Music.ArtistsCount)] artists • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Music.AlbumsCount)] albums[/COLOR] • $INFO[Window(Home).Property(Music.SongsCount)] songs</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColourHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColourHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
-		<value condition="IntegerGreaterThan(Container(9025).NumItems,0) + Substring(Container(300).ListItem.Property(Path),emby)">$INFO[Container(9025).NumItems] items</value>
+		<value condition="Integer.IsGreater(Container(9025).NumItems,0) + Substring(Container(300).ListItem.Property(Path),emby)">$INFO[Container(9025).NumItems] items</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
@@ -471,7 +471,7 @@
 	</variable>
 	<variable name="VideoInfoButton8">
 		<value condition="ListItem.IsResumable">Watch Now</value>
-		<value condition="IntegerGreaterThan(ListItem.PlayCount,0)">Replay</value>
+		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">Replay</value>
 		<value>?</value>
 	</variable>
 	<variable name="SimilarVideos">
@@ -848,15 +848,15 @@
 	</variable>
 	<variable name="VideoInfoButton8T">
 		<value condition="ListItem.IsResumable">$INFO[ListItem.PercentPlayed,Resume (,%)]</value>
-		<value condition="IntegerGreaterThan(ListItem.PlayCount,0)">Watch Again</value>
+		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">Watch Again</value>
 		<value>Watch Now</value>
 	</variable>
 	<variable name="ListItemSeasonVar">
-		<value condition="!IntegerGreaterThan(ListItem.Season,9)">$INFO[ListItem.Season,0]</value>
+		<value condition="!Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Season,0]</value>
 		<value>$INFO[ListItem.Season]</value>
 	</variable>
 	<variable name="ListItemEpisodeVar">
-		<value condition="!IntegerGreaterThan(ListItem.Episode,9)">$INFO[ListItem.Episode,0]</value>
+		<value condition="!Integer.IsGreater(ListItem.Episode,9)">$INFO[ListItem.Episode,0]</value>
 		<value>$INFO[ListItem.Episode]</value>
 	</variable>
 	<variable name="SourceFlagVar">
@@ -910,16 +910,16 @@
 		<value>?</value>
 	</variable>
 	<variable name="ExtendedInfoTrailerLabel">
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 9)">Trailer 10</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 8)">Trailer 9</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 7)">Trailer 8</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 6)">Trailer 7</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 5)">Trailer 6</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 4)">Trailer 5</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 3)">Trailer 4</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 2)">Trailer 3</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 1)">Trailer 2</value>
-		<value condition="IntegerGreaterThan(Container(1150).CurrentPage, 0)">Trailer 1</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 9)">Trailer 10</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 8)">Trailer 9</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 7)">Trailer 8</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 6)">Trailer 7</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 5)">Trailer 6</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 4)">Trailer 5</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 3)">Trailer 4</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 2)">Trailer 3</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 1)">Trailer 2</value>
+		<value condition="Integer.IsGreater(Container(1150).CurrentPage, 0)">Trailer 1</value>
 		<value condition="Substring(Listitem.Label, 5)">Trailer 5</value>
 		<value condition="Substring(Listitem.Label, 4)">Trailer 4</value>
 		<value condition="Substring(Listitem.Label, 3)">Trailer 3</value>

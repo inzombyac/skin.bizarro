@@ -169,7 +169,7 @@
 			<visible>!ListItem.IsParentFolder</visible>
 		</control>
 		<control type="group">
-			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
 				<centerleft>660</centerleft>
 				<centertop>30</centertop>
@@ -203,7 +203,7 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Dark1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 	</include>
 	<include name="View_52_BigList_FocusLayout">
@@ -305,7 +305,7 @@
 			<visible>!ListItem.IsParentFolder</visible>
 		</control>
 		<control type="group">
-			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
 				<centerleft>660</centerleft>
 				<centertop>30</centertop>
@@ -339,7 +339,7 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Light1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 	</include>
 	<include name="View_52_BigList_ItemLayout_Icon">
@@ -382,7 +382,7 @@
 			<visible>!ListItem.IsParentFolder</visible>
 		</control>
 		<control type="group">
-			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
 				<centerright>58</centerright>
 				<centertop>60</centertop>
@@ -416,7 +416,7 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Dark1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 	</include>
 	<include name="View_52_BigList_FocusLayout_Icon">
@@ -480,7 +480,7 @@
 			<visible>!ListItem.IsParentFolder</visible>
 		</control>
 		<control type="group">
-			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
 				<centerright>58</centerright>
 				<centertop>60</centertop>
@@ -514,7 +514,7 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Light1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 	</include>
 	<include name="View_52_SidePoster">

@@ -337,10 +337,10 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Light1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 		<control type="group">
-			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
 				<centerright>32</centerright>
 				<centertop>32</centertop>
@@ -443,10 +443,10 @@
 			<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Light1</colordiffuse>
-			<visible>IntegerGreaterThan(ListItem.PercentPlayed,0)</visible>
+			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 		</control>
 		<control type="group">
-			<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+			<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			<control type="image">
 				<centerright>32</centerright>
 				<centertop>32</centertop>
@@ -575,7 +575,7 @@
 					<visible>Container.Content(episodes) | Skin.HasSetting(views.56.showfanart)</visible>
 				</control>
 				<control type="group">
-					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					<visible>!Skin.HasSetting(views.56.showfanart)</visible>
 					<control type="image">
 						<right>20</right>
@@ -664,7 +664,7 @@
 					<texture background="true">$VAR[PosterPercentWatched]</texture>
 				</control>
 				<control type="group">
-					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					<control type="image">
 						<left>378</left>
 						<centertop>40</centertop>

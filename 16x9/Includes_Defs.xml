@@ -48,13 +48,13 @@
 		<value>none</value>
 	</variable>
 	<variable name="EmbyHomeDBID">
-		<value condition="Control.HasFocus(4016) + IntegerGreaterThan(Container(4016).ListItem.DBID,-1)">$INFO[Container(4016).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).ListItem.DBID,-1)">$INFO[Container(4016).ListItem.DBID]</value>
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Property(DBID)]</value>
-		<value condition="Control.HasFocus(4017) + IntegerGreaterThan(Container(4017).ListItem.DBID,-1)">$INFO[Container(4017).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4017) + Integer.IsGreater(Container(4017).ListItem.DBID,-1)">$INFO[Container(4017).ListItem.DBID]</value>
 		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Property(DBID)]</value>
-		<value condition="Control.HasFocus(4018) + IntegerGreaterThan(Container(4018).ListItem.DBID,-1)">$INFO[Container(4018).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4018).ListItem.DBID,-1)">$INFO[Container(4018).ListItem.DBID]</value>
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Property(DBID)]</value>
-		<value condition="Control.HasFocus(4012) + IntegerGreaterThan(Container(4019).ListItem.DBID,-1)">$INFO[Container(4019).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4012) + Integer.IsGreater(Container(4019).ListItem.DBID,-1)">$INFO[Container(4019).ListItem.DBID]</value>
 		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Property(DBID)]</value>
 		<value>-1</value>
 	</variable>
@@ -123,7 +123,7 @@
 		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">RunScript(script.extendedinfo)</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">ActivateWindow(Favourites)</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + IntegerGreaterThan(Container(9003).NumItems,0)">ActivateWindow(Videos,videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
+		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + Integer.IsGreater(Container(9003).NumItems,0)">ActivateWindow(Videos,videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,videodb://movies/genres/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
 		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">ActivateWindow(1102)</value>
 		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
@@ -1152,7 +1152,7 @@
 			<label>13350</label>
 			<align>left</align>
 			<onclick>ActivateWindow(MusicPlaylist)</onclick>
-			<visible>IntegerGreaterThan(Playlist.Length(music),1)</visible>
+			<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
 		</control>
 		<control type="radiobutton" id="9007" description="Low List (57)">
 			<include>DefContextButton2</include>

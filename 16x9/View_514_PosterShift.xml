@@ -60,10 +60,10 @@
 				<height>29</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatched]</texture>
-				<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
 			<control type="group">
-				<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<control type="image">
 					<right>10</right>
 					<top>152</top>

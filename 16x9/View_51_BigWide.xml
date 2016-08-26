@@ -155,7 +155,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
-						<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="image">
 						<centerright>12</centerright>
@@ -167,7 +167,7 @@
 						<visible>!ListItem.IsParentFolder</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerright>12</centerright>
 							<centertop>12</centertop>
@@ -354,7 +354,7 @@
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedN3]</texture>
 						<visible>!stringcompare(ListItem(-3).Label,..)</visible>
-						<visible>!IntegerGreaterThan(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
+						<visible>!Integer.IsGreater(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="progress">
 						<bottom>303</bottom>
@@ -371,7 +371,7 @@
 						<visible>ListItem(-3).IsResumable</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerleft>50%</centerleft>
 							<centertop>32</centertop>
@@ -458,7 +458,7 @@
 						<visible>ListItem(-2).IsResumable</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem(-2).Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem(-2).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerleft>50%</centerleft>
 							<centertop>32</centertop>
@@ -545,7 +545,7 @@
 						<visible>ListItem(-1).IsResumable</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem(-1).Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem(-1).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerleft>50%</centerleft>
 							<centertop>32</centertop>
@@ -632,7 +632,7 @@
 						<visible>ListItem(3).IsResumable</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem(3).Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem(3).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerleft>50%</centerleft>
 							<centertop>32</centertop>
@@ -719,7 +719,7 @@
 						<visible>ListItem(2).IsResumable</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem(2).Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem(2).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerleft>50%</centerleft>
 							<centertop>32</centertop>
@@ -806,7 +806,7 @@
 						<visible>ListItem(1).IsResumable</visible>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem(1).Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem(1).Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<centerleft>50%</centerleft>
 							<centertop>32</centertop>
@@ -907,7 +907,7 @@
 							<animation effect="slide" start="0" end="64" time="0" condition="Container.Content(Seasons)">Conditional</animation>
 						</control>
 						<control type="group">
-							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+							<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 							<control type="image">
 								<centerright>40</centerright>
 								<centertop>32</centertop>
@@ -1100,7 +1100,7 @@
 					<visible>!ListItem.IsParentFolder</visible>
 				</control>
 				<control type="group">
-					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					<control type="image">
 						<centerright>40</centerright>
 						<centertop>32</centertop>

@@ -1436,7 +1436,7 @@
 		</control>
 	</include>
 	<variable name="PVRChannelZero">
-		<value condition="!IntegerGreaterThan(ListItem.ChannelNumber,9)">$NUMBER[0]$NUMBER[0]</value>
-		<value condition="!IntegerGreaterThan(ListItem.ChannelNumber,99)">$NUMBER[0]</value>
+		<value condition="!Integer.IsGreater(ListItem.ChannelNumber,9)">$NUMBER[0]$NUMBER[0]</value>
+		<value condition="!Integer.IsGreater(ListItem.ChannelNumber,99)">$NUMBER[0]</value>
 	</variable>
 </includes>

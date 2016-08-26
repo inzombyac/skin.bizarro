@@ -88,7 +88,7 @@
 						<texture background="true">$VAR[PosterPercentWatched]</texture>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<left>378</left>
 							<centertop>40</centertop>
@@ -189,7 +189,7 @@
 						<texture background="true">$VAR[PosterPercentWatched]</texture>
 					</control>
 					<control type="group">
-						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						<control type="image">
 							<left>378</left>
 							<centertop>40</centertop>

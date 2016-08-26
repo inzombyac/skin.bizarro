@@ -117,7 +117,7 @@
         <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
         <action>ActivateWindow(Music)</action>
-		<visible>IntegerGreaterThan(Window(Home).Property(Music.SongsCount),0)</visible>
+		<visible>Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)</visible>
     </shortcut>
      <shortcut>
         <label>Live TV</label>
