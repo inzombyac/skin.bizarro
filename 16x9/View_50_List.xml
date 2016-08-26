@@ -195,7 +195,7 @@
 				<visible>ListItem.IsResumable</visible>
 			</control>
 			<control type="group">
-				<visible>!stringcompare(ListItem.Label,..)</visible>
+				<visible>!ListItem.IsParentFolder</visible>
 				<control type="image">
 					<left>378</left>
 					<centertop>40</centertop>
@@ -472,7 +472,7 @@
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
 			<label>$INFO[ListItem.Rating]</label>
-			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
 			<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 		</control>
@@ -639,7 +639,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.Rating]</label>
-			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
 			<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
@@ -654,7 +654,7 @@
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
 			<label>$INFO[ListItem.Rating]</label>
-			<visible>!stringcompare(ListItem.Label,..)</visible>
+			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
 			<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>

@@ -164,7 +164,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatched]</texture>
-						<visible>!stringcompare(ListItem.Label,..)</visible>
+						<visible>!ListItem.IsParentFolder</visible>
 					</control>
 					<control type="group">
 						<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
@@ -903,7 +903,7 @@
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture background="true">$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 							<animation effect="slide" start="0" end="64" time="0" condition="Container.Content(Seasons)">Conditional</animation>
 						</control>
 						<control type="group">
@@ -1097,7 +1097,7 @@
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
 					<texture background="true">$VAR[PercentWatched]</texture>
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 				</control>
 				<control type="group">
 					<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>

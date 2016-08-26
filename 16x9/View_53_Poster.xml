@@ -78,7 +78,7 @@
 					<visible>ListItem.IsResumable</visible>
 				</control>
 				<control type="group">
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 					<control type="image">
 						<left>378</left>
 						<centertop>40</centertop>
@@ -179,7 +179,7 @@
 					<visible>ListItem.IsResumable</visible>
 				</control>
 				<control type="group">
-					<visible>!stringcompare(ListItem.Label,..)</visible>
+					<visible>!ListItem.IsParentFolder</visible>
 					<control type="image">
 						<left>378</left>
 						<centertop>40</centertop>

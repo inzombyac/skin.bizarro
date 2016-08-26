@@ -99,7 +99,7 @@
 							<height>32</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 							<visible>!IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						</control>
 						<control type="group">
@@ -210,7 +210,7 @@
 							<height>32</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture>$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="group">
 							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>

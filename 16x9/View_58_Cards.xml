@@ -38,7 +38,7 @@
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture background="true">$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="image">
 							<left>10</left>
@@ -135,7 +135,7 @@
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture background="true">$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="image">
 							<left>14</left>
@@ -287,7 +287,7 @@
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture background="true">$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="group">
 							<visible>IntegerGreaterThan(ListItem.Property(UnwatchedEpisodes),0)</visible>
@@ -362,7 +362,7 @@
 							<height>40</height>
 							<aspectratio aligny="top">keep</aspectratio>
 							<texture background="true">$VAR[PercentWatched]</texture>
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 						</control>
 						<control type="image">
 							<left>14</left>

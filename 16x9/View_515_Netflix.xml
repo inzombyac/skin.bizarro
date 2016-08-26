@@ -117,7 +117,7 @@
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
 				<control type="grouplist">
-					<visible>Container.Content(movies) + ![SubString(ListItem.Path,videodb://movies/sets) + !Stringcompare(ListItem.Label,..)]</visible>
+					<visible>Container.Content(movies) + ![SubString(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR]$INFO[ListItem.Director]</label>
 						<width>980</width>
@@ -139,7 +139,7 @@
 					</control>
 				</control>
 				<control type="grouplist">
-					<visible>[SubString(ListItem.Path,videodb://movies/sets) + !Stringcompare(ListItem.Label,..)]</visible>
+					<visible>[SubString(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
 						<width>980</width>

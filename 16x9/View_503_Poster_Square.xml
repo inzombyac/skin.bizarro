@@ -47,7 +47,7 @@
 							<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="group">
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 							<control type="image">
 								<left>379</left>
 								<centerright>32</centerright>
@@ -56,7 +56,7 @@
 								<height>32</height>
 								<aspectratio aligny="top">keep</aspectratio>
 								<texture>$VAR[PercentWatched]</texture>
-								<visible>!stringcompare(ListItem.Label,..)</visible>
+								<visible>!ListItem.IsParentFolder</visible>
 							</control>
 						</control>
 						<control type="image">
@@ -99,7 +99,7 @@
 							<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 						</control>
 						<control type="group">
-							<visible>!stringcompare(ListItem.Label,..)</visible>
+							<visible>!ListItem.IsParentFolder</visible>
 							<control type="image">
 								<left>379</left>
 								<centerright>32</centerright>
@@ -108,7 +108,7 @@
 								<height>32</height>
 								<aspectratio aligny="top">keep</aspectratio>
 								<texture>$VAR[PercentWatched]</texture>
-								<visible>!stringcompare(ListItem.Label,..)</visible>
+								<visible>!ListItem.IsParentFolder</visible>
 							</control>
 						</control>
 						<control type="image">

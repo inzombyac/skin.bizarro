@@ -123,7 +123,7 @@
                         <height>32</height>
                         <aspectratio aligny="top">keep</aspectratio>
                         <texture>$VAR[PercentWatched]</texture>
-                        <visible>!stringcompare(ListItem.Label,..)</visible>
+                        <visible>!ListItem.IsParentFolder</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="337" width="222">
@@ -149,7 +149,7 @@
                         <height>32</height>
                         <aspectratio aligny="top">keep</aspectratio>
                         <texture>$VAR[PercentWatched]</texture>
-                        <visible>!stringcompare(ListItem.Label,..)</visible>
+                        <visible>!ListItem.IsParentFolder</visible>
                     </control>
                     <control type="image">
                         <centerleft>50%</centerleft>
