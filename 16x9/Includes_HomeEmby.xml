@@ -336,11 +336,11 @@
 				<texturenofocus>-</texturenofocus>
 				<include>EmbyHomeInfoActions</include>
 				<onclick condition="IntegerGreaterThan(Container(4019).ListItem.DBID, -1) + !StringCompare(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),settings)">PlayMedia($VAR[EmbyHomeItemPath])</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + !IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
 				<onclick condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Container(4019).ListItem.DBID],return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/$INFO[Container(4019).ListItem.DBID],return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),photos) + !IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
+				<onclick condition="StringCompare(Container(300).ListItem.Property(type),photos) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
 				<onclick condition="StringCompare(Container(300).ListItem.Property(type),channels) + !IntegerGreaterThan(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
@@ -400,7 +400,7 @@
 				<aspectratio>keep</aspectratio>
 				<texture background="true">$INFO[Container(4019).ListItem.Icon]</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-				<visible>!IsEmpty(Container(4019).ListItem.ChannelNumber)</visible>
+				<visible>!String.IsEmpty(Container(4019).ListItem.ChannelNumber)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="label">
@@ -414,7 +414,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.ChannelName]</label>
 				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-				<visible>IsEmpty(Container(4019).ListItem.Icon)</visible>
+				<visible>String.IsEmpty(Container(4019).ListItem.Icon)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="label">
@@ -456,7 +456,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.ChannelName]</label>
-				<visible>IsEmpty(Container(4019).ListItem.Icon)</visible>
+				<visible>String.IsEmpty(Container(4019).ListItem.Icon)</visible>
 				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -1980,7 +1980,7 @@
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
-				<visible>!IsEmpty(Container(300).ListItem.Property(widgetPath)) | !IsEmpty(Container(300).ListItem.Property(widget))</visible>
+				<visible>!String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widget))</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
@@ -2235,14 +2235,14 @@
 				<thumb>$VAR[HomeWeather5]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day5.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
-				<visible>!IsEmpty(Window(Weather).Property(Day5.Title))</visible>
+				<visible>!String.IsEmpty(Window(Weather).Property(Day5.Title))</visible>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day6.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day6.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day6.LowTemp)] $INFO[System.TemperatureUnits]</label>
 				<thumb>$VAR[HomeWeather6]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day6.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
-				<visible>!IsEmpty(Window(Weather).Property(Day6.Title))</visible>
+				<visible>!String.IsEmpty(Window(Weather).Property(Day6.Title))</visible>
 			</item>
 		</content>		
 	</include>
@@ -2314,18 +2314,18 @@
 		<value>star0</value>
 	</variable>
 	<variable name="EmbyHomeClearArt">
-		<value condition="Control.HasFocus(4016) + !IsEmpty(Container(4016).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4016).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4016).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Art(clearlogo)]</value>
-		<value condition="Control.HasFocus(4017) + !IsEmpty(Container(4017).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4017).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4017).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Art(clearlogo)]</value>
-		<value condition="Control.HasFocus(4018) + !IsEmpty(Container(4018).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4018).ListItem.Art(tvshow.clearlogo)]</value>
+		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Art(tvshow.clearlogo))">$INFO[Container(4018).ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
 		<!-- Actions --> 
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="SubString(Skin.String(HomeItemDBType),episode) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="IsEmpty(Skin.String(HomeItemDBType)) + !IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="SubString(Skin.String(HomeItemDBType),episode) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="String.IsEmpty(Skin.String(HomeItemDBType)) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>
 	<include name="EmbyFooter">

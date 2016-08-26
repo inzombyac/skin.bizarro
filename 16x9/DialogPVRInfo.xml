@@ -112,7 +112,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(ListItem.EpisodeName)</visible>
+							<visible>!String.IsEmpty(ListItem.EpisodeName)</visible>
 							<height>36</height>
 							<control type="label">
 								<width>150</width>
@@ -133,7 +133,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(ListItem.Season)</visible>
+							<visible>!String.IsEmpty(ListItem.Season)</visible>
 							<height>36</height>
 							<control type="label">
 								<width>150</width>
@@ -154,7 +154,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>!IsEmpty(ListItem.Episode)</visible>
+							<visible>!String.IsEmpty(ListItem.Episode)</visible>
 							<height>36</height>
 							<control type="label">
 								<width>150</width>

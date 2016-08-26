@@ -40,7 +40,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<colordiffuse>DialogFanartFade</colordiffuse>
 				<texture background="true">special://skin/extras/backgrounds/Headphones.jpg</texture>
-				<visible>IsEmpty(Container.Art(artist.fanart)) + IsEmpty(ListItem.Art(fanart))</visible>
+				<visible>String.IsEmpty(Container.Art(artist.fanart)) + String.IsEmpty(ListItem.Art(fanart))</visible>
 				<visible>Skin.HasSetting(furniture.info.fanart)</visible>
 			</control>
 			<control type="image">
@@ -68,7 +68,7 @@
 				<include>Dimensions_Fullscreen</include>
 				<colordiffuse>DialogFanartFade</colordiffuse>
 				<texture background="true">$INFO[Container(5013).ListItem.Property(GoogleMap)]</texture>
-				<visible>!IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013)</visible>
 			</control>
 		</control>
 		<include>Furniture_Clock</include>
@@ -307,7 +307,7 @@
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Artists) + !IsEmpty(Window(Home).Property(Artist_Formed))</visible>
+				<visible>Container.Content(Artists) + !String.IsEmpty(Window(Home).Property(Artist_Formed))</visible>
 				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				<control type="label">
@@ -396,7 +396,7 @@
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Artists)  + !IsEmpty(Window(Home).Property(Born))</visible>
+				<visible>Container.Content(Artists)  + !String.IsEmpty(Window(Home).Property(Born))</visible>
 				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				<control type="label">
@@ -426,7 +426,7 @@
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Albums) + !IsEmpty(ListItem.Artist)</visible>
+				<visible>Container.Content(Albums) + !String.IsEmpty(ListItem.Artist)</visible>
 				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				<control type="label">
@@ -456,7 +456,7 @@
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Albums) + !IsEmpty(ListItem.Property(Album_Style))</visible>
+				<visible>Container.Content(Albums) + !String.IsEmpty(ListItem.Property(Album_Style))</visible>
 				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				<control type="label">
@@ -486,7 +486,7 @@
 				<itemgap>10</itemgap>
 				<orientation>horizontal</orientation>
 				<usecontrolcoords>true</usecontrolcoords>
-				<visible>!Container.Content(Albums)  + !IsEmpty(Window(Home).Property(Died))</visible>
+				<visible>!Container.Content(Albums)  + !String.IsEmpty(Window(Home).Property(Died))</visible>
 				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				<control type="label">
@@ -561,7 +561,7 @@
 			</control>
 			<control type="group">
 				<include>DialogMusicInfoAnimation</include>
-				<animation condition="!IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation>
+				<animation condition="!String.IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<!-- Button grouplist -->
 				<control id="9000" type="grouplist">
 					<left>-2</left>
@@ -708,8 +708,8 @@
 			</control>
 			<control type="group">
 				<visible>!Control.HasFocus(7002) + !Control.HasFocus(7003) + !Control.HasFocus(7004) + !Control.HasFocus(5012) + !Control.HasFocus(5013) + !Control.HasFocus(5014) + !Control.HasFocus(5015)</visible>
-				<animation condition="!IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!IsEmpty(Window(home).Property(SimilarArtists))" effect="fade" end="0" start="100" time="0">Conditional</animation>
+				<animation condition="!String.IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation>
+				<animation condition="!String.IsEmpty(Window(home).Property(SimilarArtists))" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation effect="fade" end="100" start="0" time="200" delay="800">WindowOpen</animation>
 				<control type="image">
 					<top>295</top>
@@ -750,7 +750,7 @@
 					<width>761</width>
 					<height>470</height>
 					<texture border="66,66,51,51">views/shadow_nf.png</texture>
-					<visible>!IsEmpty(ListItem.Art(fanart))</visible>
+					<visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
 				</control>
 				<control type="fadelabel" id="4324">
 					<scrollspeed>3</scrollspeed>
@@ -767,14 +767,14 @@
 					<width>665</width>
 					<height>374</height>
 					<texture>$INFO[Control.GetLabel(4324)]</texture>
-					<visible>!IsEmpty(Window(Home).Property(Fanart))</visible>
+					<visible>!String.IsEmpty(Window(Home).Property(Fanart))</visible>
 				</control>
 				<control type="image">
 					<top>504</top>
 					<width>665</width>
 					<height>374</height>
 					<texture>$VAR[MusicFanart]</texture>
-					<visible>IsEmpty(Window(Home).Property(Fanart))</visible>
+					<visible>String.IsEmpty(Window(Home).Property(Fanart))</visible>
 				</control>
 				<!-- Banner -->
 				<control type="image">
@@ -805,7 +805,7 @@
 							<height>32</height>
 							<width>32</width>
 							<texture colordiffuse="$VAR[ColourHighlight]">indicator/playwhite.png</texture>
-							<visible>!IsEmpty(ListItem.Property(IsPlaying))</visible>
+							<visible>!String.IsEmpty(ListItem.Property(IsPlaying))</visible>
 						</control>
 						<control type="label">
 							<left>30</left>
@@ -839,7 +839,7 @@
 								<height>32</height>
 								<width>32</width>
 								<texture colordiffuse="$VAR[ColourHighlight]">indicator/playwhite.png</texture>
-								<visible>!IsEmpty(ListItem.Property(IsPlaying))</visible>
+								<visible>!String.IsEmpty(ListItem.Property(IsPlaying))</visible>
 							</control>
 							<control type="label">
 								<left>30</left>
@@ -1158,7 +1158,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<animation condition="IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation>
+				<animation condition="String.IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<!-- Description -->
 				<control type="label">
 					<top>235</top>
@@ -1168,7 +1168,7 @@
 					<font>Small</font>
 					<textcolor>Black300</textcolor>
 					<label>21821</label>
-					<visible>[Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))] | [Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))]</visible>
+					<visible>[Container.Content(albums) + !String.IsEmpty(ListItem.Property(Album_Description))] | [Container.Content(artists) + !String.IsEmpty(ListItem.Property(Artist_Description))]</visible>
 				</control>
 				<control type="textbox" id="4">
 					<top>293</top>
@@ -1212,7 +1212,7 @@
 					<font>Small</font>
 					<textcolor>Black300</textcolor>
 					<label>132</label>
-					<visible>Container.Content(artists) + !IsEmpty(Container(50).ListItem.Label)</visible>
+					<visible>Container.Content(artists) + !String.IsEmpty(Container(50).ListItem.Label)</visible>
 				</control>
 				<!-- Tracks -->
 				<control type="label">
@@ -1224,7 +1224,7 @@
 					<font>Small</font>
 					<textcolor>Black300</textcolor>
 					<label>182</label>
-					<visible>Container.Content(albums) + !IsEmpty(Container(50).ListItem.Label)</visible>
+					<visible>Container.Content(albums) + !String.IsEmpty(Container(50).ListItem.Label)</visible>
 				</control>
 				<control type="list" id="50">
 					<left>900</left>
@@ -1331,7 +1331,7 @@
 			<control type="group">
 				<left>-567</left>
 				<top>587</top>
-				<visible>!IsEmpty(Window(home).Property(MostLoved))</visible>
+				<visible>!String.IsEmpty(Window(home).Property(MostLoved))</visible>
 				<control type="label">
 					<left>575</left>
 					<width>1000</width>
@@ -1351,7 +1351,7 @@
 					<font>Large</font>
 					<textcolor>Black700</textcolor>
 					<label>Sorry, no loved tracks found for this artist.</label>
-					<visible>!IsEmpty(Window(home).Property(MostLoved)) + IsEmpty(Container(5012).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(MostLoved)) + String.IsEmpty(Container(5012).ListItem.Label)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation condition="Control.HasFocus(5012)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(5012)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -1368,7 +1368,7 @@
 					<orientation>horizontal</orientation>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
-					<visible>!IsEmpty(Window(home).Property(MostLoved))</visible>
+					<visible>!String.IsEmpty(Window(home).Property(MostLoved))</visible>
 					<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 						<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 						<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
@@ -1610,11 +1610,11 @@
 				<control type="group">
 					<left>1385</left>
 					<top>-319</top>
-					<visible>!IsEmpty(Window(home).Property(MostLoved)) + !Control.HasFocus(5012) + !IsEmpty(Container(5012).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(MostLoved)) + !Control.HasFocus(5012) + !String.IsEmpty(Container(5012).ListItem.Label)</visible>
 					<animation center="480,1022" condition="!Control.HasFocus(5012)" easing="inout" effect="zoom" end="81" start="100" time="300" tween="sine">Conditional</animation>
 					<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 					<control type="group">
-						<visible>!IsEmpty(Container(5012).ListItemNoWrap(1).Label)</visible>
+						<visible>!String.IsEmpty(Container(5012).ListItemNoWrap(1).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>675</width>
@@ -1661,7 +1661,7 @@
 					</control>
 					<control type="group">
 						<left>702</left>
-						<visible>!IsEmpty(Container(5012).ListItemNoWrap(2).Label)</visible>
+						<visible>!String.IsEmpty(Container(5012).ListItemNoWrap(2).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>675</width>
@@ -1708,7 +1708,7 @@
 					</control>
 					<control type="group">
 						<left>1404</left>
-						<visible>!IsEmpty(Container(5012).ListItemNoWrap(3).Label)</visible>
+						<visible>!String.IsEmpty(Container(5012).ListItemNoWrap(3).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>675</width>
@@ -1755,7 +1755,7 @@
 					</control>
 					<control type="group">
 						<left>2106</left>
-						<visible>!IsEmpty(Container(5012).ListItemNoWrap(4).Label)</visible>
+						<visible>!String.IsEmpty(Container(5012).ListItemNoWrap(4).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>675</width>
@@ -1802,7 +1802,7 @@
 					</control>
 					<control type="group">
 						<left>2808</left>
-						<visible>!IsEmpty(Container(5012).ListItemNoWrap(5).Label)</visible>
+						<visible>!String.IsEmpty(Container(5012).ListItemNoWrap(5).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>675</width>
@@ -1875,7 +1875,7 @@
 			<control type="group">
 				<left>-567</left>
 				<top>587</top>
-				<visible>!IsEmpty(Window(home).Property(Concerts))</visible>
+				<visible>!String.IsEmpty(Window(home).Property(Concerts))</visible>
 				<control type="label">
 					<left>575</left>
 					<width>1000</width>
@@ -1896,7 +1896,7 @@
 					<font>Large</font>
 					<textcolor>Black700</textcolor>
 					<label>Sorry, no concerts found for this artist.</label>
-					<visible>!IsEmpty(Window(home).Property(Concerts)) + IsEmpty(Container(5013).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(Concerts)) + String.IsEmpty(Container(5013).ListItem.Label)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation condition="Control.HasFocus(5013)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(5013)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -1913,7 +1913,7 @@
 					<orientation>horizontal</orientation>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
-					<visible>!IsEmpty(Window(home).Property(Concerts))</visible>
+					<visible>!String.IsEmpty(Window(home).Property(Concerts))</visible>
 					<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 						<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 						<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
@@ -2155,11 +2155,11 @@
 				<control type="group">
 					<left>1030</left>
 					<top>-319</top>
-					<visible>!IsEmpty(Window(home).Property(Concerts)) + !Control.HasFocus(5013) + !IsEmpty(Container(5013).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(Concerts)) + !Control.HasFocus(5013) + !String.IsEmpty(Container(5013).ListItem.Label)</visible>
 					<animation center="480,1022" condition="!Control.HasFocus(5013)" easing="inout" effect="zoom" end="81" start="100" time="300" tween="sine">Conditional</animation>
 					<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 					<control type="group">
-						<visible>!IsEmpty(Container(5013).ListItemNoWrap(1).Property(EventName))</visible>
+						<visible>!String.IsEmpty(Container(5013).ListItemNoWrap(1).Property(EventName))</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2206,7 +2206,7 @@
 					</control>
 					<control type="group">
 						<left>352</left>
-						<visible>!IsEmpty(Container(5013).ListItemNoWrap(2).Property(EventName))</visible>
+						<visible>!String.IsEmpty(Container(5013).ListItemNoWrap(2).Property(EventName))</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2253,7 +2253,7 @@
 					</control>
 					<control type="group">
 						<left>705</left>
-						<visible>!IsEmpty(Container(5013).ListItemNoWrap(3).Property(EventName))</visible>
+						<visible>!String.IsEmpty(Container(5013).ListItemNoWrap(3).Property(EventName))</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2300,7 +2300,7 @@
 					</control>
 					<control type="group">
 						<left>1058</left>
-						<visible>!IsEmpty(Container(5013).ListItemNoWrap(4).Property(EventName))</visible>
+						<visible>!String.IsEmpty(Container(5013).ListItemNoWrap(4).Property(EventName))</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2347,7 +2347,7 @@
 					</control>
 					<control type="group">
 						<left>1411</left>
-						<visible>!IsEmpty(Container(5013).ListItemNoWrap(5).Property(EventName))</visible>
+						<visible>!String.IsEmpty(Container(5013).ListItemNoWrap(5).Property(EventName))</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2440,7 +2440,7 @@
 			<control type="group">
 				<left>-567</left>
 				<top>587</top>
-				<visible>!IsEmpty(Window(home).Property(Discography))</visible>
+				<visible>!String.IsEmpty(Window(home).Property(Discography))</visible>
 				<control type="label">
 					<left>575</left>
 					<width>1000</width>
@@ -2461,7 +2461,7 @@
 					<font>Large</font>
 					<textcolor>Black700</textcolor>
 					<label>Sorry, no discography found for this artist.</label>
-					<visible>!IsEmpty(Window(home).Property(Discography)) + IsEmpty(Container(5014).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(Discography)) + String.IsEmpty(Container(5014).ListItem.Label)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation condition="Control.HasFocus(5014)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(5014)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -2478,7 +2478,7 @@
 					<orientation>horizontal</orientation>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
-					<visible>!IsEmpty(Window(home).Property(Discography))</visible>
+					<visible>!String.IsEmpty(Window(home).Property(Discography))</visible>
 					<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 						<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 						<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
@@ -2720,11 +2720,11 @@
 				<control type="group">
 					<left>1030</left>
 					<top>-319</top>
-					<visible>!IsEmpty(Window(home).Property(Discography)) + !Control.HasFocus(5014) + !IsEmpty(Container(5014).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(Discography)) + !Control.HasFocus(5014) + !String.IsEmpty(Container(5014).ListItem.Label)</visible>
 					<animation center="480,1022" condition="!Control.HasFocus(5014)" easing="inout" effect="zoom" end="81" start="100" time="300" tween="sine">Conditional</animation>
 					<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 					<control type="group">
-						<visible>!IsEmpty(Container(5014).ListItemNoWrap(1).Label)</visible>
+						<visible>!String.IsEmpty(Container(5014).ListItemNoWrap(1).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2771,7 +2771,7 @@
 					</control>
 					<control type="group">
 						<left>352</left>
-						<visible>!IsEmpty(Container(5014).ListItemNoWrap(2).Label)</visible>
+						<visible>!String.IsEmpty(Container(5014).ListItemNoWrap(2).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2818,7 +2818,7 @@
 					</control>
 					<control type="group">
 						<left>705</left>
-						<visible>!IsEmpty(Container(5014).ListItemNoWrap(3).Label)</visible>
+						<visible>!String.IsEmpty(Container(5014).ListItemNoWrap(3).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2865,7 +2865,7 @@
 					</control>
 					<control type="group">
 						<left>1058</left>
-						<visible>!IsEmpty(Container(5014).ListItemNoWrap(4).Label)</visible>
+						<visible>!String.IsEmpty(Container(5014).ListItemNoWrap(4).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -2912,7 +2912,7 @@
 					</control>
 					<control type="group">
 						<left>1411</left>
-						<visible>!IsEmpty(Container(5014).ListItemNoWrap(5).Label)</visible>
+						<visible>!String.IsEmpty(Container(5014).ListItemNoWrap(5).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -3005,7 +3005,7 @@
 			<control type="group">
 				<left>-567</left>
 				<top>587</top>
-				<visible>!IsEmpty(Window(home).Property(SimilarArtists))</visible>
+				<visible>!String.IsEmpty(Window(home).Property(SimilarArtists))</visible>
 				<control type="label">
 					<left>575</left>
 					<width>1000</width>
@@ -3026,7 +3026,7 @@
 					<font>Large</font>
 					<textcolor>Black700</textcolor>
 					<label>Sorry, no similar artists in your library found for this artist.</label>
-					<visible>!IsEmpty(Window(home).Property(SimilarArtists)) + IsEmpty(Container(5015).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(SimilarArtists)) + String.IsEmpty(Container(5015).ListItem.Label)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation condition="Control.HasFocus(5015)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(5015)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -3043,7 +3043,7 @@
 					<orientation>horizontal</orientation>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
-					<visible>!IsEmpty(Window(home).Property(SimilarArtists))</visible>
+					<visible>!String.IsEmpty(Window(home).Property(SimilarArtists))</visible>
 					<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 						<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide" />
 						<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide" />
@@ -3143,7 +3143,7 @@
 								<scroll>false</scroll>
 								<textcolor>Black700</textcolor>
 								<label>$INFO[ListItem.Label]</label>
-								<visible>IsEmpty(ListItem.Icon)</visible>
+								<visible>String.IsEmpty(ListItem.Icon)</visible>
 							</control>
 							<control type="image">
 								<top>48</top>
@@ -3161,11 +3161,11 @@
 				<control type="group">
 					<left>1030</left>
 					<top>-319</top>
-					<visible>!IsEmpty(Window(home).Property(SimilarArtists)) + !Control.HasFocus(5015) + !IsEmpty(Container(5015).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Window(home).Property(SimilarArtists)) + !Control.HasFocus(5015) + !String.IsEmpty(Container(5015).ListItem.Label)</visible>
 					<animation center="480,1022" condition="!Control.HasFocus(5015)" easing="inout" effect="zoom" end="81" start="100" time="300" tween="sine">Conditional</animation>
 					<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 					<control type="group">
-						<visible>!IsEmpty(Container(5015).ListItemNoWrap(1).Label)</visible>
+						<visible>!String.IsEmpty(Container(5015).ListItemNoWrap(1).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -3212,7 +3212,7 @@
 					</control>
 					<control type="group">
 						<left>352</left>
-						<visible>!IsEmpty(Container(5015).ListItemNoWrap(2).Label)</visible>
+						<visible>!String.IsEmpty(Container(5015).ListItemNoWrap(2).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -3259,7 +3259,7 @@
 					</control>
 					<control type="group">
 						<left>705</left>
-						<visible>!IsEmpty(Container(5015).ListItemNoWrap(3).Label)</visible>
+						<visible>!String.IsEmpty(Container(5015).ListItemNoWrap(3).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -3306,7 +3306,7 @@
 					</control>
 					<control type="group">
 						<left>1058</left>
-						<visible>!IsEmpty(Container(5015).ListItemNoWrap(4).Label)</visible>
+						<visible>!String.IsEmpty(Container(5015).ListItemNoWrap(4).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -3353,7 +3353,7 @@
 					</control>
 					<control type="group">
 						<left>1411</left>
-						<visible>!IsEmpty(Container(5015).ListItemNoWrap(5).Label)</visible>
+						<visible>!String.IsEmpty(Container(5015).ListItemNoWrap(5).Label)</visible>
 						<control type="image">
 							<top>48</top>
 							<width>320</width>
@@ -3501,7 +3501,7 @@
 				<width>36</width>
 				<height>20</height>
 				<texture>views/arrow_down.png</texture>
-				<visible>Control.IsVisible(4000) + !StringCompare(Container(4001).CurrentPage,Container(4001).NumPages)</visible>
+				<visible>Control.IsVisible(4000) + !Integer.IsEqual(Container(4001).CurrentPage,Container(4001).NumPages)</visible>
 				<animation delay="80" effect="fade" end="100" start="0" time="120">Visible</animation>
 				<animation delay="80" effect="fade" end="0" start="100" time="120">Hidden</animation>
 			</control>

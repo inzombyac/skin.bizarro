@@ -29,8 +29,8 @@
 				<font>font_SimplerE3D_bold</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,a,Left) | SubString(ListItem.Title,b,Left) | SubString(ListItem.Title,c,Left) | SubString(ListItem.Title,d,Left)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
+				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,a,Left) | SubString(ListItem.Title,b,Left) | SubString(ListItem.Title,c,Left) | SubString(ListItem.Title,d,Left)]</visible>
 			</control>
 			<control type="textbox">
 				<left>85</left>
@@ -44,8 +44,8 @@
 				<font>font_armyofdarkness</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))]+ [SubString(ListItem.Title,e,Left) | SubString(ListItem.Title,f,Left) | SubString(ListItem.Title,g,Left) | SubString(ListItem.Title,h,Left)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
+				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]+ [SubString(ListItem.Title,e,Left) | SubString(ListItem.Title,f,Left) | SubString(ListItem.Title,g,Left) | SubString(ListItem.Title,h,Left)]</visible>
 			</control>
 			<control type="textbox">
 				<left>85</left>
@@ -59,8 +59,8 @@
 				<font>font_babylon5</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,i,Left) | SubString(ListItem.Title,j,Left) | SubString(ListItem.Title,k,Left) | SubString(ListItem.Title,l,Left)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
+				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,i,Left) | SubString(ListItem.Title,j,Left) | SubString(ListItem.Title,k,Left) | SubString(ListItem.Title,l,Left)]</visible>
 			</control>
 			<control type="textbox">
 				<left>85</left>
@@ -74,8 +74,8 @@
 				<font>font_bachelorpad</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,m,Left) | SubString(ListItem.Title,n,Left) | SubString(ListItem.Title,o,Left) | SubString(ListItem.Title,p,Left)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
+				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,m,Left) | SubString(ListItem.Title,n,Left) | SubString(ListItem.Title,o,Left) | SubString(ListItem.Title,p,Left)]</visible>
 			</control>
 			<control type="textbox">
 				<left>85</left>
@@ -89,8 +89,8 @@
 				<font>font_bullpen3d</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,q,Left) | SubString(ListItem.Title,r,Left) | SubString(ListItem.Title,s,Left) | SubString(ListItem.Title,t,Left)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
+				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,q,Left) | SubString(ListItem.Title,r,Left) | SubString(ListItem.Title,s,Left) | SubString(ListItem.Title,t,Left)]</visible>
 			</control>
 			<control type="textbox">
 				<left>85</left>
@@ -104,8 +104,8 @@
 				<font>font_SimplerE3D_bold</font>
 				<label>[B]$VAR[LabelTitle][/B]</label>
 				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,u,Left) | SubString(ListItem.Title,v,Left) | SubString(ListItem.Title,w,Left) | SubString(ListItem.Title,x,Left) | SubString(ListItem.Title,y,Left) | SubString(ListItem.Title,z,Left)]</visible>
+				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
+				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,u,Left) | SubString(ListItem.Title,v,Left) | SubString(ListItem.Title,w,Left) | SubString(ListItem.Title,x,Left) | SubString(ListItem.Title,y,Left) | SubString(ListItem.Title,z,Left)]</visible>
 			</control> -->
 			<!--MAD - End of Fake Logo -->
 			<!-- New Plot Info -->
@@ -123,19 +123,19 @@
 						<width>980</width>
 						<textcolor>White</textcolor>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Director)</visible>
+						<visible>!String.IsEmpty(ListItem.Director)</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Genre)</visible>
+						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$VAR[Duration][/COLOR]</label>
 						<width>650</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
+						<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -144,13 +144,13 @@
 						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Genre)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
+						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -159,27 +159,27 @@
 						<label>[COLOR $VAR[ColourHighlight]]Next Episode: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.NextTitle)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
 						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]Next Aired: [/COLOR][COLOR white]$INFO[Window(Home).Property(NextAired.NextDate),,][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
 						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[126]: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.Status)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!IsEmpty(Window(Home).Property(NextAired.Status)) + IsEmpty(Window(Home).Property(NextAired.NextDate))]</visible>
+						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(Window(Home).Property(NextAired.NextDate))]</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)] + !IsEmpty(ListItem.Genre)</visible>
+						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(ListItem.Genre)</visible>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -188,19 +188,19 @@
 						<label>[COLOR $VAR[ColourHighlight]]Title: [/COLOR][COLOR White]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Title)</visible>
+						<visible>!String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[20416]: [/COLOR][COLOR White]$INFO[ListItem.Premiered][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Premiered)</visible>
+						<visible>!String.IsEmpty(ListItem.Premiered)</visible>
 					</control>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$INFO[ListItem.Duration,, $LOCALIZE[12391][/COLOR]]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
-						<visible>!IsEmpty(ListItem.Duration)</visible>
+						<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					</control>
 				</control>
 			</control>

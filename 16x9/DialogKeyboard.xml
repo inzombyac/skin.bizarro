@@ -480,7 +480,7 @@
                     </control>
                 </control>
                 <!-- <control type="group">
-                    <visible>System.HasAddon(script.extendedinfo) + !IsEmpty(Control.GetLabel(312).index(1)) + !Window.IsVisible(1130)</visible>
+                    <visible>System.HasAddon(script.extendedinfo) + !String.IsEmpty(Control.GetLabel(312).index(1)) + !Window.IsVisible(1130)</visible>
                     <top>480</top>
                     <centerleft>50%</centerleft>
                     <centertop>40%</centertop>
@@ -494,8 +494,8 @@
                         <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
                     </control>
                     <control type="group">
-                        <animation effect="fade" time="300" tween="cubic" start="0" end="100" reversible="false" condition="!IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
-                        <animation effect="fade" time="150" tween="cubic" start="100" end="0" reversible="false" condition="IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
+                        <animation effect="fade" time="300" tween="cubic" start="0" end="100" reversible="false" condition="!String.IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
+                        <animation effect="fade" time="150" tween="cubic" start="100" end="0" reversible="false" condition="String.IsEmpty(Container(5000).ListItem.Label)">Conditional</animation>
                     </control>
                     <control type="panel" id="5000">
                         <width>1530</width>

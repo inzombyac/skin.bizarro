@@ -210,8 +210,8 @@
 						<include>DefSettingsButton2</include>
 						<label>31182</label>
 						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(MovieHubWidget)][/COLOR]</label2>
-						<onclick condition="IsEmpty(Skin.String(MovieHubWidget))">Skin.SetFile(MovieHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(MovieHubWidget))">Skin.Reset(MovieHubWidget)</onclick>
+						<onclick condition="String.IsEmpty(Skin.String(MovieHubWidget))">Skin.SetFile(MovieHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
+						<onclick condition="!String.IsEmpty(Skin.String(MovieHubWidget))">Skin.Reset(MovieHubWidget)</onclick>
 					</control>
 					<control type="button" id="92182" description="Select Movies Hub Items">
 						<width>1310</width>
@@ -226,8 +226,8 @@
 						<include>DefSettingsButton2</include>
 						<label>31183</label>
 						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(TVHubWidget)][/COLOR]</label2>
-						<onclick condition="IsEmpty(Skin.String(TVHubWidget))">Skin.SetFile(TVHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(TVHubWidget))">Skin.Reset(TVHubWidget)</onclick>
+						<onclick condition="String.IsEmpty(Skin.String(TVHubWidget))">Skin.SetFile(TVHubWidget,.xsp|.m3u,special://profile/playlists/video/)</onclick>
+						<onclick condition="!String.IsEmpty(Skin.String(TVHubWidget))">Skin.Reset(TVHubWidget)</onclick>
 					</control>
 					<control type="button" id="92184" description="Select TV Hub Items">
 						<width>1310</width>
@@ -301,8 +301,8 @@
 						<include>DefSettingsButton2</include>
 						<label>31150</label>
 						<label2>[COLOR=$VAR[ColourHighlight2]]$INFO[Skin.String(fanart.fallback)][/COLOR]</label2>
-						<onclick condition="IsEmpty(Skin.String(fanart.fallback))">Skin.SetImage(fanart.fallback)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
+						<onclick condition="String.IsEmpty(Skin.String(fanart.fallback))">Skin.SetImage(fanart.fallback)</onclick>
+						<onclick condition="!String.IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
 					</control>
 					<control type="button" id="9229" description="Set Weather Icons">

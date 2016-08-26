@@ -112,7 +112,7 @@
 						<textcolor>Black70</textcolor>
 						<selectedcolor>Black70</selectedcolor>
 						<info>ListItem.Label</info>
-						<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+						<animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 					</control>
 					<control type="label">
 						<posx>170</posx>
@@ -155,7 +155,7 @@
 							<textcolor>Black70</textcolor>
 							<selectedcolor>Black70</selectedcolor>
 							<info>ListItem.Label</info>
-							<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>170</posx>
@@ -210,7 +210,7 @@
 							<textcolor>$VAR[ColourSelected]</textcolor>
 							<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 							<info>ListItem.Label</info>
-							<animation effect="slide" end="0,18" condition="IsEmpty(ListItem.AddonSummary)">Conditional</animation>
+							<animation effect="slide" end="0,18" condition="String.IsEmpty(ListItem.AddonSummary)">Conditional</animation>
 						</control>
 						<control type="label">
 							<left>170</left>

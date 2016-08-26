@@ -14,7 +14,7 @@
 			<width>91</width>
 			<height>35</height>
 			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.AudioChannels)</visible>
+			<visible>!String.IsEmpty(VideoPlayer.AudioChannels)</visible>
 		</control>
 		<control type="image">
 			<right>96</right>
@@ -22,7 +22,7 @@
 			<width>91</width>
 			<height>35</height>
 			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
+			<visible>!String.IsEmpty(VideoPlayer.VideoCodec)</visible>
 		</control>
 		<control type="image">
 			<right>192</right>
@@ -30,7 +30,7 @@
 			<width>91</width>
 			<height>35</height>
 			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.VideoCodec)</visible>
+			<visible>!String.IsEmpty(VideoPlayer.VideoCodec)</visible>
 		</control>
 		<control type="image">
 			<right>288</right>
@@ -38,7 +38,7 @@
 			<width>91</width>
 			<height>35</height>
 			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.VideoResolution)</visible>
+			<visible>!String.IsEmpty(VideoPlayer.VideoResolution)</visible>
 		</control>
 		<control type="image">
 			<right>384</right>
@@ -46,7 +46,7 @@
 			<width>91</width>
 			<height>35</height>
 			<texture colordiffuse="$VAR[OSDPanelWhite70]">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
-			<visible>!IsEmpty(VideoPlayer.VideoAspect)</visible>
+			<visible>!String.IsEmpty(VideoPlayer.VideoAspect)</visible>
 		</control>
 		<control type="label" description="Show">
 			<width>1000</width>
@@ -153,10 +153,10 @@
 		<width>226</width>
 	</include>
 	<include name="DefOSDUpDown">
-		<!--<onup condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
-		<onup condition="!IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</onup>
-		<ondown condition="IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</ondown>
-		<ondown condition="!IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</ondown>-->
+		<!--<onup condition="String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
+		<onup condition="!String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</onup>
+		<ondown condition="String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</ondown>
+		<ondown condition="!String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</ondown>-->
 		<onup condition="Window.IsVisible(MusicOSD.xml)">3</onup>
 		<ondown condition="Window.IsVisible(MusicOSD.xml)">3</ondown>
 	</include>

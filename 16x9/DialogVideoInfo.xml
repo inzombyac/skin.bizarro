@@ -7,9 +7,9 @@
 	<onload>Control.Move(5000,1)</onload>
 	<onload>Control.Move(50,$INFO[Container(50).CurrentItem,-])</onload>
 	<onload>Control.Move(50,1)</onload>
-	<onload condition="!IsEmpty(Container(50).ListItemNoWrap(0).Label)">SetProperty(Actor1,$INFO[Container(50).ListItemNoWrap(0).Label])</onload>
-	<onload condition="!IsEmpty(Container(50).ListItemNoWrap(1).Label)">SetProperty(Actor2,$INFO[Container(50).ListItemNoWrap(1).Label])</onload>
-	<onload condition="!IsEmpty(Container(50).ListItemNoWrap(2).Label)">SetProperty(Actor3,$INFO[Container(50).ListItemNoWrap(2).Label])</onload>
+	<onload condition="!String.IsEmpty(Container(50).ListItemNoWrap(0).Label)">SetProperty(Actor1,$INFO[Container(50).ListItemNoWrap(0).Label])</onload>
+	<onload condition="!String.IsEmpty(Container(50).ListItemNoWrap(1).Label)">SetProperty(Actor2,$INFO[Container(50).ListItemNoWrap(1).Label])</onload>
+	<onload condition="!String.IsEmpty(Container(50).ListItemNoWrap(2).Label)">SetProperty(Actor3,$INFO[Container(50).ListItemNoWrap(2).Label])</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
 	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
@@ -105,10 +105,10 @@
 				<include>DialogVideoInfoAnimation</include>
 				<animation condition="Control.HasFocus(50) | Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<visible>IsEmpty(ListItem.Director)</visible>
+				<visible>String.IsEmpty(ListItem.Director)</visible>
 			</control>
 			<control type="group" id="3444">
-				<visible>!IsEmpty(ListItem.Plot) | !IsEmpty(ListItem.PlotOutline)</visible>
+				<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)</visible>
 				<visible>!Control.HasFocus(50) + !Control.HasFocus(5000)</visible>
 				<left>566</left>
 				<top>12</top>
@@ -198,7 +198,7 @@
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
 					<font>Small</font>
-					<visible>!IsEmpty(ListItem.Trailer)</visible>
+					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 					<texturefocus>dialogvideo/trailer.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
 					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
@@ -213,7 +213,7 @@
 					<onclick>back</onclick>
 					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
 					<font>Small</font>
-					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<visible>String.IsEmpty(ListItem.Trailer)</visible>
 					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
 					<visible>true</visible>
 					<texturefocus>dialogvideo/trailer.png</texturefocus>
@@ -260,9 +260,9 @@
 					<alttexturefocus >dialogvideo/info.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
-					<onclick condition="IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
-					<onclick condition="Container.Content(tvshows) + IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
-					<onclick condition="!IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
+					<onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
+					<onclick condition="Container.Content(tvshows) + String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
+					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 				</control>
 				<!-- Kodi Rating -->
 				<control type="button" id="7">
@@ -311,7 +311,7 @@
 					<height>116</height>
 					<textcolor>White</textcolor>
 					<textoffsetx>0</textoffsetx>
-					<visible>!IsEmpty(ListItem.Trailer)</visible>
+					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 					<label>Watch Trailer</label>
 					<font>EPGTimeline</font>
 					<animation condition="Control.HasFocus(1003)" effect="fade" end="100" start="0" time="10">Conditional</animation>
@@ -324,7 +324,7 @@
 					<height>116</height>
 					<textcolor>White</textcolor>
 					<textoffsetx>0</textoffsetx>
-					<visible>IsEmpty(ListItem.Trailer)</visible>
+					<visible>String.IsEmpty(ListItem.Trailer)</visible>
 					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
 					<visible>true</visible>
 					<font>EPGTimeline</font>
@@ -472,7 +472,7 @@
 				<font>MediumSmall</font>
 				<textcolor>Dark1</textcolor>
 				<label>Cast and Role</label>
-				<visible>IsEmpty(Window(home).Property(Similar)) + !IsEmpty(Container(50).ListItem.Label) + !Control.HasFocus(50)</visible>
+				<visible>String.IsEmpty(Window(home).Property(Similar)) + !String.IsEmpty(Container(50).ListItem.Label) + !Control.HasFocus(50)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 			</control>
@@ -485,7 +485,7 @@
 				<font>Large</font>
 				<textcolor>Black700</textcolor>
 				<label></label>
-				<visible>IsEmpty(Window(home).Property(Similar)) + IsEmpty(Container(50).ListItem.Label)</visible>
+				<visible>String.IsEmpty(Window(home).Property(Similar)) + String.IsEmpty(Container(50).ListItem.Label)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation condition="Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -508,7 +508,7 @@
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
-				<visible>IsEmpty(Window(home).Property(Similar))</visible>
+				<visible>String.IsEmpty(Window(home).Property(Similar))</visible>
 				<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 					<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide"/>
 					<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide"/>
@@ -713,11 +713,11 @@
 				</animation>
 				<left>1060</left>
 				<top>0</top>
-				<visible>IsEmpty(Window(home).Property(Similar)) + !Control.HasFocus(50) + !IsEmpty(Container(50).ListItem.Label)</visible>
+				<visible>String.IsEmpty(Window(home).Property(Similar)) + !Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Label)</visible>
 				<animation center="480,1022" condition="!Control.HasFocus(50)" easing="inout" effect="zoom" end="81" start="100" time="300" tween="sine">Conditional</animation>
 				<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 				<control type="group">
-					<visible>!IsEmpty(Container(50).ListItemNoWrap(1).Label)</visible>
+					<visible>!String.IsEmpty(Container(50).ListItemNoWrap(1).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -764,7 +764,7 @@
 				</control>
 				<control type="group">
 					<left>352</left>
-					<visible>!IsEmpty(Container(50).ListItemNoWrap(2).Label)</visible>
+					<visible>!String.IsEmpty(Container(50).ListItemNoWrap(2).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -811,7 +811,7 @@
 				</control>
 				<control type="group">
 					<left>705</left>
-					<visible>!IsEmpty(Container(50).ListItemNoWrap(3).Label)</visible>
+					<visible>!String.IsEmpty(Container(50).ListItemNoWrap(3).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -858,7 +858,7 @@
 				</control>
 				<control type="group">
 					<left>1058</left>
-					<visible>!IsEmpty(Container(50).ListItemNoWrap(4).Label)</visible>
+					<visible>!String.IsEmpty(Container(50).ListItemNoWrap(4).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -905,7 +905,7 @@
 				</control>
 				<control type="group">
 					<left>1411</left>
-					<visible>!IsEmpty(Container(50).ListItemNoWrap(5).Label)</visible>
+					<visible>!String.IsEmpty(Container(50).ListItemNoWrap(5).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -971,7 +971,7 @@
 				<font>Large</font>
 				<textcolor>Black700</textcolor>
 				<label></label>
-				<visible>!IsEmpty(Window(home).Property(Similar)) + IsEmpty(Container(5000).ListItem.Label)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(Similar)) + String.IsEmpty(Container(5000).ListItem.Label)</visible>
 				<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 				<animation condition="Control.HasFocus(5000)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(5000)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -994,7 +994,7 @@
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
-				<visible>!IsEmpty(Window(home).Property(Similar))</visible>
+				<visible>!String.IsEmpty(Window(home).Property(Similar))</visible>
 				<animation condition="Window.IsVisible(1103)" reversible="false" type="Conditional">
 					<effect easing="out" end="-20,0" start="0,0" time="60" tween="sine" type="slide"/>
 					<effect delay="80" easing="out" end="20,0" start="0,0" time="120" tween="sine" type="slide"/>
@@ -1029,7 +1029,7 @@
 							<textcolor>Black700</textcolor>
 							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
-							<visible>IsEmpty(ListItem.Art(poster))</visible>
+							<visible>String.IsEmpty(ListItem.Art(poster))</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -1114,7 +1114,7 @@
 							<textcolor>Black700</textcolor>
 							<!-- <shadowcolor>80000000</shadowcolor> -->
 							<label>$INFO[ListItem.Label]</label>
-							<visible>IsEmpty(ListItem.Art(poster))</visible>
+							<visible>String.IsEmpty(ListItem.Art(poster))</visible>
 						</control>
 						<control type="image">
 							<top>48</top>
@@ -1148,11 +1148,11 @@
 				</animation>
 				<left>1060</left>
 				<top>0</top>
-				<visible>!IsEmpty(Window(home).Property(Similar)) + !Control.HasFocus(5000) + !IsEmpty(Container(5000).ListItem.Label)</visible>
+				<visible>!String.IsEmpty(Window(home).Property(Similar)) + !Control.HasFocus(5000) + !String.IsEmpty(Container(5000).ListItem.Label)</visible>
 				<animation center="480,1022" condition="!Control.HasFocus(5000)" easing="inout" effect="zoom" end="81" start="100" time="300" tween="sine">Conditional</animation>
 				<animation center="150,288" condition="true" effect="zoom" end="85" start="85">Conditional</animation>
 				<control type="group">
-					<visible>!IsEmpty(Container(5000).ListItemNoWrap(1).Label)</visible>
+					<visible>!String.IsEmpty(Container(5000).ListItemNoWrap(1).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -1175,12 +1175,12 @@
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
 						<label>$INFO[Container(5000).ListItemNoWrap(1).Label]</label>
-						<visible>IsEmpty(Container(5000).ListItemNoWrap(1).Art(poster))</visible>
+						<visible>String.IsEmpty(Container(5000).ListItemNoWrap(1).Art(poster))</visible>
 					</control>
 				</control>
 				<control type="group">
 					<left>352</left>
-					<visible>!IsEmpty(Container(5000).ListItemNoWrap(2).Label)</visible>
+					<visible>!String.IsEmpty(Container(5000).ListItemNoWrap(2).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -1203,12 +1203,12 @@
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
 						<label>$INFO[Container(5000).ListItemNoWrap(2).Label]</label>
-						<visible>IsEmpty(Container(5000).ListItemNoWrap(2).Art(poster))</visible>
+						<visible>String.IsEmpty(Container(5000).ListItemNoWrap(2).Art(poster))</visible>
 					</control>
 				</control>
 				<control type="group">
 					<left>705</left>
-					<visible>!IsEmpty(Container(5000).ListItemNoWrap(3).Label)</visible>
+					<visible>!String.IsEmpty(Container(5000).ListItemNoWrap(3).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -1231,12 +1231,12 @@
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
 						<label>$INFO[Container(5000).ListItemNoWrap(3).Label]</label>
-						<visible>IsEmpty(Container(5000).ListItemNoWrap(3).Art(poster))</visible>
+						<visible>String.IsEmpty(Container(5000).ListItemNoWrap(3).Art(poster))</visible>
 					</control>
 				</control>
 				<control type="group">
 					<left>1058</left>
-					<visible>!IsEmpty(Container(5000).ListItemNoWrap(4).Label)</visible>
+					<visible>!String.IsEmpty(Container(5000).ListItemNoWrap(4).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -1259,12 +1259,12 @@
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
 						<label>$INFO[Container(5000).ListItemNoWrap(4).Label]</label>
-						<visible>IsEmpty(Container(5000).ListItemNoWrap(4).Art(poster))</visible>
+						<visible>String.IsEmpty(Container(5000).ListItemNoWrap(4).Art(poster))</visible>
 					</control>
 				</control>
 				<control type="group">
 					<left>1411</left>
-					<visible>!IsEmpty(Container(5000).ListItemNoWrap(5).Label)</visible>
+					<visible>!String.IsEmpty(Container(5000).ListItemNoWrap(5).Label)</visible>
 					<control type="image">
 						<top>48</top>
 						<width>320</width>
@@ -1287,7 +1287,7 @@
 						<font>MediumBold</font>
 						<textcolor>Black700</textcolor>
 						<label>$INFO[Container(5000).ListItemNoWrap(5).Label]</label>
-						<visible>IsEmpty(Container(5000).ListItemNoWrap(5).Art(poster))</visible>
+						<visible>String.IsEmpty(Container(5000).ListItemNoWrap(5).Art(poster))</visible>
 					</control>
 				</control>
 			</control>

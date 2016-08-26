@@ -522,7 +522,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<left>1200</left>
 			<top>PosterPad</top>
-			<visible>!IsEmpty(ListItem.Icon)</visible>
+			<visible>!String.IsEmpty(ListItem.Icon)</visible>
 			<control type="image">
 				<top>PosterH</top>
 				<width>PosterW</width>

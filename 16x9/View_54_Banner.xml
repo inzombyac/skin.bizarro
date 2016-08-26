@@ -722,7 +722,7 @@
 								<selectedcolor>Light1</selectedcolor>
 							</control>
 							<control type="group">
-								<visible>!IsEmpty(ListItem.UserRating) | !IsEmpty(ListItem.Rating)</visible>
+								<visible>!String.IsEmpty(ListItem.UserRating) | !String.IsEmpty(ListItem.Rating)</visible>
 								<right>24</right>
 								<top>24</top>
 								<width>300</width>

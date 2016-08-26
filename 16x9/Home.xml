@@ -4,7 +4,7 @@
 	<defaultcontrol always="true">9945</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
-	<onload condition="IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
+	<onload condition="String.IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
 	<onload condition="System.HasAddon(script.grab.fanart)">RunScript(script.grab.fanart,mode=random,refresh=10)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">SetProperty(SkinHelper.WidgetContainer,300)</onload>
@@ -12,7 +12,7 @@
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
 		<control type="button" id="9945">
-           <onfocus condition="IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
+           <onfocus condition="String.IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
         </control>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>

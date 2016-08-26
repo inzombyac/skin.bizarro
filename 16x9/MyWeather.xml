@@ -26,7 +26,7 @@
                         <texture border="5" colordiffuse="Panel">common/box.png</texture>
                     </control>
                     <control type="image" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <aspectratio>scale</aspectratio>
@@ -34,7 +34,7 @@
 						<texture background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</texture>
                     </control>
 					<control type="multiimage" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <fadetime>600</fadetime>
@@ -51,7 +51,7 @@
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Current.FanartCode),,.png]</texture>
-                        <visible>!IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>!String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="image">
                         <centertop>35%</centertop>
@@ -60,7 +60,7 @@
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
-                        <visible>IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -99,7 +99,7 @@
                         <texture border="5" colordiffuse="Panel">common/box.png</texture>
                     </control>
                     <control type="image" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <aspectratio>scale</aspectratio>
@@ -107,7 +107,7 @@
 						<texture background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Day0.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</texture>
                     </control>
 					<control type="multiimage" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <fadetime>600</fadetime>
@@ -124,7 +124,7 @@
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day0.FanartCode),,.png]</texture>
-                        <visible>!IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>!String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="image">
                         <centertop>35%</centertop>
@@ -133,7 +133,7 @@
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Window(weather).Property(Day0.OutlookIcon)]</texture>
-                        <visible>IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -172,7 +172,7 @@
                         <texture border="5" colordiffuse="Panel">common/box.png</texture>
                     </control>
                     <control type="image" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <aspectratio>scale</aspectratio>
@@ -180,7 +180,7 @@
 						<texture background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Day1.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</texture>
                     </control>
 					<control type="multiimage" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <fadetime>600</fadetime>
@@ -197,7 +197,7 @@
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day1.FanartCode),,.png]</texture>
-                        <visible>!IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>!String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="image">
                         <centertop>35%</centertop>
@@ -206,7 +206,7 @@
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Window(weather).Property(Day1.OutlookIcon)]</texture>
-                        <visible>IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -245,7 +245,7 @@
                         <texture border="5" colordiffuse="Panel">common/box.png</texture>
                     </control>
 					<control type="image" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <aspectratio>scale</aspectratio>
@@ -253,7 +253,7 @@
 						<texture background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Day2.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</texture>
                     </control>
                     <control type="multiimage" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <fadetime>600</fadetime>
@@ -270,7 +270,7 @@
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day2.FanartCode),,.png]</texture>
-                        <visible>!IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>!String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="image">
                         <centertop>35%</centertop>
@@ -279,7 +279,7 @@
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Window(weather).Property(Day2.OutlookIcon)]</texture>
-                        <visible>IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -318,7 +318,7 @@
                         <texture border="5" colordiffuse="Panel">common/box.png</texture>
                     </control>
                     <control type="image" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <aspectratio>scale</aspectratio>
@@ -326,7 +326,7 @@
 						<texture background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Day3.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</texture>
                     </control>
 					<control type="multiimage" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <fadetime>600</fadetime>
@@ -343,7 +343,7 @@
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day3.FanartCode),,.png]</texture>
-                        <visible>!IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>!String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="image">
                         <centertop>35%</centertop>
@@ -352,7 +352,7 @@
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Window(weather).Property(Day3.OutlookIcon)]</texture>
-                        <visible>IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -391,7 +391,7 @@
                         <texture border="5" colordiffuse="Panel">common/box.png</texture>
                     </control>
                     <control type="image" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <aspectratio>scale</aspectratio>
@@ -399,7 +399,7 @@
 						<texture background="true">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Day4.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</texture>
                     </control>
 					<control type="multiimage" description="Fanart">
-                        <visible>!IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
+                        <visible>!String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)</visible>
                         <width>100%</width>
                         <height>100%</height>
                         <fadetime>600</fadetime>
@@ -416,7 +416,7 @@
                         <height>285</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day4.FanartCode),,.png]</texture>
-                        <visible>!IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>!String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="image">
                         <centertop>35%</centertop>
@@ -425,7 +425,7 @@
                         <height>240</height>
                         <aspectratio align="center" aligny="center">keep</aspectratio>
                         <texture background="true">$INFO[Window(weather).Property(Day4.OutlookIcon)]</texture>
-                        <visible>IsEmpty(Skin.String(weathericons.path))</visible>
+                        <visible>String.IsEmpty(Skin.String(weathericons.path))</visible>
                     </control>
                     <control type="label">
                         <top>20</top>

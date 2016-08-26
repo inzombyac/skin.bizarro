@@ -127,7 +127,7 @@
 					<height>125</height>
 					<fadetime>100</fadetime>
 					<label>$INFO[ListItem.Label]</label>
-					<visible>IsEmpty(ListItem.Art(clearlogo))+IsEmpty(ListItem.Art(banner))</visible>
+					<visible>String.IsEmpty(ListItem.Art(clearlogo))+String.IsEmpty(ListItem.Art(banner))</visible>
 					<visible>!Container.Content(episodes)</visible>
 				</control>
 			</control>
