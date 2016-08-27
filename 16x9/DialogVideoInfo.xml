@@ -1418,7 +1418,7 @@
 				<width>36</width>
 				<height>20</height>
 				<texture>views/arrow_down.png</texture>
-				<visible>Control.IsVisible(4000) +!StringCompare(Container(4001).CurrentPage,Container(4001).NumPages)</visible>
+				<visible>Control.IsVisible(4000) +!Integer.IsEqual(Container(4001).CurrentPage,Container(4001).NumPages)</visible>
 				<animation delay="80" effect="fade" end="100" start="0" time="120">Visible</animation>
 				<animation delay="80" effect="fade" end="0" start="100" time="120">Hidden</animation>
 			</control>

@@ -1,27 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-	<variable name="DefSettingsOnRight">
-		<value condition="Window.IsVisible(AppearanceSettings)">ReplaceWindow(VideosSettings)</value>
-		<value condition="Window.IsVisible(VideosSettings)">ReplaceWindow(MusicSettings)</value>
-		<value condition="Window.IsVisible(MusicSettings)">ReplaceWindow(PicturesSettings)</value>
-		<value condition="Window.IsVisible(PicturesSettings)">ReplaceWindow(WeatherSettings)</value>
-		<value condition="Window.IsVisible(WeatherSettings)">ReplaceWindow(NetworkSettings)</value>
-		<value condition="Window.IsVisible(NetworkSettings)">ReplaceWindow(SystemSettings)</value>
-		<value condition="Window.IsVisible(SystemSettings)">ReplaceWindow(PvrSettings)</value>
-		<value condition="Window.IsVisible(PvrSettings)">ReplaceWindow(SkinSettings)</value>
-		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(AppearanceSettings)</value>
-	</variable>
-	<variable name="DefSettingsOnLeft">
-		<value condition="Window.IsVisible(AppearanceSettings)">ReplaceWindow(SkinSettings)</value>
-		<value condition="Window.IsVisible(VideosSettings)">ReplaceWindow(AppearanceSettings)</value>
-		<value condition="Window.IsVisible(MusicSettings)">ReplaceWindow(VideosSettings)</value>
-		<value condition="Window.IsVisible(PicturesSettings)">ReplaceWindow(MusicSettings)</value>
-		<value condition="Window.IsVisible(WeatherSettings)">ReplaceWindow(PicturesSettings)</value>
-		<value condition="Window.IsVisible(NetworkSettings)">ReplaceWindow(WeatherSettings)</value>
-		<value condition="Window.IsVisible(SystemSettings)">ReplaceWindow(NetworkSettings)</value>
-		<value condition="Window.IsVisible(PvrSettings)">ReplaceWindow(SystemSettings)</value>
-		<value condition="Window.IsVisible(SkinSettings)">ReplaceWindow(PvrSettings)</value>
-	</variable>
 	<variable name="EmbyHomeItemPath">
 		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.FileNameAndPath]</value>
 		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.FileNameAndPath]</value>
@@ -62,8 +40,8 @@
 		<value>221</value>
 	</variable>
 	<variable name="EmbyWidgetFocusBoxWidth">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">190</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">300</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">190</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">300</value>
 		<value>300</value>
 	</variable>
 	<variable name="EmbyWidgetItemHeight">
@@ -76,83 +54,37 @@
 		<value>180</value>
 	</variable>
 	<variable name="EmbyWidgetWidth">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">200</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">310</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">200</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">310</value>
 		<value>310</value>
 	</variable>
 	<variable name="EmbyWidgetItemWidth">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">180</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">290</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">180</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">290</value>
 		<value>290</value>
 	</variable>
 	<variable name="EmbyHomeContent">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">pictures</value>	
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/emby_channels.xml)">videos</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">embytv</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">embymovies</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">emby</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">tvshows</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">movies</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">livetv</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),script.hdhomerun.view)">livetv</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">music</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">homevideos</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">weather</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">programs</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">settings</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),photos)">pictures</value>	
+		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/emby_channels.xml)">videos</value>
+		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">embytv</value>
+		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Property(type),movies)">embymovies</value>
+		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/Emby)">emby</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">tvshows</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">movies</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">livetv</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),script.hdhomerun.view)">livetv</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">music</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),homevideos)">homevideos</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">weather</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),programs)">programs</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">settings</value>	
 		<value>videos</value>
 	</variable>
 	<variable name="EmbyHomeRightWidgetContent">
 		<value>EmbyWidget1Content</value>
 	</variable>
-	<variable name="EmbyBottomTileAction1">
-		<!-- Home videos -->
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">$INFO[Container(300).ListItem.Property(Path)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(Videos,TVShowTitles,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,MovieTitles,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv) + System.HasAddon(script.hdhomerun.view)">RunAddon(script.hdhomerun.view)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvchannels)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://artists/,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),photos) ">ActivateWindow(pictures,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">ActivateWindow(Programs,Addons,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather)</value>
-		<value>ActivateWindow(Videos,return)</value>
-	</variable>
-	<variable name="EmbyBottomTileAction2">
-		<value condition="StringCompare(Container(300).ListItem.Property(type),channels)">RunScript(script.extendedinfo)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),favourites)">ActivateWindow(Favourites)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies) + Integer.IsGreater(Container(9003).NumItems,0)">ActivateWindow(Videos,videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,videodb://movies/genres/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">ActivateWindow(1102)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">RunAddon(script.tv.show.next.aired)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(Videos,videodb://movies/sets/,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvguide)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)">ActivateWindow(Pictures,Addons,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)">ActivateWindow(Videos,$VAR[EmbyNodeRecommended],return)</value>		
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">RunAddon(plugin.video.emby)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">System.LogOff</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weathersettings)</value>
-		<value>RunScript(script.extendedinfo)</value>
-	</variable>
-	<variable name="EmbyBottomTileAction3">
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby) + StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(1102)</value>
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">ActivateWindow(1101)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),tvshows)">ActivateWindow(1102)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),movies)">ActivateWindow(1101)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),livetv)">ActivateWindow(tvrecordings)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(music,genres,return)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(shutdownmenu)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),homevideos)"> </value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),photos)"> </value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),programs)">ActivateWindow(AddonBrowser)</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(type),videos)">ActivateWindow(10025,library://video/emby_channels.xml,return)</value>
-		<value>ActivateWindow(10025,library://video/emby_channels.xml,return)</value>
-	</variable>
 	<variable name="EmbyCollectionSource">
-		<value condition="Substring(Container(300).ListItem.Property(Path),library://video/Emby)">videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds</value>
+		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/Emby)">videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds</value>
 		<value>videodb://movies/sets/</value>
 	</variable>
 	<include name="DefSideBrowserButton">
@@ -164,218 +96,6 @@
 		<focusedcolor>Light1</focusedcolor>
 		<alttexturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/box.png</alttexturefocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]" border="16">common/box.png</texturefocus>
-	</include>
-	<include name="DefNextAiredWidget">
-		<content>
-			<item id="1">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.1.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.1.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.1.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.1.AirTime)]$INFO[Window.Property(NextAired.1.Network), - ,]$INFO[Window.Property(NextAired.1.Status), - ,]$INFO[Window.Property(NextAired.1.Classification),[CR],]$INFO[Window.Property(NextAired.1.Genre), - ,]$INFO[Window.Property(NextAired.1.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.1.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.1.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.1.NextNumber)]$INFO[Window.Property(NextAired.1.NextTitle), ,]$INFO[Window.Property(NextAired.1.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.1.Label))</visible>
-			</item>
-			<item id="2">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.2.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.2.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.2.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.2.AirTime),, - ]$INFO[Window.Property(NextAired.2.Network)]$INFO[Window.Property(NextAired.2.Status), - ,]$INFO[Window.Property(NextAired.2.Classification),[CR],]$INFO[Window.Property(NextAired.2.Genre), - ,]$INFO[Window.Property(NextAired.2.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.2.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.2.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.2.NextNumber)]$INFO[Window.Property(NextAired.2.NextTitle), ,]$INFO[Window.Property(NextAired.2.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.2.Label))</visible>
-			</item>
-			<item id="3">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.3.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.3.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.3.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.3.AirTime),, - ]$INFO[Window.Property(NextAired.3.Network)]$INFO[Window.Property(NextAired.3.Status), - ,]$INFO[Window.Property(NextAired.3.Classification),[CR],]$INFO[Window.Property(NextAired.3.Genre), - ,]$INFO[Window.Property(NextAired.3.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.3.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.3.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.3.NextNumber)]$INFO[Window.Property(NextAired.3.NextTitle), ,]$INFO[Window.Property(NextAired.3.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.3.Label))</visible>
-			</item>
-			<item id="4">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.4.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.4.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.4.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.4.AirTime),, - ]$INFO[Window.Property(NextAired.4.Network)]$INFO[Window.Property(NextAired.4.Status), - ,]$INFO[Window.Property(NextAired.4.Classification),[CR],]$INFO[Window.Property(NextAired.4.Genre), - ,]$INFO[Window.Property(NextAired.4.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.4.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.4.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.4.NextNumber)]$INFO[Window.Property(NextAired.4.NextTitle), ,]$INFO[Window.Property(NextAired.4.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.4.Label))</visible>
-			</item>
-			<item id="5">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.5.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.5.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.5.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.5.AirTime),, - ]$INFO[Window.Property(NextAired.5.Network)]$INFO[Window.Property(NextAired.5.Status), - ,]$INFO[Window.Property(NextAired.5.Classification),[CR],]$INFO[Window.Property(NextAired.5.Genre), - ,]$INFO[Window.Property(NextAired.5.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.5.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.5.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.5.NextNumber)]$INFO[Window.Property(NextAired.5.NextTitle), ,]$INFO[Window.Property(NextAired.5.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.5.Label))</visible>
-			</item>
-			<item id="6">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.6.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.6.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.6.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.6.AirTime),, - ]$INFO[Window.Property(NextAired.6.Network)]$INFO[Window.Property(NextAired.6.Status), - ,]$INFO[Window.Property(NextAired.6.Classification),[CR],]$INFO[Window.Property(NextAired.6.Genre), - ,]$INFO[Window.Property(NextAired.6.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.6.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.6.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.6.NextNumber)]$INFO[Window.Property(NextAired.6.NextTitle), ,]$INFO[Window.Property(NextAired.6.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.6.Label))</visible>
-			</item>
-			<item id="7">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.7.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.7.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.7.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.7.AirTime),, - ]$INFO[Window.Property(NextAired.7.Network)]$INFO[Window.Property(NextAired.7.Status), - ,]$INFO[Window.Property(NextAired.7.Classification),[CR],]$INFO[Window.Property(NextAired.7.Genre), - ,]$INFO[Window.Property(NextAired.7.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.7.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.7.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.7.NextNumber)]$INFO[Window.Property(NextAired.7.NextTitle), ,]$INFO[Window.Property(NextAired.7.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.7.Label))</visible>
-			</item>
-			<item id="8">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.8.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.8.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.8.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.8.AirTime),, - ]$INFO[Window.Property(NextAired.8.Network)]$INFO[Window.Property(NextAired.8.Status), - ,]$INFO[Window.Property(NextAired.8.Classification),[CR],]$INFO[Window.Property(NextAired.8.Genre), - ,]$INFO[Window.Property(NextAired.8.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.8.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.8.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.8.NextNumber)]$INFO[Window.Property(NextAired.8.NextTitle), ,]$INFO[Window.Property(NextAired.8.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.8.Label))</visible>
-			</item>
-			<item id="9">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.9.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.9.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.9.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.9.AirTime),, - ]$INFO[Window.Property(NextAired.9.Network)]$INFO[Window.Property(NextAired.9.Status), - ,]$INFO[Window.Property(NextAired.9.Classification),[CR],]$INFO[Window.Property(NextAired.9.Genre), - ,]$INFO[Window.Property(NextAired.9.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.9.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.9.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.9.NextNumber)]$INFO[Window.Property(NextAired.9.NextTitle), ,]$INFO[Window.Property(NextAired.9.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.9.Label))</visible>
-			</item>
-			<item id="10">
-				<onclick>ActivateWindow(Videos,$INFO[Window.Property(NextAired.10.Library)],return)</onclick>
-				<property name="Fanart">$INFO[Window.Property(NextAired.10.Art(fanart))]</property>
-				<icon>$INFO[Window.Property(NextAired.10.Art(poster))]</icon>
-				<property name="Plot">$INFO[Window.Property(NextAired.10.AirTime),, - ]$INFO[Window.Property(NextAired.10.Network)]$INFO[Window.Property(NextAired.10.Status), - ,]$INFO[Window.Property(NextAired.10.Classification),[CR],]$INFO[Window.Property(NextAired.10.Genre), - ,]$INFO[Window.Property(NextAired.10.Runtime),[CR], $LOCALIZE[12391]]</property>
-				<property name="Logo">$INFO[Window.Property(NextAired.10.Art(clearlogo))]</property>
-				<label>$INFO[Window.Property(NextAired.10.Label)]</label>
-				<label2>$INFO[Window.Property(NextAired.10.NextNumber)]$INFO[Window.Property(NextAired.10.NextTitle), ,]$INFO[Window.Property(NextAired.10.NextDate), • ,]</label2>
-				<visible>!String.IsEmpty(Window.Property(NextAired.10.Label))</visible>
-			</item>
-		</content>
-	</include>
-	<include name="DefFavouritesWidget">
-		<item id="11" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.1.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.1.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.1.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.1.path)]</onclick>
-		</item>
-		<item id="12" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.2.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.2.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.2.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.2.path)]</onclick>
-		</item>
-		<item id="13" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.3.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.3.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.3.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.3.path)]</onclick>
-		</item>
-		<item id="14" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.4.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.4.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.4.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.4.path)]</onclick>
-		</item>
-		<item id="15" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.5.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.5.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.5.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.5.path)]</onclick>
-		</item>
-		<item id="16" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.6.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.6.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.6.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.6.path)]</onclick>
-		</item>
-		<item id="17" description="AutoFavourite">
-			<visible>StringCompare(Container(300).ListItem.Property(widget),Favourites) + !String.IsEmpty(Window(Home).Property(favourite.7.path))</visible>
-			<label>$INFO[Window(Home).Property(favourite.7.name)]</label>
-			<icon>$INFO[Window(Home).Property(favourite.7.thumb)]</icon>
-			<property name="ItemType">$LOCALIZE[1036]</property>
-			<onclick>$INFO[Window(Home).Property(favourite.7.path)]</onclick>
-		</item>
-	</include>
-	<include name="DefWeatherMaps">
-		<content>
-		<item>
-			<label>$INFO[Window(weather).Property(Map.1.Heading)]</label>
-			<label2>$INFO[Window(weather).Property(Map.1.Legend)]</label2>
-			<icon>$INFO[Window(weather).Property(Map.1.Area)]</icon>
-			<property name="Layer">$INFO[Window(weather).Property(Map.1.Layer)]</property>
-			<onclick>ShowPicture(Window(weather).Property(Map.1.Area))</onclick>
-			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.1.Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
-		</item>
-		<item>
-			<label>$INFO[Window(weather).Property(Map.2.Heading)]</label>
-			<label2>$INFO[Window(weather).Property(Map.2.Legend)]</label2>
-			<icon>$INFO[Window(weather).Property(Map.2.Area)]</icon>
-			<property name="Layer">$INFO[Window(weather).Property(Map.2.Layer)]</property>
-			<onclick>ShowPicture(Window(weather).Property(Map.2.Area))</onclick>
-			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.2.Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
-		</item>
-		<item>
-			<label>$INFO[Window(weather).Property(Map.3.Heading)]</label>
-			<label2>$INFO[Window(weather).Property(Map.3.Legend)]</label2>
-			<icon>$INFO[Window(weather).Property(Map.3.Area)]</icon>
-			<property name="Layer">$INFO[Window(weather).Property(Map.3.Layer)]</property>
-			<onclick>ShowPicture(Window(weather).Property(Map.3.Area))</onclick>
-			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.3.Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
-		</item>
-		<item>
-			<label>$INFO[Window(weather).Property(Map.4.Heading)]</label>
-			<label2>$INFO[Window(weather).Property(Map.4.Legend)]</label2>
-			<icon>$INFO[Window(weather).Property(Map.4.Area)]</icon>
-			<property name="Layer">$INFO[Window(weather).Property(Map.4.Layer)]</property>
-			<onclick>ShowPicture(Window(weather).Property(Map.4.Area))</onclick>
-			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.4.Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
-		</item>
-		<item>
-			<label>$INFO[Window(weather).Property(Map.5.Heading)]</label>
-			<label2>$INFO[Window(weather).Property(Map.5.Legend)]</label2>
-			<icon>$INFO[Window(weather).Property(Map.5.Area)]</icon>
-			<property name="Layer">$INFO[Window(weather).Property(Map.5.Layer)]</property>
-			<onclick>ShowPicture(Window(weather).Property(Map.5.Area))</onclick>
-			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.5.Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
-		</item>
-		</content>
-	</include>
-	<include name="DefWidgetSelector">
-		<align>center</align>
-		<aligny>center</aligny>
-		<width>293</width>
-		<onclick>SetFocus(301)</onclick>
-		<top>0</top>
-		<height>64</height>
-		<centerleft>50%</centerleft>
-		<textcolor>Dark3</textcolor>
-		<focusedcolor>Dark1</focusedcolor>
-		<font>WidgetSelector</font>
-		<texturefocus>noop</texturefocus>
 	</include>
 	<include name="DefDialogButtons">
 		<width>300</width>
@@ -751,16 +471,6 @@
 			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
 			<colordiffuse>White100</colordiffuse>
 		</control>
-		<!-- <control type="image">
-			<description>LOGO</description>
-			<left>0</left>
-			<top>25</top>
-			<width>400</width>
-			<height>70</height>
-			<aspectratio>keep</aspectratio>
-			<texture>logo.png</texture>
-			<colordiffuse>$VAR[ColourHighlight2]</colordiffuse>
-		</control> -->
 		<control type="group">
 			<control type="image">
 				<left>10</left>
@@ -1144,7 +854,7 @@
 			<label>136</label>
 			<onclick>SetFocus(50)</onclick>
 			<visible>Window.IsVisible(MyMusicSongs.xml)</visible>
-			<visible>!stringcompare(Container.FolderPath,special://musicplaylists/)</visible>
+			<visible>!String.IsEqual(Container.FolderPath,special://musicplaylists/)</visible>
 		</control>
 		<control type="button" id="9098">
 			<description>Now Playing</description>
@@ -1228,25 +938,25 @@
 		<value>special://skin/extras/playlists/RandomMovies.xsp</value>
 	</variable>
 	<variable name="DefDirectorWindowContent">
-		<value condition="stringcompare(Window(1103).Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[Window(home).Property(ExtStudio)]</value>
-		<value condition="stringcompare(Window(1103).Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Window(home).Property(ExtDBID)]</value>
+		<value condition="String.IsEqual(Window(1103).Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[Window(home).Property(ExtStudio)]</value>
+		<value condition="String.IsEqual(Window(1103).Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Window(home).Property(ExtDBID)]</value>
 		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[Window(home).Property(ExtDirector)]</value>
 	</variable>
 	<variable name="DefDirectorInfoWindowContent">
-		<value condition="stringcompare(Window.Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</value>
-		<value condition="stringcompare(Window.Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="String.IsEqual(Window.Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</value>
+		<value condition="String.IsEqual(Window.Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
 		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[ListItem.Director]</value>
 	</variable>
 	<variable name="DefMovieDBMoviesContent">
-		<value condition="stringcompare(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
-		<value condition="stringcompare(Window(1104).Property(content),2)">plugin://script.extendedinfo?info=popularmovies</value>
-		<value condition="stringcompare(Window(1104).Property(content),3)">plugin://script.extendedinfo?info=comingsoonmovies</value>
+		<value condition="String.IsEqual(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
+		<value condition="String.IsEqual(Window(1104).Property(content),2)">plugin://script.extendedinfo?info=popularmovies</value>
+		<value condition="String.IsEqual(Window(1104).Property(content),3)">plugin://script.extendedinfo?info=comingsoonmovies</value>
 		<value>plugin://script.extendedinfo?info=incinemamovies</value>
 	</variable>
 	<variable name="DefMovieDBEpisodesContent">
-		<value condition="stringcompare(Window(1105).Property(content),1)">plugin://script.extendedinfo?info=topratedtvshows</value>
-		<value condition="stringcompare(Window(1105).Property(content),2)">plugin://script.extendedinfo?info=populartvshows</value>
-		<value condition="stringcompare(Window(1105).Property(content),3)">plugin://script.extendedinfo?info=onairtvshows</value>
+		<value condition="String.IsEqual(Window(1105).Property(content),1)">plugin://script.extendedinfo?info=topratedtvshows</value>
+		<value condition="String.IsEqual(Window(1105).Property(content),2)">plugin://script.extendedinfo?info=populartvshows</value>
+		<value condition="String.IsEqual(Window(1105).Property(content),3)">plugin://script.extendedinfo?info=onairtvshows</value>
 		<value>plugin://script.extendedinfo?info=airingtodaytvshows</value>
 	</variable>
 	<include name="DefInfoButtons">
@@ -1406,12 +1116,12 @@
 	<variable name="DefWidgetRight2Content">
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2))">$INFO[Container(300).ListItem.Property(widgetPath.right2)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(300).ListItem.Property(widgetPath.right2.unwatched)]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended)) + !StringCompare(Container(300).ListItem.Property(type),photos) + !StringCompare(Container(300).ListItem.Property(type),homevideos)">$INFO[Container(300).ListItem.Property(widgetPath.right2.recommended)]</value>
+		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos)">$INFO[Container(300).ListItem.Property(widgetPath.right2.recommended)]</value>
 	</variable>
 	<variable name="DefWidgetRight2Selection">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2))">$INFO[Container(211).ListItem.Property(widgetPath.right2)]</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(211).ListItem.Property(widgetPath.right2.unwatched)]</value>
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.recommended)) + !StringCompare(Container(211).ListItem.Property(type),photos) + !StringCompare(Container(211).ListItem.Property(type),homevideos)">$INFO[Container(211).ListItem.Property(widgetPath.right2.recommended)]</value>
+		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(211).ListItem.Property(type),photos) + !String.IsEqual(Container(211).ListItem.Property(type),homevideos)">$INFO[Container(211).ListItem.Property(widgetPath.right2.recommended)]</value>
 	</variable>
 	<variable name="DefWidgetRight3Content">
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right3))">$INFO[Container(300).ListItem.Property(widgetPath.right3)]</value>
@@ -1427,132 +1137,132 @@
 		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Property(type)]&amp;folderid=random&amp;limit=25</value>
 	</variable>
 	<variable name="EmbyNodeNumber">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">0</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">1</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">2</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">3</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">4</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">5</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">6</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">7</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">8</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">9</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">10</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">11</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">12</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">13</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">0</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">1</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">2</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">3</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">4</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">5</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">6</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">7</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">8</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">9</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">10</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">11</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">12</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">13</value>	
 	</variable>
 	<variable name="EmbyNode">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.content)]</value>	
 	</variable>
 	<variable name="EmbyNodeRecommended">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recommended.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recommended.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recommended.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recommended.content)]</value>	
 	</variable>
 	<variable name="EmbyNodeRecent">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recent.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recent.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recent.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recent.content)]</value>	
 	</variable>
 	<variable name="EmbyNodeRecentEpisodes">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recentepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recentepisodes.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.recentepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.recentepisodes.content)]</value>	
 	</variable>
 	<variable name="EmbyNodeInProgress">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.inprogress.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.inprogress.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.inprogress.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.inprogress.content)]</value>	
 	</variable>
 	<variable name="EmbyNodeUnwatched">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.unwatched.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.unwatched.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.unwatched.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.unwatched.content)]</value>	
 	</variable>
 	<variable name="EmbyNodeNextEpisodes">
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.nextepisodes.content)]</value>
-		<value condition="StringCompare(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.nextepisodes.content)]</value>	
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-10-title)">$INFO[Window(Home).Property(emby.nodes.10.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-11-title)">$INFO[Window(Home).Property(emby.nodes.11.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-12-title)">$INFO[Window(Home).Property(emby.nodes.12.nextepisodes.content)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-13-title)">$INFO[Window(Home).Property(emby.nodes.13.nextepisodes.content)]</value>	
 	</variable>
 	<include name="OldEmbyMovies">		videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22year%22%2C%22direction%22%3A%22ascending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%220%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D
 	</include>

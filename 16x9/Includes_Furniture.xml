@@ -202,7 +202,7 @@
 			<width>120</width>
 			<height>120</height>
 			
-			<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
+			<visible>!String.StartsWith(ListItem.Path,videodb://movies/sets)</visible>
 		</control>
 		<control type="grouplist">
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
@@ -219,33 +219,6 @@
 			<align>left</align>
 			<itemgap>10</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
-			<!-- <control type="group">
-				<centertop>50%</centertop>
-				<width>73</width>
-				<height>50</height>
-				<control type="image" description="button back">
-					<width>73</width>
-					<height>50</height>
-					<texture colordiffuse="Dark1">common/cadre.png</texture>
-				</control>
-				<control type="label">
-					<width>73</width>
-					<height>46</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>[B]$VAR[HDSD][/B]</label>
-					<font>Medium</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
-					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
-				</control>
-				<control type="image">
-					<width>73</width>
-					<height>50</height>
-					<centertop>50%</centertop>
-					<texture colordiffuse="Dark1">flags/sets.png</texture>
-					<visible>substring(ListItem.Path,videodb://movies/sets,left)</visible>
-				</control>
-			</control> -->
 			<control type="image">
 				<posx>50</posx>
 				<width>64</width>
@@ -302,7 +275,7 @@
 				<centertop>50%</centertop>
 				<width>120</width>
 				<height>64</height>
-				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesMeter)) + !Substring(Window(Home).Property(SkinHelper.RottenTomatoesMeter),N/A)</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesMeter)) + !String.Contains(Window(Home).Property(SkinHelper.RottenTomatoesMeter),N/A)</visible>
 				<control type="image">
 					<height>50</height>
 					<centertop>50%</centertop>
@@ -403,7 +376,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
-				<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
+				<visible>!String.StartsWith(ListItem.Path,videodb://movies/sets)</visible>
 			</control>
 			<control type="image">
 				<width>108</width>
@@ -474,7 +447,7 @@
 				<centertop>50%</centertop>
 				<height>50</height>
 				<texture colordiffuse="Dark1">flags/bluray.png</texture>
-				<visible>[substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip) | substring(ListItem.FilenameAndPath,bd25) | substring(ListItem.FilenameAndPath,bd50)]</visible>
+				<visible>[String.Contains(ListItem.FilenameAndPath,bluray) | String.Contains(ListItem.FilenameAndPath,bdrip) | String.Contains(ListItem.FilenameAndPath,bd25) | String.Contains(ListItem.FilenameAndPath,bd50)]</visible>
 			</control>
 			<control type="group">
 				<centertop>70%</centertop>
@@ -553,40 +526,6 @@
 			<align>left</align>
 			<itemgap>24</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
-			<!-- <control type="group">
-				<centertop>50%</centertop>
-				<width>73</width>
-				<height>50</height>
-				<control type="image" description="button back">
-					<width>73</width>
-					<height>50</height>
-					<texture colordiffuse="Dark1">common/cadre.png</texture>
-				</control>
-				<control type="label">
-					<width>73</width>
-					<height>46</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$VAR[HDSD]</label>
-					<font>Medium</font>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
-					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
-				</control>
-				<control type="image">
-					<width>130</width>
-					<height>50</height>
-					<centertop>50%</centertop>
-					<texture colordiffuse="Dark1">$VAR[HDSDImage]</texture>
-					<visible>!substring(ListItem.Path,videodb://movies/sets,left)</visible>
-				</control>
-				<control type="image">
-					<width>73</width>
-					<height>50</height>
-					<centertop>50%</centertop>
-					<texture colordiffuse="Dark1">flags/sets.png</texture>
-					<visible>substring(ListItem.Path,videodb://movies/sets,left)</visible>
-				</control>
-			</control> -->
 			<control type="image">
 				<width>48</width>
 				<height>64</height>
@@ -642,7 +581,7 @@
 				<height>50</height>
 				<texture colordiffuse="Black700">flags/audio/dts.png]</texture>
 				<aspectratio align="left">scale</aspectratio>
-				<visible>!String.IsEmpty(ListItem.AudioCodec) + SubString(ListItem.AudioCodec,dts) + !SubString(ListItem.AudioCodec,dtshd_hra) + !SubString(ListItem.AudioCodec,dtshd_ma) + !SubString(ListItem.AudioCodec,dtshdma)</visible>
+				<visible>!String.IsEmpty(ListItem.AudioCodec) + String.Contains(ListItem.AudioCodec,dts) + !String.Contains(ListItem.AudioCodec,dtshd_hra) + !String.Contains(ListItem.AudioCodec,dtshd_ma) + !String.Contains(ListItem.AudioCodec,dtshdma)</visible>
 			</control>
 			<control type="image">
 				<width>130</width>
@@ -689,7 +628,7 @@
 				<centertop>50%</centertop>
 				<height>50</height>
 				<texture colordiffuse="Dark1">flags/bluray.png</texture>
-				<visible>[substring(ListItem.FilenameAndPath,bluray) | substring(ListItem.FilenameAndPath,bdrip) | substring(ListItem.FilenameAndPath,bd25) | substring(ListItem.FilenameAndPath,bd50)]</visible>
+				<visible>[String.Contains(ListItem.FilenameAndPath,bluray) | String.Contains(ListItem.FilenameAndPath,bdrip) | String.Contains(ListItem.FilenameAndPath,bd25) | String.Contains(ListItem.FilenameAndPath,bd50)]</visible>
 			</control>
 			<control type="image">
 				<width>73</width>
@@ -746,7 +685,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>SubString(Container.FolderPath,plugin://plugin.program.advanced.launcher,left)</visible>
+			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher)</visible>
 			<left>SidePad</left>
 			<centerbottom>30</centerbottom>
 			<width>1920</width>
@@ -851,7 +790,7 @@
 		<value condition="Container.Content(files)">special://skin/extras/icons/files.png</value>
 		<value condition="Container.Content(plugins)">special://skin/extras/icons/video-addons.png</value>
 		<value condition="Container.Content(addons)">special://skin/extras/icons/addons.png</value>
-		<value condition="SubString(Container.FolderPath,videodb://musicvideos/,Left)">special://skin/extras/icons/musicvideo.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,videodb://musicvideos/)">special://skin/extras/icons/musicvideo.png</value>
 		<value condition="Window.IsVisible(ColorPicker.xml)">special://skin/extras/icons/wand.png</value>
 		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/icons/livetv.png</value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml) | Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">special://skin/extras/icons/songs.png</value>
@@ -879,9 +818,9 @@
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + SubString(Container.FolderPath,videodb://movies/,Left)">$INFO[Container.FolderName]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + SubString(Container.FolderPath,videodb://tvshows/,Left) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + SubString(Container.FolderPath,videodb://tvshows/,Left)">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/)">$INFO[Container.FolderName]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml)">$LOCALIZE[3]</value>
 		<value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[19019]</value>
@@ -961,7 +900,7 @@
 					<height>108</height>
 					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !Substring(Control.GetLabel(8308),empty.png)</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !String.Contains(Control.GetLabel(8308),empty.png)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
@@ -969,7 +908,7 @@
 					<height>80</height>
 					<texture border="0" diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),empty.png) + String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
@@ -977,7 +916,7 @@
 					<height>80</height>
 					<texture border="0" diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),empty.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					<visible>!Control.HasFocus(3634)</visible>
 				</control>
@@ -993,7 +932,7 @@
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + Substring(Control.GetLabel(8308),empty.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),empty.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 				</control>
 				<control type="image">
 					<top>-14</top>
