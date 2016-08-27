@@ -166,7 +166,7 @@
                             <effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto" />
                             <effect type="fade" start="100" end="0" time="150" tween="sine" easing="out" />
                         </animation>
-                        <visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+                        <visible>!String.Contains(ListItem.Path,script.extendedinfo)</visible>
                     </control>
                     <control type="image">
                         <left>3</left>

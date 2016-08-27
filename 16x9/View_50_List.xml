@@ -308,7 +308,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<control type="group">
 				<control type="list" id="550">
-					<visible>![Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !substring(Container.FolderPath,plugin://,left) + !stringcompare(Container.FolderPath,library://video/movies/) + !stringcompare(Container.FolderPath,library://video/tvshows/) + !stringcompare(Container.FolderPath,special://videoplaylists/)] | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)]]</visible>
+					<visible>![Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !String.StartsWith(Container.FolderPath,plugin://) + !stringcompare(Container.FolderPath,library://video/movies/) + !stringcompare(Container.FolderPath,library://video/tvshows/) + !stringcompare(Container.FolderPath,special://videoplaylists/)] | [Container.Content(episodes) + !String.StartsWith(Container.FolderPath,plugin://)]]</visible>
 					<top>PosterPad</top>
 					<height>PosterH</height>
 					<left>ListSquareX</left>
@@ -474,7 +474,7 @@
 			<label>$INFO[ListItem.Rating]</label>
 			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
-			<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
+			<visible>!String.StartsWith(Container.FolderPath,plugin://) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 		</control>
 		<control type="label">
 			<right>30</right>
@@ -486,7 +486,7 @@
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
 			<label>$INFO[ListItem.Year]</label>
-			<visible>SubString(Container.FolderPath,plugin://plugin.program.advanced.launcher,left)</visible>
+			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher)</visible>
 		</control>
 	</include>
 	<include name="50itemlayout">
@@ -641,7 +641,7 @@
 			<label>$INFO[ListItem.Rating]</label>
 			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
-			<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
+			<visible>!String.StartsWith(Container.FolderPath,plugin://) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
@@ -656,7 +656,7 @@
 			<label>$INFO[ListItem.Rating]</label>
 			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
-			<visible>!SubString(Container.FolderPath,plugin://,left) + !Container.Content(plugins) + !Container.Content(addons)</visible>
+			<visible>!String.StartsWith(Container.FolderPath,plugin://) + !Container.Content(plugins) + !Container.Content(addons)</visible>
 			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
@@ -669,7 +669,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.Year]</label>
-			<visible>SubString(Container.FolderPath,plugin://plugin.program.advanced.launcher,left)</visible>
+			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher)</visible>
 		</control>
 	</include>
 	<include name="50itemlayout_square">

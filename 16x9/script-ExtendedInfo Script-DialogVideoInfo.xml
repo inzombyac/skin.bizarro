@@ -232,7 +232,7 @@
                                 <radioheight>44</radioheight>
 								<onclick>PlayMedia($INFO[Skin.String(HomeItemPath)])</onclick>
 								<onclick>Back</onclick>
-                                <visible>[SubString(Skin.String(HomeItemDBTYPE),episode)|[String.IsEmpty(Skin.String(HomeItemDBTYPE)) + !IsVisible(Control.IsVisible(120)) + !IsVisible(Control.IsVisible(8))]] + Integer.IsGreater(Skin.String(HomeItemDBID),1)</visible>
+                                <visible>[String.Contains(Skin.String(HomeItemDBTYPE),episode)|[String.IsEmpty(Skin.String(HomeItemDBTYPE)) + !IsVisible(Control.IsVisible(120)) + !IsVisible(Control.IsVisible(8))]] + Integer.IsGreater(Skin.String(HomeItemDBID),1)</visible>
                             </control>
 							<control id="1150" type="panel">
 								<visible>!Stringcompare(Window.Property(Type),tvshow)</visible>

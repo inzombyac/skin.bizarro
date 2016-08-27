@@ -3,7 +3,7 @@
 <includes>
 	<include name="53Content">
 		<height>1080</height>
-		<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | SubString(Container.FolderPath,plugin://,left) | Container.Content(plugins) | Container.Content(addons)</visible>
+		<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://) | Container.Content(plugins) | Container.Content(addons)</visible>
 		<posy>56</posy>
 		<posx>-190</posx>
 		<width>2300</width>

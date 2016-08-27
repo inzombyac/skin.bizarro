@@ -52,7 +52,7 @@
             <control type="group">
                 <posy>320</posy>
                 <control type="fixedlist" id="57">
-                    <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !substring(Container.FolderPath,plugin://,left)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs)</visible>
+                    <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !String.StartsWith(Container.FolderPath,plugin://)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs)</visible>
                     <top>PosterPad</top>
                     <height>320</height>
                     <right>SidePad</right>

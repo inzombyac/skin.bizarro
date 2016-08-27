@@ -11,7 +11,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8308),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8308),empty.png)</visible>
         </control>
         <control id="8309" type="image">
             <include>Dimensions_Fullscreen</include>
@@ -22,7 +22,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8309),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8309),empty.png)</visible>
         </control>
         <control id="8310" type="image">
             <include>Dimensions_Fullscreen</include>
@@ -33,7 +33,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8310),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8310),empty.png)</visible>
         </control>
         <control id="8311" type="image">
             <include>Dimensions_Fullscreen</include>
@@ -44,7 +44,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8311),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8311),empty.png)</visible>
         </control>
         <control id="8312" type="image">
             <include>Dimensions_Fullscreen</include>
@@ -55,7 +55,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8312),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8312),empty.png)</visible>
         </control>
         <control id="8313" type="image">
             <include>Dimensions_Fullscreen</include>
@@ -66,7 +66,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8313),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8313),empty.png)</visible>
         </control>
         <control id="8314" type="image">
             <include>Dimensions_Fullscreen</include>
@@ -77,7 +77,7 @@
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>Substring(Control.GetLabel(8314),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8314),empty.png)</visible>
         </control>
         <include>Furniture_Header</include>
         <include>Furniture_NowPlaying</include>

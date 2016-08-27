@@ -6,108 +6,6 @@
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(515)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
-			<!-- MAD - Fake Logos -->
-			<!-- <control type="image">
-				<left>85</left>
-				<top>25</top>
-				<width>387</width>
-				<height>150</height>
-				<aspectratio align="left" aligny="center">keep</aspectratio>
-				<texture background="true">$VAR[Container515Logo]</texture>
-				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-			</control>
-			<control type="textbox">
-				<left>85</left>
-				<top>25</top>
-				<width>510</width>
-				<height>150</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<shadowcolor>Black</shadowcolor>
-				<font>font_SimplerE3D_bold</font>
-				<label>[B]$VAR[LabelTitle][/B]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,a,Left) | SubString(ListItem.Title,b,Left) | SubString(ListItem.Title,c,Left) | SubString(ListItem.Title,d,Left)]</visible>
-			</control>
-			<control type="textbox">
-				<left>85</left>
-				<top>25</top>
-				<width>510</width>
-				<height>150</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<shadowcolor>Black</shadowcolor>
-				<font>font_armyofdarkness</font>
-				<label>[B]$VAR[LabelTitle][/B]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]+ [SubString(ListItem.Title,e,Left) | SubString(ListItem.Title,f,Left) | SubString(ListItem.Title,g,Left) | SubString(ListItem.Title,h,Left)]</visible>
-			</control>
-			<control type="textbox">
-				<left>85</left>
-				<top>25</top>
-				<width>510</width>
-				<height>150</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<shadowcolor>Black</shadowcolor>
-				<font>font_babylon5</font>
-				<label>[B]$VAR[LabelTitle][/B]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,i,Left) | SubString(ListItem.Title,j,Left) | SubString(ListItem.Title,k,Left) | SubString(ListItem.Title,l,Left)]</visible>
-			</control>
-			<control type="textbox">
-				<left>85</left>
-				<top>25</top>
-				<width>510</width>
-				<height>150</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<shadowcolor>Black</shadowcolor>
-				<font>font_bachelorpad</font>
-				<label>[B]$VAR[LabelTitle][/B]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,m,Left) | SubString(ListItem.Title,n,Left) | SubString(ListItem.Title,o,Left) | SubString(ListItem.Title,p,Left)]</visible>
-			</control>
-			<control type="textbox">
-				<left>85</left>
-				<top>25</top>
-				<width>510</width>
-				<height>150</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<shadowcolor>Black</shadowcolor>
-				<font>font_bullpen3d</font>
-				<label>[B]$VAR[LabelTitle][/B]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,q,Left) | SubString(ListItem.Title,r,Left) | SubString(ListItem.Title,s,Left) | SubString(ListItem.Title,t,Left)]</visible>
-			</control>
-			<control type="textbox">
-				<left>85</left>
-				<top>25</top>
-				<width>510</width>
-				<height>150</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
-				<shadowcolor>Black</shadowcolor>
-				<font>font_SimplerE3D_bold</font>
-				<label>[B]$VAR[LabelTitle][/B]</label>
-				<visible allowhiddenfocus="true">Control.HasFocus(515)</visible>
-				<visible>[Container.Content(movies) | Container.Content(sets) + String.IsEmpty(ListItem.Art(clearlogo))] | [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))]</visible>
-				<visible>[String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + [SubString(ListItem.Title,u,Left) | SubString(ListItem.Title,v,Left) | SubString(ListItem.Title,w,Left) | SubString(ListItem.Title,x,Left) | SubString(ListItem.Title,y,Left) | SubString(ListItem.Title,z,Left)]</visible>
-			</control> -->
-			<!--MAD - End of Fake Logo -->
 			<!-- New Plot Info -->
 			<control type="group">
 				<left>70</left>
@@ -117,7 +15,7 @@
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<textcolor>$VAR[ColourHighlight]</textcolor>
 				<control type="grouplist">
-					<visible>Container.Content(movies) + ![SubString(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
+					<visible>Container.Content(movies) + ![String.Contains(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR]$INFO[ListItem.Director]</label>
 						<width>980</width>
@@ -139,7 +37,7 @@
 					</control>
 				</control>
 				<control type="grouplist">
-					<visible>[SubString(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
+					<visible>[String.Contains(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
 						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
 						<width>980</width>

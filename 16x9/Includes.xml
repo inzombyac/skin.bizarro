@@ -115,7 +115,7 @@
 		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/backgrounds/Family.jpg</value>
 		<value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
 		<value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
-		<value condition="[Window.IsActive(Videos) | Window.IsActive(movieinformation)]  +  substring(ListItem.Path,plugin://plugin.video.emby) + Skin.HasSetting(EnableExtraFanart)">$INFO[ListItem.Path]extrafanart/</value>
+		<value condition="[Window.IsActive(Videos) | Window.IsActive(movieinformation)]  +  String.Contains(ListItem.Path,plugin://plugin.video.emby) + Skin.HasSetting(EnableExtraFanart)">$INFO[ListItem.Path]extrafanart/</value>
 		<value condition="[Window.IsActive(Videos) | Window.IsActive(movieinformation)] + Skin.HasSetting(EnableExtraFanart) + !String.IsEmpty(Window(Home).Property(ExtraFanArtPath))">$INFO[Window(Home).Property(ExtraFanArtPath)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(Container(9500).ListItem.Art(fanart))">$INFO[Container(9500).ListItem.Art(fanart)]</value>
@@ -230,7 +230,7 @@
                 <include>Dimensions_Fullscreen</include>
                 <colordiffuse>DialogFanartFade</colordiffuse>
                 <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-                <visible>Substring(Control.GetLabel(8328),empty.png)</visible>
+                <visible>String.Contains(Control.GetLabel(8328),empty.png)</visible>
                 <visible>Skin.HasSetting(furniture.info.fanart)</visible>
                 <visible>Control.HasFocus(4000)</visible>
             </control>
@@ -347,7 +347,7 @@
 			<height>60</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_NC-17_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,NC-17)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,NC-17)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -355,7 +355,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_PG-13_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,PG-13)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -363,7 +363,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,Unrated) | SubString(ListItem.Mpaa,Approved) | SubString(ListItem.Mpaa,Passed) | SubString(ListItem.Mpaa,USA:NR) | SubString(ListItem.Mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | SubString(ListItem.Mpaa,Not Rated)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,Unrated) | String.Contains(ListItem.Mpaa,Approved) | String.Contains(ListItem.Mpaa,Passed) | String.Contains(ListItem.Mpaa,USA:NR) | String.Contains(ListItem.Mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | String.Contains(ListItem.Mpaa,Not Rated)]</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -371,7 +371,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_PG_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,USA:PG) | SubString(ListItem.Mpaa,US:PG) | Substring(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !SubString(ListItem.Mpaa,PG-13)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,USA:PG) | String.Contains(ListItem.Mpaa,US:PG) | String.Contains(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !String.Contains(ListItem.Mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -379,7 +379,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_R_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.mpaa,US:R) | SubString(ListItem.mpaa,USA:R) | SubString(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)] </visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:R) | String.Contains(ListItem.mpaa,USA:R) | String.Contains(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)] </visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -387,7 +387,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_G_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.mpaa,US:G) | SubString(ListItem.mpaa,USA:G) | SubString(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)] </visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:G) | String.Contains(ListItem.mpaa,USA:G) | String.Contains(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)] </visible>
 		</control>
 	</include>
 	<include name="lib_Rating_MPAA_home">
@@ -397,7 +397,7 @@
 			<height>60</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_NC-17_Certificate_US.png</texture>
-			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + SubString(Container(301).ListItem.mpaa,NC-17)</visible>
+			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + String.Contains(Container(301).ListItem.mpaa,NC-17)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -405,7 +405,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_PG-13_Certificate_US.png</texture>
-			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + SubString(Container(301).ListItem.mpaa,PG-13)</visible>
+			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + String.Contains(Container(301).ListItem.mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -413,7 +413,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
-			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [SubString(Container(301).ListItem.mpaa,Unrated) | SubString(Container(301).ListItem.mpaa,Passed) | SubString(Container(301).ListItem.mpaa,Approved) | SubString(Container(301).ListItem.mpaa,USA:NR) | SubString(Container(301).ListItem.mpaa,US:NR) | String.IsEqual(Container(301).ListItem.Mpaa,NR) | SubString(Container(301).ListItem.Mpaa,Not Rated)]</visible>
+			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [String.Contains(Container(301).ListItem.mpaa,Unrated) | String.Contains(Container(301).ListItem.mpaa,Passed) | String.Contains(Container(301).ListItem.mpaa,Approved) | String.Contains(Container(301).ListItem.mpaa,USA:NR) | String.Contains(Container(301).ListItem.mpaa,US:NR) | String.IsEqual(Container(301).ListItem.Mpaa,NR) | String.Contains(Container(301).ListItem.Mpaa,Not Rated)]</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -421,7 +421,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_PG_Certificate_US.png</texture>
-			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [SubString(Container(301).ListItem.mpaa,USA:PG) | SubString(Container(301).ListItem.mpaa,US:PG) | SubString(Container(301).ListItem.mpaa,Rated PG) | String.IsEqual(Container(301).ListItem.Mpaa,PG)] + !SubString(Container(301).ListItem.mpaa,PG-13)</visible>
+			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [String.Contains(Container(301).ListItem.mpaa,USA:PG) | String.Contains(Container(301).ListItem.mpaa,US:PG) | String.Contains(Container(301).ListItem.mpaa,Rated PG) | String.IsEqual(Container(301).ListItem.Mpaa,PG)] + !String.Contains(Container(301).ListItem.mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -429,7 +429,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_R_Certificate_US.png</texture>
-			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [SubString(Container(301).ListItem.mpaa,US:R) | SubString(Container(301).ListItem.mpaa,USA:R) | SubString(Container(301).ListItem.mpaa,Rated R) | String.IsEqual(Container(301).ListItem.Mpaa,R)]</visible>
+			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [String.Contains(Container(301).ListItem.mpaa,US:R) | String.Contains(Container(301).ListItem.mpaa,USA:R) | String.Contains(Container(301).ListItem.mpaa,Rated R) | String.IsEqual(Container(301).ListItem.Mpaa,R)]</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -437,7 +437,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_G_Certificate_US.png</texture>
-			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [SubString(Container(301).ListItem.mpaa,US:G) | SubString(Container(301).ListItem.mpaa,USA:G) | SubString(Container(301).ListItem.mpaa,Rated G) | String.IsEqual(Container(301).ListItem.Mpaa,G)]</visible>
+			<visible>!String.IsEmpty(Container(301).ListItem.Mpaa) + [String.Contains(Container(301).ListItem.mpaa,US:G) | String.Contains(Container(301).ListItem.mpaa,USA:G) | String.Contains(Container(301).ListItem.mpaa,Rated G) | String.IsEqual(Container(301).ListItem.Mpaa,G)]</visible>
 		</control>
 	</include>
 	<!-- MPAA Ratings -->
@@ -448,7 +448,7 @@
 			<height>60</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_NC-17_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,NC-17)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,NC-17)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -456,7 +456,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_PG-13_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,PG-13)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -464,7 +464,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_NR_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,Unrated) | SubString(ListItem.Mpaa,Approved) | SubString(ListItem.Mpaa,Passed) | Substring(ListItem.mpaa,USA:NR) | Substring(ListItem.mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | SubString(ListItem.Mpaa,Not Rated)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,Unrated) | String.Contains(ListItem.Mpaa,Approved) | String.Contains(ListItem.Mpaa,Passed) | String.Contains(ListItem.mpaa,USA:NR) | String.Contains(ListItem.mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | String.Contains(ListItem.Mpaa,Not Rated)]</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -472,7 +472,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_PG_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [Substring(ListItem.mpaa,USA:PG) | Substring(ListItem.mpaa,US:PG) | Substring(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !Substring(ListItem.mpaa,PG-13)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,USA:PG) | String.Contains(ListItem.mpaa,US:PG) | String.Contains(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !String.Contains(ListItem.mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -480,7 +480,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_R_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.mpaa,US:R) | SubString(ListItem.mpaa,USA:R) | SubString(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:R) | String.Contains(ListItem.mpaa,USA:R) | String.Contains(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)]</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -488,7 +488,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/MPAA_G_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.mpaa,US:G) | SubString(ListItem.mpaa,USA:G) | SubString(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:G) | String.Contains(ListItem.mpaa,USA:G) | String.Contains(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)]</visible>
 		</control>
 	</include>
 	<!-- TV Ratings -->
@@ -499,14 +499,14 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/TV-14_Certificate_US.png</texture>
-			<visible>substring(ListItem.mpaa,TV-14)</visible>
+			<visible>String.Contains(ListItem.mpaa,TV-14)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
 			<width>118</width>
 			<height>62</height>
 			<texture>flags/rating/TV-G_Certificate_US.png</texture>
-			<visible>substring(ListItem.mpaa,TV-G)</visible>
+			<visible>String.Contains(ListItem.mpaa,TV-G)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -514,7 +514,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/TV-PG_Certificate_US.png</texture>
-			<visible>substring(ListItem.mpaa,TV-PG)</visible>
+			<visible>String.Contains(ListItem.mpaa,TV-PG)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -522,7 +522,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/TV-MA_Certificate_US.png</texture>
-			<visible>substring(ListItem.mpaa,TV-MA)</visible>
+			<visible>String.Contains(ListItem.mpaa,TV-MA)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -530,7 +530,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/tv-y.png</texture>
-			<visible>substring(ListItem.mpaa,TV-Y)</visible>
+			<visible>String.Contains(ListItem.mpaa,TV-Y)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -538,7 +538,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/tv-y7.png</texture>
-			<visible>substring(ListItem.mpaa,TV-Y7)</visible>
+			<visible>String.Contains(ListItem.mpaa,TV-Y7)</visible>
 		</control>
 	</include>
 	<include name="lib_Rating_TV_home">
@@ -548,7 +548,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/TV-14_Certificate_US.png</texture>
-			<visible>substring(Container(301).ListItem.mpaa,TV-14)</visible>
+			<visible>String.Contains(Container(301).ListItem.mpaa,TV-14)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -556,7 +556,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/TV-G_Certificate_US.png</texture>
-			<visible>substring(Container(301).ListItem.mpaa,TV-G)</visible>
+			<visible>String.Contains(Container(301).ListItem.mpaa,TV-G)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -564,7 +564,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/TV-MA_Certificate_US.png</texture>
-			<visible>substring(Container(301).ListItem.mpaa,TV-MA)</visible>
+			<visible>String.Contains(Container(301).ListItem.mpaa,TV-MA)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -572,7 +572,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/tv-y.png</texture>
-			<visible>substring(Container(301).ListItem.mpaa,TV-Y)</visible>
+			<visible>String.Contains(Container(301).ListItem.mpaa,TV-Y)</visible>
 		</control>
 		<control type="image">
 			<centertop>50%</centertop>
@@ -580,7 +580,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture>flags/rating/tv-y7.png</texture>
-			<visible>substring(Container(301).ListItem.mpaa,TV-Y7)</visible>
+			<visible>String.Contains(Container(301).ListItem.mpaa,TV-Y7)</visible>
 		</control>
 	</include>
 	<!-- MPAA Ratings -->
@@ -591,7 +591,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/MPAA_NC-17_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,NC-17)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,NC-17)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -599,7 +599,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/MPAA_PG-13_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.mpaa,PG-13)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -607,7 +607,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/MPAA_NR_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,Unrated) | SubString(ListItem.Mpaa,Approved) | SubString(ListItem.Mpaa,Passed) | SubString(ListItem.Mpaa,USA:NR) | SubString(ListItem.Mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | SubString(ListItem.Mpaa,Not Rated)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,Unrated) | String.Contains(ListItem.Mpaa,Approved) | String.Contains(ListItem.Mpaa,Passed) | String.Contains(ListItem.Mpaa,USA:NR) | String.Contains(ListItem.Mpaa,US:NR) | String.IsEqual(ListItem.Mpaa,NR) | String.Contains(ListItem.Mpaa,Not Rated)]</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -615,7 +615,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/MPAA_PG_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.Mpaa,USA:PG) | SubString(ListItem.Mpaa,US:PG) | Substring(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !SubString(ListItem.Mpaa,PG-13)</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.Mpaa,USA:PG) | String.Contains(ListItem.Mpaa,US:PG) | String.Contains(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)] + !String.Contains(ListItem.Mpaa,PG-13)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -623,7 +623,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/MPAA_R_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.mpaa,US:R) | SubString(ListItem.mpaa,USA:R) | SubString(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:R) | String.Contains(ListItem.mpaa,USA:R) | String.Contains(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.Mpaa,R)]</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -631,7 +631,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/MPAA_G_Certificate_US.png</texture>
-			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [SubString(ListItem.mpaa,US:G) | SubString(ListItem.mpaa,USA:G) | SubString(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)]</visible>
+			<visible>Container.Content(movies) + !String.IsEmpty(ListItem.Mpaa) + [String.Contains(ListItem.mpaa,US:G) | String.Contains(ListItem.mpaa,USA:G) | String.Contains(ListItem.mpaa,Rated G) | String.IsEqual(ListItem.Mpaa,G)]</visible>
 		</control>
 	</include>
 	<!-- TV Ratings -->
@@ -642,7 +642,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/TV-14_Certificate_US.png</texture>
-			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.Mpaa,14)</visible>
+			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.Mpaa,14)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -650,7 +650,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/TV-G_Certificate_US.png</texture>
-			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.Mpaa,g) + !SubString(ListItem.Mpaa,pg)</visible>
+			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.Mpaa,g) + !String.Contains(ListItem.Mpaa,pg)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -658,7 +658,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/TV-PG_Certificate_US.png</texture>
-			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.Mpaa,pg)</visible>
+			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.Mpaa,pg)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -666,7 +666,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/TV-MA_Certificate_US.png</texture>
-			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.Mpaa,ma)</visible>
+			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.Mpaa,ma)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -674,7 +674,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/tv-y.png</texture>
-			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.Mpaa,y) + !SubString(ListItem.Mpaa,y7)</visible>
+			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.Mpaa,y) + !String.Contains(ListItem.Mpaa,y7)</visible>
 		</control>
 		<control type="image">
 			<top>14</top>
@@ -682,7 +682,7 @@
 			<height>50</height>
 			<colordiffuse>Black100</colordiffuse>
 			<texture colordiffuse="Black700" fallback="flags/rating/MPAA_NR_Certificate_US.png">flags/rating/tv-y7.png</texture>
-			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + SubString(ListItem.Mpaa,y7)</visible>
+			<visible>[Container.Content(episode) | Container.Content(episodes) | Container.Content(tvshow) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(season)] + !String.IsEmpty(ListItem.Mpaa) + String.Contains(ListItem.Mpaa,y7)</visible>
 		</control>
 	</include>
 	<include name="LanguageFlagsExtraInfo">

@@ -269,7 +269,7 @@
 		</control>
 		<control type="list" id="9025">
 			<content>$VAR[DefWidgetMainContent]</content>
-			<visible>Substring(Container(300).ListItem.Property(Path),emby)</visible>
+			<visible>String.Contains(Container(300).ListItem.Property(Path),emby)</visible>
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<!-- Collections -->
@@ -1215,7 +1215,7 @@
 			<!-- Music -->
 			<control type="panel" id="4017">
 				<description>Widget</description>
-				<visible>Substring(Container(300).ListItem.Property(type),music)</visible>
+				<visible>String.Contains(Container(300).ListItem.Property(type),music)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
 				<width>759</width>
@@ -2324,7 +2324,7 @@
 	<include name="EmbyHomeInfoActions">
 		<!-- Actions --> 
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="SubString(Skin.String(HomeItemDBType),episode) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="String.Contains(Skin.String(HomeItemDBType),episode) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="String.IsEmpty(Skin.String(HomeItemDBType)) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>

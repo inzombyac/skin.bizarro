@@ -540,7 +540,7 @@
 							<height>116</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>Light1</colordiffuse>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
+							<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
@@ -623,7 +623,7 @@
 							<height>116</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>Light1</colordiffuse>
-							<visible>!SubString(ListItem.Icon,Default)</visible>
+							<visible>!String.Contains(ListItem.Icon,Default)</visible>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
 						</control>
@@ -738,7 +738,7 @@
 						<height>116</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -785,7 +785,7 @@
 						<height>116</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -832,7 +832,7 @@
 						<height>116</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -879,7 +879,7 @@
 						<height>116</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -926,7 +926,7 @@
 						<height>116</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!SubString(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(ListItem.Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
@@ -1085,7 +1085,7 @@
 								<effect type="zoom" start="100" end="90" time="150" tween="sine" easing="inout" center="auto"/>
 								<effect type="fade" start="100" end="0" time="150" tween="sine" easing="out"/>
 							</animation>
-							<visible>!substring(ListItem.Path,script.extendedinfo)</visible>
+							<visible>!String.Contains(ListItem.Path,script.extendedinfo)</visible>
 						</control>
 						<control type="image">
 							<left>-48</left>
@@ -1350,7 +1350,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>
 			<texture>special://skin/extras/backgrounds/Family.jpg</texture>
-			<visible>Substring(Control.GetLabel(8328),empty.png)</visible>
+			<visible>String.Contains(Control.GetLabel(8328),empty.png)</visible>
 			<visible>Skin.HasSetting(furniture.info.fanart)</visible>
 			<visible>Control.HasFocus(4000)</visible>
 		</control>
