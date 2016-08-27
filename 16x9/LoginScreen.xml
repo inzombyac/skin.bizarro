@@ -29,7 +29,7 @@
 						<width>650</width>
                         <height>120</height>
 						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
 					</control>
 					<control type="label">
                         <posx>140</posx>
@@ -39,7 +39,7 @@
                         <textcolor>Dark1</textcolor>
                         <font>SmallBold</font>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
                     </control>
                     <control type="label">
                         <posx>140</posx>
@@ -49,18 +49,18 @@
                         <textcolor>Dark2</textcolor>
                         <label>$INFO[ListItem.Label2]</label>
                         <font>Font-ListInfo</font>
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="120">
 					<control type="button">
-						<onfocus condition="!Skin.HasSetting(home.masteruser) + StringCompare(ListItem.Label,Master User)">SetFocus(52,1)</onfocus>
+						<onfocus condition="!Skin.HasSetting(home.masteruser) + String.IsEqual(ListItem.Label,Master User)">SetFocus(52,1)</onfocus>
 					</control>
                     <control type="image">
 						<width>650</width>
                         <height>120</height>
 						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
 					</control>
 					<control type="image">
 						<width>650</width>
@@ -68,7 +68,7 @@
 						<texture colordiffuse="Light1" border="5">common/box.png</texture>
 						  <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
 					</control>
 					<control type="image">                                
                         <left>8</left>
@@ -79,10 +79,10 @@
                         <texture diffuse="diffuse/dialogselect.png" fallback="DefaultAddonNone.png">$INFO[Listitem.Icon]</texture>
                         <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
                     </control>
                     <control type="group">
-						<visible>!StringCompare(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
                         <animation type="Focus" condition="Container(52).OnNext | Container(52).OnPrevious" reversible="false">
                             <effect type="fade" start="50" end="100" time="300" tween="sine" easing="inout" />
                         </animation>

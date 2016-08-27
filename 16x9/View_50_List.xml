@@ -308,7 +308,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
 			<control type="group">
 				<control type="list" id="550">
-					<visible>![Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !String.StartsWith(Container.FolderPath,plugin://) + !stringcompare(Container.FolderPath,library://video/movies/) + !stringcompare(Container.FolderPath,library://video/tvshows/) + !stringcompare(Container.FolderPath,special://videoplaylists/)] | [Container.Content(episodes) + !String.StartsWith(Container.FolderPath,plugin://)]]</visible>
+					<visible>![Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | [Container.Content(files) + !String.StartsWith(Container.FolderPath,plugin://) + !String.IsEqual(Container.FolderPath,library://video/movies/) + !String.IsEqual(Container.FolderPath,library://video/tvshows/) + !String.IsEqual(Container.FolderPath,special://videoplaylists/)] | [Container.Content(episodes) + !String.StartsWith(Container.FolderPath,plugin://)]]</visible>
 					<top>PosterPad</top>
 					<height>PosterH</height>
 					<left>ListSquareX</left>
@@ -499,7 +499,7 @@
 			<label>$VAR[LabelYear]</label>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<visible>Container.Content(movies)+!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(movies)+!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -510,7 +510,7 @@
 			<label>$VAR[LabelYear]</label>
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
-			<visible>Container.Content(movies)+stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(movies)+String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>120</posx>
@@ -522,7 +522,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
-			<visible>Container.Content(seasons)+!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(seasons)+!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 			<control type="label">
 			<posx>120</posx>
@@ -534,7 +534,7 @@
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
 			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
-			<visible>Container.Content(seasons)+stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(seasons)+String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>120</posx>
@@ -546,7 +546,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
-			<visible>!Container.Content(episodes) + !Container.Content(tvshows)+ !Container.Content(seasons)+!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!Container.Content(episodes) + !Container.Content(tvshows)+ !Container.Content(seasons)+!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>120</posx>
@@ -558,7 +558,7 @@
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
 			<animation effect="slide" start="0" end="-90" time="0" condition="!Container.Content(movies)">Conditional</animation>
-			<visible>!Container.Content(episodes) + !Container.Content(tvshows)+ !Container.Content(seasons)+stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!Container.Content(episodes) + !Container.Content(tvshows)+ !Container.Content(seasons)+String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -569,7 +569,7 @@
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
 			<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Property(UnwatchedEpisodes),(, / ]$INFO[ListItem.Property(TotalEpisodes),,)]</label>
-			<visible>Container.Content(tvshows)+stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(tvshows)+String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -580,7 +580,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.TVShowTitle] $INFO[ListItem.Property(UnwatchedEpisodes),(, / ]$INFO[ListItem.Property(TotalEpisodes),,)]</label>
-			<visible>Container.Content(tvshows)+!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(tvshows)+!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -591,7 +591,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
-			<visible>Container.Content(episodes) + !stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(episodes) + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<posx>30</posx>
@@ -602,7 +602,7 @@
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
 			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
-			<visible>Container.Content(episodes) + stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>Container.Content(episodes) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<right>154</right>
@@ -642,7 +642,7 @@
 			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
 			<visible>!String.StartsWith(Container.FolderPath,plugin://) + !Container.Content(plugins) + !Container.Content(addons)</visible>
-			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<right>30</right>
@@ -657,7 +657,7 @@
 			<visible>!ListItem.IsParentFolder</visible>
 			<visible>!Container.Content(seasons)</visible>
 			<visible>!String.StartsWith(Container.FolderPath,plugin://) + !Container.Content(plugins) + !Container.Content(addons)</visible>
-			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<right>30</right>

@@ -109,13 +109,13 @@
 		<include>EmbyFooter</include>
 		<!-- Widget Info -->
 		<control type="group">
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [Integer.IsGreater(Container(4016).NumItems,3)+Integer.IsGreater(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [Integer.IsGreater(Container(4016).NumItems,0) + !Integer.IsGreater(Container(4016).NumItems,3) + Integer.IsGreater(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[Integer.IsGreater(Container(4016).NumItems,3)+!Integer.IsGreater(Container(4017).NumItems,2)] + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4016).NumItems,3) + !Integer.IsGreater(Container(4017).NumItems,2) + Integer.IsGreater(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4016).NumItems,0) + !Integer.IsGreater(Container(4016).NumItems,3) + !Integer.IsGreater(Container(4017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + !StringCompare(Container(300).ListItem.Property(type),music) + [Control.IsVisible(4017) | Control.IsVisible(4018)]" time="200">Conditional</animation>
-			<animation effect="slide" start="0" end="-300,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017)] + StringCompare(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [Integer.IsGreater(Container(4016).NumItems,3)+Integer.IsGreater(Container(4017).NumItems,2)] + !String.IsEqual(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)] + [Integer.IsGreater(Container(4016).NumItems,0) + !Integer.IsGreater(Container(4016).NumItems,3) + Integer.IsGreater(Container(4017).NumItems,2)] + !String.IsEqual(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4017) | Control.HasFocus(4018)]+[Integer.IsGreater(Container(4016).NumItems,3)+!Integer.IsGreater(Container(4017).NumItems,2)] + !String.IsEqual(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4016).NumItems,3) + !Integer.IsGreater(Container(4017).NumItems,2) + Integer.IsGreater(Container(4017).NumItems,0) + !String.IsEqual(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-60,0" condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4016).NumItems,0) + !Integer.IsGreater(Container(4016).NumItems,3) + !Integer.IsGreater(Container(4017).NumItems,0) + !String.IsEqual(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-260,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018)] + !String.IsEqual(Container(300).ListItem.Property(type),music) + [Control.IsVisible(4017) | Control.IsVisible(4018)]" time="200">Conditional</animation>
+			<animation effect="slide" start="0" end="-300,0" condition="[Control.HasFocus(4016) | Control.HasFocus(4017)] + String.IsEqual(Container(300).ListItem.Property(type),music)" time="200">Conditional</animation>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -145,17 +145,17 @@
 			<control type="fixedlist" id="40016">
 				<content limit="25">$VAR[DefWidgetRight1Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 			<control type="fixedlist" id="40017">
 				<content limit="25">$VAR[DefWidgetRight2Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 			<control type="fixedlist" id="40018">
 				<content limit="25">$VAR[DefWidgetRight3Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 		</control>
 	</include>
@@ -251,20 +251,20 @@
 		<control type="list" id="9003">
 			<content limit="1" sortby="random">$VAR[EmbyCollectionSource]</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),movies)</visible>
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<control type="list" id="9004">
 			<content limit="25" sortby="random">special://skin/extras/playlists/RandomAlbums.xsp</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 			<autoscroll time="15000">!Control.HasFocus(9004)</autoscroll>
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<control type="list" id="9005">
 			<content limit="1" sortby="random">special://skin/extras/playlists/InProgressMovies.xsp</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>StringCompare(Container(300).ListItem.Property(type),movies)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),movies)</visible>
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<control type="list" id="9025">
@@ -275,7 +275,7 @@
 		<!-- Collections -->
 		<control type="panel" id="4012">
 			<description>Widget</description>
-			<visible>StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			<top>330</top>
 			<left>78</left>
 			<width>1764</width>
@@ -310,7 +310,7 @@
 			<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<visible>StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 		</control>
 		<!-- Main Widget -->
 		<control type="group" >
@@ -318,8 +318,8 @@
 			<left>SidePad</left>
 			<width>856</width>
 			<height>496</height>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),weather)</visible>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			<include>Animation.FocusSmall</include>
 			<control type="button" id="4012">
 				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
@@ -335,15 +335,15 @@
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
 				<include>EmbyHomeInfoActions</include>
-				<onclick condition="Integer.IsGreater(Container(4019).ListItem.DBID, -1) + !StringCompare(Container(300).ListItem.Property(type),music) + !StringCompare(Container(300).ListItem.Property(type),settings)">PlayMedia($VAR[EmbyHomeItemPath])</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
-				<onclick condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Container(4019).ListItem.DBID],return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),programs) + String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/$INFO[Container(4019).ListItem.DBID],return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),photos) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
-				<onclick condition="StringCompare(Container(300).ListItem.Property(type),channels) + !Integer.IsGreater(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
+				<onclick condition="Integer.IsGreater(Container(4019).ListItem.DBID, -1) + !String.IsEqual(Container(300).ListItem.Property(type),music) + !String.IsEqual(Container(300).ListItem.Property(type),settings)">PlayMedia($VAR[EmbyHomeItemPath])</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),programs) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
+				<onclick condition="String.IsEqual(Skin.String(HomeItemDBType),tvshow)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Container(4019).ListItem.DBID],return)</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),programs) + String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/$INFO[Container(4019).ListItem.DBID],return)</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
+				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),channels) + !Integer.IsGreater(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
 			</control>	
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
@@ -360,7 +360,7 @@
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.DelayFadeOut</include>
-				<!-- <visible>!StringCompare(Container(300).ListItem.Property(type),livetv)</visible> -->
+				<!-- <visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible> -->
 			</control>
 			<control type="progress">
 				<bottom>80</bottom>
@@ -375,14 +375,14 @@
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>Integer.IsGreater(Container(4019).ListItem.PercentPlayed,0)</visible>
 			</control>
 			<!-- Live TV -->
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/Channels.jpg</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="image">
@@ -390,7 +390,7 @@
 				<width>856</width>
 				<height>496</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>	
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>	
 				<include>Animation.FadeIn</include>				
 			</control>
 			<control type="image">
@@ -399,7 +399,7 @@
 				<width>200</width>
 				<aspectratio>keep</aspectratio>
 				<texture background="true">$INFO[Container(4019).ListItem.Icon]</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>!String.IsEmpty(Container(4019).ListItem.ChannelNumber)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -413,7 +413,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.ChannelName]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>String.IsEmpty(Container(4019).ListItem.Icon)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -427,7 +427,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.ChannelNumber]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="progress">
@@ -443,7 +443,7 @@
 				<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
 				<info>Container(4019).ListItem.Progress</info>
 				<colordiffuse>Dark1</colordiffuse>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>Integer.IsGreater(Container(4019).ListItem.Progress,0)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -457,7 +457,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.ChannelName]</label>
 				<visible>String.IsEmpty(Container(4019).ListItem.Icon)</visible>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="label">
@@ -470,7 +470,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.StartTime]$INFO[Container(4019).ListItem.EndTime, - , ]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 			<control type="textbox">
@@ -483,7 +483,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[Container(4019).ListItem.Title,[B],[/B]]$INFO[Container(4019).ListItem.EpisodeName, (,)]$INFO[Container(4019).ListItem.Plot,[CR],]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
 		</control>
@@ -500,19 +500,19 @@
 			<onfocus>300</onfocus>
 			<content limit="25" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>!StringCompare(Container(300).ListItem.Property(type),settings)+ !StringCompare(Container(300).ListItem.Property(type),weather)+ !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(type),settings)+ !String.IsEqual(Container(300).ListItem.Property(type),weather)+ !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 		</control>
 		<!-- Settings -->
 		<control type="list" id="4019">
 			<include>Animation.FocusSmall</include>
-			<visible>StringCompare(Container(300).ListItem.Property(type),settings) | StringCompare(Container(300).ListItem.Property(type),weather) | StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),settings) | String.IsEqual(Container(300).ListItem.Property(type),weather) | String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			<!--systeminfo widgets -->
 			<include>SysInfoWidgetMain</include>
 		</control>
 		<!-- Weather -->
 		<control type="panel" id="4012">
 			<include>Animation.FocusSmall</include>
-			<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
@@ -549,7 +549,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
-				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating] | StringCompare(Container(300).ListItem.Property(type),weather) | StringCompare(Container(300).ListItem.Property(type),settings)</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating] | String.IsEqual(Container(300).ListItem.Property(type),weather) | String.IsEqual(Container(300).ListItem.Property(type),settings)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -562,7 +562,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4016) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>Control.IsVisible(4016) + !String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4016)">Conditional</animation>
             </control>
 			<control type="scrollbar" id="40160">
@@ -574,7 +574,7 @@
                 <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
                 <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-				<visible>Control.IsVisible(4016) + StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>Control.IsVisible(4016) + String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4016)">Conditional</animation>
             </control>
 			<!-- Use Right 2 widget when widget 1 is empty --> 
@@ -588,13 +588,13 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating + Integer.IsGreater(Container(40017).NumItems,0) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),settings) + !StringCompare(Container(300).ListItem.Property(type),collection) + !StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating + Integer.IsGreater(Container(40017).NumItems,0) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),settings) + !String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control> -->
 			<!-- Videos -->
 			<control type="panel" id="4016">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -618,7 +618,7 @@
 				<include>Animation.DelayFadeIn</include>
 			</control>
 			<control type="panel" id="4016">
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),weather) + !StringCompare(Container(300).ListItem.Property(defaultID),settings) + !StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[single_widget_width]</width>
@@ -643,7 +643,7 @@
 			</control>
 			<!-- Music -->
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -674,7 +674,7 @@
 			<!-- Weather -->
 			<control type="panel" id="4016">
 				<description>Widget</description>
-				<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -698,7 +698,7 @@
 			</control>
 			<!-- Settings -->
 			<control type="panel" id="4016">
-				<visible>StringCompare(Container(300).ListItem.Property(type),settings)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),settings)</visible>
 				<top>330</top>
 				<left>944</left>
 				<width>$PARAM[double_widget_width]</width>
@@ -750,7 +750,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
@@ -769,7 +769,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<visible>Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
@@ -788,7 +788,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<visible>Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
@@ -807,7 +807,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<visible>Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
@@ -826,7 +826,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<visible>Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
 				<visible>Integer.IsGreater(Container(40016).NumItems,3)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
@@ -845,7 +845,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
 				<visible>!Integer.IsGreater(Container(40016).NumItems,0)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
@@ -866,7 +866,7 @@
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 				<visible>Control.IsVisible(4017) + Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,6)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
             </control>
 			<!-- Right 1: Double, Right 2: Double -->
 			 <control type="scrollbar" id="40170">
@@ -880,7 +880,7 @@
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 				<visible>Control.IsVisible(4017) + Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40017).NumItems,6)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
             </control>
 			<!-- Right 1: Single, Right 2: Triple -->
 			 <control type="scrollbar" id="40170">
@@ -894,7 +894,7 @@
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 				<visible>Control.IsVisible(4017) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40016).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
             </control>
 			<!-- Right 1: None, Right 2: Triple -->
 			 <control type="scrollbar" id="40170">
@@ -908,7 +908,7 @@
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 				<visible>Control.IsVisible(4017) + !Integer.IsGreater(Container(40016).NumItems,0)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
             </control>
 			<!-- Music -->
 			 <control type="scrollbar" id="40170">
@@ -922,7 +922,7 @@
                 <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 				<visible>Control.IsVisible(4017)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
-				<visible>StringCompare(Container(300).ListItem.Property(type),music)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
             </control>
 			<!-- Widgets -->
 			<!-- Right 1: Double, Right 2: Triple -->
@@ -951,7 +951,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -984,7 +984,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1017,7 +1017,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1049,7 +1049,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1081,7 +1081,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1113,7 +1113,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1145,7 +1145,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,4)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1176,7 +1176,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1207,7 +1207,7 @@
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
 				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(defaultID),music) + !StringCompare(Container(300).ListItem.Property(defaultID),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
@@ -1609,8 +1609,8 @@
 			<!-- Right 1: Double / Right 2: Double / Right 3: Single-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_3]</left>
@@ -1641,8 +1641,8 @@
 			<!-- Right 1: Double / Right 2: Single / Right 3: Single-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_8]</left>
@@ -1673,8 +1673,8 @@
 			<!-- Right 1: Single / Right 2: Triple / Right 3: Single-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_1]</left>
@@ -1704,8 +1704,8 @@
 			<!-- Right 1: Single / Right 2: Double / Right 3: Double/Single-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_2]</left>
@@ -1735,8 +1735,8 @@
 			<!-- Right 1: Single / Right 2: Single / Right 3: Triple-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_7]</left>
@@ -1763,8 +1763,8 @@
 			<!-- Right 1: None / Right 2: Single / Right 3: Double-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_5]</left>
@@ -1791,8 +1791,8 @@
 			<!-- Right 1: None / Right 2: Double / Right 3: Double-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_4]</left>
@@ -1819,8 +1819,8 @@
 			<!-- Right 1: None / Right 2: Triple / Right 3: Single-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_0]</left>
@@ -1847,8 +1847,8 @@
 			<!-- Right 1: Double / Right 2: None / Right 3: Double-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_10]</left>
@@ -1875,8 +1875,8 @@
 			<!-- Right 1: Single / Right 2: None / Right 3: Triple-->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_9]</left>
@@ -1903,8 +1903,8 @@
 			<!-- Right 1: None / Right 2: None / Right 3: Quad -->
 			<control type="panel" id="4018">
 				<description>Widget</description>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),music)</visible>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>Integer.IsGreater(Container(40018).NumItems,0)</visible>
 				<top>330</top>
 				<left>$PARAM[widget_left_11]</left>
@@ -1967,7 +1967,7 @@
 				<width>100%</width>
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1979,7 +1979,7 @@
 				<width>100%</width>
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),livetv)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>!String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widget))</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1997,7 +1997,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidgetContentLabel]</label>
-				<visible>!StringCompare(Container(300).ListItem.Property(type),livetv) + !StringCompare(Container(300).ListItem.Property(type),weather) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -2023,7 +2023,7 @@
 				<width>100%</width>
 				<height>100%</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-				<visible>Control.HasFocus(4012) + !StringCompare(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>Control.HasFocus(4012) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 		</control>
 	</include>
@@ -2075,7 +2075,7 @@
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
+				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -2135,7 +2135,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<visible>StringCompare(Container(300).ListItem.Property(type),weather)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
 				<include>Animation.Focus</include>
 			</control>
 			<control type="image">
@@ -2163,7 +2163,7 @@
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
+				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 				<include>Animation.Focus</include>
 			</control>
 			<control type="label">
@@ -2197,7 +2197,7 @@
 				<width>$PARAM[item_width]</width>
 				<height>$PARAM[item_height]</height>
 				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
-				<visible>!StringCompare(ListItem.Label, Get more...)</visible>
+				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 				<include>Animation.Focus</include>
 			</control>
 		</focusedlayout>
@@ -2323,10 +2323,10 @@
 	</variable>
 	<include name="EmbyHomeInfoActions">
 		<!-- Actions --> 
-		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
+		<oninfo condition="String.IsEqual(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="String.Contains(Skin.String(HomeItemDBType),episode) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
 		<oninfo condition="String.IsEmpty(Skin.String(HomeItemDBType)) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="StringCompare(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
+		<oninfo condition="String.IsEqual(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">
@@ -2346,7 +2346,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar1].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),movies) | StringCompare(Container(300).ListItem.Property(type),tvshows) | StringCompare(Container(300).ListItem.Property(type),music) | StringCompare(Container(300).ListItem.Property(type),videos) | StringCompare(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2354,7 +2354,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar2].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),movies) | StringCompare(Container(300).ListItem.Property(type),tvshows) | StringCompare(Container(300).ListItem.Property(type),music) | StringCompare(Container(300).ListItem.Property(type),videos) | StringCompare(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2362,7 +2362,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar3].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),movies) | StringCompare(Container(300).ListItem.Property(type),tvshows) | StringCompare(Container(300).ListItem.Property(type),music) | StringCompare(Container(300).ListItem.Property(type),videos) | StringCompare(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2370,7 +2370,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar4].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),movies) | StringCompare(Container(300).ListItem.Property(type),tvshows) | StringCompare(Container(300).ListItem.Property(type),music) | StringCompare(Container(300).ListItem.Property(type),videos) | StringCompare(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2378,7 +2378,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar5].png</texture>
-				<visible>StringCompare(Container(300).ListItem.Property(type),movies) | StringCompare(Container(300).ListItem.Property(type),tvshows) | StringCompare(Container(300).ListItem.Property(type),music) | StringCompare(Container(300).ListItem.Property(type),videos) | StringCompare(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
 			</control>
 			<control type="group">
 				<centertop>50%</centertop>

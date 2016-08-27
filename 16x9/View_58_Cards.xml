@@ -179,7 +179,7 @@
 							<textcolor>Dark1</textcolor>
 							<selectedcolor>Dark1</selectedcolor>
 							<label>$VAR[LabelTitle]</label>
-							<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="label">
 							<left>20</left>
@@ -190,7 +190,7 @@
 							<textcolor>Dark2</textcolor>
 							<selectedcolor>Dark2</selectedcolor>
 							<label>$VAR[LabelTitle]</label>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="textbox">
 							<left>540</left>
@@ -203,7 +203,7 @@
 							<selectedcolor>Dark1</selectedcolor>
 							<label>$VAR[LabelPlotBoxLong]</label>
 							<autoscroll></autoscroll>
-							<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="textbox">
 							<left>540</left>
@@ -216,7 +216,7 @@
 							<selectedcolor>Dark3</selectedcolor>
 							<label>$VAR[LabelPlotBoxLong]</label>
 							<autoscroll></autoscroll>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="label">
 							<left>400</left>
@@ -229,7 +229,7 @@
 							<textcolor>Dark3</textcolor>
 							<selectedcolor>Dark3</selectedcolor>
 							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-							<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 						<control type="label">
 							<left>400</left>
@@ -242,7 +242,7 @@
 							<textcolor>Dark1</textcolor>
 							<selectedcolor>Dark1</selectedcolor>
 							<label fallback="19055">$VAR[LabelYear,, • ]$VAR[LabelDuration,, • ]$INFO[ListItem.Rating]</label>
-							<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+							<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 						</control>
 					</itemlayout>
 					<focusedlayout width="890" height="380" condition="!Container.Content(episodes)">

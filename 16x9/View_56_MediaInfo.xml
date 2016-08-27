@@ -383,7 +383,7 @@
 			<label>$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -395,7 +395,7 @@
 			<label>$INFO[ListItem.Label]</label>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 			<visible>!Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -407,7 +407,7 @@
 			<label>$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
-			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -419,7 +419,7 @@
 			<label>$INFO[ListItem.Label]</label>
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
-			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 			<visible>!Container.Content(episodes)</visible>
 		</control>
 		<!-- <control type="image">
@@ -477,7 +477,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.Label2]</label>
-			<visible>!stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>!String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
 			<right>70</right>
@@ -489,7 +489,7 @@
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
 			<label>$INFO[ListItem.Label2]</label>
-			<visible>stringcompare(ListItem.Overlay,OverlayWatched.png)</visible>
+			<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control> -->
 	</include>
 	<include name="56FanartView">

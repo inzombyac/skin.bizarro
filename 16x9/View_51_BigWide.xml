@@ -344,7 +344,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedN3Backing]</texture>
-						<visible>!stringcompare(ListItem(-3).Label,..)</visible>
+						<visible>!ListItem(-3).IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -353,7 +353,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedN3]</texture>
-						<visible>!stringcompare(ListItem(-3).Label,..)</visible>
+						<visible>!ListItem(-3).IsParentFolder</visible>
 						<visible>!Integer.IsGreater(ListItem(-3).Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="progress">
@@ -432,7 +432,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedN2Backing]</texture>
-						<visible>!stringcompare(ListItem(-2).Label,..)</visible>
+						<visible>!ListItem(-2).IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -441,7 +441,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedN2]</texture>
-						<visible>!stringcompare(ListItem(-2).Label,..)</visible>
+						<visible>!ListItem(-2).IsParentFolder</visible>
 					</control>
 					<control type="progress">
 						<bottom>303</bottom>
@@ -519,7 +519,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedN1Backing]</texture>
-						<visible>!stringcompare(ListItem(-1).Label,..)</visible>
+						<visible>!ListItem(-1).IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -528,7 +528,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedN1]</texture>
-						<visible>!stringcompare(ListItem(-1).Label,..)</visible>
+						<visible>!ListItem(-1).IsParentFolder</visible>
 					</control>
 					<control type="progress">
 						<bottom>303</bottom>
@@ -606,7 +606,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedP3Backing]</texture>
-						<visible>!stringcompare(ListItem(3).Label,..)</visible>
+						<visible>!ListItem(3).IsParentFolder</visible>
 					</control>					
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -615,7 +615,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedP3]</texture>
-						<visible>!stringcompare(ListItem(3).Label,..)</visible>
+						<visible>!ListItem(3).IsParentFolder</visible>
 					</control>
 					<control type="progress">
 						<bottom>303</bottom>
@@ -693,7 +693,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedP2Backing]</texture>
-						<visible>!stringcompare(ListItem(2).Label,..)</visible>
+						<visible>!ListItem(3).IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -702,7 +702,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedP2]</texture>
-						<visible>!stringcompare(ListItem(2).Label,..)</visible>
+						<visible>!ListItem(2).IsParentFolder</visible>
 					</control>
 					<control type="progress">
 						<bottom>303</bottom>
@@ -780,7 +780,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture colordiffuse="$VAR[ColourHighlight]">$VAR[PercentWatchedP1Backing]</texture>
-						<visible>!stringcompare(ListItem(1).Label,..)</visible>
+						<visible>!ListItem(1).IsParentFolder</visible>
 					</control>
 					<control type="image">
 						<centerleft>50%</centerleft>
@@ -789,7 +789,7 @@
 						<height>40</height>
 						<aspectratio aligny="top">keep</aspectratio>
 						<texture background="true">$VAR[PercentWatchedP1]</texture>
-						<visible>!stringcompare(ListItem(1).Label,..)</visible>
+						<visible>!ListItem(1).IsParentFolder</visible>
 					</control>
 					<control type="progress">
 						<bottom>303</bottom>

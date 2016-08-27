@@ -166,7 +166,7 @@
 				<font>Medium</font>
 				<onclick>Back</onclick>
 			</control>
-			<visible>stringcompare(Container.NumItems,0)</visible>
+			<visible>Integer.IsEqual(Container.NumItems,0)</visible>
 		</control>
 	</controls>
 </window>
