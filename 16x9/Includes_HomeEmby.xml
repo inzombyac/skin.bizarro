@@ -287,7 +287,7 @@
 			<scrolltime tween="quadratic">0</scrolltime>
 			<pagecontrol>40120</pagecontrol>
 			<preloaditems>14</preloaditems>
-			<include name="EmbyWidget1Content">
+			<include content="EmbyWidget1Content">
 				<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 				<param name="widget_width">252</param>
 				<param name="item_width">234</param>
@@ -609,7 +609,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
@@ -633,7 +633,7 @@
 				<preloaditems>3</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
@@ -658,7 +658,7 @@
 				<preloaditems>9</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="widget_width">305</param>
 					<param name="item_width">285</param>
 					<param name="widget_height">335</param>
@@ -687,7 +687,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					<param name="aspect">keep</param>
 				</include>
@@ -713,7 +713,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<include>SysInfoWidget</include>
@@ -942,7 +942,7 @@
 				<preloaditems>4</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -975,7 +975,7 @@
 				<preloaditems>4</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1008,7 +1008,7 @@
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1040,7 +1040,7 @@
 				<preloaditems>4</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1072,7 +1072,7 @@
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1104,7 +1104,7 @@
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1136,7 +1136,7 @@
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1167,7 +1167,7 @@
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1198,7 +1198,7 @@
 				<preloaditems>2</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					<param name="widget_width">252</param>
 					<param name="item_width">234</param>
@@ -1229,7 +1229,7 @@
 				<preloaditems>9</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="widget_width">305</param>
 					<param name="item_width">285</param>
 					<param name="widget_height">335</param>
@@ -1627,7 +1627,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1659,7 +1659,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1691,7 +1691,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1722,7 +1722,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1753,7 +1753,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1781,7 +1781,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1809,7 +1809,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1837,7 +1837,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1865,7 +1865,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1893,7 +1893,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight3Content]</content>
@@ -1921,7 +1921,7 @@
 				<preloaditems>6</preloaditems>
 				<orientation>vertical</orientation>
 				<scrolltime tween="quadratic">0</scrolltime>
-				<include name="EmbyWidget1Content">
+				<include content="EmbyWidget1Content">
 					<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 				</include>
 				<content limit="12" target="videos">$VAR[DefWidgetRight3Content]</content>
