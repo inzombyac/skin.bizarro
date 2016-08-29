@@ -2322,11 +2322,8 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<!-- Actions --> 
-		<oninfo condition="String.IsEqual(Skin.String(HomeItemDBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Skin.String(HomeItemDBID)],name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="String.Contains(Skin.String(HomeItemDBType),episode) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="String.IsEmpty(Skin.String(HomeItemDBType)) + !String.IsEmpty(Skin.String(HomeItemTVShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=-1,name=$INFO[Skin.String(HomeItemTVShowTitle)])</oninfo>
-		<oninfo condition="String.IsEqual(Skin.String(HomeItemDBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Skin.String(HomeItemDBID)])</oninfo>
+		<!-- Actions - No longer needed in Krypton --> 
+		
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

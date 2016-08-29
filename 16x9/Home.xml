@@ -20,7 +20,8 @@
 		<include>Furniture_Clock</include>
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_RSS</include>
-		<control type="group">	
+		<control type="group">
+			<visible>!Window.IsVisible(12003)</visible>
 			<include>HomeEmbyRow</include>
 			<include>HomeEmbyWidgetInfo</include>
 		</control>
@@ -125,21 +126,21 @@
 						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 						<align>left</align>
 					</control>
-<!-- 					<control type="radiobutton" id="9261" description="Show RSS">
+ 					<control type="radiobutton" id="9261" description="Show RSS">
 						<include>DefContextButton</include>
 						<label>Show RSS feed</label>
 						<selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
 						<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
 						<align>left</align>
-					</control> -->
-					<!-- <control type="radiobutton" id="9262" description="Debug mode">
+					</control>
+					<control type="radiobutton" id="9262" description="Debug mode">
 						<include>DefContextButton</include>
 						<label>Debug Mode</label>
 						<selected>Skin.HasSetting(debug.mode)</selected>
 						<onclick>Skin.ToggleSetting(debug.mode)</onclick>
 						<onclick>right</onclick>
 						<align>left</align>
-					</control> -->
+					</control>
 					<control type="label"  id="9263">
 						<textoffsetx>15</textoffsetx>
 						<font>Home</font>
