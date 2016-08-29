@@ -59,7 +59,7 @@
                             <right>10</right>
                             <height>100%</height>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(9000)">Conditional</animation>
-                            <texture colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texture>
+                            <texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
                         </control>
                         <control type="label">
                             <textcolor>Selected</textcolor>
@@ -149,7 +149,7 @@
                             <control type="image">
                                 <width>100%</width>
                                 <height>100%</height>
-                                <texture colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texture>
+                                <texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
                             </control>
                             <control type="image">
                                 <top>10</top>
@@ -259,7 +259,7 @@
                             <control type="image">
                                 <width>100%</width>
                                 <height>100%</height>
-                                <texture colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texture>
+                                <texture colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texture>
                             </control>
                             <control type="image">
                                 <top>10</top>

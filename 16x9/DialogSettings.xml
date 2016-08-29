@@ -78,7 +78,7 @@
                     <description>Defaults</description>
                     <width>270</width>
                     <font>Button</font>
-                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                 </control>
             </control>
@@ -86,21 +86,21 @@
             <control type="button" id="7">
                 <description>Default Button</description>
                 <align>left</align>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
             <control type="radiobutton" id="8">
                 <description>Default RadioButton</description>
                 <align>left</align>
                 <radioposx>1230</radioposx>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
             <control type="spincontrolex" id="9">
                 <description>Default spincontrolex</description>
                 <align>left</align>
                 <reverse>yes</reverse>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
             <control type="image" id="11">
@@ -113,19 +113,19 @@
             <control type="edit" id="12">
                 <description>Default Button</description>
                 <align>left</align>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
 				<textcolor>Black70</textcolor>
             </control>
 
             <control type="sliderex" id="13">
                 <description>Default Slider</description>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
             <control type="label" id="14">
                 <description>Default Button</description>
                 <align>left</align>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColourHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
 
