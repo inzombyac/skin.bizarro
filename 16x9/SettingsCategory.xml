@@ -52,7 +52,10 @@
                     <ondown>3</ondown>
                     <orientation>vertical</orientation>
                 </control>
-
+				 <control type="togglebutton" id="10">
+					<description>Default Category Button</description>
+					<include>DefSettingsButton</include>
+				</control>
                 <!-- Lines -->
                 <control type="image">
                     <top>10</top>
@@ -76,16 +79,16 @@
                 <control type="button" id="20">
                     <left>30</left>
                     <right>30</right>
+					<width>auto</width>
                     <posy>77</posy>
                     <height>30</height>
                     <font>Tiny</font>
-                    <textcolor>PanelWhite70</textcolor>
                     <scroll>true</scroll>
                     <align>left</align>
                     <textoffsetx>0</textoffsetx>
                     <texturenofocus>noop</texturenofocus>
-                    <texturefocus>noop</texturefocus>
-                    <focusedcolor>$VAR[ColourHighlight2]</focusedcolor>
+                    <texturefocus colordiffuse="Dark1">common/white.png</texturefocus>
+                    <textcolor>$VAR[ColourHighlight2]</textcolor>
                     <ondown>3</ondown>
                     <onleft>9000</onleft>
                     <onright>5</onright>
@@ -133,7 +136,11 @@
             <description>Default Category Button</description>
             <include>DefSettingsButton2</include>
         </control>
-
+		
+		<control type="sliderex" id="13">
+			<description>Default Slider</description>
+			<include>DefSettingsButton2</include>
+         </control>
     </controls>
 
 </window>

@@ -149,7 +149,7 @@
                         <label>3</label>
                         <label2>31157</label2>
                         <icon>special://skin/extras/icons/film.png</icon>
-                        <onclick>activatewindow(VideosSettings)</onclick>
+                        <onclick>activatewindow(PlayerSettings)</onclick>
                     </item>
                     <item id="3">
                         <label>2</label>
@@ -185,7 +185,7 @@
                         <label>705</label>
                         <label2>31164</label2>
                         <icon>special://skin/extras/icons/network.png</icon>
-                        <onclick>activatewindow(NetworkSettings)</onclick>
+                        <onclick>activatewindow(ServiceSettings)</onclick>
                     </item>
                     <item id="9">
                         <label>13200</label>

@@ -250,8 +250,8 @@
 		<height>70</height>
 		<textureup flipy="true" colordiffuse="PanelWhite30">buttons/spin-down.png</textureup>
 		<texturedown colordiffuse="PanelWhite30">buttons/spin-down.png</texturedown>
-		<textureupfocus flipy="true" colordiffuse="PanelWhite100">buttons/spin-down.png</textureupfocus>
-		<texturedownfocus colordiffuse="PanelWhite100">buttons/spin-down.png</texturedownfocus>
+		<textureupfocus flipy="true" colordiffuse="$VAR[ColourHighlight]">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="$VAR[ColourHighlight]">buttons/spin-down.png</texturedownfocus>
 		<textureradiofocus colordiffuse="PanelWhite70">buttons/radio-on.png</textureradiofocus>
 		<textureradionofocus colordiffuse="PanelWhite12">buttons/radio-off.png</textureradionofocus>
 		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
@@ -272,6 +272,21 @@
 		<texturefocus colordiffuse="Dark1">common/white.png</texturefocus>
 		<alttexturefocus colordiffuse="Dark1">common/white.png</alttexturefocus>
 		<alttexturenofocus colordiffuse="Light1">common/white.png</alttexturenofocus>
+	</include>
+	<include name="DefSettingsButton3">
+		<align>left</align>
+		<font>Small</font>
+		<textcolor>PanelWhite100</textcolor>
+		<disabledcolor>PanelWhite12</disabledcolor>
+		<height>70</height>
+		<textureup flipy="true" colordiffuse="PanelWhite30">buttons/spin-down.png</textureup>
+		<texturedown colordiffuse="PanelWhite30">buttons/spin-down.png</texturedown>
+		<textureupfocus flipy="true" colordiffuse="PanelWhite100">buttons/spin-down.png</textureupfocus>
+		<texturedownfocus colordiffuse="PanelWhite100">buttons/spin-down.png</texturedownfocus>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="PanelWhite12">buttons/radio-off.png</textureradionofocus>
+		<texturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</texturefocus>
+		<alttexturefocus colordiffuse="$VAR[ColourHighlight]">common/white.png</alttexturefocus>
 	</include>
 	<include name="DefSettingsOKCancelButton">
 		<font>Button</font>
@@ -881,6 +896,79 @@
 			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(51)</visible>
+		</control>
+	</include>
+	<include name="Def9000AddonSide">
+		<left>0</left>
+		<top>115</top>
+		<width>455</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
+		<onright condition="Window.IsVisible(tvguide)">10</onright>
+		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<itemgap>0</itemgap>
+		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>View Options</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="9326">
+			<description>View</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>View: $INFO[Container.Viewmode]</label>
+			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
+		</control>
+		<control type="button" id="3">
+			<description>Sort</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control>
+		<control type="togglebutton" id="4">
+			<description>Ascending</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>584</label>
+			<altlabel>585</altlabel>
+		</control>
+		<control type="radiobutton" id="9012" description="Big List Double Pane (52)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31235</label>
+			<selected>!Skin.HasSetting(52biglist.singlepane)</selected>
+			<onclick>Skin.ToggleSetting(52biglist.singlepane)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(52)</visible>
+		</control>
+		<control type="radiobutton" id="9004" description="Wall Big Poster(505)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31185</label>
+			<selected>Skin.HasSetting(505wall.showposter)</selected>
+			<onclick>Skin.ToggleSetting(505wall.showposter)</onclick>
+			<onclick>Skin.Reset(505wall.noposter)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(505)</visible>
+		</control>
+		<control type="radiobutton" id="9005" description="Wall No Poster(505)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31779</label>
+			<selected>Skin.HasSetting(505wall.noposter)</selected>
+			<onclick>Skin.ToggleSetting(505wall.noposter)</onclick>
+			<onclick>Skin.Reset(505wall.showposter)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(505)</visible>
 		</control>
 	</include>
 	<include name="DefDialogSelectManual6">
