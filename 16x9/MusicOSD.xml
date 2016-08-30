@@ -31,6 +31,7 @@
 					<textureslidernib>osd/progress-end.png</textureslidernib>
 					<textureslidernibfocus>osd/progress-end.png</textureslidernibfocus>
 					<action>seek</action>
+					<orientation>horizontal</orientation>
 				</control>
 			</control>
             <control type="grouplist" id="101">

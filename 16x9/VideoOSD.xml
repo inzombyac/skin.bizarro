@@ -3,7 +3,6 @@
 <window id="2901">
 	<include condition="!Player.PauseEnabled">OSDFocusStop</include>
 	<include condition="Player.PauseEnabled">OSDFocusPause</include>
-	
 	<onload>SetProperty(osdshowinfo,1,home)</onload>
 	<onunload>ClearProperty(osdshowinfo,home)</onunload>
 	<controls>
@@ -38,6 +37,7 @@
 					<textureslidernib>osd/progress-end.png</textureslidernib>
 					<textureslidernibfocus>osd/progress-end.png</textureslidernibfocus>
 					<action>seek</action>
+					<orientation>horizontal</orientation>
 				</control>
 			</control>
 			<control type="group">
@@ -56,6 +56,7 @@
 					<textureslidernib>osd/progress-end.png</textureslidernib>
 					<textureslidernibfocus>osd/progress-end.png</textureslidernibfocus>
 					<action>seek</action>
+					<orientation>horizontal</orientation>
 				</control>
 			</control>
 			<!-- Sub Menu -->

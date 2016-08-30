@@ -42,6 +42,7 @@
             </control>
 
             <control type="slider" id="11">
+				<orientation>horizontal</orientation>
                 <description>Slider</description>
                 <posy>120</posy>
                 <left>30</left>

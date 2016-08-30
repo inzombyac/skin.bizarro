@@ -47,6 +47,11 @@
                 <label>$INFO[Container(300).ListItem.Property(Path)]</label>
 				<visible>Control.HasFocus(300)</visible>
             </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(302).ListItem.Property(Path)]</label>
+				<visible>Control.HasFocus(302)</visible>
+            </control>
 		</control>
 	</include>
 </includes>

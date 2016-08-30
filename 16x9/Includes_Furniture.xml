@@ -110,7 +110,7 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 					<texture colordiffuse="Dark1">progress/play.png</texture>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					<visible>!Player.Paused</visible>
+					<visible>!Player.Paused + !Player.Muted</visible>
 				</control>
 				<control type="image" description="Pause">
 					<left>0</left>
@@ -121,6 +121,16 @@
 					<texture colordiffuse="Dark1">progress/pause.png</texture>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					<visible>Player.Paused</visible>
+				</control>
+				<control type="image" description="Mute">
+					<left>0</left>
+					<centertop>50%</centertop>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture colordiffuse="Dark1">progress/mute.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+					<visible>Player.Muted + !Player.Paused</visible>
 				</control>
 				<control type="progress" id="9666">
 					<texturebg>-</texturebg>
@@ -870,7 +880,7 @@
 	</include>
 	<variable name="HeaderIcon">
 		<value condition="Window.IsVisible(Home.xml)+!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)">empty.png</value>
-		<value condition="Window.IsVisible(DialogMuteBug.xml)">special://skin/extras/icons/mute.png</value>
+		<value condition="Player.Muted">special://skin/extras/icons/mute.png</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)">special://skin/extras/icons/favourites.png</value>
 		<value condition="Window.IsVisible(1101)">special://skin/extras/icons/film.png</value>

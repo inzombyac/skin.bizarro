@@ -411,7 +411,7 @@
 	<propertydefault labelID="livetv" property="widget.right1">Recordings</propertydefault>
 	<propertydefault labelID="livetv" property="widgetName.right1">Recordings</propertydefault>
 	<propertydefault labelID="livetv" property="widgetType.right1">videos</propertydefault>
-	<propertydefault labelID="livetv" property="widgetPath.right1">pvr://recordings/</propertydefault>
+	<propertydefault labelID="livetv" property="widgetPath.right1">pvr://recordings/tv/active</propertydefault>
 	<propertydefault labelID="livetv" property="widgetTarget.right1">video</propertydefault>
 	
 	<propertydefault labelID="livetv" property="widget.right2">Next Aired</propertydefault>

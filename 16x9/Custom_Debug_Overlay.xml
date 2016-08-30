@@ -444,26 +444,6 @@
                 <include>ControlID2</include>
                 <label>$INFO[Container.ListItem.Path]</label>
             </control>
-			<control type="label">
-                <include>ControlID2</include>
-                <label>$INFO[Container(4012).ListItem.Path]</label>
-				
-            </control>
-			<control type="label">
-                <include>ControlID2</include>
-                <label>$INFO[Container(4016).ListItem.Path]</label>
-	
-            </control>
-			<control type="label">
-                <include>ControlID2</include>
-                <label>$INFO[Window(Home).Container(4017).ListItem.Path]</label>
-	
-            </control>
-			<control type="label">
-                <include>ControlID2</include>
-                <label>$INFO[Container(4018).ListItem.Path]</label>
-	
-            </control>
         </control>
     </controls>
 </window>

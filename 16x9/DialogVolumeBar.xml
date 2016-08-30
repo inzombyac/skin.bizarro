@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="104">
-    
-
-    <controls>
-
-       
+    <controls> 
         <control type="group">
             <right>72</right>
             <posy>72</posy>
@@ -23,10 +19,8 @@
                 <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
                 <texture border="16" colordiffuse="Background">common/rounded-shadow8.png</texture>
             </control>
-
             <control type="group">
-                <visible>!player.passthrough</visible>
-                
+                <visible>!player.passthrough</visible>            
                 <control type="image">
                     <left>24</left>
                     <centertop>50%</centertop>
@@ -34,9 +28,8 @@
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="Dark1">buttons/volume.png</texture>
-                    <visible>!Window.IsVisible(DialogMuteBug.xml)</visible>
-                </control>
-                
+                    <visible>!Player.Muted</visible>
+                </control>            
                 <control type="image">
                     <left>24</left>
                     <centertop>50%</centertop>
@@ -44,9 +37,8 @@
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="Dark1">buttons/mute.png</texture>
-                    <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
-                </control>
-                
+                    <visible>Player.Muted</visible>
+                </control>             
                 <control type="label">
                     <left>104</left>
                     <top>24</top>
@@ -55,8 +47,7 @@
                     <font>Tiny</font>
                     <label>$LOCALIZE[13376]$INFO[Player.Volume,  ,]</label>
                     <textcolor>Dark1</textcolor>
-                </control>
-                
+                </control>           
                 <control type="label">
                     <align>right</align>
                     <right>24</right>
@@ -67,7 +58,6 @@
                     <label>$INFO[Control.GetLabel(1),, %]</label>
                     <textcolor>Dark1</textcolor>
                 </control>
-
                 <control type="progress">
                     <description>progress control</description>
                     <left>104</left>
@@ -76,12 +66,9 @@
                     <height>8</height>
                     <info>Player.Volume</info>
                 </control>
-
             </control>
-
             <control type="group">
                 <visible>player.passthrough</visible>
-
                 <control type="label">
                     <description>Passthrough Label</description>
                     <left>38</left>
@@ -92,9 +79,7 @@
                     <font>Tiny</font>
                     <label>29802</label>
                 </control>
-
             </control>
-
         </control>
         <control type="group">
             <right>72</right>
@@ -112,10 +97,8 @@
                 <height>100</height>
                 <texture border="16" colordiffuse="OSDBack">common/rounded-shadow8.png</texture>
             </control>
-
             <control type="group">
-                <visible>!player.passthrough</visible>
-                
+                <visible>!player.passthrough</visible>              
                 <control type="image">
                     <left>24</left>
                     <centertop>50%</centertop>
@@ -123,9 +106,8 @@
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="PanelWhite70">buttons/volume.png</texture>
-                    <visible>!Window.IsVisible(DialogMuteBug.xml)</visible>
+                    <visible>!Player.Muted</visible>
                 </control>
-                
                 <control type="image">
                     <left>24</left>
                     <centertop>50%</centertop>
@@ -133,9 +115,8 @@
                     <height>64</height>
                     <aspectratio>keep</aspectratio>
                     <texture colordiffuse="PanelWhite70">buttons/mute.png</texture>
-                    <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
-                </control>
-                
+                    <visible>Player.Muted</visible>
+                </control>              
                 <control type="label">
                     <left>104</left>
                     <top>24</top>
@@ -144,8 +125,7 @@
                     <font>Tiny</font>
                     <label>$LOCALIZE[13376]$INFO[Player.Volume,  ,]</label>
                     <textcolor>PanelWhite70</textcolor>
-                </control>
-                
+                </control>              
                 <control type="label">
                     <align>right</align>
                     <right>24</right>
@@ -156,7 +136,6 @@
                     <label>$INFO[Control.GetLabel(1),, %]</label>
                     <textcolor>PanelWhite70</textcolor>
                 </control>
-
                 <control type="progress">
                     <description>progress control</description>
                     <left>104</left>
@@ -165,12 +144,9 @@
                     <height>8</height>
                     <info>Player.Volume</info>
                 </control>
-
             </control>
-
             <control type="group">
                 <visible>player.passthrough</visible>
-
                 <control type="label">
                     <description>Passthrough Label</description>
                     <left>38</left>
@@ -181,11 +157,8 @@
                     <font>Tiny</font>
                     <label>29802</label>
                 </control>
-
             </control>
-
-        </control>
-        
+        </control>       
         <control type="progress" id="1">
             <description>progress control</description>
             <left>104</left>
@@ -196,7 +169,5 @@
             <info>Player.Volume</info>
             <visible>false</visible>
         </control>
-
     </controls>
-
 </window>
