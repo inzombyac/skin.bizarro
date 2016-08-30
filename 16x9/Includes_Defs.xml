@@ -296,7 +296,7 @@
 		<width>270</width>
 	</include>
 	<include name="Def9000GroupList">
-		<left>0</left>
+		<left>10</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
@@ -342,18 +342,31 @@
 					<label>480</label>
 					<align>left</align>
 				</control>
-				<control type="button" id="9002">
-					<onclick>ReplaceWindow(VideosSettings)</onclick>
-					<onclick>SetFocus(3)</onclick>
+				<control type="button" id="9012">
+					<onclick>ReplaceWindow(SkinSettings)</onclick>
 					<include>DefContextButton</include>
-					<label>3</label>
+					<label>20077</label>
 					<align>left</align>
 				</control>
 				<control type="button" id="9003">
-					<onclick>ReplaceWindow(MusicSettings)</onclick>
+					<onclick>ReplaceWindow(PlayerSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
-					<label>2</label>
+					<label>14201</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9005">
+					<onclick>ReplaceWindow(MediaSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>14212</label>
+					<align>left</align>
+				</control>
+				<control type="button" id="9010">
+					<onclick>ReplaceWindow(PVRSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>19191</label>
 					<align>left</align>
 				</control>
 				<control type="button" id="9004">
@@ -361,27 +374,6 @@
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>24001</label>
-					<align>left</align>
-				</control>
-				<control type="button" id="9005">
-					<onclick>ReplaceWindow(PicturesSettings)</onclick>
-					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
-					<label>1</label>
-					<align>left</align>
-				</control>
-				<control type="button" id="9006">
-					<onclick>ReplaceWindow(WeatherSettings)</onclick>
-					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
-					<label>8</label>
-					<align>left</align>
-				</control>
-				<control type="button" id="9007">
-					<onclick>ReplaceWindow(NetworkSettings)</onclick>
-					<onclick>SetFocus(3)</onclick>
-					<include>DefContextButton</include>
-					<label>705</label>
 					<align>left</align>
 				</control>
 				<control type="button" id="9008">
@@ -398,24 +390,18 @@
 					<align>left</align>
 					<label>13200</label>
 				</control>
-				<control type="button" id="9010">
-					<onclick>ReplaceWindow(PVRSettings)</onclick>
+				<control type="button" id="9007">
+					<onclick>ReplaceWindow(ServiceSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
-					<label>19191</label>
+					<label>705</label>
 					<align>left</align>
-				</control>
+				</control>				
 				<control type="button" id="9011">
 					<onclick>ReplaceWindow(7)</onclick>
 					<onclick>SetFocus(3)</onclick>
 					<include>DefContextButton</include>
 					<label>130</label>
-					<align>left</align>
-				</control>
-				<control type="button" id="9012">
-					<onclick>ReplaceWindow(SkinSettings)</onclick>
-					<include>DefContextButton</include>
-					<label>20077</label>
 					<align>left</align>
 				</control>
 			</control>
@@ -478,17 +464,17 @@
 		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
 		<include>Animation.SideSlide</include>
 		<control type="button">
-			<left>-12</left>
+			<left>-10</left>
 			<top>-12</top>
-			<width>455</width>
+			<width>465</width>
 			<height>1104</height>
 			<texturefocus border="12">common/rounded-shadow8.png</texturefocus>
 			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
-			<colordiffuse>White100</colordiffuse>
+			<colordiffuse>White95</colordiffuse>
 		</control>
 		<control type="group">
 			<control type="image">
-				<left>10</left>
+				<left>30</left>
 				<top>25</top>
 				<width>70</width>
 				<height>70</height>
@@ -499,7 +485,7 @@
 				<align>left</align>
 			</control>
 			<control type="image">
-				<left>10</left>
+				<left>30</left>
 				<top>25</top>
 				<width>70</width>
 				<height>70</height>
@@ -512,13 +498,159 @@
 			</control>
 			<control type="label">
 				<label>$INFO[System.ProfileName]</label>
-				<left>100</left>
+				<left>120</left>
 				<top>25</top>
 			</control>
 		</control>
 	</include>
+	<include name="Def9000HomeMenuTop">
+		<left>10</left>
+		<top>100</top>
+		<height>1080</height>
+		<onright>300</onright>
+		<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
+		<control type="label" id="201">
+			<top>200</top>
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Actions</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="grouplist" id="3110">
+			<description>grouplist for context buttons</description>
+			<posx>18</posx>
+			<posy>0</posy>
+			<width>455</width>
+			<height>1080</height>
+			<itemgap>0</itemgap>
+			<orientation>vertical</orientation>
+			<control type="group" id="9090">
+				<height>70</height>
+				<ondown>3122</ondown>
+				<onup>9267</onup>
+				<control type="button" id="9091">
+					<description>Global Search</description>
+					<include>DefContextButton</include>
+					<align>left</align>
+					<label>137</label>
+					<onclick>RunScript(script.globalsearch)</onclick>
+					<onup>9267</onup>
+					<ondown>3122</ondown>
+					<onright>300</onright>
+				</control>
+				<control type="image">
+					<right>20</right>
+					<top>10</top>
+					<width>50</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<texture background="true" colordiffuse="Dark1">special://skin/extras/icons/search.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>!Control.HasFocus(9091)</visible>
+				</control>
+				<control type="image">
+					<right>20</right>
+					<top>10</top>
+					<width>50</width>
+					<height>50</height>
+					<aligny>center</aligny>
+					<texture background="true" colordiffuse="Light1">special://skin/extras/icons/search.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>Control.HasFocus(9091)</visible>
+				</control>
+			</control>
+			<control type="button" id="3122">
+				<include>DefContextButton</include>
+				<label>Emby</label>
+				<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
+				<align>left</align>
+			</control>
+			<control type="button" id ="9092" description="Emby Manual Sync">
+				<include>DefContextButton</include>
+				<label>Manual Emby Sync</label>
+				<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+				<onclick>right</onclick>
+				<align>left</align>
+			</control>
+			<control type="button" id="3123">
+				<include>DefContextButton</include>
+				<label>10003</label>
+				<align>left</align>
+				<onclick>right</onclick>
+				<onclick>ActivateWindow(filemanager)</onclick>
+			</control>   
+			<control type="label" id="9259">
+				<textoffsetx>15</textoffsetx>
+				<font>Home</font>
+				<label>Home Options</label>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<aligny>center</aligny>
+			</control> 
+			<control type="button" id="9212" description="Customise Home">
+				<include>DefContextButton</include>
+				<label>31109</label>
+				<onclick>right</onclick>
+				<onclick>ActivateWindow(busydialog)</onclick>
+				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+				<align>left</align>
+			</control>
+			<control type="radiobutton" id="9261" description="Show RSS">
+				<include>DefContextButton</include>
+				<label>Show RSS feed</label>
+				<selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
+				<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
+				<align>left</align>
+			</control>
+			<control type="radiobutton" id="9262" description="Debug mode">
+				<include>DefContextButton</include>
+				<label>Debug Mode</label>
+				<selected>Skin.HasSetting(debug.mode)</selected>
+				<onclick>Skin.ToggleSetting(debug.mode)</onclick>
+				<onclick>right</onclick>
+				<align>left</align>
+			</control>
+			<control type="label"  id="9263">
+				<textoffsetx>15</textoffsetx>
+				<font>Home</font>
+				<label>Other</label>
+				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<aligny>center</aligny>
+			</control>
+			<control type="button" id="3121">
+				<include>DefContextButton</include>
+				<label>5</label>
+				<align>left</align>
+				<onclick>right</onclick>
+				<onclick>ActivateWindow(settings)</onclick>
+			</control>
+			<control type="button"  id="9264">
+				<include>DefContextButton</include>
+				<label>31195</label>
+				<onclick>ReloadSkin()</onclick>
+				<align>left</align>
+			</control>
+			<control type="button" id="9265">
+				<onclick>System.LogOff</onclick>
+				<include>DefContextButton</include>
+				<label>Log Off</label>
+				<align>left</align>
+			</control>				
+			<control type="button"  id="9267">
+				<description>Exit XBMC button</description>
+				<include>DefContextButton</include>
+				<label>13012</label>
+				<onclick>Quit()</onclick>
+				<ondown>9090</ondown>
+				<visible>System.ShowExitButton</visible>
+				<align>left</align>
+			</control> 
+		</control>
+	</include>
 	<include name="Def9000MediaMenuTop">
-		<left>0</left>
+		<left>10</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
@@ -762,7 +894,7 @@
 		</control>
 	</include>
 	<include name="Def9000MusicSide">
-		<left>0</left>
+		<left>10</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
@@ -899,7 +1031,7 @@
 		</control>
 	</include>
 	<include name="Def9000AddonSide">
-		<left>0</left>
+		<left>10</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>

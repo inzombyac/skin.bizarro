@@ -241,12 +241,12 @@ msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] 
 msgstr "[B]Configurer les paramètres d'apparence[/B][CR][CR] • Changer l'habillage[CR] • Définir la langue et la région[CR] • Changer les options de listage de fichiers[CR] • Paramétrer un économiseur d'écran"
 
 msgctxt "#31157"
-msgid "[B]Configure Video Settings[/B][CR][CR] •     Manage your video library[CR] •     Set video playback options[CR] •     Change video listing options[CR] •     Set subtitle fonts"
-msgstr "[B]Configurer les paramètres des vidéos[/B][CR][CR] • Gérer la vidéothèque[CR] • Définir les options de lecture vidéo[CR] • Changer les options de listage des vidéos[CR] • Définir les polices des sous-titres"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
 
 msgctxt "#31158"
-msgid "[B]Configure Music Settings[/B][CR][CR] •     Manage your music library[CR] •     Set music playback options[CR] •     Change music listing options[CR] •     Setup song submission[CR] •     Set karaoke options"
-msgstr "[B]Configuration des paramètres de la musique[/B][CR][CR] • Gérer l'audiothèque[CR] • Définir les options de lecture[CR] • Changer les options des listes de musique[CR] • Paramétrer l'envoi de chanson[CR] • Définir les options de karaoké"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
+msgstr "[B]Configuration des paramètres[/B][CR][CR] • Gérer thèque[CR] • Définir les options de lecture[CR] • Changer les options des listes[CR] • Paramétrer l'envoi de chanson"
 
 msgctxt "#31159"
 msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing options[CR] •     Configure slideshows"

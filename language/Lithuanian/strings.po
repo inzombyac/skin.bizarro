@@ -241,12 +241,12 @@ msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] 
 msgstr "[B]Konfigūruoti išvaizdos nustatymus[/B][CR][CR] •     Pakeisti teminę išvaizdą[CR] •     Nustatyti kalbą ir regioną[CR] •     Pakeisti failų sąrašo parinktis[CR] •     Nustatyti ekrano užsklandą"
 
 msgctxt "#31157"
-msgid "[B]Configure Video Settings[/B][CR][CR] •     Manage your video library[CR] •     Set video playback options[CR] •     Change video listing options[CR] •     Set subtitle fonts"
-msgstr "[B]Konfigūruoti vaizdo įrašų nustatymus[/B][CR][CR] •     Tvarkyti vaizdo biblioteką[CR] •     Nustatyti vaizdo įrašų atkūrimo parinktis[CR] •     Nustatyti vaizdo įrašų sąrašo parinktis[CR] •     Nustatyti subtitrų šriftą"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
 
 msgctxt "#31158"
-msgid "[B]Configure Music Settings[/B][CR][CR] •     Manage your music library[CR] •     Set music playback options[CR] •     Change music listing options[CR] •     Setup song submission[CR] •     Set karaoke options"
-msgstr "[B]Konfigūruoti muzikos nustatymus[/B][CR][CR] •     Tvarkyti muzikos biblioteką[CR] •     Nustatyti muzikos atkūrimo parinktis[CR] •     Pakeisti muzikos sąrašo parinktis[CR] •     Nustatyti muzikos įkėlimą[CR] •     Nustatyti karaoke parinktis"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
+msgstr "[B]Konfigūruoti nustatymus[/B][CR][CR] •     Tvarkyti biblioteką[CR] •     Nustatyti atkūrimo parinktis[CR] •     Pakeisti sąrašo parinktis[CR] •     Nustatyti įkėlimą"
 
 msgctxt "#31159"
 msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing options[CR] •     Configure slideshows"

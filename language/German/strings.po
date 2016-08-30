@@ -241,12 +241,12 @@ msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] 
 msgstr "[B]Konfiguriere die Darstellung[/B][CR][CR] • Ändere den Skin[CR] • Wähle Sprache und Region[CR] • Ändere Dateilisten[CR] • Setze Bildschirmschoner"
 
 msgctxt "#31157"
-msgid "[B]Configure Video Settings[/B][CR][CR] •     Manage your video library[CR] •     Set video playback options[CR] •     Change video listing options[CR] •     Set subtitle fonts"
-msgstr "[B]Konfiguriere Video-Einstellungen[/B][CR][CR] • Verwalte Deine Video-Bibliothek[CR] • Konfiguriere die Video-Wiedergabe[CR] • Ändere Videolisten[CR] • Konfiguriere Untertitel-Schriftarten"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
 
 msgctxt "#31158"
-msgid "[B]Configure Music Settings[/B][CR][CR] •     Manage your music library[CR] •     Set music playback options[CR] •     Change music listing options[CR] •     Setup song submission[CR] •     Set karaoke options"
-msgstr "[B]Konfiguriere deine Musik[/B][CR][CR] • Verwalte deine Musik-Bibliothek[CR] • Konfiguriere Musik-Playback[CR] • Ändere Musiklisten[CR] • Konfiguriere Song-Eingabe[CR] • Konfiguriere Karaoke-Modus"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
+msgstr "[B]Konfiguriere deine [/B][CR][CR] • Verwalte deine Bibliothek[CR] • Konfiguriere Playback[CR] • Ändere listen[CR] • Konfiguriere Song-Eingabe"
 
 msgctxt "#31159"
 msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing options[CR] •     Configure slideshows"

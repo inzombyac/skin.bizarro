@@ -242,12 +242,12 @@ msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] 
 msgstr "[B]Configureer uiterlijk instellingen[[/B]CR][CR] • Wijzig de skin  [CR] • Stel taal en regio in[CR] verander[CR] • verander bestandslijstopties[CR] • Stel een schermbeveiliging in"
 
 msgctxt "#31157"
-msgid "[B]Configure Video Settings[/B][CR][CR] •     Manage your video library[CR] •     Set video playback options[CR] •     Change video listing options[CR] •     Set subtitle fonts"
-msgstr "[B]Configureer Video instellingen[/B][CR][CR] • Beheer je videobibliotheek[BR] • Configureer videoafspeelopties[CR] • Verander videobestandlijstopties[CR] • Stel ondertitel lettertypen in"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
 
 msgctxt "#31158"
-msgid "[B]Configure Music Settings[/B][CR][CR] •     Manage your music library[CR] •     Set music playback options[CR] •     Change music listing options[CR] •     Setup song submission[CR] •     Set karaoke options"
-msgstr "[B]Configureer Muziek instellingen[/B][CR][CR] • Beheer je muziekbibliotheek[CR] • Configureer muziekafspeelopties[CR] • Verander muzieklijst opties[CR] • Stel nummeraanbod in[CR] • Configureer karaoke opties in"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
+msgstr "[B]Configureer instellingen[/B][CR][CR] • Beheer je bibliotheek[CR] • Configureer muziekafspeelopties[CR] • Verander muzieklijst opties[CR] • Stel nummeraanbod in"
 
 msgctxt "#31159"
 msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing options[CR] •     Configure slideshows"

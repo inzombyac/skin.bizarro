@@ -229,11 +229,11 @@ msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] 
 msgstr "[B]Настройка Параметров Внешнего Вида[/B][CR][CR] • Изменить обложку[CR] • Установить язык и регион[CR] • Изменить параметры списка файлов[CR] • Установить заставку"
 
 msgctxt "#31157"
-msgid "[B]Configure Video Settings[/B][CR][CR] •     Manage your video library[CR] •     Set video playback options[CR] •     Change video listing options[CR] •     Set subtitle fonts"
-msgstr "[B]Настройка Параметров Видео[/B][CR][CR] • Управление видео библиотекой[CR] • Установить параметры воспроизведения видео[CR] • Изменить параметры списка видео[CR] • Установить шрифт субтитров"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
 
 msgctxt "#31158"
-msgid "[B]Configure Music Settings[/B][CR][CR] •     Manage your music library[CR] •     Set music playback options[CR] •     Change music listing options[CR] •     Setup song submission[CR] •     Set karaoke options"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
 msgstr "[B]Настройка Параметров Музыки[/B][CR][CR] • Управление аудио библиотекой[CR] • Установить параметры воспроизведения музыки[CR] • Изменить параметры списка музыки[CR] • Настройка представления песни[CR] • Установить параметры караоке"
 
 msgctxt "#31159"

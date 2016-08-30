@@ -241,12 +241,12 @@ msgid "[B]Configure Appearance Settings[/B][CR][CR] •     Change the skin[CR] 
 msgstr "[B]Konfiguracja wyglądu[/B][CR][CR] • Wybór skóry[CR] • Ustawienia regionalne[CR] • Listy plików[CR] • Wygaszacz ekranu"
 
 msgctxt "#31157"
-msgid "[B]Configure Video Settings[/B][CR][CR] •     Manage your video library[CR] •     Set video playback options[CR] •     Change video listing options[CR] •     Set subtitle fonts"
-msgstr "[B]Konfiguracja wideo[/B][CR][CR] • Biblioteka wideo[CR] • Odtwarzanie[CR] • Akceleracja[CR] • Listy wideo[CR] • Napisy"
+msgid "[B]Configure Player Settings[/B][CR][CR] •     Set video playback options[CR] •     Change skip settings[CR] •     Set language and subtitles"
+msgstr ""
 
 msgctxt "#31158"
-msgid "[B]Configure Music Settings[/B][CR][CR] •     Manage your music library[CR] •     Set music playback options[CR] •     Change music listing options[CR] •     Setup song submission[CR] •     Set karaoke options"
-msgstr "[B]Konfiguracja muzyki[/B][CR][CR] • Biblioteka muzyki[CR] • Odtwarzanie[CR] • Listy utworów[CR] • CD-Audio[CR] • Karaoke"
+msgid "[B]Configure Media Settings[/B][CR][CR] •     Manage your library[CR] •     Set playback options[CR] •     Change listing options[CR] •     Setup song submission[CR] •     Set thumbnail options"
+msgstr "[B]Konfiguracja[/B][CR][CR] • Biblioteka[CR] • Odtwarzanie[CR] • Listy utworów[CR] • CD-Audio[CR]"
 
 msgctxt "#31159"
 msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing options[CR] •     Configure slideshows"
