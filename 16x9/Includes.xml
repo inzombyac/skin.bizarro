@@ -53,32 +53,41 @@
 	<include name="WindowID">
 		<width>780</width>
 		<height>21</height>
-		<textcolor>Blue</textcolor>
+		<textcolor>White</textcolor>
 		<shadowcolor>Black</shadowcolor>
 		<align>left</align>
 	</include>
 	<include name="DialogID">
 		<width>780</width>
 		<height>21</height>
-		<textcolor>Green</textcolor>
+		<textcolor>PanelWhite70</textcolor>
 		<shadowcolor>Black</shadowcolor>
 		<align>left</align>
 	</include>
 	<include name="PathID">
-		<posx>15r</posx>
+		<posx>20r</posx>
 		<posy>15</posy>
 		<width>780</width>
 		<height>21</height>
-		<textcolor>Blue</textcolor>
+		<textcolor>EmbyGreen</textcolor>
 		<shadowcolor>Black</shadowcolor>
 		<align>right</align>
 	</include>
 	<include name="ControlID">
-		<posx>15r</posx>
+		<posx>20r</posx>
 		<posy>48</posy>
 		<width>780</width>
 		<height>21</height>
 		<textcolor>Red</textcolor>
+		<shadowcolor>Black</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID2">
+		<posx>20r</posx>
+		<posy>81</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>amber</textcolor>
 		<shadowcolor>Black</shadowcolor>
 		<align>right</align>
 	</include>

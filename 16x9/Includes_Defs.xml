@@ -607,8 +607,8 @@
 			<control type="radiobutton" id="9262" description="Debug mode">
 				<include>DefContextButton</include>
 				<label>Debug Mode</label>
-				<selected>Skin.HasSetting(debug.mode)</selected>
-				<onclick>Skin.ToggleSetting(debug.mode)</onclick>
+				<selected>Skin.HasSetting(DebugGrid)</selected>
+				<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
 				<onclick>right</onclick>
 				<align>left</align>
 			</control>

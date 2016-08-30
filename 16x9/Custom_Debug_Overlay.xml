@@ -1,16 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <window type="dialog" id="1198">
-
     <zorder>2</zorder>
     <visible>!Window.IsVisible(startup)</visible>
-    <visible>false</visible>
+    <visible>Skin.HasSetting(DebugGrid)</visible>
     <controls>
         <control type="group">
             <!-- Window/Dialog debug -->
             <control type="grouplist">
-                <left>15</left>
-                <top>15</top>
+                <left>20</left>
+                <top>20</top>
                 <width>780</width>
                 <height>450</height>
                 <itemgap>12</itemgap>
@@ -40,6 +37,7 @@
                     <label>Home.xml</label>
                     <visible>Window.IsVisible(Home.xml)</visible>
                 </control>
+
 
                 <control type="label">
                     <include>WindowID</include>
@@ -221,12 +219,6 @@
                     <include>DialogID</include>
                     <label>DialogMusicScan.xml</label>
                     <visible>Window.IsVisible(DialogMusicScan.xml)</visible>
-                </control>
-
-                <control type="label">
-                    <include>DialogID</include>
-                    <label>DialogMuteBug.xml</label>
-                    <visible>Window.IsVisible(DialogMuteBug.xml)</visible>
                 </control>
 
                 <control type="label">
@@ -447,6 +439,30 @@
             <control type="label">
                 <include>ControlID</include>
                 <label>$INFO[Container.FolderPath]</label>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container.ListItem.Path]</label>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(4012).ListItem.Path]</label>
+				
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(4016).ListItem.Path]</label>
+	
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Window(Home).Container(4017).ListItem.Path]</label>
+	
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(4018).ListItem.Path]</label>
+	
             </control>
         </control>
     </controls>

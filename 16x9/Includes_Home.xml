@@ -19,4 +19,34 @@
 			</control>
 		</control>
 	</include>
+	<include name="DebugGridHome">
+		 <control type="group">
+			 <visible>Skin.HasSetting(DebugGrid)</visible>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(4019).ListItem.Path]</label>
+				<visible>Control.HasFocus(4012)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(4016).ListItem.Path]</label>
+				<visible>Control.HasFocus(4016)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Window(Home).Container(4017).ListItem.Path]</label>
+				<visible>Control.HasFocus(4017)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(4018).ListItem.Path]</label>
+				<visible>Control.HasFocus(4018)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID2</include>
+                <label>$INFO[Container(300).ListItem.Property(Path)]</label>
+				<visible>Control.HasFocus(300)</visible>
+            </control>
+		</control>
+	</include>
 </includes>
