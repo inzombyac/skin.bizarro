@@ -549,7 +549,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget1Label]</label>
-				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating] | String.IsEqual(Container(300).ListItem.Property(type),weather) | String.IsEqual(Container(300).ListItem.Property(type),settings)</visible>
+				<visible>[Integer.IsGreater(Container(40016).NumItems,0) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]] | String.IsEqual(Container(300).ListItem.Property(type),weather) | String.IsEqual(Container(300).ListItem.Property(type),settings)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -588,7 +588,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
-				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating + Integer.IsGreater(Container(40017).NumItems,0) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),settings) + !String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<visible>!Integer.IsGreater(Container(40016).NumItems,0) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)] + Integer.IsGreater(Container(40017).NumItems,0) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),settings) + !String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control> -->
@@ -613,7 +613,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
-				<visible>Integer.IsGreater(Container(40016).NumItems,3) + !Container(40016).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,3) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.DelayFadeIn</include>
 			</control>
@@ -637,7 +637,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
-				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)	+ !Container(40016).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Integer.IsGreater(Container(40016).NumItems,3)	+ [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.DelayFadeIn</include>
 			</control>
@@ -667,7 +667,7 @@
 					<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 				</include>
 				<content limit="25">$VAR[DefWidgetRight1Content]</content>
-				<visible>Integer.IsGreater(Container(40016).NumItems,0) + !Container(40016).IsUpdating</visible>
+				<visible>Integer.IsGreater(Container(40016).NumItems,0) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -2395,7 +2395,15 @@
 				<width>200</width>
 				<texture colordiffuse="Dark1">$VAR[EmbyHomeClearArt]</texture>
 				<aspectratio align="right" aligny="center">keep</aspectratio>
+				<!-- <visible>Skin.HasSetting(furniture.flags)</visible> -->
 			</control>
+			<!-- <control type="image">
+				<centertop>50%</centertop>
+				<width>200</width>
+				<texture fallback="resource://resource.images.studios.white/default-studio.png">$INFO[Container(4016).ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
+				<aspectratio align="right" aligny="center">keep</aspectratio>
+				<visible>!Skin.HasSetting(furniture.flags)</visible>
+			</control> -->
 		</control>
 	</include>
 	<include name="WeatherTodayMainWidget">

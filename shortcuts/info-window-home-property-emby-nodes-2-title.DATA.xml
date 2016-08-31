@@ -41,7 +41,7 @@
 		<label2>TV/Movies Only</label2>
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
-		<action>ActivateWindow(Video,$VAR[DefEmbyNodeRandomAction],return)</action>
+		<action>ActivateWindow(Videos,$VAR[DefEmbyNodeRandomAction],return)</action>
 		<visible>[!StringCompare(Window(Home).Property(emby.nodes.2.type),photos) + !StringCompare(Window(Home).Property(emby.nodes.2.type),homevideos)] | Window.IsVisible(script-skinshortcuts.xml)</visible>
 	</shortcut>
 		<shortcut>

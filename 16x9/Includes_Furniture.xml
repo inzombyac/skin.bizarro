@@ -593,26 +593,6 @@
 				</control>
 			</control>
 		</control>
-		<control type="group">
-			<visible>!Skin.HasSetting(furniture.flags)+!Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogMusicInfo.xml)</visible>
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
-			<visible>!ListItem.IsParentFolder</visible>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<left>0</left>
-			<centerbottom>60</centerbottom>
-			<width>1920</width>
-			<height>120</height>
-			<align>right</align>
-			<control type="image">
-				<right>0</right>
-				<width>258</width>
-				<height>120</height>
-				<texture colordiffuse="Dark1">$VAR[Studio]</texture>
-				<aspectratio align="left" aligny="center">keep</aspectratio>
-			</control>
-		</control>
 	</include>
 	<include name="Furniture_Hub_Flags">
 		<control type="grouplist">
@@ -744,9 +724,10 @@
 	</include>
 	<include name="Furniture_Logo">
 		<control type="group">
-			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>Skin.HasSetting(furniture.flags)</visible>
+			<visible>!ListItem.IsParentFolder</visible>
 			<left>1622</left>
 			<top>960</top>
 			<include>Animation.FadeIn</include>
@@ -757,6 +738,26 @@
 				<texture background="true">$VAR[ClearLogo]</texture>
 				<aspectratio align="center" aligny="center">keep</aspectratio>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Skin.HasSetting(furniture.flags)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>!ListItem.IsParentFolder</visible>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>0</left>
+			<centerbottom>60</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<align>right</align>
+			<control type="image">
+				<right>0</right>
+				<width>258</width>
+				<height>120</height>
+				<texture colordiffuse="Dark1">$VAR[Studio]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
 			</control>
 		</control>
 	</include>

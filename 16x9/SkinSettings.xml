@@ -565,14 +565,6 @@
 						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 					</control>
-					<control type="radiobutton" id="9268" description="Logo">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31744</label>
-						<selected>Skin.HasSetting(furniture.logo)</selected>
-						<onclick>Skin.ToggleSetting(furniture.logo)</onclick>
-					</control>
 					<control type="radiobutton" id="9270" description="DiscArt">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9106)</visible>
@@ -581,14 +573,6 @@
 						<selected>Skin.HasSetting(furniture.nodiscart)</selected>
 						<onclick>Skin.ToggleSetting(furniture.nodiscart)</onclick>
 					</control>
-					<!-- <control type="radiobutton" id="92703" description="Fanart Dialog Info">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Show fanart on video info screen</label>
-						<selected>Skin.HasSetting(furniture.info.fanart)</selected>
-						<onclick>Skin.ToggleSetting(furniture.info.fanart)</onclick>
-					</control> -->
 					<control type="button" id="92705" description="Video Info Blur">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
