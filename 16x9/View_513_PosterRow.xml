@@ -3,7 +3,7 @@
 	<include name="View_513_PosterRow">
 		<control type="group">
 			<visible>Control.IsVisible(513)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<include>Animation.Common</include>
 			<control type="group">
 				<animation type="Conditional" reversible="true" condition="Control.HasFocus(513)">

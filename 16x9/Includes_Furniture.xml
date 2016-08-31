@@ -315,7 +315,7 @@
 	<include name="Furniture_Flags">
 		<control type="group">
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
+			<visible>!Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
@@ -329,7 +329,7 @@
 		</control>
 		<control type="grouplist">
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
+			<visible>!Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
@@ -595,7 +595,7 @@
 		</control>
 		<control type="group">
 			<visible>!Skin.HasSetting(furniture.flags)+!Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
@@ -615,7 +615,7 @@
 		</control>
 		<control type="group">
 			<visible>!Skin.HasSetting(furniture.flags)+Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
@@ -765,7 +765,7 @@
 	<include name="Furniture_Logo">
 		<control type="group">
 			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
 			<left>1622</left>
 			<top>960</top>
@@ -937,6 +937,10 @@
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$INFO[ListItem.Title]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.Label]  ($INFO[ListItem.Year])</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
@@ -979,6 +983,9 @@
 	<variable name="SubHeaderLabel">
 		<value condition="Window.IsVisible(home)">$VAR[EmbyFooterLabel]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Year]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.AlbumArtist]</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ,]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(movies)">$INFO[ListItem.TagLine]</value>
@@ -999,7 +1006,7 @@
 			<top>40</top>
 			<left>SidePad</left>
 			<visible>!ControlGroup(303).HasFocus()</visible>
-			<visible>!Window.IsVisible(DialogAlbumInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
 			<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 			<orientation>horizontal</orientation>
@@ -1293,7 +1300,7 @@
 			<top>160</top>
 			<texture colordiffuse="Dark3">common/black.png</texture>
 			<height>80</height>
-			<visible>Window.IsVisible(Home.xml)</visible>
+			<visible>Window.IsVisible(Home.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>

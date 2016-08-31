@@ -2,47 +2,21 @@
 <!-- Foundation -->
 <window id="147">
     <defaultcontrol>61</defaultcontrol>
-
     <controls>
-
         <include>GlobalOverlay</include>
-
         <control type="group">
-
-
-                <include>Animation.FadeIn.Slide</include>
-                <include>Animation.FadeOut</include>
-                <posy>0</posy>
-                <width>1920</width>
-                <height>1080</height>
-                <control type="image">
-                    <left>-8</left>
-                    <right>-8</right>
-                    <top>-8</top>
-                    <bottom>-8</bottom>
-                    <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
-                </control>
-            <control type="image">
-                <left>-8</left>
-                <right>-8</right>
-                <top>-8</top>
-                <bottom>-8</bottom>
-                <aspectratio align="center">scale</aspectratio>
-                <texture fallback="common/black.png" background="true">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
-                <visible>!Skin.HasSetting(furniture.info.fanart)</visible>
-            </control>
-              <control type="image">
-                  <left>-8</left>
-                  <right>-8</right>
-                  <top>-8</top>
-                  <bottom>-8</bottom>
-                <animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-                <aspectratio align="center">scale</aspectratio>
-                <texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">diffuseoverlay.png</texture>
-                <visible>!Skin.HasSetting(furniture.info.fanart)</visible>
-            </control>
-
-            
+			<include>Animation.FadeIn.Slide</include>
+			<include>Animation.FadeOut</include>
+			<posy>0</posy>
+			<width>1920</width>
+			<height>1080</height>
+			<control type="image">
+				<left>-8</left>
+				<right>-8</right>
+				<top>-8</top>
+				<bottom>-8</bottom>
+				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+			</control>            
             <control type="label" id="1">
                 <description>header label</description>
                 <left>30</left>
@@ -53,7 +27,6 @@
                 <textcolor>Black70</textcolor>
                 <height>45</height>
             </control>
-
             <control type="textbox" id="5">
                 <description>textarea</description>
                 <left>60</left>
@@ -62,7 +35,6 @@
                 <height>780</height>
                 <align>justify</align>
             </control>
-
             <control type="scrollbar" id="61">
                 <right>30</right>
                 <posy>108</posy>
@@ -75,9 +47,6 @@
                 <texturesliderbackground colordiffuse="Black12">common/white.png</texturesliderbackground>
                 <texturesliderbar colordiffuse="$VAR[ColourHighlight]">common/white.png</texturesliderbar>
             </control>
-
         </control>
-
     </controls>
-
 </window>

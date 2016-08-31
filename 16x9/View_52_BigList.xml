@@ -9,7 +9,7 @@
 		<control type="group">
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(52)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<control type="list" id="52">
 				<top>PosterPad</top>
 				<left>200</left>
@@ -58,7 +58,7 @@
 		<control type="group">
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(52)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<control type="panel" id="52">
 				<top>PosterPad</top>
 				<left>SidePad</left>
@@ -519,7 +519,7 @@
 	</include>
 	<include name="View_52_SidePoster">
 		<control type="group" description="Poster">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<left>1200</left>
 			<top>PosterPad</top>
 			<visible>!String.IsEmpty(ListItem.Icon)</visible>

@@ -91,7 +91,7 @@
 	<include name="View_514_PosterShift">
 		<control type="group">
 			<visible>Control.IsVisible(514)</visible>
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogAlbumInfo.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<include>Animation.Common</include>
 			<control type="group">
 				<visible>!Window.IsActive(addoninformation)</visible>

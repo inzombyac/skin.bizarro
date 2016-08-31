@@ -1,87 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<!-- musicinformation -->
-	<defaultcontrol always="true">1</defaultcontrol>
-	<onload>Control.Move(5012,$INFO[Container(5012).CurrentItem,-])</onload>
-	<onload>Control.Move(5012,1)</onload>
-	<onload>Control.Move(5013,$INFO[Container(5013).CurrentItem,-])</onload>
-	<onload>Control.Move(5013,1)</onload>
-	<onload>Control.Move(5014,$INFO[Container(5014).CurrentItem,-])</onload>
-	<onload>Control.Move(5014,1)</onload>
-	<onload>Control.Move(5015,$INFO[Container(5015).CurrentItem,-])</onload>
-	<onload>Control.Move(5015,1)</onload>
-	<onload>ClearProperty(logo,home)</onload>
-	<onload>ClearProperty(Banner,home)</onload>
-	<onload>ClearProperty(Fanart,home)</onload>
-	<onload>ClearProperty(Fanart2,home)</onload>
-	<onload>ClearProperty(Fanart3,home)</onload>
-	<onload>ClearProperty(Artist_Formed,home)</onload>
-	<onload>ClearProperty(Born,home)</onload>
-	<onload>ClearProperty(Died,home)</onload>
-	<onload>ClearProperty(Description,home)</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$VAR[MusicFanart]"',radius=$VAR[VideoInfoBlurLevel],prefix=MusicInfo)</onload>
-	<onunload>ClearProperty(AlbumDetails,home)</onunload>
-	<onunload>ClearProperty(MostLoved,home)</onunload>
-	<onunload>ClearProperty(Concerts,home)</onunload>
-	<onunload>ClearProperty(Discography,home)</onunload>
-	<onunload>ClearProperty(SimilarArtists,home)</onunload>
-	<onunload>ClearProperty(logo,home)</onunload>
-	<onunload>ClearProperty(Banner,home)</onunload>
-	<onunload>ClearProperty(Fanart,home)</onunload>
-	<onunload>ClearProperty(Fanart2,home)</onunload>
-	<onunload>ClearProperty(Fanart3,home)</onunload>
-	<onload condition="Container.Content(artists)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
-	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
-	<animation effect="fade" end="100" start="100" time="200">WindowClose</animation>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<zorder>0</zorder>s
+	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onunload>ClearProperty(Similar,home)</onunload>
+	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
+	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
 	<controls>
-		<!-- Fanart -->
-		<control type="group">
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>DialogFanartFade</colordiffuse>
-				<texture background="true">special://skin/extras/backgrounds/Headphones.jpg</texture>
-				<visible>String.IsEmpty(Container.Art(artist.fanart)) + String.IsEmpty(ListItem.Art(fanart))</visible>
-				<visible>Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>DialogFanartFade</colordiffuse>
-				<texture background="true">$VAR[MusicFanart]</texture>
-				<visible>Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<aspectratio align="center">scale</aspectratio>
-				<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(MusicInfo.ImageFilter)]</texture>
-				<visible>!Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-				<aspectratio align="center">scale</aspectratio>
-				<texture colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]">diffuseoverlay.png</texture>
-				<visible>!Skin.HasSetting(furniture.info.fanart)</visible>
-			</control>
-
-			<control type="image">
-				<include>Dimensions_Fullscreen</include>
-				<colordiffuse>DialogFanartFade</colordiffuse>
-				<texture background="true">$INFO[Container(5013).ListItem.Property(GoogleMap)]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Concerts)) + Control.HasFocus(5013)</visible>
-			</control>
-		</control>
-		<include>Furniture_Clock</include>
-		<control type="image">
-			<top>59</top>
-			<right>40</right>
-			<width>258</width>
-			<height>130</height>
-			<texture>$INFO[Window(Home).Property(logo)]</texture>
-			<aspectratio align="center" aligny="top">keep</aspectratio>
-			<visible>Skin.HasSetting(furniture.logo)</visible>
-			<animation effect="rotate" end="10" center="auto" condition="true" time="200">conditional</animation>
-		</control>
 		<control type="image">
 			<top>280</top>
 			<left>570</left>
@@ -98,44 +23,15 @@
 			</animation>
 			<visible>Control.HasFocus(5014)</visible>
 		</control>
-		<!-- Twitter -->
-		<control type="group">
-			<bottom>5</bottom>
-			<height>36</height>
-			<visible>Container.Content(Artists)</visible>
-			<width>100%</width>
-			<control type="label">
-				<width>150</width>
-				<height>36</height>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<label>[B]Twitter[/B]</label>
-				<aligny>center</aligny>
-			</control>
-			<control type="label">
-				<left>150</left>
-				<top>6</top>
-				<width>100%</width>
-				<height>24</height>
-				<font>Tiny</font>
-				<textcolor>Dark2</textcolor>
-				<scroll>true</scroll>
-				<wrapmultiline>false</wrapmultiline>
-				<scrollspeed>40</scrollspeed>
-				<scrollsuffix> ••</scrollsuffix>
-				<label fallback="19055">$INFO[Container(9301).ListItem.Property(author),[B],[/B]]$INFO[Container(9301).ListItem.Property(date), ,]$INFO[Container(9301).ListItem.Property(comment), - ","]$INFO[Container(9301).ListItem(1).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(1).Property(date), ,]$INFO[Container(9301).ListItem(1).Property(comment), - ","]$INFO[Container(9301).ListItem(2).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(2).Property(date), ,]$INFO[Container(9301).ListItem(2).Property(comment), - ","]$INFO[Container(9301).ListItem(3).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(3).Property(date), ,]$INFO[Container(9301).ListItem(3).Property(comment), - ","]$INFO[Container(9301).ListItem(4).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(4).Property(date), ,]$INFO[Container(9301).ListItem(4).Property(comment), - ","]$INFO[Container(9301).ListItem(5).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(5).Property(date), ,]$INFO[Container(9301).ListItem(5).Property(comment), - ","]$INFO[Container(9301).ListItem(6).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(6).Property(date), ,]$INFO[Container(9301).ListItem(6).Property(comment), - ","]$INFO[Container(9301).ListItem(7).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(7).Property(date), ,]$INFO[Container(9301).ListItem(7).Property(comment), - ","]$INFO[Container(9301).ListItem(8).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(8).Property(date), ,]$INFO[Container(9301).ListItem(8).Property(comment), - ","]$INFO[Container(9301).ListItem(9).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(9).Property(date), ,]$INFO[Container(9301).ListItem(9).Property(comment), - ","]$INFO[Container(9301).ListItem(10).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(10).Property(date), ,]$INFO[Container(9301).ListItem(10).Property(comment), - ","]$INFO[Container(9301).ListItem(11).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(11).Property(date), ,]$INFO[Container(9301).ListItem(11).Property(comment), - ","]$INFO[Container(9301).ListItem(12).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(12).Property(date), ,]$INFO[Container(9301).ListItem(12).Property(comment), - ","]$INFO[Container(9301).ListItem(13).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(13).Property(date), ,]$INFO[Container(9301).ListItem(13).Property(comment), - ","]$INFO[Container(9301).ListItem(14).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(14).Property(date), ,]$INFO[Container(9301).ListItem(14).Property(comment), - ","]$INFO[Container(9301).ListItem(15).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(15).Property(date), ,]$INFO[Container(9301).ListItem(15).Property(comment), - ","]$INFO[Container(9301).ListItem(16).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(16).Property(date), ,]$INFO[Container(9301).ListItem(16).Property(comment), - ","]$INFO[Container(9301).ListItem(17).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(17).Property(date), ,]$INFO[Container(9301).ListItem(17).Property(comment), - ","]$INFO[Container(9301).ListItem(18).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(18).Property(date), ,]$INFO[Container(9301).ListItem(18).Property(comment), - ","]$INFO[Container(9301).ListItem(19).Property(author), •• [B],[/B]]$INFO[Container(9301).ListItem(19).Property(date), ,]$INFO[Container(9301).ListItem(19).Property(comment), - ","]</label>
-				<aligny>center</aligny>
-			</control>
-		</control>
 		<control type="group">
 			<include>DialogMusicInfoAnimation</include>
-			<left>90</left>
-			<top>99</top>
+			<left>SidePad</left>
+			<top>182</top>
 			<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
 			<!-- Icon -->
 			<control type="image">
-				<width>336</width>
-				<height>336</height>
+				<width>567</width>
+				<height>567</height>
 				<texture>$INFO[ListItem.Icon]</texture>
 				<aspectratio>scale</aspectratio>
 			</control>
@@ -144,11 +40,12 @@
 				<top>560</top>
 				<width>320</width>
 				<height>320</height>
+				<right>30</right>
 				<texture fallback="cdart/default.png">$INFO[ListItem.FolderPath,,cdart.png]</texture>
 				<aspectratio aligny="center">keep</aspectratio>
 				<visible>!Skin.HasSetting(furniture.nodiscart)</visible>
 				<animation type="WindowOpen" reversible="false" condition="container.content(albums)">
-					<effect type="slide" start="-200,20" end="0,0" delay="600" time="800" tween="quadratic" easing="out" />
+					<effect type="slide" start="200,-20" end="0,0" delay="600" time="800" tween="quadratic" easing="out" />
 					<effect type="rotate" start="0" center="auto" end="-720" delay="400" time="800" tween="quadratic" easing="out" />
 				</animation>
 				<animation type="WindowClose" reversible="false" condition="container.content(albums)">
@@ -1515,7 +1412,7 @@
 								<scroll>false</scroll>
 								<textcolor>Black700</textcolor>
 								<shadowcolor>80000000</shadowcolor>
-								<label>$INFO[ListItem.Album</label>
+								<label>$INFO[ListItem.Album]</label>
 								<animation center="auto" condition="Control.HasFocus(5012)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
 								<animation center="auto" condition="Control.HasFocus(5012)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
 							</control>
@@ -1901,7 +1798,7 @@
 					<animation condition="Control.HasFocus(5013)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(5013)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				</control>
-				<control id="5013" type="fixedlist">
+				<!-- <control id="5013" type="fixedlist">
 					<left>-25</left>
 					<top>-271</top>
 					<width>2600</width>
@@ -2151,7 +2048,7 @@
 						</control>
 					</focusedlayout>
 					<content>plugin://script.extendedinfo?info=artistevents&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
-				</control>
+				</control>-->
 				<control type="group">
 					<left>1030</left>
 					<top>-319</top>

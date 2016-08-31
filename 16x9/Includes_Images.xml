@@ -207,6 +207,7 @@
 		<!-- <value>$INFO[ListItem.Art(clearlogo)]</value> -->
 	</variable>
 	<variable name="MusicFanart">
+		
 		<value condition="!String.IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>special://skin/extras/backgrounds/Headphones.jpg</value>
