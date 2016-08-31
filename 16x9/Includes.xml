@@ -133,7 +133,7 @@
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<!-- Skin Shortcuts -->
 		<value condition="Window.IsVisible(script-skinshortcuts.xml) + !String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(Background)]</value>
-		<value>common/null.png</value>
+		<value>diffuse/bg-diffuse.png</value>
 	</variable>
 	<include name="GlobalVideoWindow">
 		<control type="image" description="Background">
@@ -187,7 +187,6 @@
 			<visible>!Window.IsVisible(home)</visible>
 			<animation effect="fade" start="100" end="75" time="200" condition="Player.HasVideo + Skin.HasSetting(global.showvideo) | Player.HasAudio + Skin.HasSetting(global.showvisualisation)">Conditional</animation>
 		</control>
-		<!-- Dump this -->
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
@@ -207,8 +206,7 @@
 		<control type="multiimage" description="Fanart">
  			<include condition="!Window.IsVisible(home)">GlobalBackgroundFade</include>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
-			<visible>!Skin.HasSetting(global.hidefanart) | Window.IsVisible(home)</visible>
-			<visible>![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)]</visible>
+			<visible>!Skin.HasSetting(global.hidefanart) + ![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)] + !Window.IsVisible(Home.xml) </visible>
 			<include>Dimensions_Fullscreen</include>
 			<include>Animation.FadeFromHome</include>
 			<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.IsVisible(home)">WindowClose</animation>
@@ -224,8 +222,14 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(Home.ImageFilter)]</texture>
-			<visible>Window.IsVisible(home)</visible>
+			<texture background="true">$INFO[Window(home).Property(Home.ImageFilter)]</texture>
+			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + !String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight2]" background="true">diffuse/bg-diffuse.png</texture>
+			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
 		</control>
 		<control id="8328" type="image">
 			<include>Dimensions_Fullscreen</include>
@@ -253,7 +257,7 @@
 			<height>1080</height>
 			<aspectratio>stretch</aspectratio>
 			<!--<include>Animation_FanartFade</include>-->
-			<texture background="true" colordiffuse="FloorFade">backgrounds/black_content2.png</texture>
+			<texture background="true" colordiffuse="FloorFade">diffuseoverlay.png</texture>
 			<visible>Control.HasFocus(515)</visible>
 		</control>
 	</include>
@@ -311,7 +315,7 @@
 			<height>1080</height>
 			<aspectratio>stretch</aspectratio>
 			<!--<include>Animation_FanartFade</include>-->
-			<texture>backgrounds/black_content2.png</texture>
+			<texture>diffuseoverlay.png</texture>
 		</control>
 	</include>
 	<!-- No textures -->

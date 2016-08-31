@@ -1,13 +1,10 @@
 <window>
     <defaultcontrol always="true">52</defaultcontrol>
-    
     <backgroundcolor>0</backgroundcolor>
-    <onload>SetProperty(SkinInitStarted,1,home)</onload>
 	<onload condition="!Skin.HasSetting(home.masteruser)">SetFocus(52,1)</onload>
     <controls>
 		<control type="group">
             <visible>!Player.HasVideo</visible>
-            <visible>!String.IsEmpty(Window(home).Property(SkinInitStarted))</visible>
             <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
             <include>Furniture_Header</include>
             <include>Furniture_Clock</include>
@@ -76,7 +73,7 @@
                         <width>111</width>
                         <height>111</height>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture diffuse="diffuse/dialogselect.png" fallback="DefaultActor.png">$INFO[Listitem.Icon]</texture>
+                        <texture diffuse="diffuse/dialogselect.png" fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
                         <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
 						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>

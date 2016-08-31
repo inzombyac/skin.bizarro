@@ -242,6 +242,18 @@
 		<alttexturefocus colordiffuse="Dark1" border="16">common/white.png</alttexturefocus>
 		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
 	</include>
+	<include name="DefContextButtonToggle">
+		<radioposx>400</radioposx>
+		<width>430</width>
+		<height>55</height>
+		<font>TinyBold</font>
+		<textcolor>$VAR[ColourHighlight2]</textcolor>
+		<textureradiofocus colordiffuse="$VAR[ColourHighlight2]">buttons/radio-on.png</textureradiofocus>
+		<textureradionofocus colordiffuse="Black30">buttons/radio-off.png</textureradionofocus>
+		<focusedcolor>$VAR[ColourHighlight2]</focusedcolor>
+		<alttexturefocus colordiffuse="Dark1" border="16">common/white.png</alttexturefocus>
+		<texturefocus colordiffuse="Dark1" border="16">common/white.png</texturefocus>
+	</include>
 	<include name="DefSettingsButton">
 		<align>left</align>
 		<font>Small</font>
@@ -296,7 +308,7 @@
 		<width>270</width>
 	</include>
 	<include name="Def9000GroupList">
-		<left>10</left>
+		<left>20</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
@@ -466,15 +478,15 @@
 		<control type="button">
 			<left>-10</left>
 			<top>-12</top>
-			<width>465</width>
+			<width>475</width>
 			<height>1104</height>
 			<texturefocus border="12">common/rounded-shadow8.png</texturefocus>
 			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
-			<colordiffuse>White95</colordiffuse>
+			<colordiffuse>Light1</colordiffuse>
 		</control>
 		<control type="group">
 			<control type="image">
-				<left>30</left>
+				<left>40</left>
 				<top>25</top>
 				<width>70</width>
 				<height>70</height>
@@ -485,7 +497,7 @@
 				<align>left</align>
 			</control>
 			<control type="image">
-				<left>30</left>
+				<left>40</left>
 				<top>25</top>
 				<width>70</width>
 				<height>70</height>
@@ -504,7 +516,7 @@
 		</control>
 	</include>
 	<include name="Def9000HomeMenuTop">
-		<left>10</left>
+		<left>20</left>
 		<top>100</top>
 		<height>1080</height>
 		<onright>300</onright>
@@ -650,7 +662,7 @@
 		</control>
 	</include>
 	<include name="Def9000MediaMenuTop">
-		<left>10</left>
+		<left>20</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
@@ -666,6 +678,71 @@
 		<itemgap>0</itemgap>
 		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Video Options</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="10">
+			<description>Watched Toggle</description>
+			<include>DefContextButtonToggle</include>
+			<align>left</align>
+			<label>20367</label>
+		</control>
+		<control type="group" id="9090">
+			<height>70</height>
+			<ondown>19</ondown>
+			<onup>10</onup>
+			<control type="button" id="9091">
+				<description>Global Search</description>
+				<include>DefContextButton</include>
+				<align>left</align>
+				<label>137</label>
+				<onclick>RunScript(script.globalsearch,tvshows=true&amp;movies=true&amp;episodes=true&amp;actors=true)</onclick>
+				<onup>10</onup>
+				<ondown>19</ondown>
+				<onright>300</onright>
+			</control>
+			<control type="image">
+				<right>20</right>
+				<top>10</top>
+				<width>50</width>
+				<height>50</height>
+				<aligny>center</aligny>
+				<texture background="true" colordiffuse="Dark1">special://skin/extras/icons/search.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>!Control.HasFocus(9091)</visible>
+			</control>
+			<control type="image">
+				<right>20</right>
+				<top>10</top>
+				<width>50</width>
+				<height>50</height>
+				<aligny>center</aligny>
+				<texture background="true" colordiffuse="Light1">special://skin/extras/icons/search.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>Control.HasFocus(9091)</visible>
+			</control>
+		</control>
+		<control type="edit" id="19">
+			<label>587</label>
+			<description>Filter (hidden)</description>
+			<include>DefContextButton2</include>
+			<visible>!Container.CanFilterAdvanced</visible>
+		</control>
+		<control type="radiobutton" id="98">
+			<visible>Container.CanFilterAdvanced</visible>
+			<description>Filter</description>
+			<include>DefContextButton2</include>
+			<label>587</label>
+			<align>left</align>
+			<onclick>SetFocus(50)</onclick>
+			<onclick>Filter</onclick>
+			<selected>Container.Filtered</selected>
+		</control>
+		<control type="label" id="201">
 			<height>42</height>
 			<textoffsetx>15</textoffsetx>
 			<font>Home</font>
@@ -692,6 +769,16 @@
 			<label>584</label>
 			<altlabel>585</altlabel>
 		</control>
+		<control type="label" id="202">
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Misc Options</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<!-- Other Options -->
 		<control type="radiobutton" id="9030" description="Plot Overlay">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -892,9 +979,51 @@
 			<onclick>Skin.ToggleSetting(views.156.showtick)</onclick>
 			<visible>Control.IsVisible(156)</visible>
 		</control>
+		<control type="label" id="203">
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Actions</label>
+			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<!-- <control type="radiobutton" id="16"> <description>PartyMode</description> <include>DefContextButton</include> <align>left</align> <label>589</label> <visible>Container.Content(MusicVideos)</visible> </control> -->
+		<control type="button" id="9092">
+			<description>Set Custom Widget</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31222</label>
+			<onclick>Back</onclick>
+			<onclick>ActivateWindow(1106)</onclick>
+		</control>
+		<control type="button" id="9098">
+			<description>Video Playlist</description>
+			<include>DefContextButton2</include>
+			<label>559</label>
+			<align>left</align>
+			<onclick>ActivateWindow(VideoPlaylist)</onclick>
+			<visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
+		</control>
+		<control type="button" id="20">
+			<description>Update</description>
+			<align>left</align>
+			<label>653</label>
+			<include>DefContextButton2</include>
+		</control>
+		<control type="radiobutton" id="11">
+			<description>Unlock Shares</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>20336</label>
+			<onclick>xbmc.mastermode</onclick>
+			<selected>system.ismaster</selected>
+			<visible>system.haslocks</visible>
+		</control>
+		
 	</include>
 	<include name="Def9000MusicSide">
-		<left>10</left>
+		<left>20</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
@@ -1031,7 +1160,7 @@
 		</control>
 	</include>
 	<include name="Def9000AddonSide">
-		<left>10</left>
+		<left>20</left>
 		<top>115</top>
 		<width>455</width>
 		<height>1080</height>
