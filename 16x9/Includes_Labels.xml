@@ -786,12 +786,14 @@
 		<value condition="String.IsEqual(ListItem.Duration,300)">5 hours</value>
 	</variable>
 	<variable name="MusicInfoLabel">
-		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Album]$INFO[ListItem.Year, • ,]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="MusicInfoDescription">
-		<value condition="Container.Content(albums)">$INFO[ListItem.Property(Album_Description)]</value>
-		<value>$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.ContributorAndRole)">$INFO[ListItem.ContributorAndRole]</value>
+		<value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
+		<value condition=" !String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value>...</value>
 	</variable>
 	<variable name="MovieList">
 		<value condition="!String.IsEmpty(Container(150).ListItemNoWrap(2).Label)">$INFO[Container(150).ListItemNoWrap(0).Label], $INFO[Container(150).ListItemNoWrap(1).Label], $INFO[Container(150).ListItemNoWrap(2).Label]</value>

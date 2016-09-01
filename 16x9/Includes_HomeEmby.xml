@@ -2322,8 +2322,7 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<!-- Actions - No longer needed in Krypton --> 
-		
+		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

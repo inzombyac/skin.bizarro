@@ -228,7 +228,7 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$VAR[ColourHighlight2]" background="true">diffuse/bg-diffuse.png</texture>
+			<texture colordiffuse="$VAR[ColourHighlight2]" background="true" fallback="diffuse/bg-diffuse.png">$INFO[Window(home).Property(Home2.ImageFilter)]</texture>
 			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
 		</control>
 		<control id="8328" type="image">
