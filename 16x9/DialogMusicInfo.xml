@@ -6,22 +6,6 @@
 	<onunload>ClearProperty(DialogInfo.ImageColor,home)</onunload>
 	<onunload>ClearProperty(DialogInfo.ImageFilter,home)</onunload>
 	<controls>
-		<control type="image">
-			<top>280</top>
-			<left>570</left>
-			<width>400</width>
-			<height>400</height>
-			<texture fallback="cdart/default.png">$INFO[Container(5014).ListItem.Property(cdart)]</texture>
-			<aspectratio aligny="center">keep</aspectratio>
-			<animation type="Conditional" reversible="false" condition="Control.HasFocus(5014)">
-				<effect type="slide" start="-200,20" end="0,0" delay="600" time="800" tween="quadratic" easing="out" />
-				<effect type="rotate" start="0" center="auto" end="-720" delay="400" time="800" tween="quadratic" easing="out" />
-			</animation>
-			<animation type="Conditional" reversible="false" condition="!Control.HasFocus(5014)">
-				<effect type="slide" start="20,0" end="-400,0" time="320" tween="quadratic" easing="out" />
-			</animation>
-			<visible>Control.HasFocus(5014)</visible>
-		</control>
 		<control type="group">
 			<include>DialogMusicInfoAnimation</include>
 			<left>SidePad</left>
@@ -54,7 +38,7 @@
 				<visible>container.content(albums)</visible>
 			</control>
 			<control id="7000" type="button">
-				<top>374</top>
+				<top>720</top>
 				<width>336</width>
 				<height>53</height>
 				<onup>Close</onup>
@@ -75,7 +59,7 @@
 				<include>DefDialogInfoButtons</include>
 			</control>
 			<control id="7001" type="button">
-				<top>439</top>
+				<top>785</top>
 				<width>336</width>
 				<height>53</height>
 				<onup>7000</onup>
@@ -96,7 +80,7 @@
 				<label>Details</label>
 			</control>
 			<control id="7002" type="button">
-				<top>504</top>
+				<top>850</top>
 				<width>336</width>
 				<height>53</height>
 				<onup>7001</onup>
@@ -117,7 +101,7 @@
 				<visible>Container.Content(artists)</visible>
 			</control>
 			<control id="7003" type="button">
-				<top>569</top>
+				<top>915</top>
 				<width>336</width>
 				<height>53</height>
 				<onup>7002</onup>
@@ -138,7 +122,7 @@
 				<visible>Container.Content(artists)</visible>
 			</control>
 			<control id="7004" type="button">
-				<top>634</top>
+				<top>980</top>
 				<width>336</width>
 				<height>53</height>
 				<onup>7003</onup>
@@ -159,7 +143,7 @@
 				<visible>Container.Content(artists)</visible>
 			</control>
 			<control id="7005" type="button">
-				<top>699</top>
+				<top>1045</top>
 				<width>336</width>
 				<height>53</height>
 				<onup>7004</onup>
@@ -181,8 +165,8 @@
 			</control>
 		</control>
 		<control type="group">
-			<left>460</left>
-			<top>99</top>
+			<left>665</left>
+			<top>180</top>
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 			<!-- Heading -->
 			<control type="label">
@@ -194,36 +178,6 @@
 				<scrollspeed>100</scrollspeed>
 				<label>$VAR[MusicInfoLabel]</label>
 				<include>DialogMusicInfoAnimation</include>
-			</control>
-			<!-- Formed -->
-			<control type="grouplist">
-				<include>DialogMusicInfoAnimation</include>
-				<top>40</top>
-				<height>44</height>
-				<itemgap>10</itemgap>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Artists) + !String.IsEmpty(Window(Home).Property(Artist_Formed))</visible>
-				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<control type="label">
-					<align>left</align>
-					<aligny>center</aligny>
-					<top>-14</top>
-					<posx>4</posx>
-					<width>44</width>
-					<font>symbol</font>
-					<label></label>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<width max="1192">auto</width>
-					<height>36</height>
-					<font>Small</font>
-					<aligny>bottom</aligny>
-					<textcolor>Black700</textcolor>
-					<label>$INFO[Window(Home).Property(Artist_Formed)]</label>
-				</control>
 			</control>
 			<!-- Year -->
 			<control type="grouplist">
@@ -284,36 +238,6 @@
 					<label>$INFO[ListItem.Genre]</label>
 				</control>
 			</control>
-			<!-- Born -->
-			<control type="grouplist">
-				<include>DialogMusicInfoAnimation</include>
-				<top>144</top>
-				<height>44</height>
-				<itemgap>10</itemgap>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Artists)  + !String.IsEmpty(Window(Home).Property(Born))</visible>
-				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<control type="label">
-					<align>left</align>
-					<aligny>center</aligny>
-					<top>-14</top>
-					<posx>4</posx>
-					<width>44</width>
-					<font>symbol</font>
-					<label></label>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<width max="1192">auto</width>
-					<height>36</height>
-					<font>Small</font>
-					<aligny>bottom</aligny>
-					<textcolor>Black700</textcolor>
-					<label fallback="N/A">$INFO[Window(Home).Property(Born)]</label>
-				</control>
-			</control>
 			<!-- Artist -->
 			<control type="grouplist">
 				<include>DialogMusicInfoAnimation</include>
@@ -342,66 +266,6 @@
 					<aligny>bottom</aligny>
 					<textcolor>Black700</textcolor>
 					<label>$INFO[ListItem.Artist]</label>
-				</control>
-			</control>
-			<!-- Style -->
-			<control type="grouplist">
-				<include>DialogMusicInfoAnimation</include>
-				<top>196</top>
-				<height>44</height>
-				<itemgap>10</itemgap>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<visible>Container.Content(Albums) + !String.IsEmpty(ListItem.Property(Album_Style))</visible>
-				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<control type="label">
-					<align>left</align>
-					<aligny>center</aligny>
-					<top>-14</top>
-					<posx>4</posx>
-					<width>44</width>
-					<font>symbol</font>
-					<label></label>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<width max="1192">auto</width>
-					<height>36</height>
-					<font>Small</font>
-					<aligny>bottom</aligny>
-					<textcolor>Black700</textcolor>
-					<label>$INFO[ListItem.Property(Album_Style)]</label>
-				</control>
-			</control>
-			<!-- Died -->
-			<control type="grouplist">
-				<include>DialogMusicInfoAnimation</include>
-				<top>196</top>
-				<height>44</height>
-				<itemgap>10</itemgap>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<visible>!Container.Content(Albums)  + !String.IsEmpty(Window(Home).Property(Died))</visible>
-				<animation condition="Control.HasFocus(1500) | Control.HasFocus(2500)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-				<animation condition="!Control.HasFocus(1500) + !Control.HasFocus(2500)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				<control type="label">
-					<align>left</align>
-					<aligny>center</aligny>
-					<top>-14</top>
-					<posx>4</posx>
-					<width>44</width>
-					<font>symbol</font>
-					<label></label>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<width max="1192">auto</width>
-					<height>36</height>
-					<font>Small</font>
-					<aligny>bottom</aligny>
-					<textcolor>Black700</textcolor>
-					<label fallback="N/A">$INFO[Window(Home).Property(Artist_Disbanded),, ]$INFO[Window(Home).Property(Died)]</label>
 				</control>
 			</control>
 			<control type="group" id="3444">
@@ -487,7 +351,7 @@
 						<label></label>
 						<textcolor>Black700</textcolor>
 						<onup condition="Control.IsVisible(3444)">3444</onup>
-						<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
+						<onclick>PlayMedia(&quot;$INFO[ListItem.FileNameAndPath]&quot; )</onclick>
 						<texturefocus colordiffuse="$INFO[Window(home).Property(MusicInfo.ImageColor)]" border="5">common/box.png</texturefocus>
 						<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
 						<visible>Control.IsEnabled(1)</visible>
@@ -559,7 +423,7 @@
 						<textoffsetx>0</textoffsetx>
 						<font>EPGTimeline</font>
 						<label>Play</label>
-						<onclick>RunScript(script.playalbum,albumid=$INFO[ListItem.DBID])</onclick>
+						<onclick>PlayMedia(&quot;$INFO[ListItem.FileNameAndPath]&quot; )</onclick>
 						<animation condition="Control.HasFocus(1)" effect="fade" end="100" start="0" time="10">Conditional</animation>
 						<animation condition="!Control.HasFocus(1)" effect="fade" end="0" start="100" time="10">Conditional</animation>
 						<visible>Control.IsEnabled(1)</visible>
