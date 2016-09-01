@@ -190,7 +190,7 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
+			<texture fallback="common/black.png" background="true">$INFO[Window(home).Property(DialogInfo.ImageFilter)]</texture>
 			<visible>Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<fadetime>600</fadetime>
@@ -199,7 +199,7 @@
 			<include>Dimensions_Fullscreen</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(VideoInfo.ImageColor)]">common/floor.png</texture>
+			<texture colordiffuse="$INFO[Window(home).Property(DialogInfo.ImageColor)]">common/floor.png</texture>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			<visible>Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)</visible>
 		</control>

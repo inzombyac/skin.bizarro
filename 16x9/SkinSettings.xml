@@ -577,7 +577,7 @@
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
 						<label>Blur Level</label>
-						<label2 fallback="10">[COLOR=$VAR[ColourHighlight2]]$VAR[VideoInfoBlurLevel][/COLOR]</label2>
+						<label2 fallback="10">[COLOR=$VAR[ColourHighlight2]]$VAR[DialogInfoBlurLevel][/COLOR]</label2>
 						<onclick>SetProperty(Dialog.NumItems,10)</onclick>
 						<onclick>SetProperty(Dialog.1.Label,2)</onclick>
 						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(VideoInfoBlur,2))</onclick>

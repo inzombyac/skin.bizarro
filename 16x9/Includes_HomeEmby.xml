@@ -46,7 +46,7 @@
 				<include>HomeEmbyContent</include>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
 			</control>
 		</control>
 	</include>
@@ -59,7 +59,7 @@
 				<texturenofocus>-</texturenofocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -78,7 +78,7 @@
 				<texturenofocus>-</texturenofocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[VideoInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>

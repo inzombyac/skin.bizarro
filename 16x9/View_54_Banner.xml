@@ -2,7 +2,7 @@
 <!-- Foundation -->
 
 <includes>
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<include name="View_54_Banner">
 		<control type="group">
 			<include>Animation.Common</include>

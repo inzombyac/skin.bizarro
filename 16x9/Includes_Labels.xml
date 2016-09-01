@@ -479,7 +479,7 @@
 		<value condition="String.IsEqual(Skin.String(FanartFade),Brightest)">FanartFade4</value>
 		<value>FanartFade</value>
 	</variable>
-	<variable name="VideoInfoBlurLevel">
+	<variable name="DialogInfoBlurLevel">
 		<value condition="!String.IsEmpty(Skin.String(VideoInfoBlur))">$INFO[Skin.String(VideoInfoBlur)]</value>
 		<value>10</value>
 	</variable>

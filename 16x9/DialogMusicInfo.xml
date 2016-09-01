@@ -2,10 +2,9 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<zorder>0</zorder>s
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[VideoInfoBlurLevel],prefix=VideoInfo)</onload>
-	<onunload>ClearProperty(Similar,home)</onunload>
-	<onunload>ClearProperty(VideoInfo.ImageColor,home)</onunload>
-	<onunload>ClearProperty(VideoInfo.ImageFilter,home)</onunload>
+	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
+	<onunload>ClearProperty(DialogInfo.ImageColor,home)</onunload>
+	<onunload>ClearProperty(DialogInfo.ImageFilter,home)</onunload>
 	<controls>
 		<control type="image">
 			<top>280</top>
@@ -3419,15 +3418,6 @@
 				<texturesliderbarfocus border="3">common/Scrollbar.png</texturesliderbarfocus>
 				<animation condition="System.IdleTime(1)" effect="fade" end="0" start="100" time="200">Conditional</animation>
 			</control>
-		</control>
-		<!-- Twitter Feed Fake List -->
-		<control type="list" id="9301">
-			<height>36</height>
-			<orientation>horizontal</orientation>
-			<autoscroll time="8000">false</autoscroll>
-			<itemlayout width="1" height="1"></itemlayout>
-			<focusedlayout width="1" height="1"></focusedlayout>
-			<content>plugin://script.extendedinfo?info=artistshouts&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
 		</control>
 	</controls>
 </window>
