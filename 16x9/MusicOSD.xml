@@ -80,7 +80,7 @@
                     <description>Playlist</description>
                     <align>left</align>
                     <label>559</label>
-                    <onclick>ActivateWindow(MusicPlaylist)</onclick>
+                    <onclick>ActivateWindow(musicplaylist)</onclick>
                     <include>DefOSDButtons</include>
                 </control>
 

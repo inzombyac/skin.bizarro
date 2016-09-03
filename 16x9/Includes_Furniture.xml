@@ -185,15 +185,16 @@
 					<visible>Player.Paused</visible>
 				</control>
 				<control type="button" id="7788">
+					<top>-5</top>
 					<ondown>300</ondown>
 					<left>-100</left>
-					<width>660</width>
+					<width>652</width>
 					<height>90</height>
 					<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
 					<textcolor>$VAR[OSDPanelWhite30]</textcolor>
 					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
 					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texturefocus>
-					<width>226</width>
+					<onclick>dialog.close(all,true)</onclick>
 					<onclick>FullScreen</onclick>
 				</control>
 			</control>
