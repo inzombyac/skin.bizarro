@@ -207,7 +207,6 @@
 		<!-- <value>$INFO[ListItem.Art(clearlogo)]</value> -->
 	</variable>
 	<variable name="MusicFanart">
-		
 		<value condition="!String.IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>special://skin/extras/backgrounds/Headphones.jpg</value>
@@ -284,6 +283,8 @@
 		<value condition="String.Contains(Window.Property(mpaa),US:R) | String.Contains(Window.Property(mpaa),USA:R) | String.Contains(Window.Property(mpaa),Rated R) | [String.IsEqual(Window.Property(mpaa),R)]">MPAA_R_Certificate_US</value>
 	</variable>
 	<variable name="HDSDImage">
+		<value condition="Container.Content(songs)">$INFO[ListItem.FileExtension,flags/audio/,.png]</value>
+		<value condition="Container.Content(albums) | Container.Content(artists)">flags/audio/fallback.png</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)"></value>
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>

@@ -8,7 +8,9 @@
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
         <include>Furniture_Clock</include>
+		<include>Furniture_Flags</include>
         <include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
         <include>View_50_List_Square</include>
         <include condition="!Skin.HasSetting(51bigwide.showinfo)">View_51_BigWide</include>

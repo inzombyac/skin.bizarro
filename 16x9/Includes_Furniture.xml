@@ -201,51 +201,71 @@
 	</include>
 	<!-- Flags -->
 	<variable name="Flagstar1">
+		<value condition="Integer.IsGreater(ListItem.UserRating,1)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,0)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,1)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,0)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar2">
+		<value condition="Integer.IsGreater(ListItem.UserRating,3)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,2)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,3)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,2)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar3">
+		<value condition="Integer.IsGreater(ListItem.UserRating,5)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,4)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,5)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,4)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar4">
+		<value condition="Integer.IsGreater(ListItem.UserRating,7)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,6)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,7)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,6)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar5">
+		<value condition="Integer.IsGreater(ListItem.UserRating,9)">star10</value>
+		<value condition="Integer.IsGreater(ListItem.UserRating,8)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,9)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,8)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="HubFlagstar1">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,1)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,0)">star5</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,1)">star10</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,0)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="HubFlagstar2">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,3)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,2)">star5</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,3)">star10</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,2)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="HubFlagstar3">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,5)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,4)">star5</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,5)">star10</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,4)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="HubFlagstar4">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,7)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,6)">star5</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,7)">star10</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,6)">star5</value>
 		<value>star0</value>
 	</variable>
 	<variable name="HubFlagstar5">
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,9)">star10</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,8)">star5</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,9)">star10</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,8)">star5</value>
 		<value>star0</value>
@@ -313,7 +333,7 @@
 		<value>star0</value>
 	</variable>
 	<include name="Furniture_Flags">
-		<control type="group">
+		<!-- <control type="group">
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
 			<visible>!Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
 			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
@@ -324,13 +344,12 @@
 			<centerbottom>30</centerbottom>
 			<width>120</width>
 			<height>120</height>
-			
 			<visible>!String.StartsWith(ListItem.Path,videodb://movies/sets)</visible>
-		</control>
+		</control> -->
 		<control type="grouplist">
 			<visible>!Skin.HasSetting(furniture.flags)</visible>
-			<visible>!Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
