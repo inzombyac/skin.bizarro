@@ -793,7 +793,7 @@
 		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.ContributorAndRole)">$INFO[ListItem.ContributorAndRole]</value>
 		<value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
 		<value condition=" !String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
-		<value>...</value>
+		<value>No description found</value>
 	</variable>
 	<variable name="MovieList">
 		<value condition="!String.IsEmpty(Container(150).ListItemNoWrap(2).Label)">$INFO[Container(150).ListItemNoWrap(0).Label], $INFO[Container(150).ListItemNoWrap(1).Label], $INFO[Container(150).ListItemNoWrap(2).Label]</value>
