@@ -320,15 +320,6 @@
 		<onback>50</onback>
 		<itemgap>0</itemgap>
 		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-		<control type="label" id="200">
-			<height>42</height>
-			<textoffsetx>15</textoffsetx>
-			<font>Home</font>
-			<label>View Options</label>
-			<textcolor>$VAR[ColourHighlight]</textcolor>
-			<aligny>center</aligny>
-			<align>left</align>
-		</control>
 	</include>
 	<include name="Def9000SettingsMenu">
 		<control type="group">
@@ -347,6 +338,31 @@
 				<onback condition="Window.IsVisible(SettingsCategory.xml)">3</onback>
 				<onback condition="!Window.IsVisible(SettingsCategory.xml)">9101</onback>
 				<include>Def9000GroupList</include>
+				<control type="label" id="200">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Settings Level</label>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<aligny>center</aligny>
+					<visible>Window.IsVisible(SettingsCategory.xml)</visible>
+					<align>left</align>
+				</control>
+				<control type="button" id="20">
+					<include>DefContextButton</include>
+					<onclick>SettingsLevelChange</onclick>
+					<visible>Window.IsVisible(SettingsCategory.xml)</visible>
+					<align>left</align>
+				</control>
+				<control type="label" id="201">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>5</label>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<aligny>center</aligny>
+					<align>left</align>
+				</control>
 				<control type="button" id="9001">
 					<onclick>ReplaceWindow(AppearanceSettings)</onclick>
 					<onclick>SetFocus(3)</onclick>
