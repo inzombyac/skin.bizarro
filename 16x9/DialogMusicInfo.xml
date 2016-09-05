@@ -128,8 +128,8 @@
 					<width>1620</width>
 					<height>116</height>
 					<itemgap>10</itemgap>
-					<onleft>noop</onleft>
-					<onright>noop</onright>
+					<onleft>9001</onleft>
+					<onright>9001</onright>
 					<ondown>5050</ondown>
 					<onup>300</onup>
 					<orientation>horizontal</orientation>

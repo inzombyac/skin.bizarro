@@ -467,7 +467,7 @@
 		<value>?</value>
 	</variable>
 	<variable name="SimilarVideos">
-		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
+		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarlocalmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
 	</variable>
 	<variable name="FanartFadeLabel">
