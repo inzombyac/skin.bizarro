@@ -6,8 +6,6 @@
 	<onload condition="Container.Content(artists) | Container.Content(songs)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
 	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
-	<onunload>ClearProperty(DialogInfo.ImageColor,home)</onunload>
-	<onunload>ClearProperty(DialogInfo.ImageFilter,home)</onunload>
 	<onunload>ClearProperty(Discography,home)</onunload>
 	<onunload>ClearProperty(SimilarArtists,home)</onunload>
 	<controls>

@@ -13,8 +13,6 @@
 	<onload condition="!String.IsEmpty(Container(50).ListItemNoWrap(2).Label)">SetProperty(Actor3,$INFO[Container(50).ListItemNoWrap(2).Label])</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<onunload>ClearProperty(Similar,home)</onunload>
-	<onunload>ClearProperty(DialogInfo.ImageColor,home)</onunload>
-	<onunload>ClearProperty(DialogInfo.ImageFilter,home)</onunload>
 	<controls>
 		<control type="group">
 			<animation type="WindowOpen" reversible="false">
@@ -48,7 +46,7 @@
 				<visible>!String.IsEmpty(ListItem.Icon)</visible>
 			</control>
 			<!-- Icon -->
-			<control type="image">
+			<control type="image" id="3">
 				<width>480</width>
 				<height>720</height>
 				<fadetime>200</fadetime>
@@ -102,7 +100,7 @@
 				<top>12</top>
 				<width>1194</width>
 				<height>169</height>
-				<control type="radiobutton"  id="132">
+				<control type="radiobutton"  id="300">
 					<top>-8</top>
 					<width>100%</width>
 					<height>100%</height>
@@ -122,7 +120,7 @@
 					<textoffsetx>2</textoffsetx>
 					<textoffsety>4</textoffsety>
 					<onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[ListItem.Plot],home)</onclick>
-					<onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[Window(home).Property(Text)]')</onclick>
+					<onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[ListItem.Plot]')</onclick>
 				</control>
 				<!-- Plot -->
 				<control type="textbox">
@@ -133,9 +131,8 @@
 					<font>TwentyEight</font>
 					<scroll>true</scroll>
 					<textcolor>Dark1</textcolor>
-					<label fallback="">$VAR[Plot]</label>
+					<label>$INFO[ListItem.Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
-					<visible>!ControlGroup(3444).HasFocus()</visible>
 				</control>
 			</control>
 			<!-- Button grouplist -->
@@ -212,60 +209,6 @@
 					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
-				<control id="10" type="button">
-					<description>Set Artwork</description>
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
-					<ondown>9007</ondown>
-					<font>EPGTimeline</font>
-					<label>13405</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
-					<texturefocus>dialogvideo/thumb.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/thumb.png</texturenofocus>
-					<alttexturefocus >dialogvideo/thumb.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/thumb.png</alttexturenofocus>
-				</control>
-				<!-- Artwork Downloader Button -->
-				<control id="20" type="button">
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
-					<ondown>9007</ondown>
-					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
-					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui,mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui,mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-					<font>EPGTimeline</font>
-					<label>13511</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
-					<texturefocus>dialogvideo/artwork.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/artwork.png</texturenofocus>
-					<alttexturefocus >dialogvideo/artwork.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/artwork.png</alttexturenofocus>
-				</control>
-				<!-- Refresh -->
-				<!-- <control type="button" id="6">
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(3444)">3444</onup>
-					<ondown>9007</ondown>
-					<font>EPGTimeline</font>
-					<label>Refresh</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
-					<texturefocus>dialogvideo/refresh.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/refresh.png</texturenofocus>
-					<alttexturefocus >dialogvideo/refresh.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/refresh.png</alttexturenofocus>
-				</control> -->
 				<!-- Kodi Rating -->
 				<control type="button" id="7">
 					<width>222</width>
@@ -306,6 +249,26 @@
 					<onclick condition="Container.Content(tvshows) + String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 				</control>
+				<!--Add to Couchpotato Button -->
+				<!-- <control type="button" id="1008">
+					<description>Couch Potato</description>
+					<width>222</width>
+					<height>116</height>
+					<onup condition="Control.IsVisible(3444)">3444</onup>
+					<ondown>9007</ondown>
+					<font>EPGTimeline</font>
+					<label>Extended Info</label>
+					<textoffsety>77</textoffsety>
+					<textcolor>White70</textcolor>
+					<textoffsetx>0</textoffsetx>
+					<aligny>top</aligny>
+					<texturefocus>dialogvideo/info.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
+					<alttexturefocus >dialogvideo/info.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
+					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))">RunPlugin(plugin://plugin.video.couchpotato_manager/movies/add?imdb_id=$INFO[ListItem.IMDBNumber])</onclick>
+					<visible>System.HasAddon(plugin.video.couchpotato_manager) </visible>
+				</control> -->
 			</control>
 			<!--Similar Overview-->
 			<!-- Button grouplist -->
@@ -402,13 +365,12 @@
 				<height>640</height>
 				<onup>9007</onup>
 				<ondown>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem.Label])</ondown>
-				<onleft>7000</onleft>
+				<onleft>50</onleft>
 				<onright>noop</onright>
 				<onright condition="!Window.IsVisible(1103)">SetProperty(BounceRight,1,Home)</onright>
 				<onback>9001</onback>
 				<preloaditems>2</preloaditems>
 				<focusposition>2</focusposition>
-				<viewtype label="">list</viewtype>
 				<orientation>horizontal</orientation>
 				<defaultcontrol always="true">0</defaultcontrol>
 				<scrolltime easing="inout" tween="sine">300</scrolltime>
@@ -429,7 +391,7 @@
 							<width>320</width>
 							<height>480</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<texture background="true">$INFO[ListItem.Thumb]</texture>
 						</control>
 						<control type="image">
 							<left>-48</left>
@@ -439,16 +401,16 @@
 							<texture border="66,66,51,51">views/shadow_nf.png</texture>
 						</control>
 						<control type="image">
-							<top>412</top>
+							<top>440</top>
 							<width>320</width>
-							<height>116</height>
+							<height>88</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>Light1</colordiffuse>
 							<visible>!String.Contains(ListItem.Icon,Default)</visible>
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>412</top>
+							<top>440</top>
 							<width>290</width>
 							<height>42</height>
 							<font>SmallBold</font>
@@ -457,7 +419,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>463</top>
+							<top>491</top>
 							<width>290</width>
 							<height>28</height>
 							<font>Small</font>
@@ -522,9 +484,9 @@
 							<animation center="auto" condition="Control.HasFocus(50)" easing="inout" effect="fade" end="100" start="0" time="300" tween="sine">UnFocus</animation>
 						</control>
 						<control type="image">
-							<top>412</top>
+							<top>440</top>
 							<width>320</width>
-							<height>116</height>
+							<height>88</height>
 							<texture>common/white.png</texture>
 							<colordiffuse>Light1</colordiffuse>
 							<visible>!String.Contains(ListItem.Icon,Default)</visible>
@@ -533,7 +495,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>412</top>
+							<top>440</top>
 							<width>290</width>
 							<height>42</height>
 							<font>SmallBold</font>
@@ -546,7 +508,7 @@
 						</control>
 						<control type="label">
 							<left>18</left>
-							<top>463</top>
+							<top>491</top>
 							<width>290</width>
 							<height>28</height>
 							<font>Small</font>
@@ -637,32 +599,30 @@
 						<texture border="66,66,51,51">views/shadow_nf.png</texture>
 					</control>
 					<control type="image">
-						<top>412</top>
+						<top>440</top>
 						<width>320</width>
-						<height>116</height>
+						<height>88</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!String.Contains(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(Container(50).ListItemNoWrap(1).Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>412</top>
+						<top>440</top>
 						<width>290</width>
 						<height>42</height>
 						<font>SmallBold</font>
 						<textcolor>Dark1</textcolor>
-						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(1).Label]</label>
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>463</top>
+						<top>491</top>
 						<width>290</width>
 						<height>28</height>
 						<font>Small</font>
 						<scroll>false</scroll>
 						<textcolor>Dark2</textcolor>
-						<!-- <shadowcolor>80000000</shadowcolor> -->
 						<label>$INFO[Container(50).ListItemNoWrap(1).Label2,$LOCALIZE[20347] ,]</label>
 					</control>
 				</control>
@@ -684,16 +644,16 @@
 						<texture border="66,66,51,51">views/shadow_nf.png</texture>
 					</control>
 					<control type="image">
-						<top>412</top>
+						<top>440</top>
 						<width>320</width>
-						<height>116</height>
+						<height>88</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!String.Contains(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(Container(50).ListItemNoWrap(2).Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>412</top>
+						<top>440</top>
 						<width>290</width>
 						<height>42</height>
 						<font>SmallBold</font>
@@ -703,7 +663,7 @@
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>463</top>
+						<top>491</top>
 						<width>290</width>
 						<height>28</height>
 						<font>Small</font>
@@ -731,16 +691,16 @@
 						<texture border="66,66,51,51">views/shadow_nf.png</texture>
 					</control>
 					<control type="image">
-						<top>412</top>
+						<top>440</top>
 						<width>320</width>
-						<height>116</height>
+						<height>88</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!String.Contains(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(Container(50).ListItemNoWrap(3).Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>412</top>
+						<top>440</top>
 						<width>290</width>
 						<height>42</height>
 						<font>SmallBold</font>
@@ -750,7 +710,7 @@
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>463</top>
+						<top>491</top>
 						<width>290</width>
 						<height>28</height>
 						<font>Small</font>
@@ -778,16 +738,16 @@
 						<texture border="66,66,51,51">views/shadow_nf.png</texture>
 					</control>
 					<control type="image">
-						<top>412</top>
+						<top>440</top>
 						<width>320</width>
-						<height>116</height>
+						<height>88</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!String.Contains(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(Container(50).ListItemNoWrap(4).Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>412</top>
+						<top>440</top>
 						<width>290</width>
 						<height>42</height>
 						<font>SmallBold</font>
@@ -797,7 +757,7 @@
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>463</top>
+						<top>491</top>
 						<width>290</width>
 						<height>28</height>
 						<font>Small</font>
@@ -825,16 +785,16 @@
 						<texture border="66,66,51,51">views/shadow_nf.png</texture>
 					</control>
 					<control type="image">
-						<top>412</top>
+						<top>440</top>
 						<width>320</width>
-						<height>116</height>
+						<height>88</height>
 						<texture>common/white.png</texture>
 						<colordiffuse>Light1</colordiffuse>
-						<visible>!String.Contains(ListItem.Icon,Default)</visible>
+						<visible>!String.Contains(Container(50).ListItemNoWrap(5).Icon,Default)</visible>
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>412</top>
+						<top>440</top>
 						<width>290</width>
 						<height>42</height>
 						<font>SmallBold</font>
@@ -844,7 +804,7 @@
 					</control>
 					<control type="label">
 						<left>18</left>
-						<top>463</top>
+						<top>491</top>
 						<width>290</width>
 						<height>28</height>
 						<font>Small</font>
@@ -1230,7 +1190,7 @@
 					<visible>Control.HasFocus(5000)</visible>
 				</control>
 				<control type="label">
-					<top>18</top>
+					<top>10</top>
 					<width>auto</width>
 					<height>50</height>
 					<align>left</align>
@@ -1328,5 +1288,85 @@
 			</control>
 		</control>
 		<include>Furniture_OverlayInfo</include>
+		<include>Furniture_NowPlaying</include>
+		<control type="group">
+			<include>Def9000SideBladeLeft</include>
+			<control type="grouplist" id="9000">
+				<left>20</left>
+				<top>115</top>
+				<width>455</width>
+				<height>1080</height>
+				<onleft>9000</onleft>			
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onback>9001</onback>
+				<itemgap>0</itemgap>
+				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+				<control type="label" id="200">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Video Info Actions</label>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="9050">
+					<description>Now Playing</description>
+					<include>DefContextButton2</include>
+					<label>Now Playing</label>
+					<align>left</align>
+					<onclick>dialog.close(all,true)</onclick>
+					<onclick>FullScreen</onclick>
+					<visible>Player.HasMedia</visible>
+				</control>
+				<control type="button" id="9051">
+					<description>Now Playing</description>
+					<include>DefContextButton2</include>
+					<label>13350</label>
+					<align>left</align>
+					<onclick>ActivateWindow(VideoPlaylist)</onclick>
+					<visible>Integer.IsGreater(Playlist.Length(video),1)</visible>
+				</control>
+				<control type="button" id="9091">
+					<description>Global Search</description>
+					<include>DefContextButton</include>
+					<align>left</align>
+					<label>137</label>
+					<onclick>RunScript(script.globalsearch,tvshows=true&amp;movies=true&amp;episodes=true&amp;actors=true)</onclick>
+				</control>
+				<control type="label" id="201">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Metadata</label>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="10">
+					<description>Now Playing</description>
+					<include>DefContextButton2</include>
+					<description>Set Artwork</description>
+					<label>13405</label>
+					<align>left</align>
+				</control>
+				<!-- Artwork Downloader Button -->
+				<control id="20" type="button">
+					<description>Artwork Downloader</description>
+					<include>DefContextButton2</include>
+					<visible>System.HasAddon(script.artwork.downloader) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
+					<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader, mode=gui,mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+					<onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader, mode=gui,mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
+					<align>left</align>
+					<label>13511</label>
+				</control>
+				<!-- Refresh -->
+				<control type="button" id="6">
+					<description>Refresh</description>
+					<include>DefContextButton2</include>
+					<label>Refresh</label>
+					<align>left</align>
+				</control>
+			</control>
+		</control>
 	</controls>
 </window>
