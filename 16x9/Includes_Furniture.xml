@@ -986,6 +986,8 @@
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Year]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.AlbumArtist]</value>
+		<value condition="Container.Content(songs) + Integer.IsGreater(ListItem.TrackNumber, 0) + Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ,]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>

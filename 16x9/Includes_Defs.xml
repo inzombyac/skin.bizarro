@@ -1960,12 +1960,68 @@
 				<visible>Integer.IsGreater(Container(5052).NumItems,1)</visible>
 			</item>
 			<item>
-				<label>$INFO[Container(5052).ListItem(20).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(20).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(20).Icon]</icon>
+				<label>$INFO[Container(5052).ListItem(2).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(2).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(2).Icon]</icon>
 				<onclick>dialog.close(all,true)</onclick>
 				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,20)</visible>
+				<visible>Integer.IsGreater(Container(5052).NumItems,2)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(3).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(3).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(3).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,3)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(4).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(4).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(4).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,4)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(5).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(5).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(5).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,5)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(6).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(6).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(6).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,6)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(7).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(7).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(7).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,7)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(8).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(8).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(8).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,8)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(5052).ListItem(9).Label]</label>
+				<label2>$INFO[Container(5052).ListItem(9).Property(LibraryPath)]</label2>
+				<icon>$INFO[Container(5052).ListItem(9).Icon]</icon>
+				<onclick>dialog.close(all,true)</onclick>
+				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
+				<visible>Integer.IsGreater(Container(5052).NumItems,9)</visible>
 			</item>
 		</content>
 	</include>

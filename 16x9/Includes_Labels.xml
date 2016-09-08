@@ -787,6 +787,9 @@
 	</variable>
 	<variable name="MusicInfoLabel">
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]$INFO[ListItem.Year, • ,]</value>
+		
+		<value condition="Container.Content(songs) + Integer.IsGreater(ListItem.TrackNumber, 0) + Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
 		<value>$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="MusicInfoDescription">

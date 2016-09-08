@@ -458,7 +458,7 @@
 					<font>MediumSmall</font>
 					<textcolor>Dark1</textcolor>
 					<label>$VAR[MusicInfoSimilarLabel]</label>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible>
+					<!-- <visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible> -->
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<include>DialogMusicInfoAnimation</include>
@@ -475,7 +475,7 @@
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<align>center</align>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible>
+					<!-- <visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible> -->
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<onright>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onright>
