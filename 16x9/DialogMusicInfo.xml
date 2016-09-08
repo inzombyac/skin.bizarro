@@ -3,11 +3,15 @@
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<zorder>0</zorder>
-	<onload condition="Container.Content(artists) | Container.Content(songs)">RunScript(script.extendedinfo,info=artistdetails,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
+	<onload condition="Container.Content(artists) | Container.Content(songs)">RunScript(script.extendedinfo,info=discography,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
 	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
-	<onunload>ClearProperty(Discography,home)</onunload>
-	<onunload>ClearProperty(SimilarArtists,home)</onunload>
+	<onunload>ClearProperty(Discography.1.Label,home)</onunload>
+	<onunload>ClearProperty(SimilarArtists.1.Label,home)</onunload>
+	<onload>Skin.SetString(CurrentAlbumIcon,$INFO[ListItem.Icon])</onload>
+	<onload>Skin.SetString(CurrentAlbumPath,$INFO[ListItem.FileNameAndPath])</onload>
+	<onunload>Skin.Reset(CurrentAlbumPath)</onunload>
+	<onunload>Skin.Reset(CurrentAlbumIcon)</onunload>
 	<controls>
 		<control type="group">
 			<left>SidePad</left>
@@ -20,7 +24,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>diffuse/shadowspot.png</texture>
 				<visible>!String.IsEmpty(ListItem.Icon)</visible>
-				<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+				<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 			</control>
 			<!-- Icon -->
@@ -30,7 +34,7 @@
 				<fadetime>200</fadetime>
 				<texture>$INFO[ListItem.Icon]</texture>
 				<aspectratio>scale</aspectratio>
-				<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+				<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 				<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 			</control>
 		</control>
@@ -38,13 +42,13 @@
 			<left>600</left>
 			<top>180</top>
 			<width>1240</width>
-			<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+			<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 			<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 			<control type="image">
 				<width>100%</width>
 				<height>480</height>
-				<texture>$VAR[MusicFanart]</texture>
+				<texture fallback="special://skin/extras/backgrounds/Headphones.jpg">$INFO[ListItem.Art(fanart)]</texture>
 				<aspectratio>scale</aspectratio>
 				<colordiffuse>Dark4</colordiffuse>
 			</control>
@@ -126,7 +130,7 @@
 					<width>1620</width>
 					<height>116</height>
 					<itemgap>10</itemgap>
-					<onleft>9001</onleft>
+					<onleft>9000</onleft>
 					<onright>9001</onright>
 					<ondown>5050</ondown>
 					<onup>300</onup>
@@ -144,38 +148,36 @@
 					</control>
 					<!-- Play Button -->
 					<control type="button" id="1">
+						<description>Play/Browse</description>
 						<width>222</width>
 						<height>116</height>
-						<textcolor>White</textcolor>
-						<textoffsetx>0</textoffsetx>
+						<onup condition="Control.IsVisible(300)">300</onup>
+						<ondown>5050</ondown>	
 						<font>EPGTimeline</font>
 						<aligny>top</aligny>
 						<textoffsety>77</textoffsety>
-						<textcolor>White</textcolor>
+						<textcolor>White70</textcolor>
+						<textoffsetx>0</textoffsetx>
 						<label>Play</label>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown>5050</ondown>
 						<texturefocus>dialogvideo/watchnow.png</texturefocus>
 						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
 						<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
 						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
-						<onclick>PlayMedia(&quot;$INFO[ListItem.FileNameAndPath]&quot; )</onclick>
+						<onclick>PlayMedia($INFO[ListItem.FileNameAndPath],1)</onclick>
 						<visible>!Container.Content(Artists)</visible>
-						<onup>300</onup>
 					</control>
 					<!-- Youtube Button -->
 					<control type="button" id="2">
 						<width>222</width>
 						<height>116</height>
-						<textcolor>White</textcolor>
 						<textoffsetx>0</textoffsetx>
 						<font>EPGTimeline</font>
 						<aligny>top</aligny>
 						<textoffsety>77</textoffsety>
-						<textcolor>White</textcolor>
+						<textcolor>White70</textcolor>
 						<label>Search YouTube</label>
 						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown>5050</ondown>
+						<ondown>5050</ondown>	
 						<onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
 						<onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
 						<onclick condition="Container.Content(songs)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album] $INFO[ListItem.Label],home)</onclick>
@@ -190,12 +192,11 @@
 					<control type="button" id="6">
 						<width>222</width>
 						<height>116</height>
-						<textcolor>White</textcolor>
 						<textoffsetx>0</textoffsetx>
 						<font>EPGTimeline</font>
 						<aligny>top</aligny>
 						<textoffsety>77</textoffsety>
-						<textcolor>White</textcolor>
+						<textcolor>White70</textcolor>
 						<onup condition="Control.IsVisible(300)">300</onup>
 						<ondown>5050</ondown>
 						<texturefocus>dialogvideo/refresh.png</texturefocus>
@@ -209,160 +210,29 @@
 					<control type="button" id="7">
 						<width>222</width>
 						<height>116</height>
-						<textcolor>White</textcolor>
 						<textoffsetx>0</textoffsetx>
 						<font>EPGTimeline</font>
 						<aligny>top</aligny>
 						<textoffsety>77</textoffsety>
-						<textcolor>White</textcolor>
+						<textcolor>White70</textcolor>
 						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown>5050</ondown>
+						<ondown>5050</ondown>	
 						<texturefocus>dialogvideo/rate.png</texturefocus>
 						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
 						<alttexturefocus>dialogvideo/rate.png</alttexturefocus>
 						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
 						<onup>300</onup>
 					</control>
-					<!-- Get Thumb Button -->
-					<control type="button" id="10">
-						<width>222</width>
-						<height>116</height>
-						<font>EPGTimeline</font>
-						<aligny>top</aligny>
-						<textoffsety>77</textoffsety>
-						<textcolor>White</textcolor>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown>5050</ondown>
-						<texturefocus>dialogvideo/thumb.png</texturefocus>
-						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/thumb.png</texturenofocus>
-						<alttexturefocus >dialogvideo/thumb.png</alttexturefocus>
-						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/thumb.png</alttexturenofocus>
-						<onup>300</onup>
-					</control>
-					<!-- Album Information -->
-					<!-- <control type="button" id="12">
-						<width>222</width>
-						<height>116</height>
-						<font>EPGTimeline</font>
-						<aligny>top</aligny>
-						<textoffsety>77</textoffsety>
-						<textcolor>White</textcolor>
-						<label>Dunno</label>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown>50</ondown>
-						<texturefocus>dialogvideo/info.png</texturefocus>
-						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
-						<alttexturefocus >dialogvideo/info.png</alttexturefocus>
-						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
-						<onclick>dialog.close(all,true)</onclick>
-					</control> -->
-				</control>
-				<control id="9002" type="grouplist">
-					<left>10</left>
-					<top>385</top>
-					<width>1620</width>
-					<height>116</height>
-					<itemgap>10</itemgap>
-					<onleft>noop</onleft>
-					<onright>noop</onright>
-					<ondown>5050</ondown>
-					<onup>300</onup>
-					<orientation>horizontal</orientation>
-					<defaultcontrol always="true">9009</defaultcontrol>
-					<!-- Dummy to always set focus to first visible button -->
-					<control id="9009" type="button">
-						<width>-10</width>
-						<height>0</height>
-						<label>-</label>
-						<onfocus>Right</onfocus>
-						<include>NoTextures</include>
-						<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + !Control.HasFocus(6) + !Control.HasFocus(10)</visible>
-						<onup>300</onup>
-					</control>
-					<!-- Play Button -->
-					<control type="button" id="1">
-						<width>222</width>
-						<height>116</height>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<label>Play</label>
-						<animation condition="Control.HasFocus(1)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-						<animation condition="!Control.HasFocus(1)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-						<visible>!Container.Content(Artists)</visible>
-						<onup>300</onup>
-					</control>
-					<!-- Youtube Button -->
-					<control type="button" id="2">
-						<width>222</width>
-						<height>116</height>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<label>Search Youtube</label>
-						<animation condition="Control.HasFocus(2)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-						<animation condition="!Control.HasFocus(2)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-						<onup>300</onup>
-					</control>
-					<!-- Refresh Button -->
-					<control type="button" id="6">
-						<width>222</width>
-						<height>116</height>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<label>Refresh</label>
-						<animation condition="Control.HasFocus(6)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-						<animation condition="!Control.HasFocus(6)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-						<visible>!Container.Content(Songs)</visible>
-						<onup>300</onup>
-					</control>
-					<!-- Rate Button -->
-					<control type="button" id="7">
-						<width>222</width>
-						<height>116</height>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<animation condition="Control.HasFocus(7)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-						<animation condition="!Control.HasFocus(7)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-					</control>
-					<!-- Get Thumb Button -->
-					<control type="button" id="10">
-						<width>222</width>
-						<height>116</height>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<label>Get Thumb</label>
-						<animation condition="Control.HasFocus(10)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-						<animation condition="!Control.HasFocus(10)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-						<onup>300</onup>
-					</control>
-					<!-- Album info -->
-					<!-- <control type="button" id="12">
-						<width>222</width>
-						<height>116</height>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<label>Dunno</label>
-						<animation condition="Control.HasFocus(10)" effect="fade" end="100" start="0" time="10">Conditional</animation>
-						<animation condition="!Control.HasFocus(10)" effect="fade" end="0" start="100" time="10">Conditional</animation>
-						<onclick>dialog.close(all,true)</onclick>
-						<onup>300</onup>
-					</control> -->
 				</control>
 			</control>
 		</control>
 		<!-- Full Screen Items -->
 		<control type="group">
 			<left>50</left>
-			<top>70</top>
+			<top>110</top>
 			<width>1820</width>
 			<!-- Discography -->
 			<control type="group">
-				!IsEmpty(Window(home).Property(Discography))
 				<left>0</left>
 				<top>600</top>
 				<!-- Discography label -->
@@ -373,31 +243,14 @@
 					<top>-40</top>
 					<font>MediumSmall</font>
 					<textcolor>Dark1</textcolor>
-					<label>Albums for this artist</label>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051)</visible>
-					<visible>!String.IsEmpty(Container(5050).ListItem.Label)</visible>
+					<label>$VAR[MusicInfoDiscographyLabel]</label>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<include>DialogMusicInfoAnimation</include>
 				</control>
-				<!-- No Albums Artists -->
-				<control type="label">
-					<left>20</left>
-					<width>1000</width>
-					<height>32</height>
-					<top>-40</top>
-					<font>MediumSmall</font>
-					<textcolor>Dark1</textcolor>
-					<label>No albums found for this artist</label>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051)</visible>
-					<visible>String.IsEmpty(Container(5050).ListItem.Label)</visible>
-					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
-					<animation condition="Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				</control>
 				<control id="5050" type="panel">
 					<include>DialogMusicInfoAnimation</include>
-					<height>350</height>
+					<height>325</height>
 					<onup>9001</onup>
 					<ondown>5051</ondown>
 					<preloaditems>2</preloaditems>
@@ -407,69 +260,174 @@
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<align>center</align>
-					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
+					<visible>!String.IsEmpty(Window(Home).Property(Discography.1.Label)) + !Container.Content(albums)</visible>
+					<animation delay="1000" effect="fade" end="100" start="0" time="200" >Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
-					<animation effect="fade" start="0" end="100" time="2000" delay="2000">WindowOpen</animation>
-					<itemlayout height="350" width="350">						
+					<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>						
+					<itemlayout height="300" width="330">						
 						<control type="image">
 							<top>10</top>
 							<left>10</left>
-							<width>300</width>
-							<height>300</height>
+							<width>290</width>
+							<height>290</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true" fallback="cdart/default.png">$INFO[ListItem.Icon]</texture>
-						</control>
-						<control type="label">
-							<top>290</top>
-							<left>10</left>
-							<width>280</width>
-							<font>Tiny</font>
-							<align>center</align>
-							<textcolor>White</textcolor>
-							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
+							<texture background="true" fallback="common/black.png">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="image">
-							<top>310</top>
+							<top>265</top>
 							<left>10</left>
-							<width>300</width>
+							<width>290</width>
 							<height>35</height>
-							<texture>views/OverlayNF.png</texture>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
 						</control>
 					</itemlayout>
-					<focusedlayout height="350" width="350">
+					<focusedlayout height="300" width="330">
 						<control type="image">
 							<top>10</top>
 							<left>10</left>
-							<width>300</width>
-							<height>300</height>
+							<width>290</width>
+							<height>290</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true" fallback="cdart/default.png">$INFO[ListItem.Icon]</texture>
+							<texture background="true" fallback="common/black.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>265</top>
+							<left>10</left>
+							<width>290</width>
+							<height>35</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 						</control>
 						<control type="label">
-							<top>290</top>
-							<width>280</width>
+							<top>250</top>
 							<left>10</left>
+							<width>290</width>
 							<font>Tiny</font>
 							<align>center</align>
-							<textcolor>White</textcolor>
+							<textcolor>Dark1</textcolor>
 							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
 						</control>
 						<control type="image">
 							<top>10</top>
-							<left>8</left>
-							<width>304</width>
-							<height>340</height>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
 							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 						</control>
-							<control type="image">
-							<top>310</top>
-							<left>10</left>
-							<width>300</width>
-							<height>35</height>
-							<texture>views/OverlayNF.png</texture>
+						<control type="image">
+							<bottom>40</bottom>
+							<right>40</right>
+							<width>60</width>
+							<height>60</height>
+							<texture>indicator/poster-inprogress.png</texture>
+							<visible>!String.IsEmpty(ListItem.FileNameAndPath)</visible>
 						</control>
 					</focusedlayout>
 					<content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+				</control>
+				<!-- Album Tracklist -->
+				<control id="5050" type="panel">
+					<include>DialogMusicInfoAnimation</include>
+					<height>325</height>
+					<onup>9001</onup>
+					<ondown>5051</ondown>
+					<preloaditems>2</preloaditems>
+					<focusposition>2</focusposition>
+					<viewtype>list</viewtype>
+					<orientation>horizontal</orientation>
+					<defaultcontrol always="true">0</defaultcontrol>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<align>center</align>
+					<animation delay="1000" effect="fade" end="100" start="0" time="200">Visible</animation>
+					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+					<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
+					<visible>Container.Content(albums)</visible>
+					<itemlayout height="300" width="330">						
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<aspectratio align="center">scale</aspectratio>
+							<texture background="true" fallback="common/black.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>110</top>
+							<left>10</left>
+							<width>290</width>
+							<font>EpisodeNumber</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$VAR[MusicInfoTrackLabel]</label>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<focusedlayout height="300" width="330">
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<aspectratio align="center">scale</aspectratio>
+							<texture background="true" fallback="common/black.png">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>110</top>
+							<left>10</left>
+							<width>290</width>
+							<font>EpisodeNumber</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$VAR[MusicInfoTrackLabel]</label>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
+							<font>Tiny</font>
+							<align>center</align>
+							<textcolor>Dark1</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="image">
+							<top>10</top>
+							<left>10</left>
+							<width>290</width>
+							<height>290</height>
+							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+						</control>
+					</focusedlayout>
+					<include>MusicInfoTracklist</include>
 				</control>
 			</control>
 			<control type="group">
@@ -483,31 +441,15 @@
 					<top>-40</top>
 					<font>MediumSmall</font>
 					<textcolor>Dark1</textcolor>
-					<label>Similar Artists in your Library</label>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051)</visible>
-					<visible>!String.IsEmpty(Container(5051).ListItem.Label)</visible>
+					<label>$VAR[MusicInfoSimilarLabel]</label>
+					<visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<include>DialogMusicInfoAnimation</include>
 				</control>
-				<!-- No Similar Artists -->
-				<control type="label">
-					<left>20</left>
-					<width>1000</width>
-					<height>32</height>
-					<top>-40</top>
-					<font>MediumSmall</font>
-					<textcolor>Dark1</textcolor>
-					<label>No similar artists found in your library.</label>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051)</visible>
-					<visible>String.IsEmpty(Container(5051).ListItem.Label)</visible>
-					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
-					<animation condition="Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
-				</control>
 				<control id="5051" type="panel">
 					<include>DialogMusicInfoAnimation</include>
-					<height>350</height>
+					<height>325</height>
 					<onup>5050</onup>
 					<ondown>5051</ondown>
 					<preloaditems>2</preloaditems>
@@ -517,69 +459,82 @@
 					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<align>center</align>
-					<visible>Control.HasFocus(5050) | Control.HasFocus(5051)</visible>
+					<visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
-					<itemlayout height="350" width="350">						
+					<itemlayout height="300" width="325">						
 						<control type="image">
 							<top>10</top>
 							<left>10</left>
-							<width>300</width>
-							<height>300</height>
+							<width>290</width>
+							<height>290</height>
 							<aspectratio align="center">scale</aspectratio>
 							<texture background="true" fallback="cdart/default.png">$INFO[ListItem.Icon]</texture>
 						</control>
-						<control type="label">
-							<top>290</top>
-							<width>280</width>
+						<control type="image">
+							<top>265</top>
 							<left>10</left>
+							<width>290</width>
+							<height>35</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
 							<font>Tiny</font>
 							<align>center</align>
-							<textcolor>White</textcolor>
+							<textcolor>Dark1</textcolor>
 							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
-						</control>
-						<control type="image">
-							<top>310</top>
-							<left>10</left>
-							<width>300</width>
-							<height>35</height>
-							<texture>views/OverlayNF.png</texture>
 						</control>
 					</itemlayout>
-					<focusedlayout height="350" width="350">
+					<focusedlayout height="300" width="330">
 						<control type="image">
 							<top>10</top>
 							<left>10</left>
-							<width>300</width>
-							<height>300</height>
+							<width>290</width>
+							<height>290</height>
 							<aspectratio align="center">scale</aspectratio>
 							<texture background="true" fallback="cdart/default.png">$INFO[ListItem.Icon]</texture>
 						</control>
-						<control type="label">
-							<top>290</top>
-							<width>280</width>
+						<control type="image">
+							<top>265</top>
 							<left>10</left>
+							<width>290</width>
+							<height>35</height>
+							<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+						</control>
+						<control type="label">
+							<top>250</top>
+							<left>10</left>
+							<width>290</width>
 							<font>Tiny</font>
 							<align>center</align>
-							<textcolor>White</textcolor>
+							<textcolor>Dark1</textcolor>
 							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
 						</control>
 						<control type="image">
 							<top>10</top>
-							<left>8</left>
-							<width>304</width>
-							<height>340</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
-						</control>
-							<control type="image">
-							<top>310</top>
 							<left>10</left>
-							<width>300</width>
-							<height>35</height>
-							<texture>views/OverlayNF.png</texture>
+							<width>290</width>
+							<height>290</height>
+							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 					</focusedlayout>
 					<content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+				</control>
+				<!-- Hidden list to grab data -->
+				<control id="50" type="list">
+					<itemlayout width="1" height="1">
+						<control type="button">
+							<onfocus>SetFocus(5050)</onfocus>
+						</control>
+					</itemlayout>
+					<focusedlayout width="1" height="1">
+						<control type="button">
+							<onfocus>SetFocus(5050)</onfocus>
+						</control>
+					</focusedlayout>
 				</control>
 			</control>
 		</control>
@@ -595,6 +550,7 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<onback>9001</onback>
+				<onright>9001</onright>
 				<itemgap>0</itemgap>
 				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 				<control type="label" id="200">
@@ -643,6 +599,25 @@
                     <align>left</align>
                     <label>589</label>
                 </control>
+				<control type="label" id="201">
+					<height>42</height>
+					<textoffsetx>15</textoffsetx>
+					<font>Home</font>
+					<label>Metadata</label>
+					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				<!-- Get Thumb Button -->
+				<control type="button" id="10">
+					<include>DefContextButton2</include>
+					<align>left</align>
+				</control>
+				<!-- Get Fanart Button -->
+				<control type="button" id="12">
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<visible>!Container.Content(songs)</visible>
+				</control>
             </control>
         </control>
 	</controls>

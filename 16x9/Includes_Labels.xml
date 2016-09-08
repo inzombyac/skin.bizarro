@@ -792,7 +792,7 @@
 	<variable name="MusicInfoDescription">
 		<value condition="Container.Content(songs) + !String.IsEmpty(ListItem.ContributorAndRole)">$INFO[ListItem.ContributorAndRole]</value>
 		<value condition="Container.Content(albums) + !String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
-		<value condition=" !String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value>No description found</value>
 	</variable>
 	<variable name="MovieList">
@@ -935,5 +935,18 @@
 		<value condition="Control.HasFocus(8778)">$VAR[WidgetRight2SelectionLabel]: $VAR[DefWidgetRight2Selection]</value>
 		<value condition="Control.HasFocus(8779)">$VAR[WidgetRight3SelectionLabel]: $VAR[DefWidgetRight3Selection]</value>
 		<value>$INFO[Container(211).ListItem.Property(path)]</value>
+	</variable>
+	<variable name="MusicInfoDiscographyLabel">
+		<value condition="Container.Content(albums)">Tracklist for $INFO[ListItem.Album]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(Discography.1.Label)) + !Container.Content(albums)">Albums for $INFO[ListItem.Artist]</value>
+		
+	</variable>
+	<variable name="MusicInfoSimilarLabel">
+		<value condition="Integer.IsGreater(Container(5051).NumItems,0)">Similar Artists in Your Library</value>
+		<value>No Similar Artists Found in Your Library</value>
+	</variable>
+	<variable name="MusicInfoTrackLabel">
+		<value condition="Integer.IsGreater(ListItem.Label2, 0) + Integer.IsLess(ListItem.Label2, 10)">$INFO[ListItem.Label2,0]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 </includes>

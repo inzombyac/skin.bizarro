@@ -110,10 +110,11 @@
 	</include>
 	<!-- Dialog video info animation -->
 	<include name="DialogVideoInfoAnimation">
-		<animation condition="Control.HasFocus(50) | Control.HasFocus(150) | Control.HasFocus(250) | Control.HasFocus(350) | Control.HasFocus(450) | Control.HasFocus(1000) | Control.HasFocus(1500) | Control.HasFocus(2500) | Control.HasFocus(5000) | Control.HasFocus(850) | Control.HasFocus(950)" effect="fade" end="6" start="100" time="200">Conditional</animation>
+		<animation condition="Control.HasFocus(5050) | Control.HasFocus(500)" effect="slide" end="0,-450" start="0,0" time="200">Conditional</animation>
 	</include>
+	<!-- Dialog music info animation -->
 	<include name="DialogMusicInfoAnimation">
-		<animation condition="Control.HasFocus(5051) | Control.HasFocus(5050)" effect="slide" end="0,-450" start="0,0" time="200">Conditional</animation>
+		<animation condition="Control.HasFocus(5051) | Control.HasFocus(5050) | Control.HasFocus(50)" effect="slide" end="0,-450" start="0,0" time="200">Conditional</animation>
 	</include>
 	<!-- Emby Home Fade  -->
 	<include name="Animation.EmbyFadeOut">

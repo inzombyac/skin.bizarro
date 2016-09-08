@@ -1687,4 +1687,255 @@
 	</include>
 	<include name="HighRatedEmbyMovies">		videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D
 	</include>
+	<include name="VideoCastContent">
+		<content type="static">
+			<!--Cast list content -->
+			<item>
+				<label>$INFO[Container(50).ListItem(0).Label]</label>
+				<label2>$INFO[Container(50).ListItem(0).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(0).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(0).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(0).Label])</onclick>
+				<oninfo>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(0).Label])</oninfo>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(1).Label]</label>
+				<label2>$INFO[Container(50).ListItem(1).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(1).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(1).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(1).Label])</onclick>
+				<oninfo>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(1).Label])</oninfo>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(2).Label]</label>
+				<label2>$INFO[Container(50).ListItem(2).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(2).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(2).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(2).Label])</onclick>
+				<oninfo>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(2).Label])</oninfo>
+			</item>
+		</content>
+	</include>
+	<include name="MusicInfoTracklist">
+		<content type="static">
+			<!--Cast list content -->
+			<item>
+				<label>$INFO[Container(50).ListItem(0).Title]</label>
+				<label2>$INFO[Container(50).ListItem(0).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 0)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(1).Title]</label>
+				<label2>$INFO[Container(50).ListItem(1).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 1)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(2).Title]</label>
+				<label2>$INFO[Container(50).ListItem(2).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 2)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(3).Title]</label>
+				<label2>$INFO[Container(50).ListItem(3).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 3)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(4).Title]</label>
+				<label2>$INFO[Container(50).ListItem(4).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 4)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(5).Title]</label>
+				<label2>$INFO[Container(50).ListItem(5).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 5)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(6).Title]</label>
+				<label2>$INFO[Container(50).ListItem(6).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 6)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(7).Title]</label>
+				<label2>$INFO[Container(50).ListItem(7).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 7)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(8).Title]</label>
+				<label2>$INFO[Container(50).ListItem(8).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 8)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(9).Title]</label>
+				<label2>$INFO[Container(50).ListItem(9).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 9)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(10).Title]</label>
+				<label2>$INFO[Container(50).ListItem(10).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 10)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(11).Title]</label>
+				<label2>$INFO[Container(50).ListItem(11).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 11)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(12).Title]</label>
+				<label2>$INFO[Container(50).ListItem(12).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 12)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(13).Title]</label>
+				<label2>$INFO[Container(50).ListItem(13).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 13)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(14).Title]</label>
+				<label2>$INFO[Container(50).ListItem(14).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 14)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(15).Title]</label>
+				<label2>$INFO[Container(50).ListItem(15).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 15)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(16).Title]</label>
+				<label2>$INFO[Container(50).ListItem(16).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 16)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(17).Title]</label>
+				<label2>$INFO[Container(50).ListItem(17).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 17)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(18).Title]</label>
+				<label2>$INFO[Container(50).ListItem(18).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 18)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(19).Title]</label>
+				<label2>$INFO[Container(50).ListItem(19).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 19)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(20).Title]</label>
+				<label2>$INFO[Container(50).ListItem(20).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 20)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(21).Title]</label>
+				<label2>$INFO[Container(50).ListItem(21).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 21)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(22).Title]</label>
+				<label2>$INFO[Container(50).ListItem(22).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 22)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(23).Title]</label>
+				<label2>$INFO[Container(50).ListItem(23).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 23)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(24).Title]</label>
+				<label2>$INFO[Container(50).ListItem(24).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 24)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(25).Title]</label>
+				<label2>$INFO[Container(50).ListItem(25).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 25)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(26).Title]</label>
+				<label2>$INFO[Container(50).ListItem(26).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 26)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(27).Title]</label>
+				<label2>$INFO[Container(50).ListItem(27).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 27)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(28).Title]</label>
+				<label2>$INFO[Container(50).ListItem(28).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 28)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(29).Title]</label>
+				<label2>$INFO[Container(50).ListItem(29).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 29)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(30).Title]</label>
+				<label2>$INFO[Container(50).ListItem(30).TrackNumber]</label2>
+				<icon>$INFO[Skin.String(CurrentAlbumIcon)]</icon>
+				<onclick>PlayMedia($INFO[Skin.String(CurrentAlbumPath)],1)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 30)</visible>
+			</item>
+		</content>
+	</include>
 </includes>
