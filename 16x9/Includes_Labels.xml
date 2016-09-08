@@ -939,7 +939,6 @@
 	<variable name="MusicInfoDiscographyLabel">
 		<value condition="Container.Content(albums)">Tracklist for $INFO[ListItem.Album]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(Discography.1.Label)) + !Container.Content(albums)">Albums for $INFO[ListItem.Artist]</value>
-		
 	</variable>
 	<variable name="MusicInfoSimilarLabel">
 		<value condition="Integer.IsGreater(Container(5051).NumItems,0)">Similar Artists in Your Library</value>

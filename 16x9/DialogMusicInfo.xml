@@ -7,12 +7,28 @@
 	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<onunload>ClearProperty(Discography.1.Label,home)</onunload>
-	<onunload>ClearProperty(SimilarArtists.1.Label,home)</onunload>
+	<onunload>ClearProperty(artistdetails.Label,home)</onunload>
+	<onunload>ClearProperty(albuminfo.Label,home)</onunload>
 	<onload>Skin.SetString(CurrentAlbumIcon,$INFO[ListItem.Icon])</onload>
-	<onload>Skin.SetString(CurrentAlbumPath,$INFO[ListItem.FileNameAndPath])</onload>
-	<onunload>Skin.Reset(CurrentAlbumPath)</onunload>
+	<onload>Skin.SetString(CurrentAlbumPath,$INFO[ListItem.DBID])</onload>
 	<onunload>Skin.Reset(CurrentAlbumIcon)</onunload>
 	<controls>
+		<!-- Hidden list to grab data -->
+		<control id="5052" type="list">
+			<itemlayout width="1" height="1">
+				<control type="label">$INFO[ListItem.Label]</control>
+				<control type="label">$INFO[ListItem.Label2[</control>
+				<control type="image">$INFO[ListItem.Icon]</control>
+				<onfocus>SetFocus(9001)</onfocus>
+			</itemlayout>
+			<focusedlayout width="1" height="1">
+				<control type="label">$INFO[ListItem.Label[</control>
+				<control type="label">$INFO[ListItem.Label2]</control>
+				<control type="image">$INFO[ListItem.Icon]</control>
+				<onfocus>SetFocus(9001)</onfocus>
+			</focusedlayout>
+			<content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+		</control>
 		<control type="group">
 			<left>SidePad</left>
 			<top>180</top>
@@ -462,6 +478,9 @@
 					<visible>Control.HasFocus(5050) | Control.HasFocus(5051) |  Control.HasFocus(50)</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
+					<onright>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onright>
+					<onleft>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onleft>
+					<onfocus>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onfocus>
 					<itemlayout height="300" width="325">						
 						<control type="image">
 							<top>10</top>
@@ -469,7 +488,7 @@
 							<width>290</width>
 							<height>290</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true" fallback="cdart/default.png">$INFO[ListItem.Icon]</texture>
+							<texture background="true" fallback="common/black.png">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="image">
 							<top>265</top>
@@ -485,7 +504,7 @@
 							<font>Tiny</font>
 							<align>center</align>
 							<textcolor>Dark1</textcolor>
-							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
+							<label>$INFO[ListItem.Label]</label>
 						</control>
 					</itemlayout>
 					<focusedlayout height="300" width="330">
@@ -495,7 +514,7 @@
 							<width>290</width>
 							<height>290</height>
 							<aspectratio align="center">scale</aspectratio>
-							<texture background="true" fallback="cdart/default.png">$INFO[ListItem.Icon]</texture>
+							<texture background="true" fallback="common/black.png">$INFO[ListItem.Icon]</texture>
 						</control>
 						<control type="image">
 							<top>265</top>
@@ -511,7 +530,7 @@
 							<font>Tiny</font>
 							<align>center</align>
 							<textcolor>Dark1</textcolor>
-							<label>$INFO[ListItem.Label]$INFO[ListItem.Year, (,)]</label>
+							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="image">
 							<top>10</top>
@@ -520,8 +539,12 @@
 							<height>290</height>
 							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 						</control>
+						<control type="button">
+							<onfocus>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onfocus>
+						</control>
 					</focusedlayout>
-					<content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+					<!-- <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content> -->
+					<include>SimilarArtistsList</include>
 				</control>
 				<!-- Hidden list to grab data -->
 				<control id="50" type="list">
