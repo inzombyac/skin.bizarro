@@ -563,7 +563,12 @@
 				</control>
 			</control>
 		</control>
-		<include>Furniture_NowPlaying</include>
+		<include>Furniture_Header</include>
+        <include>Furniture_Clock</include>
+		<include>Furniture_Flags</include>
+        <include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
+        <include>Furniture_NowPlaying</include>
 		<control type="group">
             <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">

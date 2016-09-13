@@ -866,7 +866,7 @@
 	</variable>
 	<variable name="DurationLong">
         <value condition="String.IsEqual(ListItem.DBTYPE,song)">$INFO[ListItem.Duration,, min]</value>
-		<value condition="!Skin.HasSetting(furniture.alternate.duration) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
+		<value condition="!String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItemDuration.Hours))">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
 		<value>$INFO[ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="DurationLongVideoInfo">

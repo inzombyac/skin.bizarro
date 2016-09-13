@@ -4,6 +4,9 @@
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<zorder>0</zorder>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
+<!-- 	<onload condition="Container.Content(tvshows) | Container.Content(episodes)">
+	RunScript(script.tv.show.next.aired,tvshowtitle=$INFO[ListItem.Label])
+	</onload> -->
 	<onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=traktsimilarmovies,dbid='"$INFO[ListItem.DBID]"')</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<onload condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">RunScript(script.extendedinfo,info=traktsimilartvshows,dbid='"$INFO[ListItem.DBID]"')</onload>
@@ -589,8 +592,12 @@
 			<visible>String.Contains(Control.GetLabel(8328),empty.png)</visible>
 			<visible>Control.HasFocus(4000)</visible>
 		</control>
+		<include>Furniture_Header</include>
+        <include>Furniture_Clock</include>
+		<include>Furniture_Flags</include>
+        <include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
-		<include>Furniture_NowPlaying</include>
+        <include>Furniture_NowPlaying</include>
 		<control type="group">
 			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">

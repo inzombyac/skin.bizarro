@@ -2130,6 +2130,7 @@
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
 				<onfocus>SetProperty(TVShowID,$VAR[EmbyHomeTVShowID],home)</onfocus>
+				<onfocus condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">RunScript(script.tv.show.next.aired,tvshowtitle=$VAR[EmbyHomeTVShowTitle])</onfocus>
 			</control>
 			<control type="image">
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
