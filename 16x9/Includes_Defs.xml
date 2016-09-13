@@ -36,6 +36,17 @@
 		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Property(DBID)]</value>
 		<value>-1</value>
 	</variable>
+	<variable name="EmbyHomeTVShowID">
+		<value condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).ListItem.DBID,-1) + [String.IsEqual(Container(4016).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4016).ListItem.Property(type),tvshow) | String.IsEqual(Container(4016).ListItem.DBTYPE,episode) | String.IsEqual(Container(4016).ListItem.Property(type),episode)]">$INFO[Container(4016).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4016) + [String.IsEqual(Container(4016).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4016).ListItem.Property(type),tvshow) | String.IsEqual(Container(4016).ListItem.DBTYPE,episode) | String.IsEqual(Container(4016).ListItem.Property(type),episode)]">$INFO[Container(4016).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4017) + Integer.IsGreater(Container(4017).ListItem.DBID,-1) + [String.IsEqual(Container(4017).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4017).ListItem.Property(type),tvshow) | String.IsEqual(Container(4017).ListItem.DBTYPE,episode) | String.IsEqual(Container(4017).ListItem.Property(type),episode)]">$INFO[Container(4017).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4017) + [String.IsEqual(Container(4017).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4017).ListItem.Property(type),tvshow) | String.IsEqual(Container(4017).ListItem.DBTYPE,episode) | String.IsEqual(Container(4017).ListItem.Property(type),episode)]">$INFO[Container(4017).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4018).ListItem.DBID,-1) + [String.IsEqual(Container(4018).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4018).ListItem.Property(type),tvshow) | String.IsEqual(Container(4018).ListItem.DBTYPE,episode) | String.IsEqual(Container(4018).ListItem.Property(type),episode)]">$INFO[Container(4018).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4018) + [String.IsEqual(Container(4018).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4018).ListItem.Property(type),tvshow) | String.IsEqual(Container(4018).ListItem.DBTYPE,episode) | String.IsEqual(Container(4018).ListItem.Property(type),episode)]">$INFO[Container(4018).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4012) + Integer.IsGreater(Container(4019).ListItem.DBID,-1) + [String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4019).ListItem.Property(type),tvshow) | String.IsEqual(Container(4019).ListItem.DBTYPE,episode) | String.IsEqual(Container(4019).ListItem.Property(type),episode)]">$INFO[Container(4019).ListItem.DBID]</value>
+		<value condition="Control.HasFocus(4012) + [String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4019).ListItem.Property(type),tvshow) | String.IsEqual(Container(4019).ListItem.DBTYPE,episode) | String.IsEqual(Container(4019).ListItem.Property(type),episode)]]">$INFO[Container(4019).ListItem.Property(DBID)]</value>
+		<value>-1</value>
+	</variable>
 	<variable name="EmbyWidgetFocusBoxHeight">
 		<value>221</value>
 	</variable>
@@ -1695,24 +1706,160 @@
 				<label2>$INFO[Container(50).ListItem(0).Label2]</label2>
 				<thumb>$INFO[Container(50).ListItem(0).Thumb]</thumb>
 				<icon>$INFO[Container(50).ListItem(0).Icon]</icon>
-				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(0).Label])</onclick>
-				<oninfo>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(0).Label])</oninfo>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(0).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 0)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(50).ListItem(1).Label]</label>
 				<label2>$INFO[Container(50).ListItem(1).Label2]</label2>
 				<thumb>$INFO[Container(50).ListItem(1).Thumb]</thumb>
 				<icon>$INFO[Container(50).ListItem(1).Icon]</icon>
-				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(1).Label])</onclick>
-				<oninfo>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(1).Label])</oninfo>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(1).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 1)</visible>
 			</item>
 			<item>
 				<label>$INFO[Container(50).ListItem(2).Label]</label>
 				<label2>$INFO[Container(50).ListItem(2).Label2]</label2>
 				<thumb>$INFO[Container(50).ListItem(2).Thumb]</thumb>
 				<icon>$INFO[Container(50).ListItem(2).Icon]</icon>
-				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(2).Label])</onclick>
-				<oninfo>RunScript(script.extendedinfo,info=extendedactorinfo,name=$INFO[Container(50).ListItem(2).Label])</oninfo>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(2).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 2)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(3).Label]</label>
+				<label2>$INFO[Container(50).ListItem(3).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(3).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(3).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(3).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 3)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(4).Label]</label>
+				<label2>$INFO[Container(50).ListItem(4).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(4).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(4).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(4).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 4)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(5).Label]</label>
+				<label2>$INFO[Container(50).ListItem(5).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(5).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(5).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(5).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 5)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(6).Label]</label>
+				<label2>$INFO[Container(50).ListItem(6).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(6).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(6).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(6).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 6)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(7).Label]</label>
+				<label2>$INFO[Container(50).ListItem(7).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(7).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(7).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(7).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 7)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(8).Label]</label>
+				<label2>$INFO[Container(50).ListItem(8).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(8).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(8).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(8).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 8)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(9).Label]</label>
+				<label2>$INFO[Container(50).ListItem(9).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(9).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(9).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(9).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 9)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(10).Label]</label>
+				<label2>$INFO[Container(50).ListItem(10).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(10).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(10).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(10).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 10)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(11).Label]</label>
+				<label2>$INFO[Container(50).ListItem(11).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(11).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(11).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(11).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 11)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(12).Label]</label>
+				<label2>$INFO[Container(50).ListItem(12).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(12).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(12).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(12).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 12)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(13).Label]</label>
+				<label2>$INFO[Container(50).ListItem(13).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(13).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(13).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(13).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 13)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(14).Label]</label>
+				<label2>$INFO[Container(50).ListItem(14).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(14).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(14).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(14).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 14)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(15).Label]</label>
+				<label2>$INFO[Container(50).ListItem(15).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(15).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(15).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(15).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 15)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(16).Label]</label>
+				<label2>$INFO[Container(50).ListItem(16).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(16).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(16).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(16).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 16)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(17).Label]</label>
+				<label2>$INFO[Container(50).ListItem(17).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(17).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(17).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(17).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 17)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(18).Label]</label>
+				<label2>$INFO[Container(50).ListItem(18).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(18).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(18).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(18).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 18)</visible>
+			</item>
+			<item>
+				<label>$INFO[Container(50).ListItem(19).Label]</label>
+				<label2>$INFO[Container(50).ListItem(19).Label2]</label2>
+				<thumb>$INFO[Container(50).ListItem(19).Thumb]</thumb>
+				<icon>$INFO[Container(50).ListItem(19).Icon]</icon>
+				<onclick>RunScript(script.extendedinfo,info=extendedactorinfo,name=$ESCINFO[Container(50).ListItem(19).Label])</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems, 19)</visible>
 			</item>
 		</content>
 	</include>
@@ -2025,4 +2172,8 @@
 			</item>
 		</content>
 	</include>
+		<variable name="SimilarVideos">
+		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
+	</variable>
 </includes>

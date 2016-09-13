@@ -447,9 +447,13 @@
 		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
 	</variable>
 	<variable name="VideoInfoLabel">
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
-		<value condition="Container.Content(movies) + !String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Title]$INFO[ListItem.Year, (,)]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Title]</value>
+	</variable>
+	<variable name="VideoInfoSubLabel">
+		<value condition="Container.Content(episodes)">$VAR[ListItemSeasonVar,,]$VAR[ListItemEpisodeVar,x,]</value>
+		<value condition="!String.IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
 	</variable>
 	<variable name="CastList">
 		<value condition="!String.IsEmpty(Window(movieinformation).Property(Actor3))">$INFO[Window(movieinformation).Property(Actor1)], $INFO[Window(movieinformation).Property(Actor2)], $INFO[Window(movieinformation).Property(Actor3)]</value>
@@ -466,9 +470,9 @@
 		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">Replay</value>
 		<value>?</value>
 	</variable>
-	<variable name="SimilarVideos">
-		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
+	<variable name="SimilarVideoLabel">
+		<value condition="Container.Content(movies)">Movies Similar to $INFO[ListItem.Label]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">TV Shows Similar to $INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="FanartFadeLabel">
 		<value condition="String.IsEqual(Skin.String(FanartFade),Darkest)">FanartFade6</value>

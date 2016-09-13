@@ -69,7 +69,7 @@
 				<colordiffuse>Dark4</colordiffuse>
 			</control>
 			<!-- Heading -->
-			<control type="label">
+			<!-- <control type="label">
 				<left>10</left>
 				<width>100%</width>
 				<height>38</height>
@@ -78,9 +78,9 @@
 				<textcolor>Dark1</textcolor>
 				<scrollspeed>100</scrollspeed>
 				<label>$VAR[MusicInfoLabel]</label>
-			</control>
-			<!-- Genre -->
-			<control type="grouplist">
+			</control> -->
+			<!-- Sub-Heading -->
+			<!-- <control type="grouplist">
 				<top>40</top>
 				<height>44</height>
 				<itemgap>10</itemgap>
@@ -96,9 +96,10 @@
 					<textcolor>Dark2</textcolor>
 					<label>$INFO[ListItem.Genre]</label>
 				</control>
-			</control>
+			</control> -->
+			<!-- Description Box -->
 			<control type="group">
-				<top>120</top>
+				<top>20</top>
 				<left>10</left>
 				<width>1220</width>
 				<height>200</height>
@@ -135,6 +136,7 @@
 					<scroll>true</scroll>
 					<textcolor>Dark1</textcolor>
 					<label>$VAR[MusicInfoDescription]</label>
+					<include>DialogMusicInfoAnimation</include>
 				</control>
 			</control>
 			<control type="group">
@@ -159,7 +161,7 @@
 						<label>-</label>
 						<onfocus>Right</onfocus>
 						<include>NoTextures</include>
-						<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + Control.HasFocus(6) + !Control.HasFocus(10)</visible>
+						<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + !Control.HasFocus(6) + !Control.HasFocus(10) + !Control.HasFocus(7)</visible>
 						<onup>300</onup>
 					</control>
 					<!-- Play Button -->

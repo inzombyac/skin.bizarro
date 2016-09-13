@@ -444,6 +444,17 @@
                 <include>ControlID2</include>
                 <label>$INFO[Container.ListItem.Path]</label>
             </control>
+			<control type="label">
+                <include>ControlID4</include>
+                <label>TV: $INFO[Window(home).Property(TVShowID)] /SIM: $INFO[Window(home).Property(Similar.1.label)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label>
+				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+            </control>
+			<control type="label">
+                <include>ControlID5</include>
+                <label>DBID: $INFO[ListItem.DBID]</label>
+				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+            </control>
+			
         </control>
     </controls>
 </window>

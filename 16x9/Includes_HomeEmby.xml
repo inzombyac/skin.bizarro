@@ -2129,6 +2129,7 @@
 				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
+				<onfocus>SetProperty(TVShowID,$VAR[EmbyHomeTVShowID],home)</onfocus>
 			</control>
 			<control type="image">
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>

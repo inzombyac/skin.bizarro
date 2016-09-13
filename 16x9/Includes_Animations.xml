@@ -110,7 +110,8 @@
 	</include>
 	<!-- Dialog video info animation -->
 	<include name="DialogVideoInfoAnimation">
-		<animation condition="Control.HasFocus(5050) | Control.HasFocus(500)" effect="slide" end="0,-450" start="0,0" time="200">Conditional</animation>
+		<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="0,-390" start="0,0" time="200">Conditional</animation>
+		<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="-520,0" start="0,0" time="200">Conditional</animation>
 	</include>
 	<!-- Dialog music info animation -->
 	<include name="DialogMusicInfoAnimation">

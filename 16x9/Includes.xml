@@ -91,6 +91,33 @@
 		<shadowcolor>Black</shadowcolor>
 		<align>right</align>
 	</include>
+	<include name="ControlID3">
+		<posx>20r</posx>
+		<posy>114</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>Blue</textcolor>
+		<shadowcolor>EmbyGreen</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID4">
+		<posx>20r</posx>
+		<posy>147</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>electric purple</textcolor>
+		<shadowcolor>Red</shadowcolor>
+		<align>right</align>
+	</include>
+	<include name="ControlID5">
+		<posx>20r</posx>
+		<posy>178</posy>
+		<width>1920</width>
+		<height>21</height>
+		<textcolor>White</textcolor>
+		<shadowcolor>Grey</shadowcolor>
+		<align>right</align>
+	</include>
 	<include name="GlobalOverlay">
 		<control type="image">
 			<include>Animation.FadeIn</include>

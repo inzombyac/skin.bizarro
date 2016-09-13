@@ -52,6 +52,11 @@
                 <label>$INFO[Container(302).ListItem.Property(Path)]</label>
 				<visible>Control.HasFocus(302)</visible>
             </control>
+			<control type="label">
+                <include>ControlID3</include>
+                <label>$VAR[EmbyHomeDBType] $VAR[EmbyHomeTVShowID]</label>
+            </control>
+			
 		</control>
 	</include>
 </includes>
