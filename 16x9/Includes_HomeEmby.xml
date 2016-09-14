@@ -2131,6 +2131,11 @@
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
 				<onfocus>SetProperty(TVShowID,$VAR[EmbyHomeTVShowID],home)</onfocus>
 				<onfocus condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">RunScript(script.tv.show.next.aired,tvshowtitle=$VAR[EmbyHomeTVShowTitle])</onfocus>
+				<onfocus condition="Control.HasFocus(4016) + [String.IsEqual(Container(4016).ListItem.Property(type),episode) | String.IsEqual(Container(4016).ListItem.DBTYPE,episode)]">Skin.SetString(LastIcon,$INFO[Container(4016).ListItem.Art(tvshow.poster)])</onfocus>
+				<onfocus condition="Control.HasFocus(4016) + ![String.IsEqual(Container(4016).ListItem.Property(type),episode) | String.IsEqual(Container(4016).ListItem.DBTYPE,episode)]">Skin.SetString(LastIcon,$INFO[Container(4016).ListItem.Icon])</onfocus>
+				<onfocus condition="Control.HasFocus(4017)">Skin.SetString(LastIcon,$INFO[Container(4017).ListItem.Icon])</onfocus>
+				<onfocus condition="Control.HasFocus(4018)">Skin.SetString(LastIcon,$INFO[Container(4018).ListItem.Icon])</onfocus>
+				<onfocus condition="Control.HasFocus(4012)">Skin.SetString(LastIcon,$INFO[Container(4019).ListItem.Icon])</onfocus>
 			</control>
 			<control type="image">
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
@@ -2325,6 +2330,7 @@
 	</variable>
 	<include name="EmbyHomeInfoActions">
 		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
+		<oninfo condition="String.IsEqual(Container(300).ListItem.Property(type),collection)">noop</oninfo>
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

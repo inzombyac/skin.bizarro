@@ -56,6 +56,11 @@
                 <include>ControlID3</include>
                 <label>$VAR[EmbyHomeDBType] $VAR[EmbyHomeTVShowID]</label>
             </control>
+			<control type="label">
+                <include>ControlID5</include>
+                <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label>
+				
+            </control>
 			
 		</control>
 	</include>

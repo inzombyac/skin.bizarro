@@ -44,7 +44,7 @@
 		<value condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4018).ListItem.DBID,-1) + [String.IsEqual(Container(4018).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4018).ListItem.Property(type),tvshow) | String.IsEqual(Container(4018).ListItem.DBTYPE,episode) | String.IsEqual(Container(4018).ListItem.Property(type),episode)]">$INFO[Container(4018).ListItem.DBID]</value>
 		<value condition="Control.HasFocus(4018) + [String.IsEqual(Container(4018).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4018).ListItem.Property(type),tvshow) | String.IsEqual(Container(4018).ListItem.DBTYPE,episode) | String.IsEqual(Container(4018).ListItem.Property(type),episode)]">$INFO[Container(4018).ListItem.Property(DBID)]</value>
 		<value condition="Control.HasFocus(4012) + Integer.IsGreater(Container(4019).ListItem.DBID,-1) + [String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4019).ListItem.Property(type),tvshow) | String.IsEqual(Container(4019).ListItem.DBTYPE,episode) | String.IsEqual(Container(4019).ListItem.Property(type),episode)]">$INFO[Container(4019).ListItem.DBID]</value>
-		<value condition="Control.HasFocus(4012) + [String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4019).ListItem.Property(type),tvshow) | String.IsEqual(Container(4019).ListItem.DBTYPE,episode) | String.IsEqual(Container(4019).ListItem.Property(type),episode)]]">$INFO[Container(4019).ListItem.Property(DBID)]</value>
+		<value condition="Control.HasFocus(4012) + [String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4019).ListItem.Property(type),tvshow) | String.IsEqual(Container(4019).ListItem.DBTYPE,episode) | String.IsEqual(Container(4019).ListItem.Property(type),episode)]">$INFO[Container(4019).ListItem.Property(DBID)]</value>
 		<value>-1</value>
 	</variable>
 	<variable name="EmbyWidgetFocusBoxHeight">
@@ -2172,8 +2172,12 @@
 			</item>
 		</content>
 	</include>
-		<variable name="SimilarVideos">
+	<variable name="SimilarVideos">
 		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
+	</variable>
+	<variable name="VideoDBID">
+		<value condition="!String.IsEmpty(ListItem.DBID)">$INFO[ListItem.DBID]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(DBID)">$INFO[ListItem.Property(DBID)]</value>
 	</variable>
 </includes>

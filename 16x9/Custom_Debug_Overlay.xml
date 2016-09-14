@@ -438,21 +438,21 @@
 
             <control type="label">
                 <include>ControlID</include>
-                <label>$INFO[Container.FolderPath]</label>
+                <label>Folder Path: $INFO[Container.FolderPath]</label>
             </control>
 			<control type="label">
                 <include>ControlID2</include>
-                <label>$INFO[Container.ListItem.Path]</label>
+                <label>Path: $INFO[Container.ListItem.Path]</label>
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-                <label>$INFO[ListItem.Property(Thumb)]</label>
-				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                <label>TV: $INFO[ListItem.TVShowTitle],$INFO[Window(home).Property(TVShowID)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label>
+				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID5</include>
-                <label>DBID: $INFO[ListItem.DBID]</label>
-				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
+                <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label>
+				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
             </control>
 			
         </control>

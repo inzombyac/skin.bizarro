@@ -3,15 +3,12 @@
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<zorder>0</zorder>
+	<onload condition="Container.Content(episodes) + String.IsEmpty(ListItem.DBID) + String.StartsWith(ListItem.Path,plugin://plugin.video.emby)">SetProperty(TVShowID,$INFO[ListItem.Property(DBID)],home)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
-<!-- 	<onload condition="Container.Content(tvshows) | Container.Content(episodes)">
+	<!--<onload condition="Container.Content(tvshows) | Container.Content(episodes)">
 	RunScript(script.tv.show.next.aired,tvshowtitle=$INFO[ListItem.Label])
 	</onload> -->
-	<onload condition="Container.Content(movies)">RunScript(script.extendedinfo,info=traktsimilarmovies,dbid='"$INFO[ListItem.DBID]"')</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
-	<onload condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">RunScript(script.extendedinfo,info=traktsimilartvshows,dbid='"$INFO[ListItem.DBID]"')</onload>
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
-	<onunload>ClearProperty(Similar,home)</onunload>
 	<controls>
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
@@ -42,6 +39,15 @@
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
 					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<visible>!String.IsEqual(ListItem.Icon,DefaultTVShows.png)</visible>
+				</control>
+				<control type="image">
+					<!--Plugin Thumb image-->
+					<texture>$INFO[Skin.String(LastIcon)]</texture>
+					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
+					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<visible>String.IsEqual(ListItem.Icon,DefaultTVShows.png)</visible>
 				</control>
 				<control type="image">
 					<right>10</right>
@@ -184,10 +190,10 @@
 					<label>-</label>
 					<onfocus>Right</onfocus>
 					<include>NoTextures</include>
-					<visible>!Control.HasFocus(8) + !Control.HasFocus(11) + !Control.HasFocus(1006) + !Control.HasFocus(105) + !Control.HasFocus(7) + !Control.HasFocus(1007)</visible>
+					<visible>!Control.HasFocus(8) + !Control.HasFocus(11) + !Control.HasFocus(1006) + !Control.HasFocus(105) + !Control.HasFocus(7) + !Control.HasFocus(1007) + !Control.HasFocus(6) </visible>
 					<onup>300</onup>
 				</control>
-				<control id="8" type="togglebutton">
+				<control id="8" type="button">
 					<description>Play/Browse</description>
 					<width>222</width>
 					<height>116</height>
@@ -226,27 +232,41 @@
 					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
-				<control id="1006" type="button">
-					<description>Trailer</description>
+				<!-- Refresh Button -->
+				<!-- <control type="button" id="6">
+					<width>222</width>
+					<height>116</height>
+					<textoffsetx>0</textoffsetx>
+					<font>EPGTimeline</font>
+					<label>Refresh</label>
+					<aligny>top</aligny>
+					<textoffsety>77</textoffsety>
+					<textcolor>White70</textcolor>
+					<onup condition="Control.IsVisible(300)">300</onup>
+					<ondown>5050</ondown>
+					<texturefocus>dialogvideo/refresh.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/refresh.png</texturenofocus>
+					<alttexturefocus>dialogvideo/refresh.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/refresh.png</alttexturenofocus>
+					<visible>!String.IsEmpty(Container.Content)</visible>
+				</control> -->
+				<!-- Kodi Rating -->
+				<control type="button" id="7">
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
 					<ondown>5050</ondown>
-					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
-					<onclick>back</onclick>
-					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
+					<label>38023</label>
 					<font>EPGTimeline</font>
-					<label>Watch Trailer</label>
 					<textoffsety>77</textoffsety>
 					<textcolor>White70</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<aligny>top</aligny>
-					<visible>String.IsEmpty(ListItem.Trailer)</visible>
-					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
-					<texturefocus>dialogvideo/trailer.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
-					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
+					<texturefocus>dialogvideo/rate.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
+					<alttexturefocus >dialogvideo/rate.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
+					<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
 				</control>
 				<!-- Video Extras -->
 				<control type="button" id="105">	
@@ -268,23 +288,28 @@
 					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
-				<!-- Kodi Rating -->
-				<control type="button" id="7">
+				<!-- Youtube Trailers -->
+				<control id="1006" type="button">
+					<description>Trailer</description>
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
 					<ondown>5050</ondown>
-					<label>38023</label>
+					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
+					<onclick>back</onclick>
+					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
 					<font>EPGTimeline</font>
+					<label>Find Trailers</label>
 					<textoffsety>77</textoffsety>
 					<textcolor>White70</textcolor>
 					<textoffsetx>0</textoffsetx>
 					<aligny>top</aligny>
-					<texturefocus>dialogvideo/rate.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
-					<alttexturefocus >dialogvideo/rate.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
-					<enable>IsEmpty(Container.PluginName)</enable>
+					<visible>String.IsEmpty(ListItem.Trailer)</visible>
+					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
+					<texturefocus>dialogvideo/trailer.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
+					<alttexturefocus>dialogvideo/trailer.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="1007">
@@ -300,13 +325,14 @@
 					<aligny>top</aligny>
 					<texturefocus>dialogvideo/info.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
-					<alttexturefocus >dialogvideo/info.png</alttexturefocus>
+					<alttexturefocus>dialogvideo/info.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
-					<onclick condition="String.IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
-					<onclick condition="Container.Content(tvshows) + String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
-					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
+					<onclick condition="!String.IsEmpty(ListItem.DBID) + String.IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
+					<onclick condition="!String.IsEmpty(ListItem.DBID) + Container.Content(tvshows) + String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
+					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))| !String.IsEmpty(Window(home).Property(TvShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
 					<visible>System.HasAddon(script.extendedinfo)</visible>
+					<visible>!String.IsEmpty(ListItem.DBID) | !String.IsEmpty(Window(home).Property(TVShowID)) | !String.IsEmpty(ListItem.TvShowTitle)</visible>
 				</control>
 				<!--Add to Couchpotato Button -->
 				<!-- <control type="button" id="1008">
@@ -592,10 +618,7 @@
 			<visible>String.Contains(Control.GetLabel(8328),empty.png)</visible>
 			<visible>Control.HasFocus(4000)</visible>
 		</control>
-		<include>Furniture_Header</include>
-        <include>Furniture_Clock</include>
 		<include>Furniture_Flags</include>
-        <include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
 		<control type="group">
