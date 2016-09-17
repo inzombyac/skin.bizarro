@@ -442,7 +442,7 @@
             </control>
 			<control type="label">
                 <include>ControlID2</include>
-                <label>Path: $INFO[Container.ListItem.Path]</label>
+                <label>Path: $INFO[Container.ListItem.FileNameAndPath]</label>
             </control>
 			<control type="label">
                 <include>ControlID4</include>

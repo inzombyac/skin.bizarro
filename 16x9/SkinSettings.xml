@@ -23,6 +23,11 @@
 				<right>8</right>
 				<top>8</top>
 				<bottom>8</bottom>
+				<control type="image">
+					<width>453</width>
+					<height>638</height>
+					<texture border="5" colordiffuse="Light1">common/box.png</texture>
+				</control>
 				<!-- Left Group -->
 				<control type="grouplist" id="9100">
 					<description>Button Area</description>
@@ -179,7 +184,7 @@
 				<!-- Right Group -->
 				<control type="grouplist" id="9200">
 					<description>Control Area</description>
-					<left>450</left>
+					<left>460</left>
 					<right>0</right>
 					<top>140</top>
 					<bottom>10</bottom>
@@ -794,7 +799,7 @@
 					<font>Tiny</font>
 					<textcolor>PanelWhite70</textcolor>
 					<scroll>true</scroll>
-					<label>19055</label>
+					<label>20077</label>
 				</control>
 			</control>
 		</control>

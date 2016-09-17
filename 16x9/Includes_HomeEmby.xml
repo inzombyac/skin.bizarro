@@ -18,7 +18,6 @@
 			<control type="image">
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
-				<!-- <animation effect="fade" start="100" end="00" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
 				<visible>Integer.IsGreater(Container(300).NumItems,6)</visible>
 				<bottom>885</bottom>
 				<right>52</right>
@@ -27,9 +26,9 @@
 				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
 			</control>
 			<control type="list" id="300">
-				<!-- <animation effect="slide" end="0,24" condition="control.hasfocus(302)" time="200">Conditional</animation> -->
-				<include>Animation.DelayFadeIn</include>
+				<!-- <include>Animation.DelayFadeIn</include> -->
 				<include>Animation.FadeOut</include>
+				<include>Animation.FadeIn.Slide</include>
 				<description>Home Wraplist</description>
 				<left>SidePad</left>
 				<right>SidePad</right>
@@ -98,6 +97,7 @@
 				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
+				<animation effect="slide" start="-100" end="0" time="500" center="auto" tween="back" easing="out" condition="Container(300).OnNext | Container(300).OnPrevious">Focus</animation>
 			</control>
 		</focusedlayout>
 		<content>

@@ -558,6 +558,7 @@
 				<width>220</width>
 				<height>64</height>
 				<visible>!String.IsEmpty(ListItem.Duration)</visible>
+				<visible>!Container.Content(tvshows)</visible>
 				<control type="image">
 					<height>50</height>
 					<centertop>50%</centertop>

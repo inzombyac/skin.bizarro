@@ -240,6 +240,7 @@
 						<alttexturefocus>dialogvideo/rate.png</alttexturefocus>
 						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
 						<onup>300</onup>
+						<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
 					</control>
 				</control>
 			</control>
@@ -542,6 +543,8 @@
 							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 						<control type="button">
+							<width>1</width>
+							<height>1</height>
 							<onfocus>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onfocus>
 						</control>
 					</focusedlayout>

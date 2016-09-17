@@ -21,6 +21,7 @@
 	</include>
 	<include name="DebugGridHome">
 		 <control type="group">
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			 <visible>Skin.HasSetting(DebugGrid)</visible>
 			<control type="label">
                 <include>ControlID2</include>
