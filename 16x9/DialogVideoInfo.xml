@@ -50,8 +50,8 @@
 					<visible>String.IsEqual(ListItem.Icon,DefaultTVShows.png)</visible>
 				</control>
 				<control type="image">
-					<right>10</right>
-					<top>10</top>
+					<right>12</right>
+					<top>12</top>
 					<width>32</width>
 					<height>32</height>
 					<aspectratio aligny="top">keep</aspectratio>
@@ -129,12 +129,7 @@
 					<radiowidth>1</radiowidth>
 					<onup condition="Player.HasMedia">7788</onup>
 					<ondown>9001</ondown>
-					<textureradioonfocus colordiffuse="White70">-</textureradioonfocus>
-					<textureradioonnofocus colordiffuse="Black100">-</textureradioonnofocus>
-					<textureradioofffocus colordiffuse="White70">-</textureradioofffocus>
-					<textureradiooffnofocus colordiffuse="Black100">-</textureradiooffnofocus>
 					<texturefocus border="5" colordiffuse="$INFO[Window(home).Property(DialogInfo.ImageColor)]">common/box.png</texturefocus>
-					<texturenofocus border="5" colordiffuse="White70">common/box.png</texturenofocus>
 					<align>left</align>
 					<aligny>top</aligny>
 					<textoffsetx>2</textoffsetx>

@@ -135,6 +135,34 @@
 	<include name="Animation.FocusSmall">
 		<animation effect="zoom" end="103" time="50" center="auto">Focus</animation>
 	</include>
+	<include name="Animation.EmbyRight2Slide">
+		<animation condition="Integer.IsGreater(Container(40016).NumItems,9)" effect="slide" end="11,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40016).NumItems,4)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40016).NumItems,0)" effect="slide" end="372,0" start="0,0" time="200">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyRight3Slide">
+		<animation condition="Integer.IsGreater(Container(40016).NumItems,9)" effect="slide" end="11,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40016).NumItems,4)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40016).NumItems,0)" effect="slide" end="372,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40017).NumItems,6)" effect="slide" end="12,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40017).NumItems,4)" effect="slide" end="252,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40017).NumItems,2)" effect="slide" end="252,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Integer.IsGreater(Container(40017).NumItems,0)" effect="slide" end="270,0" start="0,0" time="200">Conditional</animation>
+	</include>
+	<include name="Animation.EmbyHomeSlide">
+		<animation condition="[Control.HasFocus(4018)] + Integer.IsGreater(Container(40016).NumItems,4)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4018)] + Integer.IsGreater(Container(40016).NumItems,0)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4018)] + Integer.IsGreater(Container(40017).NumItems,4)" effect="slide" end="-232,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4018)] + Integer.IsGreater(Container(40017).NumItems,2)" effect="slide" end="-232,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4018)] + Integer.IsGreater(Container(40017).NumItems,0)" effect="slide" end="-232,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4017) + Integer.IsGreater(Container(40018).NumItems,0)] + Integer.IsGreater(Container(40016).NumItems,4)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4017) + Integer.IsGreater(Container(40018).NumItems,0)] + Integer.IsGreater(Container(40016).NumItems,0)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4017) + Integer.IsGreater(Container(40018).NumItems,0)] + Integer.IsGreater(Container(40017).NumItems,4)" effect="slide" end="-232,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4017) + Integer.IsGreater(Container(40018).NumItems,0)] + Integer.IsGreater(Container(40017).NumItems,2)" effect="slide" end="-232,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4017) + Integer.IsGreater(Container(40018).NumItems,0)] + Integer.IsGreater(Container(40017).NumItems,0)" effect="slide" end="-232,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4016) | [Control.HasFocus(4017) + !Integer.IsGreater(Container(40018).NumItems,0)]] + Integer.IsGreater(Container(40016).NumItems,0) + Integer.IsGreater(Container(40017).NumItems,0)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4016) | [Control.HasFocus(4017) + !Integer.IsGreater(Container(40018).NumItems,0)]] + Integer.IsGreater(Container(40016).NumItems,4) + Integer.IsGreater(Container(40017).NumItems,0)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
+	</include>
 	<include name="Animation.EmbyMainZoom">
 		<animation effect="zoom" end="103" time="50" center="auto" condition="Control.HasFocus(4012)">Conditional</animation>
 	</include>
