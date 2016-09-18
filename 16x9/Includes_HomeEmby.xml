@@ -33,9 +33,10 @@
 				<left>SidePad</left>
 				<right>SidePad</right>
 				<top>120</top>
-				<ondown condition="Control.IsVisible(4016)">4016</ondown>
+				<!-- <ondown condition="Control.IsVisible(4016)">4016</ondown>
 				<ondown condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</ondown>
-				<ondown condition="!Control.IsVisible(4016) + !Control.IsVisible(4017)">4012</ondown>
+				<ondown condition="!Control.IsVisible(4016) + !Control.IsVisible(4017)">4012</ondown> -->
+				<ondown>4012</ondown>
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">9000</onup>
 				<onleft>300</onleft>
@@ -525,7 +526,7 @@
 		<!-- Settings -->
 		<control type="list" id="4019">
 			<include>Animation.FocusSmall</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),settings) | String.IsEqual(Container(300).ListItem.Property(type),weather) | String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(type),settings) | String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			<!--systeminfo widgets -->
 			<include>SysInfoWidgetMain</include>
 		</control>
@@ -744,7 +745,7 @@
 		<param name="widget_left" default="964"/>
 		<param name="widget_label_left" default="974"/>
 		<param name="scroll_left" default="1734"/>
-		<param name="scroll_left_2" default="1936"/>
+		<param name="scroll_left_2" default="1680"/>
 		<definition>
 			<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 			<control type="label">
@@ -758,7 +759,7 @@
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyHomeWidget2Label]</label>
 				<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>Control.IsVisible(4017)</visible>
@@ -792,6 +793,7 @@
 				<visible>Control.IsVisible(4017)  + Integer.IsGreater(Container(40017).NumItems,4)</visible>
                 <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(4017)">Conditional</animation>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
+				<include>Animation.EmbyRight2Slide</include>
             </control>
 			<!-- Widgets -->
 			<!-- Right 1: Double, Right 2: Triple -->
@@ -926,6 +928,7 @@
 				<visible>Control.IsVisible(4016)</visible>
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn</include>
+				<include>Animation.EmbyRight2Slide</include>
 			</control>
 		</definition>
 	</include>
@@ -1180,7 +1183,7 @@
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
 				<include>Animation.FadeOut</include>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1190,7 +1193,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1201,7 +1204,7 @@
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
 				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
-				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0) + !Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0) + !Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1213,7 +1216,7 @@
 				<left>10</left>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1227,7 +1230,7 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1245,7 +1248,7 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
@@ -1253,7 +1256,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<visible>!Container(300).Scrolling + ![Container(4019).IsUpdating + System.IdleTime(0)]</visible>
+				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
