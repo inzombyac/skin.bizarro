@@ -762,15 +762,15 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<control type="image">
+				<!-- <control type="image">
 					<right>50</right>
-					<bottom>60</bottom>
+					<bottom>120</bottom>
 					<height>110</height>
 					<fadetime>100</fadetime>
 					<aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture background="true">$VAR[ClearLogoBanner]</texture>
 					<visible>Container.Content(episodes)</visible>
-				</control>
+				</control> -->
 				<include>Furniture_Scrollbar</include>
 			</control>
 		</control>

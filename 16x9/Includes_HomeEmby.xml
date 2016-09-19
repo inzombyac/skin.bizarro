@@ -318,6 +318,7 @@
 			<content target="videos">videodb://movies/sets/</content>
 			<include>Animation.FadeOut</include>
 			<include>Animation.FadeIn</include>
+			<include>Animation.Common</include>
 		</control>
 		<control type="scrollbar" id="40120">
 			<left>78</left>
@@ -1561,13 +1562,41 @@
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar5].png</texture>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
 			</control>
-			<control type="group">
+			<control type="grouplist">
 				<centertop>50%</centertop>
 				<height>64</height>
-				<width>1330</width>
+				<width>1380</width>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
 				<visible>Control.HasFocus(4012) | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(302)</visible>
+				<control type="group">
+					<centertop>50%</centertop>
+					<width>220</width>
+					<height>64</height>
+					<visible>[Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)] | [Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)] | [Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)] | [Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)]</visible>
+					<control type="image">
+						<height>50</height>
+						<centertop>50%</centertop>
+						<texture colordiffuse="Dark1">flags/time.png</texture>
+						<aspectratio align="left">keep</aspectratio>
+					</control>
+					<control type="label">
+						<left>57</left>
+						<width>170</width>
+						<centertop>50%</centertop>
+						<height>64</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$VAR[EmbyDurationHomeLong]</label>
+						<font>DurationFontSmall</font>
+						<textcolor>Dark1</textcolor>
+					</control>
+				</control>
 				<control type="label">
 					<left>10</left>
+					<width>1160</width>
 					<font>DurationFontSmall</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
@@ -1576,7 +1605,8 @@
 			</control>
 			<control type="image">
 				<centertop>50%</centertop>
-				<width>200</width>
+				<width>150</width>
+				<left>10</left>
 				<texture colordiffuse="Dark1">$VAR[EmbyHomeClearArt]</texture>
 				<aspectratio align="right" aligny="center">keep</aspectratio>
 				<!-- <visible>Skin.HasSetting(furniture.flags)</visible> -->

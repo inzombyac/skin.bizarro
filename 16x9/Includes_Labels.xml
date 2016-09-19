@@ -841,6 +841,7 @@
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!String.IsEmpty(Container(10017).ListItem.EndTime) + Control.HasFocus(10017)]">$INFO[Container(10017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!String.IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)]">$INFO[Container(14017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!String.IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]">$INFO[Container(15017).ListItem.EndTime(hh:mm)]</value>
+		<value condition="!Skin.HasSetting(furniture.hideendtime) + [!String.IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301)]">$INFO[Container(301).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!container.content(tvshows) + !container.content(seasons) + !String.IsEmpty(ListItem.EndTime)">$INFO[ListItem.EndTime(hh:mm)]</value>
 	</variable>
 	<variable name="KodiFlix.Label">
@@ -878,9 +879,10 @@
 		<value>$INFO[Container(301).ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="EmbyDurationHomeLong">
-		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Duration,,min]</value>
-		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Duration,,min]</value>
-		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)">$INFO[Container(4019).ListItem.Duration,,min]</value>
 	</variable>
 	<variable name="MPAA">
 		<value condition="String.Contains(ListItem.Mpaa,gb-pg)">PG</value>

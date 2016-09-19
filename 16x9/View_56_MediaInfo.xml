@@ -448,15 +448,15 @@
 	<include name="56FanartView">
 		<control type="group">
 		<visible>Container.Content(episodes) | Container.Content(movies)</visible>
-			<top>650</top>
+			<top>700</top>
 			<right>60</right>
 			<width>PosterW</width>
-			<height>PosterH</height>
+			<height>270</height>
 			<control type="image">
 				<left>10</left>
 				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<visible>Skin.HasSetting(views.56.showfanart)</visible>
 				<visible>!Container.Content(episodes)</visible>
@@ -465,7 +465,7 @@
 				<left>10</left>
 				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 				<visible>Skin.HasSetting(views.56.showfanart)</visible>
 				<visible>Container.Content(episodes)</visible>
@@ -474,7 +474,7 @@
 				<left>10</left>
 				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[LandscapeImage]</texture>
 				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
 				<!-- <visible>Container.Content(episodes)</visible> -->
