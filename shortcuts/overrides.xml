@@ -484,7 +484,7 @@
     <!-- Browse for Backgrounds -->
     <background label="::PLAYLIST::">playlistBackground</background>
     <background label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>
-    <background label="smartshortcuts">||BROWSE||special://skin/extras/backgrounds</background>
+    <background label="local">||BROWSE||special://skin/extras/backgrounds</background>
     <backgroundBrowse default="protocol://">True</backgroundBrowse>
 
     <backgrounddefault defaultID="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>

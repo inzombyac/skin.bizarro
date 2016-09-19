@@ -424,6 +424,18 @@
                     <label>VisualisationPresetList.xml</label>
                     <visible>Window.IsVisible(VisualisationPresetList.xml)</visible>
                 </control>
+				
+				<control type="label">
+                    <include>DialogID</include>
+                    <label>SkinSettings.xml</label>
+                    <visible>Window.IsVisible(SkinSettings.xml)</visible>
+                </control>
+				
+				<control type="label">
+                    <include>DialogID</include>
+                    <label>script-skinshortcuts.xml</label>
+                    <visible>Window.IsVisible(script-skinshortcuts.xml)</visible>
+                </control>				
 
             </control>
 

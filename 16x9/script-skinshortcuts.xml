@@ -127,15 +127,16 @@
                     </control>
                 </focusedlayout>
             </control>
-			<!-- Testing -->
+			<!-- Widgets -->
 			<control type="group" id="9876">
-				<height>759</height>
+				<height>860</height>
 				<onleft>9100</onleft>
 				<right>15</right>
 				<width>420</width>	
 				<control type="grouplist" >
 					<height>450</height>
 					<onleft>9100</onleft>
+					<ondown>8780</ondown>
 					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<control type="label">
 						<description>header label</description>
@@ -189,6 +190,18 @@
 						<onclick>SendClick(312)</onclick>
 					</control>
 				</control>
+				<control type="button" id="8780" description="OK">
+						<onup>9100</onup>
+						<onleft>9100</onleft>
+						<bottom>5</bottom>
+						<label>OK</label>
+						<width>100%</width>
+						<height>66</height>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<include>DefDialogButtons</include>
+						<onclick>Dialog.Close(all,true)</onclick>
+						<onclick>ReloadSkin()</onclick>
+					</control>
 				<control type="group">
 					<top>460</top>
 					<height>299</height>
@@ -208,7 +221,7 @@
 						<top>69</top>
 						<height>220</height>
 						<aspectratio>keep</aspectratio>
-						<texture>$VAR[GlobalFanart]</texture>
+						<texture>$VAR[SkinShortcutsBackground]</texture>
 						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					</control>
 					<control type="image">
