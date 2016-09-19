@@ -23,7 +23,7 @@
 		 <control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			 <visible>Skin.HasSetting(DebugGrid)</visible>
-			<control type="label">
+			<!-- <control type="label">
                 <include>ControlID2</include>
                 <label>$INFO[Container(4019).ListItem.Path]</label>
 				<visible>Control.HasFocus(4012)</visible>
@@ -61,8 +61,15 @@
                 <include>ControlID5</include>
                 <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label>
 				
+            </control> -->
+			<control type="label">
+                <include>ControlID3</include>
+                <label>$INFO[Container(300).ListItem.Property(type)]</label>
             </control>
-			
+			<control type="label">
+                <include>ControlID4</include>
+                <label>$INFO[Container(300).ListItem.Property(widgetPath.right2)]</label>
+            </control>
 		</control>
 	</include>
 </includes>

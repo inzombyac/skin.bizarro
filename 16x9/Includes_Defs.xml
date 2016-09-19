@@ -1545,13 +1545,13 @@
 	</variable>
 	<variable name="DefWidgetRight2Content">
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2))">$INFO[Container(300).ListItem.Property(widgetPath.right2)]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(300).ListItem.Property(widgetPath.right2.unwatched)]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos)">$INFO[Container(300).ListItem.Property(widgetPath.right2.recommended)]</value>
+		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.unwatched)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos) + !String.IsEqual(Container(300).ListItem.Property(type),channels) + !String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(300).ListItem.Property(widgetPath.right2.unwatched)]</value>
+		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos) + !String.IsEqual(Container(300).ListItem.Property(type),channels) + !String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(300).ListItem.Property(widgetPath.right2.recommended)]</value>
 	</variable>
 	<variable name="DefWidgetRight2Selection">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2))">$INFO[Container(211).ListItem.Property(widgetPath.right2)]</value>
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.unwatched))">$INFO[Container(211).ListItem.Property(widgetPath.right2.unwatched)]</value>
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(211).ListItem.Property(type),photos) + !String.IsEqual(Container(211).ListItem.Property(type),homevideos)">$INFO[Container(211).ListItem.Property(widgetPath.right2.recommended)]</value>
+		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.unwatched)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos) + !String.IsEqual(Container(211).ListItem.Property(type),channels) + !String.IsEqual(Container(211).ListItem.Property(type),music)">$INFO[Container(211).ListItem.Property(widgetPath.right2.unwatched)]</value>
+		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(211).ListItem.Property(type),photos) + !String.IsEqual(Container(211).ListItem.Property(type),homevideos) + !String.IsEqual(Container(211).ListItem.Property(type),channels) + !String.IsEqual(Container(211).ListItem.Property(type),music)">$INFO[Container(211).ListItem.Property(widgetPath.right2.recommended)]</value>
 	</variable>
 	<variable name="DefWidgetRight3Content">
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right3))">$INFO[Container(300).ListItem.Property(widgetPath.right3)]</value>
