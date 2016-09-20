@@ -7,7 +7,7 @@
 	<onunload>ClearProperty(osdshowinfo,home)</onunload>
 	<controls>
 		<control type="group">
-			<height>86</height>
+			<height>90</height>
 			<bottom>0</bottom>
 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="150" delay="150" />

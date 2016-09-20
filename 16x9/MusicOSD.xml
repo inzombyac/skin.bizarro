@@ -5,7 +5,7 @@
     <include condition="Player.PauseEnabled">OSDFocusPause</include>
     <controls>
         <control type="group">
-            <height>74</height>
+            <height>80</height>
             <bottom>64</bottom>
             <include>Animation.FadeIn</include>
             <animation type="Hidden">

@@ -1042,6 +1042,14 @@
 			<align>left</align>
 			<label>653</label>
 			<include>DefContextButton2</include>
+			<visible>!System.HasAddon(plugin.video.emby)</visible>
+		</control>
+		<control type="button" id="9093" description="Emby Manual sync">
+			<include>DefContextButton2</include>
+			<label>653</label>
+			<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+			<align>left</align>
+			<visible>System.HasAddon(plugin.video.emby)</visible>
 		</control>
 		<control type="radiobutton" id="11">
 			<description>Unlock Shares</description>
@@ -1223,6 +1231,14 @@
 			<align>left</align>
 			<label>653</label>
 			<include>DefContextButton2</include>
+			<visible>!System.HasAddon(plugin.video.emby)</visible>
+		</control>
+		<control type="button" id="9093" description="Emby Manual sync">
+			<include>DefContextButton2</include>
+			<label>653</label>
+			<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+			<align>left</align>
+			<visible>System.HasAddon(plugin.video.emby)</visible>
 		</control>
 	</include>
 	<include name="Def9000AddonSide">
