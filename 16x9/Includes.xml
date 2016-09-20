@@ -16,6 +16,7 @@
 	<include file="View_500_Thumbnails.xml" />
 	<include file="View_503_Poster_Square.xml" />
 	<include file="View_505_Wall_Square.xml" />
+	<include file="View_506_Wall_Poster.xml" />
 	<include file="View_514_PosterShift.xml" />
 	<include file="View_513_PosterRow.xml" />
 	<include file="View_515_Netflix.xml" />
@@ -248,14 +249,23 @@
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture background="true">$INFO[Window(home).Property(Home.ImageFilter)]</texture>
+			<texture>$INFO[Window(home).Property(Home.ImageFilter)]</texture>
 			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + !String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
+			<include>Animation.FurnitureFadeInOut</include>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$VAR[ColourHighlight2]" background="true" fallback="diffuse/bg-diffuse.png">$INFO[Window(home).Property(Home2.ImageFilter)]</texture>
-			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
+			<texture>$INFO[Window(home).Property(Home2.ImageFilter)]</texture>
+			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + !String.IsEmpty(Window(home).Property(Home2.ImageFilter))</visible>
+			<include>Animation.FurnitureFadeInOut</include>
+		</control>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<aspectratio align="center">scale</aspectratio>
+			<texture colordiffuse="$VAR[ColourHighlight2]" background="true">diffuse/bg-diffuse.png</texture>
+			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + String.IsEmpty(Window(home).Property(Home2.ImageFilter)) + String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
+			<include>Animation.FurnitureFadeInOut</include>
 		</control>
 		<control id="8328" type="image">
 			<include>Dimensions_Fullscreen</include>

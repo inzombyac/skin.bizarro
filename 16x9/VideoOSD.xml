@@ -7,7 +7,7 @@
 	<onunload>ClearProperty(osdshowinfo,home)</onunload>
 	<controls>
 		<control type="group">
-			<height>74</height>
+			<height>86</height>
 			<bottom>0</bottom>
 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="150" delay="150" />
@@ -110,9 +110,9 @@
 				</control>
 			</control>
 			<control type="grouplist" id="100">
-				<top>13</top>
+				<top>25</top>
 				<left>50</left>
-				<height>48</height>
+				<height>64</height>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<align>left</align>
@@ -148,7 +148,7 @@
 			<control type="grouplist" id="101">
 				<top>13</top>
 				<width>100%</width>
-				<height>48</height>
+				<height>64</height>
 				<itemgap>16</itemgap>
 				<orientation>horizontal</orientation>
 				<align>center</align>
@@ -159,9 +159,9 @@
 				<include condition="Skin.HasSetting(osd.usetheme)">OSDVideoControlsFlip</include>
 			</control>
 			<control type="grouplist" id="102">
-				<top>13</top>
+				<top>25</top>
 				<right>50</right>
-				<height>48</height>
+				<height>64</height>
 				<itemgap>0</itemgap>
 				<orientation>horizontal</orientation>
 				<align>right</align>

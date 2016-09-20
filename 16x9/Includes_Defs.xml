@@ -606,16 +606,23 @@
 				<include>DefContextButton</include>
 				<label>Emby</label>
 				<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
-				
 				<align>left</align>
 			</control>
-			<control type="button" id ="9092" description="Emby Manual Sync">
+			<control type="button" id="9092" description="Emby Manual sync">
 				<include>DefContextButton</include>
-				<label>Manual Emby Sync</label>
+				<label>653</label>
 				<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
 				<onclick>right</onclick>
 				<align>left</align>
 				<visible>System.HasAddon(plugin.video.emby)</visible>
+			</control>
+			<control type="button" id ="9093" description="Update library">
+				<include>DefContextButton</include>
+				<label>653</label>
+				<onclick>UpdateLibrary(video)</onclick>
+				<onclick>right</onclick>
+				<align>left</align>
+				<visible>!System.HasAddon(plugin.video.emby)</visible>
 			</control>
 			<control type="button" id="3123">
 				<include>DefContextButton</include>
@@ -633,7 +640,7 @@
 			</control> 
 			<control type="button" id="9212" description="Customise Home">
 				<include>DefContextButton</include>
-				<label>31109</label>
+				<label>$LOCALIZE[31109]</label>
 				<onclick>right</onclick>
 				<onclick>ActivateWindow(busydialog)</onclick>
 				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
@@ -1180,21 +1187,10 @@
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>31185</label>
-			<selected>Skin.HasSetting(505wall.showposter)</selected>
-			<onclick>Skin.ToggleSetting(505wall.showposter)</onclick>
-			<onclick>Skin.Reset(505wall.noposter)</onclick>
+			<selected>Skin.HasSetting(506wall.bigposter)</selected>
+			<onclick>Skin.ToggleSetting(506wall.bigposter)</onclick>
 			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(505)</visible>
-		</control>
-		<control type="radiobutton" id="9007" description="Wall No Poster(505)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31779</label>
-			<selected>Skin.HasSetting(505wall.noposter)</selected>
-			<onclick>Skin.ToggleSetting(505wall.noposter)</onclick>
-			<onclick>Skin.Reset(505wall.showposter)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(505)</visible>
+			<visible>Control.IsVisible(506)</visible>
 		</control>
 		<control type="radiobutton" id="9008" description="Low List (57)">
 			<include>DefContextButton2</include>
@@ -1204,15 +1200,6 @@
 			<onclick>Skin.ToggleSetting(57list.low)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(57)</visible>
-		</control>
-		<control type="radiobutton" id="9009" description="Big Wide Info (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
 		</control>
 		<control type="label" id="9010">
 			<width>455</width>
@@ -1290,25 +1277,14 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(52)</visible>
 		</control>
-		<control type="radiobutton" id="9004" description="Wall Big Poster(505)">
+		<control type="radiobutton" id="9004" description="Wall Big Poster(506)">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>31185</label>
-			<selected>Skin.HasSetting(505wall.showposter)</selected>
-			<onclick>Skin.ToggleSetting(505wall.showposter)</onclick>
-			<onclick>Skin.Reset(505wall.noposter)</onclick>
+			<selected>Skin.HasSetting(506wall.bigposter)</selected>
+			<onclick>Skin.ToggleSetting(506wall.bigposter)</onclick>
 			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(505)</visible>
-		</control>
-		<control type="radiobutton" id="9005" description="Wall No Poster(505)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31779</label>
-			<selected>Skin.HasSetting(505wall.noposter)</selected>
-			<onclick>Skin.ToggleSetting(505wall.noposter)</onclick>
-			<onclick>Skin.Reset(505wall.showposter)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(505)</visible>
+			<visible>Control.IsVisible(506)</visible>
 		</control>
 	</include>
 	<include name="DefDialogSelectManual6">

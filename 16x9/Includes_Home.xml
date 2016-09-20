@@ -122,13 +122,6 @@
 	<include name="HomeEmbyContent">
 		<top>177</top>
 		<itemlayout width="300" height="74">
-			<control type="button">
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
-				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
-			</control>
 			<control type="label">
 				<align>center</align>
 				<aligny>top</aligny>
@@ -147,6 +140,7 @@
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus>
 				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
+				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -1188,6 +1182,9 @@
 				<texture>$INFO[ListItem.Icon]</texture>
 				<visible>!String.IsEmpty(ListItem.Icon)</visible>
 			</control>
+			<control type="label">
+				<label>$INFO[ListItem.Duration]</label>
+			</control>
 		</itemlayout>
 		<focusedlayout width="1" height="1">
 			<control type="button">
@@ -1200,6 +1197,9 @@
 			<control type="image">
 				<texture>$INFO[ListItem.Icon]</texture>
 				<visible>!String.IsEmpty(ListItem.Icon)</visible>
+			</control>
+			<control type="label">
+				<label>$INFO[ListItem.Duration]</label>
 			</control>
 		</focusedlayout>
 	</include>
@@ -1579,7 +1579,7 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
+		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

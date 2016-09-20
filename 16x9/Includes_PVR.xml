@@ -1147,7 +1147,7 @@
 				<left>55</left>
 				<width>145</width>
 				<height>70</height>
-				<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 		</channellayout>
@@ -1173,7 +1173,7 @@
 				<left>55</left>
 				<width>145</width>
 				<height>70</height>
-				<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[ListItem.Icon]</texture>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 		</focusedchannellayout>

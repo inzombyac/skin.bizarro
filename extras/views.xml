@@ -2,7 +2,8 @@
     <view id="List" value="50" languageid="535" type="all"/>
 	<view id="Poster" value="53" languageid="31792" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,programs" />
     <view id="Wall" value="55" languageid="31791" type="movies,setmovies,tvshows,musicvideos,seasons,sets,programs" />
-	<view id="Wall Square" value="505" languageid="31791" type="artists,albums,songs,programs,addons" />
+	<view id="Wall Square" value="505" languageid="31794" type="artists,albums,songs,programs,addons" />
+	<view id="Wall Poster" value="506" languageid="31795" type="artists,albums,songs" />
 	<view id="Media info" value="56" languageid="544" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,programs" />
     <view id="Extra Info" value="57" languageid="31147" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Big wide" value="51" languageid="540" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,artists,albums,songs" />

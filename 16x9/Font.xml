@@ -38,36 +38,6 @@
 			<size>36</size>
 		</font>
 		<font>
-			<name>symbolview</name>
-			<filename>symbol.ttf</filename>
-			<size>28</size>
-			<style />
-		</font>
-		<font>
-			<name>symbol</name>
-			<filename>symbol.ttf</filename>
-			<size>36</size>
-			<style />
-		</font>
-		<font>
-			<name>symbolbig</name>
-			<filename>symbol.ttf</filename>
-			<size>54</size>
-			<style />
-		</font>
-		<font>
-			<name>symbolbiggest</name>
-			<filename>symbol.ttf</filename>
-			<size>112</size>
-			<style />
-		</font>
-		<font>
-			<name>tinysymbol</name>
-			<filename>symbol.ttf</filename>
-			<size>20</size>
-			<style />
-		</font>
-		<font>
 			<name>EndTime</name>
 			<style>uppercase</style>
 			<filename>segoe-media-center.ttf</filename>
@@ -269,84 +239,11 @@
 			<filename>segoe-media-center.ttf</filename>
 			<size>22</size>
 		</font>
-		<font>
-			<name>Weather</name>
-			<filename>Weather.ttf</filename>
-			<size>64</size>
-		</font>
-		<font>
-			<name>BigWeather</name>
-			<filename>Weather.ttf</filename>
-			<size>160</size>
-		</font>
 		<!-- Required for system -->
 		<font>
 			<name>font13</name>
 			<filename>segoe-media-center.ttf</filename>
 			<size>30</size>
-		</font>
-		<!-- Hand written -->
-		<font>
-			<name>Hand_20</name>
-			<filename>fafers.ttf</filename>
-			<size>20</size>
-		</font>
-		<font>
-			<name>Hand_23</name>
-			<filename>fafers.ttf</filename>
-			<size>23</size>
-		</font>
-		<font>
-			<name>Hand_28</name>
-			<filename>fafers.ttf</filename>
-			<size>28</size>
-		</font>
-		<font>
-			<name>Hand_32</name>
-			<filename>fafers.ttf</filename>
-			<size>32</size>
-		</font>
-		<!-- Fake Logo -->
-		<font>
-			<name>font_SimplerE3D</name>
-			<filename>a_SimplerE3D.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_SimplerE3D_bold</name>
-			<filename>a_SimplerE3D.ttf</filename>
-			<style>uppercase bold</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_armyofdarkness</name>
-			<filename>Army_Of_Darkness.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_babylon5</name>
-			<filename>Babylon5_Station.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_bachelorpad</name>
-			<filename>Bachelor_Pad.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_bullpen3d</name>
-			<filename>bullpen3.ttf</filename>
-			<size>25</size>
-		</font>
-		<font>
-			<name>font_assassinsdub</name>
-			<filename>Assassins_Dub.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
 		</font>
 		<font>
 			<name>DurationFont</name>
@@ -394,36 +291,6 @@
 			<name>ThirtySix</name>
 			<filename>segoe-media-center.ttf</filename>
 			<size>36</size>
-		</font>
-		<font>
-			<name>symbolview</name>
-			<filename>symbol.ttf</filename>
-			<size>28</size>
-			<style />
-		</font>
-		<font>
-			<name>symbol</name>
-			<filename>symbol.ttf</filename>
-			<size>36</size>
-			<style />
-		</font>
-		<font>
-			<name>symbolbig</name>
-			<filename>symbol.ttf</filename>
-			<size>54</size>
-			<style />
-		</font>
-		<font>
-			<name>symbolbiggest</name>
-			<filename>symbol.ttf</filename>
-			<size>112</size>
-			<style />
-		</font>
-		<font>
-			<name>tinysymbol</name>
-			<filename>symbol.ttf</filename>
-			<size>20</size>
-			<style />
 		</font>
 		<font>
 			<name>EndTime</name>
@@ -620,90 +487,16 @@
 			<filename>RobotoCondensed-Bold.ttf</filename>
 			<size>22</size>
 		</font>
-		<font>
-			<name>Weather</name>
-			<filename>Weather.ttf</filename>
-			<size>64</size>
-		</font>
-		<font>
-			<name>BigWeather</name>
-			<filename>Weather.ttf</filename>
-			<size>160</size>
-		</font>
 		<!-- Required for system -->
 		<font>
 			<name>font13</name>
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>30</size>
 		</font>
-		<!-- Hand written -->
-		<font>
-			<name>Hand_20</name>
-			<filename>fafers.ttf</filename>
-			<size>20</size>
-		</font>
-		<font>
-			<name>Hand_23</name>
-			<filename>fafers.ttf</filename>
-			<size>23</size>
-		</font>
-		<font>
-			<name>Hand_28</name>
-			<filename>fafers.ttf</filename>
-			<size>28</size>
-		</font>
-		<font>
-			<name>Hand_32</name>
-			<filename>fafers.ttf</filename>
-			<size>32</size>
-		</font>
-		<!-- Fake Logo -->
-		<font>
-			<name>font_SimplerE3D</name>
-			<filename>a_SimplerE3D.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_SimplerE3D_bold</name>
-			<filename>a_SimplerE3D.ttf</filename>
-			<style>uppercase bold</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_armyofdarkness</name>
-			<filename>Army_Of_Darkness.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_babylon5</name>
-			<filename>Babylon5_Station.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_bachelorpad</name>
-			<filename>Bachelor_Pad.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font_bullpen3d</name>
-			<filename>bullpen3.ttf</filename>
-			<size>25</size>
-		</font>
-		<font>
-			<name>font_assassinsdub</name>
-			<filename>Assassins_Dub.ttf</filename>
-			<style>uppercase</style>
-			<size>38</size>
-		</font>
 		<font>
 			<name>FakeLogo</name>
-			<filename>Assassins_Dub.ttf</filename>
-			<style>uppercase</style>
-			<size>50</size>
+			<filename>RobotoCondensed-Bold.ttf</filename>
+			<size>100</size>
 		</font>
 		<font>
 			<name>DurationFont</name>

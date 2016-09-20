@@ -3,7 +3,6 @@
 <window id="6">
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">55</defaultcontrol>
-	
 	<views>50,550,54,53,51,55,56,57,58,59,52,500,514,513,515</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<!-- <onload condition="System.HasAddon(script.duration)">RunScript(script.duration,backend=True)</onload> -->

@@ -457,6 +457,12 @@
                 <label>Path: $INFO[Container.ListItem.FileNameAndPath]</label>
             </control>
 			<control type="label">
+                <include>ControlID3</include>
+                <label>View: $INFO[Container.Viewmode]</label>
+            </control>
+			
+			
+			<control type="label">
                 <include>ControlID4</include>
                 <label>TV: $INFO[ListItem.TVShowTitle],$INFO[Window(home).Property(TVShowID)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>

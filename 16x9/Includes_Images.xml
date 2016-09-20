@@ -210,41 +210,6 @@
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>special://skin/extras/backgrounds/Headphones.jpg</value>
 	</variable>
-	<variable name="FakeDiscArtOverlay">
-		<value condition="String.Contains(ListItem.Filename,.3D.) | String.Contains(ListItem.Filename,.3d.)">common/discart/3d.png</value>
-		<value condition="String.Contains(ListItem.Filename, 3D.) | String.Contains(ListItem.Filename, 3d.)">common/discart/3d.png</value>
-		<value condition="String.Contains(ListItem.Filename,.3DBD.) | String.Contains(ListItem.Filename,.3dbd.)">common/discart/3d.png</value>
-		<value condition="String.Contains(ListItem.Filename, 3DBD.) | String.Contains(ListItem.Filename, 3dbd.)">common/discart/3d.png</value>
-		<value condition="String.Contains(ListItem.Filename,.HDTV.) | String.Contains(ListItem.Filename,.hdtv.)">common/discart/hdtv.png</value>
-		<value condition="String.Contains(ListItem.Filename, HDTV.) | String.Contains(ListItem.Filename, hdtv.)">common/discart/hdtv.png</value>
-		<value condition="String.Contains(ListItem.Filename,.HDDVD.) | String.Contains(ListItem.Filename,.hddvd)">common/discart/hddvd.png</value>
-		<value condition="String.Contains(ListItem.Filename, HDDVD.) | String.Contains(ListItem.Filename, hddvd.)">common/discart/hddvd.png</value>
-		<value condition="String.Contains(ListItem.Filename,.WEBDL.) | String.Contains(ListItem.Filename,.webdl.)">common/discart/webdl.png</value>
-		<value condition="String.Contains(ListItem.Filename, WEBDL.) | String.Contains(ListItem.Filename, webdl.)">common/discart/webdl.png</value>
-		<value condition="String.Contains(ListItem.Filename,.WEB-DL.) | String.Contains(ListItem.Filename,web-dl.)">common/discart/webdl.png</value>
-		<value condition="String.Contains(ListItem.Filename, WEB-DL.) | String.Contains(ListItem.Filename, web-dl.)">common/discart/webdl.png</value>
-		<value condition="String.Contains(ListItem.Filename,.4K.) | String.Contains(ListItem.Filename,.4k.)">common/discart/4k.png</value>
-		<value condition="String.Contains(ListItem.Filename, 4K.) | String.Contains(ListItem.Filename, 4k.)">common/discart/4k.png</value>
-		<value>common/discart/$INFO[ListItem.VideoResolution]p.png</value>
-	</variable>
-	<variable name="FakeDischandcolor">
-		<value condition="container.content(tvshows) | container.content(episodes) | container.content(seasons)">common/discart/hdtvhand.png</value>
-		<value condition="String.Contains(ListItem.Filename,.3D.) | String.Contains(ListItem.Filename,.3d.)">common/discart/3dhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, 3D.) | String.Contains(ListItem.Filename, 3d.)">common/discart/3dhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename,.3DBD.) | String.Contains(ListItem.Filename,.3dbd.)">common/discart/3dhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, 3DBD.) | String.Contains(ListItem.Filename, 3dbd.)">common/discart/3dhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename,.HDTV.) | String.Contains(ListItem.Filename,.hdtv.)">common/discart/hdtvhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, HDTV.) | String.Contains(ListItem.Filename, hdtv.)">common/discart/hdtvhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename,.HDDVD.) | String.Contains(ListItem.Filename,.hddvd)">common/discart/hddvdhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, HDDVD.) | String.Contains(ListItem.Filename, hddvd.)">common/discart/hddvdhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename,.WEBDL.) | String.Contains(ListItem.Filename,.webdl.)">common/discart/webdlhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, WEBDL.) | String.Contains(ListItem.Filename, webdl.)">common/discart/webdlhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename,.WEB-DL.) | String.Contains(ListItem.Filename,web-dl.)">common/discart/webdlhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, WEB-DL.) | String.Contains(ListItem.Filename, web-dl.)">common/discart/webdlhandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename,.4K.) | String.Contains(ListItem.Filename,.4k.)">common/discart/4khandcolor.png</value>
-		<value condition="String.Contains(ListItem.Filename, 4K.) | String.Contains(ListItem.Filename, 4k.)">common/discart/4khandcolor.png</value>
-		<value>common/discart/$INFO[ListItem.VideoResolution]phandcolor.png</value>
-	</variable>
 	<variable name="GlobalCaseVar">
 		<value condition="String.Contains(ListItem.Filename,.3D.)">3d.png</value>
 		<value condition="String.Contains(ListItem.Filename,hdtv)">hdtv.png</value>

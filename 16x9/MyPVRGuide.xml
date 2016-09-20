@@ -33,7 +33,7 @@
 						<left>100</left>
 						<width>200</width>
 						<height>170</height>
-						<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[Container(10).ListItem.Icon]</texture>
+						<texture background="true">$INFO[Container(10).ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Player.HasVideo + !Skin.HasSetting(EPGArt.Enabled)</visible>
 					</control>
@@ -42,7 +42,7 @@
 						<left>0</left>
 						<width>300</width>
 						<height>200</height>
-						<texture background="true" fallback="windows/pvr/defaultchannel.png">$INFO[ListItem.Icon]</texture>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
 						<visible>!Player.HasVideo + Skin.HasSetting(EPGArt.Enabled)</visible>
 					</control>

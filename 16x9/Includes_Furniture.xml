@@ -548,7 +548,6 @@
 					<centertop>50%</centertop>
 					<texture colordiffuse="Dark1">flags/time.png</texture>
 					<aspectratio align="left">keep</aspectratio>
-
 				</control>
 				<control type="label">
 					<left>57</left>
@@ -560,7 +559,6 @@
 					<label>$VAR[DurationLong]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>Dark1</textcolor>
-					
 				</control>
 			</control>
 			<control type="image">
@@ -924,7 +922,7 @@
 		<value condition="Window.IsVisible(DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Label]</value>
-		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.Label]  ($INFO[ListItem.Year])</value>
+		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.Title] ($INFO[ListItem.Year])</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		

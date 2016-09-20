@@ -271,6 +271,7 @@
 	<include name="OSDVideoControls">
 		<control type="togglebutton" id="9003">
 			<description>Record</description>
+			<bottom>0</bottom>
 			<width>48</width>
 			<height>48</height>
 			<label></label>
@@ -288,6 +289,7 @@
 		</control>
 		<control type="button" id="12">
 			<description>Skip Back</description>
+			<top>14</top>
 			<width>48</width>
 			<height>48</height>
 			<label></label>
@@ -299,6 +301,7 @@
 		</control>
 		<control type="button" id="13">
 			<description>Rewind</description>
+			<top>48</top>
 			<width>48</width>
 			<height>48</height>
 			<label></label>
@@ -312,8 +315,8 @@
 		</control>
 		<control type="togglebutton" id="14">
 			<description>Play/Pause</description>
-			<width>48</width>
-			<height>48</height>
+			<width>64</width>
+			<height>64</height>
 			<label></label>
 			<altlabel></altlabel>
 			<font>noop</font>
@@ -329,6 +332,7 @@
 		</control>
 		<control type="button" id="15">
 			<description>Stop</description>
+			<bottom>0</bottom>
 			<width>48</width>
 			<height>48</height>
 			<label></label>
@@ -340,6 +344,7 @@
 		</control>
 		<control type="button" id="16">
 			<description>Fast Forward</description>
+			<bottom>0</bottom>
 			<width>48</width>
 			<height>48</height>
 			<label></label>
@@ -353,6 +358,7 @@
 		</control>
 		<control type="button" id="17">
 			<description>Next</description>
+			<bottom>0</bottom>
 			<width>48</width>
 			<height>48</height>
 			<label></label>
@@ -363,6 +369,7 @@
 			<onclick>PlayerControl(Next)</onclick>
 		</control>
 		<control type="button" id="9002">
+			<bottom>0</bottom>
 			<width>48</width>
 			<height>48</height>
 			<font>noop</font>

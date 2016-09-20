@@ -844,3 +844,11 @@ msgstr ""
 msgctxt "#31793"
 msgid "Ends at"
 msgstr ""
+
+msgctxt "#31794"
+msgid "Wall Square"
+msgstr ""
+
+msgctxt "#31795"
+msgid "Wall Poster"
+msgstr ""
