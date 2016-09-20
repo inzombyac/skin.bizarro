@@ -200,7 +200,7 @@
 									<align>center</align>
 									<aligny>center</aligny>
 									<aspectratio aligny="bottom">keep</aspectratio>
-									<texture background="true" fallback="empty.png">$INFO[ListItem.Art(clearlogo)]</texture>
+									<texture background="true" fallback="common/null.png">$INFO[ListItem.Art(clearlogo)]</texture>
 								</control>
 							</control>
 							<include>ShiftPosterThumbs</include>

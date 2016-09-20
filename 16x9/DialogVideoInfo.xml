@@ -8,7 +8,7 @@
 	<!--<onload condition="Container.Content(tvshows) | Container.Content(episodes)">
 	RunScript(script.tv.show.next.aired,tvshowtitle=$INFO[ListItem.Label])
 	</onload> -->
-	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
+	<onload condition="!String.IsEmpty(ListItem.Art(fanart))">RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<controls>
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
@@ -603,14 +603,14 @@
 		<control id="8328" type="image">
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture fallback="empty.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<texture fallback="common/null.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
 			<visible>Control.HasFocus(4000)</visible>
 		</control>
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>
 			<texture>special://skin/extras/backgrounds/Family.jpg</texture>
-			<visible>String.Contains(Control.GetLabel(8328),empty.png)</visible>
+			<visible>String.Contains(Control.GetLabel(8328),null.png)</visible>
 			<visible>Control.HasFocus(4000)</visible>
 		</control>
 		<include>Furniture_Flags</include>

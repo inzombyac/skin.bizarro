@@ -5,79 +5,79 @@
         <control id="8308" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(200).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(200).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8308),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8308),null.png)</visible>
         </control>
         <control id="8309" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(201).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(201).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8309),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8309),null.png)</visible>
         </control>
         <control id="8310" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(202).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(202).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8310),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8310),null.png)</visible>
         </control>
         <control id="8311" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(203).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(203).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8311),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8311),null.png)</visible>
         </control>
         <control id="8312" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(204).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(204).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8312),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8312),null.png)</visible>
         </control>
         <control id="8313" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(205).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(205).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8313),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8313),null.png)</visible>
         </control>
         <control id="8314" type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
-            <texture fallback="empty.png" background="true">$INFO[Container(206).ListItem.Property(Fanart)]</texture>
+            <texture fallback="common/null.png" background="true">$INFO[Container(206).ListItem.Property(Fanart)]</texture>
         </control>
         <control type="image">
             <include>Dimensions_Fullscreen</include>
             <colordiffuse>DialogFanartFade</colordiffuse>
             <texture>special://skin/extras/backgrounds/Family.jpg</texture>
-            <visible>String.Contains(Control.GetLabel(8314),empty.png)</visible>
+            <visible>String.Contains(Control.GetLabel(8314),null.png)</visible>
         </control>
         <include>Furniture_Header</include>
         <include>Furniture_NowPlaying</include>

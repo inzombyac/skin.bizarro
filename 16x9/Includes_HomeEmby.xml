@@ -1113,10 +1113,12 @@
 				<onfocus>SetFocus(300)</onfocus>
 			</control>
 			<control type="image">
-				<texture>ListItem.Art(fanart)</texture>
+				<texture>$INFO[ListItem.Art(fanart)]</texture>
+				<visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
 			</control>
 			<control type="image">
-				<texture>ListItem.Icon</texture>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<visible>!String.IsEmpty(ListItem.Icon)</visible>
 			</control>
 		</itemlayout>
 		<focusedlayout width="1" height="1">
@@ -1124,10 +1126,12 @@
 				<onfocus>SetFocus(300)</onfocus>
 			</control>
 			<control type="image">
-				<texture>ListItem.Art(fanart)</texture>
+				<texture>$INFO[ListItem.Art(fanart)]</texture>
+				<visible>!String.IsEmpty(ListItem.Art(fanart))</visible>
 			</control>
 			<control type="image">
-				<texture>ListItem.Icon</texture>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<visible>!String.IsEmpty(ListItem.Icon)</visible>
 			</control>
 		</focusedlayout>
 	</include>
@@ -1507,8 +1511,7 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
-		<oninfo condition="String.IsEqual(Container(300).ListItem.Property(type),collection)">noop</oninfo>
+		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

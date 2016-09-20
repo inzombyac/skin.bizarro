@@ -35,7 +35,7 @@
                 <control type="label">
                     <include>WindowID</include>
                     <label>Home.xml</label>
-                    <visible>Window.IsVisible(Home.xml)</visible>
+                    <visible>Window.IsVisible(Home)</visible>
                 </control>
 
 

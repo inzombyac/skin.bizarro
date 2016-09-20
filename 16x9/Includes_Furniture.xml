@@ -881,7 +881,7 @@
 		</control>
 	</include>
 	<variable name="HeaderIcon">
-		<value condition="Window.IsVisible(Home.xml)+!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)">empty.png</value>
+		<value condition="Window.IsVisible(Home)+!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)">common/null.png</value>
 		<value condition="Player.Muted">special://skin/extras/icons/mute.png</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)">special://skin/extras/icons/favourites.png</value>
@@ -1034,7 +1034,7 @@
 					<height>108</height>
 					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !String.Contains(Control.GetLabel(8308),empty.png)</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !String.Contains(Control.GetLabel(8308),null.png)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
@@ -1042,7 +1042,7 @@
 					<height>80</height>
 					<texture border="0" diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),empty.png) + String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),null.png) + String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
 				<control type="image">
@@ -1050,7 +1050,7 @@
 					<height>80</height>
 					<texture border="0" diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),empty.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),null.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					<visible>!Control.HasFocus(3634)</visible>
 				</control>
@@ -1066,7 +1066,7 @@
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
 					<visible>!Container.Scrolling</visible>
-					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),empty.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
+					<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),null.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
 				</control>
 				<control type="image">
 					<top>-14</top>
@@ -1203,7 +1203,7 @@
 			<top>160</top>
 			<texture colordiffuse="Dark3">common/black.png</texture>
 			<height>80</height>
-			<visible>Window.IsVisible(Home.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>

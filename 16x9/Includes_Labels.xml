@@ -68,12 +68,12 @@
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
 		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
-		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
-		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
-		<value condition="Window.IsVisible(Home.xml) + String.IsEqual(Container(300).ListItem.Property(type),livetv) + String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4019).ListItem.Property(Rating)]</value>
-		<value condition="Window.IsVisible(Home.xml) + String.IsEqual(Container(300).ListItem.Property(type),videos)">$INFO[Container(4019).ListItem.Year]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
+		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),livetv) + String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4019).ListItem.Property(Rating)]</value>
+		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),videos)">$INFO[Container(4019).ListItem.Year]</value>
 		<value></value>
 	</variable>
 	<variable name="LabelPlotBox">

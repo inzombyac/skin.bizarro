@@ -118,7 +118,6 @@
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 	</variable>
 	<variable name="FanartImage">
-		<!-- <value condition="Container(4019).IsUpdating + Window.IsVisible(Home.xml)">common/null.png</value> -->
 		<value condition="Skin.HasSetting(osd.hidespoilers) + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher/)">$INFO[ListItem.Icon]</value>
