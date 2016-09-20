@@ -643,14 +643,6 @@
 				<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
 				<align>left</align>
 			</control>
-			<control type="radiobutton" id="9262" description="Debug mode">
-				<include>DefContextButton</include>
-				<label>Debug Mode</label>
-				<selected>Skin.HasSetting(DebugGrid)</selected>
-				<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
-				<onclick>right</onclick>
-				<align>left</align>
-			</control>
 			<control type="label"  id="9263">
 				<textoffsetx>15</textoffsetx>
 				<font>Home</font>

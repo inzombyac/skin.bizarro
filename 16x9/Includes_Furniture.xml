@@ -375,7 +375,6 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[Flagstar2].png</texture>
-				<visible>!Skin.HasSetting(furniture.numericrating)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -383,7 +382,6 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[Flagstar3].png</texture>
-				<visible>!Skin.HasSetting(furniture.numericrating)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -391,7 +389,6 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[Flagstar4].png</texture>
-				<visible>!Skin.HasSetting(furniture.numericrating)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -399,19 +396,6 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[Flagstar5].png</texture>
-				<visible>!Skin.HasSetting(furniture.numericrating)</visible>
-			</control>
-			<control type="label">
-				<left>-16</left>
-				<width min="48">auto</width>
-				<centertop>50%</centertop>
-				<height>64</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<label>$INFO[ListItem.Rating]</label>
-				<font>DurationFontSmall</font>
-				<textcolor>Dark1</textcolor>
-				<visible>Skin.HasSetting(furniture.numericrating)</visible>
 			</control>
 			<!-- Rotten Tomatoes -->
 			<control type="group">
@@ -1095,7 +1079,7 @@
 					<centerleft>40</centerleft>
 					<width>48</width>
 					<height>48</height>
-					<texture colordiffuse="PanelWhite100" fallback="special://skin/extras/spinners/segments.gif">$INFO[Skin.String(busyloader)]</texture>
+					 <texture colordiffuse="$VAR[ColourHighlight]">dialog/busy.gif</texture>
 					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
@@ -1121,7 +1105,6 @@
 					<width>auto</width>
 					<textcolor>Dark3</textcolor>
 					<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[31793] ,]</label>
-					<visible>!Skin.HasSetting(furniture.hideendtime)</visible>
 				</control>
 			</control>
 		</control>
@@ -1171,7 +1154,7 @@
 					<centerleft>40</centerleft>
 					<width>48</width>
 					<height>48</height>
-					<texture colordiffuse="PanelWhite100" fallback="special://skin/extras/spinners/segments.gif">$INFO[Skin.String(busyloader)]</texture>
+					 <texture colordiffuse="$VAR[ColourHighlight]">dialog/busy.gif</texture>
 					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
@@ -1250,19 +1233,6 @@
 				<visible>Skin.HasSetting(furniture.weather)</visible>
 				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
 			</control>
-			<!-- <control type="label">
-				<centertop>155</centertop>
-				<right>-225</right>
-				<aligny>top</aligny>
-				<width>240</width>
-				<height>333</height>
-				<font>EPGTimeline</font>
-				<textcolor>Dark1</textcolor>
-				<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[31793] ,]</label>
-				<visible>!Skin.HasSetting(furniture.hideendtime)</visible>
-				<angle>-90</angle>
-				<fadetime>200</fadetime>
-			</control> -->
 		</control>
 	</include>
 	<variable name="HomeFlagstar1">

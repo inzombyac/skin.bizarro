@@ -390,12 +390,17 @@
 		<value condition="!String.IsEmpty(Container(211).ListItem.Thumb)">$INFO[Container(211).ListItem.Thumb]</value>		
 	</variable>
 	<variable name="SkinShortcutsBackground">
+		<value condition="Control.HasFocus(312)">special://skin/extras/shortcutthumbs/Main.png</value>
+		<value condition="Control.HasFocus(405)">special://skin/extras/shortcutthumbs/Submenu.png</value>
+		<value condition="Control.HasFocus(8777)">special://skin/extras/shortcutthumbs/Right1.png</value>
+		<value condition="Control.HasFocus(8778)">special://skin/extras/shortcutthumbs/Right2.png</value>
+		<value condition="Control.HasFocus(8779)">special://skin/extras/shortcutthumbs/Right3.png</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(background)]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),movies)">$INFO[Window(Home).Property(script.grab.fanart.Movie.FanArt)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(type),movies)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),music)">$INFO[Window(Home).Property(script.grab.fanart.Music.FanArt)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(type),music)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>

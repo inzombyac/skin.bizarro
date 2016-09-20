@@ -132,12 +132,14 @@
 				<height>860</height>
 				<onleft>9100</onleft>
 				<right>15</right>
-				<width>420</width>	
+				<width>420</width>
+				<top>65</top>				
 				<control type="grouplist" >
 					<height>450</height>
 					<onleft>9100</onleft>
 					<ondown>8780</ondown>
 					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+					<itemgap>3</itemgap>
 					<control type="label">
 						<description>header label</description>
 						<left>22</left>
@@ -145,7 +147,7 @@
 						<font>SmallBold</font>
 						<align>center</align>
 						<textcolor>Black70</textcolor>
-						<label>Widgets</label>
+						<label>Widgets</label>	
 					</control>
 					<!-- Main widget -->
 					 <control type="button" id="312" description="Main Widget">
@@ -193,17 +195,17 @@
 				<control type="button" id="8780" description="OK">
 						<onup>9100</onup>
 						<onleft>9100</onleft>
-						<bottom>5</bottom>
+						<bottom>104</bottom>
 						<label>OK</label>
 						<width>100%</width>
 						<height>66</height>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-						<include>DefDialogButtons</include>
+						<include>DefSettingsOKCancelButton</include>
 						<onclick>Dialog.Close(all,true)</onclick>
 						<onclick>ReloadSkin()</onclick>
 					</control>
 				<control type="group">
-					<top>460</top>
+					<top>390</top>
 					<height>299</height>
 					<control type="label">
 						<description>header label</description>
