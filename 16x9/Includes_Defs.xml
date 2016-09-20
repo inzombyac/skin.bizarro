@@ -566,6 +566,7 @@
 			<height>1080</height>
 			<itemgap>0</itemgap>
 			<orientation>vertical</orientation>
+			<defaultcontrol>9090</defaultcontrol>
 			<control type="group" id="9090">
 				<height>70</height>
 				<ondown>3122</ondown>
@@ -605,6 +606,7 @@
 				<include>DefContextButton</include>
 				<label>Emby</label>
 				<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
+				
 				<align>left</align>
 			</control>
 			<control type="button" id ="9092" description="Emby Manual Sync">
@@ -613,6 +615,7 @@
 				<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
 				<onclick>right</onclick>
 				<align>left</align>
+				<visible>System.HasAddon(plugin.video.emby)</visible>
 			</control>
 			<control type="button" id="3123">
 				<include>DefContextButton</include>
@@ -638,7 +641,7 @@
 			</control>
 			<control type="radiobutton" id="9261" description="Show RSS">
 				<include>DefContextButton</include>
-				<label>Show RSS feed</label>
+				<label>$LOCALIZE[13305]</label>
 				<selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
 				<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
 				<align>left</align>
@@ -666,17 +669,20 @@
 			<control type="button" id="9265">
 				<onclick>System.LogOff</onclick>
 				<include>DefContextButton</include>
-				<label>Log Off</label>
+				<label>20126</label>
 				<align>left</align>
 			</control>				
-			<control type="button"  id="9267">
+			<control type="button" id="9267">
 				<description>Exit XBMC button</description>
 				<include>DefContextButton</include>
 				<label>13012</label>
 				<onclick>Quit()</onclick>
-				<ondown>9090</ondown>
 				<visible>System.ShowExitButton</visible>
 				<align>left</align>
+			</control> 
+			<control type="button" id ="9269">
+				<description>Go to top</description>
+				<onfocus>SetFocus(9091)</onfocus>
 			</control> 
 		</control>
 	</include>
