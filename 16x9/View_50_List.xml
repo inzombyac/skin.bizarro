@@ -487,7 +487,7 @@
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
 			<label>$INFO[ListItem.Year]</label>
-			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher)</visible>
+			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
 		</control>
 	</include>
 	<include name="50itemlayout">
@@ -670,7 +670,7 @@
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$INFO[ListItem.Year]</label>
-			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher)</visible>
+			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
 		</control>
 	</include>
 	<include name="50itemlayout_square">

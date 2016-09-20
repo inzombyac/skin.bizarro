@@ -10,7 +10,7 @@
 	 <widget label="Lazy TV" condition="System.HasAddon(script.lazytv)" type="episodes" target="videos" path="special://profile/playlists/video/LazyTV.xsp" icon="special://skin/extras/icons/lazytv.png">Lazy TV</widget>
 	
 	<!--Advanced Launcher -->
-	 <widget label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.launcher)" type="programs" target="videos" path="plugin://plugin.program.advanced.launcher/?default" icon="special://skin/extras/icons/xbox.png">Launchers</widget>
+	 <widget label="Advanced Launcher" condition="System.HasAddon(plugin.program.advanced.emulator.launcher)" type="programs" target="videos" path="plugin://plugin.program.advanced.emulator.launcher/?default" icon="special://skin/extras/icons/xbox.png">Launchers</widget>
 	 		
     <!-- Custom Widgets -->
     <widget label="$INFO[Skin.String(CustomWidget1)]" path="$INFO[Skin.String(CustomWidget1)]" condition="!String.IsEmpty(Skin.String(CustomWidget1))" icon="special://skin/extras/icons/bookmarks.png">Custom1</widget>

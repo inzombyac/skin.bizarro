@@ -792,7 +792,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.launcher)</visible>
+			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
 			<left>SidePad</left>
 			<centerbottom>30</centerbottom>
 			<width>1920</width>

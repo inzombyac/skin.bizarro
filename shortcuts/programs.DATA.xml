@@ -13,8 +13,8 @@
         <label>Advanced Launcher</label>
         <icon>special://skin/extras/icons/addtile.png</icon>
 		<thumb>special://skin/extras/backgrounds/Gamesystems.jpg</thumb>
-        <action>ActivateWindow(10001,"plugin://plugin.program.advanced.launcher",return)</action>
-		<visible>System.HasAddon(plugin.program.advanced.launcher)</visible>
+        <action>ActivateWindow(10001,"plugin://plugin.program.advanced.emulator.launcher",return)</action>
+		<visible>System.HasAddon(plugin.program.advanced.emulator.launcher)</visible>
     </shortcut>
 	<shortcut>
         <label2>programs</label2>
