@@ -371,4 +371,9 @@
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
 	</variable>
+	<variable name="AdvancedLauncherFurnitureIcon">
+		<value condition="String.IsEqual(ListItem.Property(platform),Nintendo NES)">flags/game/nes.png</value>
+		<value condition="String.IsEqual(ListItem.Property(platform),Nintendo Gameboy Advance)">flags/game/gba.png</value>
+		<value condition="!String.IsEqual(ListItem.Property(platform),unknown) + !String.IsEmpty(ListItem.Property(platform))">flags/game/xbox_360.png</value>
+	</variable>
 </includes>

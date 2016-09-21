@@ -765,100 +765,34 @@
 		</control>
 	</include>
 	<include name="Furniture_Adv_Launcher">
-		<control type="group">
-			<visible>Container.Content(Addons)</visible>
-			<left>SidePad</left>
-			<centerbottom>30</centerbottom>
+		<control type="grouplist">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>40</left>
+			<centerbottom>40</centerbottom>
 			<width>1920</width>
 			<height>120</height>
 			<orientation>horizontal</orientation>
 			<align>left</align>
 			<itemgap>10</itemgap>
 			<usecontrolcoords>true</usecontrolcoords>
-			<control type="group">
-				<centertop>50%</centertop>
-				<height>50</height>
-				<control type="label">
-					<width min="128">auto</width>
-					<centertop>50%</centertop>
-					<height>64</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Label]</label>
-					<font>Flag</font>
-					<textcolor>White</textcolor>
-					<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
-				</control>
-			</control>
-		</control>
-		<control type="group">
 			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-			<left>SidePad</left>
-			<centerbottom>30</centerbottom>
-			<width>1920</width>
-			<height>120</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>10</itemgap>
-			<usecontrolcoords>true</usecontrolcoords>
-			<control type="group">
+			<control type="image">
 				<centertop>50%</centertop>
-				<height>50</height>
-				<control type="label">
-					<width min="128">auto</width>
-					<centertop>50%</centertop>
-					<height>64</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Year,, ·][COLOR gray]$INFO[ListItem.Studio, ,][/COLOR]</label>
-					<font>Flag</font>
-					<textcolor>White</textcolor>
-					<visible>Control.IsVisible(53) + !String.IsEmpty(ListItem.Year)</visible>
-				</control>
-				<control type="label">
-					<width min="128">auto</width>
-					<centertop>50%</centertop>
-					<height>64</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Genre] · [COLOR gray]$INFO[ListItem.Studio][/COLOR]</label>
-					<font>Flag</font>
-					<textcolor>White</textcolor>
-					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52)  | Control.IsVisible(500)] + !String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Studio)</visible>
-				</control>
-				<control type="label">
-					<width min="128">auto</width>
-					<centertop>50%</centertop>
-					<height>64</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.Genre]</label>
-					<font>Flag</font>
-					<textcolor>White</textcolor>
-					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52) | Control.IsVisible(500)] + !String.IsEmpty(ListItem.Genre) + String.IsEmpty(ListItem.Studio)</visible>
-				</control>
-				<control type="label">
-					<width min="128">auto</width>
-					<centertop>50%</centertop>
-					<height>64</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>[COLOR gray]$INFO[ListItem.Studio][/COLOR]</label>
-					<font>Flag</font>
-					<textcolor>White</textcolor>
-					<visible>[Control.IsVisible(50) | Control.IsVisible(550) | Control.IsVisible(52)  | Control.IsVisible(500)] + String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Studio)</visible>
-				</control>
-				<control type="label">
-					<width min="128">auto</width>
-					<centertop>50%</centertop>
-					<height>64</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<label>[B]$INFO[ListItem.Label][/B]</label>
-					<font>Flag</font>
-					<textcolor>White</textcolor>
-					<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
-				</control>
+				<width>100</width>
+				<texture>$VAR[AdvancedLauncherFurnitureIcon]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+				
+			</control>
+			<control type="label">
+				<width min="128">auto</width>
+				<centertop>50%</centertop>
+				<height>64</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$VAR[AdvancedLauncherLabel]</label>
+				<font>Flag</font>
+				<textcolor>White</textcolor>
 			</control>
 		</control>
 	</include>
@@ -889,6 +823,7 @@
 		<value condition="String.StartsWith(Container.FolderPath,library://video/tvshows/)">special://skin/extras/icons/tv.png</value>
 		<value condition="String.StartsWith(Container.FolderPath,videodb://movies/)">special://skin/extras/icons/film.png</value>
 		<value condition="String.StartsWith(Container.FolderPath,videodb://tvshows/)">special://skin/extras/icons/tv.png</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">special://skin/extras/icons/games.png</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://)">special://skin/extras/icons/video-addons.png</value>
 		<value condition="Container.Content(movies)">special://skin/extras/icons/film.png</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">special://skin/extras/icons/tv.png</value>
@@ -938,13 +873,14 @@
 		<value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[4]</value>
 		<value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[19017]</value>
 		<value condition="Window.IsVisible(MyPVRTimers.xml)">$LOCALIZE[19040]</value>
-		<value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[137]</value>
+		<value condition="Window.IsVisible(MyPVRSearch.xml)">$LOCALIZE[137]</value>xz
 		<value condition="!String.IsEmpty(Container.FolderName) + [Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)]">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyMusicNav.xml) | Window.IsVisible(MyMusicSongs.xml)">$LOCALIZE[2]</value>
 		<value condition="Window.IsVisible(SettingsSystemInfo.xml) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(settings) | Window.IsVisible(SkinSettings.xml)">$LOCALIZE[5]</value>
 		<value condition="Window.IsVisible(weather)">$LOCALIZE[8]</value>
 		<value condition="!String.IsEmpty(Container.FolderName) + Window.IsVisible(MyPics.xml)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyPics.xml)">$LOCALIZE[1]</value>
+		<value condition="Window.IsVisible(MyPrograms.xml) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyPrograms.xml)">$LOCALIZE[0]</value>
 		<value condition="Window.IsVisible(AddonBrowser.xml)">$LOCALIZE[24001]</value>
 		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">$LOCALIZE[559]</value>

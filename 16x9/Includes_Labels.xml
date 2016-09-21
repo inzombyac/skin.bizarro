@@ -839,7 +839,7 @@
 		<value condition="[!String.IsEmpty(Container(14017).ListItem.EndTime) + Control.HasFocus(14017)]">$INFO[Container(14017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="[!String.IsEmpty(Container(15017).ListItem.EndTime) + Control.HasFocus(15017)]">$INFO[Container(15017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="[!String.IsEmpty(Container(301).ListItem.EndTime) + Control.HasFocus(301)]">$INFO[Container(301).ListItem.EndTime(hh:mm)]</value>
-		<value condition="!container.content(tvshows) + !container.content(seasons) + !String.IsEmpty(ListItem.EndTime)">$INFO[ListItem.EndTime(hh:mm)]</value>
+		<value condition="!container.content(tvshows) + !container.content(seasons) + !String.IsEmpty(ListItem.EndTime) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.EndTime(hh:mm)]</value>
 	</variable>
 	<variable name="KodiFlix.Label">
 		<value condition="ListItem.IsPlaying">[COLOR=$VAR[ColourHighlight]]$INFO[ListItem.Label][/COLOR]</value>
@@ -953,5 +953,10 @@
 	<variable name="MusicInfoTrackLabel">
 		<value condition="Integer.IsGreater(ListItem.Label2, 0) + Integer.IsLess(ListItem.Label2, 10)">$INFO[ListItem.Label2,0]</value>
 		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+	<variable name="AdvancedLauncherLabel">
+		<value condition="!String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(platform)">$INFO[ListItem.Property(platform)]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Studio)]">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
 	</variable>
 </includes>
