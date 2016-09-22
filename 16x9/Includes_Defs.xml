@@ -1284,6 +1284,15 @@
 			<label>584</label>
 			<altlabel>585</altlabel>
 		</control>
+		<control type="radiobutton" id="9002" description="No Wrap (53)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31148</label>
+			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
+			<onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
 		<control type="radiobutton" id="9012" description="Big List Double Pane (52)">
 			<include>DefContextButton2</include>
 			<align>left</align>
