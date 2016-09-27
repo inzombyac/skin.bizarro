@@ -1,17 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">52</defaultcontrol>
     <backgroundcolor>0</backgroundcolor>
 	<onload condition="!Skin.HasSetting(home.masteruser)">SetFocus(52,1)</onload>
     <controls>
 		<control type="group">
-            <visible>!Player.HasVideo</visible>
             <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
             <include>Furniture_Header</include>
             <include>Furniture_Clock</include>
-            <include>Furniture_NowPlaying</include>
 			<aligny>center</aligny>
             <control type="list" id="52">
-                <visible>!Window.IsVisible(ProfileSettings.xml)</visible>
                 <posx>635</posx>
                 <posy>180</posy>
                 <width>650</width>

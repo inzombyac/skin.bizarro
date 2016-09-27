@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Foundation -->
 <window>
     <defaultcontrol always="true">9315</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
     <controls>
         <control type="button" id="9315">
             <visible allowhiddenfocus="true">false</visible>
@@ -13,6 +13,8 @@
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableAddonsLookups)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onfocus>
             <onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
         </control>
     </controls>
 </window>
