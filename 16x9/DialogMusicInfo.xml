@@ -179,7 +179,7 @@
 						<label>Play</label>
 						<texturefocus>dialogvideo/watchnow.png</texturefocus>
 						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
-						<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
+						<alttexturefocus>dialogvideo/watchnow.png</alttexturefocus>
 						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 						<onclick>PlayMedia($INFO[ListItem.FileNameAndPath],1)</onclick>
 						<visible>!Container.Content(Artists)</visible>

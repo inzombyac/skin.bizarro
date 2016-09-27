@@ -12,7 +12,7 @@
 	<shortcut>
         <defaultID>tvguide</defaultID>
 		<label2>livetv</label2>
-        <label>19069</label>
+        <label>$LOCALIZE[19069]</label>
         <action>ActivateWindow(tvguide)</action>
         <icon>special://skin/extras/icons/tvguide.png</icon>
 		<thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>
@@ -20,7 +20,7 @@
     <shortcut>
         <defaultID>recordings</defaultID>
 		<label2>livetv</label2>
-        <label>19163</label>
+        <label>$LOCALIZE[19163]</label>
         <action>ActivateWindow(tvrecordings)</action>
         <icon>special://skin/extras/icons/bookmark.png</icon>
 		<thumb>special://skin/extras/backgrounds/Family.jpg</thumb>
@@ -28,7 +28,7 @@
     <shortcut>
         <defualtID>timers</defualtID>
 		<label2>livetv</label2>
-        <label>19040</label>
+        <label>$LOCALIZE[19040]</label>
         <action>ActivateWindow(tvtimers)</action>
         <icon>special://skin/extras/icons/timer.png</icon>
 		<thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>

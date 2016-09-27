@@ -198,33 +198,6 @@
 			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
 		</control>
 	</include>
-	<include name="DefDialogOK">
-		<centerleft>50%</centerleft>
-		<posy>360</posy>
-		<width>900</width>
-		<include>Animation.FadeIn.Slide</include>
-		<control type="image">
-			<posx>-30</posx>
-			<posy>-30</posy>
-			<width>960</width>
-			<height>444</height>
-			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
-		</control>
-		<control type="label" id="1">
-			<description>Heading</description>
-			<centerleft>50%</centerleft>
-			<width>885</width>
-			<font>MediumBold</font>
-			<align>center</align>
-		</control>
-		<control type="textbox" id="9">
-			<description>Line 1</description>
-			<left>15</left>
-			<right>15</right>
-			<posy>108</posy>
-			<height>300</height>
-		</control>
-	</include>
 	<include name="DefPVRDialogButton">
 		<width>600</width>
 		<height>66</height>
@@ -625,7 +598,7 @@
 			</control>
 			<control type="button" id="9092" description="Emby Manual sync">
 				<include>DefContextButton</include>
-				<label>653</label>
+				<label>$LOCALIZE[653]</label>
 				<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
 				<onclick>right</onclick>
 				<align>left</align>
@@ -633,7 +606,7 @@
 			</control>
 			<control type="button" id ="9093" description="Update library">
 				<include>DefContextButton</include>
-				<label>653</label>
+				<label>$LOCALIZE[653]</label>
 				<onclick>UpdateLibrary(video)</onclick>
 				<onclick>right</onclick>
 				<align>left</align>
@@ -641,7 +614,7 @@
 			</control>
 			<control type="button" id="3123">
 				<include>DefContextButton</include>
-				<label>10003</label>
+				<label>$LOCALIZE[10003]</label>
 				<align>left</align>
 				<onclick>right</onclick>
 				<onclick>ActivateWindow(filemanager)</onclick>
@@ -684,7 +657,7 @@
 			</control>
 			<control type="button"  id="9264">
 				<include>DefContextButton</include>
-				<label>31195</label>
+				<label>$LOCALIZE[31195]</label>
 				<onclick>ReloadSkin()</onclick>
 				<align>left</align>
 			</control>
@@ -697,7 +670,7 @@
 			<control type="button" id="9267">
 				<description>Exit XBMC button</description>
 				<include>DefContextButton</include>
-				<label>13012</label>
+				<label>$LOCALIZE[13012]</label>
 				<onclick>Quit()</onclick>
 				<visible>System.ShowExitButton</visible>
 				<align>left</align>

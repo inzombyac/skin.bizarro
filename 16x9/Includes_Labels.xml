@@ -255,7 +255,7 @@
 		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
 		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Property(type),movies) + Integer.IsGreater(Container(9003).NumItems,0)">Collections</value>
 		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Property(type),movies)">Genres</value>
-		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31193]</value>
+		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby)">$LOCALIZE[31800]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31220]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">Collections</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">TV Guide</value>
@@ -270,7 +270,7 @@
 	<variable name="EmbyButton3Label">
 		<value condition="Container(300).Scrolling">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),homevideos)">Favorites</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31193]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$LOCALIZE[31800]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">$LOCALIZE[31192]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">Recorded TV</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">Genres</value>

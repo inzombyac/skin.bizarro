@@ -887,7 +887,7 @@
 		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">$LOCALIZE[559]</value>
 		<value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[744]</value>
 		<value condition="Window.IsVisible(1101)">$LOCALIZE[31192]</value>
-		<value condition="Window.IsVisible(1102)">$LOCALIZE[31193]</value>
+		<value condition="Window.IsVisible(1102)">$LOCALIZE[31800]</value>
 		<value condition="Window.IsVisible(1103) + String.IsEqual(Window(1103).Property(content),1)">$INFO[Window(home).Property(ExtStudio),$LOCALIZE[31205] ,]</value>
 		<value condition="Window.IsVisible(1103) + String.IsEqual(Window(1103).Property(content),2)">$INFO[Window(home).Property(ExtMovie),$LOCALIZE[31204] ,]</value>
 		<value condition="Window.IsVisible(1103)">$INFO[Window(home).Property(ExtDirector),$LOCALIZE[31191] ,]</value>

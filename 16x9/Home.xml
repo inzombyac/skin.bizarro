@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Foundation -->
-<window id="0">
+<window>
 	<defaultcontrol always="true">9945</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
@@ -20,7 +19,7 @@
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_RSS</include>
 		<include>DebugGridHome</include>
-		<control type="group">
+		<control type="group" description="Emby Home Menu">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml)</visible>
 			<include>HomeEmbyRow</include>
 			<include>HomeEmbyWidgetInfo</include>

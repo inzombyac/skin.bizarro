@@ -3,7 +3,7 @@
     <shortcut>
         <defaultID>TV Hub</defaultID>
 		<label2>tvshows</label2>
-        <label>31193</label>
+        <label>$LOCALIZE[31800]</label>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(1102)</action>
 		<thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
@@ -11,7 +11,7 @@
 	<shortcut>
         <defaultID>nextaired</defaultID>
 		<label2>tvshows</label2>
-        <label>31220</label>
+        <label>$LOCALIZE[31220]</label>
         <icon>special://skin/extras/icons/tv.png</icon>
 		<action>RunAddon(script.tv.show.next.aired)</action>
 		<thumb>special://skin/extras/backgrounds/Airing.jpg</thumb>

@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Arctic: Zephyr
-# Addon id: skin.arctic.zephyr
-# Addon Provider: jurialmunkey
+# Addon Name: Bizarro
+# Addon id: skin.bizarro
+# Addon Provider: inzombyac
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
@@ -384,10 +384,6 @@ msgctxt "#31192"
 msgid "Movie Hub"
 msgstr "Movie Hub"
 
-msgctxt "#31193"
-msgid "TV Hub"
-msgstr "TV Hub"
-
 msgctxt "#31194"
 msgid "View Options"
 msgstr "View Options"
@@ -564,10 +560,263 @@ msgctxt "#31237"
 msgid "Use minimal busy loader in header"
 msgstr "Use minimal busy loader in header"
 
+
+msgctxt "#31241"
+msgid "Info"
+msgstr "Info"
+
+msgctxt "#31242"
+msgid "Extended Info"
+msgstr "Extended Info"
+
+msgctxt "#31243"
+msgid "pages"
+msgstr "pages"
+
+msgctxt "#31244"
+msgid "Banner Wall"
+msgstr "Banner Wall"
+
+msgctxt "#31245"
+msgid "Classic Style"
+msgstr "Classic Style"
+
+msgctxt "#31246"
+msgid "Show icon media flags"
+msgstr "Show icon media flags"
+
+msgctxt "#31247"
+msgid "Home menu style"
+msgstr "Home menu style"
+
+msgctxt "#31248"
+msgid "Normal"
+msgstr "Normal"
+
+msgctxt "#31249"
+msgid "Classic"
+msgstr "Classic"
+
+msgctxt "#31250"
+msgid "Vertical"
+msgstr "Vertical"
+
+msgctxt "#31251"
+msgid "Weather Fanart"
+msgstr "Weather Fanart"
+
+msgctxt "#31252"
+msgid "Weather Forecast"
+msgstr "Weather Forecast"
+
+msgctxt "#31253"
+msgid "Always display info and osd controls on music visualisation"
+msgstr "Always display info and osd controls on music visualisation"
+
+msgctxt "#31254"
+msgid "Show plot overlay after 3 second delay"
+msgstr "Show plot overlay after 3 second delay"
+
+msgctxt "#31255"
+msgid "Show info overlay"
+msgstr "Show info overlay"
+
+msgctxt "#31730"
+msgid "Show Extra Fanart"
+msgstr "Show Extra Fanart"
+
+msgctxt "#31739"
+msgid "  -- Icon view"
+msgstr "  -- Icon view"
+
+msgctxt "#31740"
+msgid "  -- Show Genre Colours"
+msgstr "  -- Show Genre Colours"
+
+msgctxt "#31741"
+msgid "Banner"
+msgstr "Banner"
+
+msgctxt "#31742"
+msgid "Gallery"
+msgstr "Gallery"
+
+msgctxt "#31744"
+msgid "Show Logo"
+msgstr "Show Logo"
+
+msgctxt "#31745"
+msgid "Colors"
+msgstr "Colors"
+
+msgctxt "#31746"
+msgid "Highlight color"
+msgstr "Highlight color"
+
+msgctxt "#31747"
+msgid "Set the Focus Color"
+msgstr "Set the Focus Color"
+
+msgctxt "#31748"
+msgid "Highlight"
+msgstr "Highlight"
+
+msgctxt "#31749"
+msgid "Colour"
+msgstr "Color"
+
+msgctxt "#31750"
+msgid "Alternate Video Info"
+msgstr "Alternate Video Info"
+
+msgctxt "#31751"
+msgid "Netflix Home"
+msgstr "Netflix Home"
+
+msgctxt "#31752"
+msgid "Search on YouTube"
+msgstr "Search on YouTube"
+
+msgctxt "#31753"
+msgid "Motion picture rating country"
+msgstr "Motion picture rating country"
+
+msgctxt "#31754"
+msgid "Select motion picture rating country"
+msgstr "Select motion picture rating country"
+
+msgctxt "#31755"
+msgid "Show Disc Art and Studio Logos"
+msgstr "Show Disc Art and Studio Logos"
+
+msgctxt "#31756"
+msgid "Poster Row"
+msgstr "Poster Row"
+
+msgctxt "#31757"
+msgid "Poster Shift"
+msgstr "Poster Shift"
+
+msgctxt "#31758"
+msgid "Netflix"
+msgstr "Netflix"
+
+msgctxt "#31759"
+msgid "Widget 1"
+msgstr "Widget 1"
+
+msgctxt "#31760"
+msgid "Widget 2"
+msgstr "Widget 2"
+
+msgctxt "#31761"
+msgid "Widget 3"
+msgstr "Widget 3"
+
+msgctxt "#31762"
+msgid "Widget 4"
+msgstr "Widget 4"
+
+msgctxt "#31763"
+msgid "Widget 5"
+msgstr "Widget 5"
+
+msgctxt "#31764"
+msgid "Widget 6"
+msgstr "Widget 6"
+
+msgctxt "#31765"
+msgid "Widget 7"
+msgstr "Widget 7"
+
+msgctxt "#31766"
+msgid "Widget 8"
+msgstr "Widget 8"
+
+msgctxt "#31767"
+msgid "Widget 9"
+msgstr "Widget 9"
+
+msgctxt "#31768"
+msgid "Widget 10"
+msgstr "Widget 10"
+
+msgctxt "#31769"
+msgid "Enable/Disable views"
+msgstr "Enable/Disable views"
+
+msgctxt "#31778"
+msgid "Big Screen Wall +"
+msgstr "Big Screen Wall +"
+
+msgctxt "#31779"
+msgid "Big Screen Wall"
+msgstr "Big Screen Wall"
+
+msgctxt "#31780"
+msgid "Configure background opacity"
+msgstr "Configure background opacity"
+
+msgctxt "#31781"
+msgid "Big Screen Move"
+msgstr "Big Screen Move"
+
+msgctxt "#31782"
+msgid "Because you watched"
+msgstr "Because you watched"
+
+msgctxt "#31783"
+msgid "Similar Movies"
+msgstr "Similar Movies"
+
+msgctxt "#31784"
+msgid "Recommended Media"
+msgstr "Recommended Media"
+
+msgctxt "#31785"
+msgid "Enable smart shortcuts for playlists"
+msgstr "Enable smart shortcuts for playlists"
+
+msgctxt "#31786"
+msgid "Enable smart shortcuts for favorites"
+msgstr "Enable smart shortcuts for favorites"
+
+msgctxt "#31787"
+msgid "Enable smart shortcuts for Emby"
+msgstr "Enable smart shortcuts for Emby"
+
+msgctxt "#31788"
+msgid "Enable smart shortcuts for Plex"
+msgstr "Enable smart shortcuts for Plex"
+
+msgctxt "#31789"
+msgid "Enable smart shortcuts for Netflix"
+msgstr "Enable smart shortcuts for Netflix"
+
+msgctxt "#31790"
+msgid "You may need to restart Kodi for the changes to take effect"
+msgstr "You may need to restart Kodi for the changes to take effect"
+
 msgctxt "#31791"
 msgid "Wall"
-msgstr ""
+msgstr "Wall"
 
 msgctxt "#31792"
 msgid "Poster"
-msgstr ""
+msgstr "Poster"
+
+msgctxt "#31793"
+msgid "Ends at"
+msgstr "Ends at"
+
+msgctxt "#31794"
+msgid "Wall Square"
+msgstr "Wall Square"
+
+msgctxt "#31795"
+msgid "Wall Poster"
+msgstr "Wall Poster"
+
+msgctxt "#31800"
+msgid "TV Hub"
+msgstr "TV Hub"

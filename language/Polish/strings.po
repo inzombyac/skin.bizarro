@@ -384,7 +384,7 @@ msgctxt "#31192"
 msgid "Movie Hub"
 msgstr "Centrum filmowe"
 
-msgctxt "#31193"
+msgctxt "#31800"
 msgid "TV Hub"
 msgstr "Centrum serialowe"
 

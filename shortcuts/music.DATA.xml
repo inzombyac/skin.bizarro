@@ -3,7 +3,7 @@
     <shortcut>
         <defaultID>artists</defaultID>
 		<label2>music</label2>
-        <label>133</label>
+        <label>$LOCALIZE[133]</label>
         <icon>special://skin/extras/icons/artist.png</icon>
         <action>ActivateWindow(Music,musicdb://artists/,return)</action>
 		<thumb>special://skin/extras/backgrounds/music artist.jpg</thumb>
@@ -11,7 +11,7 @@
 	<shortcut>
         <defaultID>albums</defaultID>
 		<label2>music</label2>
-        <label>132</label>
+        <label>$LOCALIZE[132]</label>
         <icon>special://skin/extras/icons/songs.png</icon>
         <action>ActivateWindow(Music,musicdb://albums/,return)</action>
 		<thumb>special://skin/extras/backgrounds/music.jpg</thumb>
@@ -19,7 +19,7 @@
 	<shortcut>
         <defaultID>addons</defaultID>
 		<label2>music</label2>
-        <label>1038</label>
+        <label>$LOCALIZE[1038]</label>
         <icon>special://skin/extras/icons/songs.png</icon>
         <action>ActivateWindow(Music,Addons,return)</action>
 		<thumb>special://skin/extras/backgrounds/Settings.jpg</thumb>
