@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
 <window type="dialog" id="1168">
     <defaultcontrol always="true">500</defaultcontrol>
     <onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=10,prefix=YouTubeInfo)</onload>

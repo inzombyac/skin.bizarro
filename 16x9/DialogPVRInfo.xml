@@ -2,7 +2,6 @@
 <!-- Foundation -->
 <window id="2003">
 	<defaultcontrol always="true">5</defaultcontrol>
-	
 	<controls>
 	    <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 	   

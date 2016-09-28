@@ -20,7 +20,6 @@
 	<include file="View_514_PosterShift.xml" />
 	<include file="View_513_PosterRow.xml" />
 	<include file="View_515_Netflix.xml" />
-
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_GlobalSearch.xml" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
 <window>
 	<menucontrol>9000</menucontrol>
-	
 	<background>0</background>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<views>10,11,12,13</views>
