@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
 
+	<!-- Limits Shortcuts to just this skin -->
+	<doNotShareMenu />
     <!-- Smart shortcuts -->
     <widget label="Smart Shortcuts" type="32010" icon="special://skin/extras/icons/title.png">||BROWSE||script.skin.helper.service/?action=widgets</widget>
     <!-- Playlist -->
