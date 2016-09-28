@@ -817,6 +817,6 @@ msgctxt "#31795"
 msgid "Wall Poster"
 msgstr "Wall Poster"
 
-msgctxt "#31800"
+msgctxt "#31103"
 msgid "TV Hub"
 msgstr "TV Hub"

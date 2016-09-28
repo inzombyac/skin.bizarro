@@ -43,70 +43,14 @@
             <include>57Info</include>
         </control>
     </include>
-    <include name="View_57_ExtraInfo_LowList">
-        <description>List View (id=57)</description>
-        <control type="group">
-            <include>Animation.Common</include>
-            <visible>Control.IsVisible(57)</visible>
-            <visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
-            <control type="group">
-                <posy>320</posy>
-                <control type="fixedlist" id="57">
-                    <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !String.StartsWith(Container.FolderPath,plugin://)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | Container.Content(albums) | Container.Content(songs)</visible>
-                    <top>PosterPad</top>
-                    <height>320</height>
-                    <right>SidePad</right>
-                    <width>1100</width>
-                    <onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-                    <onright>60</onright>
-                    <onup>57</onup>
-                    <ondown>57</ondown>
-                    <focusposition>2</focusposition>
-                    <movement>2</movement>
-                    <pagecontrol>60</pagecontrol>
-                    <viewtype label="31147">list</viewtype>
-                    <scrolltime tween="quadratic">400</scrolltime>
-                    <itemlayout width="1100" height="64">
-                        <include>50itemlayout</include>
-                    </itemlayout>
-
-                    <focusedlayout width="1100" height="64">
-                        <control type="group">
-                            <visible>Control.HasFocus(57) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-                            <include>50focuslayout</include>
-                        </control>
-                        <control type="group">
-                            <visible>!Control.HasFocus(57) | Window.IsVisible(DialogVideoInfo.xml)</visible>
-                            <include>50itemlayout</include>
-                        </control>
-                    </focusedlayout>
-                </control>
-                <control type="scrollbar" id="60">
-                    <onback>50</onback>
-                    <centerright>60</centerright>
-                    <posy>PosterPad</posy>
-                    <height>320</height>
-                    <width>8</width>
-                    <onleft>50</onleft>
-                    <onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
-                    <texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-                    <texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
-                    <texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
-                    <animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-                </control>
-            </control>
-            <include>57Info</include>
-        </control>
-    </include>
     <include name="57Info">
         <control type="group">
             <left>70</left>
             <width>587</width>
-            <top>150</top>
-            <height>950</height>
+            <top>180</top>
+            <height>920</height>
             <control type="group">
                 <height>330</height>
-                <visible>!Skin.HasSetting(57list.low)</visible>
                 <control type="image">
                     <width>100%</width>
                     <height>100%</height>
@@ -181,7 +125,6 @@
                 <right>20</right>
                 <posy>330</posy>
                 <height>478</height>
-                
                 <control type="label">
                     <top>10</top>
                     <aligny>center</aligny>
@@ -209,9 +152,6 @@
                     <label>$VAR[LabelPlotBox]</label>
                 </control>
             </control>
-        
-        </control>
-        
+        </control>  
     </include>
-
 </includes>

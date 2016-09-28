@@ -147,7 +147,7 @@
 						<include>DefSettingsButton</include>
 					</control>
 					<control type="label">
-						<description>Memory Text</description>
+						<description>Memory Used Text</description>
 						<posy>-70</posy>
 						<posx>800</posx>
 						<font>Tiny</font>

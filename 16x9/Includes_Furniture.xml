@@ -688,7 +688,7 @@
 					<centertop>50%</centertop>
 					<texture colordiffuse="Dark1">flags/time.png</texture>
 					<aspectratio align="left">scale</aspectratio>
-					<visible>!String.IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+					<visible>!String.IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55)]</visible>
 				</control>
 				<control type="label">
 					<left>55</left>
@@ -697,10 +697,10 @@
 					<height>50</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>$INFO[ListItem.Duration,, $LOCALIZE[31102] ]</label>
+					<label>$INFO[ListItem.Duration,, min]</label>
 					<font>FlagHD</font>
 					<textcolor>Dark1</textcolor>
-					<visible>!String.IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55) | [Control.IsVisible(56) + Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)]]</visible>
+					<visible>!String.IsEmpty(ListItem.Duration) + [Control.IsVisible(500) | Control.IsVisible(503) | Control.IsVisible(505) | Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(54) | Control.IsVisible(57) | Control.IsVisible(58) | Control.IsVisible(53) | Control.IsVisible(52) | Control.IsVisible(56) | Control.IsVisible(55)]</visible>
 				</control>
 			</control>
 			<control type="image">
@@ -888,7 +888,7 @@
 		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">$LOCALIZE[559]</value>
 		<value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[744]</value>
 		<value condition="Window.IsVisible(1101)">$LOCALIZE[31192]</value>
-		<value condition="Window.IsVisible(1102)">$LOCALIZE[31800]</value>
+		<value condition="Window.IsVisible(1102)">$LOCALIZE[31103]</value>
 		<value condition="Window.IsVisible(1103) + String.IsEqual(Window(1103).Property(content),1)">$INFO[Window(home).Property(ExtStudio),$LOCALIZE[31205] ,]</value>
 		<value condition="Window.IsVisible(1103) + String.IsEqual(Window(1103).Property(content),2)">$INFO[Window(home).Property(ExtMovie),$LOCALIZE[31204] ,]</value>
 		<value condition="Window.IsVisible(1103)">$INFO[Window(home).Property(ExtDirector),$LOCALIZE[31191] ,]</value>

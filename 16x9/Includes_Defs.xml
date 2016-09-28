@@ -859,28 +859,8 @@
 			<label>31147</label>
 			<selected>Skin.HasSetting(56media.showinfo)</selected>
 			<onclick>Skin.ToggleSetting(56media.showinfo)</onclick>
-			<onclick>Skin.Reset(56media.low)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(56)</visible>
-		</control>
-		<control type="radiobutton" id="9006" description="Low List Media (56)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31142</label>
-			<selected>Skin.HasSetting(56media.low)</selected>
-			<onclick>Skin.ToggleSetting(56media.low)</onclick>
-			<onclick>Skin.Reset(56media.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(56)</visible>
-		</control>
-		<control type="radiobutton" id="9007" description="Low List (57)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31142</label>
-			<selected>Skin.HasSetting(57list.low)</selected>
-			<onclick>Skin.ToggleSetting(57list.low)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(57)</visible>
 		</control>
 		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
 			<include>DefContextButton2</include>
@@ -1188,15 +1168,6 @@
 			<onclick>Skin.ToggleSetting(506wall.bigposter)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(506)</visible>
-		</control>
-		<control type="radiobutton" id="9008" description="Low List (57)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31142</label>
-			<selected>Skin.HasSetting(57list.low)</selected>
-			<onclick>Skin.ToggleSetting(57list.low)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(57)</visible>
 		</control>
 		<control type="label" id="9010">
 			<width>455</width>

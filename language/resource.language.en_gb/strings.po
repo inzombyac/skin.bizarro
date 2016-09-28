@@ -16,30 +16,35 @@ msgstr ""
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-####################
-# Bizarro Strings  #
-####################
+# strings 31000 thru 31999 reserved for skins
 
+# Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"
 msgid "items"
 msgstr ""
 
+# Custom_Hub_Movies.xml: 108, Custom_Hub_TV.xml: 108
+# Includes_Furniture.xml:700, Includes_Labels.xml: 58, 70, 72, 74, 355, 356, 357
+# View_56_MediaInfo.xml: 162
 msgctxt "#31102"
 msgid "min"
 msgstr ""
 
+# Includes_Furniture.xml: 891
+# Includes_Labels.xml: 259, 274
+# overrides.xml: 30
 msgctxt "#31103"
-msgid "Live TV"
+msgid "TV Hub"
 msgstr ""
 
+# SettingsSystemInfo.xml: 155
 msgctxt "#31104"
 msgid "Used Memory"
 msgstr ""
 
-msgctxt "#31105"
-msgid "Spotlight"
-msgstr ""
-
+# Includes_Labels.xml: 383
+# Includes_PVR.xml: 352, 364, 501, 513, 644, 656
+# MyPVRGuide.xml: 338, 350, 441, 453, 538, 550, 660, 672, 763, 775, 860, 872, 983, 995, 1086, 1098, 1183
 msgctxt "#31106"
 msgid "Finishes at"
 msgstr ""
@@ -72,14 +77,6 @@ msgctxt "#31113"
 msgid "No Timer"
 msgstr ""
 
-msgctxt "#31114"
-msgid "Now Playing"
-msgstr ""
-
-msgctxt "#31115"
-msgid "Show header / switch clock position"
-msgstr ""
-
 msgctxt "#31116"
 msgid "DVD Menu"
 msgstr ""
@@ -104,70 +101,11 @@ msgctxt "#31121"
 msgid "Show fanart"
 msgstr ""
 
-msgctxt "#31122"
-msgid "Ongoing Episodes"
-msgstr ""
-
-msgctxt "#31123"
-msgid "Resumable Movies"
-msgstr ""
-
-msgctxt "#31124"
-msgid "Recent Movies"
-msgstr ""
-
-msgctxt "#31125"
-msgid "Recent Episodes"
-msgstr ""
-
-msgctxt "#31126"
-msgid "Episodes Spotlight"
-msgstr ""
-
-msgctxt "#31127"
-msgid "Movies Spotlight"
-msgstr ""
-
-msgctxt "#31128"
-msgid "Custom widget 1"
-msgstr ""
-
-msgctxt "#31129"
-msgid "Custom widget 2"
-msgstr ""
-
-msgctxt "#31130"
-msgid "Show slideshow when no widget is set"
-msgstr ""
-
-msgctxt "#31131"
-msgid "Set slideshow path"
-msgstr ""
-
 msgctxt "#31132"
 msgid "Reset menu to default"
 msgstr ""
 
-msgctxt "#31133"
-msgid "Hide watched"
-msgstr ""
-
-msgctxt "#31134"
-msgid "Trending Movies"
-msgstr ""
-
-msgctxt "#31135"
-msgid "Trending Shows"
-msgstr ""
-
-msgctxt "#31136"
-msgid "Airing Shows"
-msgstr ""
-
-msgctxt "#31137"
-msgid "Premiering Shows"
-msgstr ""
-
+#Custom_MovieDB_Movies.xml: 95
 msgctxt "#31138"
 msgid "Content Loading"
 msgstr ""
@@ -853,6 +791,3 @@ msgctxt "#31795"
 msgid "Wall Poster"
 msgstr ""
 
-msgctxt "#31800"
-msgid "TV Hub"
-msgstr ""

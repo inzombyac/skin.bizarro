@@ -105,7 +105,7 @@
                             <font>Small</font>
                             <textcolor>PanelWhite70</textcolor>
                             <selectedcolor>PanelWhite70</selectedcolor>
-                            <label>$INFO[Container(9500).ListItem.Duration,, $LOCALIZE[31102]]</label>
+                            <label>$INFO[Container(9500).ListItem.Duration,, min]</label>
                         </control>
                         <control type="image">
                             <centerright>110</centerright>

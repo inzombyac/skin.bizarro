@@ -21,11 +21,9 @@
 		<include condition="!Skin.HasSetting(55wall.hideinfo)">View_55_Wall_Info</include>
 		<include condition="Skin.HasSetting(55wall.showposter)">View_55_Wall_Poster</include>
 		<include condition="Skin.HasSetting(55wall.hideinfo) + !Skin.HasSetting(55wall.showposter)">View_55_Wall</include>
-		<include condition="!Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)">View_56_MediaInfo</include>
-		<include condition="Skin.HasSetting(56media.showinfo) + !Skin.HasSetting(56media.low)">View_56_MediaInfo2</include>
-		<include condition="Skin.HasSetting(56media.low)">View_56_MediaInfo3</include>
-		<include condition="!Skin.HasSetting(57list.low)">View_57_ExtraInfo</include>
-		<include condition="Skin.HasSetting(57list.low)">View_57_ExtraInfo_LowList</include>
+		<include condition="!Skin.HasSetting(56media.showinfo)">View_56_MediaInfo</include>
+		<include condition="Skin.HasSetting(56media.showinfo)">View_56_MediaInfo2</include>
+		<include>View_57_ExtraInfo</include>
 		<include>View_58_Cards</include>
 		<include>View_59_BannerPlex</include>
 		<include>View_500_Thumbnails</include>

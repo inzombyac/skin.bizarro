@@ -435,7 +435,7 @@
 			<font>SmallBold</font>
 			<textcolor>Light1</textcolor>
 			<selectedcolor>Light1</selectedcolor>
-			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
 			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
@@ -591,7 +591,7 @@
 			<font>SmallBold</font>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
 			<visible>Container.Content(episodes) + !String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">
@@ -602,7 +602,7 @@
 			<font>SmallBold</font>
 			<textcolor>Dark3</textcolor>
 			<selectedcolor>Dark3</selectedcolor>
-			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season,,E]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
+			<label>$VAR[LabelSeasonZero]$INFO[ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[ListItem.Episode,, • ]$INFO[ListItem.Title]</label>
 			<visible>Container.Content(episodes) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)</visible>
 		</control>
 		<control type="label">

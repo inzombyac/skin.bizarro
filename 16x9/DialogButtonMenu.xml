@@ -114,19 +114,19 @@
                     <label>5</label>
                     <onclick>ActivateWindow(settings)</onclick>
                 </control>       
-                <control type="button" id="3122">
+               <!--  <control type="button" id="3122">
                     <include>DefContextButton</include>
                     <label>130</label>
                     <onclick>ActivateWindow(systeminfo)</onclick>
-                </control>         
-                <control type="button" id="3123">
+                </control>    -->      
+               <!--  <control type="button" id="3123">
                     <include>DefContextButton</include>
                     <label>10003</label>
                     <onclick>ActivateWindow(filemanager)</onclick>
-                </control>        
+                </control> -->        
                 <control type="button" id="3120">
                     <include>DefContextButton</include>
-                    <label>31195</label>
+                    <label>20183</label>
                     <onclick>ReloadSkin()</onclick>
                 </control>
             </control>
