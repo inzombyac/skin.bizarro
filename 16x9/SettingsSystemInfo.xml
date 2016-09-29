@@ -152,7 +152,7 @@
 						<posx>800</posx>
 						<font>Tiny</font>
 						<height>60</height>
-						<label>$LOCALIZE[31104]:</label>
+						<label>Used Memory:</label>
 						<include>DefSettingsButton</include>
 					</control>
 					<control type="label">

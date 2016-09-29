@@ -26,101 +26,99 @@ msgstr ""
 # Custom_Hub_Movies.xml: 108, Custom_Hub_TV.xml: 108
 # Includes_Furniture.xml:700, Includes_Labels.xml: 58, 70, 72, 74, 355, 356, 357
 # View_56_MediaInfo.xml: 162
-msgctxt "#31102"
-msgid "min"
-msgstr ""
+# msgctxt "#31102"
+# msgid "min"
+# msgstr ""
 
 # Includes_Furniture.xml: 891
 # Includes_Labels.xml: 259, 274
 # overrides.xml: 30
-msgctxt "#31103"
-msgid "TV Hub"
-msgstr ""
+#msgctxt "#31103"
+#msgid "TV Hub"
+#msgstr ""
 
 # SettingsSystemInfo.xml: 155
-msgctxt "#31104"
-msgid "Used Memory"
-msgstr ""
+#msgctxt "#31104"
+#msgid "Used Memory"
+#msgstr ""
 
 # Includes_Labels.xml: 383
 # Includes_PVR.xml: 352, 364, 501, 513, 644, 656
 # MyPVRGuide.xml: 338, 350, 441, 453, 538, 550, 660, 672, 763, 775, 860, 872, 983, 995, 1086, 1098, 1183
-msgctxt "#31106"
-msgid "Finishes at"
-msgstr ""
+#msgctxt "#31106"
+#msgid "Finishes at"
+#msgstr ""
 
-msgctxt "#31107"
-msgid "Video Stream"
-msgstr ""
+# Same as built in #38031
+#msgctxt "#31107"
+#msgid "Video Stream"
+#msgstr ""
 
-msgctxt "#31108"
-msgid "Current Menu"
-msgstr ""
+# 10000 = Home, 21435=Edit
+#msgctxt "#31109"
+#msgid "Customise home menu"
+#msgstr ""
 
-msgctxt "#31109"
-msgid "Customise home menu"
-msgstr ""
+# 19190
+#msgctxt "#31110"
+#msgid "Background"
+#msgstr ""
 
-msgctxt "#31110"
-msgid "Background"
-msgstr ""
-
+# SkinSettings.xml: 335
 msgctxt "#31111"
 msgid "Show now playing video in background"
 msgstr ""
 
-msgctxt "#31112"
-msgid "Submenu"
-msgstr ""
+# 1034
+#msgctxt "#31112"
+#msgid "Submenu"
+#msgstr ""
 
-msgctxt "#31113"
-msgid "No Timer"
-msgstr ""
+# Includes_Labels.xml" 367 - Removed
+#msgctxt "#31113"
+#msgid "No Timer"
+#msgstr ""
 
-msgctxt "#31116"
-msgid "DVD Menu"
-msgstr ""
+# 446 = DVD 33061 = Menu
+#msgctxt "#31116"
+#msgid "DVD Menu"
+#msgstr ""
 
-msgctxt "#31117"
-msgid "3D Mode"
-msgstr ""
+# 36501
+#msgctxt "#31117"
+#msgid "3D Mode"
+#msgstr ""
 
+# SkinSettings.xml: 361
 msgctxt "#31118"
 msgid "Show artist slideshow"
 msgstr ""
 
+# SkinSettings.xml: 371
 msgctxt "#31119"
 msgid "Show visualisation behind slideshow"
 msgstr ""
 
+# SkinSettings.xml: 380
 msgctxt "#31120"
 msgid "Animate artist slideshow"
 msgstr ""
 
-msgctxt "#31121"
-msgid "Show fanart"
-msgstr ""
+# 20414
+#msgctxt "#31121"
+#msgid "Show fanart"
+#msgstr ""
 
+# SkinSettings.xml: 211
 msgctxt "#31132"
-msgid "Reset menu to default"
+msgid "Reset all home shortcuts to default"
 msgstr ""
 
 #Custom_MovieDB_Movies.xml: 95
-msgctxt "#31138"
-msgid "Content Loading"
-msgstr ""
-
-msgctxt "#31139"
-msgid "Box Office"
-msgstr ""
-
-msgctxt "#31140"
-msgid "Budget"
-msgstr ""
-
-msgctxt "#31141"
-msgid "Youtube"
-msgstr ""
+# Replace with 198
+#msgctxt "#31138"
+#msgid "Content Loading"
+#msgstr ""
 
 msgctxt "#31142"
 msgid "Use low list"
@@ -777,10 +775,6 @@ msgstr ""
 
 msgctxt "#31792"
 msgid "Poster"
-msgstr ""
-
-msgctxt "#31793"
-msgid "Ends at"
 msgstr ""
 
 msgctxt "#31794"

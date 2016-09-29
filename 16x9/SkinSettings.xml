@@ -55,7 +55,7 @@
 					<control type="togglebutton" id="9102" description="Background">
 						<usealttexture>ControlGroup(9100).HasFocus(9102)</usealttexture>
 						<include>DefSettingsButton2</include>
-						<label>31110</label>
+						<label>19190</label>
 					</control>
 					<control type="togglebutton" id="9106" description="Furniture">
 						<usealttexture>ControlGroup(9100).HasFocus(9106)</usealttexture>
@@ -197,11 +197,11 @@
 					<ondown>9200</ondown>
 					<orientation>vertical</orientation>
 					<!-- Home -->
-					<control type="button" id="9212" description="Customise Home">
+					<control type="button" id="9212" description="Customize Home">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>
 						<include>DefSettingsButton2</include>
-						<label>31109</label>
+						<label>$LOCALIZE[21435] $LOCALIZE[10000] $LOCALIZE[13398]</label>
 						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					</control>
 					<control type="button" id="9213" description="Reset Home to Defaults">
@@ -256,7 +256,7 @@
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9102)</visible>
 						<include>DefSettingsButton2</include>
-						<label>31121</label>
+						<label>20414</label>
 						<selected>!Skin.HasSetting(global.hidefanart)</selected>
 						<onclick>Skin.ToggleSetting(global.hidefanart)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
@@ -345,11 +345,11 @@
 						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
 					</control>
 					<!-- OSD -->
-					<control type="radiobutton" id="9235" description="Show Fanart">
+					<control type="radiobutton" id="9235" description="Fanart Slideshow">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9103)</visible>
 						<include>DefSettingsButton2</include>
-						<label>31121</label>
+						<label>20425</label>
 						<selected>Skin.HasSetting(musicvis.fanartfallback)</selected>
 						<enable>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</enable>
 						<onclick>Skin.ToggleSetting(musicvis.fanartfallback)</onclick>
@@ -357,6 +357,7 @@
 					<control type="radiobutton" id="9231" description="Show slideshow in background">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<visible>System.HasAddon(script.artistslideshow)</visible>
 						<include>DefSettingsButton2</include>
 						<label>31118</label>
 						<enable>System.HasAddon(script.artistslideshow)</enable>

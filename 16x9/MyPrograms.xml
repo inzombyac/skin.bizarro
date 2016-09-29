@@ -6,8 +6,7 @@
     <views>50,52,53,500,514,505</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include condition="!Skin.HasSetting(50list.low)">View_50_List</include>
-		<include condition="Skin.HasSetting(50list.low)">View_50_LowList</include>
+        <include>View_50_List</include>
 		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
 		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
 		<include>View_53_Poster</include>
@@ -24,6 +23,7 @@
 		<include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
 		<include>Furniture_Adv_Launcher</include>
+		<include>Furniture_Addons</include>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>

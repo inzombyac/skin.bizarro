@@ -16,6 +16,7 @@
 		<include condition="Skin.HasSetting(506wall.bigposter)">View_506_Wall_Big_Poster</include>
 		<include>View_505_Wall_No_Poster</include>
 		<include>View_500_Thumbnails</include>
+		<include>Furniture_Addons</include>
 		<control type="group">
 			<include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>

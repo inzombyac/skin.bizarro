@@ -386,4 +386,9 @@
 		<value condition="String.IsEqual(ListItem.Property(platform),Sega MegaDrive/Genesis)">flags/game/Genesis.png</value>
 		<value condition="!String.IsEqual(ListItem.Property(platform),unknown) + !String.IsEmpty(ListItem.Property(platform))">flags/game/Xbox_360.png</value>
 	</variable>
+	<variable name="AddonStatusIcon">
+		<value condition="String.IsEqual(ListItem.Property(Addon.Status),Disabled)">special://skin/extras/icons/error.png</value>
+		<value condition="String.IsEqual(ListItem.Property(Addon.Status),Enabled)">special://skin/extras/icons/shipping.png</value>
+		<value>special://skin/extras/icons/warning.png</value>
+	</variable>
 </includes>

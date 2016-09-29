@@ -3,7 +3,7 @@
     <shortcut>
         <defaultID>TV Hub</defaultID>
 		<label2>tvshows</label2>
-        <label>$LOCALIZE[31103]</label>
+        <label>TV Hub</label>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(1102)</action>
 		<thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>

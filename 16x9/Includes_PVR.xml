@@ -349,7 +349,7 @@
 								<font>Tiny</font>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
+								<label>$INFO[ListItem.EndTime,$LOCALIZE[19127]: ,]</label>
 								<visible>!String.IsEmpty(ListItem.NextTitle)</visible>
 							</control>
 							<control type="label">
@@ -361,7 +361,7 @@
 								<font>Tiny</font>
 								<textcolor>Dark1</textcolor>
 								<selectedcolor>Dark1</selectedcolor>
-								<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
+								<label>$INFO[ListItem.EndTime,$LOCALIZE[19127]: ,]</label>
 								<visible>String.IsEmpty(ListItem.NextTitle)</visible>
 							</control>
 							<control type="label">
@@ -498,7 +498,7 @@
 									<font>Tiny</font>
 									<textcolor>Light1</textcolor>
 									<selectedcolor>Light1</selectedcolor>
-									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
+									<label>$INFO[ListItem.EndTime,$LOCALIZE[19127]: ,]</label>
 									<visible>!String.IsEmpty(ListItem.NextTitle)</visible>
 								</control>
 								<control type="label">
@@ -510,7 +510,7 @@
 									<font>Tiny</font>
 									<textcolor>Light1</textcolor>
 									<selectedcolor>Light1</selectedcolor>
-									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
+									<label>$INFO[ListItem.EndTime,$LOCALIZE[19127]: ,]</label>
 									<visible>String.IsEmpty(ListItem.NextTitle)</visible>
 								</control>
 								<control type="label">
@@ -641,7 +641,7 @@
 									<font>Tiny</font>
 									<textcolor>Dark1</textcolor>
 									<selectedcolor>Dark1</selectedcolor>
-									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
+									<label>$INFO[ListItem.EndTime,$LOCALIZE[19127]: ,]</label>
 									<visible>!String.IsEmpty(ListItem.NextTitle)</visible>
 								</control>
 								<control type="label">
@@ -653,7 +653,7 @@
 									<font>Tiny</font>
 									<textcolor>Dark1</textcolor>
 									<selectedcolor>Dark1</selectedcolor>
-									<label>$INFO[ListItem.EndTime,$LOCALIZE[31106] ,]</label>
+									<label>$INFO[ListItem.EndTime,$LOCALIZE[19127]: ,]</label>
 									<visible>String.IsEmpty(ListItem.NextTitle)</visible>
 								</control>
 								<control type="label">

@@ -783,7 +783,6 @@
 				<width>100</width>
 				<texture>$VAR[AdvancedLauncherFurnitureIcon]</texture>
 				<aspectratio align="left" aligny="center">keep</aspectratio>
-				
 			</control>
 			<control type="label">
 				<width min="128">auto</width>
@@ -792,6 +791,39 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$VAR[AdvancedLauncherLabel]</label>
+				<font>Flag</font>
+				<textcolor>White</textcolor>
+			</control>
+		</control>
+	</include>
+	<include name="Furniture_Addons">
+		<control type="grouplist">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<left>40</left>
+			<centerbottom>40</centerbottom>
+			<width>1920</width>
+			<height>120</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
+			<control type="image">
+				<centertop>50%</centertop>
+				<width>60</width>
+				<texture>$VAR[AddonStatusIcon]</texture>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+				<height>60</height>
+				<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.Property(Addon.Status))</visible>
+			</control>
+			<control type="label">
+				<width min="128">auto</width>
+				<centertop>50%</centertop>
+				<height>64</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.AddonVersion]$INFO[ListItem.Property(Addon.Status),  •  ,]$INFO[ListItem.AddonCreator,  •  ,]$INFO[ListItem.AddonType,  •  ,]</label>
 				<font>Flag</font>
 				<textcolor>White</textcolor>
 			</control>
@@ -853,7 +885,7 @@
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[20011]</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)">$LOCALIZE[1036]</value>
-		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$LOCALIZE[31141]</value>
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">YouTube</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(musicvideos) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(episodes) + !Container.Content(seasons) + !Container.Content(tvshows)">$INFO[ListItem.Title]$INFO[ListItem.Year,(,)]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml)">$INFO[ListItem.Title]</value>
@@ -888,7 +920,7 @@
 		<value condition="Window.IsVisible(MyMusicPlaylist.xml)">$LOCALIZE[559]</value>
 		<value condition="Window.IsVisible(FileManager.xml)">$LOCALIZE[744]</value>
 		<value condition="Window.IsVisible(1101)">$LOCALIZE[31192]</value>
-		<value condition="Window.IsVisible(1102)">$LOCALIZE[31103]</value>
+		<value condition="Window.IsVisible(1102)">TV Hub</value>
 		<value condition="Window.IsVisible(1103) + String.IsEqual(Window(1103).Property(content),1)">$INFO[Window(home).Property(ExtStudio),$LOCALIZE[31205] ,]</value>
 		<value condition="Window.IsVisible(1103) + String.IsEqual(Window(1103).Property(content),2)">$INFO[Window(home).Property(ExtMovie),$LOCALIZE[31204] ,]</value>
 		<value condition="Window.IsVisible(1103)">$INFO[Window(home).Property(ExtDirector),$LOCALIZE[31191] ,]</value>
@@ -1041,7 +1073,7 @@
 					<font>Flag</font>
 					<width>auto</width>
 					<textcolor>Dark3</textcolor>
-					<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[31793] ,]</label>
+					<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
 				</control>
 			</control>
 		</control>

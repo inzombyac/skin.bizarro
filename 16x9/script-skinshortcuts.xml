@@ -306,7 +306,7 @@
                 <control type="button" id="405" description="Set Submenu">
                     <width>100%</width>
                     <height>66</height>
-                    <label>31112</label>
+                    <label>1034</label>
                     <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>

@@ -805,10 +805,6 @@ msgctxt "#31792"
 msgid "Poster"
 msgstr "Poster"
 
-msgctxt "#31793"
-msgid "Ends at"
-msgstr "Ends at"
-
 msgctxt "#31794"
 msgid "Wall Square"
 msgstr "Wall Square"

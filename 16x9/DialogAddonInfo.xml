@@ -86,7 +86,7 @@
                 </control>
 				<control type="radiobutton" id="13">
                     <description>Auto-Update button</description>
-                    <radioposx>380</radioposx>
+                    <radioposx>360</radioposx>
 					<width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
