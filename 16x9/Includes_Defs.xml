@@ -283,7 +283,7 @@
 		<textureradionofocus colordiffuse="PanelWhite12">buttons/radio-off.png</textureradionofocus>
 		<texturefocus colordiffuse="Dark1">common/white.png</texturefocus>
 		<alttexturefocus colordiffuse="Dark1">common/white.png</alttexturefocus>
-		<alttexturenofocus colordiffuse="Light1">common/white.png</alttexturenofocus>
+		<alttexturenofocus colordiffuse="Dark3">common/white.png</alttexturenofocus>
 	</include>
 	<include name="DefSettingsButton3">
 		<align>left</align>

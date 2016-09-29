@@ -936,6 +936,7 @@
 	</variable>
 	<variable name="SubHeaderLabel">
 		<value condition="Window.IsVisible(home)">$VAR[EmbyFooterLabel]</value>
+		<value condition="Window.IsVisible(Settings.xml)">$INFO[System.CurrentControl]</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">[COLOR=Dark1]$INFO[ListItem.AddonVersion,Version: ,][/COLOR] by $INFO[ListItem.AddonCreator] $INFO[ListItem.Artist, • ]$INFO[ListItem.AddonType, • ,]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Year]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>

@@ -245,8 +245,8 @@ msgid "[B]Configure Picture Settings[/B][CR][CR] •     Set picture listing opt
 msgstr "[B]Configuración de imágenes[/B][CR][CR] • Cambiar el listado de las imágenes[CR] • Configurar presentación"
 
 msgctxt "#31160"
-msgid "[B]Configure Weather Settings[/B][CR][CR] •     Set up to three cities"
-msgstr "[B]Configuración del tiempo metereológico[/B][CR][CR] • Asignar localización"
+msgid "[B]Configure File Sources[/B][CR][CR] •     Add manual paths to Kodi"
+msgstr "[B]Configure File Sources[/B][CR][CR] •     Add manual paths to Kodi"
 
 msgctxt "#31161"
 msgid "[B]Configure System Settings[/B][CR][CR] •     Setup and calibrate displays[CR] •     Configure audio output[CR] •     Setup remote controls[CR] •     Set power saving options[CR] •     Enable debugging[CR] •     Setup master lock"

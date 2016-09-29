@@ -9,13 +9,6 @@
     </shortcut>
     <shortcut>
         <label2>settings</label2>
-        <label>7</label>
-        <action>ActivateWindow(FileManager)</action>
-        <icon>special://skin/extras/icons/files.png</icon>
-		<thumb>special://skin/extras/backgrounds/programs.jpg</thumb>
-    </shortcut>
-    <shortcut>
-        <label2>settings</label2>
         <label>13200</label>
         <action>ActivateWindow(Profiles)</action>
         <icon>special://skin/extras/icons/actor.png</icon>

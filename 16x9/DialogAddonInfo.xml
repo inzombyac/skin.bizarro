@@ -3,7 +3,7 @@
 <window id="146">
     <defaultcontrol always="true">9000</defaultcontrol>
     <controls>
-        <include>GlobalOverlay</include>
+        <!-- <include>GlobalOverlay</include> -->
 		<control type="group">
 			<left>SidePad</left>
 			<top>180</top>

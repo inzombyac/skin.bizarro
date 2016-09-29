@@ -129,16 +129,18 @@
                 </focusedlayout>
             </control>
 			<!-- Widgets -->
-			<control type="group" id="9876">
+			<control type="group" >
 				<height>860</height>
 				<onleft>9100</onleft>
 				<right>15</right>
 				<width>420</width>
-				<top>65</top>				
-				<control type="grouplist" >
+				<top>65</top>		
+				<onup>8780</onup>				
+				<control type="grouplist" id="8786">
 					<height>450</height>
 					<onleft>9100</onleft>
 					<ondown>8780</ondown>
+					<onup>8780</onup>
 					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 					<itemgap>3</itemgap>
 					<control type="label">
@@ -158,6 +160,7 @@
 						<include>DefDialogButtons</include>
 						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<onup>8780</onup>
 					</control>
 					<control type="button" id="8777" description="Right Widget1">
 						<label>Right Widget 1</label>
@@ -194,7 +197,9 @@
 					</control>
 				</control>
 				<control type="button" id="8780" description="OK">
-					<onup>9100</onup>
+					<onup condition="Control.IsVisible(312)">8786</onup>
+					<onup condition="!Control.IsVisible(312)">9100</onup>
+					<ondown>8780</ondown>
 					<onleft>9100</onleft>
 					<bottom>104</bottom>
 					<label>OK</label>
@@ -207,7 +212,7 @@
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				<control type="button" id="8781" description="Back Submenu">
-					<onup>9100</onup>
+					<onup>8781</onup>
 					<onleft>9100</onleft>
 					<bottom>104</bottom>
 					<label>Back</label>
@@ -252,7 +257,8 @@
             <!-- Right Buttons -->
             <control type="grouplist" id="9100">
                 <onleft>211</onleft>
-                <onright condition="String.IsEqual(Window.Property(groupname),mainmenu)">312</onright>
+                <onright condition="String.IsEqual(Window.Property(groupname),mainmenu) + Control.IsVisible(312)">8786</onright>
+				<onright condition="String.IsEqual(Window.Property(groupname),mainmenu) + !Control.IsVisible(312)">8780</onright>
 				<onright condition="!String.IsEqual(Window.Property(groupname),mainmenu)">8781</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>

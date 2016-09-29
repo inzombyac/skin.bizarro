@@ -11,8 +11,8 @@
         <control type="group">
             <left>SidePad</left>
             <width>1760</width>
-            <top>PosterPad</top>
-            <height>545</height>
+            <top>180</top>
+            <height>670</height>
             <include>Animation.Common</include>
             <control type="image">
                 <width>100%</width>
@@ -25,9 +25,10 @@
                 <right>10</right>
                 <left>1160</left>
                 <control type="image">
-                    <visible>false</visible>
-                    <width>100%</width>
-                    <height>100%</height>
+                    <top>5</top>
+                    <bottom>10</bottom>
+                    <right>10</right>
+                    <left>5</left>
                     <texture border="5" colordiffuse="PanelWhite12">common/box.png</texture>
                 </control>
                 <control type="textbox">
@@ -61,7 +62,7 @@
                 <left>0</left>
                 <width>1150</width>
                 <top>10</top>
-                <height>602</height>
+                <height>710</height>
                 <orientation>horizontal</orientation>
                 <itemlayout width="575" height="107">
                     <control type="label">
@@ -147,6 +148,12 @@
                         <label2>31163</label2>
                         <icon>special://skin/extras/icons/livetv.png</icon>
                         <onclick>activatewindow(pvrsettings)</onclick>
+                    </item>
+					<item id="5">
+                        <label>10003</label>
+                        <label2>31160</label2>
+                        <icon>special://skin/extras/icons/files.png</icon>
+                        <onclick>activatewindow(filemanager)</onclick>
                     </item>
 				   <item id="4">
                         <label>24001</label>
