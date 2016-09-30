@@ -113,7 +113,7 @@
 						<top>5</top>
 						<right>5</right>
 						<height>300</height>
-						<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+						<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						<include>Animation.FadeIn</include>		
 						<include>Animation.Focus</include>
 					</control>

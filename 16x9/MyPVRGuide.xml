@@ -59,8 +59,8 @@
 						<aligny>center</aligny>
 						<height>32</height>
 						<font>SmallBold</font>
-						<textcolor>$VAR[ColourHighlight]</textcolor>
-						<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+						<textcolor>$VAR[ColorHighlight]</textcolor>
+						<selectedcolor>$VAR[ColorHighlight]</selectedcolor>
 						<label>$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
 						<visible>String.IsEmpty(ListItem.Season)</visible>
 					</control>
@@ -70,8 +70,8 @@
 						<aligny>center</aligny>
 						<height>32</height>
 						<font>SmallBold</font>
-						<textcolor>$VAR[ColourHighlight]</textcolor>
-						<selectedcolor>$VAR[ColourHighlight]</selectedcolor>
+						<textcolor>$VAR[ColorHighlight]</textcolor>
+						<selectedcolor>$VAR[ColorHighlight]</selectedcolor>
 						<label>$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
 						<visible>!String.IsEmpty(ListItem.Season)</visible>
 					</control>
@@ -197,7 +197,7 @@
 							<left>4</left>
 							<top>4</top>
 							<height>62</height>
-							<texture border="1" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
+							<texture border="1" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 							<visible>!Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
 						<control type="image" id="2">
@@ -205,7 +205,7 @@
 							<left>2</left>
 							<top>2</top>
 							<height>68</height>
-							<texture border="1" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
+							<texture border="1" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 							<visible>Skin.HasSetting(EPGGenreColors.Enabled)</visible>
 						</control>
 						<control type="label" id="1">

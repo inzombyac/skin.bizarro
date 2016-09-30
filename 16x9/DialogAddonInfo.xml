@@ -40,7 +40,7 @@
                     <width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <include>DefDialogButtons</include>
                     <label>518</label>
                 </control>
@@ -49,7 +49,7 @@
                     <width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <include>DefDialogButtons</include>
                     <label>24022</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
@@ -59,7 +59,7 @@
                     <width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <include>DefDialogButtons</include>
                     <label>24021</label>   
                     <visible>!Skin.HasSetting(global.kioskmode)</visible> 
@@ -69,7 +69,7 @@
                     <width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <include>DefDialogButtons</include>
                     <label>24020</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
@@ -79,7 +79,7 @@
                     <width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <include>DefDialogButtons</include>
                     <label>24069</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
@@ -90,7 +90,7 @@
 					<width>100%</width>
                     <height>68</height>
                     <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-                    <texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<include>DefDialogButtons</include>
                     <label>21340</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
@@ -135,7 +135,7 @@
 					<control type="image">
 					<width>450</width>
 					<height>274</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+					<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 					<visible>Control.HasFocus(50)</visible>
 					<include>Animation.Focus</include>
 				</control>

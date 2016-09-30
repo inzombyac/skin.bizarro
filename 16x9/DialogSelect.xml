@@ -44,7 +44,7 @@
 						<width>1064</width>
 						<height>66</height>
 						<texture border="5" colordiffuse="Dark1">common/box.png</texture>
-						<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+						<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
 						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(3)">Conditional</animation>
 						<bordersize>6,0,0,0</bordersize>
 					</control>
@@ -173,7 +173,7 @@
 							<width>696</width>
 							<height>135</height>
 							<texture border="5" colordiffuse="Dark1">common/box.png</texture>
-							<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+							<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
 							<bordersize>6,0,0,0</bordersize>
 						</control>
 						<control type="image">
@@ -240,7 +240,7 @@
 					<ondown>7</ondown>
 					<font>Button</font>
 					<textcolor>Black70</textcolor>
-					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<animation effect="slide" start="0" end="22,-100" condition="!Control.IsVisible(6)">Conditional</animation>
 				</control>
 				<control type="button" id="7">
@@ -253,7 +253,7 @@
 					<ondown>5</ondown>
 					<font>Button</font>
 					<textcolor>Black70</textcolor>
-					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<animation effect="slide" start="0" end="22,-100" condition="!Control.IsVisible(6)">Conditional</animation>
 				</control>
 			</control>

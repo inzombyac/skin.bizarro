@@ -81,7 +81,7 @@
                     <posy>30</posy>
                     <width>48</width>
                     <height>48</height>
-                     <texture colordiffuse="$VAR[ColourHighlight]">dialog/busy.gif</texture>
+                     <texture colordiffuse="$VAR[ColorHighlight]">dialog/busy.gif</texture>
                     <aspectratio>keep</aspectratio>
                 </control>
 
@@ -184,7 +184,7 @@
                         <top>3</top>
                         <right>3</right>
                         <bottom>15</bottom>
-                        <texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+                        <texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
                         <animation type="Focus">
                             <effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
                             <effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />

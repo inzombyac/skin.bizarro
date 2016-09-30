@@ -11,8 +11,8 @@
 			<onleft>50</onleft>
 			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="100,0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 		</control>
@@ -27,8 +27,8 @@
 			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 			<onright>50</onright>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="-100,0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<visible>Container.Column(0)</visible>
@@ -42,8 +42,8 @@
 			<onleft>50</onleft>
 			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" end="100,0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<visible>!Container.Column(0)</visible>
@@ -60,8 +60,8 @@
 			<onup>50</onup>
 			<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 		</control>
 	</include>
@@ -175,14 +175,14 @@
 					<right>10</right>
 					<bottom>10</bottom>
 					<width>100</width>
-					<texture colordiffuse="$VAR[ColourHighlight2]">special://skin/extras/icons/equaliser.gif</texture>
+					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser.gif</texture>
 					<visible>!Player.Paused</visible>
 				</control>
 				<control type="image">
 					<right>10</right>
 					<bottom>10</bottom>
 					<width>100</width>
-					<texture colordiffuse="$VAR[ColourHighlight2]">special://skin/extras/icons/equaliser_stop.gif</texture>
+					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser_stop.gif</texture>
 					<visible>Player.Paused</visible>
 				</control>
 				<control type="button" id="7788">
@@ -193,8 +193,8 @@
 					<height>90</height>
 					<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
 					<textcolor>$VAR[OSDPanelWhite30]</textcolor>
-					<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
-					<texturefocus colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texturefocus>
+					<focusedcolor>$VAR[ColorHighlight]</focusedcolor>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texturefocus>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>FullScreen</onclick>
 				</control>
@@ -950,14 +950,14 @@
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(episodes)">$VAR[ListItemSeasonVar,S]-$VAR[ListItemEpisodeVar,E] • [COLOR Black300]Premiered:[/COLOR] $INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(tvshows)">[COLOR Black300]Premiered:[/COLOR] $INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
-		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]">[COLOR=$VAR[ColourHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]$INFO[Control.GetLabel(28), • ,]</value>
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColourHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColourHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]] [COLOR=$VAR[ColourHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + !Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColourHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]] [COLOR=$VAR[ColourHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)  + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColourHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]</value>
-		<value condition="!String.IsEmpty(Container(9500).NumItems) + !Window.IsVisible(home) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColourHighlight]]$INFO[Container.CurrentItem] / $INFO[Container(9500).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
-		<value condition="Window.IsVisible(MyWeather.xml) + !String.IsEmpty(Window(Weather).Property(Location))">[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature,,[/COLOR] ]$INFO[Window(Weather).Property(Location)]</value>
-		<value condition="String.IsEmpty(Pvr.BackendChannels)">[COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132]</value>
-		<value>[COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColourHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132] • [COLOR=$VAR[ColourHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
+		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]$INFO[Control.GetLabel(28), • ,]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + !Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)  + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]</value>
+		<value condition="!String.IsEmpty(Container(9500).NumItems) + !Window.IsVisible(home) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container(9500).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
+		<value condition="Window.IsVisible(MyWeather.xml) + !String.IsEmpty(Window(Weather).Property(Location))">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR] ]$INFO[Window(Weather).Property(Location)]</value>
+		<value condition="String.IsEmpty(Pvr.BackendChannels)">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132]</value>
+		<value>[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132] • [COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
 	</variable>
 	<include name="Furniture_Header">
 		<control type="grouplist">
@@ -1027,7 +1027,7 @@
 					<left>-14</left>
 					<width>108</width>
 					<height>108</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="0" diffuse="common/circle.png">special://skin/extras/icons/configure.png</texture>
+					<texture colordiffuse="$VAR[ColorHighlight]" border="0" diffuse="common/circle.png">special://skin/extras/icons/configure.png</texture>
 					<visible>Control.HasFocus(3634)</visible>
 				</control>
 				<control type="label">
@@ -1049,7 +1049,7 @@
 					<centerleft>40</centerleft>
 					<width>48</width>
 					<height>48</height>
-					 <texture colordiffuse="$VAR[ColourHighlight]">dialog/busy.gif</texture>
+					 <texture colordiffuse="$VAR[ColorHighlight]">dialog/busy.gif</texture>
 					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
@@ -1124,7 +1124,7 @@
 					<centerleft>40</centerleft>
 					<width>48</width>
 					<height>48</height>
-					 <texture colordiffuse="$VAR[ColourHighlight]">dialog/busy.gif</texture>
+					 <texture colordiffuse="$VAR[ColorHighlight]">dialog/busy.gif</texture>
 					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
 					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				</control>
@@ -1164,7 +1164,7 @@
 			<top>40</top>
 			<include>Animation.FurnitureFadeInOut</include>
 			<height>84</height>
-			<animation effect="slide" start="0" end="0,-10" time="150" condition="Skin.HasSetting(furniture.weather)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-10" time="150" condition="!String.IsEmpty(Weather.Temperature)">Conditional</animation>
 			<control type="label">
 				<centertop>24</centertop>
 				<right>130</right>
@@ -1200,8 +1200,8 @@
 				<textcolor>Dark3</textcolor>
 				<align>right</align>
 				<width>50%</width>
-				<visible>Skin.HasSetting(furniture.weather)</visible>
-				<label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+				<visible>!String.IsEmpty(Weather.Temperature)</visible>
+				<label>[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
 			</control>
 		</control>
 	</include>

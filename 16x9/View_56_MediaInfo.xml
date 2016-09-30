@@ -131,8 +131,8 @@
 				<width>8</width>
 				<onright>56</onright>
 				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-				<texturesliderbar border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbar>
-				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColourHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+				<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 				<animation effect="slide" end="-30,0" time="400" condition="Control.HasFocus(60)">Conditional</animation>
 			</control>
@@ -218,7 +218,7 @@
 			<width>100%</width>
 			<height>100%</height>
 			<texture border="8" colordiffuse="Dark1">common/box.png</texture>
-			<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+			<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
 			<bordersize>6,0,0,0</bordersize>
 		</control>
 		<control type="image">

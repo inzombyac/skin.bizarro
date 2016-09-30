@@ -65,7 +65,7 @@
 			<focusedcolor>black</focusedcolor>
 			<disabledcolor>lightgrey</disabledcolor>
 			<pulseonselect>false</pulseonselect>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 			<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
 		</control>
 		<control type="button" id="3011">
@@ -80,7 +80,7 @@
 			<label>$ADDON[script.skin.helper.service 32013]</label>
 			<textcolor>white</textcolor>
 			<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 		</control>
 		<!-- Save button -->
 		<control type="button" id="3012">
@@ -94,7 +94,7 @@
 			<label>190</label>
 			<textcolor>white</textcolor>
 			<selectedcolor>white</selectedcolor>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" border="5">common/box.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 			<texturenofocus colordiffuse="White70" border="5">common/box.png</texturenofocus>
 		</control>
 	</controls>

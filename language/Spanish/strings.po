@@ -32,9 +32,10 @@ msgctxt "#31104"
 msgid "Used Memory"
 msgstr "Memoria usada"
 
+# MyWeather.xml: 492
 msgctxt "#31105"
-msgid "Spotlight"
-msgstr "Destacadas"
+msgid "Location:"
+msgstr "Location:"
 
 msgctxt "#31106"
 msgid "Finishes at"

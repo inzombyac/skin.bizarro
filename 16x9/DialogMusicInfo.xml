@@ -340,7 +340,7 @@
 							<left>10</left>
 							<width>290</width>
 							<height>290</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 						<control type="image">
 							<bottom>40</bottom>
@@ -444,7 +444,7 @@
 							<left>10</left>
 							<width>290</width>
 							<height>290</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 					</focusedlayout>
 					<include>MusicInfoTracklist</include>
@@ -541,7 +541,7 @@
 							<left>10</left>
 							<width>290</width>
 							<height>290</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 						<control type="button">
 							<width>1</width>
@@ -592,7 +592,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Music Info Actions</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
                 <control type="button" id="9050">
@@ -638,7 +638,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Metadata</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<!-- Get Thumb Button -->

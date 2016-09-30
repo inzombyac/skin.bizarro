@@ -192,8 +192,8 @@
                         <info>Player.CacheLevel</info>
                         <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
                         <lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-                        <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                        <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+                        <midtexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</midtexture>
+                        <righttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</righttexture>
                         <visible>Player.Seeking</visible>
                     </control>
                     <control type="progress" description="cache">
@@ -204,9 +204,9 @@
                         <info>PVR.TimeshiftCur</info>
                         <reveal>true</reveal>
                         <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                        <lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-                        <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                        <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+                        <lefttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</lefttexture>
+                        <midtexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</midtexture>
+                        <righttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</righttexture>
                     </control>
                     <control type="progress" id="23">
                         <description>Progress Bar</description>

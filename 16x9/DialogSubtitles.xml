@@ -110,7 +110,7 @@
                     <control type="image">
                         <height>66</height>
                         <width>100%</width>
-                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                        <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                     </control>
                     <control type="image">
                         <posx>11</posx>
@@ -211,7 +211,7 @@
                 <align>left</align>
                 <textcolor>Black30</textcolor>
                 <focusedcolor>White100</focusedcolor>
-                <texturefocus border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texturefocus>
+                <texturefocus border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texturefocus>
                 <texturenofocus border="5" colordiffuse="Black12">common/box.png</texturenofocus>
             </control>
             
@@ -241,7 +241,7 @@
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>Black30</textcolor>
-                        <selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
+                        <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
                     </control>
 
                 </itemlayout>
@@ -250,7 +250,7 @@
                     <control type="image">
                         <height>66</height>
                         <width>100%</width>
-                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                        <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                         <visible>Control.HasFocus(150)</visible>
                     </control>
                     <control type="image">
@@ -266,7 +266,7 @@
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>Black30</textcolor>
-                        <selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
+                        <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
                         <visible>!Control.HasFocus(150)</visible>
                     </control>
                     <control type="label">
@@ -276,7 +276,7 @@
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>White100</textcolor>
-                        <selectedcolor>$VAR[ColourHighlight2]</selectedcolor>
+                        <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
                         <visible>Control.HasFocus(150)</visible>
                     </control>
                     

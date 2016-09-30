@@ -32,7 +32,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Misc Options</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="9">
@@ -66,7 +66,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Last Updated</label>
-					<textcolor>$VAR[ColourHighlight2]</textcolor>
+					<textcolor>$VAR[ColorHighlight2]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="label" id="204">

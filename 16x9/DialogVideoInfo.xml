@@ -496,7 +496,7 @@
 							<left>10</left>
 							<width>240</width>
 							<height>365</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 					</focusedlayout>
 					<include>VideoCastContent</include>
@@ -593,7 +593,7 @@
 							<left>10</left>
 							<width>240</width>
 							<height>365</height>
-							<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 					</focusedlayout>
 					<content limit="20">$VAR[SimilarVideos]</content>
@@ -635,7 +635,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Video Info Actions</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="9050">
@@ -667,7 +667,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Metadata</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="10">

@@ -14,8 +14,8 @@
 				<width>1760</width>
 				<font>font12</font>
 				<urlset>1</urlset>
-				<textcolor>$VAR[ColourHighlight2]</textcolor>
-				<titlecolor>$VAR[ColourHighlight]</titlecolor>
+				<textcolor>$VAR[ColorHighlight2]</textcolor>
+				<titlecolor>$VAR[ColorHighlight]</titlecolor>
 				<headlinecolor>white</headlinecolor>
 			</control>
 		</control>
@@ -158,7 +158,7 @@
 				<centerleft>50%</centerleft>
 				<width>90%</width>
 				<height>4</height>
-				<texture colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+				<texture colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<animation effect="slide" start="-100" end="0" time="500" center="auto" tween="back" easing="out" condition="Container(300).OnNext" reversible="false">Focus</animation>
@@ -319,7 +319,7 @@
 				<control type="image">
 					<width>284</width>
 					<height>186</height>
-					<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+					<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 					<visible>Control.HasFocus(302)</visible>
 					<include>Animation.Focus</include>
 				</control>
@@ -1272,7 +1272,7 @@
 			<control type="image">
 				<width>100%</width>
 				<height>100%</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="20">common/selectbox.png</texture>
+				<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 				<visible>Control.HasFocus(4012) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 		</control>
@@ -1454,7 +1454,7 @@
 				<left>10</left>
 				<width>$PARAM[item_width]</width>
 				<height>$PARAM[item_height]</height>
-				<texture colordiffuse="$VAR[ColourHighlight]" border="30">common/selectbox.png</texture>
+				<texture colordiffuse="$VAR[ColorHighlight]" border="30">common/selectbox.png</texture>
 				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 				<include>Animation.Focus</include>
 			</control>
@@ -1508,7 +1508,7 @@
 		<content type="static">
 			<!--weather widgets -->
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColourHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR]</label>
 				<label2>High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label2>
 				<thumb>$VAR[HomeWeatherToday]</thumb>
 				<property name="plot">Outlook: $INFO[Window(Weather).Property(Day0.Outlook)][CR]Current Condition: $INFO[Window(Weather).Property(Current.Condition)][CR]Feels Like: $INFO[Window(Weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][CR]Humidity:  $INFO[Window(Weather).Property(Current.Humidity)][CR]Wind: $INFO[Window(Weather).Property(Current.Wind)][CR]Dew Point:  $INFO[Window(Weather).Property(Current.DewPoint)][CR]Provided By: $INFO[Window(Weather).Property(WeatherProvider)]</property>

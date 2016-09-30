@@ -13,24 +13,24 @@
 				<width>1050</width>
 				<height>160</height>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<textcolor>$VAR[ColorHighlight]</textcolor>
 				<control type="grouplist">
 					<visible>Container.Content(movies) + ![String.Contains(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR]$INFO[ListItem.Director]</label>
+						<label>[COLOR $VAR[ColorHighlight]]Directed by: [/COLOR]$INFO[ListItem.Director]</label>
 						<width>980</width>
 						<textcolor>White</textcolor>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Director)</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$VAR[Duration][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$VAR[Duration][/COLOR]</label>
 						<width>650</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Duration)</visible>
@@ -39,13 +39,13 @@
 				<control type="grouplist">
 					<visible>[String.Contains(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]Directed by: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Director)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Director)) + [Container.Content(movies) | Container.Content(sets)]</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Genre)][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[Window(home).Property(Set.Movies.Genre)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(Window(home).Property(Set.Movies.Genre)) + [Container.Content(movies) | Container.Content(sets)]</visible>
@@ -54,27 +54,27 @@
 				<control type="grouplist">
 					<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Next Episode: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.NextTitle)][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]Next Episode: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.NextTitle)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
 						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Next Aired: [/COLOR][COLOR white]$INFO[Window(Home).Property(NextAired.NextDate),,][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]Next Aired: [/COLOR][COLOR white]$INFO[Window(Home).Property(NextAired.NextDate),,][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !Skin.HasSetting(Disable.NextAired)</visible>
 						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)]</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[126]: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.Status)][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[126]: [/COLOR][COLOR White]$INFO[Window(Home).Property(NextAired.Status)][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>[Container.Content(tvshows) | Container.Content(seasons)] + [!String.IsEmpty(Window(Home).Property(NextAired.Status)) + String.IsEmpty(Window(Home).Property(NextAired.NextDate))]</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[515]: [/COLOR][COLOR White]$INFO[ListItem.Genre][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!Container.Content(episodes) + [Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEmpty(ListItem.Genre)</visible>
@@ -83,19 +83,19 @@
 				<control type="grouplist">
 					<visible>Container.Content(episodes)</visible>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]Title: [/COLOR][COLOR White]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]Title: [/COLOR][COLOR White]$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Title)</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[20416]: [/COLOR][COLOR White]$INFO[ListItem.Premiered][/COLOR]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[20416]: [/COLOR][COLOR White]$INFO[ListItem.Premiered][/COLOR]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Premiered)</visible>
 					</control>
 					<control type="label">
-						<label>[COLOR $VAR[ColourHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$INFO[ListItem.Duration,, $LOCALIZE[12391][/COLOR]]</label>
+						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$INFO[ListItem.Duration,, $LOCALIZE[12391][/COLOR]]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Duration)</visible>
@@ -299,7 +299,7 @@
 							<height>195</height>
 							<texture border="20">common/selectbox.png</texture>
 							<visible>Control.HasFocus(515)</visible>
-							<colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+							<colordiffuse>$VAR[ColorHighlight]</colordiffuse>
 						</control>
 						<control type="image">
 							<centerleft>50%</centerleft>
@@ -307,7 +307,7 @@
 							<width>100</width>
 							<height>100</height>
 							<aspectratio>keep</aspectratio>
-							<texture colordiffuse="$VAR[ColourHighlight2]">common/playring.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight2]">common/playring.png</texture>
 							<animation type="Focus">
 								<effect type="zoom" start="90" end="100" time="150" tween="sine" easing="inout" center="auto" />
 								<effect type="fade" start="0" end="100" time="150" tween="sine" easing="in" />

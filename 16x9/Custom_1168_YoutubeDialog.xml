@@ -24,7 +24,7 @@
             <include>Animation.FurnitureFadeInOut</include>
             <height>84</height>
             <right>20</right>
-            <animation effect="slide" start="0" end="0,-10" time="150" condition="Skin.HasSetting(furniture.weather)">Conditional</animation>
+            <animation effect="slide" start="0" end="0,-10" time="150" condition="!String.IsEmpty(Weather.Temperature)">Conditional</animation>
             <control type="label">
                 <centertop>24</centertop>
                 <right>130</right>
@@ -60,8 +60,8 @@
                 <textcolor>Dark3</textcolor>
                 <align>right</align>
                 <width>50%</width>
-                <visible>Skin.HasSetting(furniture.weather)</visible>
-                <label>[COLOR=$VAR[ColourHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
+                <visible>!String.IsEmpty(Weather.Temperature)</visible>
+                <label>[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature][/COLOR] $INFO[Weather.Conditions]</label>
             </control>
         </control>
         <control type="group">

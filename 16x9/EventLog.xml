@@ -102,7 +102,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="8" colordiffuse="Dark1">common/box.png</texture>
-						<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+						<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
 						<bordersize>6,0,0,0</bordersize>
 					</control>
 					<control type="image">
@@ -189,7 +189,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>31006</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="togglebutton" id="4">
@@ -205,7 +205,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>31026</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="21">

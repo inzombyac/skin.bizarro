@@ -28,9 +28,10 @@ msgctxt "#31103"
 msgid "Live TV"
 msgstr "Élő TV"
 
+# MyWeather.xml: 492
 msgctxt "#31105"
-msgid "Spotlight"
-msgstr "Kiemelt"
+msgid "Location:"
+msgstr "Location:"
 
 msgctxt "#31107"
 msgid "Video Stream"

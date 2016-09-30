@@ -489,7 +489,7 @@
                 <control type="button" id="9008" description="Weather Location">
                     <include>DefContextButton</include>
                     <align>left</align>
-                    <label>35500</label>
+                    <label>31105</label>
                     <label2>$INFO[Weather.Location]</label2>
                     <onclick>Weather.LocationNext</onclick>
                 </control>
@@ -509,7 +509,7 @@
                     <include>DefContextButton</include>
                     <align>left</align>
                     <label>$LOCALIZE[5]</label>
-                    <onclick>activatewindow(WeatherSettings)</onclick>
+                    <onclick>activatewindow(ServiceSettings)</onclick>
                 </control>
             </control>
         </control>

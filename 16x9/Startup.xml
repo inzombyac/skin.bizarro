@@ -12,6 +12,7 @@
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.favorites)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.playlists)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableAddonsLookups)</onfocus>
+			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onfocus>
             <onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
 			<texturenofocus>-</texturenofocus>

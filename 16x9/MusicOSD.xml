@@ -93,7 +93,7 @@
                     <font>Tiny</font>
                     <disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
                     <textcolor>$VAR[Music2OSDPanelWhite30]</textcolor>
-                    <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+                    <focusedcolor>$VAR[ColorHighlight]</focusedcolor>
                     <texturefocus>noop</texturefocus>
                     <label>Visual Text</label>
                     <onclick>Skin.ToggleSetting(osd.showvisualtext)</onclick>
@@ -139,7 +139,7 @@
                     <font>Tiny</font>
                     <disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
                     <textcolor>$VAR[MusicOSDPanelWhite30]</textcolor>
-                    <focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+                    <focusedcolor>$VAR[ColorHighlight]</focusedcolor>
                     <texturefocus>noop</texturefocus>
                     <width>226</width>
                     <align>right</align>

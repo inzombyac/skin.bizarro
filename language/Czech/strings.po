@@ -24,9 +24,10 @@ msgctxt "#31103"
 msgid "Live TV"
 msgstr "Televize"
 
+# MyWeather.xml: 492
 msgctxt "#31105"
-msgid "Spotlight"
-msgstr "Spotlight"
+msgid "Location:"
+msgstr "Location:"
 
 msgctxt "#31110"
 msgid "Background"

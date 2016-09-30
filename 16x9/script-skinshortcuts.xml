@@ -92,7 +92,7 @@
                         <posy>0</posy>
                         <width>100%</width>
                         <height>80</height>
-                        <texture border="5" colordiffuse="$VAR[ColourHighlight]">common/box.png</texture>
+                        <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                         <visible>Control.HasFocus(211)</visible>
                     </control>
                     <control type="image">

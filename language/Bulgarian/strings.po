@@ -28,9 +28,10 @@ msgctxt "#31103"
 msgid "Live TV"
 msgstr "Телевизия"
 
+# MyWeather.xml: 492
 msgctxt "#31105"
-msgid "Spotlight"
-msgstr "Представени"
+msgid "Location:"
+msgstr "Location:"
 
 msgctxt "#31108"
 msgid "Current Menu"

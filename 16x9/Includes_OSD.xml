@@ -63,7 +63,7 @@
 			<top>50</top>
 			<height>40</height>
 			<font>TinyBold</font>
-			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
 			<label>$VAR[PlayerTitle]</label>
 			<visible>VideoPlayer.Content(episodes)</visible>
 		</control>
@@ -81,7 +81,7 @@
 			<top>50</top>
 			<height>40</height>
 			<font>MediumBold</font>
-			<textcolor>$VAR[ColourHighlight]</textcolor>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
 			<label>$VAR[PlayerBigTitle]</label>
 			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
 		</control>
@@ -129,9 +129,9 @@
 			<info>Player.ProgressCache</info>
 			<visible>true</visible>
 			<texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-			<lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-			<midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-			<righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+			<lefttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</righttexture>
 		</control>
 		<control type="progress" id="23">
 			<description>Progress Bar</description>
@@ -149,15 +149,11 @@
 		<font>Tiny</font>
 		<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
 		<textcolor>$VAR[OSDPanelWhite30]</textcolor>
-		<focusedcolor>$VAR[ColourHighlight]</focusedcolor>
+		<focusedcolor>$VAR[ColorHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
 		<width>226</width>
 	</include>
 	<include name="DefOSDUpDown">
-		<!--<onup condition="String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</onup>
-		<onup condition="!String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</onup>
-		<ondown condition="String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">SetProperty(osdshowinfo,1,home)</ondown>
-		<ondown condition="!String.IsEmpty(Window(home).Property(osdshowinfo)) + !Window.IsVisible(MusicOSD.xml)">ClearProperty(osdshowinfo,home)</ondown>-->
 		<onup condition="Window.IsVisible(MusicOSD.xml)">3</onup>
 		<ondown condition="Window.IsVisible(MusicOSD.xml)">3</ondown>
 	</include>
@@ -278,10 +274,10 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/record.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/record.png</texturenofocus>
 			<usealttexture>Player.Recording</usealttexture>
-			<alttexturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
+			<alttexturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
 			<alttexturenofocus colordiffuse="PanelWhite70" flipx="true">osd/record-on.png</alttexturenofocus>
 			<onclick>PlayerControl(Record)</onclick>
 			<enable>Player.CanRecord</enable>
@@ -296,7 +292,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/next.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/next.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/next.png</texturenofocus>
 			<onclick>PlayerControl(Previous)</onclick>
 		</control>
@@ -308,7 +304,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/ff.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/ff.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/ff.png</texturenofocus>
 			<onclick>PlayerControl(Rewind)</onclick>
 			<enable>Player.SeekEnabled</enable>
@@ -322,10 +318,10 @@
 			<altlabel></altlabel>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/pause.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70">osd/pause.png</texturenofocus>
 			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-			<alttexturefocus colordiffuse="$VAR[ColourHighlight]">osd/play.png</alttexturefocus>
+			<alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/play.png</alttexturefocus>
 			<alttexturenofocus colordiffuse="PanelWhite70">osd/play.png</alttexturenofocus>
 			<onclick>PlayerControl(Play)</onclick>
 			<enable>Player.PauseEnabled</enable>
@@ -339,7 +335,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/stop.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stop.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70">osd/stop.png</texturenofocus>
 			<onclick>PlayerControl(Stop)</onclick>
 		</control>
@@ -351,7 +347,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/ff.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/ff.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70">osd/ff.png</texturenofocus>
 			<onclick>PlayerControl(Forward)</onclick>
 			<enable>Player.SeekEnabled</enable>
@@ -365,7 +361,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/next.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/next.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70">osd/next.png</texturenofocus>
 			<onclick>PlayerControl(Next)</onclick>
 		</control>
@@ -375,7 +371,7 @@
 			<height>48</height>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/eject.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/eject.png</texturefocus>
 			<texturenofocus colordiffuse="PanelWhite70">osd/eject.png</texturenofocus>
 			<onclick>EjectTray()</onclick>
 			<visible>System.HasMediadvd</visible>
@@ -389,10 +385,10 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/record.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1" flipx="true">osd/record.png</texturenofocus>
 			<usealttexture>Player.Recording</usealttexture>
-			<alttexturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
+			<alttexturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
 			<alttexturenofocus colordiffuse="Dark1" flipx="true">osd/record-on.png</alttexturenofocus>
 			<onclick>PlayerControl(Record)</onclick>
 			<enable>Player.CanRecord</enable>
@@ -406,7 +402,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/next.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/next.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1" flipx="true">osd/next.png</texturenofocus>
 			<onclick>PlayerControl(Previous)</onclick>
 		</control>
@@ -417,7 +413,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]" flipx="true">osd/ff.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/ff.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1" flipx="true">osd/ff.png</texturenofocus>
 			<onclick>PlayerControl(Rewind)</onclick>
 			<enable>Player.SeekEnabled</enable>
@@ -431,10 +427,10 @@
 			<altlabel></altlabel>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/pause.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/pause.png</texturenofocus>
 			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-			<alttexturefocus colordiffuse="$VAR[ColourHighlight]">osd/play.png</alttexturefocus>
+			<alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/play.png</alttexturefocus>
 			<alttexturenofocus colordiffuse="Dark1">osd/play.png</alttexturenofocus>
 			<onclick>PlayerControl(Play)</onclick>
 			<enable>Player.PauseEnabled</enable>
@@ -447,7 +443,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/stop.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stop.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/stop.png</texturenofocus>
 			<onclick>PlayerControl(Stop)</onclick>
 		</control>
@@ -458,7 +454,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/ff.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/ff.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/ff.png</texturenofocus>
 			<onclick>PlayerControl(Forward)</onclick>
 			<enable>Player.SeekEnabled</enable>
@@ -471,7 +467,7 @@
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/next.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/next.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/next.png</texturenofocus>
 			<onclick>PlayerControl(Next)</onclick>
 		</control>
@@ -480,7 +476,7 @@
 			<height>48</height>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColourHighlight]">osd/eject.png</texturefocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/eject.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/eject.png</texturenofocus>
 			<onclick>EjectTray()</onclick>
 			<visible>System.HasMediadvd</visible>

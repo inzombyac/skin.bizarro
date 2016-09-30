@@ -219,7 +219,7 @@
 			<right>10</right>
 			<height>120</height>
 			<texture border="5" colordiffuse="Dark1">common/box.png</texture>
-			<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+			<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
 			<bordersize>6,0,0,0</bordersize>
 		</control>
 		<control type="image">
@@ -433,7 +433,7 @@
 			<right>10</right>
 			<height>120</height>
 			<texture border="5" colordiffuse="Dark1">common/box.png</texture>
-			<bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+			<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
 			<bordersize>6,0,0,0</bordersize>
 		</control>
 		<control type="image">

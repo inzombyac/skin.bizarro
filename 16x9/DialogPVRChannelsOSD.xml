@@ -49,7 +49,7 @@
 				<posy>73</posy>
 				<width>128</width>
 				<align>right</align>
-				<textcolor>$VAR[ColourHighlight]</textcolor>
+				<textcolor>$VAR[ColorHighlight]</textcolor>
 				<font>TinyBold</font>
 				<label>$INFO[System.Time(hh:mm)]</label>
 			</control>
@@ -147,7 +147,7 @@
 					<control type="image">
 						<width>667</width>
 						<height>109</height>
-						<texture colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
+						<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 					</control>
 					<control type="image">
 						<width>667</width>

@@ -75,7 +75,7 @@
                     <textoffsetx>15</textoffsetx>
                     <font>Home</font>
                     <label>Actions</label>
-                    <textcolor>$VAR[ColourHighlight]</textcolor>
+                    <textcolor>$VAR[ColorHighlight]</textcolor>
                     <aligny>center</aligny>
                 </control>
 				<control type="button" id="9092">

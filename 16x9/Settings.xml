@@ -90,7 +90,7 @@
                         <right>0</right>
                         <bottom>10</bottom>
                         <texture border="5" colordiffuse="Dark1">common/white.png</texture>
-                        <bordertexture colordiffuse="$VAR[ColourHighlight]">common/white.png</bordertexture>
+                        <bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
                         <bordersize>6,0,0,0</bordersize>
                     </control>
                     <control type="image">
@@ -120,7 +120,7 @@
                 </focusedlayout>
                 <content>
                     <item id="1">
-                        <label>480</label>
+                        <label>24997</label>
                         <label2>31156</label2>
                         <icon>special://skin/extras/icons/appearance.png</icon>
                         <onclick>activatewindow(AppearanceSettings)</onclick>
@@ -174,7 +174,7 @@
                         <onclick>activatewindow(Profiles)</onclick>
                     </item>
 					<item id="7">
-                        <label>705</label>
+                        <label>14208</label>
                         <label2>31164</label2>
                         <icon>special://skin/extras/icons/network.png</icon>
                         <onclick>activatewindow(ServiceSettings)</onclick>

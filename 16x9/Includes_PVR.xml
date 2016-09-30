@@ -32,7 +32,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Live TV Sections</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="9001">
@@ -76,7 +76,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>View Options</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 					<visible>Control.IsVisible(10)</visible>
 				</control>
@@ -118,7 +118,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>View Options</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="button" id="28">
@@ -148,7 +148,7 @@
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
 					<label>Misc Options</label>
-					<textcolor>$VAR[ColourHighlight]</textcolor>
+					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
 				<control type="radiobutton" id="6">
@@ -1092,7 +1092,7 @@
 				<posx>50</posx>
 				<posy>2</posy>
 				<height>68</height>
-				<texture border="12" colordiffuse="$VAR[ColourHighlight]">common/white.png</texture>
+				<texture border="12" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 				<visible>Control.HasFocus(10)</visible>
 			</control>
 			<control type="image">
@@ -1405,7 +1405,7 @@
 					<font>SmallBold</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
-					<label>[COLOR=$VAR[ColourHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Season, ,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title, • ,]$INFO[ListItem.EpisodeName, (,)][COLOR=$VAR[ColourHighlight]][/COLOR]$INFO[ListItem.Genre, • ,]</label>
+					<label>[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Season, ,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title, • ,]$INFO[ListItem.EpisodeName, (,)][COLOR=$VAR[ColorHighlight]][/COLOR]$INFO[ListItem.Genre, • ,]</label>
 					<visible>!String.IsEmpty(ListItem.Season)</visible>
 				</control>
 				<control type="label">
@@ -1417,7 +1417,7 @@
 					<font>SmallBold</font>
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
-					<label>[COLOR=$VAR[ColourHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Title, • ,]$INFO[ListItem.EpisodeName, (,)][COLOR=$VAR[ColourHighlight]][/COLOR]$INFO[ListItem.Genre, • ,]</label>
+					<label>[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,][/COLOR]$INFO[ListItem.Title, • ,]$INFO[ListItem.EpisodeName, (,)][COLOR=$VAR[ColorHighlight]][/COLOR]$INFO[ListItem.Genre, • ,]</label>
 					<visible>String.IsEmpty(ListItem.Season)</visible>
 				</control>
 				<control type="textbox">

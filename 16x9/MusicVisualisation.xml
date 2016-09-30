@@ -54,7 +54,7 @@
                         <left>-30</left>
                         <width>520</width>
                         <height>520</height>
-                        <texture colordiffuse="$VAR[ColourHighlight]" border="20">thumbs/cd_shadow_glow.png</texture>
+                        <texture colordiffuse="$VAR[ColorHighlight]" border="20">thumbs/cd_shadow_glow.png</texture>
                     </control>
                     <control type="image">
                         <left>280</left>
@@ -132,49 +132,49 @@
                                     <posx>-16</posx>
                                     <width>64</width>
                                     <height>64</height>
-                                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+                                    <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
                                     <texture background="true">flags/$VAR[OSDMusicFlagstar1].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
-                                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+                                    <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
                                     <texture background="true">flags/$VAR[OSDMusicFlagstar2].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
-                                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+                                    <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
                                     <texture background="true">flags/$VAR[OSDMusicFlagstar3].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
-                                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+                                    <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
                                     <texture background="true">flags/$VAR[OSDMusicFlagstar4].png</texture>
                                 </control>
                                 <control type="image">
                                     <posx>-48</posx>
                                     <width>64</width>
                                     <height>64</height>
-                                    <colordiffuse>$VAR[ColourHighlight]</colordiffuse>
+                                    <colordiffuse>$VAR[ColorHighlight]</colordiffuse>
                                     <texture background="true">flags/$VAR[OSDMusicFlagstar5].png</texture>
                                 </control>
                                 <control type="image">
                                     <centertop>14</centertop>
                                     <width>120</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/equaliser.gif</texture>
+                                    <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/equaliser.gif</texture>
                                     <visible>!Player.Paused</visible>
                                 </control>
                                 <control type="image">
                                     <centertop>14</centertop>
                                     <width>120</width>
                                     <height>64</height>
-                                    <texture colordiffuse="$VAR[ColourHighlight]">special://skin/extras/icons/equaliser_stop.gif</texture>
+                                    <texture colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/equaliser_stop.gif</texture>
                                     <visible>Player.Paused</visible>
                                 </control>
                                 <control type="image">
@@ -249,9 +249,9 @@
                             <info>Player.ProgressCache</info>
                             <visible>true</visible>
                             <texturebg colordiffuse="00ffffff">osd/progress-bg.png</texturebg>
-                            <lefttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</lefttexture>
-                            <midtexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</midtexture>
-                            <righttexture colordiffuse="$VAR[ColourHighlight2]">osd/progress-end.png</righttexture>
+                            <lefttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</lefttexture>
+                            <midtexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</midtexture>
+                            <righttexture colordiffuse="$VAR[ColorHighlight2]">osd/progress-end.png</righttexture>
                         </control>
 
                         <control type="progress" id="23">
