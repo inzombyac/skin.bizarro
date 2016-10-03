@@ -3,12 +3,13 @@
 <window>
     <defaultcontrol always="true">52</defaultcontrol>
     <backgroundcolor>0</backgroundcolor>
-	<onload condition="!Skin.HasSetting(home.masteruser)">SetFocus(52,1)</onload>
+	<onload condition="Integer.IsGreater(Container(52).NumItems,0)">SetFocus(52,1)</onload>
+	<onload>Skin.SetBool(login.reset)</onload>
     <controls>
 		<control type="group">
             <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-            <include>Furniture_Header</include>
-            <include>Furniture_Clock</include>
+            <!-- <include>Furniture_Header</include>
+            <include>Furniture_Clock</include> -->
 			<aligny>center</aligny>
             <control type="list" id="52">
                 <posx>635</posx>
@@ -23,7 +24,7 @@
 						<width>650</width>
                         <height>120</height>
 						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
 					</control>
 					<control type="label">
                         <posx>140</posx>
@@ -33,7 +34,7 @@
                         <textcolor>Dark1</textcolor>
                         <font>SmallBold</font>
                         <label>$INFO[ListItem.Label]</label>
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
                     </control>
                     <control type="label">
                         <posx>140</posx>
@@ -43,18 +44,15 @@
                         <textcolor>Dark2</textcolor>
                         <label>$INFO[ListItem.Label2]</label>
                         <font>Font-ListInfo</font>
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
                     </control>
                 </itemlayout>
                 <focusedlayout height="120">
-					<control type="button">
-						<onfocus condition="!Skin.HasSetting(home.masteruser) + String.IsEqual(ListItem.Label,Master User)">SetFocus(52,1)</onfocus>
-					</control>
                     <control type="image">
 						<width>650</width>
                         <height>120</height>
 						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
 					</control>
 					<control type="image">
 						<width>650</width>
@@ -62,7 +60,7 @@
 						<texture colordiffuse="Light1" border="5">common/box.png</texture>
 						  <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
 					</control>
 					<control type="image">                                
                         <left>8</left>
@@ -73,10 +71,10 @@
                         <texture diffuse="diffuse/dialogselect.png" fallback="DefaultUser.png">$INFO[Listitem.Icon]</texture>
                         <animation effect="slide" start="0,120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-120" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(52).OnNext">Focus</animation>
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
                     </control>
                     <control type="group">
-						<visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible>
+						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
                         <animation type="Focus" condition="Container(52).OnNext | Container(52).OnPrevious" reversible="false">
                             <effect type="fade" start="50" end="100" time="300" tween="sine" easing="inout" />
                         </animation>
@@ -102,17 +100,17 @@
                     </control>
                 </focusedlayout>
             </control>
-			<control type="radiobutton" id="8">
+			<control type="button" id="8">
 				<onup>52</onup>
 				<bottom>100</bottom>
-				<width>650</width>
 				<left>635</left>
+				<width>650</width>
 				<height>70</height>
-				<label>Show Master Profile</label>
-				<radioposx>600</radioposx>
-				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-				<selected>Skin.HasSetting(home.masteruser)</selected>
-				<onclick>Skin.ToggleSetting(home.masteruser)</onclick>
+				<texturenofocus colordiffuse="Light1" border="16">common/white.png</texturenofocus>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/white.png</texturefocus>
+				<label>33060</label>
+				<onclick>ActivateWindow(shutdownmenu)</onclick>
+				<align>center</align>
 			</control>
         </control>
     </controls>

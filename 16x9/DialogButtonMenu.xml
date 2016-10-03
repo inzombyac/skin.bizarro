@@ -123,7 +123,12 @@
                     <include>DefContextButton</include>
                     <label>10003</label>
                     <onclick>ActivateWindow(filemanager)</onclick>
-                </control> -->        
+                </control> -->   
+				<control type="button" id="3123">
+                    <include>DefContextButton</include>
+                    <label>31795</label>
+                    <onclick>Skin.ToggleSetting(DebugGrid)</onclick>
+                </control>			
                 <control type="button" id="3120">
                     <include>DefContextButton</include>
                     <label>20183</label>

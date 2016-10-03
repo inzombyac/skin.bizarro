@@ -11,7 +11,11 @@
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
 		<control type="button" id="9945">
-           <onfocus condition="String.IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
+			<!-- Workaround -->
+			<onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus>
+			<onfocus>Skin.reset(login.reset)</onfocus>
+			<!-- Workaround -->
+			<onfocus condition="String.IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
         </control>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>
@@ -22,8 +26,8 @@
 		<include>DebugGridHome</include>
 		<control type="group" description="Emby Home Menu">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml)</visible>
-			<include>HomeEmbyRow</include>
-			<include>HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyRow</include>
+			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
 		</control>
 		<control type="group" description="Side Menu">
 			<include>Def9000SideBladeLeft</include>

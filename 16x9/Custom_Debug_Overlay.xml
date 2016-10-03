@@ -43,7 +43,7 @@
 
                 <control type="label">
                     <include>WindowID</include>
-                    <label>LoginScreen.xml</label>
+                    <label>LoginScreen.xml: $INFO[System.ProfileName]</label>
                     <visible>Window.IsVisible(LoginScreen.xml)</visible>
                 </control>
 
