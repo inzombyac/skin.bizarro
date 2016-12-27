@@ -1681,14 +1681,12 @@
 				<left>10</left>
 				<texture colordiffuse="Dark1">$VAR[EmbyHomeClearArt]</texture>
 				<aspectratio align="right" aligny="center">keep</aspectratio>
-				<!-- <visible>Skin.HasSetting(furniture.flags)</visible> -->
 			</control>
 			<!-- <control type="image">
 				<centertop>50%</centertop>
 				<width>200</width>
 				<texture fallback="resource://resource.images.studios.white/default-studio.png">$INFO[Container(4016).ListItem.Studio,resource://resource.images.studios.white/,.png]</texture>
 				<aspectratio align="right" aligny="center">keep</aspectratio>
-				<visible>!Skin.HasSetting(furniture.flags)</visible>
 			</control> -->
 		</control>
 	</include>

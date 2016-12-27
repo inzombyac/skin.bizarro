@@ -152,7 +152,7 @@
 						<posx>800</posx>
 						<font>Tiny</font>
 						<height>60</height>
-						<label>Used Memory:</label>
+						<label>31104</label>
 						<include>DefSettingsButton</include>
 					</control>
 					<control type="label">

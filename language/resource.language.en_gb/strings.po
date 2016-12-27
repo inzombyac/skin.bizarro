@@ -26,21 +26,21 @@ msgstr ""
 # Custom_Hub_Movies.xml: 108, Custom_Hub_TV.xml: 108
 # Includes_Furniture.xml:700, Includes_Labels.xml: 58, 70, 72, 74, 355, 356, 357
 # View_56_MediaInfo.xml: 162
-# msgctxt "#31102"
-# msgid "min"
-# msgstr ""
+msgctxt "#31102"
+msgid "min"
+msgstr ""
 
 # Includes_Furniture.xml: 891
 # Includes_Labels.xml: 259, 274
 # overrides.xml: 30
-#msgctxt "#31103"
-#msgid "TV Hub"
-#msgstr ""
+msgctxt "#31103"
+msgid "TV Hub"
+msgstr ""
 
 # SettingsSystemInfo.xml: 155
-#msgctxt "#31104"
-#msgid "Used Memory"
-#msgstr ""
+msgctxt "#31104"
+msgid "Used Memory"
+msgstr ""
 
 # MyWeather.xml: 492
 msgctxt "#31105"

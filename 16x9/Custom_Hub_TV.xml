@@ -2,7 +2,6 @@
 <!-- Foundation -->
 <window type="window" id="1102">
     <defaultcontrol always="true">9501</defaultcontrol>
-    
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
@@ -105,7 +104,7 @@
                             <font>Small</font>
                             <textcolor>PanelWhite70</textcolor>
                             <selectedcolor>PanelWhite70</selectedcolor>
-                            <label>$INFO[Container(9500).ListItem.Duration,, min]</label>
+                            <label>$INFO[Container(9500).ListItem.Duration,, $LOCALIZE[31102]]</label>
                         </control>
                         <control type="image">
                             <centerright>110</centerright>

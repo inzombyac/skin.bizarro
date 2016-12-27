@@ -63,7 +63,7 @@
 	<variable name="LabelGenre">
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[ListItem.Studio, • ]</value>
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,]$INFO[ListItem.Duration, • , min]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[31102]]</value>
 		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
@@ -75,11 +75,11 @@
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[20074])">$INFO[ListItem.MPAA]</value>
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[570])">$INFO[ListItem.DateAdded]</value>
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
-		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, min]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="[Container.Content(tvshows) + !Control.IsVisible(54)] | Container.Content(episodes)">$VAR[LabelYear]</value>
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, min]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, min]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
 		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),livetv) + String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4019).ListItem.Property(Rating)]</value>
 		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),videos)">$INFO[Container(4019).ListItem.Year]</value>
@@ -361,9 +361,9 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(widget),LiveTV)">[COLOR=Dark2]$INFO[Container(301).ListItem.StartTime]$INFO[Container(301).ListItem.EndTime, - ,][/COLOR]$INFO[Container(301).ListItem.Title,  ,    ][COLOR=Dark2]$LOCALIZE[515][/COLOR]$INFO[Container(301).ListItem.Genre,  ,][CR][COLOR=Dark2]$INFO[Container(301).ListItem.NextStartTime]$INFO[Container(301).ListItem.NextEndTime, - ,][/COLOR]$INFO[Container(301).ListItem.NextTitle,  ,    ][COLOR=Dark2]$LOCALIZE[515][/COLOR]$INFO[Container(301).ListItem.NextGenre,  ,]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(widget),NextAired)"></value>
 		<value condition="String.Contains(Container(300).ListItem.Property(widget),Album)">$INFO[Container(301).ListItem.Artist]$INFO[Container(301).ListItem.Year, • ,]</value>
-		<value condition="!String.IsEqual(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) + !String.IsEmpty(Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.TvShowTitle]$INFO[Container(301).ListItem.Premiered, • ,]$INFO[Container(301).ListItem.Duration, • , min]$INFO[Container(301).ListItem.Rating, • ,]</value>
-		<value condition="!String.IsEqual(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) + String.IsEmpty(Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Year]$INFO[Container(301).ListItem.Duration, • , min]$INFO[Container(301).ListItem.Rating, • ,]</value>
-		<value condition="String.IsEqual(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Episode,, $LOCALIZE[20360]]$INFO[Container(301).ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[Container(301).ListItem.Duration, • , min]$INFO[Container(301).ListItem.Rating, • ,]</value>
+		<value condition="!String.IsEqual(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) + !String.IsEmpty(Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.TvShowTitle]$INFO[Container(301).ListItem.Premiered, • ,]$INFO[Container(301).ListItem.Duration, • , $LOCALIZE[31102]]$INFO[Container(301).ListItem.Rating, • ,]</value>
+		<value condition="!String.IsEqual(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle) + String.IsEmpty(Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Year]$INFO[Container(301).ListItem.Duration, • , $LOCALIZE[31102]]$INFO[Container(301).ListItem.Rating, • ,]</value>
+		<value condition="String.IsEqual(Container(301).ListItem.Title,Container(301).ListItem.TvShowTitle)">$INFO[Container(301).ListItem.Episode,, $LOCALIZE[20360]]$INFO[Container(301).ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[Container(301).ListItem.Duration, • , $LOCALIZE[31102]]$INFO[Container(301).ListItem.Rating, • ,]</value>
 	</variable>
 	<variable name="PVRInfoStatus">
 		<value condition="ListItem.IsRecording"> • $LOCALIZE[19158]</value>
@@ -872,23 +872,23 @@
 		<value>$INFO[ListItem.VideoCodec]</value>
 	</variable>
 	<variable name="DurationLong">
-        <value condition="String.IsEqual(ListItem.DBTYPE,song)">$INFO[ListItem.Duration,, min]</value>
-		<value condition="!String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItemDuration.Hours))">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
-		<value>$INFO[ListItem.Duration,,min]</value>
+        <value condition="String.IsEqual(ListItem.DBTYPE,song)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="!String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItemDuration.Hours))">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,$LOCALIZE[31102]]</value>
+		<value>$INFO[ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="DurationLongVideoInfo">
-		<value condition="!Skin.HasSetting(furniture.alternate.duration) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours), ,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,min]</value>
-		<value>$INFO[ListItem.Duration,,min]</value>
+		<value condition="!Skin.HasSetting(furniture.alternate.duration) + !String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0)">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours), ,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,$LOCALIZE[31102]]</value>
+		<value>$INFO[ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="DurationHomeLong">
-		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(home).Property(Duration), ,min]</value>
-		<value>$INFO[Container(301).ListItem.Duration,,min]</value>
+		<value condition="!Skin.HasSetting(furniture.alternate.duration)">$INFO[Window(home).Property(Duration), ,$LOCALIZE[31102]]</value>
+		<value>$INFO[Container(301).ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="EmbyDurationHomeLong">
-		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration,,min]</value>
-		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration,,min]</value>
-		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration,,min]</value>
-		<value condition="Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)">$INFO[Container(4019).ListItem.Duration,,min]</value>
+		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)">$INFO[Container(4019).ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="MPAA">
 		<value condition="String.Contains(ListItem.Mpaa,gb-pg)">PG</value>
