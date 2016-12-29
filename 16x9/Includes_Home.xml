@@ -682,13 +682,37 @@
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
+					<visible>Integer.IsGreater(Container(40016).NumItems,3) + !Integer.IsGreater(Container(40016).NumItems,6) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
+					<include>Animation.FadeOut</include>
+					<include>Animation.DelayFadeIn</include>
+				</control>
+				<control type="panel" id="4016">
+					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[double_widget_width]</width>
+					<height>735</height>
+					<onup>300</onup>
+					<ondown>4016</ondown>
+					<pagecontrol>40160</pagecontrol>
+					<onleft>4012</onleft>
+					<onright condition="Control.IsVisible(4017)">4017</onright>
+					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>6</preloaditems>
 					<orientation>vertical</orientation>
 					<scrolltime tween="quadratic">0</scrolltime>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[DefWidgetRight1Content]</content>
-					<visible>Integer.IsGreater(Container(40016).NumItems,3) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
+					<visible>Integer.IsGreater(Container(40016).NumItems,3) + Integer.IsGreater(Container(40016).NumItems,6) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>

@@ -358,7 +358,7 @@
 	<propertydefault labelID="tvshows" property="widget.right1">Next Up</propertydefault>
 	<propertydefault labelID="tvshows" property="widgetName.right1">Next Up</propertydefault>
 	<propertydefault labelID="tvshows" property="widgetType.right1">tvshows</propertydefault>
-	<propertydefault labelID="tvshows" property="widgetPath.right1">plugin://script.skin.helper.service/?action=nextepisodes&amp;limit=10&amp;reload=$INFO[Window(Home).Property(widgetreload)]</propertydefault>
+	<propertydefault labelID="tvshows" property="widgetPath.right1">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</propertydefault>
 	<propertydefault labelID="tvshows" property="widgetTarget.right1">video</propertydefault>
 	
 	<propertydefault labelID="tvshows" property="widget.right2">Unwatched</propertydefault>
@@ -407,7 +407,7 @@
 	<propertydefault labelID="music" property="widgetPath.right2">plugin://service.library.data.provider?type=recommendedalbums&amp;reload=$INFO[Window.Property(recommendedalbums)]</propertydefault>
 	<propertydefault labelID="music" property="widgetTarget.right2">music</propertydefault>
 	
-	<widgetdefaultnode labelID="livetv" group="mainmenu" label="TV Channels" type="videos" path="pvr://channels/tv/All&amp;channels/" target="video">TV Channels</widgetdefaultnode>
+	<widgetdefaultnode labelID="livetv" group="mainmenu" label="TV Channels" type="videos" path="plugin://script.skin.helper.widgets/?action=channels&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]" target="video">TV Channels</widgetdefaultnode>
 	
 	<propertydefault labelID="livetv" property="widget.right1">Recordings</propertydefault>
 	<propertydefault labelID="livetv" property="widgetName.right1">Recordings</propertydefault>
@@ -418,7 +418,7 @@
 	<propertydefault labelID="livetv" property="widget.right2">Next Aired</propertydefault>
 	<propertydefault labelID="livetv" property="widgetName.right2">Next Aired</propertydefault>
 	<propertydefault labelID="livetv" property="widgetType.right2">videos</propertydefault>
-	<propertydefault labelID="livetv" property="widgetPath.right2">plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</propertydefault>
+	<propertydefault labelID="livetv" property="widgetPath.right2">plugin://script.skin.helper.widgets/?action=nextaired&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</propertydefault>
 	<propertydefault labelID="livetv" property="widgetTarget.right2">video</propertydefault>
 		
 	<widgetdefaultnode labelID="programs" group="mainmenu" label="Programs" type="videos" path="addons://sources/executable" target="video">Programs</widgetdefaultnode>
