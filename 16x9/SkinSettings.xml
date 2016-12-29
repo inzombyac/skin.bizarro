@@ -636,7 +636,7 @@
 					<control type="button" id="9282">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor.name)</onclick>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor.name)</onclick>
 						<label> - Set main highlight colour</label>
 						<label2>[COLOR=$VAR[ColorHighlight]]$INFO[Skin.String(focuscolor.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColorHighlight)</visible>
@@ -662,7 +662,7 @@
 					<control type="button" id="9285">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=focuscolor2.name)</onclick>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=focuscolor2.name)</onclick>
 						<label> - Set second highlight colour</label>
 						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(focuscolor2.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColorHighlight2)</visible>
@@ -688,7 +688,7 @@
 					<control type="button" id="9288">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=selectedcolor.name)</onclick>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=selectedcolor.name)</onclick>
 						<label> - Set selected colour</label>
 						<label2>[COLOR=$VAR[ColourSelected]]$INFO[Skin.String(selectedcolor.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(ColourSelected)</visible>
@@ -705,7 +705,7 @@
 					<control type="button" id="92868">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.service,action=COLORPICKER,skinstring=posterbacking.colour.name)</onclick>
+						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=posterbacking.colour.name)</onclick>
 						<label> - Set backing colour</label>
 						<label2>[COLOR=$INFO[Skin.String(posterbacking.colour.name)]]$INFO[Skin.String(posterbacking.colour.name)][/COLOR]</label2>
 						<visible>Skin.HasSetting(PosterBackingColour)</visible>

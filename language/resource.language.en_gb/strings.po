@@ -792,3 +792,7 @@ msgctxt "#31795"
 msgid "Wall Poster"
 msgstr ""
 
+# SmartPlaylistEditor.xml 224
+msgctxt "#31796"
+msgid "Order"
+msgstr ""

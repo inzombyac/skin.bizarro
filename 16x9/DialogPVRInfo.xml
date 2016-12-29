@@ -67,6 +67,13 @@
 						<include>DefInfoButtons</include>
 						<visible>Window.IsActive(PVRGuideInfo)</visible>
 					</control>
+					<control type="button" id="9">
+						<description>timer</description>
+						<label>19061</label>
+						<width>260</width>
+						<include>DefInfoButtons</include>
+						<visible>Window.IsActive(PVRGuideInfo)</visible>
+					</control>
 					<!-- <control type="button" id="9001">
 						<description>ExtInfo</description>
 						<label>31147</label>

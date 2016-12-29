@@ -32,7 +32,6 @@ msgctxt "#31104"
 msgid "Used Memory"
 msgstr "Used Memory"
 
-# MyWeather.xml: 492
 msgctxt "#31105"
 msgid "Location:"
 msgstr "Location:"
@@ -817,3 +816,7 @@ msgstr "Wall Poster"
 msgctxt "#31103"
 msgid "TV Hub"
 msgstr "TV Hub"
+
+msgctxt "#31796"
+msgid "Order"
+msgstr "Order"
