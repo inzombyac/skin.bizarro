@@ -332,7 +332,7 @@
 		<!--<value>$INFO[Skin.String(HomeItemDBID)] / $INFO[Skin.String(HomeItemTVShowTitle)] / $INFO[Skin.String(HomeItemDBType)] / $INFO[Skin.String(HomeItemPath)]</value>-->
 	</variable>
 	<variable name="EmbyHomeSelectedMenu">
-		<value condition="!String.IsEmpty(Window(Home).Property(EmbyHomeLabelStripped)) + String.Contains(Container(300).ListItem.label,-)">$INFO[Window(Home).Property(EmbyHomeLabelStripped)]</value>
+		<!-- <value condition="!String.IsEmpty(Window(Home).Property(EmbyHomeLabelStripped)) + String.Contains(Container(300).ListItem.label,-)">$INFO[Window(Home).Property(EmbyHomeLabelStripped)]</value> -->
 		<value>$INFO[Container(300).ListItem.label]</value>
 	</variable>
 	<variable name="EmbyHomeMenuLabel">

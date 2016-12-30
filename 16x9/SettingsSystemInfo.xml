@@ -109,6 +109,11 @@
 						<include>DefSettingsButton</include>
 						<label>19012</label>
 					</control>
+					<control type="button" id="100">
+						<description>Privacy</description>
+						<include>DefSettingsButton</include>
+						<label>12389</label>
+					</control>
 				</control>
 				<control type="grouplist">
 					<left>480</left>
@@ -239,6 +244,16 @@
 						<height>40</height>
 						<include>DefSettingsButton</include>
 					</control>
+				</control>
+				<control type="textbox" id="30">
+					<left>480</left>
+					<top>160</top>
+					<bottom>0</bottom>
+					<right>30</right>
+					<font>Tiny</font>
+					<height>455</height>
+					<include>DefSettingsButton</include>
+					<autoscroll delay="5000" repeat="7500" time="3000">true</autoscroll>
 				</control>
 			</control>
 		</control>

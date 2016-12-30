@@ -209,6 +209,7 @@
 					<include>DefSettingsOKCancelButton</include>
 					<onclick>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onclick>
 					<onclick>Back</onclick>
+					<onclick>ReloadSkin()</onclick>
 					<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				<control type="button" id="8781" description="Back Submenu">

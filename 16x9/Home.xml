@@ -12,6 +12,7 @@
 	<controls>
 		<control type="button" id="9945">
 			<!-- Workaround -->
+			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
 			<onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus>
 			<onfocus>Skin.reset(login.reset)</onfocus>
 			<!-- Workaround -->
