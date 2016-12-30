@@ -167,7 +167,8 @@
 						<width>100%</width>
 						<height>66</height>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right1)</onclick>
@@ -178,7 +179,8 @@
 						<width>100%</width>
 						<height>66</height>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right2)</onclick>
@@ -189,7 +191,8 @@
 						<width>100%</width>
 						<height>66</height>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),music) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),music) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right3)</onclick>

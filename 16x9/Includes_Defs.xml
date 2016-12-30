@@ -1482,6 +1482,7 @@
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(211).ListItem.Property(widgetPath)]</value>
 	</variable>
 	<variable name="DefWidgetRight1Content">
+	
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right1))">$INFO[Container(300).ListItem.Property(widgetPath.right1)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right1.nextepisodes))">$INFO[Container(300).ListItem.Property(widgetPath.right1.nextepisodes)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right1.inprogress))">$INFO[Container(300).ListItem.Property(widgetPath.right1.inprogress)]</value>
@@ -1494,6 +1495,7 @@
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right1.recent))">$INFO[Container(211).ListItem.Property(widgetPath.right1.recent)]</value>
 	</variable>
 	<variable name="DefWidgetRight2Content">
+		
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2))">$INFO[Container(300).ListItem.Property(widgetPath.right2)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.unwatched)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos) + !String.IsEqual(Container(300).ListItem.Property(type),channels) + !String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(300).ListItem.Property(widgetPath.right2.unwatched)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2.recommended)) + !String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos) + !String.IsEqual(Container(300).ListItem.Property(type),channels) + !String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(300).ListItem.Property(widgetPath.right2.recommended)]</value>

@@ -375,10 +375,10 @@
 	
 	<widgetdefaultnode labelID="movies" group="mainmenu" label="Movie Spotlight" type="movies" path="special://skin/extras/playlists/RandomMovies.xsp" target="video">Movie Spotlight</widgetdefaultnode>
 	
-	<propertydefault labelID="movies" property="widget.right1">Recommended</propertydefault>
-	<propertydefault labelID="movies" property="widgetName.right1">Recommended</propertydefault>
+	<propertydefault labelID="movies" property="widget.right1">Resume</propertydefault>
+	<propertydefault labelID="movies" property="widgetName.right1">Resume</propertydefault>
 	<propertydefault labelID="movies" property="widgetType.right1">movies</propertydefault>
-	<propertydefault labelID="movies" property="widgetPath.right1">special://skin/extras/playlists/InProgressRecommendedMovies.xsp</propertydefault>
+	<propertydefault labelID="movies" property="widgetPath.right1">special://skin/extras/playlists/InProgressMovies.xsp</propertydefault>
 	<propertydefault labelID="movies" property="widgetTarget.right1">video</propertydefault>
 	
 	<propertydefault labelID="movies" property="widget.right2">Unwatched</propertydefault>
@@ -386,6 +386,12 @@
 	<propertydefault labelID="movies" property="widgetType.right2">movies</propertydefault>
 	<propertydefault labelID="movies" property="widgetPath.right2">special://skin/extras/playlists/UnwatchedMovies.xsp</propertydefault>
 	<propertydefault labelID="movies" property="widgetTarget.right2">video</propertydefault>
+	
+	<propertydefault labelID="movies" property="widget.right3">Similiar to movies you watched...</propertydefault>
+	<propertydefault labelID="movies" property="widgetName.right3">Similiar to movies you watched...</propertydefault>
+	<propertydefault labelID="movies" property="widgetType.right3">movies</propertydefault>
+	<propertydefault labelID="movies" property="widgetPath.right3">plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=movies&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</propertydefault>
+	<propertydefault labelID="movies" property="widgetTarget.right3">video</propertydefault>
 	
 	<!-- <propertydefault labelID="movies" property="widget.right3">Oldest</propertydefault>
 	<propertydefault labelID="movies" property="widgetName.right3">Oldest</propertydefault>

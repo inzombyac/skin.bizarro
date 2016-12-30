@@ -234,6 +234,7 @@
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
 		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">[CR]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(originaltitle))">$INFO[ListItem.Property(originaltitle)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName.right3))">$INFO[Container(300).ListItem.Property(widgetName.right3)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right3.recentepisodes))">$INFO[Container(300).ListItem.Property(widgetName.right3.recentepisodes)]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right3.recent)) + [!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right1.nextepisodes)) | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.right1.inprogress))]">$INFO[Container(300).ListItem.Property(widgetName.right3.recent)]</value>

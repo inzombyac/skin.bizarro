@@ -205,12 +205,32 @@
 			<control type="fixedlist" id="40016">
 				<content limit="25">$VAR[DefWidgetRight1Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+			</control>
+			<control type="fixedlist" id="40016">
+				<content limit="25">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
+				<onfocus>SetFocus(300)</onfocus>
+				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="fixedlist" id="40016">
+				<content limit="25">special://skin/extras/playlists/InProgressMovies.xsp</content>
+				<onfocus>SetFocus(300)</onfocus>
+				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
 			</control>
 			<control type="fixedlist" id="40017">
 				<content limit="25">$VAR[DefWidgetRight2Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+			</control>
+			<control type="fixedlist" id="40017">
+				<content limit="25">special://skin/extras/playlists/UnwatchedShows.xsp</content>
+				<onfocus>SetFocus(300)</onfocus>
+				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			</control>
+			<control type="fixedlist" id="40017">
+				<content limit="25">special://skin/extras/playlists/UnwatchedMovies.xsp</content>
+				<onfocus>SetFocus(300)</onfocus>
+				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
 			</control>
 			<control type="fixedlist" id="40018">
 				<content limit="25">$VAR[DefWidgetRight3Content]</content>
@@ -637,9 +657,57 @@
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
+				<!-- TV Shows -->
+				<control type="panel" id="4016">
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>735</height>
+					<onup>300</onup>
+					<ondown>4016</ondown>
+					<pagecontrol>40160</pagecontrol>
+					<onleft>4012</onleft>
+					<onright condition="Control.IsVisible(4017)">4017</onright>
+					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<content limit="12" target="videos">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
+					<include>Animation.FadeOut</include>
+					<include>Animation.DelayFadeIn</include>
+				</control>
+				<!-- Movies -->
+				<control type="panel" id="4016">
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>735</height>
+					<onup>300</onup>
+					<ondown>4016</ondown>
+					<pagecontrol>40160</pagecontrol>
+					<onleft>4012</onleft>
+					<onright condition="Control.IsVisible(4017)">4017</onright>
+					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<content limit="12" target="videos">special://skin/extras/playlists/InProgressMovies.xsp</content>
+					<include>Animation.FadeOut</include>
+					<include>Animation.DelayFadeIn</include>
+				</control>
 				<!-- Videos -->
 				<control type="panel" id="4016">
-					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
+					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
@@ -799,8 +867,71 @@
 					<visible>Control.IsVisible(4017)</visible>
 					<include>Animation.EmbyRight2SlideMusic</include>
 				</control>
-				<!-- Widgets -->
-				<!-- Right 1: Double, Right 2: Triple -->
+				<!-- TV Shows -->
+				<control type="panel" id="4017">
+					<description>Widget</description>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>732</height>
+					<onup>300</onup>
+					<ondown>4017</ondown>
+					<pagecontrol>40170</pagecontrol>
+					<onleft condition="Control.IsVisible(4016)">4016</onleft>
+					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>8</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+						<param name="widget_width">$PARAM[single_widget_width]</param>
+						<param name="item_width">$PARAM[item_width]</param>
+						<param name="widget_height">$PARAM[widget_height]</param>
+						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_top">$PARAM[overlay_top]</param>
+					</include>
+					<content limit="8" target="videos">special://skin/extras/playlists/UnwatchedShows.xsp</content>
+					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<include>Animation.FadeOut</include>
+					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.EmbyRight2Slide</include>
+				</control>
+				<!-- Movies -->
+				<control type="panel" id="4017">
+					<description>Widget</description>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>732</height>
+					<onup>300</onup>
+					<ondown>4017</ondown>
+					<pagecontrol>40170</pagecontrol>
+					<onleft condition="Control.IsVisible(4016)">4016</onleft>
+					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>8</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+						<param name="widget_width">$PARAM[single_widget_width]</param>
+						<param name="item_width">$PARAM[item_width]</param>
+						<param name="widget_height">$PARAM[widget_height]</param>
+						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_top">$PARAM[overlay_top]</param>
+					</include>
+					<content limit="8" target="videos">special://skin/extras/playlists/UnwatchedMovies.xsp</content>
+					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<include>Animation.FadeOut</include>
+					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.EmbyRight2Slide</include>
+				</control>
+				<!-- Videos -->
 				<control type="panel" id="4017">
 					<description>Widget</description>
 					<top>330</top>
@@ -827,80 +958,14 @@
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Content]</content>
 					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
-					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
+					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + 
+					!String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
+					!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<visible>!Container(300).Scrolling</visible>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
-				<!-- Right 1: Double, Right 2: Double -->
-				<!-- <control type="panel" id="4017">
-					<description>Widget</description>
-					<top>330</top>
-					<left>$PARAM[widget_left]</left>
-					<width>$PARAM[double_widget_width]</width>
-					<height>732</height>
-					<onup>300</onup>
-					<ondown>4017</ondown>
-					<pagecontrol>40170</pagecontrol>
-					<onleft condition="Control.IsVisible(4016)">4016</onleft>
-					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
-					<onright condition="Control.IsVisible(4018)">4018</onright>
-					<include>EmbyHomeInfoActions</include>
-					<preloaditems>4</preloaditems>
-					<orientation>vertical</orientation>
-					<scrolltime tween="quadratic">0</scrolltime>
-					<include content="EmbyWidget1Content">
-						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-						<param name="widget_width">$PARAM[single_widget_width]</param>
-						<param name="item_width">$PARAM[item_width]</param>
-						<param name="widget_height">$PARAM[widget_height]</param>
-						<param name="item_height">$PARAM[item_height]</param>
-						<param name="overlay_top">$PARAM[overlay_top]</param>
-					</include>
-					<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-					<visible>Integer.IsGreater(Container(40017).NumItems,2) + !Integer.IsGreater(Container(40017).NumItems,4)</visible>
-					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
-					<visible>!Container(300).Scrolling</visible>
-					<include>Animation.FadeOut</include>
-					<include>Animation.DelayFadeIn</include>
-					<include>Animation.EmbyRight2Slide</include>
-				</control> -->
-				<!-- Right 1: Double, Right 2: Single -->
-				<!-- <control type="panel" id="4017">
-					<description>Widget</description>
-					<top>330</top>
-					<left>$PARAM[widget_left]</left>
-					<width>$PARAM[single_widget_width]</width>
-					<height>732</height>
-					<onup>300</onup>
-					<ondown>4017</ondown>
-					<pagecontrol>40170</pagecontrol>
-					<onleft condition="Control.IsVisible(4016)">4016</onleft>
-					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
-					<onright condition="Control.IsVisible(4018)">4018</onright>
-					<include>EmbyHomeInfoActions</include>
-					<preloaditems>2</preloaditems>
-					<orientation>vertical</orientation>
-					<scrolltime tween="quadratic">0</scrolltime>
-					<include content="EmbyWidget1Content">
-						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-						<param name="widget_width">$PARAM[single_widget_width]</param>
-						<param name="item_width">$PARAM[item_width]</param>
-						<param name="widget_height">$PARAM[widget_height]</param>
-						<param name="item_height">$PARAM[item_height]</param>
-						<param name="overlay_top">$PARAM[overlay_top]</param>
-					</include>
-					<content limit="25" target="videos">$VAR[DefWidgetRight2Content]</content>
-					<visible>Integer.IsGreater(Container(40017).NumItems,0) + !Integer.IsGreater(Container(40017).NumItems,2)</visible>
-					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
-					<visible>!Container(300).Scrolling</visible>
-					<include>Animation.FadeOut</include>
-					<include>Animation.DelayFadeIn</include>
-					<include>Animation.EmbyRight2Slide</include>
-				</control> -->
 				<!-- Music -->
 				<control type="panel" id="4017">
 					<description>Widget</description>
