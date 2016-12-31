@@ -60,8 +60,8 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-                <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label>
-				
+                <!-- <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label> -->
+				<label>$INFO[Container(4016).CurrentItem]</label>
             </control>
 			<control type="label">
                 <include>ControlID5</include>
