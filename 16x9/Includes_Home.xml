@@ -60,7 +60,7 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-                <label>$VAR[GlobalFanart]</label>
+                <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label>
 				
             </control>
 			<control type="label">
@@ -352,17 +352,9 @@
 			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<control type="list" id="9004">
-			<content limit="25" sortby="random">special://skin/extras/playlists/RandomAlbums.xsp</content>
-			<include>EmbyHiddenItemLayout</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
-			<autoscroll time="15000">!Control.HasFocus(9004)</autoscroll>
+			<content>special://skin/extras/playlists/RandomMovie.xsp</content>
 			<onfocus>SetFocus(300)</onfocus>
-		</control>
-		<control type="list" id="9005">
-			<content limit="1" sortby="random">special://skin/extras/playlists/InProgressMovies.xsp</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),movies)</visible>
-			<onfocus>SetFocus(300)</onfocus>
 		</control>
 		<control type="list" id="9025">
 			<content>$VAR[DefWidgetMainContent]</content>

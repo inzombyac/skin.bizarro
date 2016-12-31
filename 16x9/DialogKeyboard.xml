@@ -479,8 +479,8 @@
                         <ondown condition="Control.IsVisible(5000)">5000</ondown>
                     </control>
                 </control>
-                <!-- <control type="group">
-                    <visible>System.HasAddon(script.extendedinfo) + !String.IsEmpty(Control.GetLabel(312).index(1)) + !Window.IsVisible(1130)</visible>
+                <control type="group">
+                    <visible>System.HasAddon(plugin.program.autocompletion) + !String.IsEmpty(Control.GetLabel(312).index(1)) + !Window.IsVisible(1130)</visible>
                     <top>480</top>
                     <centerleft>50%</centerleft>
                     <centertop>40%</centertop>
@@ -544,9 +544,9 @@
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                         </focusedlayout>
-                        <content>plugin://script.extendedinfo?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=10</content>
+						<content>plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).index(1)]&amp;&amp;limit=9</content>
                     </control>
-                </control> -->
+                </control>
             </control>
         </control>
     </controls>
