@@ -176,6 +176,7 @@
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
 		<value condition="Container(300).Scrolling">[CR]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$INFO[Container(4019).ListItem.Title]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">Kodi $INFO[System.BuildVersion]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$INFO[Container(4019).ListItem.TVShowTitle,,]</value>
@@ -189,6 +190,7 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),collection)">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Year]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$INFO[Container(4019).ListItem.Label2]</value>
 		<value condition="!String.IsEqual(Container(300).ListItem.Property(type),livetv)">$VAR[LabelDuration]</value>
 	</variable>
 	<variable name="WidgetMainSelectionLabel">

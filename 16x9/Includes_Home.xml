@@ -61,7 +61,7 @@
 			<control type="label">
                 <include>ControlID4</include>
                 <!-- <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label> -->
-				<label>$INFO[Container(4016).CurrentItem]</label>
+				<label>$VAR[EmbyMainWidgetIcon]</label>
             </control>
 			<control type="label">
                 <include>ControlID5</include>
@@ -115,7 +115,8 @@
 				<include>HomeEmbyContent</include>
 				<!-- <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus> -->
 				<!-- <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus> -->
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
+				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus> -->
+				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home),00:03,silent)</onfocus>
 			</control>
 		</control>
 	</include>
@@ -140,8 +141,10 @@
 				<texturenofocus>-</texturenofocus>
 				<!-- <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
 				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus> -->
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus>
-				<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
+				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus> -->
+				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home),00:03,silent)</onfocus>
+				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus> -->
+				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:03,silent)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -175,7 +178,6 @@
 		<!-- Widget Info -->
 		<control type="group">
 			<include>Animation.EmbyHomeSlide</include>
-			<include>Animation.EmbyHomeSlideMusic</include>
 			<animation type="WindowClose">
 				<effect type="fade" start="100" end="0" time="150" />
 			</animation>
@@ -183,7 +185,7 @@
 			<!-- Main menu item -->
 			<control type="label">
 				<left>SidePad</left>
-				<top>290</top>
+				<top>285</top>
 				<width>410</width>
 				<align>left</align>
 				<height>40</height>
@@ -205,32 +207,13 @@
 			<control type="fixedlist" id="40016">
 				<content limit="25">$VAR[DefWidgetRight1Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
-			</control>
-			<control type="fixedlist" id="40016">
-				<content limit="25">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</content>
-				<onfocus>SetFocus(300)</onfocus>
-				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="fixedlist" id="40016">
-				<content limit="25">special://skin/extras/playlists/InProgressMovies.xsp</content>
-				<onfocus>SetFocus(300)</onfocus>
-				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),music)</visible>
 			</control>
 			<control type="fixedlist" id="40017">
 				<content limit="25">$VAR[DefWidgetRight2Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
 				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
-			</control>
-			<control type="fixedlist" id="40017">
-				<content limit="25">special://skin/extras/playlists/UnwatchedShows.xsp</content>
-				<onfocus>SetFocus(300)</onfocus>
-				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
-			</control>
-			<control type="fixedlist" id="40017">
-				<content limit="25">special://skin/extras/playlists/UnwatchedMovies.xsp</content>
-				<onfocus>SetFocus(300)</onfocus>
-				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
 			</control>
 			<control type="fixedlist" id="40018">
 				<content limit="25">$VAR[DefWidgetRight3Content]</content>
@@ -466,25 +449,25 @@
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
+				<!-- <visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible> -->
 				<visible>Integer.IsGreater(Container(4019).ListItem.PercentPlayed,0)</visible>
 			</control>
 			<!-- Live TV -->
-			<control type="image">
+			<!-- <control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture background="true">special://skin/extras/backgrounds/Channels.jpg</texture>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="image">
+			</control> -->
+			<!-- <control type="image">
 				<description>Title overlay</description>
 				<width>856</width>
 				<height>482</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>	
 				<include>Animation.FadeIn</include>				
-			</control>
-			<control type="image">
+			</control> -->
+			<!-- <control type="image">
 				<left>10</left>
 				<height>100</height>
 				<width>200</width>
@@ -493,8 +476,8 @@
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>!String.IsEmpty(Container(4019).ListItem.ChannelNumber)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="label">
+			</control> -->
+			<!-- <control type="label">
 				<left>10</left>
 				<height>100</height>
 				<aligny>center</aligny>
@@ -507,8 +490,8 @@
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>String.IsEmpty(Container(4019).ListItem.Icon)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="label">
+			</control> -->
+			<!-- <control type="label">
 				<left>250</left>
 				<height>100</height>
 				<aligny>center</aligny>
@@ -520,8 +503,8 @@
 				<label>$INFO[Container(4019).ListItem.ChannelNumber]</label>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="progress">
+			</control> -->
+			<!-- <control type="progress">
 				<left>350</left>
 				<width>90</width>
 				<height>19</height>
@@ -537,8 +520,8 @@
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<visible>Integer.IsGreater(Container(4019).ListItem.Progress,0)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="label">
+			</control> -->
+			<!-- <control type="label">
 				<left>10</left>
 				<aligny>center</aligny>
 				<height>100</height>
@@ -550,8 +533,8 @@
 				<visible>String.IsEmpty(Container(4019).ListItem.Icon)</visible>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="label">
+			</control> -->
+			<!-- <control type="label">
 				<right>4</right>
 				<width>460</width>
 				<aligny>center</aligny>
@@ -563,8 +546,8 @@
 				<label>$INFO[Container(4019).ListItem.StartTime]$INFO[Container(4019).ListItem.EndTime, - , ]</label>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
-			<control type="textbox">
+			</control> -->
+			<!-- <control type="textbox">
 				<left>12</left>
 				<top>100</top>
 				<right>12</right>
@@ -576,8 +559,41 @@
 				<label>$INFO[Container(4019).ListItem.Title,[B],[/B]]$INFO[Container(4019).ListItem.EpisodeName, (,)]$INFO[Container(4019).ListItem.Plot,[CR],]</label>
 				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
 				<include>Animation.FadeIn</include>
-			</control>
+			</control> -->
 		</control>
+		<!-- Live TV -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content sortby="random">plugin://script.skin.helper.widgets/?action=channels&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
+		</control>
+		<!-- Channels -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="50" sortby="random">plugin://script.extendedinfo?info=incinemamovies</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
+		</control>
+		<!-- Default -->
 		<control type="list" id="4019">
 			<preloaditems>6</preloaditems>
 			<orientation>horizontal</orientation>
@@ -591,7 +607,7 @@
 			<onfocus>300</onfocus>
 			<content limit="25" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>!String.IsEqual(Container(300).ListItem.Property(type),settings)+ !String.IsEqual(Container(300).ListItem.Property(type),weather)+ !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(type),settings)+ !String.IsEqual(Container(300).ListItem.Property(type),weather)+ !String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),channels) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 		</control>
 		<!-- Settings -->
 		<control type="list" id="4019">
@@ -637,7 +653,7 @@
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 				<control type="label">
 					<left>$PARAM[widget_label_left]</left>
-					<top>290</top>
+					<top>285</top>
 					<width>$PARAM[double_widget_width]</width>
 					<align>left</align>
 					<height>40</height>
@@ -645,7 +661,7 @@
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[EmbyHomeWidget1Label]</label>
-					<visible>[Integer.IsGreater(Container(40016).NumItems,0) + [!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]] | String.IsEqual(Container(300).ListItem.Property(type),weather) | String.IsEqual(Container(300).ListItem.Property(type),settings)</visible>
+					<visible>Control.IsVisible(4016)</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
@@ -697,9 +713,57 @@
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>
+				<!-- Live TV  -->
+				<control type="panel" id="4016">
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>735</height>
+					<onup>300</onup>
+					<ondown>4016</ondown>
+					<pagecontrol>40160</pagecontrol>
+					<onleft>4012</onleft>
+					<onright condition="Control.IsVisible(4017)">4017</onright>
+					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<content limit="12" target="videos">pvr://recordings/tv/active</content>
+					<include>Animation.FadeOut</include>
+					<include>Animation.DelayFadeIn</include>
+				</control>	
+				<!-- Channels  -->
+				<control type="panel" id="4016">
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>735</height>
+					<onup>300</onup>
+					<ondown>4016</ondown>
+					<pagecontrol>40160</pagecontrol>
+					<onleft>4012</onleft>
+					<onright condition="Control.IsVisible(4017)">4017</onright>
+					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<content limit="12" target="videos">plugin://script.extendedinfo?info=trendingmovies</content>
+					<include>Animation.FadeOut</include>
+					<include>Animation.DelayFadeIn</include>
+				</control>					
 				<!-- Videos -->
 				<control type="panel" id="4016">
-					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + !String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
@@ -727,7 +791,7 @@
 					<visible>String.IsEqual(Container(300).ListItem.Property(type),music)</visible>
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
-					<width>$PARAM[quadruple_widget_width]</width>
+					<width>1750</width>
 					<height>700</height>
 					<onup>300</onup>
 					<ondown>4016</ondown>
@@ -748,8 +812,7 @@
 						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 						<param name="overlay_top">295</param>
 					</include>
-					<content limit="8">$VAR[DefWidgetRight1Content]</content>
-					<visible>[!Container(40016).IsUpdating | Control.HasFocus(4016) | Control.HasFocus(4017) | Control.HasFocus(4018) | Control.HasFocus(4012) | Control.HasFocus(4019)]</visible>
+					<content limit="10">plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>
@@ -825,7 +888,7 @@
 				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + [[!String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEqual(Container(300).ListItem.Property(type),homevideos) + !String.IsEqual(Container(300).ListItem.Property(type),channels) + !String.IsEqual(Container(300).ListItem.Property(type),music)] | !String.IsEmpty(Container(300).ListItem.Property(widgetPath.right2))]</visible>
 				<control type="label">
 					<left>$PARAM[widget_label_left]</left>
-					<top>290</top>
+					<top>285</top>
 					<width>$PARAM[double_widget_width]</width>
 					<align>left</align>
 					<height>40</height>
@@ -833,31 +896,13 @@
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[EmbyHomeWidget2Label]</label>
-					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
+					<visible>Integer.IsGreater(Container(4017).NumItems,0)</visible>
 					<visible>!Container(300).Scrolling </visible>
 					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music)</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 					<visible>Control.IsVisible(4017)</visible>
 					<include>Animation.EmbyRight2Slide</include>
-				</control>
-				<control type="label">
-					<left>$PARAM[widget_label_left]</left>
-					<top>290</top>
-					<width>$PARAM[double_widget_width]</width>
-					<align>left</align>
-					<height>40</height>
-					<font>Small</font>
-					<textcolor>Dark1</textcolor>
-					<selectedcolor>Dark1</selectedcolor>
-					<label>$VAR[EmbyHomeWidget2Label]</label>
-					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
-					<visible>!Container(300).Scrolling </visible>
-					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),music)</visible>
-					<include>Animation.FadeIn</include>
-					<include>Animation.FadeOut</include>
-					<visible>Control.IsVisible(4017)</visible>
-					<include>Animation.EmbyRight2SlideMusic</include>
 				</control>
 				<!-- TV Shows -->
 				<control type="panel" id="4017">
@@ -885,7 +930,6 @@
 						<param name="overlay_top">$PARAM[overlay_top]</param>
 					</include>
 					<content limit="8" target="videos">special://skin/extras/playlists/UnwatchedShows.xsp</content>
-					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<include>Animation.FadeOut</include>
 					<include>Animation.LongDelayFadeIn</include>
@@ -917,8 +961,38 @@
 						<param name="overlay_top">$PARAM[overlay_top]</param>
 					</include>
 					<content limit="8" target="videos">special://skin/extras/playlists/UnwatchedMovies.xsp</content>
-					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+					<include>Animation.FadeOut</include>
+					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.EmbyRight2Slide</include>
+				</control>
+				<!-- Live TV -->
+				<control type="panel" id="4017">
+					<description>Widget</description>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>732</height>
+					<onup>300</onup>
+					<ondown>4017</ondown>
+					<pagecontrol>40170</pagecontrol>
+					<onleft condition="Control.IsVisible(4016)">4016</onleft>
+					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
+					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>8</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
+						<param name="widget_width">$PARAM[single_widget_width]</param>
+						<param name="item_width">$PARAM[item_width]</param>
+						<param name="widget_height">$PARAM[widget_height]</param>
+						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_top">$PARAM[overlay_top]</param>
+					</include>
+					<content limit="8" target="videos">plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</content>
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<include>Animation.FadeOut</include>
 					<include>Animation.LongDelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
@@ -952,44 +1026,12 @@
 					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
 					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
-					!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+					!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + 
+					!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<visible>!Container(300).Scrolling</visible>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
-				</control>
-				<!-- Music -->
-				<control type="panel" id="4017">
-					<description>Widget</description>
-					<visible>String.Contains(Container(300).ListItem.Property(type),music)</visible>
-					<top>330</top>
-					<left>$PARAM[widget_left]</left>
-					<width>1440</width>
-					<height>700</height>
-					<onup>300</onup>
-					<ondown>4017</ondown>
-					<pagecontrol>40170</pagecontrol>
-					<onleft condition="Control.IsVisible(4016)">4016</onleft>
-					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
-					<include>EmbyHomeInfoActions</include>
-					<preloaditems>9</preloaditems>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="quadratic">0</scrolltime>
-					<include content="EmbyWidget1Content">
-						<param name="widget_width">350</param>
-						<param name="item_width">335</param>
-						<param name="widget_height">350</param>
-						<param name="item_height">335</param>
-						<param name="scale">center</param>
-						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-						<param name="overlay_top">295</param>
-					</include>
-					<content limit="8">$VAR[DefWidgetRight2Content]</content>
-					<visible>!Container(300).Scrolling</visible>
-					<visible>Integer.IsGreater(Container(40017).NumItems,0)</visible>
-					<include>Animation.FadeOut</include>
-					<include>Animation.DelayFadeIn</include>
-					<include>Animation.EmbyRight2SlideMusic</include>
 				</control>
 			</control>
 		</definition>
@@ -1005,10 +1047,9 @@
 		<definition>
 			<control type="group">
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<!-- Right 3: Double-->
 				<control type="label">
 					<left>$PARAM[widget_label_left]</left>
-					<top>290</top>
+					<top>285</top>
 					<width>$PARAM[double_widget_width]</width>
 					<align>left</align>
 					<height>40</height>
@@ -1102,7 +1143,7 @@
 				<width>100%</width>
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+				<visible><!-- !String.IsEqual(Container(300).ListItem.Property(type),livetv) +  -->!String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1114,7 +1155,7 @@
 				<width>100%</width>
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible>
+				<!-- <visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible> -->
 				<visible>!String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widget))</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1132,7 +1173,8 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidgetContentLabel]</label>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),livetv) + !String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+				<!-- !String.IsEqual(Container(300).ListItem.Property(type),livetv) +  -->
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -1465,7 +1507,8 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus>
+		<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:03,silent)</onfocus>
+		<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus> -->
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">
