@@ -207,8 +207,7 @@
 			<control type="fixedlist" id="40016">
 				<content limit="25">$VAR[DefWidgetRight1Content]</content>
 				<onfocus>SetFocus(300)</onfocus>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + 
-				!String.IsEqual(Container(300).ListItem.Property(defaultID),music)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 			</control>
 			<control type="fixedlist" id="40017">
 				<content limit="25">$VAR[DefWidgetRight2Content]</content>
@@ -661,7 +660,7 @@
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[EmbyHomeWidget1Label]</label>
-					<visible>Control.IsVisible(4016)</visible>
+					<visible>Integer.IsGreater(Container(40016).NumItems,0) | String.IsEqual(Container(300).ListItem.Property(defaultID),settings) | String.IsEqual(Container(300).ListItem.Property(defaultID),weather)</visible>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
@@ -678,6 +677,7 @@
 					<onleft>4012</onleft>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
@@ -702,6 +702,7 @@
 					<onleft>4012</onleft>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
@@ -726,6 +727,7 @@
 					<onleft>4012</onleft>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
@@ -750,6 +752,7 @@
 					<onleft>4012</onleft>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
@@ -774,6 +777,7 @@
 					<onleft>4012</onleft>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
@@ -799,6 +803,7 @@
 					<pagecontrol>40160</pagecontrol>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>9</preloaditems>
 					<orientation>horizontal</orientation>
@@ -854,6 +859,7 @@
 					<pagecontrol>40160</pagecontrol>
 					<onright condition="Control.IsVisible(4017)">4017</onright>
 					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>6</preloaditems>
 					<orientation>vertical</orientation>
@@ -917,6 +923,7 @@
 					<onleft condition="Control.IsVisible(4016)">4016</onleft>
 					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
 					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>8</preloaditems>
 					<orientation>horizontal</orientation>
@@ -948,6 +955,7 @@
 					<onleft condition="Control.IsVisible(4016)">4016</onleft>
 					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
 					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>8</preloaditems>
 					<orientation>horizontal</orientation>
@@ -979,6 +987,7 @@
 					<onleft condition="Control.IsVisible(4016)">4016</onleft>
 					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
 					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>8</preloaditems>
 					<orientation>horizontal</orientation>
@@ -1010,6 +1019,7 @@
 					<onleft condition="Control.IsVisible(4016)">4016</onleft>
 					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
 					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<onright condition="!Control.IsVisible(4018)">noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>8</preloaditems>
 					<orientation>horizontal</orientation>
@@ -1079,7 +1089,7 @@
 					<onleft condition="Control.IsVisible(4017)">4017</onleft>
 					<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
 					<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
-					<onright condition="Control.IsVisible(4018)">4018</onright>
+					<onright>noop</onright>
 					<include>EmbyHomeInfoActions</include>
 					<preloaditems>12</preloaditems>
 					<orientation>horizontal</orientation>
@@ -1283,7 +1293,7 @@
 				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
 				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<include>Animation.FadeIn</include>
+				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 				<visible>!Container(300).Scrolling </visible>
