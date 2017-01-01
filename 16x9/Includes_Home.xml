@@ -144,7 +144,7 @@
 				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus> -->
 				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home),00:03,silent)</onfocus>
 				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus> -->
-				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:03,silent)</onfocus>
+				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:01,silent)</onfocus>
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -1507,7 +1507,7 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:03,silent)</onfocus>
+		<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:01,silent)</onfocus>
 		<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus> -->
 	</include>
 	<include name="EmbyFooter">
