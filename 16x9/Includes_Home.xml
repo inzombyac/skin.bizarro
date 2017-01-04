@@ -440,6 +440,22 @@
 				<visible>Integer.IsGreater(Container(4019).ListItem.PercentPlayed,0)</visible>
 			</control>
 		</control>
+		<!-- TV Shows -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="25" sortby="random">special://skin/extras/playlists/RandomShows.xsp</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+		</control>
 		<!-- Default -->
 		<control type="list" id="4019">
 			<preloaditems>6</preloaditems>
@@ -454,7 +470,7 @@
 			<onfocus>300</onfocus>
 			<content limit="25" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>!String.IsEqual(Container(300).ListItem.Property(type),settings)+ !String.IsEqual(Container(300).ListItem.Property(type),weather)+ !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(type),settings)+ !String.IsEqual(Container(300).ListItem.Property(type),weather)+ !String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 		</control>
 		<!-- Settings -->
 		<control type="list" id="4019">
@@ -1069,7 +1085,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2TVShows]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Movies -->
@@ -1101,7 +1117,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Movies]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Live TV -->
@@ -1133,7 +1149,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2LiveTV]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Channels -->
@@ -1165,7 +1181,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Channels]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 0 -->
@@ -1197,7 +1213,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby0]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 1 -->
@@ -1229,7 +1245,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby1]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 2 -->
@@ -1261,7 +1277,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby2]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 3 -->
@@ -1293,7 +1309,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby3]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 4 -->
@@ -1325,7 +1341,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby4]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 5 -->
@@ -1357,7 +1373,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby5]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 6 -->
@@ -1389,7 +1405,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby6]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 7 -->
@@ -1421,7 +1437,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby7]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 8 -->
@@ -1453,7 +1469,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby8]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 9 -->
@@ -1485,7 +1501,7 @@
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby9]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
 					<include>Animation.FadeOut</include>
-					<include>Animation.LongDelayFadeIn</include>
+					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Videos -->
@@ -1564,7 +1580,7 @@
 					<include>Animation.FadeOut</include>
 					<include>Animation.EmbyRight3Slide</include>
 					<visible>Control.IsVisible(4018)</visible>
-					<visible>Integer.IsGreater(Container(4018).NumItems,0)</visible>
+					<!-- <visible>Integer.IsGreater(Container(4018).NumItems,0)</visible> -->
 				</control>
 				<!-- TV Shows -->
 				<control type="panel" id="4018">

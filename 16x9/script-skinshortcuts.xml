@@ -167,11 +167,25 @@
 						<width>100%</width>
 						<height>66</height>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) +
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),programs) + 						
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels)</visible>
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right1)</onclick>
@@ -182,9 +196,24 @@
 						<width>100%</width>
 						<height>66</height>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),music)</visible>
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right2)</onclick>
@@ -195,8 +224,24 @@
 						<width>100%</width>
 						<height>66</height>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),music) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies)</visible>
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right3)</onclick>
