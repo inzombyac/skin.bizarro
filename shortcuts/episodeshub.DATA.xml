@@ -6,7 +6,13 @@
         <action>ActivateWindow(Videos,TvShowTitles,return)</action>
         <icon>special://skin/extras/icons/tv.png</icon>
     </shortcut>
-    <shortcut>
+     <shortcut>
+        <label2>Episode Hub Shortcut</label2>
+        <label>Next Up</label>
+        <action>ActivateWindow(Videos,plugin://script.skin.helper.service/?action=nextepisodes,return)</action>
+        <icon>special://skin/extras/icons/recentlyadded.png</icon>
+    </shortcut>
+	<shortcut>
         <label2>Episode Hub Shortcut</label2>
         <label>$LOCALIZE[31173]</label>
         <action>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</action>

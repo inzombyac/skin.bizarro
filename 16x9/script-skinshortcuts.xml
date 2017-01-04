@@ -159,7 +159,7 @@
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</visible>
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection)</visible>
 						<onup>8780</onup>
 					</control>
 					<control type="button" id="8777" description="Right Widget1">

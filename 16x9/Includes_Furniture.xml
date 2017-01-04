@@ -1158,7 +1158,7 @@
 			<top>160</top>
 			<texture colordiffuse="Dark3">common/black.png</texture>
 			<height>80</height>
-			<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
+			<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>

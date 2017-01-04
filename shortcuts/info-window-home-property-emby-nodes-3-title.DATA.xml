@@ -4,7 +4,7 @@
 		<label2>Movies Only</label2>
         <label>Movie Hub</label>
         <icon>special://skin/extras/icons/film.png</icon>
-		<thumb>$INFO[Window(Home).Property(emby.nodes.3.image)]</thumb>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</thumb>
         <action>ActivateWindow(1101)</action>
 		<visible>StringCompare(Container(300).ListItem.Property(type),movies) | Window.IsVisible(script-skinshortcuts.xml)</visible>
     </shortcut>
@@ -22,7 +22,7 @@
 		<label2>TV Shows Only</label2>
         <label>TV Hub</label>
         <icon>special://skin/extras/icons/tv.png</icon>
-		<thumb>$INFO[Window(Home).Property(emby.nodes.3.image)]</thumb>
+		<thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
         <action>ActivateWindow(1102)</action>
 		<visible>StringCompare(Container(300).ListItem.Property(type),tvshows) | Window.IsVisible(script-skinshortcuts.xml)</visible>
     </shortcut>

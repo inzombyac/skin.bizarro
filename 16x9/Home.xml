@@ -26,7 +26,7 @@
 		<include>Furniture_RSS</include>
 		<include>DebugGridHome</include>
 		<control type="group" description="Emby Home Menu">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyRow</include>
 			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
 		</control>
