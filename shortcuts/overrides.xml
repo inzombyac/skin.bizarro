@@ -111,17 +111,6 @@
 	<backgrounddefault defaultID="channels">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="collection" group="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</backgrounddefault>
 	
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.image)]</backgrounddefault>
-
 	<backgrounddefault defaultID="artists" group="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="albums" group="music">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="addons" group="music">special://skin/extras/backgrounds/Settings.jpg</backgrounddefault>
@@ -147,132 +136,8 @@
 	
 	<!-- Emby Nodes -->
 	
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.image)]</backgrounddefault>
-	<backgrounddefault defaultID="Movie Hub" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.image)]</backgrounddefault>
-	<backgrounddefault defaultID="TV Hub" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-0-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-1-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-2-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-3-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-4-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-5-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-6-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-7-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-8-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	<backgrounddefault defaultID="collections" group="info-window-home-property-emby-nodes-9-title">$INFO[Container(9003).ListItem(0).Art(fanart)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-0-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-0-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-1-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-1-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-2-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-2-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-3-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-3-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-4-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-4-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-5-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-5-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-6-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-6-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-7-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-7-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-8-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-8-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-9-title" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
-	<backgrounddefault defaultID="nextaired" group="info-window-home-property-emby-nodes-9-title" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
-	
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-inprogress-title" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-inprogress-title" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-inprogress-title" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-inprogress-title" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-inprogress-title" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-inprogress-title" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-inprogress-title" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-inprogress-title" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-inprogress-title" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.inprogress.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-inprogress-title" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.inprogress.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-recent-title" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-recent-title" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-recent-title" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-recent-title" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-recent-title" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-recent-title" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-recent-title" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-recent-title" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-recent-title" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.recent.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-recent-title" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.recent.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-nextepisodes-title" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-nextepisodes-title" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-nextepisodes-title" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-nextepisodes-title" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-nextepisodes-title" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-nextepisodes-title" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-nextepisodes-title" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-nextepisodes-title" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-nextepisodes-title" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.nextepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-nextepisodes-title" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.nextepisodes.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-unwatched-title" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-unwatched-title" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-unwatched-title" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-unwatched-title" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-unwatched-title" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-unwatched-title" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-unwatched-title" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-unwatched-title" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-unwatched-title" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.unwatched.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-unwatched-title" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.unwatched.image)]</backgrounddefault>
-
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-recentepisodes-title" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-recentepisodes-title" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-recentepisodes-title" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-recentepisodes-title" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-recentepisodes-title" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-recentepisodes-title" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-recentepisodes-title" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-recentepisodes-title" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-recentepisodes-title" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.recentepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-recentepisodes-title" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.recentepisodes.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-0-inprogressepisodes-title" group="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-1-inprogressepisodes-title" group="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-2-inprogressepisodes-title" group="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-3-inprogressepisodes-title" group="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-4-inprogressepisodes-title" group="info-window-home-property-emby-nodes-4-title">$INFO[Window(Home).Property(emby.nodes.4.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-5-inprogressepisodes-title" group="info-window-home-property-emby-nodes-5-title">$INFO[Window(Home).Property(emby.nodes.5.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-6-inprogressepisodes-title" group="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-7-inprogressepisodes-title" group="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-8-inprogressepisodes-title" group="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.inprogressepisodes.image)]</backgrounddefault>
-	<backgrounddefault defaultID="info-window-home-property-emby-nodes-9-inprogressepisodes-title" group="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.inprogressepisodes.image)]</backgrounddefault>
-	
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-0-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-1-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-2-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-3-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-4-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-5-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-6-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-7-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-8-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	<backgrounddefault defaultID="random" group="info-window-home-property-emby-nodes-9-title">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	
 	<backgrounddefault defaultID="random" group="tvshows">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
 	<backgrounddefault defaultID="random" group="movies">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-	
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
@@ -367,18 +232,6 @@
     <icon image="DefaultAddonMusic.png">special://skin/extras/icons/songs.png</icon>
     <icon image="DefaultAddonProgram.png">special://skin/extras/icons/addons.png</icon>
     
-    <!-- Thumbs -->
-    <!-- <thumbnail labelID="info-window-home-property-emby-nodes-0-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-1-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-2-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-3-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-4-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-5-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-6-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-7-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-8-title">special://skin/extras/icons/emby_diff.png</thumbnail>
-	<thumbnail labelID="info-window-home-property-emby-nodes-9-title">special://skin/extras/icons/emby_diff.png</thumbnail> -->
-	
 	<icon labelID="tvhub">special://skin/extras/icons/tv.png</icon>
 	
 	<thumbnail label="3dtv.png">special://skin/extras/icons/3dtv.png</thumbnail>
