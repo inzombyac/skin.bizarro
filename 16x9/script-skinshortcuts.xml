@@ -159,7 +159,53 @@
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(211).ListItem.Property(defaultID),collection)</visible>
+						<visible>!String.IsEqual(Container(211).ListItem.Property(defaultID),weather) +
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),programs) + 						
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),settings) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),collection) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
+						<onup>8780</onup>
+					</control>
+					<control type="button" id="3122" description="Main Widget">
+						<width>100%</width>
+						<height>66</height>
+						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+						<label>Main Widget (Locked)</label>
+						<include>DefDialogButtons</include>
+						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+						<visible>String.IsEqual(Container(211).ListItem.Property(defaultID),weather) |
+						String.IsEqual(Container(211).ListItem.Property(defaultID),programs) | 						
+						String.IsEqual(Container(211).ListItem.Property(defaultID),settings) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),collection) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),music) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),channels) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
 						<onup>8780</onup>
 					</control>
 					<control type="button" id="8777" description="Right Widget1">
@@ -250,7 +296,8 @@
 				</control>
 				<control type="button" id="8780" description="OK">
 					<onup condition="Control.IsVisible(312)">8786</onup>
-					<onup condition="!Control.IsVisible(312)">9100</onup>
+					<onup condition="!Control.IsVisible(312) + Control.IsVisible(3122)">3122</onup>
+					<onup condition="!Control.IsVisible(312) + !Control.IsVisible(3122)">9100</onup>
 					<ondown>8780</ondown>
 					<onleft>9100</onleft>
 					<bottom>104</bottom>
@@ -311,7 +358,8 @@
             <control type="grouplist" id="9100">
                 <onleft>211</onleft>
                 <onright condition="String.IsEqual(Window.Property(groupname),mainmenu) + Control.IsVisible(312)">8786</onright>
-				<onright condition="String.IsEqual(Window.Property(groupname),mainmenu) + !Control.IsVisible(312)">8780</onright>
+				<onright condition="String.IsEqual(Window.Property(groupname),mainmenu) + !Control.IsVisible(312) + Control.IsVisible(3122)">8786</onright>
+				<onright condition="String.IsEqual(Window.Property(groupname),mainmenu) + !Control.IsVisible(312) + !Control.IsVisible(3122)">8780</onright>
 				<onright condition="!String.IsEqual(Window.Property(groupname),mainmenu)">8781</onright>
                 <onup>9100</onup>
                 <ondown>9100</ondown>
@@ -339,13 +387,6 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-               <!--  <control type="button" id="312" description="Widget">
-                    <width>100%</width>
-                    <height>66</height>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                </control> -->
                 <control type="button" id="310" description="Background">
                     <width>100%</width>
                     <height>66</height>
@@ -353,15 +394,6 @@
 					<visible>!String.IsEmpty(Container(211).ListItem.Label)</visible>
                     <include>DefDialogButtons</include>
                 </control>
-               <!--  <control type="button" id="311" description="Select Icon">
-                    <width>100%</width>
-                    <height>66</height>
-                    <label>31181</label>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label)</visible>
-					<visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                </control> -->
                 <control type="button" id="405" description="Set Submenu">
                     <width>100%</width>
                     <height>66</height>

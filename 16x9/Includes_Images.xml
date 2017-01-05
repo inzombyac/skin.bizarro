@@ -302,7 +302,7 @@
         <value>$INFO[Window(weather).Property(Day6.OutlookIcon)]</value>
 	</variable>
 	<variable name="EmbyMainWidgetIcon">
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">special://skin/extras/backgrounds/krypton.png</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">special://skin/extras/backgrounds/krypton.png</value>
 		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">common/null.png</value>
 		<value condition="Container(4019).Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + String.IsEqual(Container(4019).ListItem.Overlay,OverlayWatched.png)]]">$INFO[Container(4019).ListItem.Icon]</value>
 		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(4019).Content(episodes) + [String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) | Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>

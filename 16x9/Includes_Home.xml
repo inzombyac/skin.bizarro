@@ -61,7 +61,8 @@
 			<control type="label">
                 <include>ControlID4</include>
                 <!-- <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label> -->
-				<label>$VAR[EmbyMainWidgetIcon]</label>
+				<!-- <label>$VAR[EmbyMainWidgetIcon]</label> -->
+				<label>$INFO[Container(300).ListItem.Property(defaultID)]</label>
             </control>
 			<control type="label">
                 <include>ControlID5</include>
@@ -328,15 +329,10 @@
 			<onfocus>SetFocus(300)</onfocus>
 			<include>EmbyHiddenItemLayout</include>
 		</control>
-		<control type="list" id="9025">
-			<content>$VAR[DefWidgetMainContent]</content>
-			<visible>String.Contains(Container(300).ListItem.Property(Path),emby)</visible>
-			<onfocus>SetFocus(300)</onfocus>
-		</control>
 		<!-- Collections -->
 		<control type="panel" id="4012">
 			<description>Widget</description>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 			<top>330</top>
 			<left>78</left>
 			<width>1764</width>
@@ -373,7 +369,7 @@
 			<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 		</control>
 		<!-- Main Widget -->
 		<control type="group" >
@@ -381,8 +377,8 @@
 			<left>SidePad</left>
 			<width>856</width>
 			<height>482</height>
-			<visible>!String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
-			<visible>!String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 			<include>Animation.FocusSmall</include>
 			<control type="button" id="4012">
 				<onfocus>Skin.SetString(HomeItemTVShowTitle,$VAR[EmbyHomeTVShowTitle])</onfocus>
@@ -423,6 +419,7 @@
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.DelayFadeOut</include>
+				<visible>Integer.IsGreater(Container(4019).NumItems,0)</visible>
 			</control>
 			<control type="progress">
 				<bottom>78</bottom>
@@ -452,9 +449,249 @@
 			<onright>300</onright>
 			<onleft>300</onleft>
 			<onfocus>300</onfocus>
-			<content limit="25" sortby="random">special://skin/extras/playlists/RandomShows.xsp</content>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainTVShows]</content>
 			<include>EmbyHiddenItemLayout</include>
 			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+		</control>
+		<!-- Movies -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainMovies]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
+		</control>
+		<!-- Live TV -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainLiveTV]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
+		</control>
+		<!-- Channels -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainChannels]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
+		</control>
+		<!-- Music -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainMusic]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),music)</visible>
+		</control>
+		<!-- Programs -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainPrograms]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),programs)</visible>
+		</control>
+		<!-- Emby Node 0 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby0]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)</visible>
+		</control>
+		<!-- Emby Node 1 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby1]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)</visible>
+		</control>
+		<!-- Emby Node 2 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby2]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)</visible>
+		</control>
+		<!-- Emby Node 3 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby3]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)</visible>
+		</control>
+		<!-- Emby Node 4 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby4]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)</visible>
+		</control>
+		<!-- Emby Node 5 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby5]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)</visible>
+		</control>
+		<!-- Emby Node 6 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby6]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)</visible>
+		</control>
+		<!-- Emby Node 7 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby7]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)</visible>
+		</control>
+		<!-- Emby Node 8 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby8]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)</visible>
+		</control>
+		<!-- Emby Node 9 -->
+		<control type="list" id="4019">
+			<preloaditems>6</preloaditems>
+			<orientation>horizontal</orientation>
+			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
+			<scrolltime tween="quadratic">100</scrolltime>
+			<onup>300</onup>
+			<ondown>300</ondown>
+			<onup>300</onup>
+			<onright>300</onright>
+			<onleft>300</onleft>
+			<onfocus>300</onfocus>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainEmby9]</content>
+			<include>EmbyHiddenItemLayout</include>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
 		</control>
 		<!-- Default -->
 		<control type="list" id="4019">
@@ -468,21 +705,39 @@
 			<onright>300</onright>
 			<onleft>300</onleft>
 			<onfocus>300</onfocus>
-			<content limit="25" sortby="random">$VAR[DefWidgetMainContent]</content>
+			<content limit="5" sortby="random">$VAR[DefWidgetMainContent]</content>
 			<include>EmbyHiddenItemLayout</include>
-			<visible>!String.IsEqual(Container(300).ListItem.Property(type),settings)+ !String.IsEqual(Container(300).ListItem.Property(type),weather)+ !String.IsEqual(Container(300).ListItem.Property(type),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
+			<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),channels) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + 
+				!String.IsEqual(Container(300).ListItem.Property(defaultID),programs)</visible>
 		</control>
 		<!-- Settings -->
 		<control type="list" id="4019">
 			<include>Animation.FocusSmall</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),settings) | String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),settings) | String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 			<!--systeminfo widgets -->
 			<include>SysInfoWidgetMain</include>
 		</control>
 		<!-- Weather -->
 		<control type="panel" id="4012">
 			<include>Animation.FocusSmall</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
+			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),weather)</visible>
 			<top>330</top>
 			<left>SidePad</left>
 			<width>856</width>
@@ -2026,7 +2281,7 @@
 				<width>100%</width>
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<visible><!-- !String.IsEqual(Container(300).ListItem.Property(type),livetv) +  -->!String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 				<visible>!Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -2038,8 +2293,7 @@
 				<width>100%</width>
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
-				<!-- <visible>String.IsEqual(Container(300).ListItem.Property(type),livetv)</visible> -->
-				<visible>!String.IsEmpty(Container(300).ListItem.Property(widgetPath)) | !String.IsEmpty(Container(300).ListItem.Property(widget))</visible>
+				<visible>Integer.GreaterThan(Container(4019).NumItems, 0)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
@@ -2056,7 +2310,6 @@
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidgetContentLabel]</label>
-				<!-- !String.IsEqual(Container(300).ListItem.Property(type),livetv) +  -->
 				<visible>!String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEqual(Container(300).ListItem.Property(type),collection)</visible>
 				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
@@ -2166,7 +2419,7 @@
 				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
 				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
-				<include>Animation.DelayFadeIn</include>
+				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
 				<visible>!Container(300).Scrolling </visible>
@@ -2191,7 +2444,6 @@
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
 				<onfocus>SetProperty(TVShowID,$VAR[EmbyHomeTVShowID],home)</onfocus>
-				<!-- <onfocus condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">RunScript(script.tv.show.next.aired,tvshowtitle=$VAR[EmbyHomeTVShowTitle])</onfocus> -->
 				<onfocus condition="Control.HasFocus(4016) + [String.IsEqual(Container(4016).ListItem.Property(type),episode) | String.IsEqual(Container(4016).ListItem.DBTYPE,episode)]">Skin.SetString(LastIcon,$INFO[Container(4016).ListItem.Art(tvshow.poster)])</onfocus>
 				<onfocus condition="Control.HasFocus(4016) + ![String.IsEqual(Container(4016).ListItem.Property(type),episode) | String.IsEqual(Container(4016).ListItem.DBTYPE,episode)]">Skin.SetString(LastIcon,$INFO[Container(4016).ListItem.Icon])</onfocus>
 				<onfocus condition="Control.HasFocus(4017)">Skin.SetString(LastIcon,$INFO[Container(4017).ListItem.Icon])</onfocus>
@@ -2247,7 +2499,7 @@
 				<include>Animation.Focus</include>
 			</control>
 			<control type="progress">
-				<bottom>55\</bottom>
+				<bottom>55</bottom>
 				<height>8</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
