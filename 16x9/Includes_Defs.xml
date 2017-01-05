@@ -1465,7 +1465,7 @@
 		<value>special://skin/extras/playlists/RandomMovies.xsp</value>
 	</variable>
 	<variable name="DefWidgetMainLiveTV">
-		<value>plugin://script.skin.helper.service/?action=pvrchannels&amp;limit=25&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
+		<value>pvr://channels/tv/*</value>
 		<!-- <value>plugin://script.skin.helper.widgets/?action=channels&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value> -->
 	</variable>
 	<variable name="DefWidgetMainChannels">
