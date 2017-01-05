@@ -301,13 +301,14 @@
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="Container(4016).IsUpdating + System.IdleTime(0)">[CR]</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName.right1))">$INFO[Container(300).ListItem.Property(widgetName.right1)]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">Kodi Information</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">Weather</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">System Status</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">Extended Forecast</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">Recordings</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Next Up</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">Recent Albums</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">Trending Movies</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),programs)">Add-ons</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">Next Up</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">Resume</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">Recent</value>

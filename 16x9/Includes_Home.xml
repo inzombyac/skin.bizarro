@@ -417,8 +417,8 @@
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>
-				<include>Animation.DelayFadeIn</include>
-				<include>Animation.DelayFadeOut</include>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
 				<visible>Integer.IsGreater(Container(4019).NumItems,0)</visible>
 			</control>
 			<control type="progress">
