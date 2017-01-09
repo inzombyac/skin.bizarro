@@ -592,6 +592,8 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="ColorHighlight">
+		<!-- <value condition="!String.IsEmpty(Window(home).Property(Home2.ComplimentaryColor))">$INFO[Window(home).Property(Home2.ComplimentaryColor)]</value>
+		<value condition="!String.IsEmpty(Window(home).Property(Home2.ImageColor))">$INFO[Window(home).Property(Home2.ImageColor)]</value> -->
 		<value condition="Skin.HasSetting(ColorHighlight)">$INFO[Skin.String(focuscolor.name)]</value>
 		<value condition="!Skin.HasSetting(ColorHighlight)">Highlight</value>
 	</variable>

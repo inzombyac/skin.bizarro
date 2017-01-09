@@ -62,7 +62,8 @@
                 <include>ControlID4</include>
                 <!-- <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label> -->
 				<!-- <label>$VAR[EmbyMainWidgetIcon]</label> -->
-				<label>$INFO[Container(300).ListItem.Property(defaultID)]</label>
+				<!-- <label>$INFO[Container(300).ListItem.Property(defaultID)]</label> -->
+				<label>$INFO[Window(home).Property(Home.ImageColor)] / $INFO[Window(home).Property(Home2.ImageColor)]</label>
             </control>
 			<control type="label">
                 <include>ControlID5</include>
@@ -96,7 +97,6 @@
 				<texture colordiffuse="Dark2" flipx="false">common/arrow-small-right.png</texture>
 			</control>
 			<control type="list" id="300">
-				<!-- <include>Animation.DelayFadeIn</include> -->
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn.Slide</include>
 				<description>Home Wraplist</description>
@@ -114,10 +114,7 @@
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
 				<include>HomeEmbyContent</include>
-				<!-- <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus> -->
-				<!-- <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus> -->
-				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus> -->
-				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home),00:03,silent)</onfocus>
+				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
 			</control>
 		</control>
 	</include>
@@ -140,12 +137,7 @@
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<!-- <onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar= -,string=$INFO[Container(300).ListItem.Label],output=EmbyHomeLabelStripped) </onfocus>
-				<onfocus>RunScript(script.skin.helper.service,action=stripstring,splitchar=_all.xml,string=$INFO[Container(300).ListItem.Label2],output=EmbyHomePath) </onfocus> -->
-				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home)</onfocus> -->
-				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home),00:03,silent)</onfocus>
-				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus> -->
-				<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:01,silent)</onfocus>
+				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -2740,8 +2732,7 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<onfocus>AlarmClock(newwall,RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2),00:01,silent)</onfocus>
-		<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=$VAR[DialogInfoBlurLevel],prefix=Home2)</onfocus> -->
+		<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

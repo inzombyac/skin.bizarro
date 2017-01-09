@@ -7,16 +7,17 @@
 	<onload condition="String.IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">SetProperty(SkinHelper.WidgetContainer,300)</onload>
-	<onload condition="Pvr.HasTimer">RunScript(script.toolbox,info=notification,header=Next Recording,text=$VAR[LabelNextRecording],icon=indicator/recording.png,time=15,sound=FALSE)</onload>
+	<onload condition="Pvr.HasTimer + System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=notification,header=Next Recording,text=$VAR[LabelNextRecording],icon=indicator/recording.png,time=15,sound=FALSE)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
 		<control type="button" id="9945">
 			<!-- Workaround -->
-			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
+			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:05,silent)</onfocus>
 			<onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus>
 			<onfocus>Skin.reset(login.reset)</onfocus>
 			<!-- Workaround -->
 			<onfocus condition="String.IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
+			<!-- <onfocus condition="System.HasAddon(script.toolbox)">AlarmClock(HomeColor,RunScript(script.toolbox,info=blur,id='"$VAR[EmbyMainWidgetIcon]";,radius=30,prefix=Home),00:10,silent)</onfocus> -->
         </control>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>GlobalOverlay</include>
