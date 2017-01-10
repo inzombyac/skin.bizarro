@@ -1111,18 +1111,19 @@
 		<value condition="Control.HasFocus(8779) | Control.HasFocus(87799)">$VAR[WidgetRight3SelectionLabel]: $VAR[DefWidgetRight3Selection]</value>
 		<value>$INFO[Container(211).ListItem.Property(path)]</value>
 	</variable>
-	<variable name="MusicInfoDiscographyLabel">
-		<value condition="Container.Content(albums)">Tracklist for $INFO[ListItem.Album]</value>
-		<value condition="!String.IsEmpty(Window(Home).Property(Discography.1.Label)) + !Container.Content(albums)">Albums for $INFO[ListItem.Artist]</value>
-	</variable>
-	<variable name="MusicInfoSimilarLabel">
-		<!-- <value condition="Integer.IsGreater(Container(5051).NumItems,0)">Similar Artists in Your Library</value>
-		<value>No Similar Artists Found in Your Library</value> -->
-		<value condition="Integer.IsGreater(Container(5051).NumItems,0)">Recommended Albums</value>
+	<variable name="MusicInfoListLabel">
+		<value condition="Container.Content(albums) + Integer.IsGreater(Container(50).NumItems,0)">Tracklist for $INFO[ListItem.Album]</value>
+		<value condition="Container.Content(artists) + Integer.IsGreater(Container(50).NumItems,0)">Albums for $INFO[ListItem.Artist]</value>
+		<value condition="Integer.IsGreater(Container(50).NumItems,0)">$LOCALIZE[38045]</value>
 	</variable>
 	<variable name="MusicInfoTrackLabel">
 		<value condition="Integer.IsGreater(ListItem.Label2, 0) + Integer.IsLess(ListItem.Label2, 10)">$INFO[ListItem.Label2,0]</value>
 		<value>$INFO[ListItem.Label2]</value>
+	</variable>
+	<variable name="MusicInfoContentLabel">
+		<value condition="Container.Content(songs)">$INFO[ListItem.Label2]</value>
+		<value condition="Container.Content(artists) + IntegerGreaterThan(ListItem.Label2,1000)">$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</value>
+		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="AdvancedLauncherLabel">
 		<value condition="!String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
