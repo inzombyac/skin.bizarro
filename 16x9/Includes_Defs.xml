@@ -1543,7 +1543,7 @@
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidgetRight1Music">
-		<value>plugin://service.library.data.provider?type=recentalbums&amp;reload=$INFO[Window.Property(recentalbums)]</value>
+		<value>musicdb://recentlyaddedalbums/</value>
 	</variable>
 	<variable name="DefWidgetRight1Programs">
 		<value>addons://sources/executable</value>
