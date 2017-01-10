@@ -35,45 +35,12 @@
                     <top>20</top>
                     <bottom>20</bottom>
                     <control type="image">
-                        <bottom>-25</bottom>
-                        <left>-30</left>
-                        <width>520</width>
-                        <height>520</height>
-                        <texture colordiffuse="$VAR[ColorHighlight]" border="20">thumbs/cd_shadow_glow.png</texture>
-                    </control>
-                    <control type="image">
-                        <left>280</left>
-                        <top>10</top>
-                        <width>440</width>
-                        <height>440</height>
-                        <aspectratio>keep</aspectratio>
-                        <fadetime>400</fadetime>
-                        <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
-                        <animation effect="slide" end="-180" time="320" tween="cubic">Hidden</animation>
-                        <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="320">WindowOpen</animation>
-                        <animation type="WindowClose">
-                            <effect type="slide" end="-180" time="320" tween="cubic" easing="in" />
-                            <effect type="fade" start="100" end="0" time="0" delay="320" />
-                            <condition type="!Player.Playing" />
-                        </animation>
-                        <animation effect="rotate" end="-360" center="auto" time="4800" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
-                        <texture background="true" fallback="cdart/default.png">$INFO[Player.FolderPath]cdart.png</texture>
-                    </control>
-                    <control type="image">
                         <bottom>0</bottom>
                         <width>460</width>
                         <height>460</height>
                         <fadetime>400</fadetime>
-                        <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask2.png">$VAR[PlayerPoster]</texture>
+                        <texture fallback="DefaultAlbumCover.png">$VAR[PlayerPoster]</texture>
                         <aspectratio aligny="center" align="center">scale</aspectratio>
-                        <bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
-                    </control>
-                    <control type="image">
-                        <bottom>0</bottom>
-                        <width>460</width>
-                        <height>460</height>
-                        <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-                        <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
                     </control>
                     <control type="group">
                         <top>5</top>

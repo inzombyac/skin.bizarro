@@ -470,6 +470,11 @@
 				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
             </control>
 			<control type="label">
+                <include>ControlID4</include>
+                <label>$ESCINFO[ListItem.FileNameAndPath]</label>
+				<visible>Window.IsVisible(DialogMusicInfo.xml)</visible>
+            </control>
+			<control type="label">
                 <include>ControlID5</include>
                 <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
