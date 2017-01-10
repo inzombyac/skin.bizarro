@@ -116,7 +116,7 @@
         <label2>Common Shortcut</label2>
         <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
-        <action>ActivateWindow(Music)</action>
+        <action>ActivateWindow(Music,musicdb://songs/)</action>
 		<visible>Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)</visible>
     </shortcut>
      <shortcut>

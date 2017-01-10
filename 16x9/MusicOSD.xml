@@ -68,13 +68,13 @@
                     <include>DefOSDButtons</include>
                 </control>
 
-                <control type="button" id="2">
+                <!-- <control type="button" id="2">
                     <description>Lyrics</description>
                     <align>left</align>
                     <label>24013</label>
                     <onclick>RunScript(script.cu.lrclyrics)</onclick>
                     <include>DefOSDButtons</include>
-                </control>
+                </control> -->
 
                 <control type="button" id="3">
                     <description>Playlist</description>
@@ -131,7 +131,7 @@
                     <disabledcolor>PanelWhite12</disabledcolor>
                 </control>
 
-                <control type="button" id="7" description="Show musc info always">
+                <!-- <control type="button" id="7" description="Show musc info always">
                     <width>220</width>
                     <aligny>center</aligny>
                     <align>center</align>
@@ -145,14 +145,14 @@
                     <align>right</align>
                     <label>Show Info</label>
                     <onclick>Skin.ToggleSetting(osd.showmusicinfo)</onclick>
-                </control>
+                </control> -->
                 <control type="button" id="6">
                     <width>270</width>
                     <align>right</align>
                     <description>Random</description>
                     <include>DefOSDButtons</include>
-                    <label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
-                    <onclick>XBMC.PlayerControl(Random)</onclick>
+                    <label>$VAR[MusicOSDRandomLabel]</label>
+                    <onclick>PlayerControl(Random)</onclick>
                 </control>
             </control>
         </control>

@@ -35,42 +35,5 @@
                 <include>Def9000MusicSide</include>
             </control>
         </control>
-		<control type="group">
-			<visible>!Window.IsVisible(DialogProgress.xml)</visible>
-			<visible>!Window.IsVisible(DialogBusy.xml)</visible>
-			<posx>480</posx>
-			<posy>486</posy>
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>840</width>
-				<height>120</height>
-				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
-			</control>
-			<control type="image">
-				<description>Busy animation</description>
-				<posx>30</posx>
-				<posy>30</posy>
-				<width>64</width>
-				<height>64</height>
-				<texture>DefaultFolderBack.png</texture>
-				<aspectratio>keep</aspectratio>
-			</control>
-			<control type="label">
-				<description>Busy label</description>
-				<posx>105</posx>
-				<width>720</width>
-				<height>120</height>
-				<aligny>center</aligny>
-				<align>left</align>
-				<label>No Items in this view.  Press OK to return</label>
-				<textcolor>Black70</textcolor>
-				<font>Medium</font>
-			</control>
-			<visible>Integer.IsEqual(Container.NumItems,0)</visible>
-		</control>
     </controls>
 </window>

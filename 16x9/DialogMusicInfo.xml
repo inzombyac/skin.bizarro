@@ -4,8 +4,8 @@
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">9001</defaultcontrol>
 	<zorder>0</zorder>
-	<onload condition="Container.Content(artists) | Container.Content(songs)">RunScript(script.extendedinfo,info=discography,artistname='$ESCINFO[ListItem.Artist]',silent=False)</onload>
-	<onload condition="Container.Content(albums)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=False)</onload>
+	<onload condition="[Container.Content(artists) | Container.Content(songs)] + !String.IsEmpty(ListItem.Artist)">RunScript(script.extendedinfo,info=discography,artistname='$ESCINFO[ListItem.Artist]',silent=true)</onload>
+	<onload condition="Container.Content(albums) + !String.IsEmpty(ListItem.Artist) + !String.IsEmpty(ListItem.Album)">RunScript(script.extendedinfo,info=artistdetails,info=albuminfo,artistname='$ESCINFO[ListItem.Artist]',albumname='$ESCINFO[ListItem.Album]',silent=true)</onload>
 	<onload>RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<onunload>ClearProperty(Discography.1.Label,home)</onunload>
 	<onunload>ClearProperty(artistdetails.Label,home)</onunload>
@@ -28,7 +28,7 @@
 				<control type="image">$INFO[ListItem.Icon]</control>
 				<onfocus>SetFocus(9001)</onfocus>
 			</focusedlayout>
-			<content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+			<content>$VAR[SimilarArtistContent]</content>
 		</control>
 		<control type="group">
 			<left>SidePad</left>
@@ -185,28 +185,6 @@
 						<onclick>PlayMedia($INFO[ListItem.FileNameAndPath],1)</onclick>
 						<visible>!Container.Content(Artists)</visible>
 					</control>
-					<!-- Youtube Button -->
-					<control type="button" id="2">
-						<width>222</width>
-						<height>116</height>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<aligny>top</aligny>
-						<textoffsety>77</textoffsety>
-						<textcolor>White70</textcolor>
-						<label>Search YouTube</label>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown>5050</ondown>	
-						<onclick condition="Container.Content(artists)">SetProperty(listcontent,$INFO[ListItem.Artist],home)</onclick>
-						<onclick condition="Container.Content(albums)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album],home)</onclick>
-						<onclick condition="Container.Content(songs)">SetProperty(listcontent,$INFO[ListItem.Artist] $INFO[ListItem.Album] $INFO[ListItem.Label],home)</onclick>
-						<onclick>ActivateWindow(1168)</onclick>
-						<texturefocus>dialogvideo/youtube.png</texturefocus>
-						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/youtube.png</texturenofocus>
-						<alttexturefocus >dialogvideo/youtube.png</alttexturefocus>
-						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/youtube.png</alttexturenofocus>
-						<onup>300</onup>
-					</control>
 					<!-- Refresh Button -->
 					<control type="button" id="6">
 						<width>222</width>
@@ -351,7 +329,7 @@
 							<visible>!String.IsEmpty(ListItem.FileNameAndPath)</visible>
 						</control>
 					</focusedlayout>
-					<content>plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</content>
+					<content>$VAR[DiscographyContent]</content>
 				</control>
 				<!-- Album Tracklist -->
 				<control id="5050" type="panel">
@@ -549,7 +527,6 @@
 							<onfocus>Skin.SetString(CurrentArtistPath,$INFO[Container(5051).ListItem.Label2])</onfocus>
 						</control>
 					</focusedlayout>
-					<!-- <content>plugin://script.extendedinfo?info=similarartistsinlibrary&amp;&amp;artistname=$INFO[ListItem.Artist]</content> -->
 					<include>SimilarArtistsList</include>
 				</control>
 				<!-- Hidden list to grab data -->

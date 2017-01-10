@@ -820,3 +820,7 @@ msgstr "TV Hub"
 msgctxt "#31796"
 msgid "Order"
 msgstr "Order"
+
+msgctxt "#31797"
+msgid "Emby Manual Sync"
+msgstr "Emby Manual Sync"

@@ -47,7 +47,7 @@
 				<include>Def9000MediaMenuTop</include>
 			</control>
 		</control>
-		<control type="group">
+		<!-- <control type="group">
 			<visible>!Window.IsVisible(DialogProgress.xml)</visible>
 			<visible>!Window.IsVisible(DialogBusy.xml)</visible>
 			<posx>480</posx>
@@ -83,6 +83,6 @@
 				<onclick>Back</onclick>
 			</control>
 			<visible>Integer.IsEqual(Container.NumItems,0)</visible>
-		</control>
+		</control> -->
 	</controls>
 </window>

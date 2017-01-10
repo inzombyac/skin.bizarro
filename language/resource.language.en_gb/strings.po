@@ -796,3 +796,8 @@ msgstr ""
 msgctxt "#31796"
 msgid "Order"
 msgstr ""
+
+# Include_Defs.xml 1172
+msgctxt "#31797"
+msgid "Emby Manual Sync"
+msgstr ""

@@ -5,7 +5,6 @@
     
     <controls>
         <control type="visualisation" id="2">
-            <visible>Skin.HasSetting(OSDVisualisation.ShowFanart) | [!Skin.HasSetting(musicvis.fanartfallback) + [!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)]]</visible>
             <description>visualisation</description>
             <include>Dimensions_Fullscreen</include>
         </control>
@@ -13,21 +12,7 @@
             <aspectratio>scale</aspectratio>
             <include>Dimensions_Fullscreen</include>
             <texture background="true">$INFO[Player.Art(fanart)]</texture>
-            <visible>!System.HasAddon(script.artistslideshow) | Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
-            <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
-            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-        </control>
-        <control type="multiimage">
-            <aspectratio>scale</aspectratio>
-            <include>Dimensions_Fullscreen</include>
-            <timeperimage>10000</timeperimage>
-            <randomize>true</randomize>
-            <fadetime>600</fadetime>
-            <loop>yes</loop>
-            <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
-            <visible>System.HasAddon(script.artistslideshow) + !Skin.HasSetting(ArtistSlideShow.Disabled)</visible>
-            <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
+            <animation effect="fade" start="100" end="65" time="0" condition="Player.HasAudio">Conditional</animation>
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
         </control>
@@ -39,7 +24,7 @@
                 <texture border="2" colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
                 <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
             </control>
-            <visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Skin.HasSetting(osd.showmusicinfo)</visible>
+            <visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
             <control type="group">
                 <height>500</height>
                 <bottom>60</bottom>
@@ -322,15 +307,6 @@
                     </scrollsuffix>
                 </control>
             </control>
-        </control>
-
-        <control type="list" id="9301">
-            <height>36</height>
-            <orientation>horizontal</orientation>
-            <autoscroll time="8000">false</autoscroll>
-            <itemlayout width="1" height="1"></itemlayout>
-            <focusedlayout width="1" height="1"></focusedlayout>
-            <content>plugin://script.extendedinfo?info=artistshouts&amp;&amp;artistname=$INFO[MusicPlayer.Artist]</content>
         </control>
     </controls>
 </window>

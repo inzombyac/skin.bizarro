@@ -1116,8 +1116,9 @@
 		<value condition="!String.IsEmpty(Window(Home).Property(Discography.1.Label)) + !Container.Content(albums)">Albums for $INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="MusicInfoSimilarLabel">
-		<value condition="Integer.IsGreater(Container(5051).NumItems,0)">Similar Artists in Your Library</value>
-		<value>No Similar Artists Found in Your Library</value>
+		<!-- <value condition="Integer.IsGreater(Container(5051).NumItems,0)">Similar Artists in Your Library</value>
+		<value>No Similar Artists Found in Your Library</value> -->
+		<value condition="Integer.IsGreater(Container(5051).NumItems,0)">Recommended Albums</value>
 	</variable>
 	<variable name="MusicInfoTrackLabel">
 		<value condition="Integer.IsGreater(ListItem.Label2, 0) + Integer.IsLess(ListItem.Label2, 10)">$INFO[ListItem.Label2,0]</value>
@@ -1127,5 +1128,9 @@
 		<value condition="!String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(platform)">$INFO[ListItem.Property(platform)]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
 		<value condition="!String.IsEmpty(ListItem.Genre) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Studio)]">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
+	</variable>
+	<variable name="MusicOSDRandomLabel">
+		<value condition="String.IsEqual(Playlist.Random,Off)">Random : Off</value>
+		<value>Random : On</value>
 	</variable>
 </includes>
