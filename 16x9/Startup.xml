@@ -7,12 +7,9 @@
         <control type="button" id="9315">
             <visible allowhiddenfocus="true">false</visible>
             <onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetString(SkinHelper.RandomFanartDelay,10)</onfocus>
-			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnablePVRThumbs)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service) + System.HasAddon(plugin.video.emby)">Skin.SetBool(SmartShortcuts.emby)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.favorites)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.playlists)</onfocus>
-			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableAddonsLookups)</onfocus>
-			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onfocus>
             <!-- Workaround -->
 			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
 			<!-- Workaround -->

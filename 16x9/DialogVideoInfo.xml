@@ -6,10 +6,6 @@
 	<zorder>0</zorder>
 	<onload condition="Container.Content(episodes) + String.IsEmpty(ListItem.DBID) + String.StartsWith(ListItem.Path,plugin://plugin.video.emby)">SetProperty(TVShowID,$INFO[ListItem.Property(DBID)],home)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
-	<!--<onload condition="Container.Content(tvshows) | Container.Content(episodes)">
-	RunScript(script.tv.show.next.aired,tvshowtitle=$INFO[ListItem.Label])
-	</onload> -->
-	<onload condition="!String.IsEmpty(ListItem.Art(fanart))">RunScript(script.toolbox,info=blur,id='"$INFO[ListItem.Art(fanart)]"',radius=$VAR[DialogInfoBlurLevel],prefix=DialogInfo)</onload>
 	<controls>
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
@@ -121,44 +117,16 @@
 				<left>10</left>
 				<width>1220</width>
 				<height>200</height>				
-				<control type="radiobutton"  id="300">
-					<top>-8</top>
-					<width>100%</width>
-					<height>100%</height>
-					<radioposx>1</radioposx>
-					<radioposy>1</radioposy>
-					<radiowidth>1</radiowidth>
-					<onup condition="Player.HasMedia">7788</onup>
-					<ondown>9001</ondown>
-					<texturefocus border="5" colordiffuse="$INFO[Window(home).Property(DialogInfo.ImageColor)]">common/box.png</texturefocus>
-					<align>left</align>
-					<aligny>top</aligny>
-					<textoffsetx>2</textoffsetx>
-					<textoffsety>4</textoffsety>
-					<onclick>SetProperty(Text,[B]$INFO[ListItem.TagLine,,[CR]][/B]$ESCINFO[ListItem.Plot],home)</onclick>
-					<onclick>RunScript(script.toolbox,info=textviewer,header=Plot,text='$ESCINFO[ListItem.Plot]')</onclick>
-					<visible>!String.IsEmpty(ListItem.Plot)</visible>
-				</control>
-				<control type="radiobutton"  id="300">
-					<top>-8</top>
-					<width>100%</width>
-					<height>100%</height>
-					<radioposx>1</radioposx>
-					<radioposy>1</radioposy>
-					<radiowidth>1</radiowidth>
-					<onup condition="Player.HasMedia">7788</onup>
-					<ondown>9001</ondown>
-					<visible>String.IsEmpty(ListItem.Plot)</visible>
-				</control>
 				<!-- Plot -->
 				<control type="textbox" id="4">
 					<height>190</height>
 					<top>-8</top>
 					<left>5</left>
+					<height>190</height>
 					<align>left</align>
 					<font>TwentyEight</font>
 					<scroll>true</scroll>
-					<textcolor>Dark1</textcolor>
+					<textcolor>Dark2</textcolor>
 					<label>$INFO[ListItem.Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
 				</control>

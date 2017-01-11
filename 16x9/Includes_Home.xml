@@ -2524,6 +2524,28 @@
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
+			<control type="group">
+				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<control type="image">
+					<right>15</right>
+					<centertop>30</centertop>
+					<height>40</height>
+					<width>40</width>
+					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<right>15</right>
+					<centertop>30</centertop>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+					<font>Small</font>
+					<textcolor>White</textcolor>
+				</control>
+			</control>
 		</itemlayout>
 		<focusedlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="button">
@@ -2601,6 +2623,28 @@
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 				<include>Animation.Focus</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
+				<control type="image">
+					<right>15</right>
+					<centertop>30</centertop>
+					<height>40</height>
+					<width>40</width>
+					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<right>15</right>
+					<centertop>30</centertop>
+					<height>40</height>
+					<width>40</width>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
+					<font>Small</font>
+					<textcolor>White</textcolor>
+				</control>
 			</control>
 			<control type="image">
 				<left>10</left>

@@ -261,16 +261,6 @@
 						<onclick>Skin.ToggleSetting(global.hidefanart)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
 					</control>
-					<control type="radiobutton" id="9228" description="Show Extra fanart">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
-						<visible>!Skin.HasSetting(global.hidefanart)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31730</label>
-						<selected>Skin.HasSetting(EnableExtraFanart)</selected>
-						<onclick>Skin.ToggleSetting(EnableExtraFanart)</onclick>
-						<visible>!Skin.HasSetting(lights.out)</visible>
-					</control>
 					<control type="button" id="92281" description="Fanart Opacity">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
@@ -345,14 +335,6 @@
 						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
 					</control>
 					<!-- OSD -->
-					<control type="radiobutton" id="9233" description="Animate Artist slideshow">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9103)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31120</label>
-						<selected>Skin.HasSetting(ArtistSlideshow.Animate)</selected>
-						<onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
-					</control>
 					<control type="radiobutton" id="9240" description="Hide spoilers">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9103)</visible>
@@ -508,35 +490,6 @@
 						<label>Do not show DiscArt</label>
 						<selected>Skin.HasSetting(furniture.nodiscart)</selected>
 						<onclick>Skin.ToggleSetting(furniture.nodiscart)</onclick>
-					</control>
-					<control type="button" id="92705" description="Video Info Blur">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<label>Blur Level</label>
-						<label2 fallback="10">[COLOR=$VAR[ColorHighlight2]]$VAR[DialogInfoBlurLevel][/COLOR]</label2>
-						<onclick>SetProperty(Dialog.NumItems,10)</onclick>
-						<onclick>SetProperty(Dialog.1.Label,2)</onclick>
-						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(VideoInfoBlur,2))</onclick>
-						<onclick>SetProperty(Dialog.2.Label,4)</onclick>
-						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(VideoInfoBlur,4))</onclick>
-						<onclick>SetProperty(Dialog.3.Label,6)</onclick>
-						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(VideoInfoBlur,6))</onclick>
-						<onclick>SetProperty(Dialog.4.Label,8)</onclick>
-						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(VideoInfoBlur,8))</onclick>
-						<onclick>SetProperty(Dialog.5.Label,10 - Default)</onclick>
-						<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(VideoInfoBlur,10))</onclick>
-						<onclick>SetProperty(Dialog.6.Label,12)</onclick>
-						<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(VideoInfoBlur,12))</onclick>
-						<onclick>SetProperty(Dialog.7.Label,14)</onclick>
-						<onclick>SetProperty(Dialog.7.BuiltIn,Skin.SetString(VideoInfoBlur,14))</onclick>
-						<onclick>SetProperty(Dialog.8.Label,16)</onclick>
-						<onclick>SetProperty(Dialog.8.BuiltIn,Skin.SetString(VideoInfoBlur,16))</onclick>
-						<onclick>SetProperty(Dialog.9.Label,18)</onclick>
-						<onclick>SetProperty(Dialog.9.BuiltIn,Skin.SetString(VideoInfoBlur,18))</onclick>
-						<onclick>SetProperty(Dialog.10.Label,20)</onclick>
-						<onclick>SetProperty(Dialog.10.BuiltIn,Skin.SetString(VideoInfoBlur,20))</onclick>
-						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Blur Level)</onclick>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
 					</control>
 					<!-- Extras -->
 					<control type="radiobutton" id="9272" description="Kiosk Mode">

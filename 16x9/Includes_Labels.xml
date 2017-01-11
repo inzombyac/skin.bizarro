@@ -304,7 +304,8 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">System Status</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">Extended Forecast</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">Recordings</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Next Up</value>
+		<!-- <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Next Up</value> -->
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">In Progress Shows</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">Recent Albums</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">Trending Movies</value>
@@ -651,10 +652,6 @@
 		<value condition="String.IsEqual(Skin.String(FanartFade),Brighter)">FanartFade3</value>
 		<value condition="String.IsEqual(Skin.String(FanartFade),Brightest)">FanartFade4</value>
 		<value>FanartFade</value>
-	</variable>
-	<variable name="DialogInfoBlurLevel">
-		<value condition="!String.IsEmpty(Skin.String(VideoInfoBlur))">$INFO[Skin.String(VideoInfoBlur)]</value>
-		<value>10</value>
 	</variable>
 	<variable name="Duration">
 		<value condition="String.IsEqual(ListItem.Duration,1)">1 minute</value>

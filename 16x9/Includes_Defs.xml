@@ -1530,14 +1530,14 @@
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(211).ListItem.Property(widgetPath)]</value>
 	</variable>
 	<variable name="DefWidgetRight1TVShows">
-		<value>plugin://script.skin.helper.service/?action=nextepisodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<!-- <value>plugin://script.skin.helper.service/?action=nextepisodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
+		<value>videodb://inprogresstvshows</value>
 	</variable>
 	<variable name="DefWidgetRight1Movies">
 		<value>special://skin/extras/playlists/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="DefWidgetRight1LiveTV">
 		<value>pvr://recordings/tv/active</value>
-		<!-- <value>plugin://script.skin.helper.widgets/?action=recordings&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value> -->
 	</variable>
 	<variable name="DefWidgetRight1Channels">
 		<value>plugin://script.extendedinfo?info=trendingmovies</value>

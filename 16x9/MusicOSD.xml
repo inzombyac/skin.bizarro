@@ -8,6 +8,7 @@
             <height>80</height>
             <bottom>64</bottom>
             <include>Animation.FadeIn</include>
+			<visible>Player.HasMedia</visible>
             <animation type="Hidden">
                 <effect type="slide" end="0,60" start="0" time="200"/>
                 <effect type="fade" end="0" start="100" time="150"/>

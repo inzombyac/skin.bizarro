@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2006">
-    <defaultcontrol always="true">-</defaultcontrol>
-    
+	<defaultcontrol always="true">-</defaultcontrol>
     <controls>
         <control type="visualisation" id="2">
             <description>visualisation</description>
             <include>Dimensions_Fullscreen</include>
         </control>
-        <control type="image">
+		<control type="image">
             <aspectratio>scale</aspectratio>
             <include>Dimensions_Fullscreen</include>
             <texture background="true" fallback="special://skin/extras/backgrounds/Headphones.jpg">$INFO[Player.Art(fanart)]</texture>
             <animation effect="fade" start="100" end="65" time="0" condition="Player.HasAudio">Conditional</animation>
-            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+			<visible>!System.HasAddon(script.artistslideshow) | String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow))</visible>
         </control>
         <control type="group">
             <include>Animation.FadeIn</include>
