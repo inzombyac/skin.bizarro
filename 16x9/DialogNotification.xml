@@ -27,7 +27,6 @@
                     <width>74</width>
                     <height>74</height>
                     <aspectratio>keep</aspectratio>
-                    <colordiffuse>Dark1</colordiffuse>
                 </control>                
                 <control type="label" id="401">
                     <left>104</left>
