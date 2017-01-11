@@ -99,7 +99,6 @@
             <control type="spincontrolex" id="9">
                 <description>Default spincontrolex</description>
                 <align>left</align>
-                <reverse>yes</reverse>
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
 

@@ -125,7 +125,6 @@
         <textoffsetx>30</textoffsetx>
         <align>left</align>
         <aligny>center</aligny>
-        <reverse>yes</reverse>
         <pulseonselect>false</pulseonselect>
     </default>
 
@@ -148,7 +147,6 @@
         <textoffsetx>30</textoffsetx>
         <align>left</align>
         <aligny>center</aligny>
-        <reverse>yes</reverse>
         <pulseonselect>false</pulseonselect>
     </default>
 

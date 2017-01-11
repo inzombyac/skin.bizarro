@@ -38,14 +38,15 @@
 				<description>background image</description>
 				<posx>0</posx>
 				<posy>0</posy>
-				<top>34</top>
+				<top>50</top>
 				<width>100%</width>
-				<height>110</height>
+				<height>102</height>
 				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
 				<texture border="16">common/rounded-shadow8.png</texture>
+				<animation effect="fade" start="100" end="50" condition="Control.IsVisible(100)">Conditional</animation>
 			</control>   
             <control type="grouplist" id="101">
-                <top>52</top>
+                <top>70</top>
                 <width>100%</width>
                 <height>72</height>
                 <itemgap>16</itemgap>
@@ -56,8 +57,8 @@
                 <include>OSDVideoControls</include>
             </control>
             <control type="grouplist" id="100">
-                <top>0</top>
-                <left>50</left>
+                <top>70</top>
+                <left>530</left>
                 <height>48</height>
                 <itemgap>-10</itemgap>
                 <orientation>horizontal</orientation>
@@ -67,30 +68,14 @@
                 <onup>101</onup>
                 <ondown>101</ondown>
                 <usecontrolcoords>true</usecontrolcoords>
-                <control type="button" id="1">
-                    <description>Repeat</description>
-                    <align>left</align>
-                    <label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
-                    <onclick>XBMC.PlayerControl(Repeat)</onclick>
-                    <include>DefOSDButtons</include>
-                </control>
-
                 <!-- <control type="button" id="2">
                     <description>Lyrics</description>
                     <align>left</align>
                     <label>24013</label>
                     <onclick>RunScript(script.cu.lrclyrics)</onclick>
                     <include>DefOSDButtons</include>
+					<visible>System.HasAddon(script.cu.lrclyrics)</visible>
                 </control> -->
-
-                <control type="button" id="3">
-                    <description>Playlist</description>
-                    <align>left</align>
-                    <label>559</label>
-                    <onclick>ActivateWindow(musicplaylist)</onclick>
-                    <include>DefOSDButtons</include>
-                </control>
-
                 <control type="button" id="8">
                     <description>Visual Text</description>
                     <width>220</width>
@@ -108,7 +93,7 @@
             </control>
 
             <control type="grouplist" id="102">
-                <top>0</top>
+                <top>70</top>
                 <right>50</right>
                 <height>48</height>
                 <itemgap>-10</itemgap>

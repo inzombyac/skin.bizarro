@@ -391,4 +391,9 @@
 		<value condition="String.IsEqual(ListItem.Property(Addon.Status),Enabled)">special://skin/extras/icons/shipping.png</value>
 		<value>special://skin/extras/icons/warning.png</value>
 	</variable>
+	<variable name="RepeatOSDIcon">
+		<value condition="Playlist.IsRepeatOne">osd/repeat-all.png</value>
+		<value condition="Playlist.IsRepeat">osd/repeat-none.png</value>
+		<value>osd/repeat.png</value>
+	</variable>
 </includes>

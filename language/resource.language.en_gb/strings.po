@@ -47,52 +47,10 @@ msgctxt "#31105"
 msgid "Location:"
 msgstr ""
 
-# Includes_Labels.xml: 383
-# Includes_PVR.xml: 352, 364, 501, 513, 644, 656
-# MyPVRGuide.xml: 338, 350, 441, 453, 538, 550, 660, 672, 763, 775, 860, 872, 983, 995, 1086, 1098, 1183
-#msgctxt "#31106"
-#msgid "Finishes at"
-#msgstr ""
-
-# Same as built in #38031
-#msgctxt "#31107"
-#msgid "Video Stream"
-#msgstr ""
-
-# 10000 = Home, 21435=Edit
-#msgctxt "#31109"
-#msgid "Customise home menu"
-#msgstr ""
-
-# 19190
-#msgctxt "#31110"
-#msgid "Background"
-#msgstr ""
-
 # SkinSettings.xml: 335
 msgctxt "#31111"
 msgid "Show now playing video in background"
 msgstr ""
-
-# 1034
-#msgctxt "#31112"
-#msgid "Submenu"
-#msgstr ""
-
-# Includes_Labels.xml" 367 - Removed
-#msgctxt "#31113"
-#msgid "No Timer"
-#msgstr ""
-
-# 446 = DVD 33061 = Menu
-#msgctxt "#31116"
-#msgid "DVD Menu"
-#msgstr ""
-
-# 36501
-#msgctxt "#31117"
-#msgid "3D Mode"
-#msgstr ""
 
 # SkinSettings.xml: 361
 msgctxt "#31118"
@@ -109,21 +67,10 @@ msgctxt "#31120"
 msgid "Animate artist slideshow"
 msgstr ""
 
-# 20414
-#msgctxt "#31121"
-#msgid "Show fanart"
-#msgstr ""
-
 # SkinSettings.xml: 211
 msgctxt "#31132"
 msgid "Reset all home shortcuts to default"
 msgstr ""
-
-#Custom_MovieDB_Movies.xml: 95
-# Replace with 198
-#msgctxt "#31138"
-#msgid "Content Loading"
-#msgstr ""
 
 msgctxt "#31142"
 msgid "Use low list"
@@ -566,7 +513,6 @@ msgstr ""
 msgctxt "#31255"
 msgid "Show info overlay"
 msgstr ""
-
 
 msgctxt "#31730"
 msgid "Show Extra Fanart"

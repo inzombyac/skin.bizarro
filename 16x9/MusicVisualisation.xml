@@ -11,7 +11,7 @@
         <control type="image">
             <aspectratio>scale</aspectratio>
             <include>Dimensions_Fullscreen</include>
-            <texture background="true">$INFO[Player.Art(fanart)]</texture>
+            <texture background="true" fallback="special://skin/extras/backgrounds/Headphones.jpg">$INFO[Player.Art(fanart)]</texture>
             <animation effect="fade" start="100" end="65" time="0" condition="Player.HasAudio">Conditional</animation>
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
@@ -24,11 +24,11 @@
                 <texture border="2" colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
                 <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
             </control>
-            <visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml)</visible>
+            <visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Player.Playing</visible>
             <control type="group">
                 <height>500</height>
                 <bottom>60</bottom>
-                <animation effect="slide" start="0" end="0,-60" time="200" condition="Window.IsActive(MusicOSD)">Conditional</animation>
+				<animation effect="slide" start="0" end="0,-60" time="200" condition="Window.IsActive(MusicOSD)">Conditional</animation>
                 <control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>

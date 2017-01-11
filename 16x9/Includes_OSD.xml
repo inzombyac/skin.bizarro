@@ -281,6 +281,45 @@
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.CanRecord">Conditional</animation>
 		</control>
+		<control type="button" id="9004">
+			<description>Repeat</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<label></label>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-off.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/repeat-off.png</texturenofocus>
+			<onclick>XBMC.PlayerControl(Repeat)</onclick>
+			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRepeatOne</visible>
+		</control>
+		<control type="button" id="9005">
+			<description>Repeat</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<label></label>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/repeat.png</texturenofocus>
+			<onclick>XBMC.PlayerControl(Repeat)</onclick>
+			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRepeat</visible>
+		</control>
+		<control type="button" id="9006">
+			<description>Repeat</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<label></label>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/repeat-all.png</texturenofocus>
+			<onclick>XBMC.PlayerControl(Repeat)</onclick>
+			<visible>Window.IsVisible(MusicOSD.xml) + !Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+		</control>			
 		<control type="button" id="12">
 			<description>Skip Back</description>
 			<width>48</width>
