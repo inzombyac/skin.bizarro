@@ -119,7 +119,6 @@
 			<bottom>10</bottom>
 			<height>10</height>
 			<texture colordiffuse="Black12">common/white.png</texture>
-			<visible>Skin.HasSetting(osd.usetheme)</visible>
 		</control>
 		<control type="progress" description="cache">
 			<description>Progress Bar</description>
@@ -232,154 +231,43 @@
 		</control>
 	</include>
 	<variable name="OSDPanel">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Background</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Background</value>
 		<value>OSDBack</value>
 	</variable>
 	<variable name="OSDPanelWhite12">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark3</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark3</value>
 		<value>PanelWhite12</value>
 	</variable>
 	<variable name="OSDPanelWhite30">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>
 	<variable name="MusicOSDPanelWhite30">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>
 	<variable name="Music2OSDPanelWhite30">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>
 	<variable name="Music3OSDPanelWhite30">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>
 	<variable name="OSDPanelWhite70">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark1</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark1</value>
 		<value>PanelWhite70</value>
 	</variable>
 	<variable name="OSDPanelWhite100">
-		<value condition="[Skin.HasSetting(osd.usetheme)] | [!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark1</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark1</value>
 		<value>PanelWhite100</value>
 	</variable>
 	<include name="OSDVideoControls">
 		<control type="togglebutton" id="9003">
 			<description>Record</description>
-			<bottom>0</bottom>
 			<width>48</width>
-			<height>48</height>
-			<label></label>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/record.png</texturenofocus>
-			<usealttexture>Player.Recording</usealttexture>
-			<alttexturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
-			<alttexturenofocus colordiffuse="PanelWhite70" flipx="true">osd/record-on.png</alttexturenofocus>
-			<onclick>PlayerControl(Record)</onclick>
-			<enable>Player.CanRecord</enable>
-			<visible>VideoPlayer.Content(LiveTV)</visible>
-			<animation effect="fade" start="100" end="33" time="100" condition="!Player.CanRecord">Conditional</animation>
-		</control>
-		<control type="button" id="12">
-			<description>Skip Back</description>
-			<top>14</top>
-			<width>48</width>
-			<height>48</height>
-			<label></label>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/next.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/next.png</texturenofocus>
-			<onclick>PlayerControl(Previous)</onclick>
-		</control>
-		<control type="button" id="13">
-			<description>Rewind</description>
-			<top>48</top>
-			<width>48</width>
-			<height>48</height>
-			<label></label>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/ff.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70" flipx="true">osd/ff.png</texturenofocus>
-			<onclick>PlayerControl(Rewind)</onclick>
-			<enable>Player.SeekEnabled</enable>
-			<animation effect="fade" start="100" end="33" time="100" condition="!Player.SeekEnabled">Conditional</animation>
-		</control>
-		<control type="togglebutton" id="14">
-			<description>Play/Pause</description>
-			<width>64</width>
 			<height>64</height>
-			<label></label>
-			<altlabel></altlabel>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/pause.png</texturenofocus>
-			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-			<alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/play.png</alttexturefocus>
-			<alttexturenofocus colordiffuse="PanelWhite70">osd/play.png</alttexturenofocus>
-			<onclick>PlayerControl(Play)</onclick>
-			<enable>Player.PauseEnabled</enable>
-			<animation effect="fade" start="100" end="33" time="100" condition="!Player.PauseEnabled">Conditional</animation>
-		</control>
-		<control type="button" id="15">
-			<description>Stop</description>
-			<bottom>0</bottom>
-			<width>48</width>
-			<height>48</height>
-			<label></label>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stop.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/stop.png</texturenofocus>
-			<onclick>PlayerControl(Stop)</onclick>
-		</control>
-		<control type="button" id="16">
-			<description>Fast Forward</description>
-			<bottom>0</bottom>
-			<width>48</width>
-			<height>48</height>
-			<label></label>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/ff.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/ff.png</texturenofocus>
-			<onclick>PlayerControl(Forward)</onclick>
-			<enable>Player.SeekEnabled</enable>
-			<animation effect="fade" start="100" end="33" time="100" condition="!Player.SeekEnabled">Conditional</animation>
-		</control>
-		<control type="button" id="17">
-			<description>Next</description>
-			<bottom>0</bottom>
-			<width>48</width>
-			<height>48</height>
-			<label></label>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/next.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/next.png</texturenofocus>
-			<onclick>PlayerControl(Next)</onclick>
-		</control>
-		<control type="button" id="9002">
-			<bottom>0</bottom>
-			<width>48</width>
-			<height>48</height>
-			<font>noop</font>
-			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/eject.png</texturefocus>
-			<texturenofocus colordiffuse="PanelWhite70">osd/eject.png</texturenofocus>
-			<onclick>EjectTray()</onclick>
-			<visible>System.HasMediadvd</visible>
-		</control>
-	</include>
-	<include name="OSDVideoControlsFlip">
-		<control type="togglebutton" id="9003">
-			<description>Record</description>
-			<width>48</width>
-			<height>48</height>
+			<top>12</top>
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
@@ -396,7 +284,8 @@
 		<control type="button" id="12">
 			<description>Skip Back</description>
 			<width>48</width>
-			<height>48</height>
+			<height>64</height>
+			<top>12</top>
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
@@ -407,7 +296,8 @@
 		<control type="button" id="13">
 			<description>Rewind</description>
 			<width>48</width>
-			<height>48</height>
+			<height>64</height>
+			<top>12</top>
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
@@ -419,8 +309,9 @@
 		</control>
 		<control type="togglebutton" id="14">
 			<description>Play/Pause</description>
-			<width>48</width>
-			<height>48</height>
+			<width>64</width>
+			<height>64</height>
+			<bottom>12</bottom>
 			<label></label>
 			<altlabel></altlabel>
 			<font>noop</font>
@@ -437,7 +328,8 @@
 		<control type="button" id="15">
 			<description>Stop</description>
 			<width>48</width>
-			<height>48</height>
+			<height>64</height>
+			<top>12</top>
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
@@ -448,7 +340,8 @@
 		<control type="button" id="16">
 			<description>Fast Forward</description>
 			<width>48</width>
-			<height>48</height>
+			<height>64</height>
+			<top>12</top>
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
@@ -461,7 +354,8 @@
 		<control type="button" id="17">
 			<description>Next</description>
 			<width>48</width>
-			<height>48</height>
+			<height>64</height>
+			<top>12</top>
 			<label></label>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
@@ -471,7 +365,8 @@
 		</control>
 		<control type="button" id="9002">
 			<width>48</width>
-			<height>48</height>
+			<height>64</height>
+			<top>12</top>
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/eject.png</texturefocus>
@@ -499,7 +394,6 @@
 				<width>100%</width>
 				<height>100%</height>
 				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-				<animation effect="fade" start="100" end="95" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
 				<texture border="16">common/rounded-shadow8.png</texture>
 				<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>
@@ -510,7 +404,6 @@
 				<width>100%</width>
 				<height>100%</height>
 				<colordiffuse>White70</colordiffuse>
-				<animation effect="fade" start="100" end="95" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
 				<texture border="16">common/rounded-shadow8.png</texture>
 				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
 			</control>

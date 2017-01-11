@@ -630,31 +630,31 @@ msgstr ""
 
 msgctxt "#31746"
 msgid "Highlight colour"
-msgstr
+msgstr ""
 
 msgctxt "#31747"
 msgid "Set the Focus Colour"
-msgstr
+msgstr ""
 
 msgctxt "#31748"
 msgid "Highlight"
-msgstr
+msgstr ""
 
 msgctxt "#31749"
 msgid "Colour"
-msgstr 
+msgstr  ""
 
 msgctxt "#31750"
 msgid "Alternate Video Info"
-msgstr 
+msgstr  ""
 
 msgctxt "#31751"
 msgid "Netflix Home"
-msgstr 
+msgstr  ""
 
 msgctxt "#31752"
 msgid "Search on YouTube"
-msgstr
+msgstr ""
 
 msgctxt "#31753"
 msgid "Motion picture rating country"

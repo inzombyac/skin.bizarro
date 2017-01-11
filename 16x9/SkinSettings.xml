@@ -353,15 +353,6 @@
 						<selected>Skin.HasSetting(ArtistSlideshow.Animate)</selected>
 						<onclick>Skin.ToggleSetting(ArtistSlideshow.Animate)</onclick>
 					</control>
-					<control type="radiobutton" id="9234" description="Match theme">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9103)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31196</label>
-						<selected>!Skin.HasSetting(osd.usetheme)</selected>
-						<onclick>Skin.ToggleSetting(osd.usetheme)</onclick>
-						<onclick>ReloadSkin()</onclick>
-					</control>
 					<control type="radiobutton" id="9240" description="Hide spoilers">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9103)</visible>

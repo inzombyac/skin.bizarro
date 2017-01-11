@@ -9,7 +9,7 @@
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
-            <visible>[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)] | Skin.HasSetting(osd.usetheme)</visible>
+            <visible>[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]</visible>
             <control type="image">
                 <description>background image</description>
                 <posx>0</posx>
@@ -88,7 +88,7 @@
             <height>100</height>
             <include>Animation.FadeIn.Slide</include>
             <include>Animation.FadeOut</include>
-            <visible>[Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation)] + !Skin.HasSetting(osd.usetheme)</visible>
+            <visible>[Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation)]</visible>
             <control type="image">
                 <description>background image</description>
                 <posx>0</posx>

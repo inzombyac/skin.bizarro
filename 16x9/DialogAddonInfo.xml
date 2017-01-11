@@ -115,7 +115,6 @@
 				<ondown>9000</ondown>
 				<onleft>9000</onleft>
 				<orientation>horizontal</orientation>
-				<itemgap>10</itemgap>
 				<itemlayout height="274" width="505">
 					<control type="image">
 						<width>450</width>

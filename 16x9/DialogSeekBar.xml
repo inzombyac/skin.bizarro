@@ -19,7 +19,6 @@
                     <height>374</height>
                     <texture>common/white.png</texture>
                     <colordiffuse>$VAR[OSDPanel]</colordiffuse>
-                    <animation effect="fade" start="100" end="90" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
                     <include>Animation.FadeOut</include>
                 </control>
             </control>
@@ -37,7 +36,6 @@
 					<width>100%</width>
 					<height>100%</height>
 					<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-					<animation effect="fade" start="100" end="95" condition="Skin.HasSetting(osd.usetheme)">Conditional</animation>
 					<texture border="16">common/rounded-shadow8.png</texture>
 				</control>     
 				<control type="group">

@@ -13,7 +13,6 @@
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SmartShortcuts.playlists)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableAddonsLookups)</onfocus>
 			<onfocus condition="System.HasAddon(script.skin.helper.service)">Skin.SetBool(SkinHelper.EnableExtraFanart)</onfocus>
-			<onfocus condition="System.HasAddon(script.skin.info.service)">RunScript(script.skin.info.service)</onfocus>
             <!-- Workaround -->
 			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
 			<!-- Workaround -->

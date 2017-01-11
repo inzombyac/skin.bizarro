@@ -41,6 +41,7 @@
                         <fadetime>400</fadetime>
                         <texture fallback="DefaultAlbumCover.png">$VAR[PlayerPoster]</texture>
                         <aspectratio aligny="center" align="center">scale</aspectratio>
+                        <bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
                     </control>
                     <control type="group">
                         <top>5</top>
@@ -190,7 +191,6 @@
                             <bottom>5</bottom>
                             <height>10</height>
                             <texture colordiffuse="Black12">common/white.png</texture>
-                            <visible>Skin.HasSetting(osd.usetheme)</visible>
                         </control>
 
                         <control type="progress" description="cache">
