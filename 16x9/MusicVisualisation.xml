@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2006">
-	<defaultcontrol always="true">-</defaultcontrol>
+	<defaultcontrol always="true">14</defaultcontrol>
     <controls>
         <control type="visualisation" id="2">
             <description>visualisation</description>
@@ -21,6 +21,7 @@
                 <texture border="2" colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
                 <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
             </control>
+			<include>OSDMusicControls</include>
             <visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Player.Playing</visible>
             <control type="group">
                 <height>540</height>

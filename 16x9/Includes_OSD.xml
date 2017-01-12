@@ -231,7 +231,7 @@
 		</control>
 	</include>
 	<variable name="OSDPanel">
-		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Background</value>
+		<value condition="[!Window.IsVisible(fullscreenvideo)]">Background</value>
 		<value>OSDBack</value>
 	</variable>
 	<variable name="OSDPanelWhite12">
@@ -292,7 +292,7 @@
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-off.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat-off.png</texturenofocus>
 			<onclick>XBMC.PlayerControl(Repeat)</onclick>
-			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRepeatOne</visible>
+			<visible>[Window.IsVisible(MusicOSD.xml) |  Window.IsVisible(MusicVisualisation.xml)]+ Playlist.IsRepeatOne</visible>
 		</control>
 		<control type="button" id="9005">
 			<description>Repeat</description>
@@ -305,7 +305,7 @@
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat.png</texturenofocus>
 			<onclick>XBMC.PlayerControl(Repeat)</onclick>
-			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRepeat</visible>
+			<visible>[Window.IsVisible(MusicOSD.xml) |  Window.IsVisible(MusicVisualisation.xml)] + Playlist.IsRepeat</visible>
 		</control>
 		<control type="button" id="9006">
 			<description>Repeat</description>
@@ -318,7 +318,7 @@
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat-all.png</texturenofocus>
 			<onclick>XBMC.PlayerControl(Repeat)</onclick>
-			<visible>Window.IsVisible(MusicOSD.xml) + !Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+			<visible>[Window.IsVisible(MusicOSD.xml) |  Window.IsVisible(MusicVisualisation.xml)] + !Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 		</control>			
 		<control type="button" id="12">
 			<description>Skip Back</description>

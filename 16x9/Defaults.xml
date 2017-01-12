@@ -164,9 +164,9 @@
         <height>23</height>
         <texturefocus>-</texturefocus>
         <texturenofocus>-</texturenofocus>
-        <texturesliderbar>other_textures/OSD/slider_bg_2.png</texturesliderbar>
-        <textureslidernib border="2">other_textures/OSD/SliderNibNF.png</textureslidernib>
-        <textureslidernibfocus border="2">other_textures/OSD/SliderNibFO.png</textureslidernibfocus>
+        <texturesliderbar>osd/progress-bg.png</texturesliderbar>
+        <textureslidernib border="2">osd/progress-mid.png</textureslidernib>
+        <textureslidernibfocus border="2">osd/progress-mid.png</textureslidernibfocus>
     </default>
     
     <default type="sliderex">
@@ -174,9 +174,9 @@
         <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
         <sliderwidth>230</sliderwidth>
         <sliderheight>23</sliderheight>
-        <texturesliderbar>other_textures/OSD/slider_bg.png</texturesliderbar>
-        <textureslidernib border="2">other_textures/OSD/SliderNibNF.png</textureslidernib>
-        <textureslidernibfocus border="2">other_textures/OSD/SliderNibFO.png</textureslidernibfocus>
+        <texturesliderbar>osd/progress-bg.png</texturesliderbar>
+        <textureslidernib border="2">osd/progress-mid.png</textureslidernib>
+        <textureslidernibfocus border="2">osd/progress-mid.png</textureslidernibfocus>
         <font>Small</font>
         <aligny>center</aligny>
         <textcolor>Black70</textcolor>

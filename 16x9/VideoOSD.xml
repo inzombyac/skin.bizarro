@@ -34,8 +34,8 @@
 					<width>100%</width>
 					<height>20</height>
 					<texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
-					<textureslidernib>osd/progress-end.png</textureslidernib>
-					<textureslidernibfocus>osd/progress-end.png</textureslidernibfocus>
+					<textureslidernib>osd/progress-mid.png</textureslidernib>
+					<textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
 					<action>seek</action>
 					<orientation>horizontal</orientation>
 				</control>
@@ -53,8 +53,8 @@
 					<width>100%</width>
 					<height>20</height>
 					<texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
-					<textureslidernib>osd/progress-end.png</textureslidernib>
-					<textureslidernibfocus>osd/progress-end.png</textureslidernibfocus>
+					<textureslidernib>osd/progress-mid.png</textureslidernib>
+					<textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
 					<action>seek</action>
 					<orientation>horizontal</orientation>
 				</control>
