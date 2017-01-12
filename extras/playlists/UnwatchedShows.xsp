@@ -5,4 +5,5 @@
     <rule field="numwatched" operator="lessthan">
         <value>1</value>
     </rule>
+	<limit>25</limit>
 </smartplaylist>

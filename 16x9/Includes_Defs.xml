@@ -1531,7 +1531,8 @@
 	</variable>
 	<variable name="DefWidgetRight1TVShows">
 		<!-- <value>plugin://script.skin.helper.service/?action=nextepisodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
-		<value>videodb://inprogresstvshows</value>
+		<!-- <value>videodb://inprogresstvshows</value> -->
+		<value>special://skin/extras/playlists/InProgressShows.xsp</value>
 	</variable>
 	<variable name="DefWidgetRight1Movies">
 		<value>special://skin/extras/playlists/InProgressMovies.xsp</value>
@@ -1622,6 +1623,7 @@
 		<!-- <value>plugin://script.skin.helper.widgets/?action=nextaired&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value> -->
 	</variable>
 	<variable name="DefWidgetRight2Channels">
+		<!-- <value>plugin://script.extendedinfo?info=anticipatedshows</value> -->
 		<value>plugin://script.extendedinfo?info=trendingshows</value>
 	</variable>
 	<variable name="DefWidgetRight2Music">
