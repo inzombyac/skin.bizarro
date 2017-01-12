@@ -6,7 +6,7 @@
     <controls>
         <control type="group">
             <height>80</height>
-            <bottom>64</bottom>
+            <bottom>160</bottom>
             <include>Animation.FadeIn</include>
 			<visible>Player.HasMedia</visible>
             <animation type="Hidden">
@@ -19,11 +19,11 @@
             </animation>
 			<control type="group">
 				<zorder>0</zorder>
-				<left>810</left>
+				<left>600</left>
 				<right>SidePad</right>
 				<height>20</height>
-				<top>95r</top>
-				<width>1030</width>
+				<top>57r</top>
+				<width>1240</width>
 				<control type="slider" id="401">
 					<description>Seek Slider</description>
 					<width>100%</width>
@@ -35,17 +35,6 @@
 					<orientation>horizontal</orientation>
 				</control>
 			</control>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<top>50</top>
-				<width>100%</width>
-				<height>102</height>
-				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-				<texture border="16">common/rounded-shadow8.png</texture>
-				<animation effect="fade" start="100" end="50" condition="Control.IsVisible(100)">Conditional</animation>
-			</control>   
             <control type="grouplist" id="101">
                 <top>70</top>
                 <width>100%</width>
