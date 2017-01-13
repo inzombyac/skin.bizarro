@@ -356,10 +356,10 @@
 			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
-			<texturenofocus colordiffuse="Dark1">osd/pause.png</texturenofocus>
+			<texturenofocus colordiffuse="$VAR[ColorHighlight2]">osd/pause.png</texturenofocus>
 			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 			<alttexturefocus colordiffuse="$VAR[ColorHighlight]">osd/play.png</alttexturefocus>
-			<alttexturenofocus colordiffuse="Dark1">osd/play.png</alttexturenofocus>
+			<alttexturenofocus colordiffuse="$VAR[ColorHighlight2]">osd/play.png</alttexturenofocus>
 			<onclick>PlayerControl(Play)</onclick>
 			<enable>Player.PauseEnabled</enable>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.PauseEnabled">Conditional</animation>

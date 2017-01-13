@@ -89,14 +89,6 @@
 					<align>left</align>
 					<visible>Control.IsVisible(10)</visible>
 				</control>
-				<control type="radiobutton" id="124">
-					<include>DefContextButton2</include>
-					<label>31740</label>
-					<selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>
-					<onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
-					<align>left</align>
-					<visible>Control.IsVisible(10)</visible>
-				</control>
 				<control type="radiobutton" id="125">
 					<include>DefContextButton2</include>
 					<label> -- Show Aired Date</label>
@@ -1064,7 +1056,7 @@
 				<height>70</height>
 				<align>left</align>
 				<label>$INFO[ListItem.ChannelName]</label>
-				<textcolor>PanelWhite100</textcolor>
+				<textcolor>Dark1</textcolor>
 				<visible>String.IsEmpty(ListItem.Icon)</visible>
 				<scroll>false</scroll>
 			</control>
@@ -1074,7 +1066,7 @@
 				<width>88</width>
 				<height>70</height>
 				<label>$INFO[ListItem.ChannelNumberLabel]</label>
-				<textcolor>PanelWhite100</textcolor>
+				<textcolor>Dark1</textcolor>
 				<scroll>false</scroll>
 			</control>
 		</channellayout>
