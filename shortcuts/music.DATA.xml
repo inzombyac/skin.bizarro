@@ -17,6 +17,14 @@
 		<thumb>special://skin/extras/backgrounds/music.jpg</thumb>
     </shortcut>
 	<shortcut>
+        <defaultID>partymode</defaultID>
+		<label2>music</label2>
+        <label>$LOCALIZE[589]</label>
+        <icon>special://skin/extras/icons/songs.png</icon>
+        <action>PlayerControl(Partymode(music))</action>
+		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
+    </shortcut>
+	<shortcut>
         <defaultID>addons</defaultID>
 		<label2>music</label2>
         <label>$LOCALIZE[1038]</label>

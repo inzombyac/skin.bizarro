@@ -1175,6 +1175,158 @@
 			<visible>System.HasAddon(plugin.video.emby)</visible>
 		</control>
 	</include>
+	<include name="Def9000MusicPlaylistSide">
+		<left>20</left>
+		<top>115</top>
+		<width>455</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
+		<onright condition="Window.IsVisible(tvguide)">10</onright>
+		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<itemgap>0</itemgap>
+		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<control type="label" id="201">
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>13350</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="radiobutton" id="20">
+			<description>Shuffle</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>191</label>
+		</control>
+		<control type="button" id="26">
+			<description>Repeat</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>486</label>
+		</control>
+		<control type="button" id="21">
+			<description>Save</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>190</label>
+		</control>
+		<control type="button" id="22">
+			<description>Clear</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>192</label>
+		</control>
+		<control type="button" id="23">
+			<description>Play</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>208</label>
+		</control>
+		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>View Options</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="9326">
+			<description>View</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>View: $INFO[Container.Viewmode]</label>
+			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
+		</control>
+<!-- 		<control type="button" id="2">
+			<description>View</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control> -->
+		<control type="button" id="3">
+			 <description>Sort</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control>
+		<control type="togglebutton" id="4">
+			<description>Ascending</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>584</label>
+            <altlabel>585</altlabel>
+		</control>
+		<control type="radiobutton" id="9002" description="No Wrap (53)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31148</label>
+			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
+			<onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
+		<control type="radiobutton" id="9003" description="Big Wide Info (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31147</label>
+			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
+			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9004" description="Big Wide Classic (51)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31245</label>
+			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
+			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
+			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
+		<control type="radiobutton" id="9005" description="Big List Double Pane (52)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31235</label>
+			<selected>!Skin.HasSetting(52biglist.singlepane)</selected>
+			<onclick>Skin.ToggleSetting(52biglist.singlepane)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(52)</visible>
+		</control>
+		<control type="radiobutton" id="9006" description="Wall Big Poster(505)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31185</label>
+			<selected>Skin.HasSetting(506wall.bigposter)</selected>
+			<onclick>Skin.ToggleSetting(506wall.bigposter)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(506)</visible>
+		</control>		
+		<control type="label" id="9010">
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Misc Actions</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="9011">
+			<description>Set Custom Widget</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31222</label>
+			<onclick>Back</onclick>
+			<onclick>ActivateWindow(1106)</onclick>
+		</control>
+	</include>
 	<include name="Def9000AddonSide">
 		<left>20</left>
 		<top>115</top>

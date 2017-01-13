@@ -891,6 +891,7 @@
 	<variable name="MainHeaderLabel">
 		<value condition="Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)">$LOCALIZE[20186]...</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.Artist]</value>
 		<value condition="Window.IsVisible(ColorPicker.xml)">Pick a Colour</value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[20011]</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
@@ -946,6 +947,7 @@
 	</variable>
 	<variable name="SubHeaderLabel">
 		<value condition="Window.IsVisible(home)">$VAR[EmbyFooterLabel]</value>
+		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.TrackNumber,, • ]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Album, • ,]$INFO[MusicPlayer.Year, (,)]$INFO[MusicPlayer.Genre, • ,]</value>
 		<value condition="Window.IsVisible(Settings.xml)">$INFO[System.CurrentControl]</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">[COLOR=Dark1]$INFO[ListItem.AddonVersion,Version: ,][/COLOR] by $INFO[ListItem.AddonCreator] $INFO[ListItem.Artist, • ]$INFO[ListItem.AddonType, • ,]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Year]</value>
@@ -972,6 +974,17 @@
 		<value>[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132] • [COLOR=$VAR[ColorHighlight]]$INFO[Pvr.BackendChannels][/COLOR] $LOCALIZE[19019]</value>
 	</variable>
 	<include name="Furniture_Header">
+		<control type="image">
+			<width>100%</width>
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>160</height>
+		</control>
+		<control type="image">
+			<top>160</top>
+			<texture colordiffuse="Dark3">common/black.png</texture>
+			<height>80</height>
+			<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+		</control>
 		<control type="grouplist">
 			<top>40</top>
 			<left>SidePad</left>
@@ -1160,16 +1173,6 @@
 		</control>
 	</include>
 	<include name="Furniture_Clock">
-		<control type="image">
-			<texture colordiffuse="Dark3">common/black.png</texture>
-			<height>160</height>
-		</control>
-		<control type="image">
-			<top>160</top>
-			<texture colordiffuse="Dark3">common/black.png</texture>
-			<height>80</height>
-			<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
-		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2006">
-	<defaultcontrol always="true">14</defaultcontrol>
+	<onload>AlarmClock(MusicOSD,ActivateWindow(musicosd),00:05,silent)</onload>
+    <onunload>CancelAlarm(MusicOSD,true)</onunload> 
+	<!-- <defaultcontrol always="true">14</defaultcontrol> -->
     <controls>
         <control type="visualisation" id="2">
             <description>visualisation</description>
@@ -21,126 +23,19 @@
                 <texture border="2" colordiffuse="$VAR[OSDPanel]">common/white.png</texture>
                 <animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
             </control>
-			<include>OSDMusicControls</include>
+			<!-- <include>OSDMusicControls</include> -->
             <visible>Window.IsActive(MusicOSD.xml) | Player.ShowInfo | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Window.IsVisible(script-cu-lrclyrics-main.xml) | Player.Playing</visible>
             <control type="group">
                 <height>540</height>
                 <bottom>60</bottom>
 				<!-- <animation effect="slide" start="0" end="0,-60" time="200" condition="Window.IsActive(MusicOSD)">Conditional</animation> -->
-                <control type="grouplist">
-					<left>SidePad</left>
-					<bottom>-40</bottom>
-					<width>100%</width>
-					<height>64</height>
-					<orientation>horizontal</orientation>
-					<align>left</align>
-					<itemgap>24</itemgap>
-					<usecontrolcoords>true</usecontrolcoords>
-					<visible>true</visible>
-				   <control type="image">
-						<posx>-16</posx>
-						<width>64</width>
-						<height>64</height>
-						<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar1].png</texture>
-					</control>
-					<control type="image">
-						<posx>-48</posx>
-						<width>64</width>
-						<height>64</height>
-						<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar2].png</texture>
-					</control>
-					<control type="image">
-						<posx>-48</posx>
-						<width>64</width>
-						<height>64</height>
-						<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar3].png</texture>
-					</control>
-					<control type="image">
-						<posx>-48</posx>
-						<width>64</width>
-						<height>64</height>
-						<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar4].png</texture>
-					</control>
-					<control type="image">
-						<posx>-48</posx>
-						<width>64</width>
-						<height>64</height>
-						<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar5].png</texture>
-					</control>
-					<control type="image">
-						<width>96</width>
-						<height>64</height>
-						<texture colordiffuse="Dark1">$INFO[MusicPlayer.Codec,flags/audio/,.png]</texture>
-						<aspectratio>keep</aspectratio>
-					</control>
-					<control type="image">
-						<width>96</width>
-						<height>64</height>
-						<texture colordiffuse="Dark1">$INFO[MusicPlayer.Channels,flags/channels/,.png]</texture>
-						<aspectratio>keep</aspectratio>
-					</control>
-					<control type="group">
-						<centertop>50%</centertop>
-						<width>180</width>
-						<height>64</height>
-						<visible>!String.IsEmpty(MusicPlayer.Bitrate)</visible>
-						<visible>!Container.Content(tvshows)</visible>
-						<control type="image">
-							<height>50</height>
-							<centertop>50%</centertop>
-							<texture colordiffuse="Dark1">flags/box.png</texture>
-							<aspectratio align="left">keep</aspectratio>
-						</control>
-						<control type="label">
-							<left>30</left>
-							<width>170</width>
-							<centertop>50%</centertop>
-							<height>64</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[MusicPlayer.Bitrate,,kbps]</label>
-							<font>DurationFontSmall</font>
-							<textcolor>Dark1</textcolor>
-						</control>
-					</control>
-					<control type="group">
-						<centertop>50%</centertop>
-						<width>180</width>
-						<height>64</height>
-						<visible>!String.IsEmpty(MusicPlayer.Samplerate)</visible>
-						<visible>!Container.Content(tvshows)</visible>
-						<control type="image">
-							<height>50</height>
-							<centertop>50%</centertop>
-							<texture colordiffuse="Dark1">flags/box.png</texture>
-							<aspectratio align="left">keep</aspectratio>
-						</control>
-						<control type="label">
-							<left>30</left>
-							<width>170</width>
-							<centertop>50%</centertop>
-							<height>64</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<label>$INFO[MusicPlayer.Samplerate,,kHz]</label>
-							<font>DurationFontSmall</font>
-							<textcolor>Dark1</textcolor>
-						</control>
-					</control>
-					<control type="image">
-						<width>95</width>
-						<height>64</height>
-						<aspectratio>keep</aspectratio>
-						<texture colordiffuse="Dark1">resource://resource.images.recordlabels.white/$INFO[MusicPlayer.Property(Album_Label),,.png]</texture>
-					</control>
-				</control>
 				<control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>
                     <top>20</top>
                     <bottom>20</bottom>
                     <control type="image">
-                        <bottom>40</bottom>
+                        <bottom>-50</bottom>
                         <width>460</width>
                         <height>460</height>
                         <fadetime>400</fadetime>
@@ -149,7 +44,7 @@
                         <bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
                     </control>
                     <control type="group">
-                        <top>100</top>
+                        <top>280</top>
                         <!-- <left>720</left> -->
 						<left>510</left>
                         <right>0</right>
@@ -159,31 +54,120 @@
                             <itemgap>5</itemgap>
                             <visible>true</visible>
                             <usecontrolcoords>true</usecontrolcoords>
-                            <control type="label" description="Artist">
-                                <width>100%</width>
-                                <height>78</height>
-                                <font>ArtistTtile</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>$VAR[PlayerBigTitle]</label>
-                            </control>
-
-                            <control type="label" description="Song">
-                                <width>100%</width>
-                                <height>60</height>
-                                <font>MediumBold</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>$VAR[PlayerTitle]</label>
-                            </control>
-
-                            
-
-                            <control type="label" description="AlbumYear">
-                                <width>100%</width>
-                                <height>40</height>
-                                <font>SmallBold</font>
-                                <textcolor>Dark1</textcolor>
-                                <label>$VAR[PlayerPlotBox]</label>
-                            </control>
+							<control type="grouplist">
+								<width>100%</width>
+								<height>48</height>
+								<orientation>horizontal</orientation>
+								<align>left</align>
+								<itemgap>24</itemgap>
+								<usecontrolcoords>true</usecontrolcoords>
+								<visible>true</visible>
+								<control type="image">
+									<posx>-16</posx>
+									<width>64</width>
+									<height>64</height>
+									<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar1].png</texture>
+								</control>
+								<control type="image">
+									<posx>-48</posx>
+									<width>64</width>
+									<height>64</height>
+									<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar2].png</texture>
+								</control>
+								<control type="image">
+									<posx>-48</posx>
+									<width>64</width>
+									<height>64</height>
+									<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar3].png</texture>
+								</control>
+								<control type="image">
+									<posx>-48</posx>
+									<width>64</width>
+									<height>64</height>
+									<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar4].png</texture>
+								</control>
+								<control type="image">
+									<posx>-48</posx>
+									<width>64</width>
+									<height>64</height>
+									<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDMusicFlagstar5].png</texture>
+								</control>
+							</control>
+							<control type="grouplist">
+								<width>100%</width>
+								<height>64</height>
+								<orientation>horizontal</orientation>
+								<align>left</align>
+								<itemgap>24</itemgap>
+								<usecontrolcoords>true</usecontrolcoords>
+								<visible>true</visible>
+								<control type="image">
+									<width>96</width>
+									<height>64</height>
+									<texture colordiffuse="Dark1">$INFO[MusicPlayer.Codec,flags/audio/,.png]</texture>
+									<aspectratio>keep</aspectratio>
+								</control>
+								<control type="image">
+									<width>96</width>
+									<height>64</height>
+									<texture colordiffuse="Dark1">$INFO[MusicPlayer.Channels,flags/channels/,.png]</texture>
+									<aspectratio>keep</aspectratio>
+								</control>
+								<control type="group">
+									<centertop>50%</centertop>
+									<width>180</width>
+									<height>64</height>
+									<visible>!String.IsEmpty(MusicPlayer.Bitrate)</visible>
+									<visible>!Container.Content(tvshows)</visible>
+									<control type="image">
+										<height>50</height>
+										<centertop>50%</centertop>
+										<texture colordiffuse="Dark1">flags/box.png</texture>
+										<aspectratio align="left">keep</aspectratio>
+									</control>
+									<control type="label">
+										<left>30</left>
+										<width>170</width>
+										<centertop>50%</centertop>
+										<height>64</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[MusicPlayer.Bitrate,,kbps]</label>
+										<font>DurationFontSmall</font>
+										<textcolor>Dark1</textcolor>
+									</control>
+								</control>
+								<control type="group">
+									<centertop>50%</centertop>
+									<width>180</width>
+									<height>64</height>
+									<visible>!String.IsEmpty(MusicPlayer.Samplerate)</visible>
+									<visible>!Container.Content(tvshows)</visible>
+									<control type="image">
+										<height>50</height>
+										<centertop>50%</centertop>
+										<texture colordiffuse="Dark1">flags/box.png</texture>
+										<aspectratio align="left">keep</aspectratio>
+									</control>
+									<control type="label">
+										<left>30</left>
+										<width>170</width>
+										<centertop>50%</centertop>
+										<height>64</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[MusicPlayer.Samplerate,,kHz]</label>
+										<font>DurationFontSmall</font>
+										<textcolor>Dark1</textcolor>
+									</control>
+								</control>
+								<control type="image">
+									<width>95</width>
+									<height>64</height>
+									<aspectratio>keep</aspectratio>
+									<texture colordiffuse="Dark1">resource://resource.images.recordlabels.white/$INFO[MusicPlayer.Property(Album_Label),,.png]</texture>
+								</control>
+							</control>
                             <control type="label" description="NextUp">
                                 <top>5</top>
                                 <width>100%</width>
@@ -206,7 +190,7 @@
                         <control type="image">
                             <description>Progress Back</description>
                             <width>100%</width>
-                            <bottom>120</bottom>
+                            <bottom>40</bottom>
                             <height>10</height>
                             <texture colordiffuse="Black12">common/white.png</texture>
                         </control>
@@ -214,7 +198,7 @@
                         <control type="progress" description="cache">
                             <description>Progress Bar</description>
                             <width>100%</width>
-                            <bottom>120</bottom>
+                            <bottom>40</bottom>
                             <height>10</height>
                             <info>Player.ProgressCache</info>
                             <visible>true</visible>
@@ -227,7 +211,7 @@
                         <control type="progress" id="23">
                             <description>Progress Bar</description>
                             <width>100%</width>
-                            <bottom>120</bottom>
+                            <bottom>40</bottom>
                             <height>10</height>
                             <info>Player.Progress</info>
                             <visible>true</visible>
@@ -293,5 +277,9 @@
                 </control>
             </control>
         </control>
+        <include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+        <include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
     </controls>
 </window>

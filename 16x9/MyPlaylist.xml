@@ -1,95 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="6">
-    <defaultcontrol always="true">52</defaultcontrol>
+    <defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-    <views>50,52,500</views>
+    <views>50,500,53,54,51,52,505,506</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-        <include>View_52_BigList</include>
-        <include>View_500_Thumbnails</include>
-		<include>View_50_List_Square</include>
-        <include>Furniture_NowPlaying</include>
         <include>Furniture_Header</include>
         <include>Furniture_Clock</include>
-        <include>Furniture_Flags</include>
+		<include>Furniture_Flags</include>
+        <include>Furniture_Logo</include>
+		<include>Furniture_OverlayInfo</include>
+        <include>Furniture_NowPlaying</include>
+        <include>View_50_List_Square</include>
+        <include condition="!Skin.HasSetting(51bigwide.showinfo)">View_51_BigWide</include>
+        <include condition="Skin.HasSetting(51bigwide.showinfo)">View_51_BigWide_Info</include>
+		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
+		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
+        <include>View_500_Thumbnails</include>
+		<include condition="!Skin.HasSetting(506wall.bigposter)">View_506_Wall_Poster</include>
+		<include condition="Skin.HasSetting(506wall.bigposter)">View_506_Wall_Big_Poster</include>
+		<include>View_505_Wall_No_Poster</include>
+        <include>View_54_Banner</include>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
             <visible>ControlGroup(9000).HasFocus()</visible>
             <include>GlobalOverlay</include>
         </control>
-        <control type="group">
-            <include>Def9000Background</include>
-            <include>Def9000Arrows</include>
+		<control type="group">
+            <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">
-                <onleft>52</onleft>
-                <onright>52</onright>
-                <onback>52</onback>
-                <include>Def9000GroupList</include>
-                <control type="label" id="200">
-					<width>250</width>
-					<height>35</height>
-					<label>31006</label>
-					<align>center</align>
-					<aligny>center</aligny>
-				</control>
-				<control type="button" id="2">
-                    <description>View</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                </control>
-                <control type="button" id="3">
-                    <description>Sort</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                </control>
-                <control type="togglebutton" id="4">
-                    <description>Ascending</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                    <label>584</label>
-                    <altlabel>585</altlabel>
-                </control>
-                <control type="label" id="201">
-					<width>250</width>
-					<height>35</height>
-					<label>31026</label>
-					<align>center</align>
-					<aligny>center</aligny>
-				</control>
-                <control type="radiobutton" id="20">
-                    <description>Shuffle</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                    <label>191</label>
-                </control>              
-                <control type="button" id="26">
-                    <description>Repeat</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                    <label>486</label>
-                </control>               
-                <control type="button" id="21">
-                    <description>Save</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                    <label>190</label>
-                </control>
-                <control type="button" id="22">
-                    <description>Clear</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                    <label>192</label>
-                </control>
-                <control type="button" id="23">
-                    <description>Play</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                    <label>208</label>
-                </control>
+                <include>Def9000MusicPlaylistSide</include>
             </control>
         </control>
     </controls>
-
 </window>

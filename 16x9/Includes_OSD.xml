@@ -363,6 +363,7 @@
 			<onclick>PlayerControl(Play)</onclick>
 			<enable>Player.PauseEnabled</enable>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.PauseEnabled">Conditional</animation>
+			<onup condition="Window.IsVisible(MusicVisualisation.xml)">23</onup>
 		</control>
 		<control type="button" id="15">
 			<description>Stop</description>
@@ -499,5 +500,141 @@
 				</control>
 			</control>
 		</control>
+	</include>
+	<include name="OSDMusicControls">
+		<control type="group">
+            <height>80</height>
+            <bottom>80</bottom>
+            <include>Animation.FadeIn</include>
+			<visible>Player.HasMedia</visible>
+            <animation type="Hidden">
+                <!-- <effect type="slide" end="0,60" start="0" time="200"/> -->
+                <effect type="fade" end="0" start="100" time="150"/>
+            </animation>
+            <animation type="WindowClose">
+               <!--  <effect type="slide" end="0,60" start="0" time="200"/> -->
+                <effect type="fade" end="0" start="100" time="150"/>
+            </animation>
+			<control type="group">
+				<zorder>0</zorder>
+				<left>600</left>
+				<right>SidePad</right>
+				<height>20</height>
+				<top>55r</top>
+				<width>1240</width>
+				<control type="slider" id="401">
+					<description>Seek Slider</description>
+					<width>100%</width>
+					<height>20</height>
+					<texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
+					<textureslidernib>osd/progress-mid.png</textureslidernib>
+					<textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
+					<action>seek</action>
+					<orientation>horizontal</orientation>
+				</control>
+			</control>
+            <control type="grouplist" id="101">
+                <top>70</top>
+                <width>100%</width>
+                <height>72</height>
+                <itemgap>16</itemgap>
+                <orientation>horizontal</orientation>
+                <align>center</align>
+                <onleft>100</onleft>
+                <onright>102</onright>
+                <include>OSDVideoControls</include>
+            </control>
+            <control type="grouplist" id="100">
+                <top>60</top>
+                <left>585</left>
+                <height>64</height>
+                <itemgap>-10</itemgap>
+                <orientation>horizontal</orientation>
+                <align>left</align>
+                <onleft>100</onleft>
+                <onright>101</onright>
+                <onup>101</onup>
+                <ondown>101</ondown>
+                <usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="8">
+					<description>Visual Text</description>
+					<width>48</width>
+					<height>64</height>
+					<top>12</top>
+					<label></label>
+					<font>noop</font>
+					<include>DefOSDUpDown</include>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visual-text.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visual-text.png</texturenofocus>
+					<onclick>Skin.ToggleSetting(osd.showvisualtext)</onclick>
+				</control>
+            </control>
+
+            <control type="grouplist" id="102">
+                <top>60</top>
+                <right>50</right>
+                <height>72</height>
+                <itemgap>-10</itemgap>
+                <orientation>horizontal</orientation>
+                <align>right</align>
+                <onleft>101</onleft>
+                <onright>102</onright>
+                <onup>101</onup>
+                <ondown>101</ondown>
+                <usecontrolcoords>true</usecontrolcoords>
+				<control type="button" id="500">
+					<description>Visual Text</description>
+					<width>48</width>
+					<height>64</height>
+					<top>12</top>
+					<label></label>
+					<font>noop</font>
+					<include>DefOSDUpDown</include>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visualization.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visualization.png</texturenofocus>
+				</control>
+<!--                 <control type="button" id="500">
+                    <description>Vis</description>
+                    <label>250</label>
+                    <align>right</align>
+                    <include>DefOSDButtons</include>
+                    <disabledcolor>PanelWhite12</disabledcolor>
+                </control> -->
+
+                <control type="button" id="5">
+                    <width>150</width>
+                    <description>Presets</description>
+                    <label>13388</label>
+                    <align>right</align>
+                    <onclick>ActivateWindow(122)</onclick>
+                    <include>DefOSDButtons</include>
+                    <disabledcolor>PanelWhite12</disabledcolor>
+                </control>
+
+                <!-- <control type="button" id="7" description="Show musc info always">
+                    <width>220</width>
+                    <aligny>center</aligny>
+                    <align>center</align>
+                    <height>48</height>
+                    <font>Tiny</font>
+                    <disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
+                    <textcolor>$VAR[MusicOSDPanelWhite30]</textcolor>
+                    <focusedcolor>$VAR[ColorHighlight]</focusedcolor>
+                    <texturefocus>noop</texturefocus>
+                    <width>226</width>
+                    <align>right</align>
+                    <label>Show Info</label>
+                    <onclick>Skin.ToggleSetting(osd.showmusicinfo)</onclick>
+                </control> -->
+                <control type="button" id="6">
+                    <width>270</width>
+                    <align>right</align>
+                    <description>Random</description>
+                    <include>DefOSDButtons</include>
+                    <label>$VAR[MusicOSDRandomLabel]</label>
+                    <onclick>PlayerControl(Random)</onclick>
+                </control>
+            </control>
+        </control>
 	</include>
 </includes>

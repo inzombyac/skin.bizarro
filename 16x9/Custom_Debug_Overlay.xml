@@ -18,6 +18,12 @@
 
                 <control type="label">
                     <include>WindowID</include>
+                    <label>MyPlaylist.xml</label>
+                    <visible>Window.IsVisible(MyPlaylist.xml)</visible>
+                </control>
+				
+				<control type="label">
+                    <include>WindowID</include>
                     <label>AddonBrowser.xml</label>
                     <visible>Window.IsVisible(AddonBrowser.xml)</visible>
                 </control>

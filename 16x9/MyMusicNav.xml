@@ -18,7 +18,6 @@
 		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
 		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
         <include>View_500_Thumbnails</include>
-        <!-- <include>View_503_Poster_Square</include> -->
 		<include condition="!Skin.HasSetting(506wall.bigposter)">View_506_Wall_Poster</include>
 		<include condition="Skin.HasSetting(506wall.bigposter)">View_506_Wall_Big_Poster</include>
 		<include>View_505_Wall_No_Poster</include>
