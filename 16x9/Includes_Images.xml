@@ -398,4 +398,8 @@
 		<value condition="Playlist.IsRepeat">osd/repeat-none.png</value>
 		<value>osd/repeat.png</value>
 	</variable>
+	<variable name="ShuffleOSDIcon">
+		<value condition="Playlist.IsRandom">osd/unshuffle.png</value>
+		<value>osd/shuffle.png</value>
+	</variable>
 </includes>

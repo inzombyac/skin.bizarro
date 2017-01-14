@@ -414,6 +414,30 @@
 			<onclick>EjectTray()</onclick>
 			<visible>System.HasMediadvd</visible>
 		</control>
+		<control type="button" id="9007">
+			<description>Random</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/shuffle.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/shuffle.png</texturenofocus>
+			<onclick>PlayerControl(Random)</onclick>
+			<visible>Window.IsVisible(MusicOSD.xml) + !Playlist.IsRandom</visible>
+		</control>
+		<control type="button" id="9007">
+			<description>Random</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/unshuffle.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/unshuffle.png</texturenofocus>
+			<onclick>PlayerControl(Random)</onclick>
+			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRandom</visible>
+		</control>
 	</include>
 	<include name="Furniture_OSDClock">
 		<control type="group">
@@ -520,7 +544,7 @@
 				<left>600</left>
 				<right>SidePad</right>
 				<height>20</height>
-				<top>55r</top>
+				<top>45r</top>
 				<width>1240</width>
 				<control type="slider" id="401">
 					<description>Seek Slider</description>
@@ -547,8 +571,8 @@
             <control type="grouplist" id="100">
                 <top>60</top>
                 <left>585</left>
-                <height>64</height>
-                <itemgap>-10</itemgap>
+                <height>72</height>
+                <itemgap>24</itemgap>
                 <orientation>horizontal</orientation>
                 <align>left</align>
                 <onleft>100</onleft>
@@ -572,9 +596,10 @@
 
             <control type="grouplist" id="102">
                 <top>60</top>
-                <right>50</right>
+                <right>SidePad</right>
                 <height>72</height>
-                <itemgap>-10</itemgap>
+                <itemgap>24</itemgap>
+				<width>100%</width>
                 <orientation>horizontal</orientation>
                 <align>right</align>
                 <onleft>101</onleft>
@@ -600,17 +625,19 @@
                     <include>DefOSDButtons</include>
                     <disabledcolor>PanelWhite12</disabledcolor>
                 </control> -->
-
-                <control type="button" id="5">
-                    <width>150</width>
-                    <description>Presets</description>
-                    <label>13388</label>
-                    <align>right</align>
-                    <onclick>ActivateWindow(122)</onclick>
-                    <include>DefOSDButtons</include>
-                    <disabledcolor>PanelWhite12</disabledcolor>
-                </control>
-
+				<control type="button" id="5">
+					<description>Visualization Preset</description>
+					<width>48</width>
+					<height>64</height>
+					<top>12</top>
+					<label></label>
+					<font>noop</font>
+					<include>DefOSDUpDown</include>
+					<onclick>ActivateWindow(visualisationpresetlist)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visual-preset.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visual-preset.png</texturenofocus>
+					<visible>Visualisation.Enabled</visible>
+				</control>
                 <!-- <control type="button" id="7" description="Show musc info always">
                     <width>220</width>
                     <aligny>center</aligny>
@@ -626,14 +653,6 @@
                     <label>Show Info</label>
                     <onclick>Skin.ToggleSetting(osd.showmusicinfo)</onclick>
                 </control> -->
-                <control type="button" id="6">
-                    <width>270</width>
-                    <align>right</align>
-                    <description>Random</description>
-                    <include>DefOSDButtons</include>
-                    <label>$VAR[MusicOSDRandomLabel]</label>
-                    <onclick>PlayerControl(Random)</onclick>
-                </control>
             </control>
         </control>
 	</include>
