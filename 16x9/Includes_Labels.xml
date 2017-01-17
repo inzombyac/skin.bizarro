@@ -568,20 +568,25 @@
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.TrackNumber,,. ]$INFO[MusicPlayer.Title]</value>
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,. ]$INFO[VideoPlayer.ChannelName]</value>
 		<value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.Tagline)">$INFO[VideoPlayer.Tagline]</value>
+		<value condition="VideoPlayer.Content(movies) + !String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
+		<value condition="VideoPlayer.Content(movies) + !String.IsEmpty(PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Year]</value>
 		<value condition="VideoPlayer.Content(episodes)">$VAR[LabelSeasonZero]$INFO[VideoPlayer.Season]$VAR[LabelEpisodeZero2]$INFO[VideoPlayer.Episode,, • ]$INFO[Player.Title]$INFO[VideoPlayer.Premiered, • ,] </value>
-		<value condition="String.Contains(Player.Filenameandpath,http)">$LOCALIZE[38031]</value>
-		<value>$LOCALIZE[291]</value>
+		<!-- <value condition="String.Contains(Player.Filenameandpath,http)">$LOCALIZE[38031]</value> -->
+		<!-- <value>$LOCALIZE[291]</value> -->
 	</variable>
 	<variable name="PlayerBigTitle">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Artist]</value>
-		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(movies) + String.IsEmpty(VideoPlayer.Tagline) + String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.Title]</value>
+		<value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Title]$INFO[VideoPlayer.Year, (,)]</value>
 		<value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
 		<value condition="VideoPlayer.Content(livetv)">$INFO[VideoPlayer.Season,,x]$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title,[B],[/B]]$INFO[VideoPlayer.EpisodeName, (,)]</value>
 		<value>$INFO[VideoPlayer.Title]</value>
 	</variable>
 	<variable name="PlayerPlotBox">
-		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year,(,)]</value>
+		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year, (,)]</value>
 		<value condition="Player.HasVideo + Skin.HasSetting(osd.hidespoilers) + VideoPlayer.Content(episodes)">...</value>
+		<value condition="Player.HasVideo + !String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
 		<value>$INFO[VideoPlayer.Plot]</value>
 	</variable>
 	<variable name="LabelNextAiredDetails">

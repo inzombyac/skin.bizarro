@@ -7,7 +7,7 @@
 	<onunload>ClearProperty(osdshowinfo,home)</onunload>
 	<controls>
 		<control type="group">
-			<height>90</height>
+			<height>94</height>
 			<bottom>0</bottom>
 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="150" delay="150" />
@@ -21,33 +21,19 @@
 			<animation type="Hidden">
 				<effect type="fade" end="0" start="100" time="150" />
 			</animation>
+			<control type="image">
+                    <width>100%</width>
+                    <height>100%</height>
+					<texture colordiffuse="Dark2">common/black.png</texture>		
+                    <include>Animation.FadeOut</include>
+                </control>
 			<control type="group">
-				<visible>!String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(thumb))</visible>
 				<zorder>0</zorder>
 				<left>370</left>
 				<right>SidePad</right>
 				<height>20</height>
 				<top>120r</top>
 				<width>1470</width>
-				<control type="slider" id="401">
-					<description>Seek Slider</description>
-					<width>100%</width>
-					<height>20</height>
-					<texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
-					<textureslidernib>osd/progress-mid.png</textureslidernib>
-					<textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
-					<action>seek</action>
-					<orientation>horizontal</orientation>
-				</control>
-			</control>
-			<control type="group">
-				<visible>String.IsEmpty(Player.Art(tvshow.poster)) + String.IsEmpty(Player.Art(poster)) + String.IsEmpty(Player.Art(thumb))</visible>
-				<zorder>0</zorder>
-				<left>SidePad</left>
-				<right>SidePad</right>
-				<height>20</height>
-				<top>120r</top>
-				<width>1760</width>
 				<control type="slider" id="401">
 					<description>Seek Slider</description>
 					<width>100%</width>
@@ -72,7 +58,7 @@
 					<description>background image</description>
 					<width>100%</width>
 					<height>100%</height>
-					<colordiffuse>$VAR[OSDPanel]</colordiffuse>
+					<colordiffuse>Light1</colordiffuse>
 					<texture border="16">common/rounded-shadow8.png</texture>
 				</control>
 				<control type="grouplist" id="9300">

@@ -6,93 +6,72 @@
     <visible>[VideoPlayer.IsFullscreen] + [Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | !Integer.IsGreater(Player.Time,5)]</visible>
     <zorder>0</zorder>
     <controls>
-        <control type="group">
-            <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
-            <control type="group">
-                <animation effect="slide" start="0" end="0,-190" time="150" condition="Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | Player.Paused">Conditional</animation>
-                <animation effect="slide" start="0" end="0,110" time="150" condition="!Window.IsVisible(fullscreeninfo) + !Player.Seeking + !Player.DisplayAfterSeek + !Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.ShowInfo + String.IsEmpty(Window(home).Property(osdshowinfo))">Conditional</animation>
-                <animation effect="slide" start="0,110" end="0" time="150">Visible</animation>
-                <animation effect="slide" start="0,110" end="0" time="150">WindowOpen</animation>
-                <control type="image">
-                    <top>110r</top>
+
+		<control type="group">
+			<height>250</height>
+			<width>100%</width>
+			<bottom>20</bottom>
+			<animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
+			<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | Player.Paused | !Integer.IsGreater(Player.Time,5)</visible>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="150" delay="150" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" end="0" start="100" time="150" />
+			</animation>
+			<animation type="Visible">
+				<effect type="fade" start="0" end="100" time="150" delay="150" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="fade" end="0" start="100" time="150" />
+			</animation>
+			<control type="image">
                     <width>100%</width>
-                    <height>374</height>
-                    <texture>common/white.png</texture>
-                    <colordiffuse>$VAR[OSDPanel]</colordiffuse>
+                    <height>100%</height>
+					<texture colordiffuse="Dark2">common/black.png</texture>		
                     <include>Animation.FadeOut</include>
                 </control>
-            </control>
-            <control type="group">
-                <top>300r</top>
-                <bottom>0</bottom>
-                <width>100%</width>
-                <visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | Player.Paused | !Integer.IsGreater(Player.Time,5)</visible>
-                <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
-                <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
-				<control type="image">
-					<description>background image</description>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>100%</width>
-					<height>100%</height>
-					<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-					<texture border="16">common/rounded-shadow8.png</texture>
-				</control>     
-				<control type="group">
-                    <left>SidePad</left>
-                    <right>SidePad</right>
-                    <top>20</top>
-                    <bottom>20</bottom>
-                    <control type="image">
-                        <left>-70</left>
-						<top>-226</top>
-						<width>334</width>
-						<height>486</height>
-                        <texture>$VAR[PlayerPoster]</texture>
-                        <visible>!VideoPlayer.Content(LiveTV) + [!String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(Player.Art(poster))]</visible>
-                    </control>
-					<control type="image">
-                        <left>-70</left>
-						<top>-226</top>
-						<width>334</width>
-						<height>486</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[VideoPlayer.Cover]</texture>
-                        <visible>!VideoPlayer.Content(LiveTV)+ !String.IsEmpty(VideoPlayer.Cover)+ String.IsEmpty(Player.Art(tvshow.poster)) + String.IsEmpty(Player.Art(poster))</visible>
-                    </control>                   
-				   <control type="image">
-                        <width>260</width>
-                        <height>260</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[Player.Art(thumb)]</texture>
-                        <visible>VideoPlayer.Content(LiveTV) + !String.IsEmpty(Player.Art(thumb))</visible>
-                    </control>  
-                    <control type="group">
-                        <left>290</left>
-                        <visible>VideoPlayer.Content(LiveTV) + !String.IsEmpty(Player.Art(thumb))</visible>
-                        <include>OSDInfoContent</include>
-                    </control> 
-                    <control type="group">
-                        <left>290</left>
-                        <visible>!VideoPlayer.Content(LiveTV) + [!String.IsEmpty(Player.Art(tvshow.poster)) | !String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(VideoPlayer.Cover)]</visible>
-                        <include>OSDInfoContent</include>
-                    </control>  
-                    <control type="group">
-                        <left>0</left>
-                        <visible>String.IsEmpty(Player.Art(tvshow.poster)) + String.IsEmpty(Player.Art(poster)) + !VideoPlayer.Content(LiveTV)+ String.IsEmpty(VideoPlayer.Cover)</visible>
-                        <include>OSDInfoContent</include>
-                    </control>
-                </control>
-            </control>
+			<control type="group">
+				<left>PosterW</left>
+				<width>1412</width>
+				<include>OSDInfoContent</include>
+			</control>
+        </control>
+		<control type="group">
+			<height>486</height>
+			<width>334</width>
+			<bottom>20</bottom>
+			<left>SidePad</left>
+			<animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
+			<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !String.IsEmpty(Window(home).Property(osdshowinfo)) | Player.Paused | !Integer.IsGreater(Player.Time,5)</visible>
+			<animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
+			<animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation> 
+			<control type="image">
+				<width>334</width>
+				<height>486</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture diffuse="diffuse/listposter.png" background="true">$VAR[PlayerPoster]</texture>
+			</control>
+        </control>
+		<control type="group">
+			<height>100</height>
+			<bottom>0</bottom>
+            <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
             <control type="group">
                 <visible>!Player.Paused</visible>
                 <visible>!Window.IsVisible(fullscreeninfo) + !Player.ShowInfo + String.IsEmpty(Window(home).Property(osdshowinfo))</visible>
                 <visible>Player.Seeking | Player.DisplayAfterSeek  | Player.Forwarding | Player.Rewinding</visible>
                 <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
                 <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
-                <top>110r</top>
                 <bottom>0</bottom>
                 <width>100%</width>
+				<control type="image">
+                    <width>100%</width>
+                    <height>100%</height>
+					<texture colordiffuse="Dark2">common/black.png</texture>		
+                    <include>Animation.FadeOut</include>
+                </control>
                 <control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>
@@ -146,7 +125,6 @@
                         <bottom>10</bottom>
                         <height>8</height>
                         <info>Player.Progress</info>
-                       <!--  <visible>!Player.Seeking</visible> -->
                     </control>
                 </control>
             </control>
@@ -156,9 +134,14 @@
                 <visible>false</visible>
                 <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
                 <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
-                <top>180r</top>
                 <bottom>0</bottom>
-                <width>100%</width>
+				<width>100%</width>
+				<control type="image">
+                    <width>100%</width>
+                    <height>100%</height>
+					<texture colordiffuse="Dark2">common/black.png</texture>		
+                    <include>Animation.FadeOut</include>
+                </control>
                 <control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>
@@ -217,6 +200,9 @@
             </control>
         </control>
         <!-- Clock -->
-        <include>Furniture_OSDClock</include>
+       <!--  <include>Furniture_OSDClock</include> -->
+		<include>Furniture_Header</include>
+		<include>Furniture_Clock</include>
+        <include>Furniture_Logo</include>	
     </controls>
 </window>
