@@ -372,6 +372,7 @@
 				<onfocus>Skin.SetString(HomeItemDBID,$VAR[EmbyHomeDBID])</onfocus>
 				<onfocus>Skin.SetString(HomeItemDBType,$VAR[EmbyHomeDBType])</onfocus>
 				<onfocus>Skin.SetString(HomeItemPath,$VAR[EmbyHomeItemPath])</onfocus>
+				<onfocus>Skin.SetString(LastIcon,$INFO[Container(4019).ListItem.Art(Poster)])</onfocus>
 				<onup>300</onup>
 				<ondown>302</ondown>
 				<onleft>4012</onleft>

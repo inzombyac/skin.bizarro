@@ -97,11 +97,12 @@
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="PlayerPoster">
+	<variable name="PlayerPosterOSD">
 		<value condition="!String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
-		<value condition="!String.IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value>
+		<!-- <value condition="!String.IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value> -->
 		<value condition="!String.IsEmpty(MusicPlayer.Cover) + !Player.HasVideo">$INFO[MusicPlayer.Cover]</value>
+		<value>$INFO[Skin.String(LastIcon)]</value>
 	</variable>
 	<variable name="BannerImage">
 		<value condition="!String.IsEmpty(ListItem.Art(season.banner))">$INFO[ListItem.Art(season.banner)]</value>

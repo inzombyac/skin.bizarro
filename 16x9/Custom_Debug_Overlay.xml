@@ -468,8 +468,11 @@
                 <include>ControlID3</include>
                 <label>Content: $INFO[Container.Content]</label>
             </control>
-			
-			
+			<control type="label">
+                <include>ControlID4</include>
+                <label>Poster: $VAR[PlayerPosterOSD] / $INFO[Skin.String(LastIcon)]</label>
+				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+            </control>
 			<control type="label">
                 <include>ControlID4</include>
                 <label>TV: $INFO[ListItem.TVShowTitle],$INFO[Window(home).Property(TVShowID)] / CON: $INFO[Container.Content] / IMDB: $INFO[ListItem.IMDBNumber]</label>

@@ -1011,6 +1011,8 @@
 		<value condition="[!String.IsEmpty(Container(15017).ListItem.EndTime) + !String.IsEmpty(Container(15017).ListItem..Duration) + Control.HasFocus(15017)]">$INFO[Container(15017).ListItem.EndTime(hh:mm)]</value>
 		<value condition="[!String.IsEmpty(Container(301).ListItem.EndTime) + !String.IsEmpty(Container(301).ListItem..Duration) + Control.HasFocus(301)]">$INFO[Container(301).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!container.content(tvshows) + !container.content(seasons) + !String.IsEmpty(ListItem.EndTime) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.EndTime(hh:mm)]</value>
+		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(VideoPlayer.EndTime)">$INFO[VideoPlayer.EndTime(hh:mm)]</value>
+		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(Player.FinishTime)">$INFO[Player.FinishTime(hh:mm)]</value>
 	</variable>
 	<variable name="KodiFlix.Label">
 		<value condition="ListItem.IsPlaying">[COLOR=$VAR[ColorHighlight]]$INFO[ListItem.Label][/COLOR]</value>
@@ -1047,6 +1049,10 @@
 		<value>$INFO[Container(301).ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="EmbyDurationHomeLong">
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)">$INFO[Container(4019).ListItem.Duration]</value>
 		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration,,$LOCALIZE[31102]]</value>
 		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration,,$LOCALIZE[31102]]</value>
 		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration,,$LOCALIZE[31102]]</value>

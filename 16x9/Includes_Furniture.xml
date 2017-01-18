@@ -977,6 +977,7 @@
 	</variable>
 	<include name="Furniture_Header">
 		<control type="group">
+			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)]</visible>
 			<control type="image">
 				<width>100%</width>
 				<texture colordiffuse="Dark3">common/black.png</texture>
@@ -1085,7 +1086,7 @@
 				<control type="group">
 					<control type="label">
 						<centertop>24</centertop>
-						<width>auto</width>
+						<width>1350</width>
 						<font>MediumBold</font>
 						<textcolor>Dark1</textcolor>
 						<label>$VAR[MainHeaderLabel]</label>
@@ -1093,14 +1094,14 @@
 					<control type="label">
 						<centertop>58</centertop>
 						<font>Flag</font>
-						<width>auto</width>
+						<width>1350</width>
 						<textcolor>Dark2</textcolor>
 						<label>$VAR[SubHeaderLabel]</label>
 					</control>
 					<control type="label">
 						<centertop>88</centertop>
 						<font>Flag</font>
-						<width>auto</width>
+						<width>1350</width>
 						<textcolor>Dark3</textcolor>
 						<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
 					</control>
@@ -1178,6 +1179,7 @@
 	</include>
 	<include name="Furniture_Clock">
 		<control type="group">
+			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)]</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<top>40</top>

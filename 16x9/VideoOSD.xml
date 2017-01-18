@@ -3,42 +3,29 @@
 <window id="2901">
 	<include condition="!Player.PauseEnabled">OSDFocusStop</include>
 	<include condition="Player.PauseEnabled">OSDFocusPause</include>
-	<onload>SetProperty(osdshowinfo,1,home)</onload>
-	<onunload>ClearProperty(osdshowinfo,home)</onunload>
 	<controls>
 		<control type="group">
 			<height>94</height>
 			<bottom>0</bottom>
-			<animation type="WindowOpen">
-				<effect type="fade" start="0" end="100" time="150" delay="150" />
-			</animation>
-			<animation type="WindowClose">
-				<effect type="fade" end="0" start="100" time="150" />
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="150" delay="150" />
-			</animation>
-			<animation type="Hidden">
-				<effect type="fade" end="0" start="100" time="150" />
-			</animation>
 			<control type="image">
-                    <width>100%</width>
-                    <height>100%</height>
-					<texture colordiffuse="Dark2">common/black.png</texture>		
-                    <include>Animation.FadeOut</include>
-                </control>
+				<top>20</top>
+				<width>100%</width>
+				<height>100%</height>
+				<texture colordiffuse="Dark2">common/black.png</texture>		
+				<include>Animation.FadeOut</include>
+			</control>
 			<control type="group">
 				<zorder>0</zorder>
-				<left>370</left>
+				<left>424</left>
 				<right>SidePad</right>
 				<height>20</height>
-				<top>120r</top>
-				<width>1470</width>
+				<top>110r</top>
+				<width>1416</width>
 				<control type="slider" id="401">
 					<description>Seek Slider</description>
 					<width>100%</width>
 					<height>20</height>
-					<texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
+					<texturesliderbar colordiffuse="Dark4">osd/progress-end.png</texturesliderbar>
 					<textureslidernib>osd/progress-mid.png</textureslidernib>
 					<textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
 					<action>seek</action>

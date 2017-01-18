@@ -16,6 +16,7 @@
 			<height>35</height>
 			<texture colordiffuse="Dark1">$INFO[VideoPlayer.AudioChannels,flags/channels/,.png]</texture>
 			<visible>!String.IsEmpty(VideoPlayer.AudioChannels)</visible>
+			<top>10</top>
 		</control>
 		<control type="image">
 			<right>96</right>
@@ -24,6 +25,7 @@
 			<height>35</height>
 			<texture colordiffuse="Dark1">$INFO[VideoPlayer.AudioCodec,flags/audio/,.png]</texture>
 			<visible>!String.IsEmpty(VideoPlayer.VideoCodec)</visible>
+			<top>10</top>
 		</control>
 		<control type="image">
 			<right>192</right>
@@ -32,6 +34,7 @@
 			<height>35</height>
 			<texture colordiffuse="Dark1">$INFO[VideoPlayer.VideoCodec,flags/video/,.png]</texture>
 			<visible>!String.IsEmpty(VideoPlayer.VideoCodec)</visible>
+			<top>10</top>
 		</control>
 		<control type="image">
 			<right>288</right>
@@ -40,6 +43,7 @@
 			<height>35</height>
 			<texture colordiffuse="Dark1">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
 			<visible>!String.IsEmpty(VideoPlayer.VideoResolution)</visible>
+			<top>10</top>
 		</control>
 		<control type="image">
 			<right>384</right>
@@ -48,46 +52,11 @@
 			<height>35</height>
 			<texture colordiffuse="Dark1">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
 			<visible>!String.IsEmpty(VideoPlayer.VideoAspect)</visible>
+			<top>10</top>
 		</control>
-		<!-- <control type="label" description="Show">
-			<width>1000</width>
-			<top>0</top>
-			<height>40</height>
-			<font>MediumBold</font>
-			<textcolor>Dark1</textcolor>
-			<label>$VAR[PlayerBigTitle]</label>
-			<visible>VideoPlayer.Content(episodes)</visible>
-		</control> -->
-<!-- 		<control type="label" description="Title">
-			<width>100%</width>
-			<top>50</top>
-			<height>40</height>
-			<font>TinyBold</font>
-			<textcolor>$VAR[ColorHighlight]</textcolor>
-			<label>$VAR[PlayerTitle]</label>
-			<visible>VideoPlayer.Content(episodes)</visible>
-		</control>
-		<control type="label" description="Title">
-			<width>1000</width>
-			<top>0</top>
-			<height>40</height>
-			<font>TinyBold</font>
-			<textcolor>Dark1</textcolor>
-			<label>$VAR[PlayerTitle]</label>
-			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
-		</control>
-		<control type="label" description="Show">
-			<width>100%</width>
-			<top>50</top>
-			<height>40</height>
-			<font>MediumBold</font>
-			<textcolor>$VAR[ColorHighlight]</textcolor>
-			<label>$VAR[PlayerBigTitle]</label>
-			<visible>!VideoPlayer.Content(episodes) | !Player.HasVideo</visible>
-		</control> -->
 		<control type="label" description="Plot">
 			<width>100%</width>
-			<top>105</top>
+			<top>28</top>
 			<height>68</height>
 			<font>Tiny</font>
 			<align>justify</align>
@@ -99,6 +68,7 @@
 			<width>400</width>
 			<bottom>30</bottom>
 			<height>40</height>
+			<left>0</left>
 			<font>Tiny</font>
 			<textcolor>Dark1</textcolor>
 			<label>$VAR[PlayerStatus]</label>
@@ -116,14 +86,14 @@
 		<control type="image">
 			<description>Progress Back</description>
 			<width>100%</width>
-			<bottom>10</bottom>
+			<bottom>20</bottom>
 			<height>10</height>
 			<texture colordiffuse="Black12">common/white.png</texture>
 		</control>
 		<control type="progress" description="cache">
 			<description>Progress Bar</description>
 			<width>100%</width>
-			<bottom>10</bottom>
+			<bottom>20</bottom>
 			<height>10</height>
 			<info>Player.ProgressCache</info>
 			<visible>true</visible>
@@ -135,7 +105,7 @@
 		<control type="progress" id="23">
 			<description>Progress Bar</description>
 			<width>100%</width>
-			<bottom>10</bottom>
+			<bottom>20</bottom>
 			<height>10</height>
 			<info>Player.Progress</info>
 			<visible>true</visible>
