@@ -14,6 +14,14 @@
 				<texture colordiffuse="Dark2">common/black.png</texture>		
 				<include>Animation.FadeOut</include>
 			</control>
+			<control type="image" description="Background">
+				<top>20</top>
+				<width>100%</width>
+				<height>100%</height>
+				<texture colordiffuse="Background">common/bg.jpg</texture>
+				<include>Animation.FadeOut</include>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
 			<control type="group">
 				<zorder>0</zorder>
 				<left>424</left>
@@ -65,7 +73,7 @@
 					<control type="button" id="9301" description="Download">
 						<width>100%</width>
 						<height>60</height>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+						<textcolor>Dark1</textcolor>
 						<include>DefContextButton</include>
 						<label>33003</label>
 						<onclick>ActivateWindow(SubtitleSearch)</onclick>
@@ -73,7 +81,7 @@
 					<control type="togglebutton" id="9302" description="Enable Subs">
 						<width>100%</width>
 						<height>60</height>
-						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+						<textcolor>Dark1</textcolor>
 						<include>DefContextButton</include>
 						<label>$LOCALIZE[305] $INFO[VideoPlayer.SubtitlesLanguage,[UPPERCASE],[/UPPERCASE]]</label>
 						<altlabel>13106</altlabel>
@@ -138,7 +146,7 @@
 				<orientation>horizontal</orientation>
 				<align>right</align>
 				<onleft>17</onleft>
-				<onright>1</onright>
+				<onright>4</onright>
 				<include>DefOSDUpDown</include>
 				<usecontrolcoords>true</usecontrolcoords>
 				<include condition="!VideoPlayer.Content(livetv) + [VideoPlayer.HasMenu | [!VideoPlayer.Content(movies) + !VideoPlayer.Content(episodes)]]">OSDDVDMenu</include>

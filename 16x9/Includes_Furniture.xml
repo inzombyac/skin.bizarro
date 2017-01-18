@@ -344,6 +344,42 @@
 		<value condition="Integer.IsGreater(MusicPlayer.Rating,0)">star5</value>
 		<value>star0</value>
 	</variable>
+	<!-- VideoOSDFlags -->
+	<variable name="OSDVideoFlagstar5">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,9)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,8)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,9)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,8)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar4">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,7)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,7)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,6)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar3">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,5)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,4)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,5)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,4)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar2">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,3)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,2)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,3)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,2)">star5</value>
+		<value>star0</value>
+	</variable>
+	<variable name="OSDVideoFlagstar1">
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,1)">star10</value>
+		<value condition="!String.IsEmpty(VideoPlayer.UserRating) + Integer.IsGreater(VideoPlayer.UserRating,0)">star5</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,1)">star10</value>
+		<value condition="Integer.IsGreater(VideoPlayer.Rating,0)">star5</value>
+		<value>star0</value>
+	</variable>
 	<include name="Furniture_Flags">
 		<control type="grouplist">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)</visible>
@@ -982,6 +1018,13 @@
 				<width>100%</width>
 				<texture colordiffuse="Dark3">common/black.png</texture>
 				<height>160</height>
+			</control>
+			<control type="image" description="Background">
+				<width>100%</width>
+				<height>160</height>
+				<texture colordiffuse="Background">common/bg.jpg</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
 			</control>
 			<control type="image">
 				<top>160</top>

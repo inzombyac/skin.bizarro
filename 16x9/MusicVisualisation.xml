@@ -39,12 +39,12 @@
 				</control>
 				<control type="group">
                     <right>SidePad</right>
-                    <top>280</top>
+                    <top>320</top>
 					<align>right</align>
 					<control type="grouplist">
 						<width>100%</width>
 						<orientation>vertical</orientation>
-						<itemgap>5</itemgap>
+						<itemgap>0</itemgap>
 						<visible>true</visible>
 						<usecontrolcoords>true</usecontrolcoords>
 						<control type="grouplist">
@@ -124,11 +124,12 @@
 							</control>
 						</control>
 						<control type="grouplist">
-							<right>-16</right>
+							<top>-10</top>
+							<left>570</left>
 							<height>64</height>
 							<orientation>horizontal</orientation>
-							<align>right</align>
-							<itemgap>24</itemgap>
+							<align>left</align>
+							<itemgap>10</itemgap>
 							<usecontrolcoords>true</usecontrolcoords>
 							<visible>true</visible>
 							<control type="image">
@@ -163,7 +164,7 @@
 							</control>
 						</control>
 						<control type="label" description="NextUp">
-							<top>5</top>
+							<top>-10</top>
 							<width>100%</width>
 							<height>40</height>
 							<font>Tiny</font>
@@ -172,7 +173,7 @@
 							<left>570</left>
 						</control>
 						<control type="label" description="Duration">
-							<top>-45</top>
+							<top>-50</top>
 							<width>100%</width>
 							<height>40</height>
 							<font>Tiny</font>
@@ -192,7 +193,7 @@
 						<bottom>40</bottom>
 						<height>10</height>
 						<texture colordiffuse="Black12">common/white.png</texture>
-						<left>570</left>
+						<!-- <left>570</left> -->
 					</control>
 					<control type="progress" description="cache">
 						<description>Progress Bar</description>

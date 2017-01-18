@@ -54,9 +54,49 @@
 			<visible>!String.IsEmpty(VideoPlayer.VideoAspect)</visible>
 			<top>10</top>
 		</control>
+		<control type="grouplist">
+			<top>-5</top>
+			<left>0</left>
+			<height>64</height>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<itemgap>10</itemgap>
+			<usecontrolcoords>true</usecontrolcoords>
+			<visible>true</visible>
+			<control type="image">
+				<posx>-16</posx>
+				<width>64</width>
+				<height>64</height>
+				<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDVideoFlagstar1].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDVideoFlagstar2].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDVideoFlagstar3].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDVideoFlagstar4].png</texture>
+			</control>
+			<control type="image">
+				<posx>-48</posx>
+				<width>64</width>
+				<height>64</height>
+				<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDVideoFlagstar5].png</texture>
+			</control>
+		</control>
 		<control type="label" description="Plot">
 			<width>100%</width>
-			<top>28</top>
+			<top>42</top>
 			<height>68</height>
 			<font>Tiny</font>
 			<align>justify</align>
@@ -66,7 +106,7 @@
 		</control>
 		<control type="label" description="Elapsed Time">
 			<width>400</width>
-			<bottom>30</bottom>
+			<bottom>40</bottom>
 			<height>40</height>
 			<left>0</left>
 			<font>Tiny</font>
@@ -77,7 +117,7 @@
 			<right>0</right>
 			<align>right</align>
 			<width>400</width>
-			<bottom>30</bottom>
+			<bottom>40</bottom>
 			<height>40</height>
 			<font>Tiny</font>
 			<textcolor>Dark1</textcolor>
@@ -116,8 +156,8 @@
 		<align>center</align>
 		<height>48</height>
 		<font>Tiny</font>
-		<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
-		<textcolor>$VAR[OSDPanelWhite30]</textcolor>
+		<disabledcolor>Light3</disabledcolor>
+		<textcolor>Dark1</textcolor>
 		<focusedcolor>$VAR[ColorHighlight]</focusedcolor>
 		<texturefocus>noop</texturefocus>
 		<width>226</width>
@@ -230,7 +270,7 @@
 	</variable>
 	<variable name="OSDPanelWhite100">
 		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark1</value>
-		<value>PanelWhite100</value>
+		<value>Dark1</value>
 	</variable>
 	<include name="OSDVideoControls">
 		<control type="togglebutton" id="9003">
@@ -396,7 +436,7 @@
 			<onclick>PlayerControl(Random)</onclick>
 			<visible>Window.IsVisible(MusicOSD.xml) + !Playlist.IsRandom</visible>
 		</control>
-		<control type="button" id="9007">
+		<control type="button" id="9008">
 			<description>Random</description>
 			<width>48</width>
 			<height>64</height>

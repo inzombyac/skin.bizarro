@@ -8,29 +8,15 @@
     <controls>
 
 		<control type="group">
-			<height>150</height>
+			<height>175</height>
 			<width>100%</width>
 			<bottom>0</bottom>
 			<animation effect="slide" start="0" end="0,-74" time="50" condition="Window.IsVisible(videoosd)">Conditional</animation>
 			<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)</visible>
-<!-- 			<animation type="WindowOpen">
+ 			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="150" delay="150" />
 			</animation>
-			<animation type="WindowClose">
-				<effect type="fade" end="0" start="100" time="150" />
-			</animation>
-			<animation type="Visible">
-				<effect type="fade" start="0" end="100" time="150" delay="150" />
-			</animation>
-			<animation type="Hidden">
-				<effect type="fade" end="0" start="100" time="150" />
-			</animation> -->
-			<control type="image">
-                    <width>100%</width>
-                    <height>100%</height>
-					<texture colordiffuse="Dark2">common/black.png</texture>		
-                    <include>Animation.FadeOut</include>
-                </control>
+			<include>VideoBackgroundFade</include>
 			<control type="group">
 				<left>PosterW</left>
 				<width>1412</width>
@@ -59,21 +45,16 @@
 		<control type="group">
 			<height>100</height>
 			<bottom>0</bottom>
-            <!-- <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation> -->
+            <animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
             <control type="group">
                 <visible>!Player.Paused</visible>
                 <visible>!Window.IsVisible(fullscreeninfo) + !Player.ShowInfo + !Window.IsVisible(videoosd)</visible>
                 <visible>Player.Seeking | Player.DisplayAfterSeek  | Player.Forwarding | Player.Rewinding</visible>
-                <!-- <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
-                <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation> -->
+                <animation effect="fade" start="0" end="100" delay="150" time="150">Visible</animation>
+                <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
                 <bottom>0</bottom>
                 <width>100%</width>
-				<control type="image">
-                    <width>100%</width>
-                    <height>100%</height>
-					<texture colordiffuse="Dark2">common/black.png</texture>		
-                    <include>Animation.FadeOut</include>
-                </control>
+				<include>VideoBackgroundFade</include>
                 <control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>
@@ -84,7 +65,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Dark1</textcolor>
                         <label>$VAR[PlayerStatus]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -94,7 +75,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Dark1</textcolor>
                         <label>$INFO[Player.Time]$INFO[Player.Duration,  /  ,]</label>
                     </control>
                     <control type="progress" description="cachelevel">
@@ -141,12 +122,7 @@
                 <animation effect="fade" start="0" end="100" delay="150" time="150">WindowOpen</animation>
                 <bottom>0</bottom>
 				<width>100%</width>
-				<control type="image">
-                    <width>100%</width>
-                    <height>100%</height>
-					<texture colordiffuse="Dark2">common/black.png</texture>		
-                    <include>Animation.FadeOut</include>
-                </control>
+				<include>VideoBackgroundFade</include>
                 <control type="group">
                     <left>SidePad</left>
                     <right>SidePad</right>
@@ -157,7 +133,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Dark1</textcolor>
                         <label>$INFO[PVR.TimeshiftEnd]</label>
                     </control>
                     <control type="label" description="Duration Total Time">
@@ -167,7 +143,7 @@
                         <bottom>30</bottom>
                         <height>40</height>
                         <font>Tiny</font>
-                        <textcolor>$VAR[OSDPanelWhite70]</textcolor>
+                        <textcolor>Dark1</textcolor>
                         <label>$INFO[PVR.TimeshiftStart]</label>
                     </control>
                     <control type="progress" description="cachelevel">
@@ -208,6 +184,6 @@
        <!--  <include>Furniture_OSDClock</include> -->
 		<include>Furniture_Header</include>
 		<include>Furniture_Clock</include>
-        <include>Furniture_Logo</include>	
+        <include>Furniture_Logo</include>
     </controls>
 </window>
