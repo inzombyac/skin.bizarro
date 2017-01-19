@@ -7,21 +7,6 @@
 		<control type="group">
 			<height>94</height>
 			<bottom>0</bottom>
-			<control type="image">
-				<top>20</top>
-				<width>100%</width>
-				<height>100%</height>
-				<texture colordiffuse="Dark2">common/black.png</texture>		
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image" description="Background">
-				<top>20</top>
-				<width>100%</width>
-				<height>100%</height>
-				<texture colordiffuse="Background">common/bg.jpg</texture>
-				<include>Animation.FadeOut</include>
-				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			</control>
 			<control type="group">
 				<zorder>0</zorder>
 				<left>424</left>

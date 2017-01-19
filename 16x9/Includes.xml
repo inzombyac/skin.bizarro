@@ -737,13 +737,13 @@
 	<include name="VideoBackgroundFade">
 		<control type="image">
 			<width>100%</width>
-			<height>100%</height>
+			<height>250</height>
 			<texture colordiffuse="Dark3">common/black.png</texture>		
 			<include>Animation.FadeOut</include>
 		</control>
 		<control type="image" description="Background">
 			<width>100%</width>
-			<height>100%</height>
+			<height>250</height>
 			<texture colordiffuse="Background">common/bg.jpg</texture>
 			<include>Animation.FadeOut</include>
 			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>

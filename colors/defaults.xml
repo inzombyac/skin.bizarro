@@ -830,4 +830,5 @@
 	<color name="EmbyLeft">ff26619c</color>
 	<color name="EmbyCenter">ff50c878</color>
 	<color name="EmbyRight">ffe62020</color>
+	<color name="HeaderBG">01000000</color>
 </colors>

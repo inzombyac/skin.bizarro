@@ -197,6 +197,7 @@
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texturefocus>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>FullScreen</onclick>
+					<onup>3634</onup>
 				</control>
 			</control>
 		</control>
@@ -876,6 +877,7 @@
 		</control>
 	</include>
 	<variable name="HeaderIcon">
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))">$VAR[SystemAvatar]</value>
 		<value condition="Window.IsVisible(Home)+!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)">common/null.png</value>
 		<value condition="Player.Muted">special://skin/extras/icons/mute.png</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
@@ -1016,31 +1018,77 @@
 			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)]</visible>
 			<control type="image">
 				<width>100%</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<height>150</height>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<top>150</top>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<height>90</height>
+				<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<width>100%</width>
 				<texture colordiffuse="Dark3">common/black.png</texture>
-				<height>160</height>
+				<height>150</height>
 			</control>
 			<control type="image" description="Background">
 				<width>100%</width>
-				<height>160</height>
+				<height>150</height>
 				<texture colordiffuse="Background">common/bg.jpg</texture>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
 			</control>
 			<control type="image">
-				<top>160</top>
+				<width>100%</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<height>150</height>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
+			</control>
+			<control type="image">
+				<top>150</top>
 				<texture colordiffuse="Dark3">common/black.png</texture>
-				<height>80</height>
+				<height>90</height>
 				<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 			</control>
 			<control type="grouplist">
 				<top>40</top>
-				<left>SidePad</left>
+				<left>20</left>
 				<visible>!ControlGroup(303).HasFocus()</visible>
 				<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 				<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
 				<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
 				<orientation>horizontal</orientation>
 				<itemgap>24</itemgap>
+				<control type="button" id="3634">
+					<width>80</width>
+					<height>80</height>
+					<onleft>3634</onleft>
+					<onright>3634</onright>
+					<onup>3634</onup>
+					<ondown condition="Control.IsVisible(55)">55</ondown>
+					<onclick>Back</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/back.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+					<visible>!Window.IsVisible(Home.xml)</visible>
+				</control>
+				<control type="button" id="3634">
+					<width>80</width>
+					<height>80</height>
+					<onleft>3634</onleft>
+					<onright>3634</onright>
+					<onup>3634</onup>
+					<ondown>300</ondown>
+					<onclick>Menu</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/menu.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
+					<visible>Window.IsVisible(Home.xml)</visible>
+				</control>
 				<control type="group" description="iconbox">
 					<width>80</width>
 					<height>80</height>
@@ -1050,57 +1098,11 @@
 						<texture colordiffuse="Panel" border="0">common/circle.png</texture>
 					</control>
 					<control id="8308" type="image">
-						<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png">$VAR[HeaderIcon]</texture>
-						<visible>false</visible>
-					</control>
-					<control type="image">
-						<top>-14</top>
-						<left>-14</left>
-						<width>108</width>
-						<height>108</height>
+						<width>80</width>
+						<height>80</height>
 						<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
-						<visible>!Container.Scrolling</visible>
-						<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + !String.Contains(Control.GetLabel(8308),null.png)</visible>
+						<label>$VAR[HeaderIcon]</label>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					</control>
-					<control type="image">
-						<width>80</width>
-						<height>80</height>
-						<texture border="0" diffuse="common/circle.png">special://skin/extras/icons/emby2.png</texture>
-						<visible>!Container.Scrolling</visible>
-						<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),null.png) + String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
-						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					</control>
-					<control type="image">
-						<width>80</width>
-						<height>80</height>
-						<texture border="0" diffuse="common/circle.png">$INFO[Window(Home).Property(EmbyUserImage)]</texture>
-						<visible>!Container.Scrolling</visible>
-						<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),null.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
-						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-						<visible>!Control.HasFocus(3634)</visible>
-					</control>
-					<control type="button" id="3634">
-						<width>80</width>
-						<height>80</height>
-						<onleft>301</onleft>
-						<onright>301</onright>
-						<onup>303</onup>
-						<ondown>301</ondown>
-						<onclick>RunPlugin("plugin://plugin.video.emby?mode=userprefs")</onclick>
-						<font>Button</font>
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
-						<visible>!Container.Scrolling</visible>
-						<visible>[!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)] + String.Contains(Control.GetLabel(8308),null.png) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))</visible>
-					</control>
-					<control type="image">
-						<top>-14</top>
-						<left>-14</left>
-						<width>108</width>
-						<height>108</height>
-						<texture colordiffuse="$VAR[ColorHighlight]" border="0" diffuse="common/circle.png">special://skin/extras/icons/configure.png</texture>
-						<visible>Control.HasFocus(3634)</visible>
 					</control>
 					<control type="label">
 						<centertop>39</centertop>

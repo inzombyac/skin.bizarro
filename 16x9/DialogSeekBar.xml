@@ -11,7 +11,7 @@
 			<height>175</height>
 			<width>100%</width>
 			<bottom>0</bottom>
-			<animation effect="slide" start="0" end="0,-74" time="50" condition="Window.IsVisible(videoosd)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-74" time="150" condition="Window.IsVisible(videoosd)">Conditional</animation>
 			<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)</visible>
  			<animation type="WindowOpen">
 				<effect type="fade" start="0" end="100" time="150" delay="150" />

@@ -14,7 +14,7 @@
 				<height>766</height>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
-				<onup>55</onup>
+				<onup>3634</onup>
 				<ondown>55</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
@@ -213,7 +213,7 @@
 				<height>766</height>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
-				<onup>55</onup>
+				<onup>3634</onup>
 				<ondown>55</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
@@ -449,7 +449,7 @@
 				<height>766</height>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
-				<onup>55</onup>
+				<onup>3634</onup>
 				<ondown>55</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>

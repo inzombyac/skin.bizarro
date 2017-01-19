@@ -108,7 +108,7 @@
 				<ondown condition="!Control.IsVisible(4016) + !Control.IsVisible(4017)">4012</ondown> -->
 				<ondown>4012</ondown>
 				<onup condition="Player.HasMedia">7788</onup>
-				<onup condition="!Player.HasMedia">9000</onup>
+				<onup condition="!Player.HasMedia">3634</onup>
 				<onleft>300</onleft>
 				<onright>300</onright>
 				<orientation>horizontal</orientation>
