@@ -217,11 +217,6 @@
 		<value condition="String.Contains(ListItem.Filename,hdtv)">hdtv.png</value>
 		<value>$INFO[ListItem.VideoResolution]p.png</value>
 	</variable>
-	<include name="Furniture_FlagUpright">
-		<width>2</width>
-		<height>71</height>
-		<texture>info/upright.png</texture>
-	</include>
 	<variable name="RatingFlagVar">
 		<value condition="String.Contains(ListItem.mpaa,TV-G)">TV-G_Certificate_US</value>
 		<value condition="String.Contains(ListItem.mpaa,TV-PG)">TV-PG_Certificate_US</value>

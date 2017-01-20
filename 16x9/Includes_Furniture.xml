@@ -17,38 +17,6 @@
 			<animation effect="slide" end="100,0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 		</control>
 	</include>
-	<include name="Furniture_ScrollbarW">
-		<control type="scrollbar" id="60">
-			<onback>50</onback>
-			<centerleft>60</centerleft>
-			<posy>PosterPad</posy>
-			<height>PosterH</height>
-			<width>8</width>
-			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
-			<onright>50</onright>
-			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<animation effect="slide" end="-100,0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<visible>Container.Column(0)</visible>
-		</control>
-		<control type="scrollbar" id="60">
-			<onback>50</onback>
-			<centerright>60</centerright>
-			<posy>PosterPad</posy>
-			<height>PosterH</height>
-			<width>8</width>
-			<onleft>50</onleft>
-			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
-			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<animation effect="slide" end="100,0" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<visible>!Container.Column(0)</visible>
-		</control>
-	</include>
 	<include name="Furniture_Scrollbar_Horizontal">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -64,18 +32,6 @@
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 		</control>
-	</include>
-	<include name="Furniture_ButtonBack">
-		<width>64</width>
-		<height>64</height>
-		<animation type="Focus" reversible="false">
-			<effect type="zoom" start="75" end="100" center="auto" time="200" />
-		</animation>
-	</include>
-	<include name="Furniture_ButtonBack_Circle">
-		<width>64</width>
-		<height>64</height>
-		<texture colordiffuse="Dark1">common/circle.png</texture>
 	</include>
 	<include name="Furniture_NowPlaying">
 		<!-- Next Recording -->
@@ -802,7 +758,6 @@
 			<centerbottom>60</centerbottom>
 			<width>1920</width>
 			<height>120</height>
-			<align>right</align>
 			<control type="image">
 				<right>0</right>
 				<width>258</width>
@@ -1060,7 +1015,7 @@
 				<visible>!ControlGroup(303).HasFocus()</visible>
 				<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 				<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
-				<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">FurnitureFadeInOutExtended</include>
+				<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOutExtended</include>
 				<orientation>horizontal</orientation>
 				<itemgap>24</itemgap>
 				<control type="button" id="3634">
@@ -1101,7 +1056,6 @@
 						<width>80</width>
 						<height>80</height>
 						<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
-						<label>$VAR[HeaderIcon]</label>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					</control>
 					<control type="label">
@@ -1150,74 +1104,6 @@
 						<textcolor>Dark3</textcolor>
 						<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
 					</control>
-				</control>
-			</control>
-		</control>
-	</include>
-	<include name="ExtendedFurniture_Header">
-		<control type="grouplist">
-			<top>3</top>
-			<left>90</left>
-			<visible>Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
-			<include>Animation.FurnitureFadeInOutExtended</include>
-			<orientation>horizontal</orientation>
-			<itemgap>24</itemgap>
-			<control type="group" description="iconbox">
-				<width>80</width>
-				<height>80</height>
-				<control type="image">
-					<width>80</width>
-					<height>80</height>
-					<texture colordiffuse="Panel" border="0">common/circle.png</texture>
-				</control>
-				<control type="image">
-					<top>-14</top>
-					<left>-14</left>
-					<width>108</width>
-					<height>108</height>
-					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
-					<visible>!Container.Scrolling</visible>
-					<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-				<control type="label">
-					<centertop>39</centertop>
-					<centerleft>40</centerleft>
-					<width>80</width>
-					<height>80</height>
-					<font>LargeBold</font>
-					<align>center</align>
-					<aligny>center</aligny>
-					<label>$INFO[ListItem.SortLetter,[UPPERCASE],[/UPPERCASE]]</label>
-					<textcolor>PanelWhite100</textcolor>
-					<visible>Container.Scrolling</visible>
-					<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-				<control type="image">
-					<centertop>40</centertop>
-					<centerleft>40</centerleft>
-					<width>48</width>
-					<height>48</height>
-					 <texture colordiffuse="$VAR[ColorHighlight]">dialog/busy.gif</texture>
-					<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-			</control>
-			<control type="group">
-				<control type="label">
-					<centertop>24</centertop>
-					<width>auto</width>
-					<font>MediumBold</font>
-					<textcolor>Dark1</textcolor>
-					<label>$VAR[MainHeaderLabel]</label>
-				</control>
-				<control type="label">
-					<centertop>58</centertop>
-					<font>Flag</font>
-					<width>auto</width>
-					<textcolor>Dark2</textcolor>
-					<label>$VAR[SubHeaderLabel]</label>
 				</control>
 			</control>
 		</control>

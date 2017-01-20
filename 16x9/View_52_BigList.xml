@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
-	<include name="View_52_BigList">
-		<include>View_52_BigList_SinglePane</include>
-	</include>
 	<include name="View_52_BigList_SinglePane">
 		<description>List View (id=52)</description>
 		<control type="group">
@@ -18,10 +15,10 @@
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<onright>60</onright>
 				<ondown>52</ondown>
-				<onup>52</onup>
+				<onup condition="Player.HasMedia">7788</onup>
+				<onup condition="!Player.HasMedia">3634</onup>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
-				<align>left</align>
 				<orientation>vertical</orientation>
 				<viewtype label="537">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
@@ -50,7 +47,6 @@
 				<animation effect="slide" start="-100" end="-100" condition="true">Conditional</animation>
 				<include>Furniture_Scrollbar</include>
 			</control>
-			<!-- <include>View_52_SidePoster</include> -->
 		</control>
 	</include>
 	<include name="View_52_BigList_DoublePane">
@@ -517,68 +513,6 @@
 			<info>ListItem.PercentPlayed</info>
 			<colordiffuse>Light1</colordiffuse>
 			<visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
-		</control>
-	</include>
-	<include name="View_52_SidePoster">
-		<control type="group" description="Poster">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
-			<left>1200</left>
-			<top>PosterPad</top>
-			<visible>!String.IsEmpty(ListItem.Icon)</visible>
-			<control type="image">
-				<top>PosterH</top>
-				<width>PosterW</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
-				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-				<visible>Skin.HasSetting(show.reflections)</visible>
-				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
-			</control>
-				<control type="image">
-				<top>PosterH</top>
-				<width>PosterH</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
-				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
-				<visible>Skin.HasSetting(show.reflections)</visible>
-				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
-			</control>
-				<control type="image">
-				<centertop>PosterH</centertop>
-				<width>PosterH</width>
-				<height>48</height>
-				<align>center</align>
-				<aspectratio>center</aspectratio>
-				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
-				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
-			</control>
-			<control type="image">
-				<centertop>PosterH</centertop>
-				<width>PosterW</width>
-				<height>48</height>
-				<align>center</align>
-				<aspectratio>stretch</aspectratio>
-				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
-				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
-			</control>
-			<control type="image">
-				<width>PosterW</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="bottom" scalediffuse="false">scale</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
-			</control>
-			<control type="image">
-				<width>PosterH</width>
-				<height>PosterH</height>
-				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="bottom" scalediffuse="false">keep</aspectratio>
-				<texture background="true">$VAR[PosterImage]</texture>
-				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
-			</control>
 		</control>
 	</include>
 </includes>

@@ -82,23 +82,7 @@
 		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/Emby)">videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds</value>
 		<value>videodb://movies/sets/</value>
 	</variable>
-	<include name="DefSideBrowserButton">
-		<radioposx>400</radioposx>
-		<width>100%</width>
-		<height>64</height>
-		<font>Tiny</font>
-		<textcolor>Dark2</textcolor>
-		<focusedcolor>Light1</focusedcolor>
-		<alttexturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/box.png</alttexturefocus>
-		<texturefocus colordiffuse="$VAR[ColorHighlight]" border="16">common/box.png</texturefocus>
-	</include>
 	<include name="DefDialogButtons">
-		<width>300</width>
-		<font>Button</font>
-		<textcolor>Black70</textcolor>
-		<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-	</include>
-	<include name="DefDialogInfoButtons">
 		<width>300</width>
 		<font>Button</font>
 		<textcolor>Black70</textcolor>
@@ -117,38 +101,6 @@
 			<top>-8</top>
 			<bottom>-8</bottom>
 			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
-		</control>
-	</include>
-	<include name="DefDialogInfoPanelAddon">
-		<include>Animation.FadeIn.Slide</include>
-		<include>Animation.FadeOut</include>
-		<centerleft>50%</centerleft>
-		<posy>120</posy>
-		<width>1520</width>
-		<height>860</height>
-		<control type="image">
-			<left>-8</left>
-			<right>-8</right>
-			<top>-8</top>
-			<bottom>-8</bottom>
-			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
-		</control>
-	</include>
-	<include name="DefDialogInfoPanelFanart">
-		<include>Animation.FadeIn.Slide</include>
-		<include>Animation.FadeOut</include>
-		<centerleft>50%</centerleft>
-		<posy>120</posy>
-		<width>1320</width>
-		<height>840</height>
-		<control type="image">
-			<left>-8</left>
-			<right>-8</right>
-			<top>-8</top>
-			<bottom>-8</bottom>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<aspectratio>scale</aspectratio>
-			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
 		</control>
 	</include>
 	<include name="DefDialogInfoHeader">
@@ -267,21 +219,6 @@
 		<texturefocus colordiffuse="Dark1">common/white.png</texturefocus>
 		<alttexturefocus colordiffuse="Dark1">common/white.png</alttexturefocus>
 		<alttexturenofocus colordiffuse="Dark3">common/white.png</alttexturenofocus>
-	</include>
-	<include name="DefSettingsButton3">
-		<align>left</align>
-		<font>Small</font>
-		<textcolor>PanelWhite100</textcolor>
-		<disabledcolor>PanelWhite12</disabledcolor>
-		<height>70</height>
-		<textureup flipy="true" colordiffuse="PanelWhite30">buttons/spin-down.png</textureup>
-		<texturedown colordiffuse="PanelWhite30">buttons/spin-down.png</texturedown>
-		<textureupfocus flipy="true" colordiffuse="PanelWhite100">buttons/spin-down.png</textureupfocus>
-		<texturedownfocus colordiffuse="PanelWhite100">buttons/spin-down.png</texturedownfocus>
-		<textureradiofocus colordiffuse="$VAR[ColorHighlight2]">buttons/radio-on.png</textureradiofocus>
-		<textureradionofocus colordiffuse="PanelWhite12">buttons/radio-off.png</textureradionofocus>
-		<texturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</texturefocus>
-		<alttexturefocus colordiffuse="$VAR[ColorHighlight]">common/white.png</alttexturefocus>
 	</include>
 	<include name="DefSettingsOKCancelButton">
 		<font>Button</font>
@@ -418,26 +355,6 @@
 			</control>
 		</control>
 	</include>
-	<include name="Def9000Arrows">
-		<control type="group">
-			<control type="image">
-				<description>arrow image</description>
-				<centerleft>50%</centerleft>
-				<posy>-16</posy>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="White70" flipy="true">common/arrow-small.png</texture>
-			</control>
-			<control type="image">
-				<description>arrow image</description>
-				<centerleft>50%</centerleft>
-				<posy>382</posy>
-				<width>16</width>
-				<height>16</height>
-				<texture colordiffuse="White70" flipy="false">common/arrow-small.png</texture>
-			</control>
-		</control>
-	</include>
 	<include name="Def9000Background">
 		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
 		<include>Animation.ZoomIn</include>
@@ -445,22 +362,6 @@
 		<top>184</top>
 		<centerleft>50%</centerleft>
 		<height>382</height>
-		<width>466</width>
-		<control type="image">
-			<description>background image</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>466</width>
-			<height>100%</height>
-			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
-		</control>
-	</include>
-	<include name="Def9000Background2">
-		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | Control.HasFocus(7000) | Control.HasFocus(6000)</visible>
-		<include>Animation.ZoomIn</include>
-		<include>Animation.FadeOut</include>
-		<centerleft>50%</centerleft>
-		<height>1080</height>
 		<width>466</width>
 		<control type="image">
 			<description>background image</description>
@@ -515,11 +416,6 @@
 		</control>
 	</include>
 	<include name="Def9000HomeMenuTop">
-		<left>20</left>
-		<top>100</top>
-		<height>1080</height>
-		<onright>300</onright>
-		<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
 		<control type="label" id="201">
 			<top>200</top>
 			<width>455</width>
@@ -541,8 +437,6 @@
 			<defaultcontrol>9090</defaultcontrol>
 			<control type="group" id="9090">
 				<height>70</height>
-				<ondown>3122</ondown>
-				<onup>9267</onup>
 				<control type="button" id="9091">
 					<description>Global Search</description>
 					<include>DefContextButton</include>
@@ -697,8 +591,6 @@
 		</control>
 		<control type="group" id="9090">
 			<height>70</height>
-			<ondown>19</ondown>
-			<onup>10</onup>
 			<control type="button" id="9091">
 				<description>Global Search</description>
 				<include>DefContextButton</include>
@@ -1398,52 +1290,6 @@
 			<visible>Control.IsVisible(506)</visible>
 		</control>
 	</include>
-	<include name="DefDialogSelectManual6">
-		<posx>738</posx>
-		<posy>120</posy>
-		<width>300</width>
-		<height>70</height>
-		<align>center</align>
-		<label>368</label>
-		<onleft>3</onleft>
-		<onright>3</onright>
-		<onup>3</onup>
-		<ondown>3</ondown>
-		<font>Button</font>
-		<textcolor>Black70</textcolor>
-		<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-	</include>
-	<include name="DefDialogSelectManual3">
-		<description>Manual</description>
-		<right>18</right>
-		<posy>18</posy>
-		<width>100</width>
-		<height>70</height>
-		<align>center</align>
-		<label>368</label>
-		<onleft>3</onleft>
-		<onright>3</onright>
-		<onup>3</onup>
-		<ondown>3</ondown>
-		<font>Button</font>
-		<textcolor>Black70</textcolor>
-		<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-		<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-	</include>
-	<include name="DefVideoInfoCastWithDirector">
-		<top>171</top>
-		<height>639</height>
-	</include>
-	<include name="DefVideoInfoCastWithoutDirector">
-		<top>100</top>
-		<height>710</height>
-	</include>
-	<include name="DefHomeRight520">
-		<right>520</right>
-	</include>
-	<include name="DefHomeRightSidePad">
-		<right>SidePad</right>
-	</include>
 	<variable name="DefTVHubWidget">
 		<value condition="!String.IsEmpty(SKin.String(TVHubWidget))">$INFO[Skin.String(TVHubWidget)]</value>
 		<value>special://skin/extras/playlists/RandomEpisodes.xsp</value>
@@ -1494,119 +1340,6 @@
 		<textcolor>Dark2</textcolor>
 		<focusedcolor>Dark2</focusedcolor>
 		<onclick>noop</onclick>
-	</include>
-	<include name="YoutubeItemLayout">
-		<control type="group">
-			<posx>75</posx>
-			<control type="image">
-				<posx>15</posx>
-				<width>410</width>
-				<height>240</height>
-				<texture border="10">common/nofocus-shadow10.png</texture>
-			</control>
-			<control type="image">
-				<posx>25</posx>
-				<width>390</width>
-				<height>220</height>
-				<fadetime>200</fadetime>
-				<aspectratio aligny="center">scale</aspectratio>
-				<texture diffuse="diffuse/wall.png" background="true">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="label">
-				<posx>35</posx>
-				<posy>215</posy>
-				<width>440</width>
-				<label>$INFO[ListItem.Label2]</label>
-				<font>Small</font>
-				<textcolor>Dark1</textcolor>
-			</control>
-			<control type="image">
-				<posx>280</posx>
-				<posy>218</posy>
-				<width>130</width>
-				<height>30</height>
-				<texture colordiffuse="Dark1">$INFO[ListItem.Rating,stars/,.png]</texture>
-			</control>
-			<control type="textbox">
-				<posx>20</posx>
-				<posy>242</posy>
-				<height>104</height>
-				<width>400</width>
-				<label>$INFO[ListItem.Label]</label>
-				<align>center</align>
-				<font>Small</font>
-				<textcolor>Dark2</textcolor>
-			</control>
-			<control type="label">
-				<posx>30</posx>
-				<posy>-15</posy>
-				<width>380</width>
-				<height>5</height>
-				<align>center</align>
-				<label>$INFO[ListItem.Date]</label>
-				<font>Tiny</font>
-				<textcolor>Dark3</textcolor>
-			</control>
-		</control>
-	</include>
-	<include name="YoutubeFocusedLayout">
-		<control type="group">
-			<posx>75</posx>
-			<animation type="Focus">
-				<effect type="zoom" time="150" start="95" end="100" center="245,260" />
-				<effect type="zoom" time="150" start="105" end="100" delay="150" center="245,260" />
-			</animation>
-			<control type="image">
-				<posx>15</posx>
-				<width>410</width>
-				<height>240</height>
-				<texture border="10">common/nofocus-shadow10.png</texture>
-			</control>
-			<control type="image">
-				<posx>25</posx>
-				<width>390</width>
-				<height>220</height>
-				<aspectratio aligny="center">scale</aspectratio>
-				<texture diffuse="diffuse/wall.png" background="true">$INFO[ListItem.Icon]</texture>
-			</control>
-			<control type="label">
-				<posx>35</posx>
-				<posy>215</posy>
-				<width>440</width>
-				<label>$INFO[ListItem.Label2]</label>
-				<font>Small</font>
-				<textcolor>Light1</textcolor>
-			</control>
-			<control type="image">
-				<posx>280</posx>
-				<posy>218</posy>
-				<width>130</width>
-				<height>30</height>
-				<texture colordiffuse="Light1">$INFO[ListItem.Rating,stars/,.png]</texture>
-			</control>
-			<control type="textbox">
-				<posx>20</posx>
-				<posy>242</posy>
-				<height>104</height>
-				<width>400</width>
-				<align>center</align>
-				<label>$INFO[ListItem.Label]</label>
-				<animation effect="fade" time="300" start="70" end="100" delay="100" reversible="false">Focus</animation>
-				<animation effect="fade" time="300" start="100" end="50" reversible="false">UnFocus</animation>
-				<font>Small</font>
-				<textcolor>Light2</textcolor>
-			</control>
-			<control type="label">
-				<posx>30</posx>
-				<posy>-15</posy>
-				<width>380</width>
-				<height>5</height>
-				<align>center</align>
-				<label>$INFO[ListItem.Date]</label>
-				<font>Tiny</font>
-				<textcolor>Light3</textcolor>
-			</control>
-		</control>
 	</include>
 	<!-- New Emby widgets -->
 	<!-- Main Widget Selection -->
@@ -1924,10 +1657,6 @@
 	<variable name="DefEmbyNodeRandomAction">
 		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Property(type)]&amp;folderid=random&amp;limit=25</value>
 	</variable>
-	<include name="OldEmbyMovies">		videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22year%22%2C%22direction%22%3A%22ascending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%220%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D
-	</include>
-	<include name="HighRatedEmbyMovies">		videodb://movies/titles/?xsp=%7B%22order%22%3A%7B%22method%22%3A%22rating%22%2C%22direction%22%3A%22descending%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22rating%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%227%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7D
-	</include>
 	<include name="VideoCastContent">
 		<content type="static">
 			<!--Cast list content -->
@@ -2354,91 +2083,6 @@
 		<value condition="!String.IsEmpty(ListItem.Artist)">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</value> -->
 		<value></value>
 	</variable>
-	<include name="SimilarArtistsList">
-		<content type="static">
-			<!--Cast list content -->
-			<item>
-				<label>$INFO[Container(5052).ListItem(0).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(0).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(0).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,0)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(1).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(1).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(1).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,1)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(2).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(2).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(2).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,2)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(3).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(3).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(3).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,3)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(4).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(4).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(4).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,4)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(5).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(5).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(5).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,5)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(6).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(6).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(6).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,6)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(7).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(7).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(7).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,7)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(8).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(8).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(8).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,8)</visible>
-			</item>
-			<item>
-				<label>$INFO[Container(5052).ListItem(9).Label]</label>
-				<label2>$INFO[Container(5052).ListItem(9).Property(LibraryPath)]</label2>
-				<icon>$INFO[Container(5052).ListItem(9).Icon]</icon>
-				<onclick>dialog.close(all,true)</onclick>
-				<onclick>ActivateWindow(Music,$INFO[Skin.String(CurrentArtistPath)])</onclick>
-				<visible>Integer.IsGreater(Container(5052).NumItems,9)</visible>
-			</item>
-		</content>
-	</include>
 	<variable name="SimilarVideos">
 		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>

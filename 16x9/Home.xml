@@ -34,6 +34,11 @@
 		<control type="group" description="Side Menu">
 			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
+				<left>20</left>
+				<top>100</top>
+				<height>1080</height>
+				<onright>300</onright>
+				<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
 				<include>Def9000HomeMenuTop</include>
 			</control>
 		</control>

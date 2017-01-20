@@ -351,7 +351,6 @@
 			<orientation>horizontal</orientation>
 			<height>8</height>
 			<onup>4012</onup>
-			<orientation>horizontal</orientation>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
 			<texturesliderbar border="4" colordiffuse="Dark3">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="Dark2">scrollbar/scrollv.png</texturesliderbarfocus>
@@ -481,7 +480,6 @@
 				<width>90</width>
 				<height>19</height>
 				<posy>42</posy>
-				<aligny>center</aligny>
 				<reveal>true</reveal>
 				<texturebg>pvr/progress-back.png</texturebg>
 				<lefttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</lefttexture>
@@ -2730,6 +2728,7 @@
 	</variable>
 	<include name="EmbyHomeInfoActions">
 		<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
+		<onfocus></onfocus>
 	</include>
 	<include name="EmbyFooter">
 		<control type="grouplist">

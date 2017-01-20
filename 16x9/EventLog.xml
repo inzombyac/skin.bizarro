@@ -27,7 +27,6 @@
 		</control>
 		<control type="group">
 			<visible>Control.IsVisible(570)</visible>
-			<include>VisibleFadeEffect</include>
 			<control type="image">
 				<left>75</left>
 				<top>60</top>
@@ -163,7 +162,6 @@
 			<align>left</align>
 			<itemgap>5</itemgap>
 			<control type="label">
-				<include>WindowTitleCommons</include>
 				<label>$LOCALIZE[14111]</label>
 			</control>
 		</control>

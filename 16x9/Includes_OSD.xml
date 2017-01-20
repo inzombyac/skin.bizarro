@@ -449,92 +449,6 @@
 			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRandom</visible>
 		</control>
 	</include>
-	<include name="Furniture_OSDClock">
-		<control type="group">
-			<visible>Window.IsVisible(DialogVideoInfo.xml) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding | Player.ShowInfo | Window.IsVisible(fullscreeninfo) | Window.IsVisible(videoosd)</visible>
-			<visible>![Window.IsVisible(DialogKaiToast.xml) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
-			<visible>!Window.IsVisible(DialogExtendedInfo.xml)</visible>
-			<visible>![Window.IsVisible(DialogVolumeBar.xml) + !Window.IsVisible(DialogVideoInfo.xml)]</visible>
-			<right>1</right>
-			<posy>1</posy>
-			<width>380</width>
-			<height>100</height>
-			<include>Animation.FadeIn.Slide</include>
-			<include>Animation.FadeOut</include>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>100%</width>
-				<height>100%</height>
-				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
-				<texture border="16">common/rounded-shadow8.png</texture>
-				<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
-			</control>
-			<control type="image">
-				<description>background image</description>
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>100%</width>
-				<height>100%</height>
-				<colordiffuse>White70</colordiffuse>
-				<texture border="16">common/rounded-shadow8.png</texture>
-				<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
-			</control>
-			<control type="group">
-				<control type="image">
-					<left>20</left>
-					<centertop>50%</centertop>
-					<width>48</width>
-					<height>48</height>
-					<aspectratio aligny="center">keep</aspectratio>
-					<colordiffuse>Dark1</colordiffuse>
-					<texture>kaitoast/clock.png</texture>
-				</control>
-				<control type="label">
-					<right>185</right>
-					<left>20</left>
-					<height>100%</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>Small</font>
-					<textcolor>Dark1</textcolor>
-					<label>$INFO[System.Time(hh:mm)]</label>
-				</control>
-				<control type="image">
-					<left>235</left>
-					<centertop>50%</centertop>
-					<width>48</width>
-					<height>48</height>
-					<aspectratio aligny="center">keep</aspectratio>
-					<colordiffuse>Dark1</colordiffuse>
-					<texture>kaitoast/finishtime.png</texture>
-				</control>
-				<control type="label">
-					<right>-45</right>
-					<left>220</left>
-					<height>100%</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>Small</font>
-					<textcolor>Dark1</textcolor>
-					<label>$INFO[Player.FinishTime(hh:mm)]</label>
-					<visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
-				</control>
-				<control type="label">
-					<right>-45</right>
-					<left>220</left>
-					<height>100%</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>Small</font>
-					<textcolor>Dark1</textcolor>
-					<label>$INFO[ListItem.EndTime(hh:mm)]</label>
-					<visible>Window.IsVisible(DialogVideoInfo.xml)</visible>
-				</control>
-			</control>
-		</control>
-	</include>
 	<include name="OSDMusicControls">
 		<control type="group">
             <height>80</height>
@@ -550,7 +464,6 @@
                 <effect type="fade" end="0" start="100" time="150"/>
             </animation>
 			<control type="group">
-				<zorder>0</zorder>
 				<left>600</left>
 				<right>SidePad</right>
 				<height>20</height>

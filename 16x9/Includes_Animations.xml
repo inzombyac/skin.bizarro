@@ -31,14 +31,6 @@
 		<animation effect="fade" start="0" end="100" time="550" delay="250" tween="cubic" easing="inout">Visible</animation>
 		<animation effect="fade" start="0" end="100" time="550" delay="250" tween="cubic" easing="inout">WindowOpen</animation>
 	</include>
-	<include name="Animation.DelayFadeOut">
-		<animation effect="fade" end="0" start="100" time="350" delay="100" tween="cubic" easing="inout">Hidden</animation>
-		<animation effect="fade" end="0" start="100" time="350" delay="100" tween="cubic" easing="inout">WindowClose</animation>
-	</include>
-	<include name="Animation.LongDelayFadeOut">
-		<animation effect="fade" end="0" start="100" time="350" delay="1000" tween="cubic" easing="inout">Hidden</animation>
-		<animation effect="fade" end="0" start="100" time="350" delay="1000" tween="cubic" easing="inout">WindowClose</animation>
-	</include>
 	<include name="Animation.FadeFromHome">
 		<animation effect="fade" start="0" end="100" time="350" tween="cubic" easing="inout" condition="Window.Previous(home)">WindowOpen</animation>
 		<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.Next(home)">WindowClose</animation>
@@ -114,27 +106,12 @@
 		<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="0,-390" start="0,0" time="200">Conditional</animation>
 		<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="-520,0" start="0,0" time="200">Conditional</animation>
 	</include>
-	<!-- Dialog music info animation -->
-	<include name="DialogMusicInfoAnimation">
-		<!-- <animation condition="Control.HasFocus(5051) | Control.HasFocus(5050) | Control.HasFocus(50)" effect="slide" end="0,-450" start="0,0" time="200">Conditional</animation> -->
-	</include>
-	<!-- Emby Home Fade  -->
-	<include name="Animation.EmbyFadeOut">
-		<animation effect="fade" end="0" start="100" time="1000" delay="500" tween="cubic" easing="inout" reversible="false">Hidden</animation>
-	</include>
-	<include name="Animation.EmbyFadeIn">
-		<animation effect="fade" end="100" start="0" time="2000" delay="1000" tween="cubic" easing="inout" reversible="false">Visible</animation>
-		<animation effect="fade" end="0" start="0" time="500" delay="1000" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-	</include>
 	<include name="Animation.LongDelayFadeIn">
 		<animation effect="fade" end="100" start="0" time="500" delay="2000" tween="cubic" easing="inout" reversible="false">Visible</animation>
 		<animation effect="fade" end="100" start="0" time="500" delay="2000" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 	</include>
 	<include name="Animation.Focus">
 		<animation effect="zoom" end="107" time="50" center="auto">Focus</animation>
-	</include>
-	<include name="Animation.FocusSmall">
-		<animation effect="zoom" end="103" time="50" center="auto">Focus</animation>
 	</include>
 	<include name="Animation.EmbyRight2Slide">
 		<!-- <animation condition="Integer.IsGreater(Container(4016).NumItems,9)" effect="slide" end="11,0" start="0,0" time="200">Conditional</animation> -->
@@ -143,14 +120,13 @@
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,3)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,0)" effect="slide" end="372,0" start="0,0" time="200">Conditional</animation>
 	</include>
-	<include name="Animation.EmbyRight2SlideMusic">
-		<!-- <animation condition="Integer.IsGreater(Container(4016).NumItems,9)" effect="slide" end="11,0" start="0,0" time="200">Conditional</animation> -->
+<!-- 	<include name="Animation.EmbyRight2SlideMusic">
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,8)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,6)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,4)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,2)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,0)" effect="slide" end="372,0" start="0,0" time="200">Conditional</animation>
-	</include>
+	</include> -->
 	<include name="Animation.EmbyRight3Slide">
 		<!-- <animation condition="Integer.IsGreater(Container(4016).NumItems,9)" effect="slide" end="11,0" start="0,0" time="200">Conditional</animation> -->
 		<animation condition="Integer.IsGreater(Container(4016).NumItems,9)" effect="slide" end="350,0" start="0,0" time="200">Conditional</animation>
@@ -204,8 +180,5 @@
 		<animation condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).CurrentItem,6) + String.IsEqual(Container(300).ListItem.Property(defaultID),music)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
 		<animation condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).CurrentItem,8) + String.IsEqual(Container(300).ListItem.Property(defaultID),music)" effect="slide" end="-340,0" start="0,0" time="200">Conditional</animation>
 		
-	</include>
-	<include name="Animation.EmbyMainZoom">
-		<animation effect="zoom" end="103" time="50" center="auto" condition="Control.HasFocus(4012)">Conditional</animation>
 	</include>
 </includes>

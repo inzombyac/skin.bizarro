@@ -58,7 +58,6 @@
 					<scroll>true</scroll>
 					<textcolor>Dark2</textcolor>
 					<label>$VAR[MusicInfoDescription]</label>
-					<include>DialogMusicInfoAnimation</include>
 				</control>
 			</control>
 			<control type="group">
@@ -171,10 +170,8 @@
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<visible>!Container.Content(albums)</visible>
-					<include>DialogMusicInfoAnimation</include>
 				</control>
 				<control id="50" type="panel">
-					<include>DialogMusicInfoAnimation</include>
 					<height>325</height>
 					<onup>9001</onup>
 					<ondown>50</ondown>
@@ -305,11 +302,9 @@
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<visible>Container.Content(albums)</visible>
-					<include>DialogMusicInfoAnimation</include>
 				</control>
 				<!-- Album Tracklist -->
 				<control id="5050" type="panel">
-					<include>DialogMusicInfoAnimation</include>
 					<height>325</height>
 					<onup>9001</onup>
 					<ondown>5050</ondown>
