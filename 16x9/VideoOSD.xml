@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="2901">
+	<zorder>0</zorder>
 	<include condition="!Player.PauseEnabled">OSDFocusStop</include>
 	<include condition="Player.PauseEnabled">OSDFocusPause</include>
 	<controls>
@@ -8,7 +9,6 @@
 			<height>94</height>
 			<bottom>0</bottom>
 			<control type="group">
-				<zorder>0</zorder>
 				<left>424</left>
 				<right>SidePad</right>
 				<height>20</height>
@@ -100,14 +100,14 @@
 					<description>Audio</description>
 					<label>292</label>
 					<align>left</align>
-					<onclick>ActivateWindow(124)</onclick>
+					<onclick>ActivateWindow(osdaudiosettings)</onclick>
 					<include>DefOSDButtons</include>
 				</control>
 				<control type="button" id="2">
 					<description>Video Settings</description>
 					<label>291</label>
 					<align>left</align>
-					<onclick>ActivateWindow(123)</onclick>
+					<onclick>ActivateWindow(osdvideosettings)</onclick>
 					<include>DefOSDButtons</include>
 				</control>
 			</control>

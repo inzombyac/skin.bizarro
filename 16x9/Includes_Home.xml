@@ -5,7 +5,6 @@
 		<control type="group">
 			<visible>!Player.HasMedia</visible>
 			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
-			<visible>!String.Contains(Window(10025).Property(PlayingBackgroundMedia),True)</visible>
 			<control type="rss">
 				<description>RSS feed</description>
 				<left>80</left>

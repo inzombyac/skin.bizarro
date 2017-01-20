@@ -256,14 +256,6 @@
 		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>
-	<variable name="Music2OSDPanelWhite30">
-		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
-		<value>PanelWhite30</value>
-	</variable>
-	<variable name="Music3OSDPanelWhite30">
-		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
-		<value>PanelWhite30</value>
-	</variable>
 	<variable name="OSDPanelWhite70">
 		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark1</value>
 		<value>PanelWhite70</value>

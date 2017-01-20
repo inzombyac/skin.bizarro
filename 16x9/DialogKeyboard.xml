@@ -63,7 +63,6 @@
                 <height>75</height>
                 <align>center</align>
                 <textcolor>Black70</textcolor>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
             </control>
 			 <control type="label" id="314">
                 <description>List of Options</description>
@@ -73,7 +72,6 @@
                 <height>75</height>
                 <align>center</align>
                 <textcolor>Black70</textcolor>
-                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
             </control>
 
             <control type="group" id="4000">
@@ -480,7 +478,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>System.HasAddon(plugin.program.autocompletion) + !String.IsEmpty(Control.GetLabel(312).index(1)) + !Window.IsVisible(1130)</visible>
+                    <visible>System.HasAddon(plugin.program.autocompletion) + !String.IsEmpty(Control.GetLabel(312).index(1))</visible>
                     <top>480</top>
                     <centerleft>50%</centerleft>
                     <centertop>40%</centertop>

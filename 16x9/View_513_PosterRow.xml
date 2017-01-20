@@ -1055,7 +1055,6 @@
 					<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
 					<ondown>60</ondown>
 					<orientation>horizontal</orientation>
-					<viewtype label="31756">Poster Row</viewtype>
 					<pagecontrol>60</pagecontrol>
 					<focusposition>1</focusposition>
 					<preloaditems>2</preloaditems>
@@ -1070,36 +1069,6 @@
 			</control>
 		</control>
 	</include>
-	<variable name="ShowcaseItem-7Var">
-		<value condition="!String.IsEmpty(ListItem(-7).Art(poster))">$INFO[ListItem(-7).Art(poster)]</value>
-		<value condition="Container.Content(genres)">$INFO[ListItem(-7).Label,special://skin/extras/moviegenres/,.jpg]</value>
-		<value>$INFO[ListItem(-7).Icon]</value>
-	</variable>
-	<variable name="ShowcaseItem-6Var">
-		<value condition="!String.IsEmpty(ListItem(-6).Art(poster))">$INFO[ListItem(-6).Art(poster)]</value>
-		<value condition="Container.Content(genres)">$INFO[ListItem(-6).Label,special://skin/extras/moviegenres/,.jpg]</value>
-		<value>$INFO[ListItem(-6).Icon]</value>
-	</variable>
-	<variable name="ShowcaseItem-5Var">
-		<value condition="!String.IsEmpty(ListItem(-5).Art(poster))">$INFO[ListItem(-5).Art(poster)]</value>
-		<value condition="Container.Content(genres)">$INFO[ListItem(-5).Label,special://skin/extras/moviegenres/,.jpg]</value>
-		<value>$INFO[ListItem(-5).Icon]</value>
-	</variable>
-	<variable name="ShowcaseItem-4Var">
-		<value condition="!String.IsEmpty(ListItem(-4).Art(poster))">$INFO[ListItem(-4).Art(poster)]</value>
-		<value condition="Container.Content(genres)">$INFO[ListItem(-4).Label,special://skin/extras/moviegenres/,.jpg]</value>
-		<value>$INFO[ListItem(-4).Icon]</value>
-	</variable>
-	<variable name="ShowcaseItem-3Var">
-		<value condition="!String.IsEmpty(ListItem(-3).Art(poster))">$INFO[ListItem(-3).Art(poster)]</value>
-		<value condition="Container.Content(genres)">$INFO[ListItem(-3).Label,special://skin/extras/moviegenres/,.jpg]</value>
-		<value>$INFO[ListItem(-3).Icon]</value>
-	</variable>
-	<variable name="ShowcaseItem-2Var">
-		<value condition="!String.IsEmpty(ListItem(-2).Art(poster))">$INFO[ListItem(-2).Art(poster)]</value>
-		<value condition="Container.Content(genres)">$INFO[ListItem(-2).Label,special://skin/extras/moviegenres/,.jpg]</value>
-		<value>$INFO[ListItem(-2).Icon]</value>
-	</variable>
 	<variable name="ShowcaseItem-1Var">
 		<value condition="!String.IsEmpty(ListItem(-1).Art(poster))">$INFO[ListItem(-1).Art(poster)]</value>
 		<value condition="Container.Content(genres)">$INFO[ListItem(-1).Label,special://skin/extras/moviegenres/,.jpg]</value>
@@ -1224,12 +1193,5 @@
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [String.Contains(ListItem(8).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [String.IsEqual(Window(Home).Property(LatestMovie.1.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.2.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.3.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.4.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.5.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.6.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.7.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.8.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.9.Title),ListItem(8).Label) | String.IsEqual(Window(Home).Property(LatestMovie.10.Title),ListItem(8).Label)]] | [[Container.Content(tvshows)] + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(8).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(8).TvShowTitle)]] | [Container.Content(episodes) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(8).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(8).Title)]]]]">indicator/poster-new.png</value>
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + String.IsEqual(ListItem(8).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
 		<value condition="!Skin.HasSetting(furniture.hideindicators) + String.IsEqual(ListItem(8).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
-	</variable>
-	<variable name="IconOverlay9VarOrig">
-		<value condition="!Skin.HasSetting(furniture.hideindicators) + ListItem(9).IsPlaying">indicator/play.png</value>
-		<value condition="!Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hideresume) + ListItem(9).IsResumable">indicator/poster-inprogress.png</value>
-		<value condition="!Skin.HasSetting(furniture.hideindicators) + !Skin.HasSetting(furniture.hidenew) + [String.Contains(ListItem(9).Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [String.IsEqual(Window(Home).Property(LatestMovie.1.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.2.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.3.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.4.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.5.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.6.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.7.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.8.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.9.Title),ListItem(9).Label) | String.IsEqual(Window(Home).Property(LatestMovie.10.Title),ListItem(9).Label)]] | [[Container.Content(tvshows)] + [String.IsEqual(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(9).TvShowTitle) | String.IsEqual(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(9).TvShowTitle)]] | [Container.Content(episodes) + [String.IsEqual(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(9).Title) | String.IsEqual(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(9).Title)]]]]">indicator/poster-new.png</value>
-		<value condition="!Skin.HasSetting(furniture.hideindicators) + String.IsEqual(ListItem(9).Overlay,OverlayWatched.png) + !Skin.HasSetting(furniture.unwatched)">indicator/checkmark.png</value>
-		<value condition="!Skin.HasSetting(furniture.hideindicators) + String.IsEqual(ListItem(9).Overlay,OverlayUnwatched.png) + Skin.HasSetting(furniture.unwatched)">indicator/poster-unwatched.png</value>
 	</variable>
 </includes>

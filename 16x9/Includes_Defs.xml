@@ -48,36 +48,6 @@
 		<value condition="Control.HasFocus(4012) + [String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow) | String.IsEqual(Container(4019).ListItem.Property(type),tvshow) | String.IsEqual(Container(4019).ListItem.DBTYPE,episode) | String.IsEqual(Container(4019).ListItem.Property(type),episode)]">$INFO[Container(4019).ListItem.Property(DBID)]</value>
 		<value>-1</value>
 	</variable>
-	<variable name="EmbyWidgetFocusBoxHeight">
-		<value>221</value>
-	</variable>
-	<variable name="EmbyWidgetFocusBoxWidth">
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">190</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">300</value>
-		<value>300</value>
-	</variable>
-	<variable name="EmbyWidgetItemHeight">
-		<value>180</value>
-	</variable>
-	<variable name="EmbyWidgetHeight">
-		<value>253</value>
-	</variable>
-	<variable name="EmbyWidgetItemHeight">
-		<value>180</value>
-	</variable>
-	<variable name="EmbyWidgetWidth">
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">200</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">310</value>
-		<value>310</value>
-	</variable>
-	<variable name="EmbyWidgetItemWidth">
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">180</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">290</value>
-		<value>290</value>
-	</variable>
-	<variable name="EmbyHomeRightWidgetContent">
-		<value>EmbyWidget1Content</value>
-	</variable>
 	<variable name="EmbyCollectionSource">
 		<value condition="String.StartsWith(Container(300).ListItem.Property(Path),library://video/Emby)">videodb://movies/sets/?xsp=%7b%22group%22%3a%7b%22mixed%22%3afalse%2c%22type%22%3a%22sets%22%7d%2c%22order%22%3a%7b%22direction%22%3a%22ascending%22%2c%22ignorefolders%22%3a0%2c%22method%22%3a%22sorttitle%22%7d%2c%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22tag%22%2c%22operator%22%3a%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%5D%7D%2C%22type%22%3A%22movies%22%7Ds</value>
 		<value>videodb://movies/sets/</value>
@@ -830,14 +800,6 @@
 			<onclick>Skin.ToggleSetting(views.57.showfanart)</onclick>
 			<visible>Control.IsVisible(57)</visible>
 		</control>
-		<control type="radiobutton" id="9028" description="Show Tick (155)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>Hide Watched/Unwatched Indicator</label>
-			<selected>Skin.HasSetting(views.155.showtick)</selected>
-			<onclick>Skin.ToggleSetting(views.155.showtick)</onclick>
-			<visible>Control.IsVisible(155)</visible>
-		</control>
 		<control type="radiobutton" id="9029" description="Show Tick (156)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -1298,16 +1260,6 @@
 		<value condition="!String.IsEmpty(Skin.String(MovieHubWidget))">$INFO[Skin.String(MovieHubWidget)]</value>
 		<value>special://skin/extras/playlists/RandomMovies.xsp</value>
 	</variable>
-	<variable name="DefDirectorWindowContent">
-		<value condition="String.IsEqual(Window(1103).Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[Window(home).Property(ExtStudio)]</value>
-		<value condition="String.IsEqual(Window(1103).Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[Window(home).Property(ExtDBID)]</value>
-		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[Window(home).Property(ExtDirector)]</value>
-	</variable>
-	<variable name="DefDirectorInfoWindowContent">
-		<value condition="String.IsEqual(Window.Property(content),1)">plugin://script.extendedinfo?info=studio&amp;&amp;studio=$INFO[ListItem.Studio]</value>
-		<value condition="String.IsEqual(Window.Property(content),2)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;dbid=$INFO[ListItem.DBID]</value>
-		<value>plugin://script.extendedinfo?info=directormovies&amp;&amp;director=$INFO[ListItem.Director]</value>
-	</variable>
 	<variable name="DefMovieDBMoviesContent">
 		<value condition="String.IsEqual(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
 		<value condition="String.IsEqual(Window(1104).Property(content),2)">plugin://script.extendedinfo?info=popularmovies</value>
@@ -1511,12 +1463,12 @@
 		<!-- <value>plugin://script.extendedinfo?info=anticipatedshows</value> -->
 		<value>plugin://script.extendedinfo?info=trendingshows</value>
 	</variable>
-	<variable name="DefWidgetRight2Music">
+	<!-- <variable name="DefWidgetRight2Music">
 		<value>[CR]</value>
 	</variable>
 	<variable name="DefWidgetRight2Programs">
 		<value>[CR]</value>
-	</variable>
+	</variable> -->
 	<variable name="DefWidgetRight2Emby0">
 		<value condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.unwatched.content))">$INFO[Window(Home).Property(emby.nodes.0.unwatched.content)]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.recommended.content))">$INFO[Window(Home).Property(emby.nodes.0.recommended.content)]</value>
@@ -1589,18 +1541,18 @@
 	<variable name="DefWidgetRight3Movies">
 		<value>plugin://script.skin.helper.service/?action=similarmovies&amp;imdbid=$INFO[Container(9004).ListItem.IMDBNumber]</value>
 	</variable>
-	<variable name="DefWidgetRight3LiveTV">
+	<!-- <variable name="DefWidgetRight3LiveTV">
 		<value>[CR]</value>
-	</variable>
+	</variable> -->
 	<variable name="DefWidgetRight3Channels">
 		<value>plugin://script.extendedinfo?info=topratedmovies</value>
 	</variable>
-	<variable name="DefWidgetRight3Music">
+	<!-- <variable name="DefWidgetRight3Music">
 		<value>[CR]</value>
-	</variable>
-	<variable name="DefWidgetRight3Programs">
+	</variable> -->
+	<!-- <variable name="DefWidgetRight3Programs">
 		<value>[CR]</value>
-	</variable>
+	</variable> -->
 	<variable name="DefWidgetRight3Emby0">
 		<value condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.recentepisodes.content)]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))]">$INFO[Window(Home).Property(emby.nodes.0.recent.content)]</value>
@@ -2079,16 +2031,8 @@
 			</item>
 		</content>
 	</include>
-	<variable name="DiscographyContent">
-		<value condition="!String.IsEmpty(ListItem.Artist)">plugin://script.extendedinfo?info=discography&amp;&amp;artistname=$INFO[ListItem.Artist]</value> -->
-		<value></value>
-	</variable>
 	<variable name="SimilarVideos">
 		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
-	</variable>
-	<variable name="VideoDBID">
-		<value condition="!String.IsEmpty(ListItem.DBID)">$INFO[ListItem.DBID]</value>
-		<value condition="!String.IsEmpty(ListItem.Property(DBID)">$INFO[ListItem.Property(DBID)]</value>
 	</variable>
 </includes>

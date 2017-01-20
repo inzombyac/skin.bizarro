@@ -86,11 +86,6 @@
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="WidgetImage">
-		<value condition="!String.IsEmpty(Container(301).ListItem.Art(tvshow.poster))">$INFO[Container(301).ListItem.Art(tvshow.poster)]</value>
-		<value condition="!String.IsEmpty(Container(301).ListItem.Art(poster))">$INFO[Container(301).ListItem.Art(poster)]</value>
-		<value>$INFO[Container(301).ListItem.Icon]</value>
-	</variable>
 	<variable name="ThumbImage">
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(sets)">$VAR[FanartImage]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
@@ -148,23 +143,10 @@
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="PVRChannelsImage">
-		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Thumb) + !Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
-		<value>$INFO[ListItem.Icon]</value>
-	</variable>
 	<variable name="MusicImage">
 		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value>$INFO[ListItem.Icon]</value>
-	</variable>
-	<variable name="PlayerClearart">
-		<value condition="!String.IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
-		<value condition="!String.IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
-		<value condition="!String.IsEmpty(Player.Art(tvshow.clearlogo))">$INFO[Player.Art(tvshow.clearlogo)]</value>
-		<value condition="!String.IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
 	</variable>
 	<variable name="ClearLogoBanner">
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
@@ -177,71 +159,9 @@
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 	</variable>
-	<variable name="ClearArtOnly">
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-	</variable>
-	<variable name="WidgetLogo">
-		<value condition="!String.IsEmpty(Container(301).ListItem.Art(tvshow.clearlogo))">$INFO[Container(301).ListItem.Art(tvshow.clearlogo)]</value>
-		<value condition="!String.IsEmpty(Container(301).ListItem.Art(clearlogo))">$INFO[Container(301).ListItem.Art(clearlogo)]</value>
-	</variable>
-	<variable name="Container515Logo">
-		<value condition="!String.IsEmpty(Container(515).ListItem.Art(tvshow.clearlogo))">$INFO[Container(515).ListItem.Art(tvshow.clearlogo)]</value>
-		<value condition="!String.IsEmpty(Container(515).ListItem.Art(clearlogo))">$INFO[Container(515).ListItem.Art(clearlogo)]</value>
-	</variable>
-	<variable name="ClearArt">
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
-	</variable>
-	<variable name="CDArt">
-		<value condition="!container.content(movies)">$INFO[Window(Home).Property(SkinHelper.ListItemStudioLogo)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(discart))">$INFO[ListItem.Art(discart)]</value>
-		<value condition="Integer.IsGreater(ListItem.VideoResolution,719)">cdart/bd.png</value>
-		<value condition="!String.IsEmpty(ListItem.VideoResolution)">cdart/default.png</value>
-	</variable>
 	<variable name="Studio">
 		<value condition="!String.IsEmpty(ListItem.Studio)">$INFO[Window(Home).Property(SkinHelper.ListItemStudioLogo)]</value>
 		<!-- <value>$INFO[ListItem.Art(clearlogo)]</value> -->
-	</variable>
-	<variable name="MusicFanart">
-		<value condition="!String.IsEmpty(Container.Art(artist.fanart))">$INFO[Container.Art(artist.fanart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value>special://skin/extras/backgrounds/Headphones.jpg</value>
-	</variable>
-	<variable name="GlobalCaseVar">
-		<value condition="String.Contains(ListItem.Filename,.3D.)">3d.png</value>
-		<value condition="String.Contains(ListItem.Filename,hdtv)">hdtv.png</value>
-		<value>$INFO[ListItem.VideoResolution]p.png</value>
-	</variable>
-	<variable name="RatingFlagVar">
-		<value condition="String.Contains(ListItem.mpaa,TV-G)">TV-G_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,TV-PG)">TV-PG_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,TV-14)">TV-14_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,TV-MA)">TV-MA_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,TV-Y7)">tv-y7</value>
-		<value condition="String.Contains(ListItem.mpaa,TV-Y)">tv-y</value>
-		<value condition="String.Contains(ListItem.mpaa,US:G) | String.Contains(ListItem.mpaa,USA:G) | String.Contains(ListItem.mpaa,Rated G)">MPAA_G_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,PG-13)">MPAA_PG-13_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,Rated PG) | String.IsEqual(ListItem.Mpaa,PG)">MPAA_PG_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,US:R) | String.Contains(ListItem.mpaa,USA:R) | String.Contains(ListItem.mpaa,Rated R) | String.IsEqual(ListItem.mpaa,R)">MPAA_R_Certificate_US</value>
-		<value condition="String.Contains(ListItem.mpaa,NC-17)">MPAA_NC-17_Certificate_US</value>
-	</variable>
-	<variable name="ExtendedRatingFlagVar">
-		<value condition="String.Contains(Window.Property(mpaa),TV-G)">TV-G_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),TV-PG)">TV-PG_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),TV-14)">TV-14_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),TV-MA)">TV-MA_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),TV-Y7)">tv-y7</value>
-		<value condition="String.Contains(Window.Property(mpaa),TV-Y)">tv-y</value>
-		<value condition="String.Contains(Window.Property(mpaa),US:G) | String.Contains(Window.Property(mpaa),USA:G) | String.Contains(Window.Property(mpaa),Rated G)">MPAA_G_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),PG-13)">MPAA_PG-13_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),Rated PG) | String.IsEqual(Window.Property(mpaa),PG)">MPAA_PG_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),NC-17)">MPAA_NC-17_Certificate_US</value>
-		<value condition="String.Contains(Window.Property(mpaa),US:R) | String.Contains(Window.Property(mpaa),USA:R) | String.Contains(Window.Property(mpaa),Rated R) | [String.IsEqual(Window.Property(mpaa),R)]">MPAA_R_Certificate_US</value>
 	</variable>
 	<variable name="HDSDImage">
 		<value condition="Container.Content(songs)">$INFO[ListItem.FileExtension,flags/audio/,.png]</value>
@@ -388,14 +308,5 @@
 		<value condition="String.IsEqual(ListItem.Property(Addon.Status),Disabled)">special://skin/extras/icons/error.png</value>
 		<value condition="String.IsEqual(ListItem.Property(Addon.Status),Enabled)">special://skin/extras/icons/shipping.png</value>
 		<value>special://skin/extras/icons/warning.png</value>
-	</variable>
-	<variable name="RepeatOSDIcon">
-		<value condition="Playlist.IsRepeatOne">osd/repeat-all.png</value>
-		<value condition="Playlist.IsRepeat">osd/repeat-none.png</value>
-		<value>osd/repeat.png</value>
-	</variable>
-	<variable name="ShuffleOSDIcon">
-		<value condition="Playlist.IsRandom">osd/unshuffle.png</value>
-		<value>osd/shuffle.png</value>
 	</variable>
 </includes>
