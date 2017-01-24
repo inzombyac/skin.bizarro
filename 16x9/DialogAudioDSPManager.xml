@@ -81,8 +81,6 @@
                 <top>330</top>
                 <width>1740</width>
                 <height>414</height>
-                <ondown>9001</ondown>
-                <onup>9000</onup>
                 <control type="group">
                     <description>available modes group</description>
                     <width>865</width>

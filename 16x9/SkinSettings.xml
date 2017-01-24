@@ -75,7 +75,7 @@
 					<control type="togglebutton" id="9108" description="Colors">
 						<usealttexture>ControlGroup(9100).HasFocus(9108)</usealttexture>
 						<include>DefSettingsButton2</include>
-						<label>31745</label>
+						<label>22032</label>
 					</control>
 				</control>
 				<control type="image"> <!--focused background left edge -->
@@ -265,7 +265,7 @@
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
 						<label>$LOCALIZE[31780]</label>
-						<label2 fallback="Normal">[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
+						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
 						<onclick>SetProperty(Dialog.NumItems,6)</onclick>
 						<onclick>SetProperty(Dialog.1.Label,Darkest)</onclick>
 						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(FanartFade,Darkest))</onclick>
@@ -281,15 +281,6 @@
 						<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(FanartFade,Brightest))</onclick>
 						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Opacity)</onclick>
 						<visible>ControlGroup(9100).HasFocus(9102)</visible>
-						<visible>!Skin.HasSetting(lights.out)</visible>
-					</control>
-					<control type="radiobutton" id="9224" description="Animate Fanart">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31146</label>
-						<selected>Skin.HasSetting(Fanart.Animate)</selected>
-						<onclick>Skin.ToggleSetting(Fanart.Animate)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
 					</control>
 					<control type="button" id="9225" description="Set Fallback Image">
@@ -318,9 +309,10 @@
 						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(weatherfanart.name)][/COLOR]</label2>
 						<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
 					</control>
+					<!-- OSD -->
 					<control type="radiobutton" id="9221" description="Show video in background">
 						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
 						<include>DefSettingsButton2</include>
 						<label>31111</label>
 						<selected>Skin.HasSetting(global.showvideo)</selected>
@@ -328,20 +320,11 @@
 					</control>
 					<control type="radiobutton" id="9222" description="Show visualization in background">
 						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
 						<include>DefSettingsButton2</include>
 						<label>31172</label>
 						<selected>Skin.HasSetting(global.showvisualisation)</selected>
 						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
-					</control>
-					<!-- OSD -->
-					<control type="radiobutton" id="9240" description="Hide spoilers">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9103)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Hide Spoilers for unwatched TV Shows</label>
-						<selected>Skin.HasSetting(osd.hidespoilers)</selected>
-						<onclick>Skin.ToggleSetting(osd.hidespoilers)</onclick>
 					</control>
 					<!-- Widgets -->
 					<control type="button" id="9246" description="Custom Widget 1">
@@ -615,15 +598,6 @@
 						<onclick>Skin.SetString(selectedcolor.name,Selected)</onclick>
 						<label> - $LOCALIZE[409]</label>
 						<visible>Skin.HasSetting(ColourSelected)</visible>
-						<visible>ControlGroup(9100).HasFocus(9108)</visible>
-					</control>
-					<control type="button" id="92868">
-						<width>1310</width>
-						<include>DefSettingsButton2</include>
-						<onclick>RunScript(script.skin.helper.colorpicker,skinstring=posterbacking.colour.name)</onclick>
-						<label> - Set backing colour</label>
-						<label2>[COLOR=$INFO[Skin.String(posterbacking.colour.name)]]$INFO[Skin.String(posterbacking.colour.name)][/COLOR]</label2>
-						<visible>Skin.HasSetting(PosterBackingColour)</visible>
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 				</control>

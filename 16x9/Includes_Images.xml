@@ -115,12 +115,12 @@
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 	</variable>
 	<variable name="FanartImage">
-		<value condition="Skin.HasSetting(osd.hidespoilers) + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>
-		<value condition="Container.Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Icon]</value>
+		<value condition="Container.Content(episodes) + [!system.getbool(videolibrary.showunwatchedplots)  | [system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Icon]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
@@ -132,9 +132,9 @@
 	<variable name="LandscapeImage">
 		<value condition="Window.IsVisible(Home.xml) + String.StartsWith(ListItem.path,pvr://)">diffuseoverlay.png</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>
-		<value condition="Container.Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Icon]</value>
+		<value condition="Container.Content(episodes) + [!system.getbool(videolibrary.showunwatchedplots)  | [system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(ListItem.Overlay,OverlayWatched.png)]]">$INFO[ListItem.Icon]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + Container.Content(episodes) + ![String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) + ListItem.IsResumable]">$INFO[ListItem.Icon]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
@@ -220,9 +220,9 @@
 	<variable name="EmbyMainWidgetIcon">
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">special://skin/extras/backgrounds/krypton.png</value>
 		<value condition="Container(4019).IsUpdating + System.IdleTime(0)">common/null.png</value>
-		<value condition="Container(4019).Content(episodes) + [!Skin.HasSetting(osd.hidespoilers) | [Skin.HasSetting(osd.hidespoilers) + String.IsEqual(Container(4019).ListItem.Overlay,OverlayWatched.png)]]">$INFO[Container(4019).ListItem.Icon]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(4019).Content(episodes) + [String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) | Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>
-		<value condition="Skin.HasSetting(osd.hidespoilers) + Container(4019).Content(episodes) + ![String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) + Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Icon]</value>
+		<value condition="Container(4019).Content(episodes) + [!system.getbool(videolibrary.showunwatchedplots)  | [system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(Container(4019).ListItem.Overlay,OverlayWatched.png)]]">$INFO[Container(4019).ListItem.Icon]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + Container(4019).Content(episodes) + [String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) | Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="system.getbool(videolibrary.showunwatchedplots)  + Container(4019).Content(episodes) + ![String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) + Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Icon]</value>
 		<value condition="!String.IsEmpty(Container(4019).ListItem.Art(landscape)) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(Container(4019).ListItem.Art(tvshow.landscape)) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>
 		<value condition="!String.IsEmpty(Container(4019).ListItem.Art(fanart)) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Art(fanart)]</value>
@@ -233,7 +233,7 @@
 	<variable name="EmbyWidget1Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) +  String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="!system.getbool(videolibrary.showunwatchedplots)  +  String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>
@@ -246,7 +246,7 @@
 	<variable name="EmbyWidget3Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<value condition="!Skin.HasSetting(osd.hidespoilers) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
 		<value condition="String.IsEqual(Container(4018).ListItem.Property(DBTYPE),episode)">$INFO[ListItem.Icon]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>

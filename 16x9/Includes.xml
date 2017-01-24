@@ -212,24 +212,7 @@
 			<randomize>true</randomize>
 			<aspectratio>scale</aspectratio>
 			<imagepath background="true">$VAR[GlobalFanart]</imagepath>
-			<animation effect="zoom" start="115" end="135" center="auto" time="19000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
-			<animation effect="slide" start="-10,-10" end="20,20" time="14000" tween="cubic" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
-			<animation effect="rotate" center="360,640" start="-2" end="3" time="27000" tween="back" easing="inout" pulse="true"  condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
 		</control>
-<!-- 		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio align="center">scale</aspectratio>
-			<texture>$INFO[Window(home).Property(Home.ImageFilter)]</texture>
-			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + !String.IsEmpty(Window(home).Property(Home.ImageFilter))</visible>
-			<include>Animation.FurnitureFadeInOut</include>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio align="center">scale</aspectratio>
-			<texture>$INFO[Window(home).Property(Home2.ImageFilter)]</texture>
-			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + !String.IsEmpty(Window(home).Property(Home2.ImageFilter))</visible>
-			<include>Animation.FurnitureFadeInOut</include>
-		</control> -->
 		<control type="image">
 			<include>Dimensions_Fullscreen</include>
 			<aspectratio align="center">scale</aspectratio>
@@ -237,13 +220,6 @@
 			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)]</visible>
 			<include>Animation.ZoomIn</include>
 		</control>
-<!-- 		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="$INFO[Window(home).Property(Home.ImageColor)]" background="true">common/floor.png</texture>
-			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)] + !String.IsEmpty(Window(home).Property(Home.ImageColor)) + String.IsEmpty(Window(home).Property(Home2.ImageColor))</visible>
-			<include>Animation.FurnitureFadeInOut</include>
-		</control> -->
 		<control id="8328" type="image">
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>

@@ -8,9 +8,6 @@
     <controls>
 		<control type="group">
             <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-            <!-- <include>Furniture_Header</include>
-            <include>Furniture_Clock</include> -->
-			<aligny>center</aligny>
             <control type="list" id="52">
                 <posx>635</posx>
                 <posy>180</posy>
@@ -18,7 +15,6 @@
                 <height>720</height>
                 <ondown>8</ondown>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
-                <movement>1</movement>
                 <itemlayout height="120">
                     <control type="image">
 						<width>650</width>

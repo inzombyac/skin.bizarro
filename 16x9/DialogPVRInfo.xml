@@ -3,7 +3,6 @@
 <window id="2003">
 	<defaultcontrol always="true">5</defaultcontrol>
 	<controls>
-	    <!-- <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include> -->
 	   <control type="group">
             <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
 			<centerleft>50%</centerleft>
@@ -34,7 +33,6 @@
 					<left>40</left>
 					<right>40</right>
 					<height>68</height>
-					<bottom>33</bottom>
 					<itemgap>16</itemgap>
 					<align>center</align>
 					<ondown>9000</ondown>
@@ -260,7 +258,6 @@
 								<height>325</height>
 								<font>Small</font>
 								<textcolor>Dark2</textcolor>
-								<scroll>false</scroll>
 								<align>justify</align>
 								<info>ListItem.Plot</info>
 								<aligny>top</aligny>

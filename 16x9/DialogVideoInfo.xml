@@ -121,11 +121,8 @@
 				<control type="textbox" id="4">
 					<height>190</height>
 					<top>-8</top>
-					<left>5</left>
-					<height>190</height>
 					<align>left</align>
 					<font>TwentyEight</font>
-					<scroll>true</scroll>
 					<textcolor>Dark2</textcolor>
 					<label>$INFO[ListItem.Plot]</label>
 					<include>DialogVideoInfoAnimation</include>
@@ -172,8 +169,6 @@
 					<textoffsetx>0</textoffsetx>
 					<texturefocus>dialogvideo/watchnow.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
-					<alttexturefocus >dialogvideo/watchnow.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 				</control>
 				<control id="11" type="button">
 					<description>Trailer</description>
@@ -193,8 +188,6 @@
 					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 					<texturefocus>dialogvideo/trailer.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
-					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
 				<!-- Refresh Button -->
 				<!-- <control type="button" id="6">
@@ -228,8 +221,6 @@
 					<aligny>top</aligny>
 					<texturefocus>dialogvideo/rate.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
-					<alttexturefocus >dialogvideo/rate.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
 					<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
 				</control>
 				<!-- Video Extras -->
@@ -249,8 +240,6 @@
 					<visible>System.HasAddon(script.videoextras)</visible>
 					<texturefocus>dialogvideo/trailer.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
-					<alttexturefocus >dialogvideo/trailer.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
 				<!-- Youtube Trailers -->
 				<control id="1006" type="button">
@@ -272,8 +261,6 @@
 					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
 					<texturefocus>dialogvideo/trailer.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
-					<alttexturefocus>dialogvideo/trailer.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/trailer.png</alttexturenofocus>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="1007">
@@ -289,14 +276,11 @@
 					<aligny>top</aligny>
 					<texturefocus>dialogvideo/info.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
-					<alttexturefocus>dialogvideo/info.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
-					<onclick condition="!String.IsEmpty(ListItem.DBID) + String.IsEmpty(ListItem.TvShowTitle) + !Container.Content(tvshows)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
-					<onclick condition="!String.IsEmpty(ListItem.DBID) + Container.Content(tvshows) + String.IsEmpty(Window(home).Property(TVShowID))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.TvShowTitle])</onclick>
-					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))| !String.IsEmpty(Window(home).Property(TvShowTitle))">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[(Window(home).Property(TVShowID)],name=$INFO[ListItem.TvShowTitle])</onclick>
-					<visible>System.HasAddon(script.extendedinfo)</visible>
-					<visible>!String.IsEmpty(ListItem.DBID) | !String.IsEmpty(Window(home).Property(TVShowID)) | !String.IsEmpty(ListItem.TvShowTitle)</visible>
+					<onclick condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
+					<onclick condition="!String.IsEmpty(ListItem.DBID) + !String.IsEmpty(ListItem.TvShowTitle)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.TvShowTitle])</onclick>
+					<onclick condition="!String.IsEmpty(ListItem.DBID) + String.IsEmpty(ListItem.TvShowTitle)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Title])</onclick>
+					<visible>System.HasAddon(script.extendedinfo) + !String.IsEmpty(ListItem.DBID)</visible>
 				</control>
 				<!--Add to Couchpotato Button -->
 				<!-- <control type="button" id="1008">
@@ -350,7 +334,6 @@
 				<effect type="zoom" start="100" end="115" center="auto" tween="sine" delay="0" easing="out" time="300" />
 				<effect type="fade" start="100" end="0" tween="cubic" easing="out" delay="0" time="300" />
 			</animation>
-			<left>10</left>
 			<animation effect="fade" end="100" start="0" time="200" delay="800">WindowOpen</animation>		
 			<!-- Cast -->
 			<control type="group">
@@ -375,9 +358,7 @@
 					<ondown>5051</ondown>
 					<onback>9001</onback>
 					<preloaditems>2</preloaditems>
-					<focusposition>2</focusposition>
 					<orientation>horizontal</orientation>
-					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
@@ -493,9 +474,7 @@
 					<ondown>5051</ondown>
 					<onback>9001</onback>
 					<preloaditems>2</preloaditems>
-					<focusposition>2</focusposition>
 					<orientation>horizontal</orientation>
-					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<animation effect="fade" end="100" start="0" time="300">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>

@@ -645,10 +645,6 @@ msgctxt "#31744"
 msgid "Show Logo"
 msgstr "Show Logo"
 
-msgctxt "#31745"
-msgid "Colors"
-msgstr "Colors"
-
 msgctxt "#31746"
 msgid "Highlight color"
 msgstr "Highlight color"

@@ -54,7 +54,6 @@
                     <description>Master mode button</description>
                     <include>DefContextButton</include>
                     <label>20046</label>
-                    <altlabel>20045</altlabel>
                     <onclick>xbmc.mastermode</onclick>
                     <visible>System.HasLocks</visible>
                 </control>

@@ -55,7 +55,6 @@
 					<left>5</left>
 					<align>left</align>
 					<font>TwentyEight</font>
-					<scroll>true</scroll>
 					<textcolor>Dark2</textcolor>
 					<label>$VAR[MusicInfoDescription]</label>
 				</control>
@@ -103,8 +102,6 @@
 						<label>Play</label>
 						<texturefocus>dialogvideo/watchnow.png</texturefocus>
 						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
-						<alttexturefocus>dialogvideo/watchnow.png</alttexturefocus>
-						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/watchnow.png</alttexturenofocus>
 						<onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath],1)</onclick>
 						<visible>!Container.Content(Artists)</visible>
 					</control>
@@ -122,8 +119,6 @@
 						<ondown condition="Container.Content(albums)">5050</ondown>
 						<texturefocus>dialogvideo/refresh.png</texturefocus>
 						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/refresh.png</texturenofocus>
-						<alttexturefocus>dialogvideo/refresh.png</alttexturefocus>
-						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/refresh.png</alttexturenofocus>
 						<visible>!Container.Content(Songs)</visible>
 						<onup>300</onup>
 					</control>
@@ -141,8 +136,6 @@
 						<ondown condition="Container.Content(albums)">5050</ondown>	
 						<texturefocus>dialogvideo/rate.png</texturefocus>
 						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
-						<alttexturefocus>dialogvideo/rate.png</alttexturefocus>
-						<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/rate.png</alttexturenofocus>
 						<onup>300</onup>
 						<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
 					</control>
@@ -176,12 +169,9 @@
 					<onup>9001</onup>
 					<ondown>50</ondown>
 					<preloaditems>2</preloaditems>
-					<focusposition>2</focusposition>
 					<viewtype>list</viewtype>
 					<orientation>horizontal</orientation>
-					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
-					<align>center</align>
 					<visible>!Container.Content(albums)</visible>
 					<animation delay="1000" effect="fade" end="100" start="0" time="200" >Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
@@ -309,12 +299,9 @@
 					<onup>9001</onup>
 					<ondown>5050</ondown>
 					<preloaditems>2</preloaditems>
-					<focusposition>2</focusposition>
 					<viewtype>list</viewtype>
 					<orientation>horizontal</orientation>
-					<defaultcontrol always="true">0</defaultcontrol>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
-					<align>center</align>
 					<visible>Container.Content(albums)</visible>
 					<animation delay="1000" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>

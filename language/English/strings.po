@@ -570,10 +570,6 @@ msgctxt "#31744"
 msgid "Show Logo"
 msgstr ""
 
-msgctxt "#31745"
-msgid "Colours"
-msgstr ""
-
 msgctxt "#31746"
 msgid "Highlight colour"
 msgstr ""

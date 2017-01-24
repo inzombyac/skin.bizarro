@@ -2024,7 +2024,9 @@
 		</content>
 	</include>
 	<variable name="SimilarVideos">
-		<value condition="Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
-		<value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value>
+		<value condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
+		<value condition="!String.IsEmpty(ListItem.DBID) + !String.IsEmpty(ListItem.TvShowTitle)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.TvShowTitle]</value>
+		<value condition="!String.IsEmpty(ListItem.DBID) + String.IsEmpty(ListItem.TvShowTitle)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.Title]</value>
+		<!-- <value condition="!String.IsEmpty(Window(home).Property(TVShowID))">plugin://script.extendedinfo?info=similartvshows&amp;&amp;dbid=$INFO[Window(home).Property(TVShowID)]</value> -->
 	</variable>
 </includes>
