@@ -17,7 +17,7 @@
                 <align>center</align>
                 <posy>15</posy>
                 <font>MediumBold</font>
-                <label>[UPPERCASE]$LOCALIZE[298][/UPPERCASE] - ($INFO[Container(11).NumItems]) $LOCALIZE[31027] - $LOCALIZE[31028] ($INFO[Container(11).CurrentPage]/$INFO[Container(11).NumPages])</label>
+                <label>[UPPERCASE]$LOCALIZE[298][/UPPERCASE] ($INFO[Container(11).NumItems])</label>
             </control>
 
             <control type="panel" id="11">

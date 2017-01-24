@@ -31,7 +31,7 @@
 					<height>42</height>
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
-					<label>Misc Options</label>
+					<label>$LOCALIZE[31798]</label>
 					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
@@ -65,7 +65,7 @@
 					<height>42</height>
 					<textoffsetx>15</textoffsetx>
 					<font>Home</font>
-					<label>Last Updated</label>
+					<label>$LOCALIZE[12014]</label>
 					<textcolor>$VAR[ColorHighlight2]</textcolor>
 					<aligny>center</aligny>
 				</control>

@@ -747,3 +747,8 @@ msgstr ""
 msgctxt "#31797"
 msgid "Emby Manual Sync"
 msgstr ""
+
+# AddonBrowser.xml 34
+msgctxt "#31798"
+msgid "Misc Options"
+msgstr ""

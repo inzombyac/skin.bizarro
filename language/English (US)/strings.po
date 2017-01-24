@@ -824,3 +824,7 @@ msgstr "Order"
 msgctxt "#31797"
 msgid "Emby Manual Sync"
 msgstr "Emby Manual Sync"
+
+msgctxt "#31798"
+msgid "Misc Options"
+msgstr "Misc Options"
