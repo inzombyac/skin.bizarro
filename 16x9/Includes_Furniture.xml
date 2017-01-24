@@ -1008,37 +1008,45 @@
 			<control type="grouplist">
 				<top>40</top>
 				<left>20</left>
-				<visible>!ControlGroup(303).HasFocus()</visible>
 				<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 				<include condition="!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOut</include>
 				<include condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">Animation.FurnitureFadeInOutExtended</include>
 				<orientation>horizontal</orientation>
 				<itemgap>24</itemgap>
-				<control type="button" id="3634">
+				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+				<control type="grouplist">
+					<orientation>horizontal</orientation>
+					<itemgap>0</itemgap>
 					<width>80</width>
 					<height>80</height>
-					<onleft>3634</onleft>
-					<onright>3634</onright>
-					<onup>3634</onup>
-					<ondown condition="Control.IsVisible(55)">55</ondown>
-					<onclick>Back</onclick>
-					<font>Button</font>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/back.png</texturefocus>
-					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
-					<visible>!Window.IsVisible(Home.xml)</visible>
-				</control>
-				<control type="button" id="3634">
-					<width>80</width>
-					<height>80</height>
-					<onleft>3634</onleft>
-					<onright>3634</onright>
-					<onup>3634</onup>
-					<ondown>300</ondown>
-					<onclick>Menu</onclick>
-					<font>Button</font>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/menu.png</texturefocus>
-					<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
-					<visible>Window.IsVisible(Home.xml)</visible>
+					<control type="button" id="3634">
+						<width>80</width>
+						<height>80</height>
+						<onright condition="Player.HasMedia">7788</onright>
+						<onright condition="!Player.HasMedia">3634</onright>
+						<ondown condition="Control.IsVisible(55)">55</ondown>
+						<ondown condition="Control.IsVisible(50)">50</ondown>
+						<ondown condition="Control.IsVisible(53)">53</ondown>
+						<ondown condition="Control.IsVisible(513)">513</ondown>
+						<ondown condition="Control.IsVisible(514)">514</ondown>
+						<onclick>Back</onclick>
+						<font>Button</font>
+						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+						<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+						<visible>!Window.IsVisible(Home.xml)</visible>
+					</control>
+					<control type="button" id="3634">
+						<width>80</width>
+						<height>80</height>
+						<onright condition="Player.HasMedia">7788</onright>
+						<onright condition="!Player.HasMedia">3634</onright>
+						<ondown>300</ondown>
+						<onfocus>Menu</onfocus>
+						<font>Button</font>
+						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
+						<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
+						<visible>Window.IsVisible(Home.xml)</visible>
+					</control>
 				</control>
 				<control type="group" description="iconbox">
 					<width>80</width>

@@ -160,13 +160,12 @@
     </default>
 
     <default type="slider">
-        <width>360</width>
-        <height>23</height>
-        <texturefocus>-</texturefocus>
-        <texturenofocus>-</texturenofocus>
-        <texturesliderbar>osd/progress-bg.png</texturesliderbar>
-        <textureslidernib border="2">osd/progress-mid.png</textureslidernib>
-        <textureslidernibfocus border="2">osd/progress-mid.png</textureslidernibfocus>
+        <width>100%</width>
+        <height>20</height>
+        <texturesliderbar colordiffuse="00ffffff">osd/progress-end.png</texturesliderbar>
+        <textureslidernib>osd/progress-mid.png</textureslidernib>
+        <textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
+        <orientation>horizontal</orientation>
     </default>
     
     <default type="sliderex">
@@ -174,9 +173,9 @@
         <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
         <sliderwidth>230</sliderwidth>
         <sliderheight>23</sliderheight>
-        <texturesliderbar>osd/progress-bg.png</texturesliderbar>
-        <textureslidernib border="2">osd/progress-mid.png</textureslidernib>
-        <textureslidernibfocus border="2">osd/progress-mid.png</textureslidernibfocus>
+        <texturesliderbar colordiffuse="Dark1">osd/progress-bg.png</texturesliderbar>
+        <textureslidernib colordiffuse="Light4">osd/progress-end.png</textureslidernib>
+        <textureslidernibfocus colordiffuse="Light1">osd/progress-end.png</textureslidernibfocus>
         <font>Small</font>
         <aligny>center</aligny>
         <textcolor>Black70</textcolor>
