@@ -65,7 +65,6 @@
 					<posy>77</posy>
 					<height>30</height>
 					<font>Tiny</font>
-					<height>40</height>
 					<textcolor>PanelWhite70</textcolor>
 					<scroll>true</scroll>
 				</control>
@@ -145,7 +144,6 @@
 					</control>
 					<control type="progress" id="22">
 						<description>CPU BAR</description>
-						<font>Tiny</font>
 						<height>10</height>
 						<width>750</width>
 						<info>System.CPUUsage</info>
@@ -172,7 +170,6 @@
 					</control>
 					<control type="progress" id="24">
 						<description>Memory BAR</description>
-						<font>Tiny</font>
 						<posx>800</posx>
 						<height>10</height>
 						<info>system.memory(used)</info>
@@ -180,7 +177,6 @@
 					</control>
 					<control type="label" id="25">
 						<description>Spacer</description>
-						<font>-</font>
 						<font>Tiny</font>
 						<height>25</height>
 					</control>

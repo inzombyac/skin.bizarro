@@ -54,9 +54,9 @@
 			<top>560</top>
 			<width>1600</width>
 			<height>360</height>
-			<onleft>-</onleft>
-			<onright>-</onright>
-			<onup>-</onup>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+			<onup>noop</onup>
 			<ondown>3011</ondown>
 			<pagecontrol>3011</pagecontrol>
 			<scrolltime>200</scrolltime>
@@ -95,7 +95,7 @@
 					<width>190</width>
 					<height>5</height>
 					<visible>Control.HasFocus(3010)</visible>
-					<texture condition="Control.HasFocus(3010)" colordiffuse="Highlight">common/white.png</texture>
+					<texture colordiffuse="Highlight">common/white.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>

@@ -10,7 +10,7 @@
 		<include>Furniture_Clock</include>
 		<!--Header -->
 		<control type="panel" id="3110">
-			<viewtype label="31438">icons</viewtype>
+			<viewtype label="31438">icon</viewtype>
 			<posx>60</posx>
 			<posy>175</posy>
 			<width>1836</width>

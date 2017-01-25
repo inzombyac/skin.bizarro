@@ -881,7 +881,6 @@
 		<value>special://skin/extras/icons/artist.png</value>
 	</variable>
 	<variable name="MainHeaderLabel">
-		<value condition="Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)">$LOCALIZE[20186]...</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerBigTitle]</value>
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.Artist]</value>
@@ -1073,16 +1072,7 @@
 						<label>$INFO[ListItem.SortLetter,[UPPERCASE],[/UPPERCASE]]</label>
 						<textcolor>PanelWhite100</textcolor>
 						<visible>Container.Scrolling</visible>
-						<visible>!Skin.HasSetting(hide.busydialog) | !Window.IsVisible(DialogBusy.xml)</visible>
-						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-					</control>
-					<control type="image">
-						<centertop>40</centertop>
-						<centerleft>40</centerleft>
-						<width>48</width>
-						<height>48</height>
-						 <texture colordiffuse="$VAR[ColorHighlight]">dialog/busy.gif</texture>
-						<visible>Skin.HasSetting(hide.busydialog) + Window.IsVisible(DialogBusy.xml)</visible>
+						<visible>Window.IsVisible(DialogBusy.xml)</visible>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					</control>
 				</control>

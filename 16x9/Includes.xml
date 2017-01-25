@@ -203,7 +203,7 @@
 		<control type="multiimage" description="Fanart">
  			<include condition="!Window.IsVisible(home)">GlobalBackgroundFade</include>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
-			<visible>!Skin.HasSetting(global.hidefanart) + ![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)] + !Window.IsVisible(Home.xml) </visible>
+			<visible>!Skin.HasSetting(lights.out) + ![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)] + !Window.IsVisible(Home.xml) </visible>
 			<include>Dimensions_Fullscreen</include>
 			<include>Animation.FadeFromHome</include>
 			<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.IsVisible(home)">WindowClose</animation>

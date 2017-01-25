@@ -102,8 +102,6 @@
 					<onright>56</onright>
 					<onup>56</onup>
 					<ondown>56</ondown>
-					<focusposition>3</focusposition>
-					<movement>3</movement>
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="544">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
@@ -143,7 +141,6 @@
 				<control type="label">
 					<font>FakeLogo</font>
 					<height>125</height>
-					<fadetime>100</fadetime>
 					<label>$INFO[ListItem.Label]</label>
 					<visible>String.IsEmpty(ListItem.Art(clearlogo))+String.IsEmpty(ListItem.Art(banner))</visible>
 					<visible>!Container.Content(episodes)</visible>

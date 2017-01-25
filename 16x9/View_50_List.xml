@@ -96,13 +96,13 @@
 				<visible>Skin.HasSetting(show.reflections)</visible>
 				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
 			</control>
-				<control type="image">
+			<control type="image">
 				<centertop>PosterH</centertop>
 				<width>PosterH</width>
 				<height>48</height>
 				<align>center</align>
 				<aspectratio>center</aspectratio>
-				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
+				<texture>diffuse/shadowspot.png</texture>
 				<visible>!container.content(movies) + !container.content(tvshows) + !container.content(episodes) + !container.content(seasons)</visible>
 			</control>
 			<control type="image">
@@ -111,7 +111,7 @@
 				<height>48</height>
 				<align>center</align>
 				<aspectratio>stretch</aspectratio>
-				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
+				<texture>diffuse/shadowspot.png</texture>
 				<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
 			</control>
 			<control type="image">
@@ -199,7 +199,7 @@
 				<height>48</height>
 				<align>center</align>
 				<aspectratio>center</aspectratio>
-				<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
+				<texture>diffuse/shadowspot.png</texture>
 			</control>
 			<control type="image">
 				<width>PosterH</width>
@@ -302,7 +302,7 @@
 					<height>48</height>
 					<align>center</align>
 					<aspectratio>center</aspectratio>
-					<texture align="center" aligny="bottom">diffuse/shadowspot.png</texture>
+					<texture>diffuse/shadowspot.png</texture>
 				</control>
 				<control type="image">
 					<width>PosterH</width>

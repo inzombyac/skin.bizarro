@@ -131,11 +131,9 @@
 			<!-- Widgets -->
 			<control type="group" >
 				<height>860</height>
-				<onleft>9100</onleft>
 				<right>15</right>
 				<width>420</width>
-				<top>65</top>		
-				<onup>8780</onup>				
+				<top>65</top>				
 				<control type="grouplist" id="8786">
 					<height>450</height>
 					<onleft>9100</onleft>

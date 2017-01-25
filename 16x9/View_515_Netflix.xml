@@ -13,7 +13,6 @@
 				<width>1050</width>
 				<height>160</height>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<textcolor>$VAR[ColorHighlight]</textcolor>
 				<control type="grouplist">
 					<visible>Container.Content(movies) + ![String.Contains(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
 					<control type="label">
@@ -130,7 +129,6 @@
 				<height>390</height>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
-				<focusposition>1</focusposition>
 				<viewtype label="31758">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout width="340" height="195">
@@ -199,7 +197,6 @@
 						<posx>5</posx>
 						<posy>150</posy>
 						<width>330</width>
-						<width>auto</width>
 						<align>center</align>
 						<height>34</height>
 						<font>NetflixSmall</font>
@@ -283,7 +280,6 @@
 							<posx>5</posx>
 							<posy>150</posy>
 							<width>330</width>
-							<width>auto</width>
 							<align>center</align>
 							<height>34</height>
 							<font>NetflixSmall</font>

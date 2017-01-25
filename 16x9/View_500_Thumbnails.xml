@@ -232,7 +232,6 @@
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
 								<font>Micro</font>
-								<size>18</size>
 								<scroll>false</scroll>
 								<textcolor>White</textcolor>
 							</control>

@@ -42,30 +42,30 @@
 					<onup>9100</onup>
 					<ondown>9100</ondown>
 					<orientation>vertical</orientation>
-					<control type="togglebutton" id="9101" description="Home">
+					<control type="togglebutton" id="9101" description="Shortcuts">
 						<usealttexture>ControlGroup(9100).HasFocus(9101)</usealttexture>
 						<include>DefSettingsButton2</include>
-						<label>10000</label>
+						<label>111</label>
 					</control>
 					<control type="togglebutton" id="9104" description="Widgets">
 						<usealttexture>ControlGroup(9100).HasFocus(9104)</usealttexture>
 						<include>DefSettingsButton2</include>
 						<label>31144</label>
 					</control>
-					<control type="togglebutton" id="9102" description="Background">
+					<control type="togglebutton" id="9102" description="Artwork">
 						<usealttexture>ControlGroup(9100).HasFocus(9102)</usealttexture>
 						<include>DefSettingsButton2</include>
-						<label>19190</label>
+						<label>$LOCALIZE[31001]</label>
 					</control>
 					<control type="togglebutton" id="9106" description="Furniture">
 						<usealttexture>ControlGroup(9100).HasFocus(9106)</usealttexture>
 						<include>DefSettingsButton2</include>
 						<label>31152</label>
 					</control>
-					<control type="togglebutton" id="9103" description="OSD">
+					<control type="togglebutton" id="9103" description="Visualisation">
 						<usealttexture>ControlGroup(9100).HasFocus(9103)</usealttexture>
 						<include>DefSettingsButton2</include>
-						<label>478</label>
+						<label>250</label>
 					</control>
 					<control type="togglebutton" id="9107" description="Extras">
 						<usealttexture>ControlGroup(9100).HasFocus(9107)</usealttexture>
@@ -196,7 +196,7 @@
 					<onup>9200</onup>
 					<ondown>9200</ondown>
 					<orientation>vertical</orientation>
-					<!-- Home -->
+					<!-- Shortcuts -->
 					<control type="button" id="9212" description="Customize Home">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>
@@ -243,24 +243,7 @@
 						<label>$LOCALIZE[20343] [LOWERCASE]$LOCALIZE[31178][/LOWERCASE]</label>
 						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
 					</control>
-					<!-- Fanart -->
-					<control type="radiobutton" id="9201" description="Lights Out">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Lights Out</label>
-						<selected>Skin.HasSetting(lights.out)</selected>
-						<onclick>Skin.ToggleSetting(lights.out)</onclick>
-					</control>
-					<control type="radiobutton" id="9223" description="Show fanart">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9102)</visible>
-						<include>DefSettingsButton2</include>
-						<label>20414</label>
-						<selected>!Skin.HasSetting(global.hidefanart)</selected>
-						<onclick>Skin.ToggleSetting(global.hidefanart)</onclick>
-						<visible>!Skin.HasSetting(lights.out)</visible>
-					</control>
+					<!-- Artwork -->
 					<control type="button" id="92281" description="Fanart Opacity">
 						<width>1310</width>
 						<include>DefSettingsButton2</include>
@@ -293,6 +276,22 @@
 						<onclick condition="!String.IsEmpty(Skin.String(fanart.fallback))">Skin.Reset(fanart.fallback)</onclick>
 						<visible>!Skin.HasSetting(lights.out)</visible>
 					</control>
+					<control type="radiobutton" id="9267" description="Reflections">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31219</label>
+						<selected>Skin.HasSetting(show.reflections)</selected>
+						<onclick>Skin.ToggleSetting(show.reflections)</onclick>
+					</control>
+					<control type="radiobutton" id="9201" description="Lights Out">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>$LOCALIZE[31000]</label>
+						<selected>Skin.HasSetting(lights.out)</selected>
+						<onclick>Skin.ToggleSetting(lights.out)</onclick>
+					</control>
 					<control type="button" id="9229" description="Set Weather Icons">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9102)</visible>
@@ -309,7 +308,15 @@
 						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(weatherfanart.name)][/COLOR]</label2>
 						<onclick>RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
 					</control>
-					<!-- OSD -->
+					<control type="radiobutton" id="9273" description="Dont use circle icons">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9102)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31186</label>
+						<selected>!Skin.HasSetting(global.hidecirles)</selected>
+						<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
+					</control>
+					<!-- Visualisation -->
 					<control type="radiobutton" id="9221" description="Show video in background">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9103)</visible>
@@ -325,6 +332,14 @@
 						<label>31172</label>
 						<selected>Skin.HasSetting(global.showvisualisation)</selected>
 						<onclick>Skin.ToggleSetting(global.showvisualisation)</onclick>
+					</control>
+					<control type="radiobutton" id="9361" description="Plot Overlay">
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+						<include>DefSettingsButton2</include>
+						<label>31254</label>
+						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
+						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 					</control>
 					<!-- Widgets -->
 					<control type="button" id="9246" description="Custom Widget 1">
@@ -434,46 +449,6 @@
 						<selected>Skin.HasSetting(furniture.hidenew)</selected>
 						<onclick>Skin.ToggleSetting(furniture.hidenew)</onclick>
 					</control>
-					<control type="radiobutton" id="92631" description="Alternate Duration">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Use Default Duration</label>
-						<selected>Skin.HasSetting(furniture.alternate.duration)</selected>
-						<onclick>Skin.ToggleSetting(furniture.alternate.duration)</onclick>
-					</control>
-					<control type="radiobutton" id="9264" description="Now Playing">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31155</label>
-						<selected>!Skin.HasSetting(furniture.nowplaying)</selected>
-						<onclick>Skin.ToggleSetting(furniture.nowplaying)</onclick>
-					</control>
-					<control type="radiobutton" id="9267" description="Reflections">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31219</label>
-						<selected>Skin.HasSetting(show.reflections)</selected>
-						<onclick>Skin.ToggleSetting(show.reflections)</onclick>
-					</control>
-					<control type="radiobutton" id="9361" description="Plot Overlay">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31254</label>
-						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
-						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
-					</control>
-					<control type="radiobutton" id="9270" description="DiscArt">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Do not show DiscArt</label>
-						<selected>Skin.HasSetting(furniture.nodiscart)</selected>
-						<onclick>Skin.ToggleSetting(furniture.nodiscart)</onclick>
-					</control>
 					<!-- Extras -->
 					<control type="radiobutton" id="9272" description="Kiosk Mode">
 						<width>1310</width>
@@ -482,22 +457,6 @@
 						<label>31199</label>
 						<selected>Skin.HasSetting(global.kioskmode)</selected>
 						<onclick>Skin.ToggleSetting(global.kioskmode)</onclick>
-					</control>
-					<control type="radiobutton" id="9273" description="Dont use circle icons">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31186</label>
-						<selected>!Skin.HasSetting(global.hidecirles)</selected>
-						<onclick>Skin.ToggleSetting(global.hidecirles)</onclick>
-					</control>
-					<control type="radiobutton" id="9277" description="Busy Loader Minimal">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
-						<include>DefSettingsButton2</include>
-						<label>31237</label>
-						<selected>Skin.HasSetting(hide.busydialog)</selected>
-						<onclick>Skin.ToggleSetting(hide.busydialog)</onclick>
 					</control>
 					<control type="button" id="9278" description="export skin settings">
 						<width>1310</width>
