@@ -249,22 +249,9 @@
 						<include>DefSettingsButton2</include>
 						<label>$LOCALIZE[31780]</label>
 						<label2>[COLOR=$VAR[ColorHighlight2]]$INFO[Skin.String(FanartFade)][/COLOR]</label2>
-						<onclick>SetProperty(Dialog.NumItems,6)</onclick>
-						<onclick>SetProperty(Dialog.1.Label,Darkest)</onclick>
-						<onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(FanartFade,Darkest))</onclick>
-						<onclick>SetProperty(Dialog.2.Label,Dark)</onclick>
-						<onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(FanartFade,Dark))</onclick>
-						<onclick>SetProperty(Dialog.3.Label,Normal)</onclick>
-						<onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(FanartFade,Normal))</onclick>
-						<onclick>SetProperty(Dialog.4.Label,Bright)</onclick>
-						<onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(FanartFade,Bright))</onclick>
-						<onclick>SetProperty(Dialog.5.Label,Brighter)</onclick>
-						<onclick>SetProperty(Dialog.5.BuiltIn,Skin.SetString(FanartFade,Brighter))</onclick>
-						<onclick>SetProperty(Dialog.6.Label,Brightest)</onclick>
-						<onclick>SetProperty(Dialog.6.BuiltIn,Skin.SetString(FanartFade,Brightest))</onclick>
-						<onclick>RunScript(script.toolbox,info=selectdialog,header=Select Background Opacity)</onclick>
 						<visible>ControlGroup(9100).HasFocus(9102)</visible>
 						<visible>!Skin.HasSetting(lights.out)</visible>
+						<onclick>ActivateWindow(1109)</onclick>
 					</control>
 					<control type="button" id="9225" description="Set Fallback Image">
 						<width>1310</width>
@@ -457,20 +444,6 @@
 						<label>31199</label>
 						<selected>Skin.HasSetting(global.kioskmode)</selected>
 						<onclick>Skin.ToggleSetting(global.kioskmode)</onclick>
-					</control>
-					<control type="button" id="9278" description="export skin settings">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Export skin settings</label>
-						<onclick>RunScript(script.toolbox,info=exportskinsettings)</onclick>
-					</control>
-					<control type="button" id="9279" description="import skin settings">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9107)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Import skin settings</label>
-						<onclick>RunScript(script.toolbox,info=importskinsettings)</onclick>
 					</control>
 					<control type="radiobutton" id="9262" description="Debug mode">
 						<width>1310</width>

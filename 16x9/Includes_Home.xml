@@ -64,9 +64,9 @@
 				<!-- <label>$INFO[Container(300).ListItem.Property(defaultID)]</label> -->
 				<label>$INFO[Window(home).Property(Home.ImageColor)] / $INFO[Window(home).Property(Home2.ImageColor)]</label>
             </control>
-			<control type="label">
+            <control type="label">
                 <include>ControlID5</include>
-                <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label>
+                <label>$LOCALIZE[31002]</label>
             </control>
 		</control>
 	</include>
@@ -102,9 +102,6 @@
 				<left>SidePad</left>
 				<right>SidePad</right>
 				<top>120</top>
-				<!-- <ondown condition="Control.IsVisible(4016)">4016</ondown>
-				<ondown condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</ondown>
-				<ondown condition="!Control.IsVisible(4016) + !Control.IsVisible(4017)">4012</ondown> -->
 				<ondown>4012</ondown>
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">3634</onup>
@@ -113,7 +110,6 @@
 				<orientation>horizontal</orientation>
 				<scrolltime>200</scrolltime>
 				<include>HomeEmbyContent</include>
-				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
 			</control>
 		</control>
 	</include>
@@ -136,7 +132,6 @@
 			<control type="button">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
 			</control>
 			<control type="label">
 				<align>center</align>
@@ -2726,7 +2721,6 @@
 		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Art(clearlogo)]</value>
 	</variable>
 	<include name="EmbyHomeInfoActions">
-		<!-- <onfocus>RunScript(script.toolbox,info=blur,id=$VAR[GlobalFanart],radius=30,prefix=Home2)</onfocus> -->
 		<onfocus></onfocus>
 	</include>
 	<include name="EmbyFooter">

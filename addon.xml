@@ -8,7 +8,6 @@
 		<import addon="script.skin.helper.widgets" version="0.0.1"/>
 		<import addon="script.skin.helper.colorpicker" version="0.0.1"/>
 		<import addon="script.skin.helper.backgrounds" version="0.0.1"/>
-		<import addon="script.toolbox" version="1.0.0"/>
 		<import addon="script.tv.show.next.aired" version="6.0.14"/>
 		<import addon="resource.images.studios.white" version="0.0.1"/>
 		<import addon="resource.images.moviegenreicons.coloured" version="0.0.1"/>
