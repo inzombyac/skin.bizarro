@@ -36,22 +36,23 @@
 	<include name="Furniture_NowPlaying">
 		<!-- Next Recording -->
 		<control type="group">
-			<top>40</top>
-			<left>680</left>
-			<width>660</width>
+			<top>10</top>
+			<left>560</left>
+			<width>800</width>
 			<height>100</height>
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
 			<visible>Player.HasMedia</visible>
-			<animation effect="zoom" start="100" end="85" condition="true">Conditional</animation>
+			<!-- <animation effect="zoom" start="100" end="85" condition="true">Conditional</animation> -->
 			<control type="image">
 				<description>background image</description>
 				<posx>0</posx>
 				<posy>0</posy>
-				<width>660</width>
-				<height>100</height>
-				<texture border="16" colordiffuse="Background">common/rounded-shadow8.png</texture>
-				<animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+				<width>100%</width>
+				<height>100%</height>
+				<colordiffuse>Light1</colordiffuse>
+                <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+                <texture border="16">common/rounded-shadow8.png</texture>
 			</control>
 			<control type="group">
 				<centertop>50%</centertop>
@@ -108,7 +109,7 @@
 			</control>
 			<control type="group">
 				<left>104</left>
-				<width>550</width>
+				<width>690</width>
 				<posy>10</posy>
 				<control type="label">
 					<centertop>24</centertop>
@@ -131,20 +132,26 @@
 					<bottom>10</bottom>
 					<width>100</width>
 					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser.gif</texture>
-					<visible>!Player.Paused</visible>
+					<visible>!Player.Paused + !Player.HasVideo</visible>
 				</control>
 				<control type="image">
 					<right>10</right>
 					<bottom>10</bottom>
 					<width>100</width>
 					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser_stop.gif</texture>
-					<visible>Player.Paused</visible>
+					<visible>Player.Paused + !Player.HasVideo</visible>
+				</control>
+				<control type="videowindow">
+					<visible>Player.HasVideo</visible>
+					<right>10</right>
+					<bottom>10</bottom>
+					<width>180</width>
 				</control>
 				<control type="button" id="7788">
 					<top>-5</top>
 					<ondown>300</ondown>
 					<left>-100</left>
-					<width>652</width>
+					<width>792</width>
 					<height>90</height>
 					<disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
 					<textcolor>$VAR[OSDPanelWhite30]</textcolor>
@@ -153,6 +160,7 @@
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>FullScreen</onclick>
 					<onup>3634</onup>
+					<onleft>3634</onleft>
 				</control>
 			</control>
 		</control>
@@ -427,63 +435,6 @@
 				<font>Flag</font>
 				<textcolor>Dark2</textcolor>
 				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
-			</control>
-			<!-- sets -->
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.1.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.2.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.3.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.4.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.4.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.5.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.5.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.7.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))</visible>
-			</control>
-			<control type="image">
-				<width>120</width>
-				<height>120</height>
-				<centertop>50%</centertop>
-				<texture background="true">$INFO[Window(home).Property(Set.Movie.8.Art(discart))]</texture>
-				<visible>!String.IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))</visible>
 			</control>
 			<include>lib_Rating_TV</include>
 			<include>lib_Rating_MPAA</include>
@@ -965,7 +916,7 @@
 	</variable>
 	<include name="Furniture_Header">
 		<control type="group">
-			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)]</visible>
+			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>
 			<control type="image">
 				<width>100%</width>
 				<texture colordiffuse="HeaderBG">common/white.png</texture>
@@ -1104,7 +1055,7 @@
 	</include>
 	<include name="Furniture_Clock">
 		<control type="group">
-			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,5) | Window.IsVisible(VideoOSD.xml)]</visible>
+			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
 			<top>40</top>
