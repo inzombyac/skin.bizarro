@@ -28,12 +28,12 @@
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</control>
-					<control type="label">
+					<!-- <control type="label">
 						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$VAR[Duration][/COLOR]</label>
 						<width>650</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Duration)</visible>
-					</control>
+					</control> -->
 				</control>
 				<control type="grouplist">
 					<visible>[String.Contains(ListItem.Path,videodb://movies/sets) + !ListItem.IsParentFolder]</visible>
@@ -93,12 +93,12 @@
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Premiered)</visible>
 					</control>
-					<control type="label">
+					<!-- <control type="label">
 						<label>[COLOR $VAR[ColorHighlight]]$LOCALIZE[2050]: [/COLOR][COLOR White]$INFO[ListItem.Duration,, $LOCALIZE[12391][/COLOR]]</label>
 						<width>980</width>
 						<include>KodiFlixButtonsValues</include>
 						<visible>!String.IsEmpty(ListItem.Duration)</visible>
-					</control>
+					</control> -->
 				</control>
 			</control>
 			<control type="group">
@@ -122,7 +122,9 @@
 				<top>500</top>
 				<right>70</right>
 				<left>70</left>
-				<onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup>
+				<onup condition="Player.HasMedia">7788</onup>
+				<onup condition="!Player.HasMedia">3634</onup>
+				<!-- <onup condition="!Skin.HasSetting(global.kioskmode)">9000</onup> -->
 				<ondown>60</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>

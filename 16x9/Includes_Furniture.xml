@@ -976,9 +976,14 @@
 						<onright condition="!Player.HasMedia">3634</onright>
 						<ondown condition="Control.IsVisible(55)">55</ondown>
 						<ondown condition="Control.IsVisible(50)">50</ondown>
+						<ondown condition="Control.IsVisible(51)">51</ondown>
 						<ondown condition="Control.IsVisible(53)">53</ondown>
+						<ondown condition="Control.IsVisible(500)">500</ondown>
 						<ondown condition="Control.IsVisible(513)">513</ondown>
 						<ondown condition="Control.IsVisible(514)">514</ondown>
+						<ondown condition="Control.IsVisible(515)">515</ondown>
+						<ondown condition="Control.IsVisible(505)">505</ondown>
+						<ondown condition="Control.IsVisible(506)">506</ondown>
 						<onclick>Back</onclick>
 						<font>Button</font>
 						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
