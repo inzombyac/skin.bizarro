@@ -4,7 +4,7 @@
 	<include file="Defaults.xml" />
 	<!-- Views -->
 	<include file="View_50_List.xml" />
-	<include file="View_51_BigWide.xml" />
+	<include file="View_516_BigWide.xml" />
 	<include file="View_52_BigList.xml" />
 	<include file="View_53_Poster.xml" />
 	<include file="View_54_Banner.xml" />
@@ -151,15 +151,18 @@
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
 			<texture colordiffuse="Background">common/bg.jpg</texture>
+			<visible>![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 		</control>
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
 			<texture colordiffuse="Black">common/white.png</texture>
 			<visible>Player.HasVideo + Skin.HasSetting(global.showvideo)</visible>
+			<visible>![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 		</control>
 		<control type="videowindow">
 			<visible>Skin.HasSetting(global.showvideo)</visible>
 			<include>Dimensions_Fullscreen</include>
+			<visible>![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 		</control>
 	</include>
 	<include name="GlobalVisualisation">

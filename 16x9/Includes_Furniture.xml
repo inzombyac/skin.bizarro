@@ -31,6 +31,7 @@
 			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-100" time="150" condition="Control.IsVisible(516)">Conditional</animation>
 		</control>
 	</include>
 	<include name="Furniture_NowPlaying">
@@ -42,7 +43,7 @@
 			<height>100</height>
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
-			<visible>Player.HasMedia</visible>
+			<visible>Player.HasMedia + ![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 			<!-- <animation effect="zoom" start="100" end="85" condition="true">Conditional</animation> -->
 			<control type="image">
 				<description>background image</description>
@@ -975,7 +976,7 @@
 						<onright condition="Player.HasMedia">7788</onright>
 						<onright condition="!Player.HasMedia">3634</onright>
 						<ondown condition="Control.IsVisible(50)">50</ondown>
-						<ondown condition="Control.IsVisible(51)">51</ondown>
+						<ondown condition="Control.IsVisible(516)">516</ondown>
 						<ondown condition="Control.IsVisible(52)">52</ondown>
 						<ondown condition="Control.IsVisible(53)">53</ondown>
 						<ondown condition="Control.IsVisible(54)">54</ondown>

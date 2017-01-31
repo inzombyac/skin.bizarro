@@ -3,15 +3,13 @@
 <window id="6">
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">55</defaultcontrol>
-	<views>50,550,54,53,51,55,56,57,58,59,52,500,514,513,515</views>
+	<views>50,550,54,53,516,55,56,57,58,59,52,500,514,513,515</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
 		<include>View_550_List</include>
 		<include>View_50_List</include>
-		<include condition="!Skin.HasSetting(51bigwide.showinfo) + !Skin.HasSetting(51bigwide.showclassic)">View_51_BigWide</include>
-		<include condition="Skin.HasSetting(51bigwide.showinfo)">View_51_BigWide_Info</include>
-		<include condition="!Skin.HasSetting(51bigwide.showinfo) + Skin.HasSetting(51bigwide.showclassic)">View_51_BigWide_Classic</include>
+		<include>View_516_BigWide</include>
 		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
 		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
 		<include>View_53_Poster</include>

@@ -3,17 +3,18 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-    <views>50,52,53,500,514,505</views>
+    <views>50,516,52,53,500,514,505</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+        <include>View_516_BigWide</include>
         <include>View_50_List</include>
 		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
 		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
 		<include>View_53_Poster</include>
 		<include>View_514_PosterShift</include>
 		<!-- <include>View_513_PosterRow</include> -->
-		<include condition="!Skin.HasSetting(56media.showinfo)">View_56_MediaInfo</include>
-		<include condition="Skin.HasSetting(56media.showinfo)">View_56_MediaInfo2</include>
+		<!-- <include condition="!Skin.HasSetting(56media.showinfo)">View_56_MediaInfo</include>
+		<include condition="Skin.HasSetting(56media.showinfo)">View_56_MediaInfo2</include> -->
         <include>View_500_Thumbnails</include>
 		<include>View_505_Wall_No_Poster</include>
         <include>Furniture_Header</include>

@@ -698,26 +698,6 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(56)</visible>
 		</control>
-		<control type="radiobutton" id="9008" description="Big Wide Info (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
-			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
-		<control type="radiobutton" id="9014" description="Big Wide Classic (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31245</label>
-			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
-			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
 		<control type="radiobutton" id="9011" description="Banner show poster (54)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -768,13 +748,21 @@
 			<onclick>Skin.ToggleSetting(views.500.showfanart)</onclick>
 			<visible>Control.IsVisible(500)</visible>
 		</control>
-		<control type="radiobutton" id="9024" description="Prefer Fanart (51)">
+		<control type="radiobutton" id="9024" description="Prefer Fanart (516)">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Show Fanart Image</label>
-			<selected>Skin.HasSetting(views.51.showfanart)</selected>
-			<onclick>Skin.ToggleSetting(views.51.showfanart)</onclick>
-			<visible>Control.IsVisible(51)</visible>
+			<selected>Skin.HasSetting(views.516.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.516.showfanart)</onclick>
+			<visible>Control.IsVisible(516)</visible>
+		</control>
+		<control type="radiobutton" id="9028" description="Play Trailer (516)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Play Trailer</label>
+			<selected>Skin.HasSetting(views.516.trailer)</selected>
+			<onclick>Skin.ToggleSetting(views.516.trailer)</onclick>
+			<visible>Control.IsVisible(516)</visible>
 		</control>
 		<control type="radiobutton" id="9025" description="Prefer Fanart (55)">
 			<include>DefContextButton2</include>
@@ -951,26 +939,6 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(53)</visible>
 		</control>
-		<control type="radiobutton" id="9003" description="Big Wide Info (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
-			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
-		<control type="radiobutton" id="9004" description="Big Wide Classic (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31245</label>
-			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
-			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
 		<control type="radiobutton" id="9005" description="Big List Double Pane (52)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -1117,26 +1085,6 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(53)</visible>
 		</control>
-		<control type="radiobutton" id="9003" description="Big Wide Info (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(51bigwide.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showinfo)</onclick>
-			<onclick>Skin.Reset(51bigwide.showclassic)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
-		<control type="radiobutton" id="9004" description="Big Wide Classic (51)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31245</label>
-			<selected>Skin.HasSetting(51bigwide.showclassic)</selected>
-			<onclick>Skin.ToggleSetting(51bigwide.showclassic)</onclick>
-			<onclick>Skin.Reset(51bigwide.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(51)</visible>
-		</control>
 		<control type="radiobutton" id="9005" description="Big List Double Pane (52)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -1242,6 +1190,14 @@
 			<onclick>Skin.ToggleSetting(506wall.bigposter)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(506)</visible>
+		</control>
+		<control type="radiobutton" id="9028" description="Play Trailer (516)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>Play Trailer</label>
+			<selected>Skin.HasSetting(views.516.trailer)</selected>
+			<onclick>Skin.ToggleSetting(views.516.trailer)</onclick>
+			<visible>Control.IsVisible(516)</visible>
 		</control>
 	</include>
 	<variable name="DefTVHubWidget">
