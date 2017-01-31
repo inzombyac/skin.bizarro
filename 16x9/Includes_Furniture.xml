@@ -974,10 +974,16 @@
 						<height>80</height>
 						<onright condition="Player.HasMedia">7788</onright>
 						<onright condition="!Player.HasMedia">3634</onright>
-						<ondown condition="Control.IsVisible(55)">55</ondown>
 						<ondown condition="Control.IsVisible(50)">50</ondown>
 						<ondown condition="Control.IsVisible(51)">51</ondown>
+						<ondown condition="Control.IsVisible(52)">52</ondown>
 						<ondown condition="Control.IsVisible(53)">53</ondown>
+						<ondown condition="Control.IsVisible(54)">54</ondown>
+						<ondown condition="Control.IsVisible(55)">55</ondown>
+						<ondown condition="Control.IsVisible(56)">56</ondown>
+						<ondown condition="Control.IsVisible(57)">57</ondown>
+						<ondown condition="Control.IsVisible(58)">58</ondown>
+						<ondown condition="Control.IsVisible(59)">59</ondown>
 						<ondown condition="Control.IsVisible(500)">500</ondown>
 						<ondown condition="Control.IsVisible(513)">513</ondown>
 						<ondown condition="Control.IsVisible(514)">514</ondown>
