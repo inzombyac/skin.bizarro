@@ -587,6 +587,7 @@
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 							<onfocus condition="Skin.HasSetting(views.516.trailer) + !IsEmpty(ListItem.Trailer)">AlarmClock(PlayTrailer,PlayMedia($INFO[ListItem.trailer],1),00:05,silent)</onfocus>
 	                        <onunfocus condition="Player.HasVideo">PlayerControl(Stop)</onunfocus>
+	                        <onunfocus>CancelAlarm(PlayTrailer,silent)</onunfocus>
 						</control>
 						<control type="image">
 							<centerleft>50%</centerleft>

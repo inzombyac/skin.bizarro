@@ -459,14 +459,22 @@
             <control type="label">
                 <include>ControlID</include>
                 <label>Folder Path: $INFO[Container.FolderPath]</label>
+                <visible>!Window.IsVisible(VideoFullScreen.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID2</include>
                 <label>Path: $INFO[Container.ListItem.FileNameAndPath]</label>
+                <visible>!Window.IsVisible(VideoFullScreen.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID2</include>
+                <label>Path: $INFO[Player.Filenameandpath]</label>
+                <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID3</include>
                 <label>Content: $INFO[Container.Content]</label>
+                <visible>!Window.IsVisible(VideoFullScreen.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID4</include>

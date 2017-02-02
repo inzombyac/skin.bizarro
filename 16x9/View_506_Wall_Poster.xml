@@ -18,7 +18,7 @@
 				<ondown>506</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
-				<viewtype label="31791">list</viewtype>
+				<viewtype label="31795">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="337" width="222">
 					<control type="image">

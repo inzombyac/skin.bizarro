@@ -16,6 +16,27 @@ msgstr ""
 "Language: en_US\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: /16x9/SkinSettings.xml
+msgctxt "#31000"
+msgid "Lights Out (disable fanart background)"
+msgstr "Lights Out (disable fanart background)"
+
+#: /16x9/SkinSettings.xml
+msgctxt "#31001"
+msgid "Artwork"
+msgstr "Artwork"
+
+#: /16x9/Includes_Home.xml
+msgctxt "#31002"
+msgid "Debug Mode On"
+msgstr "Debug Mode On"
+
+# views.xml
+msgctxt "#31003"
+msgid "Wall Info"
+msgstr "Wall Info"
+
+
 msgctxt "#31101"
 msgid "items"
 msgstr "items"

@@ -12,9 +12,6 @@
 		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
 		<include>View_53_Poster</include>
 		<include>View_514_PosterShift</include>
-		<!-- <include>View_513_PosterRow</include> -->
-		<!-- <include condition="!Skin.HasSetting(56media.showinfo)">View_56_MediaInfo</include>
-		<include condition="Skin.HasSetting(56media.showinfo)">View_56_MediaInfo2</include> -->
         <include>View_500_Thumbnails</include>
 		<include>View_505_Wall_No_Poster</include>
         <include>Furniture_Header</include>

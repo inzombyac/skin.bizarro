@@ -4,7 +4,6 @@
 	<include file="Defaults.xml" />
 	<!-- Views -->
 	<include file="View_50_List.xml" />
-	<include file="View_516_BigWide.xml" />
 	<include file="View_52_BigList.xml" />
 	<include file="View_53_Poster.xml" />
 	<include file="View_54_Banner.xml" />
@@ -19,6 +18,8 @@
 	<include file="View_514_PosterShift.xml" />
 	<include file="View_513_PosterRow.xml" />
 	<include file="View_515_Netflix.xml" />
+	<include file="View_516_BigWide.xml" />
+	<include file="View_517_WallInfo.xml" />
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_GlobalSearch.xml" />

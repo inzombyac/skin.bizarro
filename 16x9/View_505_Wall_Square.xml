@@ -19,7 +19,7 @@
 				<ondown>505</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
-				<viewtype label="31791">list</viewtype>
+				<viewtype label="31794">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout height="400" width="296">
 					<control type="image">
@@ -74,7 +74,7 @@
 						<height>296</height>
 						<texture border="10">common/nofocus-shadow10.png</texture>
 						<include>Animation.FadeIn</include>		
-						<include>Animation.Focus</include>
+						<!-- <include>Animation.Focus</include> -->
 					</control>
 					<control type="image">
 						<left>10</left>
@@ -84,7 +84,7 @@
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<texture background="true">$VAR[PosterImage]</texture>
 						<include>Animation.FadeIn</include>		
-						<include>Animation.Focus</include>
+						<!-- <include>Animation.Focus</include> -->
 					</control>
 					<control type="image">
 						<description>Title overlay</description>
@@ -94,7 +94,7 @@
 						<width>276</width>
 						<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
 						<include>Animation.FadeIn</include>		
-						<include>Animation.Focus</include>					
+						<!-- <include>Animation.Focus</include> -->					
 					</control>
 					<control type="textbox">
 						<top>267</top>
@@ -107,16 +107,16 @@
 						<autoscroll>false</autoscroll>
 						<label>$INFO[ListItem.Label]</label>
 						<include>Animation.FadeIn</include>		
-						<include>Animation.Focus</include>
+						<!-- <include>Animation.Focus</include> -->
 					</control>
 					<control type="image">
 						<left>5</left>
 						<top>5</top>
 						<right>5</right>
-						<height>300</height>
+						<height>305</height>
 						<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						<include>Animation.FadeIn</include>		
-						<include>Animation.Focus</include>
+						<!-- <include>Animation.Focus</include> -->
 					</control>
 				</focusedlayout>
 			</control>

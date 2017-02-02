@@ -991,6 +991,7 @@
 						<ondown condition="Control.IsVisible(515)">515</ondown>
 						<ondown condition="Control.IsVisible(505)">505</ondown>
 						<ondown condition="Control.IsVisible(506)">506</ondown>
+						<ondown condition="Control.IsVisible(517)">517</ondown>
 						<onclick>Back</onclick>
 						<font>Button</font>
 						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>

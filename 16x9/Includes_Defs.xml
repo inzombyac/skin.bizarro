@@ -669,34 +669,14 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(53)</visible>
 		</control>
-		<control type="radiobutton" id="9003" description="Info Wall (55)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>!Skin.HasSetting(55wall.hideinfo)</selected>
-			<onclick>Skin.Reset(55wall.showposter)</onclick>
-			<onclick>Skin.ToggleSetting(55wall.hideinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(55)</visible>
-		</control>
 		<control type="radiobutton" id="9004" description="Poster Wall (55)">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>31185</label>
 			<selected>Skin.HasSetting(55wall.showposter)</selected>
-			<onclick>Skin.SetBool(55wall.hideinfo)</onclick>
 			<onclick>Skin.ToggleSetting(55wall.showposter)</onclick>
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(55)</visible>
-		</control>
-		<control type="radiobutton" id="9005" description="Info Media (56)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>31147</label>
-			<selected>Skin.HasSetting(56media.showinfo)</selected>
-			<onclick>Skin.ToggleSetting(56media.showinfo)</onclick>
-			<onclick>ReloadSkin()</onclick>
-			<visible>Control.IsVisible(56)</visible>
 		</control>
 		<control type="radiobutton" id="9011" description="Banner show poster (54)">
 			<include>DefContextButton2</include>
@@ -764,13 +744,13 @@
 			<onclick>Skin.ToggleSetting(views.516.trailer)</onclick>
 			<visible>Control.IsVisible(516)</visible>
 		</control>
-		<control type="radiobutton" id="9025" description="Prefer Fanart (55)">
+		<control type="radiobutton" id="9025" description="Prefer Fanart (517)">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Show Fanart Image</label>
-			<selected>Skin.HasSetting(views.55.showfanart)</selected>
-			<onclick>Skin.ToggleSetting(views.55.showfanart)</onclick>
-			<visible>Control.IsVisible(55)</visible>
+			<selected>Skin.HasSetting(views.517.showfanart)</selected>
+			<onclick>Skin.ToggleSetting(views.517.showfanart)</onclick>
+			<visible>Control.IsVisible(517)</visible>
 		</control>
 		<control type="radiobutton" id="9026" description="Prefer Fanart (56)">
 			<include>DefContextButton2</include>
