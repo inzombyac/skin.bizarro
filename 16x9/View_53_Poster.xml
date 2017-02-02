@@ -236,7 +236,7 @@
 			<include condition="!Skin.HasSetting(53poster.nowrap)">53Wrap</include>
 			<include condition="Skin.HasSetting(53poster.nowrap)">53Fixed</include>
 			<control type="group">
-				<animation effect="fade" condition="!Control.HasFocus(60)" time="200" start="100" end="0">Conditional</animation>
+				<!-- <animation effect="fade" condition="!Control.HasFocus(60)" time="200" start="100" end="0">Conditional</animation> -->
 				<include>Furniture_Scrollbar_Horizontal</include>
 			</control>
 			<control type="grouplist">

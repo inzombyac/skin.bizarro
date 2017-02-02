@@ -435,7 +435,7 @@
 						</control>
 					</focusedlayout>
 				</control>
-				<include>Furniture_Scrollbar</include>
+				<include>Furniture_Tall_Scrollbar</include>
 			</control>
 		</control>
 	</include>

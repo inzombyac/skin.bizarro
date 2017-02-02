@@ -166,7 +166,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<include>Furniture_Scrollbar</include>
+			<include>Furniture_Tall_Scrollbar</include>
 			<control type="group" description="Fanart Info">
 				<left>70</left>
 				<width>587</width>
