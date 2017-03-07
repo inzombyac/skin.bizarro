@@ -4,7 +4,7 @@
 	<defaultcontrol always="true">5</defaultcontrol>
 	<controls>
 	   <control type="group">
-            <animation effect="fade" start="100" end="90" condition="true">Conditional</animation>
+            <animation effect="fade" start="100" end="95" condition="true">Conditional</animation>
 			<centerleft>50%</centerleft>
             <posy>210</posy>
             <width>1500</width>

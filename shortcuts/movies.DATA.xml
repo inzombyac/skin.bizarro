@@ -12,7 +12,7 @@
         <defaultID>collections</defaultID>
 		<label2>movies</label2>
         <label>Collections</label>
-        <thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</thumb>
+        <thumb>special://skin/extras/backgrounds/sets.jpg</thumb>
 		<icon>special://skin/extras/icons/sets.png</icon>
         <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
     </shortcut>

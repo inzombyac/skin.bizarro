@@ -62,7 +62,7 @@
                 <!-- <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label> -->
 				<!-- <label>$VAR[EmbyMainWidgetIcon]</label> -->
 				<!-- <label>$INFO[Container(300).ListItem.Property(defaultID)]</label> -->
-				<label>$INFO[Window(home).Property(Home.ImageColor)] / $INFO[Window(home).Property(Home2.ImageColor)]</label>
+				<label>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]</label>
             </control>
             <control type="label">
                 <include>ControlID5</include>

@@ -543,7 +543,7 @@
 				<right>401</right>
 				<height>620</height>
 				<control type="wraplist" id="516">
-					<!-- <visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(sets) | Container.Content(albums) | Container.Content(songs) | Container.Content(programs) | Container.Content(addons)</visible> -->
+					<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(sets) | Container.Content(albums) | Container.Content(songs) | Container.Content(programs) | Container.Content(addons) | Container.Content(seasons)</visible>
 					<left>0</left>
 					<right>0</right>
 					<top>0</top>

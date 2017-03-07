@@ -78,7 +78,7 @@
     <backgrounddefault defaultID="settings">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>
 	<backgrounddefault defaultID="channels">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</backgrounddefault>
-	<backgrounddefault defaultID="collection" group="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Poster.Wall)]</backgrounddefault>
+	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>
 	
 	<backgrounddefault defaultID="artists" group="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="albums" group="music">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</backgrounddefault>
