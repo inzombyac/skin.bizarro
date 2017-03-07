@@ -1338,7 +1338,7 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
-					<content limit="12">$VAR[DefWidgetRight1Programs]</content>
+					<content limit="12" target="programs">$VAR[DefWidgetRight1Programs]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>
