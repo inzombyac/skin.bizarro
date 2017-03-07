@@ -2,19 +2,15 @@
 <!-- Foundation -->
 <window id="34">
     <defaultcontrol always="true">4</defaultcontrol>
-    
-
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
         <include>Furniture_Clock</include>
         <include>Furniture_NowPlaying</include>
         <include>GlobalOverlay</include>
-
         <control type="group">
             <width>700</width>
             <include>DefDialogInfoPanel</include>
-            
             <control type="label">
                 <description>Header Label</description>
                 <centerleft>50%</centerleft>
@@ -24,7 +20,6 @@
                 <posy>15</posy>
                 <font>MediumBold</font>
             </control>
-
             <control type="radiobutton" id="4">
                 <description>Enable Login Screen</description>
                 <left>15</left>
@@ -37,22 +32,18 @@
                 <radioposx>624</radioposx>
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
-
             <control type="list" id="2">
                 <posx>15</posx>
                 <posy>159</posy>
                 <width>670</width>
                 <height>483</height>
                 <onup>4</onup>
-
                 <itemlayout height="69" width="670">
-
                     <control type="label">
                         <posx>20</posx>
                         <width>810</width>
                         <info>ListItem.Label</info>
                     </control>
-
                     <control type="label">
                         <right>20</right>
                         <width>810</width>
@@ -60,26 +51,21 @@
                         <font>Tiny</font>
                         <info>ListItem.Label2</info>
                     </control>
-
                 </itemlayout>
-
                 <focusedlayout height="69" width="670">
-                    <control type="group">
-                        
+                    <control type="group">       
                         <visible>Control.HasFocus(2)</visible>
                         <control type="image">
                             <width>100%</width>
                             <height>66</height>
                             <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                         </control>
-
                         <control type="label">
                             <posx>20</posx>
                             <width>810</width>
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <right>20</right>
                             <width>810</width>
@@ -96,7 +82,6 @@
                             <width>810</width>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <right>20</right>
                             <width>810</width>
@@ -105,13 +90,8 @@
                             <info>ListItem.Label2</info>
                         </control>
                     </control>
-
                 </focusedlayout>
-
             </control>
-
         </control>
-
     </controls>
-
 </window>

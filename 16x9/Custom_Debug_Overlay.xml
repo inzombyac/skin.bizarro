@@ -165,8 +165,8 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogContentSettings.xml</label>
-                    <visible>Window.IsVisible(DialogContentSettings.xml)</visible>
+                    <label>DialogSettings.xml (DialogContentSettings)</label>
+                    <visible>Window.IsVisible(DialogContentSettings)</visible>
                 </control>
 
                 <control type="label">
@@ -225,14 +225,50 @@
 
                 <control type="label">
                     <include>DialogID</include>
+                    <label>DialogSettings.xml (MediaFilter)</label>
+                    <visible>Window.IsVisible(mediafilter)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (OSDCMSSettings)</label>
+                    <visible>Window.IsVisible(osdcmssettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (OSDAudioDSPSettings)</label>
+                    <visible>Window.IsVisible(osdaudiodspsettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (PVRTimerSetting)</label>
+                    <visible>Window.IsVisible(pvrtimersetting)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (OSDVideoSettings)</label>
+                    <visible>Window.IsVisible(osdvideosettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (OSDAudioSettings)</label>
+                    <visible>Window.IsVisible(osdaudiosettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
                     <label>DialogMusicScan.xml</label>
                     <visible>Window.IsVisible(DialogMusicScan.xml)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogNetworkSetup.xml</label>
-                    <visible>Window.IsVisible(DialogNetworkSetup.xml)</visible>
+                    <label>DialogSettings.xml (NetworkSetup)</label>
+                    <visible>Window.IsVisible(NetworkSetup)</visible>
                 </control>
 
                 <control type="label">
@@ -255,8 +291,8 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogPeripheralSettings.xml</label>
-                    <visible>Window.IsVisible(DialogPeripheralSettings.xml)</visible>
+                    <label>DialogSettings.xml (DialogPeripheralSettings)</label>
+                    <visible>Window.IsVisible(DialogPeripheralSettings)</visible>
                 </control>
 
                 <control type="label">
@@ -333,8 +369,8 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>LockSettings.xml</label>
-                    <visible>Window.IsVisible(LockSettings.xml)</visible>
+                    <label>DialogSettings.xml (LockSettings)</label>
+                    <visible>Window.IsVisible(LockSettings)</visible>
                 </control>
 
                 <control type="label">
@@ -369,8 +405,8 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>ProfileSettings.xml</label>
-                    <visible>Window.IsVisible(ProfileSettings.xml)</visible>
+                    <label>PDialogSettings.xml (ProfileSettings)</label>
+                    <visible>Window.IsVisible(ProfileSettings)</visible>
                 </control>
 
                 <control type="label">

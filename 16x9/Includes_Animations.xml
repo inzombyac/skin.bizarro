@@ -103,8 +103,8 @@
 	</include>
 	<!-- Dialog video info animation -->
 	<include name="DialogVideoInfoAnimation">
-		<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="0,-390" start="0,0" time="200">Conditional</animation>
-		<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="-520,0" start="0,0" time="200">Conditional</animation>
+		<animation condition="Control.HasFocus(50) | Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="0,-390" start="0,0" time="200">Conditional</animation>
+		<animation condition="Control.HasFocus(50) | Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="-520,0" start="0,0" time="200">Conditional</animation>
 	</include>
 	<include name="Animation.LongDelayFadeIn">
 		<animation effect="fade" end="100" start="0" time="500" delay="2000" tween="cubic" easing="inout" reversible="false">Visible</animation>

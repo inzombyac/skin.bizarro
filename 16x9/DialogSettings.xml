@@ -92,7 +92,7 @@
             <control type="radiobutton" id="8">
                 <description>Default RadioButton</description>
                 <align>left</align>
-                <radioposx>1230</radioposx>
+                <radioposx>900</radioposx>
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
 
