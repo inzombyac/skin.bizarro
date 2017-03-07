@@ -7,6 +7,7 @@
 	<onload condition="Container.Content(episodes) + String.IsEmpty(ListItem.DBID) + String.StartsWith(ListItem.Path,plugin://plugin.video.emby)">SetProperty(TVShowID,$INFO[ListItem.Property(DBID)],home)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<controls>
+		<!-- <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include> -->
 		<control type="group">
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
 			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
@@ -25,8 +26,8 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>diffuse/shadowspot.png</texture>
 					<visible>!String.IsEmpty(ListItem.Icon)</visible>
-					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				</control>
 				<control type="image" id="3">
 					<width>100%</width>
@@ -34,16 +35,16 @@
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
 					<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 					<visible>!String.IsEqual(ListItem.Icon,DefaultTVShows.png)</visible>
 				</control>
 				<control type="image">
 					<!--Plugin Thumb image-->
 					<texture>$INFO[Skin.String(LastIcon)]</texture>
 					<aspectratio align="center" aligny="center" scalediffuse="false">stretch</aspectratio>
-					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(5050)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 					<visible>String.IsEqual(ListItem.Icon,DefaultTVShows.png)</visible>
 				</control>
 				<control type="image">
@@ -53,8 +54,8 @@
 					<height>32</height>
 					<aspectratio aligny="top">keep</aspectratio>
 					<texture>$VAR[PosterPercentWatched]</texture>
-					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(5050)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				</control>
 				<control type="progress">
 					<top>720</top>
@@ -67,12 +68,12 @@
 					<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
 					<righttexture colordiffuse="EmbyGreen">osd/progress-end.png</righttexture>
 					<visible>ListItem.IsResumable</visible>
-					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(5050)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 				</control>
 				<control type="group">
-					<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)  | Control.HasFocus(50)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-					<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(5050)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					<control type="image">
 						<right>10</right>
@@ -101,8 +102,8 @@
 			<left>600</left>
 			<top>180</top>
 			<width>1240</width>
-			<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
-			<animation condition="!Control.HasFocus(5050) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
+			<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
+			<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 			<control type="image">
 				<width>100%</width>
@@ -137,13 +138,13 @@
 				<itemgap>10</itemgap>
 				<onleft>9001</onleft>
 				<onright>9001</onright>
-				<ondown>5050</ondown>
+				<ondown>50</ondown>
 				<onleft>9000</onleft>
 				<onup>300</onup>
 				<orientation>horizontal</orientation>
 				<include>DialogVideoInfoAnimation</include>
 				<defaultcontrol always="true">9009</defaultcontrol>
-				<animation condition="Control.HasFocus(5050) | Control.HasFocus(5051)" effect="slide" end="0,-192" start="0,0" time="200">Conditional</animation>
+				<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)" effect="slide" end="0,-192" start="0,0" time="200">Conditional</animation>
 				<!-- Dummy to always set focus to first visible button -->
 				<control id="9009" type="button">
 					<width>-10</width>
@@ -159,7 +160,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<onclick>dialog.close(all,true)</onclick>
 					<font>EPGTimeline</font>
 					<aligny>top</aligny>
@@ -175,7 +176,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
@@ -200,7 +201,7 @@
 					<textoffsety>77</textoffsety>
 					<textcolor>White70</textcolor>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<texturefocus>dialogvideo/refresh.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/refresh.png</texturenofocus>
 					<alttexturefocus>dialogvideo/refresh.png</alttexturefocus>
@@ -212,7 +213,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<label>38023</label>
 					<font>EPGTimeline</font>
 					<textoffsety>77</textoffsety>
@@ -229,7 +230,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<onclick>RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
 					<font>EPGTimeline</font>
 					<label>Video Extras</label>
@@ -247,7 +248,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>back</onclick>
 					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
@@ -267,7 +268,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<font>EPGTimeline</font>
 					<label>Extended Info</label>
 					<textoffsety>77</textoffsety>
@@ -288,7 +289,7 @@
 					<width>222</width>
 					<height>116</height>
 					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>5050</ondown>
+					<ondown>50</ondown>
 					<font>EPGTimeline</font>
 					<label>Extended Info</label>
 					<textoffsety>77</textoffsety>
@@ -304,18 +305,18 @@
 				</control> -->
 			</control>
 			<!-- Hidden list to grab data -->
-			<control id="50" type="fixedlist">
+			<!-- <control id="50" type="fixedlist">
 				<itemlayout width="1" height="1">
 					<control type="button">
-						<onfocus>SetFocus(5050)</onfocus>
+						<onfocus>SetFocus(50)</onfocus>
 					</control>
 				</itemlayout>
 				<focusedlayout width="1" height="1">
 					<control type="button">
-						<onfocus>SetFocus(5050)</onfocus>
+						<onfocus>SetFocus(50)</onfocus>
 					</control>
 				</focusedlayout>
-			</control>
+			</control> -->
 		</control>
 		<!-- Full Screen Items -->
 		<control type="group">
@@ -353,7 +354,7 @@
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 					<visible>!String.IsEmpty(Container(50).ListItem.Label)</visible>
 				</control>
-				<control id="5050" type="panel">	
+				<control id="50" type="panel">	
 					<onup>9001</onup>
 					<ondown>5051</ondown>
 					<onback>9001</onback>
@@ -440,7 +441,7 @@
 							<align>center</align>
 						</control>
 						<control type="image">
-							<visible>Control.HasFocus(5050)</visible>
+							<visible>Control.HasFocus(50)</visible>
 							<top>10</top>
 							<left>10</left>
 							<width>240</width>
@@ -448,7 +449,7 @@
 							<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 						</control>
 					</focusedlayout>
-					<include>VideoCastContent</include>
+					<!-- <include>VideoCastContent</include> -->
 				</control>
 			</control>
 			<!-- Similar -->
@@ -465,12 +466,12 @@
 					<font>MediumSmall</font>
 					<textcolor>Dark1</textcolor>
 					<label>$VAR[SimilarVideoLabel]</label>
-					<visible>Integer.IsGreater(Container(5051).NumItems, 0) + [Control.HasFocus(5051) | Control.HasFocus(5050)]</visible>
+					<visible>Integer.IsGreater(Container(5051).NumItems, 0) + [Control.HasFocus(5051) | Control.HasFocus(50)]</visible>
 					<animation delay="400" effect="fade" end="100" start="0" time="200">Visible</animation>
 					<animation effect="fade" end="0" start="100" time="0">Hidden</animation>
 				</control>
 				<control id="5051" type="panel">	
-					<onup>5050</onup>
+					<onup>50</onup>
 					<ondown>5051</ondown>
 					<onback>9001</onback>
 					<preloaditems>2</preloaditems>
@@ -480,7 +481,7 @@
 					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 					<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 					<top>30</top>
-					<visible>[Control.HasFocus(5051) | Control.HasFocus(5050)]</visible>
+					<visible>[Control.HasFocus(5051) | Control.HasFocus(50)]</visible>
 					<itemlayout height="380" width="270">		
 						<control type="image">
 							<left>10</left>
