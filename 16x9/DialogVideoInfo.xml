@@ -107,8 +107,8 @@
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 			<control type="image">
 				<width>100%</width>
-				<height>365</height>
-				<texture fallback="special://skin/extras/backgrounds/Channels2.jpg">$INFO[ListItem.Art(fanart)]</texture>
+				<height>190</height>
+				<texture border="15" colordiffuse="Light2">common/rounded-shadow8.png</texture>
 				<aspectratio>scale</aspectratio>
 				<colordiffuse>Dark4</colordiffuse>
 			</control>
@@ -122,6 +122,7 @@
 				<control type="textbox" id="4">
 					<height>190</height>
 					<top>-8</top>
+					<left>8</left>
 					<align>left</align>
 					<font>TwentyEight</font>
 					<textcolor>Dark2</textcolor>
@@ -549,7 +550,7 @@
 			</control>
 		</control>
 		<!-- Background -->
-		<control id="8328" type="image">
+		<!-- <control id="8328" type="image">
 			<include>Dimensions_Fullscreen</include>
 			<colordiffuse>DialogFanartFade</colordiffuse>
 			<texture fallback="common/null.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
@@ -561,7 +562,7 @@
 			<texture>special://skin/extras/backgrounds/Family.jpg</texture>
 			<visible>String.Contains(Control.GetLabel(8328),null.png)</visible>
 			<visible>Control.HasFocus(4000)</visible>
-		</control>
+		</control> -->
 		<include>Furniture_Flags</include>
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>

@@ -117,24 +117,39 @@
 	</include>
 	<variable name="GlobalFanart">
 		<!-- Skin Shortcuts -->
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Art(Fanart))">$INFO[ListItem.Art(Fanart)]</value>
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
+		<!-- If no fanart and home show nothing -->
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + Window.IsActive(home)">diffuse/bg-diffuse.png</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + !String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(background)]</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
 		<!-- Home Screen -->
-		<value condition="Window.IsVisible(home) + !String.IsEmpty(Container(4019).ListItem.Art(fanart))">$INFO[Container(4019).ListItem.Art(fanart)]</value>
-		<value condition="Window.IsVisible(home) + !String.IsEmpty(Container(4019).ListItem.Property(fanart))">$INFO[Container(4019).ListItem.Property(fanart)]</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(4019).ListItem.Property(widget),LiveTV)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
-		<value condition="Window.IsVisible(home) + !String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Container(300).ListItem.Property(Background)]</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
-		<value condition="Window.IsVisible(home) + String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
-		
-		<value condition="Window.IsVisible(home) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
-		<value condition="Window.IsVisible(home)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),weather)">special://skin/extras/backgrounds/space.jpg</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Art(fanart))">$INFO[Container(4016).ListItem.Art(fanart)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Property(fanart))">$INFO[Container(4016).ListItem.Property(fanart)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4016) + String.IsEqual(Container(4016).ListItem.Property(widget),LiveTV)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Art(fanart))">$INFO[Container(4017).ListItem.Art(fanart)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Property(fanart))">$INFO[Container(4017).ListItem.Property(fanart)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4017) + String.IsEqual(Container(4017).ListItem.Property(widget),LiveTV)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Art(fanart))">$INFO[Container(4018).ListItem.Art(fanart)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Property(fanart))">$INFO[Container(4018).ListItem.Property(fanart)]</value>
+		<value condition="Window.IsActive(home) + Control.HasFocus(4018) + String.IsEqual(Container(4018).ListItem.Property(widget),LiveTV)">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(4019).ListItem.Art(fanart))">$INFO[Container(4019).ListItem.Art(fanart)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(4019).ListItem.Property(fanart))">$INFO[Container(4019).ListItem.Property(fanart)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(4012).ListItem.Art(fanart))">$INFO[Container(4012).ListItem.Art(fanart)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(4012).ListItem.Property(fanart))">$INFO[Container(4012).ListItem.Property(fanart)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(300).ListItem.Property(Background))">$INFO[Container(300).ListItem.Property(Background)]</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
+		<value condition="Window.IsActive(home) + String.IsEqual(Container(300).ListItem.Property(type),livetv)">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</value>
+		<value condition="Window.IsActive(home) + !String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
+		<value condition="Window.IsActive(home)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
 		<!-- Other windows -->
 		<value condition="Window.IsActive(script-globalsearch-infodialog.xml) | Window.IsActive(script-globalsearch-main.xml)">$VAR[GlobalSearchArtInfo]</value>
 		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/backgrounds/Family.jpg</value>
@@ -176,83 +191,24 @@
 			</control>
 		</control>
 	</include>
-	<include name="GlobalBackgroundFade">
-		<colordiffuse>$VAR[FanartFadeLabel]</colordiffuse>
-	</include>
 	<include name="GlobalBackground">
 		<include>GlobalVideoWindow</include>
 		<include>GlobalVisualisation</include>
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
-			<include>Animation.FadeFromHome</include>
 			<texture colordiffuse="Background">common/bg.jpg</texture>
-			<visible>!Window.IsVisible(home)</visible>
 			<animation effect="fade" start="100" end="75" time="200" condition="Player.HasVideo + Skin.HasSetting(global.showvideo) | Player.HasAudio + Skin.HasSetting(global.showvisualisation)">Conditional</animation>
 		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio align="center">scale</aspectratio>
-			<texture background="true">diffuse/bg-diffuse.png</texture>
-			<visible>Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)</visible>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<fadetime>600</fadetime>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<aspectratio align="center">scale</aspectratio>
-			<texture background="true">common/floor.png</texture>
-			<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			<visible>Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)</visible>
-		</control>
 		<control type="multiimage" description="Fanart">
- 			<include condition="!Window.IsVisible(home)">GlobalBackgroundFade</include>
+ 			<colordiffuse>$VAR[FanartFadeLabel]</colordiffuse>
 			<visible>!Player.HasMedia | [!Skin.HasSetting(global.showvideo) + Player.HasVideo] | [!Skin.HasSetting(global.showvisualisation) + Player.HasAudio]</visible>
-			<visible>!Skin.HasSetting(lights.out) + ![Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml)] + !Window.IsVisible(Home.xml) </visible>
+			<visible>!Skin.HasSetting(lights.out)</visible>
 			<include>Dimensions_Fullscreen</include>
-			<include>Animation.FadeFromHome</include>
-			<animation effect="fade" end="0" start="100" time="350" tween="cubic" easing="inout" condition="Window.IsVisible(home)">WindowClose</animation>
 			<fadetime>600</fadetime>
 			<timeperimage>12000</timeperimage>
 			<randomize>true</randomize>
 			<aspectratio>scale</aspectratio>
 			<imagepath background="true">$VAR[GlobalFanart]</imagepath>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<aspectratio align="center">scale</aspectratio>
-			<texture colordiffuse="Dark2" background="true">diffuse/bg-diffuse.png</texture>
-			<visible>[Window.IsVisible(Home.xml) | Window.IsVisible(LoginScreen.xml)]</visible>
-			<include>Animation.ZoomIn</include>
-		</control>
-		<control id="8328" type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture background="true">$VAR[GlobalFanart]</texture>
-			<visible>Control.HasFocus(4000)</visible>
-		</control>
-		<control type="image">
-			<include>Dimensions_Fullscreen</include>
-			<colordiffuse>DialogFanartFade</colordiffuse>
-			<texture>special://skin/extras/backgrounds/Family.jpg</texture>
-			<visible>String.Contains(Control.GetLabel(8328),null.png)</visible>
-			<visible>Control.HasFocus(4000)</visible>
-		</control>
-		<control type="image" description="FanartOverlay">
-			<include>Dimensions_Fullscreen</include>
-			<visible>!Window.IsVisible(home)</visible>
-			<include>Animation.FadeFromHome</include>
-			<texture colordiffuse="FloorFade">common/floor.png</texture>
-		</control>
-		<control type="image">
-			<posx>-200</posx>
-			<posy>0</posy>
-			<width>3000</width>
-			<height>1080</height>
-			<aspectratio>stretch</aspectratio>
-			<!--<include>Animation_FanartFade</include>-->
-			<texture background="true" colordiffuse="FloorFade">diffuseoverlay.png</texture>
-			<visible>Control.HasFocus(515)</visible>
 		</control>
 	</include>
 	<!-- No textures -->

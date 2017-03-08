@@ -19,7 +19,6 @@
 			<onfocus condition="String.IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
         </control>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
-		<include>GlobalOverlay</include>
 		<include>Furniture_Header</include>
 		<include>Furniture_Clock</include>
 		<include>Furniture_NowPlaying</include>
@@ -29,6 +28,12 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyRow</include>
 			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
+		</control>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
 		</control>
 		<control type="group" description="Side Menu">
 			<include>Def9000SideBladeLeft</include>

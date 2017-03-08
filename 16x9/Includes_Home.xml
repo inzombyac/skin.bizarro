@@ -1267,7 +1267,7 @@
 						<param name="scale">center</param>
 						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
 					</include>
-					<content limit="10">$VAR[DefWidgetRight1Music]</content>
+					<content limit="10" target="music">$VAR[DefWidgetRight1Music]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>

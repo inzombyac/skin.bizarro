@@ -948,11 +948,6 @@
 				<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			</control>
-			<control type="image">
-				<width>100%</width>
-				<texture colordiffuse="Dark3">common/black.png</texture>
-				<height>150</height>
-			</control>
 			<control type="image" description="Background">
 				<width>100%</width>
 				<height>150</height>
@@ -966,12 +961,6 @@
 				<height>150</height>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 				<visible>Window.IsVisible(VideoFullScreen.xml)</visible>
-			</control>
-			<control type="image">
-				<top>150</top>
-				<texture colordiffuse="Dark3">common/black.png</texture>
-				<height>90</height>
-				<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 			</control>
 			<control type="grouplist">
 				<top>40</top>
@@ -1013,7 +1002,7 @@
 						<font>Button</font>
 						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
 						<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
-						<visible>!Window.IsVisible(Home.xml)</visible>
+						<visible>!Window.IsActive(Home.xml)</visible>
 					</control>
 					<control type="button" id="3634">
 						<width>80</width>
@@ -1025,7 +1014,7 @@
 						<font>Button</font>
 						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
 						<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
-						<visible>Window.IsVisible(Home.xml)</visible>
+						<visible>Window.IsActive(Home.xml)</visible>
 					</control>
 				</control>
 				<control type="group" description="iconbox">
