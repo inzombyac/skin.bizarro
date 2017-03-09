@@ -35,110 +35,81 @@
 			<top>180</top>
 			<width>1240</width>
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
-			<control type="image">
-				<width>100%</width>
-				<height>480</height>
-				<texture fallback="special://skin/extras/backgrounds/Headphones.jpg">$INFO[ListItem.Art(fanart)]</texture>
-				<aspectratio>scale</aspectratio>
-				<colordiffuse>Dark4</colordiffuse>
-			</control>
 			<!-- Description Box -->
-			<control type="group">
-				<top>20</top>
-				<left>10</left>
-				<width>1220</width>
-				<height>200</height>
-				<!-- Description -->
-				<control type="textbox">
-					<top>-8</top>
-					<height>190</height>
-					<left>5</left>
-					<align>left</align>
-					<font>TwentyEight</font>
-					<textcolor>Dark2</textcolor>
-					<label>$VAR[MusicInfoDescription]</label>
-				</control>
+			<control type="textbox">
+				<top>5</top>
+				<height>390</height>
+				<left>15</left>
+				<right>15</right>
+				<align>left</align>
+				<font>TwentyEight</font>
+				<textcolor>Dark1</textcolor>
+				<label>$VAR[MusicInfoDescription]</label>
 			</control>
-			<control type="group">
-				<!-- <animation condition="!String.IsEmpty(Window(home).Property(AlbumDetails))" effect="fade" end="0" start="100" time="0">Conditional</animation> -->
-				<!-- Button grouplist -->
-				<control id="9001" type="grouplist">
-					<left>10</left>
-					<top>350</top>
-					<width>1620</width>
-					<height>116</height>
-					<itemgap>10</itemgap>
-					<onleft>9000</onleft>
-					<onright>9001</onright>
-					<ondown condition="!Container.Content(albums)">50</ondown>
-					<ondown condition="Container.Content(albums)">5050</ondown>
-					<onup condition="Player.HasMedia">7788</onup>
-					<onup condition="!Player.HasMedia">300</onup>
-					<orientation>horizontal</orientation>
-					<defaultcontrol always="true">9009</defaultcontrol>
-					<!-- Dummy to always set focus to first visible button -->
-					<control id="9009" type="button">
-						<width>-10</width>
-						<height>0</height>
-						<label>-</label>
-						<onfocus>Right</onfocus>
-						<include>NoTextures</include>
-						<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + !Control.HasFocus(6) + !Control.HasFocus(10) + !Control.HasFocus(7)</visible>
-						<onup>300</onup>
-					</control>
-					<!-- Play Button -->
-					<control type="button" id="1">
-						<description>Play/Browse</description>
-						<width>222</width>
-						<height>116</height>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown condition="!Container.Content(albums)">50</ondown>
-						<ondown condition="Container.Content(albums)">5050</ondown>
-						<font>EPGTimeline</font>
-						<aligny>top</aligny>
-						<textoffsety>77</textoffsety>
-						<textcolor>White70</textcolor>
-						<textoffsetx>0</textoffsetx>
-						<label>Play</label>
-						<texturefocus>dialogvideo/watchnow.png</texturefocus>
-						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
-						<onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath],1)</onclick>
-						<visible>!Container.Content(Artists)</visible>
-					</control>
-					<!-- Refresh Button -->
-					<control type="button" id="6">
-						<width>222</width>
-						<height>116</height>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<aligny>top</aligny>
-						<textoffsety>77</textoffsety>
-						<textcolor>White70</textcolor>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown condition="!Container.Content(albums)">50</ondown>
-						<ondown condition="Container.Content(albums)">5050</ondown>
-						<texturefocus>dialogvideo/refresh.png</texturefocus>
-						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/refresh.png</texturenofocus>
-						<visible>!Container.Content(Songs)</visible>
-						<onup>300</onup>
-					</control>
-					<!-- Set Rating Button -->
-					<control type="button" id="7">
-						<width>222</width>
-						<height>116</height>
-						<textoffsetx>0</textoffsetx>
-						<font>EPGTimeline</font>
-						<aligny>top</aligny>
-						<textoffsety>77</textoffsety>
-						<textcolor>White70</textcolor>
-						<onup condition="Control.IsVisible(300)">300</onup>
-						<ondown condition="!Container.Content(albums)">50</ondown>
-						<ondown condition="Container.Content(albums)">5050</ondown>	
-						<texturefocus>dialogvideo/rate.png</texturefocus>
-						<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
-						<onup>300</onup>
-						<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
-					</control>
+			<!-- Button grouplist -->
+			<control id="9001" type="grouplist">
+				<left>10</left>
+				<top>414</top>
+				<width>1620</width>
+				<height>116</height>
+				<itemgap>10</itemgap>
+				<onleft>9000</onleft>
+				<onright>9001</onright>
+				<ondown condition="!Container.Content(albums)">50</ondown>
+				<ondown condition="Container.Content(albums)">5050</ondown>
+				<onup>300</onup>
+				<orientation>horizontal</orientation>
+				<defaultcontrol always="true">9009</defaultcontrol>
+				<!-- Dummy to always set focus to first visible button -->
+				<control id="9009" type="button">
+					<width>-10</width>
+					<height>0</height>
+					<label>-</label>
+					<onfocus>Right</onfocus>
+					<include>NoTextures</include>
+					<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + !Control.HasFocus(6) + !Control.HasFocus(10) + !Control.HasFocus(7)</visible>
+					<onup>300</onup>
+				</control>
+				<!-- Play Button -->
+				<control type="button" id="1">
+					<description>Play/Browse</description>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath],1)</onclick>
+					<label>208</label>
+					<visible>!Container.Content(Artists)</visible>
+				</control>
+				<!-- Refresh Button -->
+				<control type="button" id="6">
+					<description>Refresh</description>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<visible>!Container.Content(Songs)</visible>
+				</control>
+				<!-- Set Rating Button -->
+				<control type="button" id="7">
+					<description>Rating</description>
+					<width>240</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
+				</control>
+				<!-- Youtube search -->
+				<control id="1006" type="button">
+					<description>YouTube</description>
+					<width>240</width>
+					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
+					<onclick>back</onclick>
+					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=],return)</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<label>YouTube</label>
 				</control>
 			</control>
 		</control>
@@ -387,12 +358,54 @@
 				</control>
 			</control>
 		</control>
-		<!-- <include>Furniture_Header</include> -->
+		<control type="grouplist">
+			<top>40</top>
+			<left>20</left>
+			<orientation>horizontal</orientation>
+			<itemgap>24</itemgap>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<ondown>9001</ondown>
+			<onright>9001</onright>
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+				<width>80</width>
+				<height>80</height>
+				<control type="button" id="300">
+					<width>80</width>
+					<height>80</height>
+					<onclick>Back</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="iconbox">
+				<width>80</width>
+				<height>80</height>
+				<control type="image">
+					<width>80</width>
+					<height>80</height>
+					<texture colordiffuse="Panel" border="0">common/circle.png</texture>
+				</control>
+				<control id="8308" type="image">
+					<width>80</width>
+					<height>80</height>
+					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >special://skin/extras/icons/info.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				</control>
+			</control>
+		</control>
         <include>Furniture_Clock</include>
-		<!-- <include>Furniture_Flags</include> -->
         <include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
+		<control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
+		</control>
 		<control type="group">
             <include>Def9000SideBladeLeft</include>
             <control type="grouplist" id="9000">

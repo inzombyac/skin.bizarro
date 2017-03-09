@@ -12,10 +12,10 @@
 					<left>70</left>
 					<width>1780</width>
 					<height>660</height>
-					<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+					<onleft>3634</onleft>
 					<onright>60</onright>
 					<onup condition="Player.HasMedia">7788</onup>
-					<onup condition="!Player.HasMedia">3634</onup>
+					<onup condition="!Player.HasMedia">500</onup>
 					<ondown>500</ondown>
 					<preloaditems>2</preloaditems>
 					<pagecontrol>60</pagecontrol>

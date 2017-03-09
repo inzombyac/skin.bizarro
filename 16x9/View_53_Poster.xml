@@ -273,6 +273,7 @@
 			</control>
 			<control type="grouplist" id="65">
 				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
+				<visible>Control.IsVisible(53)</visible>
 				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
 				<top>770</top>
 				<left>80</left>
