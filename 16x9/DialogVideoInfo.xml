@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window>
 	<menucontrol>9000</menucontrol>
-	<defaultcontrol always="true">9001</defaultcontrol>
+	<defaultcontrol always="true">8</defaultcontrol>
 	<zorder>0</zorder>
 	<onload condition="Container.Content(episodes) + String.IsEmpty(ListItem.DBID) + String.StartsWith(ListItem.Path,plugin://plugin.video.emby)">SetProperty(TVShowID,$INFO[ListItem.Property(DBID)],home)</onload>
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
@@ -105,30 +105,24 @@
 			<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 			<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
-			<control type="image">
+			<!-- <control type="image">
 				<width>100%</width>
-				<height>190</height>
+				<height>210</height>
 				<texture border="15" colordiffuse="Light2">common/rounded-shadow8.png</texture>
 				<aspectratio>scale</aspectratio>
-				<colordiffuse>Dark4</colordiffuse>
-			</control>
+				<colordiffuse>Dark3</colordiffuse>
+			</control> -->
 			<!-- Plot Box -->
-			<control type="group">
-				<top>20</top>
-				<left>10</left>
-				<width>1220</width>
-				<height>200</height>				
-				<!-- Plot -->
-				<control type="textbox" id="4">
-					<height>190</height>
-					<top>-8</top>
-					<left>8</left>
-					<align>left</align>
-					<font>TwentyEight</font>
-					<textcolor>Dark2</textcolor>
-					<label>$INFO[ListItem.Plot]</label>
-					<include>DialogVideoInfoAnimation</include>
-				</control>
+			<control type="textbox" id="4">
+				<height>195</height>
+				<top>5</top>
+				<left>15</left>
+				<right>15</right>
+				<align>left</align>
+				<font>TwentyEight</font>
+				<textcolor>Dark1</textcolor>
+				<label>$INFO[ListItem.Plot]</label>
+				<include>DialogVideoInfoAnimation</include>
 			</control>
 			<!-- Button grouplist -->
 			<control id="9001" type="grouplist">
@@ -137,7 +131,7 @@
 				<width>1620</width>
 				<height>116</height>
 				<itemgap>10</itemgap>
-				<onleft>9001</onleft>
+				<onleft>9000</onleft>
 				<onright>9001</onright>
 				<ondown>50</ondown>
 				<onleft>9000</onleft>
@@ -284,26 +278,6 @@
 					<onclick condition="!String.IsEmpty(ListItem.DBID) + String.IsEmpty(ListItem.TvShowTitle)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Title])</onclick>
 					<visible>System.HasAddon(script.extendedinfo) + !String.IsEmpty(ListItem.DBID)</visible>
 				</control>
-				<!--Add to Couchpotato Button -->
-				<!-- <control type="button" id="1008">
-					<description>Couch Potato</description>
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
-					<font>EPGTimeline</font>
-					<label>Extended Info</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
-					<texturefocus>dialogvideo/info.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
-					<alttexturefocus >dialogvideo/info.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/info.png</alttexturenofocus>
-					<onclick condition="!String.IsEmpty(Window(home).Property(TVShowID))">RunPlugin(plugin://plugin.video.couchpotato_manager/movies/add?imdb_id=$INFO[ListItem.IMDBNumber])</onclick>
-					<visible>System.HasAddon(plugin.video.couchpotato_manager) </visible>
-				</control> -->
 			</control>
 			<!-- Hidden list to grab data -->
 			<!-- <control id="50" type="fixedlist">
@@ -563,9 +537,52 @@
 			<visible>String.Contains(Control.GetLabel(8328),null.png)</visible>
 			<visible>Control.HasFocus(4000)</visible>
 		</control> -->
+		<control type="grouplist">
+			<top>40</top>
+			<left>20</left>
+			<orientation>horizontal</orientation>
+			<itemgap>24</itemgap>
+			<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+			<control type="grouplist">
+				<orientation>horizontal</orientation>
+				<itemgap>0</itemgap>
+				<width>80</width>
+				<height>80</height>
+				<control type="button" id="300">
+					<width>80</width>
+					<height>80</height>
+					<ondown>9001</ondown>
+					<onclick>Back</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+				</control>
+			</control>
+			<control type="group" description="iconbox">
+				<width>80</width>
+				<height>80</height>
+				<control type="image">
+					<width>80</width>
+					<height>80</height>
+					<texture colordiffuse="Panel" border="0">common/circle.png</texture>
+				</control>
+				<control id="8308" type="image">
+					<width>80</width>
+					<height>80</height>
+					<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >special://skin/extras/icons/info.png</texture>
+					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+				</control>
+			</control>
+		</control>
 		<include>Furniture_Flags</include>
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
+        <control type="group">
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<visible>ControlGroup(9000).HasFocus()</visible>
+			<include>GlobalOverlay</include>
+		</control>
 		<control type="group">
 			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
@@ -577,6 +594,7 @@
 				<onup>9000</onup>
 				<ondown>9000</ondown>
 				<onback>9001</onback>
+				<onright>9001</onright>
 				<itemgap>0</itemgap>
 				<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
 				<control type="label" id="200">

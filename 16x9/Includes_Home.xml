@@ -384,6 +384,7 @@
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),channels) + !Integer.IsGreater(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
+				<!-- <oninfo>RunScript(script.skin.helper.service,action=showinfo)</oninfo> -->
 			</control>	
 			<control type="image">
 				<aspectratio>stretch</aspectratio>

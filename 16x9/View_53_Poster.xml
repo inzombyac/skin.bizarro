@@ -4,12 +4,12 @@
 	<include name="53Content">
 		<height>1080</height>
 		<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://) | Container.Content(plugins) | Container.Content(addons)</visible>
-		<posy>56</posy>
+		<posy>32</posy>
 		<posx>-190</posx>
 		<width>2300</width>
 		<onup condition="Player.HasMedia">7788</onup>
 		<onup condition="!Player.HasMedia">3634</onup>
-		<ondown>60</ondown>
+		<ondown>65</ondown>
 		<onleft>53</onleft>
 		<onright>53</onright>
 		<focusposition>1</focusposition>
@@ -118,6 +118,9 @@
 				<posy>120</posy>
 				<animation condition="Container(53).OnNext | Container(53).OnPrevious" effect="zoom" start="60" end="100" delay="0" time="350" tween="sine" easing="out" center="213,276">Focus</animation>
 				<animation condition="Container(53).OnNext | Container(53).OnPrevious" effect="zoom" start="100" end="60" delay="0" time="250" tween="sine" easing="out" center="213,276">UnFocus</animation>
+				<animation effect="Conditional" condition="!Control.HasFocus(53)">
+					<effect type="zoom" end="95" time="0" center="213,452" />
+				</animation>
 				<control type="button">
 					<texturefocus>-</texturefocus>
 					<texturenofocus>-</texturenofocus>
@@ -125,7 +128,7 @@
 					<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
 					<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
 				</control>
-				<control type="image">
+				<!-- <control type="image">
 					<top>PosterH</top>
 					<width>PosterW</width>
 					<height>PosterH</height>
@@ -134,7 +137,7 @@
 					<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 					<visible>Skin.HasSetting(show.reflections)</visible>
 					<visible>container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)</visible>
-				</control>
+				</control> -->
 				<control type="image">
 					<top>PosterH</top>
 					<width>PosterW</width>
@@ -266,6 +269,38 @@
 					<textcolor>Dark2</textcolor>
 					<height>163</height>
 					<align>justify</align>
+				</control>
+			</control>
+			<control type="grouplist" id="65">
+				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
+				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
+				<top>770</top>
+				<left>80</left>
+				<height>200</height>
+				<orientation>vertical</orientation>
+				<align>center</align>
+				<onright>53</onright>
+				<onright>Control.Move(53,1)</onright>
+				<onleft>53</onleft>
+				<onleft>Control.Move(53,-1)</onleft>
+				<onup>53</onup>
+				<ondown>60</ondown>
+				<control type="button" id="707">		
+					<label>Info</label>
+					<width>PosterW</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick>RunScript(script.skin.helper.service,action=showinfo)</onclick>
+				</control>
+				<control type="button" id="708">		
+					<label>Trailer</label>
+					<width>PosterW</width>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
 				</control>
 			</control>
 		</control>
