@@ -127,7 +127,7 @@
 			<!-- Button grouplist -->
 			<control id="9001" type="grouplist">
 				<left>10</left>
-				<top>230</top>
+				<top>260</top>
 				<width>1620</width>
 				<height>116</height>
 				<itemgap>10</itemgap>
@@ -152,126 +152,68 @@
 				</control>
 				<control id="8" type="button">
 					<description>Play/Browse</description>
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
+					<width>240</width>
 					<onclick>dialog.close(all,true)</onclick>
-					<font>EPGTimeline</font>
-					<aligny>top</aligny>
-					<label>$VAR[VideoInfoButton8T]</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<texturefocus>dialogvideo/watchnow.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/watchnow.png</texturenofocus>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<label>208</label>
 				</control>
+				<!-- Trailer -->
 				<control id="11" type="button">
 					<description>Trailer</description>
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
+					<width>240</width>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>dialog.close(all,true)</onclick>
 					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-					<font>EPGTimeline</font>
-					<label>Watch Trailer</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<label>20410</label>
 					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
-					<texturefocus>dialogvideo/trailer.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
 				</control>
-				<!-- Refresh Button -->
-				<!-- <control type="button" id="6">
-					<width>222</width>
-					<height>116</height>
-					<textoffsetx>0</textoffsetx>
-					<font>EPGTimeline</font>
-					<label>Refresh</label>
-					<aligny>top</aligny>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
-					<texturefocus>dialogvideo/refresh.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/refresh.png</texturenofocus>
-					<alttexturefocus>dialogvideo/refresh.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="Dark2" border="5">dialogvideo/refresh.png</alttexturenofocus>
-					<visible>!String.IsEmpty(Container.Content)</visible>
-				</control> -->
 				<!-- Kodi Rating -->
-				<control type="button" id="7">
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
+				<control id="7" type="button">
+					<width>240</width>
 					<label>38023</label>
-					<font>EPGTimeline</font>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
-					<texturefocus>dialogvideo/rate.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/rate.png</texturenofocus>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
 					<visible>String.IsEmpty(Container.PluginName) + Control.IsEnabled(7)</visible>
 				</control>
 				<!-- Video Extras -->
 				<control type="button" id="105">	
 					<description>Video Extras</description>
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
+					<width>240</width>
 					<onclick>RunScript(script.videoextras,display,"$INFO[ListItem.FilenameAndPath]")</onclick>
-					<font>EPGTimeline</font>
-					<label>Video Extras</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
+					<label>$LOCALIZE[31004]</label>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<label>20410</label>
 					<visible>System.HasAddon(script.videoextras)</visible>
-					<texturefocus>dialogvideo/trailer.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
 				</control>
 				<!-- Youtube Trailers -->
 				<control id="1006" type="button">
 					<description>Trailer</description>
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
+					<width>240</width>
 					<onclick condition="Player.HasMedia">PlayerControl(stop)</onclick>
 					<onclick>back</onclick>
 					<onclick>ActivateWindow(videos,$INFO[ListItem.Title,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer],return)</onclick>
-					<font>EPGTimeline</font>
-					<label>Find Trailers</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+					<label>$LOCALIZE[31005]</label>
 					<visible>String.IsEmpty(ListItem.Trailer)</visible>
 					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
-					<texturefocus>dialogvideo/trailer.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/trailer.png</texturenofocus>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="1007">
-					<width>222</width>
-					<height>116</height>
-					<onup condition="Control.IsVisible(300)">300</onup>
-					<ondown>50</ondown>
-					<font>EPGTimeline</font>
-					<label>Extended Info</label>
-					<textoffsety>77</textoffsety>
-					<textcolor>White70</textcolor>
-					<textoffsetx>0</textoffsetx>
-					<aligny>top</aligny>
-					<texturefocus>dialogvideo/info.png</texturefocus>
-					<texturenofocus colordiffuse="Light1" border="5">dialogvideo/info.png</texturenofocus>
+					<width>240</width>
+					<font>Button</font>
+					<label>$LOCALIZE[31242]</label>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
 					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
 					<onclick condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
 					<onclick condition="!String.IsEmpty(ListItem.DBID) + !String.IsEmpty(ListItem.TvShowTitle)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.TvShowTitle])</onclick>
