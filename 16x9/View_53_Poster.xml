@@ -276,8 +276,9 @@
 				<visible>Control.IsVisible(53)</visible>
 				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
 				<top>770</top>
-				<left>80</left>
+				<left>174</left>
 				<height>200</height>
+				<width>PosterW</width>
 				<orientation>vertical</orientation>
 				<align>center</align>
 				<onright>53</onright>
@@ -288,7 +289,7 @@
 				<ondown>60</ondown>
 				<control type="button" id="707">		
 					<label>Info</label>
-					<width>PosterW</width>
+					<width>240</width>
 					<font>Button</font>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
@@ -296,7 +297,7 @@
 				</control>
 				<control type="button" id="708">		
 					<label>Trailer</label>
-					<width>PosterW</width>
+					<width>240</width>
 					<font>Button</font>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>

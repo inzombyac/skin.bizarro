@@ -973,50 +973,69 @@
 				<orientation>horizontal</orientation>
 				<itemgap>24</itemgap>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
+				<ondown condition="Control.IsVisible(50)">50</ondown>
+				<ondown condition="Control.IsVisible(516)">516</ondown>
+				<ondown condition="Control.IsVisible(52)">52</ondown>
+				<ondown condition="Control.IsVisible(53)">53</ondown>
+				<ondown condition="Control.IsVisible(54)">54</ondown>
+				<ondown condition="Control.IsVisible(55)">55</ondown>
+				<ondown condition="Control.IsVisible(56)">56</ondown>
+				<ondown condition="Control.IsVisible(57)">57</ondown>
+				<ondown condition="Control.IsVisible(58)">58</ondown>
+				<ondown condition="Control.IsVisible(59)">59</ondown>
+				<ondown condition="Control.IsVisible(500)">500</ondown>
+				<ondown condition="Control.IsVisible(513)">513</ondown>
+				<ondown condition="Control.IsVisible(514)">514</ondown>
+				<ondown condition="Control.IsVisible(515)">515</ondown>
+				<ondown condition="Control.IsVisible(505)">505</ondown>
+				<ondown condition="Control.IsVisible(506)">506</ondown>
+				<ondown condition="Control.IsVisible(517)">517</ondown>
+				<ondown condition="Control.IsVisible(518)">518</ondown>
+				<ondown condition="Control.IsVisible(300)">300</ondown>
+				<!-- onright -->
+				<onright condition="Player.HasMedia">7788</onright>
 				<control type="grouplist">
 					<orientation>horizontal</orientation>
 					<itemgap>0</itemgap>
 					<width>80</width>
 					<height>80</height>
-					<control type="button" id="3634">
+					<!-- Dummy to always set focus to first visible button -->
+					<control id="3634" type="button">
+						<width>0</width>
+						<height>0</height>
+						<label>-</label>
+						<onfocus>Right</onfocus>
+						<include>NoTextures</include>
+						<visible>!Control.HasFocus(3635) + !Control.HasFocus(3636)</visible>
+						<onup>300</onup>
+					</control>
+					<control type="button" id="3635">
+						<description>back button</description>
 						<width>80</width>
 						<height>80</height>
-						<onright condition="Player.HasMedia">7788</onright>
-						<onright condition="!Player.HasMedia">3634</onright>
-						<ondown condition="Control.IsVisible(50)">50</ondown>
-						<ondown condition="Control.IsVisible(516)">516</ondown>
-						<ondown condition="Control.IsVisible(52)">52</ondown>
-						<ondown condition="Control.IsVisible(53)">53</ondown>
-						<ondown condition="Control.IsVisible(54)">54</ondown>
-						<ondown condition="Control.IsVisible(55)">55</ondown>
-						<ondown condition="Control.IsVisible(56)">56</ondown>
-						<ondown condition="Control.IsVisible(57)">57</ondown>
-						<ondown condition="Control.IsVisible(58)">58</ondown>
-						<ondown condition="Control.IsVisible(59)">59</ondown>
-						<ondown condition="Control.IsVisible(500)">500</ondown>
-						<ondown condition="Control.IsVisible(513)">513</ondown>
-						<ondown condition="Control.IsVisible(514)">514</ondown>
-						<ondown condition="Control.IsVisible(515)">515</ondown>
-						<ondown condition="Control.IsVisible(505)">505</ondown>
-						<ondown condition="Control.IsVisible(506)">506</ondown>
-						<ondown condition="Control.IsVisible(517)">517</ondown>
 						<onclick>Back</onclick>
 						<font>Button</font>
 						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
 						<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
 						<visible>!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
 					</control>
-					<control type="button" id="3634">
+					<control type="button" id="3636">
 						<width>80</width>
 						<height>80</height>
-						<onright condition="Player.HasMedia">7788</onright>
-						<onright condition="!Player.HasMedia">3634</onright>
 						<ondown>300</ondown>
 						<onfocus>Menu</onfocus>
+						<onclick>Menu</onclick>
 						<font>Button</font>
 						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
 						<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
 						<visible>Window.IsActive(Home.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+					</control>
+					<control id="3637" type="button">
+						<width>0</width>
+						<height>0</height>
+						<label>-</label>
+						<onfocus>Down</onfocus>
+						<include>NoTextures</include>
 					</control>
 				</control>
 				<control type="group" description="iconbox">
