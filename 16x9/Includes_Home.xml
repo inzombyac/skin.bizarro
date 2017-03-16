@@ -2524,7 +2524,7 @@
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture background="true">$PARAM[image_type]</texture>
+				<texture background="true">$VAR[EmbyFocusedWidgetIcon]</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2961,7 +2961,7 @@
 				<property name="poster">special://skin/extras/defaulticonswide/cpu.png</property>
 				<property name="episodethumb">special://skin/extras/defaulticonswide/cpu2.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart">special://skin/extras/backgrounds/cpu.jpg</property>
+				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$LOCALIZE[401]: $INFO[System.CPUTemperature] • $LOCALIZE[13300]: $INFO[System.FanSpeed][CR]$LOCALIZE[12390]: $INFO[System.Uptime]</property>
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
@@ -2971,7 +2971,7 @@
 				<property name="poster">special://skin/extras/defaulticonswide/memory.png</property>
 				<property name="episodethumb">special://skin/extras/defaulticonswide/memory2.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart">special://skin/extras/backgrounds/memory.jpg</property>
+				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$LOCALIZE[22012]: $INFO[System.Memory(total)] • $LOCALIZE[158]: $INFO[System.Memory(free)]</property>
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
@@ -2982,7 +2982,7 @@
 				<property name="poster">special://skin/extras/defaulticonswide/network.png</property>
 				<property name="episodethumb">special://skin/extras/defaulticonswide/network2.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart">special://skin/extras/backgrounds/networking.jpg</property>
+				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">$INFO[Network.LinkState][CR]$LOCALIZE[443]: $INFO[System.InternetState]</property>
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
@@ -2992,7 +2992,7 @@
 				<property name="poster">special://skin/extras/defaulticonswide/display.png</property>
 				<property name="episodethumb">special://skin/extras/defaulticonswide/display2.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart">special://skin/extras/backgrounds/display.jpg</property>
+				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$INFO[System.ScreenResolution]</property>
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
@@ -3002,7 +3002,7 @@
 				<property name="poster">special://skin/extras/defaulticonswide/fps.png</property>
 				<property name="episodethumb">special://skin/extras/defaulticonswide/fps2.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart">special://skin/extras/backgrounds/fps.jpg</property>
+				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$INFO[System.FPS]</property>
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>

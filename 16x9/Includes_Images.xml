@@ -230,10 +230,21 @@
 		<value>$INFO[Container(4019).ListItem.Icon]</value>
 	</variable>
 	<!-- Center Widget Selection -->
+	<variable name="EmbyFocusedWidgetIcon">
+		<value condition="Container(300).Scrolling">common/null.png</value>
+		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4012)">$VAR[EmbyWidget2Icon]</value>
+		<value condition="Control.HasFocus(4016)">$VAR[EmbyWidget1Icon]</value>
+		<value condition="Control.HasFocus(4017)">$VAR[EmbyWidget2Icon]</value>
+		<value condition="Control.HasFocus(4018)">$VAR[EmbyWidget3Icon]</value>
+		<value>$VAR[FanartImage]</value>
+	</variable>
 	<variable name="EmbyWidget1Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
+		<value condition="String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes)">$VAR[FanartImage]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<value condition="system.getbool(videolibrary.showunwatchedplots)  +  String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<!-- Not needed until there is a good nextup plugin again -->
+		<!-- <value condition="system.getbool(videolibrary.showunwatchedplots)  +  String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value> -->
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>
@@ -246,7 +257,7 @@
 	<variable name="EmbyWidget3Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<value condition="system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
 		<value condition="String.IsEqual(Container(4018).ListItem.Property(DBTYPE),episode)">$INFO[ListItem.Icon]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
