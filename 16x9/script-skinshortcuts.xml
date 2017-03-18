@@ -451,7 +451,7 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-				<control type="button" id="9898" description="Emby Mode">
+				<!-- <control type="button" id="9898" description="Emby Mode">
 					<width>100%</width>
 					<height>66</height>
 					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
@@ -471,8 +471,8 @@
 					<onclick>Back</onclick>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<visible>Skin.HasSetting(menu.noemby) + String.IsEqual(Window.Property(groupname),mainmenu) + System.HasAddon(plugin.video.emby) + !String.IsEmpty(Container(211).ListItem.Label)</visible>
-				</control>
-				<control type="button" id="9899" description="Emby Mode Off">
+				</control> -->
+				<!-- <control type="button" id="9899" description="Emby Mode Off">
 					<width>100%</width>
 					<height>66</height>
 					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
@@ -492,7 +492,7 @@
 					<onclick>Back</onclick>
 					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					<visible>!Skin.HasSetting(menu.noemby) + String.IsEqual(Window.Property(groupname),mainmenu) + System.HasAddon(plugin.video.emby) + !String.IsEmpty(Container(211).ListItem.Label)</visible>
-				</control>
+				</control> -->
             </control> 
         </control>
     </controls>

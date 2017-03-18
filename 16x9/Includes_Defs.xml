@@ -1526,7 +1526,7 @@
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right3))">$INFO[Container(211).ListItem.Property(widgetPath.right3)]</value>
 	</variable>
 	<variable name="DefEmbyNodeRandomAction">
-		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Property(type)]&amp;folderid=random&amp;limit=25</value>
+		<value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Label2]&amp;folderid=random&amp;limit=25</value>
 	</variable>
 	<include name="MusicInfoTracklist">
 		<content type="static">

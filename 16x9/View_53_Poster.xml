@@ -274,6 +274,7 @@
 			<control type="grouplist" id="65">
 				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
 				<visible>Control.IsVisible(53)</visible>
+				<visible>!String.IsEmpty(ListItem.Label)</visible>
 				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
 				<top>770</top>
 				<left>174</left>
@@ -294,6 +295,7 @@
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
 					<onclick>RunScript(script.skin.helper.service,action=showinfo)</onclick>
+					<visible>Control.IsVisible(53)</visible>
 				</control>
 				<control type="button" id="708">		
 					<label>Trailer</label>

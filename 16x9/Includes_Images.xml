@@ -232,7 +232,7 @@
 	<!-- Center Widget Selection -->
 	<variable name="EmbyFocusedWidgetIcon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes) + String.IsEqual(Container(300).ListItem.Label2,tvshows)">$VAR[ThumbImage]</value>
 		<value condition="Control.HasFocus(4012)">$VAR[EmbyWidget2Icon]</value>
 		<value condition="Control.HasFocus(4016)">$VAR[EmbyWidget1Icon]</value>
 		<value condition="Control.HasFocus(4017)">$VAR[EmbyWidget2Icon]</value>
@@ -250,14 +250,12 @@
 	</variable>
 	<variable name="EmbyWidget2Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),movies)">$VAR[ThumbImage]</value>
 		<value>$VAR[ThumbImage]</value>
 	</variable>
 	<variable name="EmbyWidget3Icon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Label2,tvshows)">$VAR[ThumbImage]</value>
 		<value condition="String.IsEqual(Container(4018).ListItem.Property(DBTYPE),episode)">$INFO[ListItem.Icon]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
@@ -265,7 +263,7 @@
 	<variable name="EmbySubMenuImage">
 		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),homevideos) | String.IsEqual(Container(300).ListItem.Label2,homevideos)">special://skin/extras/backgrounds/video.jpg</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>common/null.png</value>
 	</variable>

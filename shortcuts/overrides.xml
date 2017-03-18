@@ -1,8 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <overrides>
+    <!-- Browsable shortcuts -->
+    <groupings>
+        <!-- <shortcut label="Smart Shortcuts" type="32010" icon="special://skin/extras/icons/title.png" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut> -->
+         <node label="32029">
+            <content>common</content>
+        </node>
+        <node label="Emby" condition="System.HasAddon(plugin.video.emby)">
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.title))">$INFO[Window(Home).Property(emby.nodes.0.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.1.title)]" type="$INFO[Window(Home).Property(emby.nodes.1.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.1.title))">$INFO[Window(Home).Property(emby.nodes.1.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.2.title)]" type="$INFO[Window(Home).Property(emby.nodes.2.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.2.title))">$INFO[Window(Home).Property(emby.nodes.2.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.3.title)]" type="$INFO[Window(Home).Property(emby.nodes.3.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.3.title))">$INFO[Window(Home).Property(emby.nodes.3.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.4.title)]" type="$INFO[Window(Home).Property(emby.nodes.4.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.4.title))">$INFO[Window(Home).Property(emby.nodes.4.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.5.title)]" type="$INFO[Window(Home).Property(emby.nodes.5.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.5.title))">$INFO[Window(Home).Property(emby.nodes.5.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.6.title)]" type="$INFO[Window(Home).Property(emby.nodes.6.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.6.title))">$INFO[Window(Home).Property(emby.nodes.6.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.7.title)]" type="$INFO[Window(Home).Property(emby.nodes.7.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.7.title))">$INFO[Window(Home).Property(emby.nodes.7.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.8.title)]" type="$INFO[Window(Home).Property(emby.nodes.8.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.8.title))">$INFO[Window(Home).Property(emby.nodes.8.path)]</shortcut>
+            <shortcut label="$INFO[Window(Home).Property(emby.nodes.9.title)]" type="$INFO[Window(Home).Property(emby.nodes.9.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.9.title))">$INFO[Window(Home).Property(emby.nodes.9.path)]</shortcut>
+        </node>
+        <node label="32030">
+            <content>video</content>
+            <node label="32040">
+                <content>playlist-video</content>
+            </node>
+            <node label="32010">
+                <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+                <content>addon-video</content>
+            </node>
+            <node label="32075">
+                <content>videosources</content>
+                <content>upnp-video</content>
+                <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
+                <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
+            </node>
+        </node>
+        <node label="32031">
+            <content>music</content>
+            <node label="32040">
+                <content>playlist-audio</content>
+            </node>
+            <node label="32011">
+                <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
+                <content>addon-audio</content>
+            </node>
+            <node label="32075">
+                <content>musicsources</content>
+                <content>upnp-music</content>
+            </node>
+        </node>
+        <node label="32017" condition="System.GetBool(pvrmanager.enabled)" version="13">
+            <content>pvr</content>
+            <node label="19023">
+                <content>pvr-tv</content>
+            </node>
+            <node label="19024">
+                <content>pvr-radio</content>
+            </node>
+        </node>
+        <node label="32017" condition="PVR.HasTVChannels">
+            <content>pvr</content>
+            <node label="19023">
+                <content>pvr-tv</content>
+            </node>
+        </node>
+        <node label="32087" condition="PVR.HasRadioChannels">
+            <content>radio</content>
+            <node label="19024">
+                <content>pvr-radio</content>
+            </node>
+        </node>
+        <node label="32020">
+            <content>picturesources</content>
+        </node>
+        <node label="32007">
+            <node label="32009">
+                <shortcut label="10001" type="32021" icon="DefaultAddonProgram.png">ActivateWindow(Programs,Addons,return)</shortcut>
+                <shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" condition="System.Platform.Android">ActivateWindow(Programs,androidapp://sources/apps,return)</shortcut>
+                <content>addon-program</content>
+            </node>
+            <node label="32010">
+                <shortcut label="1037" type="32014" icon="DefaultAddonVideo.png">ActivateWindow(Videos,Addons,return)</shortcut>
+                <content>addon-video</content>
+            </node>
+            <node label="32011">
+                <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
+                <content>addon-audio</content>
+            </node>
+            <node label="32012">
+                <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png">ActivateWindow(Pictures,Addons,return)</shortcut>
+                <content>addon-image</content>
+            </node>
+        </node>
+        <node label="32006">
+            <content>favourite</content>
+        </node>
+        <node label="10004">
+            <content>settings</content>
+        </node>
+        <node label="32054">
+            <shortcut label="20183" type="32054" icon="ReloadSkin.png">ReloadSkin()</shortcut>
+            <content>commands</content>
+        </node>
+    </groupings>
 
-	<!-- Limits Shortcuts to just this skin -->
-	<doNotShareMenu />
     <!-- Smart shortcuts -->
     <widget label="Smart Shortcuts" type="32010" icon="special://skin/extras/icons/title.png">||BROWSE||script.skin.helper.service/?action=widgets</widget>
     <!-- Playlist -->
@@ -25,11 +125,6 @@
     <widget label="$INFO[Skin.String(CustomWidget8)]" path="$INFO[Skin.String(CustomWidget8)]" condition="!String.IsEmpty(Skin.String(CustomWidget8))" icon="special://skin/extras/icons/bookmarks.png">Custom8</widget>
     <widget label="$INFO[Skin.String(CustomWidget9)]" path="$INFO[Skin.String(CustomWidget9)]" condition="!String.IsEmpty(Skin.String(CustomWidget9))" icon="special://skin/extras/icons/bookmarks.png">Custom9</widget>
     <widget label="$INFO[Skin.String(CustomWidget10)]" path="$INFO[Skin.String(CustomWidget10)]" condition="!String.IsEmpty(Skin.String(CustomWidget10))" icon="special://skin/extras/icons/bookmarks.png">Custom10</widget>
-
-    <!-- Additional Common Items -->
-    <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
-    <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
-    <shortcut label="Smart Shortcuts" type="32010">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut>    
 		
 	<!-- Type properties -->
 	<propertydefault labelID="info-window-home-property-emby-nodes-0-title" property="type">$INFO[Window(Home).Property(emby.nodes.0.type)]</propertydefault>

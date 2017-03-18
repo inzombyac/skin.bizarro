@@ -62,7 +62,7 @@
                 <!-- <label>$INFO[Container(9004).ListItem.IMDBNumber] $INFO[Container(4018).ListItem.Property(similartitle)]</label> -->
 				<!-- <label>$VAR[EmbyMainWidgetIcon]</label> -->
 				<!-- <label>$INFO[Container(300).ListItem.Property(defaultID)]</label> -->
-				<label>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground.Wall)]</label>
+				<label>$INFO[Container(300).ListItem.Label2]</label>
             </control>
             <control type="label">
                 <include>ControlID5</include>
@@ -294,12 +294,6 @@
 	</include>
 	<include name="EmbyMainWidgetContent">
 		<!--- Containers to test content-->
-		<control type="list" id="9003">
-			<content limit="1" sortby="random">$VAR[EmbyCollectionSource]</content>
-			<include>EmbyHiddenItemLayout</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(type),movies)</visible>
-			<onfocus>SetFocus(300)</onfocus>
-		</control>
 		<control type="list" id="9004">
 			<content>special://skin/extras/playlists/RandomMovie.xsp</content>
 			<onfocus>SetFocus(300)</onfocus>
@@ -380,7 +374,7 @@
 				<onclick condition="String.IsEqual(Skin.String(HomeItemDBType),tvshow)">ActivateWindow(Videos,videodb://tvshows/titles/$INFO[Container(4019).ListItem.DBID],return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),programs) + String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Programs,addons://sources/executable/,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),music)">ActivateWindow(Music,musicdb://albums/$INFO[Container(4019).ListItem.DBID],return)</onclick>
-				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),photos) + !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
+				<onclick condition="[String.IsEqual(Container(300).ListItem.Property(type),photos) | String.IsEqual(Container(300).ListItem.Label2,photos)]+ !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),channels) + !Integer.IsGreater(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
