@@ -90,7 +90,7 @@
 						<description>Title overlay</description>
 						<top>267</top>
 						<left>10</left>
-						<height>45</height>
+						<height>43</height>
 						<width>276</width>
 						<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
 						<include>Animation.FadeIn</include>		

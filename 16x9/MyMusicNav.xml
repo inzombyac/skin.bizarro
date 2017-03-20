@@ -13,6 +13,7 @@
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
         <include>View_50_List_Square</include>
+        <include>View_53_Poster</include>
         <include>View_516_BigWide</include>
 		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
 		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>

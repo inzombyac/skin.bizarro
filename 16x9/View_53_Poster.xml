@@ -3,7 +3,7 @@
 <includes>
 	<include name="53Content">
 		<height>1080</height>
-		<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://) | Container.Content(plugins) | Container.Content(addons)</visible>
+		<!-- <visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://) | Container.Content(plugins) | Container.Content(addons)</visible> -->
 		<posy>32</posy>
 		<posx>-190</posx>
 		<width>2300</width>
@@ -79,7 +79,7 @@
 					<visible>ListItem.IsResumable</visible>
 				</control>
 				<control type="group">
-					<visible>!ListItem.IsParentFolder</visible>
+					<visible>!ListItem.IsParentFolder + !Window.IsVisible(MyMusicNav.xml)</visible>
 					<control type="image">
 						<left>378</left>
 						<centertop>40</centertop>
@@ -273,7 +273,7 @@
 			</control>
 			<control type="grouplist" id="65">
 				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
-				<visible>Control.IsVisible(53)</visible>
+				<visible>Control.IsVisible(53) + [container.content(movies) | container.content(tvshows) | container.content(episodes) | container.content(seasons)]</visible>
 				<visible>!String.IsEmpty(ListItem.Label)</visible>
 				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
 				<top>770</top>

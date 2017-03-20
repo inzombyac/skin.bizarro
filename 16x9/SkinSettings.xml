@@ -427,15 +427,6 @@
 						<selected>Skin.HasSetting(furniture.hideresume)</selected>
 						<onclick>Skin.ToggleSetting(furniture.hideresume)</onclick>
 					</control>
-					<control type="radiobutton" id="92613" description="New indicator">
-						<width>1310</width>
-						<visible>ControlGroup(9100).HasFocus(9106)</visible>
-						<include>DefSettingsButton2</include>
-						<label>Do not show new indicator</label>
-						<visible>!Skin.HasSetting(furniture.hideindicators)</visible>
-						<selected>Skin.HasSetting(furniture.hidenew)</selected>
-						<onclick>Skin.ToggleSetting(furniture.hidenew)</onclick>
-					</control>
 					<!-- Extras -->
 					<control type="radiobutton" id="9272" description="Kiosk Mode">
 						<width>1310</width>

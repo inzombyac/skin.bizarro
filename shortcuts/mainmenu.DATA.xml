@@ -9,7 +9,7 @@
     </shortcut>
 	<shortcut>
         <label>Movies</label>
-        <label2>Common Shortcut</label2>
+        <label2>movies</label2>
         <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
@@ -106,14 +106,14 @@
 	</shortcut> -->
 	<shortcut>
         <label>Collections</label>
-        <label2>Common Shortcut</label2>
+        <label2>collections</label2>
         <defaultID>collection</defaultID>
         <icon>special://skin/extras/icons/shipping.png</icon>
         <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
     </shortcut>
 	<shortcut>
         <label>Music</label>
-        <label2>Common Shortcut</label2>
+        <label2>music</label2>
         <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
         <action>ActivateWindow(Music,musicdb://songs/)</action>
@@ -121,14 +121,14 @@
     </shortcut>
      <shortcut>
         <label>Live TV</label>
-        <label2>Common Shortcut</label2>
+        <label2>livetv</label2>
         <defaultID>livetv</defaultID>
         <icon>special://skin/extras/icons/livetv.png</icon>
         <action>ActivateWindow(tvguide)</action>
     </shortcut>
     <shortcut>
         <label>Extras</label>
-        <label2>Extended Info</label2>
+        <label2>channels</label2>
         <defaultID>channels</defaultID>
         <icon>special://skin/extras/icons/youtube.png</icon>
         <action>RunScript(script.extendedinfo)</action>
@@ -136,21 +136,21 @@
     </shortcut>
 	<shortcut>
         <label>Programs</label>
-        <label2>Common Shortcut</label2>
+        <label2>programs</label2>
         <defaultID>programs</defaultID>
         <icon>special://skin/extras/icons/rocket2.png</icon>
         <action>ActivateWindow(Programs,Addons,return)</action>
     </shortcut>
 	<shortcut>
         <label>Weather</label>
-        <label2>Common Shortcut</label2>
+        <label2>weather</label2>
         <defaultID>weather</defaultID>
         <icon>special://skin/extras/icons/sun.png</icon>
         <action>ActivateWindow(Weather)</action>
     </shortcut>
     <shortcut>
         <label>Settings</label>
-        <label2>Common Shortcut</label2>
+        <label2>settings</label2>
         <defaultID>settings</defaultID>
         <icon>special://skin/extras/icons/settings.png</icon>
         <action>ActivateWindow(Settings)</action>

@@ -829,11 +829,6 @@
 		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(VideoPlayer.EndTime)">$INFO[VideoPlayer.EndTime(hh:mm)]</value>
 		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(Player.FinishTime)">$INFO[Player.FinishTime(hh:mm)]</value>
 	</variable>
-	<variable name="VideoInfoButton8T">
-		<value condition="ListItem.IsResumable">$INFO[ListItem.PercentPlayed,Resume (,%)]</value>
-		<value condition="Integer.IsGreater(ListItem.PlayCount,0)">Watch Again</value>
-		<value>Watch Now</value>
-	</variable>
 	<variable name="ListItemSeasonVar">
 		<value condition="!Integer.IsGreater(ListItem.Season,9)">$INFO[ListItem.Season,0]</value>
 		<value>$INFO[ListItem.Season]</value>

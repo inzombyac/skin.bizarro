@@ -1,6 +1,6 @@
 <views>
     <view id="List" value="50" languageid="535" type="all"/>
-	<view id="Poster" value="53" languageid="31792" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,programs" />
+	<view id="Poster" value="53" languageid="31792" type="all" />
     <view id="Wall" value="55" languageid="31791" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
 	<view id="Wall Square" value="505" languageid="31794" type="artists,albums,songs,programs,addons" />
 	<view id="Wall Poster" value="506" languageid="31795" type="artists,albums,songs" />
