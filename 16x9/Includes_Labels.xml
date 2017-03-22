@@ -511,7 +511,7 @@
 		<value condition="String.IsEqual(Skin.String(FanartFade),Bright)">FanartFade2</value>
 		<value condition="String.IsEqual(Skin.String(FanartFade),Brighter)">FanartFade3</value>
 		<value condition="String.IsEqual(Skin.String(FanartFade),Brightest)">FanartFade4</value>
-		<value>FanartFade</value>
+		<value>FanartFade6</value>
 	</variable>
 	<variable name="Duration">
 		<value condition="String.IsEqual(ListItem.Duration,1)">1 minute</value>

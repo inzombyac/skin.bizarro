@@ -23,37 +23,37 @@
             	<ondown>10</ondown>
             	<top>80</top>
 	            <control type="button" id="4">
-					<include>DefSettingsButton2</include>
+					<include>DefSettingsButton3</include>
 					<label>Darkest</label>
 					<onclick>Skin.SetString(FanartFade,Darkest)</onclick>
 					<onclick>Back</onclick>
 				</control>
 				 <control type="button" id="5">
-					<include>DefSettingsButton2</include>
+					<include>DefSettingsButton3</include>
 					<label>Dark</label>
 					<onclick>Skin.SetString(FanartFade,Dark)</onclick>
 					<onclick>Back</onclick>
 				</control>
 				 <control type="button" id="6">
-					<include>DefSettingsButton2</include>
+					<include>DefSettingsButton3</include>
 					<label>Normal</label>
 					<onclick>Skin.SetString(FanartFade,Normal)</onclick>
 					<onclick>Back</onclick>
 				</control>
 				 <control type="button" id="7">
-					<include>DefSettingsButton2</include>
+					<include>DefSettingsButton3</include>
 					<label>Bright</label>
 					<onclick>Skin.SetString(FanartFade,Bright)</onclick>
 					<onclick>Back</onclick>
 				</control>
 				 <control type="button" id="8">
-					<include>DefSettingsButton2</include>
+					<include>DefSettingsButton3</include>
 					<label>Brighter</label>
 					<onclick>Skin.SetString(FanartFade,Brighter)</onclick>
 					<onclick>Back</onclick>
 				</control>
 				 <control type="button" id="9">
-					<include>DefSettingsButton2</include>
+					<include>DefSettingsButton3</include>
 					<label>Brightest</label>
 					<onclick>Skin.SetString(FanartFade,Brightest)</onclick>
 					<onclick>Back</onclick>
