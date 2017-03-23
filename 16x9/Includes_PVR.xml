@@ -158,6 +158,14 @@
 					<include>DefContextButton2</include>
 					<align>left</align>
 				</control>
+				<!-- Kodi Leia -->
+				<!-- <control type="button" id="10">
+					<label>20367</label>
+					<description>Watched/Unwatched Toggle</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
+				</control> -->
 				<control type="button" id="31">
 					<description>Filter</description>
 					<label>587</label>
