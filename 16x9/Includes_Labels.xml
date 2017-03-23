@@ -143,7 +143,7 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">TV Channels</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">Music Spotlight</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">In Theaters</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),collection)">Collections</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),collection)"> Collections</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">Weather</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),programs)">Programs</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">Kodi Information</value>

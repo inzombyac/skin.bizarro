@@ -157,7 +157,7 @@
 				<label>$VAR[EmbyWidgetLabel]</label>
 				<include>Animation.DelayFadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>!Container(300).Scrolling + !Container(4019).IsUpdating</visible>
+				<visible>!Container(300).Scrolling</visible>
 			</control>
 			<include>EmbyMainWidgetContent</include>
 			<!-- Side Widgets  -->
@@ -176,23 +176,24 @@
 			<onright condition="!Control.IsVisible(4016) + Control.IsVisible(4017)">4017</onright>
 			<onright condition="!Control.IsVisible(4016) + !Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
 			<left>SidePad</left>
-			<posy>830</posy>
-			<height>226</height>
+			<!-- <posy>827</posy> -->
+			<posy>850</posy>
+			<height>240</height>
 			<orientation>horizontal</orientation>
 			<scrolltime>200</scrolltime>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<itemlayout width="288" height="226">				
+			<itemlayout width="288" height="240">				
 				<control type="image">
 					<width>280</width>
-					<height>186</height>
+					<height>200</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
 				<control type="image">
 					<width>280</width>
-					<height>186</height>
+					<height>200</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="common/opaque2.png">$VAR[EmbySubMenuImage]</texture>
 					<include>Animation.FadeIn</include>
@@ -200,14 +201,14 @@
 				</control>
 				<control type="image">
 					<description>Title overlay</description>
-					<top>146</top>
+					<top>160</top>
 					<height>40</height>
 					<width>280</width>
 					<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
 					<include>Animation.FadeIn</include>				
 				</control>
 				<control type="label">
-					<top>146</top>
+					<top>160</top>
 					<height>40</height>
 					<width>280</width>
 					<align>center</align>
@@ -219,17 +220,17 @@
 					<include>Animation.FadeOut</include>
 				</control>
 			</itemlayout>
-			<focusedlayout width="288" height="226">
+			<focusedlayout width="288" height="240">
 				<control type="image">
 					<width>280</width>
-					<height>186</height>
+					<height>200</height>
 					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
 				<control type="image">
 					<width>280</width>
-					<height>186</height>
+					<height>200</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
 					<texture background="true" fallback="common/opaque2.png">$VAR[EmbySubMenuImage]</texture>
 					<include>Animation.FadeIn</include>
@@ -237,14 +238,14 @@
 				</control>
 				<control type="image">
 					<description>Title overlay</description>
-					<top>146</top>
+					<top>160</top>
 					<height>40</height>
 					<width>280</width>
 					<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
 					<include>Animation.FadeIn</include>		
 				</control>
 				<control type="label">
-					<top>146</top>
+					<top>160</top>
 					<height>40</height>
 					<width>280</width>
 					<align>center</align>
@@ -257,7 +258,7 @@
 				</control>
 				<control type="image">
 					<width>284</width>
-					<height>186</height>
+					<height>200</height>
 					<texture colordiffuse="$VAR[ColorHighlight]" border="20">common/selectbox.png</texture>
 					<visible>Control.HasFocus(302)</visible>
 				</control>
@@ -284,7 +285,7 @@
 			<description>Widget</description>
 			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),collection)</visible>
 			<top>330</top>
-			<left>78</left>
+			<left>SidePad</left>
 			<width>1764</width>
 			<height>766</height>
 			<onup>300</onup>
@@ -370,7 +371,7 @@
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>Integer.IsGreater(Container(4019).NumItems,0)</visible>
+				<!-- <visible>Integer.IsGreater(Container(4019).NumItems,0)</visible> -->
 				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
 			<control type="progress">
@@ -1320,10 +1321,10 @@
 		<param name="triple_widget_width" default="756"/>
 		<param name="double_widget_width" default="504"/>
 		<param name="single_widget_width" default="252"/>
-		<param name="widget_height">366</param>
+		<param name="widget_height">368</param>
 		<param name="item_width">234</param>
-		<param name="item_height">351</param>
-		<param name="overlay_bottom">15</param>
+		<param name="item_height">352</param>
+		<param name="overlay_bottom">16</param>
 		<param name="widget_left" default="964"/>
 		<param name="widget_label_left" default="974"/>
 		<param name="scroll_left" default="1734"/>
@@ -1355,7 +1356,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1373,6 +1374,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2TVShows]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)</visible>
@@ -1386,7 +1388,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1404,6 +1406,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Movies]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),movies)</visible>
@@ -1417,7 +1420,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1435,6 +1438,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2LiveTV]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -1448,7 +1452,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<onleft condition="Control.IsVisible(4016)">4016</onleft>
@@ -1465,6 +1469,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Channels]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
@@ -1478,7 +1483,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1496,6 +1501,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby0]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)</visible>
@@ -1509,7 +1515,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1527,6 +1533,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby1]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)</visible>
@@ -1540,7 +1547,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1558,6 +1565,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby2]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)</visible>
@@ -1571,7 +1579,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1589,6 +1597,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby3]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)</visible>
@@ -1602,7 +1611,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1620,6 +1629,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby4]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)</visible>
@@ -1633,7 +1643,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1651,6 +1661,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby5]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)</visible>
@@ -1664,7 +1675,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1682,6 +1693,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby6]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)</visible>
@@ -1695,7 +1707,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1713,6 +1725,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby7]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)</visible>
@@ -1726,7 +1739,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1744,6 +1757,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby8]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)</visible>
@@ -1757,7 +1771,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1775,6 +1789,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Emby9]</content>
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
@@ -1788,7 +1803,7 @@
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
 					<width>$PARAM[quadruple_widget_width]</width>
-					<height>732</height>
+					<height>736</height>
 					<onup>300</onup>
 					<ondown>4017</ondown>
 					<pagecontrol>40170</pagecontrol>
@@ -1806,6 +1821,7 @@
 						<param name="item_width">$PARAM[item_width]</param>
 						<param name="widget_height">$PARAM[widget_height]</param>
 						<param name="item_height">$PARAM[item_height]</param>
+						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
 					</include>
 					<content limit="8" target="videos">$VAR[DefWidgetRight2Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),music) + 
