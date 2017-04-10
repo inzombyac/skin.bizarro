@@ -529,7 +529,8 @@
             </control>
 			<control type="label">
                 <include>ControlID5</include>
-                <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label>
+                <!-- <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label> -->
+                <label>$INFO[Container.TotalUnWatched] $INFO[Control.GetLabel(3), • ,]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
             </control>
 			

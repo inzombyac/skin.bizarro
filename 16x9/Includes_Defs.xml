@@ -573,7 +573,6 @@
 			<description>Watched Toggle</description>
 			<include>DefContextButtonToggle</include>
 			<align>left</align>
-			<label>20367</label>
 		</control>
 		<control type="group" id="9090">
 			<height>70</height>

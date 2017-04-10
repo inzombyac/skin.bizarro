@@ -870,10 +870,12 @@
 		<value condition="Window.IsVisible(DialogMusicInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Label]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(seasons) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/)">$INFO[Container.FolderName]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
+		
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml)">$LOCALIZE[3]</value>
@@ -916,8 +918,9 @@
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Genre, • ,]</value>
 		<value condition="Window.IsVisible(1102)">$INFO[System.CurrentControl]</value>
 		<value condition="Window.IsVisible(1101)">$INFO[System.CurrentControl]</value>
-		<value condition="Container.Content(songs) + Integer.IsGreater(ListItem.TrackNumber, 0) + Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]$INFO[ListItem.Genre, • ,]</value>
-		<value condition="Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]$INFO[ListItem.Genre, • ,]</value>
+		<value condition="Container.Content(songs) + Integer.IsGreater(ListItem.TrackNumber, 0) + Integer.IsLess(ListItem.TrackNumber,10)">$INFO[ListItem.TrackNumber,0, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(songs) + !Integer.IsEqual(ListItem.TrackNumber, 0)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
+		<value condition="Container.Content(songs)">$INFO[ListItem.Title]$INFO[ListItem.Album, • ,]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.TrackNumber,, • ]$INFO[ListItem.Album]$INFO[ListItem.Year, (,)]$INFO[ListItem.Artist, • ,]$INFO[ListItem.Genre, • ,]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-YoutubeList.xml)">$INFO[Window.Property(Filter_Label),, ]$INFO[Window.Property(TotalItems),, $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31242]</value>
@@ -926,9 +929,10 @@
 		<value condition="Window.IsVisible(DialogVideoInfo.xml) + Container.Content(tvshows)">[COLOR Black300]Premiered:[/COLOR] $INFO[ListItem.Premiered]</value>
 		<value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
 		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]$INFO[Control.GetLabel(28), • ,]</value>
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + !Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)  + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]</value>
+		<!-- <value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value> -->
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + !Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)  + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
 		<value condition="!String.IsEmpty(Container(9500).NumItems) + !Window.IsVisible(home) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container(9500).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
 		<value condition="Window.IsVisible(MyWeather.xml) + !String.IsEmpty(Window(Weather).Property(Location))">[COLOR=$VAR[ColorHighlight]]$INFO[Weather.Temperature,,[/COLOR] ]$INFO[Window(Weather).Property(Location)]</value>
 		<value condition="String.IsEmpty(Pvr.BackendChannels)">[COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Movies.Count)][/COLOR] $LOCALIZE[20342] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(TVShows.Count)][/COLOR] $LOCALIZE[20343] • [COLOR=$VAR[ColorHighlight]]$INFO[Window(home).Property(Music.AlbumsCount)][/COLOR] $LOCALIZE[132]</value>
@@ -1066,6 +1070,15 @@
 						<visible>Window.IsVisible(DialogBusy.xml)</visible>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 					</control>
+					<control type="button" id="8304">
+						<width>80</width>
+						<height>80</height>
+						<ondown>300</ondown>
+						<onclick>Menu</onclick>
+						<font>Button</font>
+						<texturefocus>common/null.png</texturefocus>
+						<texturenofocus>common/null.png</texturenofocus>
+					</control>
 				</control>
 				<control type="group">
 					<control type="label">
@@ -1075,18 +1088,83 @@
 						<textcolor>Dark1</textcolor>
 						<label>$VAR[MainHeaderLabel]</label>
 					</control>
-					<control type="label">
-						<centertop>58</centertop>
-						<font>Flag</font>
+					<control type="grouplist">
+						<top>42</top>
+						<height>36</height>
 						<width>1350</width>
-						<textcolor>Dark2</textcolor>
-						<label>$VAR[SubHeaderLabel]</label>
+						<orientation>horizontal</orientation>
+						<itemgap>5</itemgap>
+						<control type="image">
+							<height>36</height>
+							<width>36</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon1]</texture>
+							<visible>!String.IsEmpty(Container.SortOrder)</visible>
+						</control>
+						<control type="image">
+							<height>36</height>
+							<width>36</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon2]</texture>
+							<visible>!String.IsEmpty(Container.SortMethod)</visible>
+						</control>
+						<!-- <control type="image">
+							<height>52</height>
+							<width>32</width>
+							<aspectratio aligny="center">keep</aspectratio>
+							<texture colordiffuse="Dark1">flags\sort\sort_watched.png</texture>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
+						</control> -->
+						<control type="button" id="9874">
+							<width>36</width>
+							<height>36</height>
+							<ondown>300</ondown>
+							<onclick>Menu</onclick>
+							<font>Button</font>
+							<texturefocus colordiffuse="Dark1">flags\sort\sort_unwatched.png</texturefocus>
+							<texturenofocus colordiffuse="Dark1">flags\sort\sort_unwatched.png</texturenofocus>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
+						</control>
+						<control type="button" id="9875">
+							<width>36</width>
+							<height>36</height>
+							<ondown>300</ondown>
+							<onclick>Menu</onclick>
+							<font>Button</font>
+							<texturefocus colordiffuse="Dark1">flags\sort\sort_watched.png</texturefocus>
+							<texturenofocus colordiffuse="Dark1">flags\sort\sort_watched.png</texturenofocus>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
+						</control>
+						<control type="button" id="9876">
+							<width>36</width>
+							<height>36</height>
+							<ondown>300</ondown>
+							<onclick>Menu</onclick>
+							<font>Button</font>
+							<texturefocus colordiffuse="Dark1">flags\sort\filtered.png</texturefocus>
+							<texturenofocus colordiffuse="Dark1">flags\sort\filtered.png</texturenofocus>
+							<visible>Container.Filtered</visible>
+						</control>
+						<control type="image">
+							<height>10</height>
+							<width>10</width>
+							<aspectratio>keep</aspectratio>
+							<texture>common\null.png</texture>
+							<visible>!String.IsEmpty(Container.SortOrder) | Container.Filtered</visible>
+						</control>
+						<control type="label">
+							<height>32</height>
+							<font>Flag</font>
+							<width>auto</width>
+							<textcolor>Dark2</textcolor>
+							<label>$VAR[SubHeaderLabel]</label>
+						</control>
 					</control>
 					<control type="label">
 						<centertop>88</centertop>
 						<font>Flag</font>
 						<width>1350</width>
-						<textcolor>Dark3</textcolor>
+						<textcolor>$VAR[ColorHighlight2]</textcolor>
 						<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
 					</control>
 				</control>

@@ -309,4 +309,37 @@
 		<value condition="String.IsEqual(ListItem.Property(Addon.Status),Enabled)">special://skin/extras/icons/shipping.png</value>
 		<value>special://skin/extras/icons/warning.png</value>
 	</variable>
+	<variable name="SubHeaderIcon1">
+		<value condition="String.IsEqual(Container.SortOrder, Ascending)">flags\sort\sort_asc.png</value>
+		<value condition="String.IsEqual(Container.SortOrder, Descending)">flags\sort\sort_desc.png</value>
+		<value condition="!String.IsEmpty(Container.SortOrder)">flags\sort\sort_desc.png</value>
+	</variable>
+	<variable name="SubHeaderIcon2">
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369])">flags\sort\sort_AZ.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[551])">flags\sort\sort_AZ.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[36906])">flags\sort\sort_09.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[36907])">flags\sort\sort_09.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[568])">flags\sort\sort_watched.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[562])">flags\sort\sort_date.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[563])">flags\sort\sort_rating.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[38018])">flags\sort\sort_favorite.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[570])">flags\sort\sort_new.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[20074])">flags\sort\sort_MPAA.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[20368])">flags\sort\sort_num_list.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[552])">flags\sort\sort_date.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[567])">flags\sort\sort_play.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[180])">flags\sort\sort_duration.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[554])">flags\sort\sort_09.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[36918])">flags\sort\sort_album.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">flags\sort\sort_artist.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[578])">flags\sort\sort_artist_year.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[515])">flags\sort\sort_genre.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[289])">flags\sort\sort_size.png</value>
+		<value condition="String.IsEqual(Container.SortMethod, $LOCALIZE[561])">flags\sort\sort_file.png</value>
+		<!--Control.GetLabel(3), Control.GetLabel(28)</value> -->
+	</variable>
+	<variable name="SubHeaderIcon3">
+		<value condition="String.IsEqual($INFO[Container.NumItems], $INFO[Container.TotalUnWatched])">flags\sort\sort_watched.png</value>
+		<!--Control.GetLabel(3), Control.GetLabel(28)</value> -->
+	</variable>
 </includes>
