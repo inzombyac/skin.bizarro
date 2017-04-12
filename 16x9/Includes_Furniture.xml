@@ -1089,21 +1089,21 @@
 						<label>$VAR[MainHeaderLabel]</label>
 					</control>
 					<control type="grouplist">
-						<top>42</top>
-						<height>36</height>
+						<top>44</top>
+						<height>32</height>
 						<width>1350</width>
 						<orientation>horizontal</orientation>
 						<itemgap>5</itemgap>
 						<control type="image">
-							<height>36</height>
-							<width>36</width>
+							<height>32</height>
+							<width>32</width>
 							<aspectratio aligny="center">keep</aspectratio>
 							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon1]</texture>
 							<visible>!String.IsEmpty(Container.SortOrder)</visible>
 						</control>
 						<control type="image">
-							<height>36</height>
-							<width>36</width>
+							<height>32</height>
+							<width>32</width>
 							<aspectratio aligny="center">keep</aspectratio>
 							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon2]</texture>
 							<visible>!String.IsEmpty(Container.SortMethod)</visible>
@@ -1116,8 +1116,8 @@
 							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
 						</control> -->
 						<control type="button" id="9874">
-							<width>36</width>
-							<height>36</height>
+							<width>32</width>
+							<height>32</height>
 							<ondown>300</ondown>
 							<onclick>Menu</onclick>
 							<font>Button</font>
@@ -1126,8 +1126,8 @@
 							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
 						</control>
 						<control type="button" id="9875">
-							<width>36</width>
-							<height>36</height>
+							<width>32</width>
+							<height>32</height>
 							<ondown>300</ondown>
 							<onclick>Menu</onclick>
 							<font>Button</font>
@@ -1136,8 +1136,8 @@
 							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
 						</control>
 						<control type="button" id="9876">
-							<width>36</width>
-							<height>36</height>
+							<width>32</width>
+							<height>32</height>
 							<ondown>300</ondown>
 							<onclick>Menu</onclick>
 							<font>Button</font>
