@@ -22,7 +22,7 @@
     <shortcut>
         <label>$LOCALIZE[31175]</label>
         <label2>Movie Hub Shortcut</label2>
-        <action>PlayMedia(special://skin/extras/playlists/RandomMovies.xsp)</action>
+        <action>ActivateWindow(Videos,special://skin/extras/playlists/RandomMovies.xsp, return)</action>
         <icon>special://skin/extras/icons/signpost.png</icon>
     </shortcut>
     <shortcut>

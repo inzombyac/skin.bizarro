@@ -38,11 +38,11 @@
 	<shortcut>
 		<defaultID>random</defaultID>
 		<label>Random</label>
-		<label2>TV/Movies Only</label2>
+		<label2>TV Only</label2>
 		<icon>special://skin/extras/icons/emby_diff.png</icon>
 		<thumb>special://skin/extras/backgrounds/Splash.jpg</thumb>
 		<action>ActivateWindow(Videos,$VAR[DefEmbyNodeRandomAction],return)</action>
-		<visible>[!StringCompare(Window(Home).Property(emby.nodes.7.type),photos) + !StringCompare(Window(Home).Property(emby.nodes.7.type),homevideos)] | Window.IsVisible(script-skinshortcuts.xml)</visible>
+		<visible>StringCompare(Window(Home).Property(emby.nodes.7.type),tvshows) | Window.IsVisible(script-skinshortcuts.xml)</visible>
 	</shortcut>
 	<shortcut>
 		<defaultID>info-window-home-property-emby-nodes-7-title</defaultID>
