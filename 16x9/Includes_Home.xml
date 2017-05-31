@@ -42,7 +42,7 @@
                 <include>ControlID5</include>
                 <!-- <label>$LOCALIZE[31002]</label> -->
               <!--   <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label> -->
-              <label>$INFO[Container(300).ListItem.FileNameAndPath)]</label>
+              <label>$INFO[Container(300).ListItem.FileNameAndPath]</label>
             </control>
 		</control>
 	</include>
