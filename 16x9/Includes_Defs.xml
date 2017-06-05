@@ -120,7 +120,7 @@
 		<textoffsetx>0</textoffsetx>
 		<textcolor>Black70</textcolor>
 		<focusedcolor>$VAR[ColourSelected]</focusedcolor>
-		<radioposx>320</radioposx>
+		<radioposx>250</radioposx>
 		<radioposy>22</radioposy>
 	</include>
 	<include name="DefContextButton">
