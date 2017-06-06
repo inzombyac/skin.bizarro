@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window>
+	<zorder>20</zorder>
     <controls>
         <include>GlobalOverlay</include>
         <control type="group">
