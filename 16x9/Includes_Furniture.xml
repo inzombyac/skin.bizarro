@@ -801,7 +801,7 @@
 		</control>
 	</include>
 	<variable name="HeaderIcon">
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))">$VAR[SystemAvatar]</value>
+		<value condition="Window.IsVisible(Home)">$VAR[SystemAvatar]</value>
 		<value condition="Window.IsVisible(Home)+!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)">common/null.png</value>
 		<value condition="Player.Muted">special://skin/extras/icons/mute.png</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
@@ -1055,6 +1055,7 @@
 						<height>80</height>
 						<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
+						<aspectratio aligny="center">stretch</aspectratio>
 					</control>
 					<control type="label">
 						<centertop>39</centertop>

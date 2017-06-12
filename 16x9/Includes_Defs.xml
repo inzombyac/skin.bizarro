@@ -366,8 +366,8 @@
 			<top>-12</top>
 			<width>475</width>
 			<height>1104</height>
-			<texturefocus border="12">common/rounded-shadow8.png</texturefocus>
-			<texturenofocus border="12">common/rounded-shadow8.png</texturenofocus>
+			<texturefocus border="12">diffuse/sideblade.png</texturefocus>
+			<texturenofocus border="12">diffuse/sideblade.png</texturenofocus>
 			<colordiffuse>Light1</colordiffuse>
 		</control>
 		<control type="group">
@@ -379,7 +379,7 @@
 				<aligny>center</aligny>
 				<texture diffuse="common/circle.png" border="1">$VAR[SystemAvatar]</texture>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				<aspectratio>keep</aspectratio>
+				<aspectratio>stretch</aspectratio>
 				<align>left</align>
 			</control>
 			<control type="image">
