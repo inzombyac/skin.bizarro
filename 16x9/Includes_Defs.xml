@@ -377,6 +377,14 @@
 				<width>70</width>
 				<height>70</height>
 				<aligny>center</aligny>
+				<texture colordiffuse="Panel" border="0">common/circle.png</texture>
+			</control>
+			<control type="image">
+				<left>40</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<aligny>center</aligny>
 				<texture diffuse="common/circle.png" border="1">$VAR[SystemAvatar]</texture>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<aspectratio>stretch</aspectratio>
@@ -1194,18 +1202,6 @@
 		<value condition="!String.IsEmpty(Skin.String(MovieHubWidget))">$INFO[Skin.String(MovieHubWidget)]</value>
 		<value>special://skin/extras/playlists/RandomMovies.xsp</value>
 	</variable>
-	<variable name="DefMovieDBMoviesContent">
-		<value condition="String.IsEqual(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
-		<value condition="String.IsEqual(Window(1104).Property(content),2)">plugin://script.extendedinfo?info=popularmovies</value>
-		<value condition="String.IsEqual(Window(1104).Property(content),3)">plugin://script.extendedinfo?info=comingsoonmovies</value>
-		<value>plugin://script.extendedinfo?info=incinemamovies</value>
-	</variable>
-	<variable name="DefMovieDBEpisodesContent">
-		<value condition="String.IsEqual(Window(1105).Property(content),1)">plugin://script.extendedinfo?info=topratedtvshows</value>
-		<value condition="String.IsEqual(Window(1105).Property(content),2)">plugin://script.extendedinfo?info=populartvshows</value>
-		<value condition="String.IsEqual(Window(1105).Property(content),3)">plugin://script.extendedinfo?info=onairtvshows</value>
-		<value>plugin://script.extendedinfo?info=airingtodaytvshows</value>
-	</variable>
 	<include name="DefInfoButtons">
 		<font>Button</font>
 		<textcolor>Dark2</textcolor>
@@ -1394,7 +1390,6 @@
 		<value>plugin://script.skin.helper.widgets/?action=nextaired&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidgetRight2Channels">
-		<!-- <value>plugin://script.extendedinfo?info=anticipatedshows</value> -->
 		<value>plugin://script.extendedinfo?info=trendingshows</value>
 	</variable>
 	<!-- <variable name="DefWidgetRight2Music">

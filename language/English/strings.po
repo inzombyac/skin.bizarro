@@ -46,6 +46,11 @@ msgctxt "#31005"
 msgid "YouTube"
 msgstr ""
 
+#: /16x9/Includes_Home.xml
+msgctxt "#31006"
+msgid "Loading home content.  Please wait..."
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

@@ -8,8 +8,6 @@
 	<onload condition="System.HasAddon(script.videoextras)">RunScript(script.videoextras,check,"$INFO[ListItem.FilenameAndPath]")</onload>
 	<controls>
 		<control type="group">
-			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
-			<visible>!Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 			<left>SidePad</left>
 			<top>180</top>
 			<include>DialogVideoInfoAnimation</include>
@@ -198,7 +196,7 @@
 					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
 					<label>$LOCALIZE[31005]</label>
 					<visible>String.IsEmpty(ListItem.Trailer)</visible>
-					<visible>!Container.Content(tvshows)+!Container.Content(episodes)</visible>
+					<visible>!Container.Content(tvshows)+ !Container.Content(episodes)+ !String.IsEmpty(ListItem.DBID)</visible>
 				</control>
 				<!--Extended Info Button -->
 				<control type="button" id="1007">
@@ -207,7 +205,6 @@
 					<label>$LOCALIZE[31242]</label>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-					<onclick condition="!System.HasAddon(script.extendedinfo)">ActivateWindow(Videos,plugin://script.extendedinfo)</onclick>
 					<onclick condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[ListItem.DBID],name=$INFO[ListItem.Title])</onclick>
 					<onclick condition="!String.IsEmpty(ListItem.DBID) + !String.IsEmpty(ListItem.TvShowTitle)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.TvShowTitle])</onclick>
 					<onclick condition="!String.IsEmpty(ListItem.DBID) + String.IsEmpty(ListItem.TvShowTitle)">RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[ListItem.Title])</onclick>
@@ -378,7 +375,7 @@
 					<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 					<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 					<top>30</top>
-					<visible>[Control.HasFocus(5051) | Control.HasFocus(50)]</visible>
+					<visible>System.hasAddon(script.extendedinfo) + [Control.HasFocus(5051) | Control.HasFocus(50)]</visible>
 					<itemlayout height="380" width="270">		
 						<control type="image">
 							<left>10</left>

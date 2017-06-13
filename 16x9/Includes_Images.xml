@@ -261,7 +261,8 @@
 	<variable name="SystemAvatar">
 		<value condition="Control.HasFocus(9265)">common/black.png</value>
 		<value condition="System.HasAddon(plugin.video.emby) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
-		<value>$INFO[System.ProfileThumb]</value>
+		<value condition="!String.IsEqual(System.ProfileThumb,DefaultUser.png)">$INFO[System.ProfileThumb]</value>
+		<value>special://skin/extras/icons/kodi.png</value>
 	</variable>
 	<variable name="RottenTomato">
 		<value condition="String.IsEmpty(Window(Home).Property(SkinHelper.RottenTomatoesMeter))">common/null.png</value>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
+	<include name="HomePreLoad">
+		<!-- Show something if loading content -->
+	</include>
 	<include name="Furniture_RSS">
 		<control type="group">
 			<visible>!Player.HasMedia</visible>
@@ -22,7 +25,7 @@
 	<include name="DebugGridHome">
 		 <control type="group">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
-			 <visible>Skin.HasSetting(DebugGrid)</visible>
+			<visible>Skin.HasSetting(DebugGrid)</visible>
             <control type="label">
                 <include>ControlID2</include>
                 <label>$VAR[DebugControlLabel2]</label>
@@ -160,6 +163,7 @@
 				<include>Animation.FadeOut</include>
 				<visible>!Container(300).Scrolling</visible>
 			</control>
+			<include>HomePreLoad</include>
 			<include>EmbyMainWidgetContent</include>
 			<!-- Side Widgets  -->
 			<include>EmbyRightWidgetPanel1</include>
@@ -171,6 +175,7 @@
 	</include>
 	<include name="EmbyBottomSubMenuPanel">
 		<control type="panel" id="302">
+			<visible>!Container(4019).IsUpdating</visible>
 			<width>864</width>
 			<onup>4012</onup>
 			<onright condition="Control.IsVisible(4016)">4016</onright>
@@ -354,19 +359,7 @@
 				<onclick condition="[String.IsEqual(Container(300).ListItem.Property(type),photos) | String.IsEqual(Container(300).ListItem.Label2,photos)]+ !String.IsEmpty(Container(4019).ListItem.FileNameAndPath)">ActivateWindow(Pictures,$INFO[Container(4019).ListItem.FileNameAndPath],return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
-				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),channels) + !Integer.IsGreater(Container(4019).ListItem.DBID, -1)">RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[Container(4019).ListItem.Label])</onclick>
-				<!-- <oninfo>RunScript(script.skin.helper.service,action=showinfo)</oninfo> -->
-			</control>	
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
-				<include>Animation.FadeIn</include>
-			</control>
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture colordiffuse="Dark4">special://skin/extras/backgrounds/Channels2.jpg</texture>
-				<include>Animation.FadeIn</include>
-			</control>			
+			</control>		
 			<control type="image">
 				<aspectratio>scale</aspectratio>
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>
@@ -2322,7 +2315,7 @@
 				<height>78</height>
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
-				<visible>!Container(300).Scrolling</visible>
+				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>

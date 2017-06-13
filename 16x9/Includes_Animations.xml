@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <includes>
 	<include name="Animation.Common">
-		<visible>!Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRRecordingInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) + !Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml)</visible>
+		<visible>!Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(DialogPVRRecordingInfo.xml) + !Window.IsVisible(DialogPVRGuideInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 		<animation type="WindowOpen" reversible="false">
 			<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" />
 			<effect type="zoom" start="50" end="100" time="300" center="auto" tween="quadratic" easing="out" />
@@ -97,9 +97,6 @@
 	<include name="Animation.FurnitureFadeInOut">
 		<animation effect="fade" start="0" end="100" time="350" tween="cubic" easing="inout">Visible</animation>
 		<animation effect="fade" end="0" start="100" time="150">Hidden</animation>
-	</include>
-	<include name="Animation.FurnitureFadeInOutExtended">
-		<animation effect="fade" start="100" end="33" time="3500" delay="100" tween="cubic" easing="inout" condition="Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml) |  Window.IsVisible(script-ExtendedInfo Script-VideoList.xml)">WindowOpen</animation>
 	</include>
 	<!-- Dialog video info animation -->
 	<include name="DialogVideoInfoAnimation">

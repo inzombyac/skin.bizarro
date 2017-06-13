@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<shortcuts>
+	<shortcut>
+        <defaultID>Video Addons</defaultID>
+        <label2>videoaddons</label2>
+        <label>Video Addons</label>
+        <icon>special://skin/extras/icons/addons.png</icon>
+        <action>ActivateWindow(videos, addons://sources/video/)</action>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</thumb>
+    </shortcut>
+    <shortcut>
+        <defaultID>TV Hub</defaultID>
+        <label2>tvshows</label2>
+        <label>TV Hub</label>
+        <icon>special://skin/extras/icons/tv.png</icon>
+        <action>ActivateWindow(1102)</action>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</thumb>
+    </shortcut>
+    <shortcut>
+        <defaultID>Movie Hub</defaultID>
+		<label2>movies</label2>
+        <label>31192</label>
+        <thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</thumb>
+		<icon>special://skin/extras/icons/film.png</icon>
+        <action>ActivateWindow(1101)</action>
+    </shortcut>
+	<shortcut>
+        <defaultID>collections</defaultID>
+		<label2>movies</label2>
+        <label>Collections</label>
+        <thumb>special://skin/extras/backgrounds/sets.jpg</thumb>
+		<icon>special://skin/extras/icons/sets.png</icon>
+        <action>ActivateWindow(Videos,videodb://movies/sets/,return)</action>
+    </shortcut>
+</shortcuts>

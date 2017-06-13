@@ -218,28 +218,6 @@
 			<disabledcolor>White12</disabledcolor>
 		</control>
 	</include>
-	<include name="OSDExtraInfoTV">
-		<control type="button" id="4">
-			<description>Info</description>
-			<label>31147</label>
-			<align>right</align>
-			<include>DefOSDButtons</include>
-			<onclick>Close</onclick>
-			<onclick>RunScript(script.extendedinfo,info=extendedtvinfo,name=$INFO[VideoPlayer.TvShowTitle])</onclick>
-			<disabledcolor>White12</disabledcolor>
-		</control>
-	</include>
-	<include name="OSDExtraInfoMOVIES">
-		<control type="button" id="4">
-			<description>Info</description>
-			<label>31147</label>
-			<align>right</align>
-			<include>DefOSDButtons</include>
-			<onclick>Close</onclick>
-			<onclick>RunScript(script.extendedinfo,info=extendedinfo,name=$INFO[VideoPlayer.Title])</onclick>
-			<disabledcolor>White12</disabledcolor>
-		</control>
-	</include>
 	<variable name="OSDPanel">
 		<value condition="[!Window.IsVisible(fullscreenvideo)]">Background</value>
 		<value>OSDBack</value>
