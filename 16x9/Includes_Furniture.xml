@@ -608,7 +608,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-				<aspectratio align="left">scale</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.VideoAspect)</visible>
 			</control>
 			<control type="image">
@@ -616,7 +616,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.VideoResolution,flags/resolution/,.png]</texture>
-				<aspectratio align="left">scale</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.VideoResolution)</visible>
 			</control>
 			<control type="image">
@@ -624,7 +624,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.VideoCodec,flags/video/,.png]</texture>
-				<aspectratio align="left">scale</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.VideoCodec)</visible>
 			</control>
 			<control type="image">
@@ -632,7 +632,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.AudioCodec,flags/audio/,.png]</texture>
-				<aspectratio align="left">scale</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.AudioCodec)</visible>
 			</control>
 			<control type="image">
@@ -640,7 +640,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/audio/dts.png</texture>
-				<aspectratio align="left">scale</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.AudioCodec) + String.Contains(Container(9500).ListItem.AudioCodec,dts) + !String.Contains(Container(9500).ListItem.AudioCodec,dtshd_hra) + !String.Contains(Container(9500).ListItem.AudioCodec,dtshd_ma) + !String.Contains(Container(9500).ListItem.AudioCodec,dtshdma)</visible>
 			</control>
 			<control type="image">
@@ -648,7 +648,7 @@
 				<height>50</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">$INFO[Container(9500).ListItem.AudioChannels,flags/channels/,.png]</texture>
-				<aspectratio align="left">scale</aspectratio>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.AudioChannels)</visible>
 			</control>
 			<control type="group">
@@ -660,7 +660,7 @@
 					<height>50</height>
 					<centertop>50%</centertop>
 					<texture colordiffuse="Dark1">flags/time.png</texture>
-					<aspectratio align="left">scale</aspectratio>
+					<aspectratio align="left">keep</aspectratio>
 					<visible>!String.IsEmpty(Container(9500).ListItem.Duration)</visible>
 				</control>
 				<control type="label">
@@ -681,6 +681,7 @@
 				<centertop>50%</centertop>
 				<height>50</height>
 				<texture colordiffuse="Dark1">flags/3D.png</texture>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>Container(9500).ListItem.IsStereoscopic</visible>
 			</control>
 			<control type="image">
@@ -688,6 +689,7 @@
 				<centertop>50%</centertop>
 				<height>50</height>
 				<texture colordiffuse="Dark1">flags/bluray.png</texture>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>[String.Contains(Container(9500).ListItem.FilenameAndPath,bluray) | String.Contains(Container(9500).ListItem.FilenameAndPath,bdrip) | String.Contains(Container(9500).ListItem.FilenameAndPath,bd25) | String.Contains(Container(9500).ListItem.FilenameAndPath,bd50)]</visible>
 			</control>
 			<control type="image">
@@ -695,6 +697,7 @@
 				<centertop>50%</centertop>
 				<height>50</height>
 				<texture colordiffuse="Dark1">flags/imdb.png</texture>
+				<aspectratio align="left">keep</aspectratio>
 				<visible>!String.IsEmpty(Container(9500).ListItem.Top250)</visible>
 			</control>
 		</control>

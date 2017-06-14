@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
-	<include name="HomePreLoad">
-		<!-- Show something if loading content -->
-	</include>
 	<include name="Furniture_RSS">
 		<control type="group">
 			<visible>!Player.HasMedia</visible>
@@ -163,7 +160,7 @@
 				<include>Animation.FadeOut</include>
 				<visible>!Container(300).Scrolling</visible>
 			</control>
-			<include>HomePreLoad</include>
+			<!-- Show something if loading content -->
 			<include>EmbyMainWidgetContent</include>
 			<!-- Side Widgets  -->
 			<include>EmbyRightWidgetPanel1</include>
@@ -175,7 +172,7 @@
 	</include>
 	<include name="EmbyBottomSubMenuPanel">
 		<control type="panel" id="302">
-			<visible>!Container(4019).IsUpdating</visible>
+			<visible>Control.IsVisible(4012) | Control.IsVisible(4016) | Control.IsVisible(4017) | Control.IsVisible(4018)</visible>
 			<width>864</width>
 			<onup>4012</onup>
 			<onright condition="Control.IsVisible(4016)">4016</onright>
@@ -360,6 +357,14 @@
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),settings)">ActivateWindow(Settings,return)</onclick>
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
 			</control>		
+			<!-- place holder -->
+			<!-- <control type="image">
+				<aspectratio>scale</aspectratio>
+				<texture>$INFO[Container(300).ListItem.Property(Background)]</texture>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
+			</control> -->
 			<control type="image">
 				<aspectratio>scale</aspectratio>
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>

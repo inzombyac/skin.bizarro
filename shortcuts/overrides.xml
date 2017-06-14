@@ -5,6 +5,8 @@
         <!-- <shortcut label="Smart Shortcuts" type="32010" icon="special://skin/extras/icons/title.png" condition="System.HasAddon(script.skin.helper.service)">||BROWSE||script.skin.helper.service/?action=smartshortcuts</shortcut> -->
          <node label="32029">
             <content>common</content>
+            <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
+            <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
         </node>
         <node label="Emby" condition="System.HasAddon(plugin.video.emby)">
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.title))">$INFO[Window(Home).Property(emby.nodes.0.path)]</shortcut>
@@ -30,8 +32,6 @@
             <node label="32075">
                 <content>videosources</content>
                 <content>upnp-video</content>
-                <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
-                <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
             </node>
         </node>
         <node label="32031">
