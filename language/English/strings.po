@@ -48,7 +48,7 @@ msgstr ""
 
 #: /16x9/Includes_Home.xml
 msgctxt "#31006"
-msgid "Loading home content.  Please wait..."
+msgid "Loading content.  Please wait..."
 msgstr ""
 
 # strings 31000 thru 31999 reserved for skins

@@ -358,19 +358,51 @@
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
 			</control>		
 			<!-- place holder -->
-			<!-- <control type="image">
+			<control type="image">
 				<aspectratio>scale</aspectratio>
-				<texture>$INFO[Container(300).ListItem.Property(Background)]</texture>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
-			</control> -->
+				<texture colordiffuse="Light3">special://skin/extras/backgrounds/orbs.jpg</texture>
+				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017) + !Control.IsVisible(4018) | Container(300).OnNext | Container(300).OnPrevious</visible>
+				<include>Animation.DelayVisibleFade</include>
+			</control>
+			<control type="group">
+				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017) + !Control.IsVisible(4018)</visible>
+				<posx>0</posx>
+				<posy>200</posy>
+				<include>Animation.DelayVisibleFade</include>
+				<control type="image">
+					<description>background image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>856</width>
+					<height>120</height>
+					<texture border="16" colordiffuse="Light2">common/rounded-shadow8.png</texture>
+				</control>
+				<control type="image">
+					<description>Busy animation</description>
+					<posx>30</posx>
+					<posy>30</posy>
+					<width>64</width>
+					<height>64</height>
+					<texture colordiffuse="$VAR[ColorHighlight]">dialog/busy.gif</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<posx>105</posx>
+					<width>875</width>
+					<height>120</height>
+					<aligny>center</aligny>
+					<align>left</align>
+					<label>31006</label>
+					<textcolor>Dark1</textcolor>
+					<font>Medium</font>
+					<onclick>Back</onclick>
+				</control>
+			</control>
 			<control type="image">
 				<aspectratio>scale</aspectratio>
 				<texture>$VAR[EmbyMainWidgetIcon]</texture>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<!-- <visible>Integer.IsGreater(Container(4019).NumItems,0)</visible> -->
 				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 			</control>
 			<control type="progress">
