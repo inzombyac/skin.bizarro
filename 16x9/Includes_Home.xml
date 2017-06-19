@@ -358,14 +358,14 @@
 				<onclick condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">ActivateWindow(Weather,return)</onclick>
 			</control>		
 			<!-- place holder -->
-			<control type="image">
+			<!-- <control type="image">
 				<aspectratio>scale</aspectratio>
 				<texture colordiffuse="Light3">special://skin/extras/backgrounds/orbs.jpg</texture>
 				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017) + !Control.IsVisible(4018) | Container(300).OnNext | Container(300).OnPrevious</visible>
 				<include>Animation.DelayVisibleFade</include>
-			</control>
+			</control> -->
 			<control type="group">
-				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017) + !Control.IsVisible(4018)</visible>
+				<visible>!Control.IsVisible(4016) + !Control.IsVisible(4017) + !Control.IsVisible(4018) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItem.Property(defaultID),programs) + !String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<posx>0</posx>
 				<posy>200</posy>
 				<include>Animation.DelayVisibleFade</include>
@@ -2353,11 +2353,11 @@
 				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
 				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
+				<visible>!String.IsEmpty(Container(4019).ListItem.Label) | String.IsEqual(Container(300).ListItem.Property(defaultID),settings)</visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<animation effect="fade" end="100" start="0" time="500" delay="3500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 			</control>
-			
 			<control type="label">
 				<left>10</left>
 				<bottom>8</bottom>

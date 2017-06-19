@@ -7,6 +7,7 @@
             <content>common</content>
             <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
             <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
+            <shortcut label="Channels" type="channels" grouping="common" icon="special://skin/extras/icons/youtube.png">RunScript(script.extendedinfo)</shortcut>
         </node>
         <node label="Emby" condition="System.HasAddon(plugin.video.emby)">
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.title))">$INFO[Window(Home).Property(emby.nodes.0.path)]</shortcut>
