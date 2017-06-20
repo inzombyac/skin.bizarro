@@ -224,7 +224,7 @@
 			<height>120</height>
 			<left>6</left>
 			<width>1</width>
-			<texture colordiffuse="Light1">common/white.png</texture>
+			<texture colordiffuse="Light1">common/black.png</texture>
 		</control>
 		<control type="label">
 			<left>25</left>
@@ -438,7 +438,7 @@
 			<height>120</height>
 			<left>6</left>
 			<width>1</width>
-			<texture colordiffuse="Light1">common/white.png</texture>
+			<texture colordiffuse="Light1">common/black.png</texture>
 		</control>
 		<control type="image">
 			<left>10</left>

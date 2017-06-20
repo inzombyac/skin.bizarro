@@ -477,7 +477,7 @@
 	</variable>
 	<variable name="PlayerPlotBox">
 		<value condition="!Player.HasVideo">$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.Year, (,)]</value>
-		<value condition="Player.HasVideo + !system.getbool(videolibrary.showunwatchedplots)  + VideoPlayer.Content(episodes)">...</value>
+		<!-- <value condition="Player.HasVideo + !system.getbool(videolibrary.showunwatchedplots)  + VideoPlayer.Content(episodes)">...</value> -->
 		<value condition="Player.HasVideo + !String.IsEmpty(VideoPlayer.PlotOutline)">$INFO[VideoPlayer.PlotOutline]</value>
 		<value>$INFO[VideoPlayer.Plot]</value>
 	</variable>

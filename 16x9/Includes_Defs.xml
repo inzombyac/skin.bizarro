@@ -1538,7 +1538,7 @@
 	<variable name="DefEmbyNodeRandomAction">
 		<!-- <value>plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Label2]&amp;folderid=random&amp;limit=25</value> -->
 		<value condition="StringCompare(Container(300).ListItem.Label2,movies)">plugin://plugin.video.emby/?id=$VAR[EmbyHomeSelectedMenu]&amp;mode=browsecontent&amp;type=$INFO[Container(300).ListItem.Label2]&amp;folderid=random&amp;limit=25</value>
-		<value>videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22limit%22%3A25%2C%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22random%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22playcount%22%2C%22operator%22%3A%22greaterthan%22%2C%22value%22%3A%5B%220%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</value>
+		<value>videodb://tvshows/titles/-1/-1/-1/-1/?xsp=%7B%22limit%22%3A25%2C%22order%22%3A%7B%22direction%22%3A%22descending%22%2C%22ignorefolders%22%3A0%2C%22method%22%3A%22random%22%7D%2C%22rules%22%3A%7B%22and%22%3A%5B%7B%22field%22%3A%22tag%22%2C%22operator%22%3A%22is%22%2C%22value%22%3A%5B%22$VAR[EmbyHomeSelectedMenu]%22%5D%7D%2C%7B%22field%22%3A%22lastplayed%22%2C%22operator%22%3A%22notinthelast%22%2C%22value%22%3A%5B%2214%365Days%22%5D%7D%5D%7D%2C%22type%22%3A%22episodes%22%7D</value>
 	</variable>
 	<include name="MusicInfoTracklist">
 		<content type="static">

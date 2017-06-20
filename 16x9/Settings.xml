@@ -98,7 +98,7 @@
                         <top>0</top>
                         <bottom>10</bottom>
                         <width>1</width>
-                        <texture colordiffuse="Light1">common/white.png</texture>
+                        <texture colordiffuse="Light1">common/black.png</texture>
                     </control>
                     <control type="label">
                         <top>0</top>

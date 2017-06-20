@@ -53,8 +53,8 @@
 					<control type="image">
 						<left>6</left>
 						<width>1</width>
-						<height>135</height>
-						<texture colordiffuse="Light1">common/white.png</texture>
+						<height>66</height>
+						<texture colordiffuse="Light1">common/black.png</texture>
 					</control>
 					<control type="label">
 						<left>30</left>
@@ -184,7 +184,7 @@
 							<left>6</left>
 							<width>1</width>
 							<height>135</height>
-							<texture colordiffuse="Light1">common/white.png</texture>
+							<texture colordiffuse="Light1">common/black.png</texture>
 						</control>
 						<control type="image">
 							<posx>32</posx>

@@ -223,7 +223,7 @@
 	<!-- Center Widget Selection -->
 	<variable name="EmbyFocusedWidgetIcon">
 		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes) + String.IsEqual(Container(300).ListItem.Label2,tvshows)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes) + String.IsEqual(Container(300).ListItem.Label2,tvshows) + system.getbool(videolibrary.showunwatchedplots) ">$VAR[ThumbImage]</value>
 		<value condition="Control.HasFocus(4012)">$VAR[EmbyWidget2Icon]</value>
 		<value condition="Control.HasFocus(4016)">$VAR[EmbyWidget1Icon]</value>
 		<value condition="Control.HasFocus(4017)">$VAR[EmbyWidget2Icon]</value>
