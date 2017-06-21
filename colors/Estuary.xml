@@ -14,10 +14,11 @@
 	<color name="Light3">4d333333</color>
 	<color name="Light4">1f333333</color>
     
-    <color name="Background">FF0E597E</color>
+    <color name="Background">FF10446b</color>
     <color name="HeaderBG">FF000000</color>
     <color name="FanartFade">2Fffffff</color>
     <color name="FloorFade">BF181818</color>   
     
     <color name="Panel">FF000000</color>
+    <color name="White100">FF303030</color>
 </colors>

@@ -2,7 +2,6 @@
 <!-- Foundation -->
 <window type="window" id="1101">
     <defaultcontrol always="true">9501</defaultcontrol>
-    
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
@@ -18,18 +17,11 @@
                 <height>640</height>
                 <control type="group">
                     <control type="image">
-                        <left>-8</left>
-                        <width>1138</width>
-                        <top>-8</top>
-                        <bottom>-8</bottom>
-                        <texture border="15" colordiffuse="Panel">common/rounded-shadow8.png</texture>
-                    </control>
-                    <control type="image">
                         <left>0</left>
                         <width>1122</width>
                         <top>0</top>
                         <bottom>0</bottom>
-                        <texture diffuse="diffuse/home-fanart.png">pvr/background.jpg</texture>
+                        <texture diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Trailers.jpg</texture>
                         <visible>!Integer.IsGreater(Container(9500).NumItems,0)</visible>
                     </control>
                     <control type="wraplist" id="9500">

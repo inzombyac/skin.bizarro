@@ -198,7 +198,7 @@
 					<width>280</width>
 					<height>200</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true" fallback="common/opaque2.png">$VAR[EmbySubMenuImage]</texture>
+					<texture diffuse="diffuse/home-fanart.png" background="true" fallback="common/opaque2.png">$VAR[EmbySubMenuImage]</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
@@ -235,7 +235,7 @@
 					<width>280</width>
 					<height>200</height>
 					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true" fallback="common/opaque2.png">$VAR[EmbySubMenuImage]</texture>
+					<texture background="true" diffuse="diffuse/home-fanart.png" fallback="common/opaque2.png">$VAR[EmbySubMenuImage]</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
@@ -375,7 +375,7 @@
 					<posy>0</posy>
 					<width>856</width>
 					<height>120</height>
-					<texture border="16" colordiffuse="Light2">common/rounded-shadow8.png</texture>
+					<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
 				</control>
 				<control type="image">
 					<description>Busy animation</description>
@@ -395,12 +395,11 @@
 					<label>31006</label>
 					<textcolor>Dark1</textcolor>
 					<font>Medium</font>
-					<onclick>Back</onclick>
 				</control>
 			</control>
 			<control type="image">
 				<aspectratio>scale</aspectratio>
-				<texture>$VAR[EmbyMainWidgetIcon]</texture>
+				<texture diffuse="diffuse/home-fanart.png">$VAR[EmbyMainWidgetIcon]</texture>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -423,7 +422,7 @@
 			<!-- Live TV -->
 			<control type="image">
 				<aspectratio>stretch</aspectratio>
-				<texture background="true">special://skin/extras/backgrounds/Channels.jpg</texture>
+				<texture background="true" diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Channels.jpg</texture>
 				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<include>Animation.FadeIn</include>
 			</control>
@@ -439,7 +438,7 @@
 				<height>100</height>
 				<width>200</width>
 				<aspectratio>keep</aspectratio>
-				<texture background="true">$INFO[Container(4019).ListItem.Icon]</texture>
+				<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[Container(4019).ListItem.Icon]</texture>
 				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<visible>!IsEmpty(Container(4019).ListItem.ChannelNumber)</visible>
 				<include>Animation.FadeIn</include>
@@ -2411,7 +2410,7 @@
 		<scrolltime tween="quadratic">400</scrolltime>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="image">
-				<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
+				<texture border="15" colordiffuse="Background" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2422,7 +2421,7 @@
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture background="true" fallback="common/null.png">$PARAM[image_type]</texture>
+				<texture background="true" fallback="common/null.png" diffuse="diffuse/home-fanart.png">$PARAM[image_type]</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2485,7 +2484,7 @@
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture>common/null.png</texture>
+				<texture diffuse="diffuse/home-fanart.png">common/null.png</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2532,7 +2531,7 @@
 				<onfocus condition="Control.HasFocus(4012)">Skin.SetString(LastIcon,$INFO[Container(4019).ListItem.Icon])</onfocus>
 			</control>
 			<control type="image">
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				<texture border="15" colordiffuse="Background" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2540,7 +2539,7 @@
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture background="true">$VAR[EmbyFocusedWidgetIcon]</texture>
+				<texture background="true" diffuse="diffuse/home-fanart.png">$VAR[EmbyFocusedWidgetIcon]</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2613,7 +2612,7 @@
 				<left>10</left>
 				<width>$PARAM[item_width]</width>
 				<height>$PARAM[item_height]</height>
-				<texture colordiffuse="$VAR[ColorHighlight]" border="15">common/selectbox.png</texture>
+				<texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
 				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 			</control>
 		</focusedlayout>
