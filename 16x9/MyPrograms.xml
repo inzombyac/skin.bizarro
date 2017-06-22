@@ -79,6 +79,13 @@
 					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
+				<control type="button" id="624">
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<label>$LOCALIZE[10140]</label>
+					<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+					<visible>!String.IsEmpty(Container.PluginName)</visible>
+				</control>
 				<control type="button" id="9092">
 					<description>Set Custom Widget</description>
 					<include>DefContextButton2</include>
