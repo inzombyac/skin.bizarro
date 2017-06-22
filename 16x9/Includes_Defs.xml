@@ -510,7 +510,7 @@
 				<include>DefContextButton</include>
 				<label>$LOCALIZE[13305]</label>
 				<selected>system.getbool(lookandfeel.enablerssfeeds)</selected>
-				<onclick>system.setbool(lookandfeel.enablerssfeeds)</onclick>
+				<onclick>XBMC.RunScript(script.skin.helper.service,action=togglekodisetting,setting=lookandfeel.enablerssfeeds)</onclick>
 				<align>left</align>
 			</control>
 			<control type="label"  id="9263">
