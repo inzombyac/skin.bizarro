@@ -190,7 +190,7 @@
 				<control type="image">
 					<width>280</width>
 					<height>200</height>
-					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
+					<texture border="15" colordiffuse="Overlay">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
@@ -207,7 +207,7 @@
 					<top>160</top>
 					<height>40</height>
 					<width>280</width>
-					<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+					<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>	
 					<include>Animation.FadeIn</include>				
 				</control>
 				<control type="label">
@@ -227,7 +227,7 @@
 				<control type="image">
 					<width>280</width>
 					<height>200</height>
-					<texture border="15" colordiffuse="Background">common/opaque2.png</texture>
+					<texture border="15" colordiffuse="Overlay">common/opaque2.png</texture>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
 				</control>
@@ -244,7 +244,7 @@
 					<top>160</top>
 					<height>40</height>
 					<width>280</width>
-					<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+					<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>	
 					<include>Animation.FadeIn</include>		
 				</control>
 				<control type="label">
@@ -429,7 +429,7 @@
 			<control type="image">
 				<description>Title overlay</description>
 				<aspectratio>stretch</aspectratio>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>	
 				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>	
 				<include>Animation.FadeIn</include>				
 			</control>
@@ -2349,7 +2349,7 @@
 				<bottom>0</bottom>
 				<width>100%</width>
 				<height>78</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
 				<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 				<visible>!Container(4019).IsUpdating + !Container(300).Scrolling</visible>
 				<visible>!String.IsEmpty(Container(4019).ListItem.Label) | String.IsEqual(Container(300).ListItem.Property(defaultID),settings)</visible>
@@ -2410,7 +2410,7 @@
 		<scrolltime tween="quadratic">400</scrolltime>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
 			<control type="image">
-				<texture border="15" colordiffuse="Background" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
+				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque2.png</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2446,7 +2446,7 @@
 				<height>40</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
 				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 				<visible>!Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
@@ -2531,7 +2531,7 @@
 				<onfocus condition="Control.HasFocus(4012)">Skin.SetString(LastIcon,$INFO[Container(4019).ListItem.Icon])</onfocus>
 			</control>
 			<control type="image">
-				<texture border="15" colordiffuse="Background" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
+				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
@@ -2559,7 +2559,7 @@
 				<height>40</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
 				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
 			</control>
 			<control type="label">
@@ -2854,7 +2854,7 @@
 				<posy>0</posy>
 				<width>856</width>
 				<height>496</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>	
 			</control>
 			<control type="image">
 				<top>100</top>
@@ -2902,7 +2902,7 @@
 				<posy>0</posy>
 				<width>856</width>
 				<height>496</height>
-				<texture border="15" colordiffuse="Background">common/opaque.png</texture>	
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>	
 			</control>
 			<control type="image">
 				<top>100</top>

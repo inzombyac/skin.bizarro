@@ -24,22 +24,12 @@
 				<right>8</right>
 				<top>8</top>
 				<bottom>8</bottom>
-				<!-- Lines -->
-				<control type="image">
-					<top>10</top>
-					<left>450</left>
-					<width>1</width>
-					<bottom>10</bottom>
-					<colordiffuse>Black12</colordiffuse>
-					<texture>common/white.png</texture>
-				</control>
 				<control type="label">
 					<left>30</left>
 					<width>390</width>
 					<posy>18</posy>
 					<font>MediumBold</font>
 					<label>5</label>
-					<textcolor>PanelWhite100</textcolor>
 				</control>
 				<control type="label">
 					<left>30</left>
@@ -48,7 +38,6 @@
 					<height>30</height>
 					<font>Tiny</font>
 					<label>$INFO[System.FriendlyName]</label>
-					<textcolor>PanelWhite70</textcolor>
 					<scroll>true</scroll>
 				</control>
 				<control type="label" description="Header">
@@ -57,7 +46,6 @@
 					<posy>18</posy>
 					<font>MediumBold</font>
 					<label>130</label>
-					<textcolor>PanelWhite100</textcolor>
 				</control>
 				<control type="label" id="52" description="XBMC Build Version">
 					<left>480</left>
@@ -65,10 +53,14 @@
 					<posy>77</posy>
 					<height>30</height>
 					<font>Tiny</font>
-					<textcolor>PanelWhite70</textcolor>
 					<scroll>true</scroll>
 				</control>
 				<!-- Left Group -->
+				 <control type="image">
+					<width>455</width>
+					<height>638</height>
+					<texture border="5" colordiffuse="Dark3">common/white.png</texture>
+				</control>
 				<control type="grouplist" id="9101">
 					<width>450</width>
 					<top>140</top>
@@ -116,19 +108,15 @@
 				</control>
 				<control type="grouplist">
 					<left>480</left>
-					<top>140</top>
+					<top>100</top>
 					<bottom>0</bottom>
 					<right>30</right>
 					<itemgap>0</itemgap>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="label">
 						<description>CPU Text</description>
-						<font>Tiny</font>
-						<posy>-60</posy>
-						<posx>750</posx>
-						<align>right</align>
-						<width>600</width>
 						<height>60</height>
+						<font>Tiny</font>
 						<label>$LOCALIZE[13271]</label>
 						<include>DefSettingsButton</include>
 					</control>
@@ -243,11 +231,11 @@
 				</control>
 				<control type="textbox" id="30">
 					<left>480</left>
-					<top>160</top>
+					<top>220</top>
 					<bottom>0</bottom>
 					<right>30</right>
 					<font>Tiny</font>
-					<height>455</height>
+					<height>395</height>
 					<include>DefSettingsButton</include>
 					<autoscroll delay="5000" repeat="7500" time="3000">true</autoscroll>
 				</control>

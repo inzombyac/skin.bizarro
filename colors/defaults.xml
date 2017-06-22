@@ -51,6 +51,13 @@
 
 	<color name="DialogFanartFade">FF333333</color>
 	<color name="FloorFade">8F181818</color>
+	<color name="EmbyLeft">ff26619c</color>
+	<color name="EmbyCenter">ff50c878</color>
+	<color name="EmbyRight">ffe62020</color>
+	<color name="HeaderBG">4d000000</color>
+	<color name="Overlay">FF000000</color>
+	<color name="HeaderIconFade">FFdddddd</color>
+
 	<!-- other colors -->
 	<color name="whitethemehighlight">ff0385b5</color>
 	<color name="highlight">ffee7b0a</color>
@@ -827,8 +834,4 @@
 	<color name="yellow orange">ffffae42</color>
 	<color name="zaffre">ff0014a8</color>
 	<color name="zinnwaldite brown">ff2c1608</color>
-	<color name="EmbyLeft">ff26619c</color>
-	<color name="EmbyCenter">ff50c878</color>
-	<color name="EmbyRight">ffe62020</color>
-	<color name="HeaderBG">4d000000</color>
 </colors>

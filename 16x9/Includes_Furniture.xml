@@ -1026,7 +1026,7 @@
 					<control id="8308" type="image">
 						<width>80</width>
 						<height>80</height>
-						<texture colordiffuse="PanelWhite100" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
+						<texture colordiffuse="HeaderIconFade" border="0" diffuse="common/circle.png" >$VAR[HeaderIcon]</texture>
 						<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 						<aspectratio aligny="center">stretch</aspectratio>
 					</control>

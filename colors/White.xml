@@ -30,4 +30,13 @@
     <color name="Black700">B3000000</color>
     <color name="Black300">4D000000</color>
     <color name="Black12">1F000000</color>
+
+    <color name="PanelWhite100">FF000000</color>
+    <color name="PanelWhite70">B3000000</color>
+    <color name="PanelWhite30">4D000000</color>
+    <color name="PanelWhite12">1F000000</color>
+    <color name="PanelBlack30">4Ddddddd</color>
+
+    <color name="Overlay">FFdddddd</color>
+    <color name="HeaderIconFade">FFdddddd</color>
 </colors>
