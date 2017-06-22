@@ -120,7 +120,7 @@
 		<value condition="Window.IsActive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Art(Fanart))">$INFO[ListItem.Art(Fanart)]</value>
 		<value condition="Window.IsActive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Property(Fanart_Image))">$INFO[ListItem.Property(Fanart_Image)]</value>
 		<!-- If no fanart and home show nothing -->
-		<value condition="Window.IsActive(DialogVideoInfo.xml) + Window.IsActive(home)">diffuse/bg-diffuse.png</value>
+		<value condition="Window.IsActive(DialogVideoInfo.xml) + Window.IsActive(home)">$VAR[BackgroundFallBack]</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + !String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(background)]</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
 		<value condition="Window.IsActive(script-skinshortcuts.xml) + String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
@@ -162,7 +162,7 @@
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<!-- Skin Shortcuts -->
 		<value condition="Window.IsVisible(script-skinshortcuts.xml) + !String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(Background)]</value>
-		<value>diffuse/bg-diffuse.png</value>
+		<value>$VAR[BackgroundFallBack]</value>
 	</variable>
 	<include name="GlobalVideoWindow">
 		<control type="image" description="Background">

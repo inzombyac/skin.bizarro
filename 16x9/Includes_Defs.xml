@@ -709,23 +709,6 @@
 			<onclick>ReloadSkin()</onclick>
 			<visible>Control.IsVisible(52)</visible>
 		</control>
-		<control type="radiobutton" id="9016" description="Discart (513,514)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>Show DiscArt</label>
-			<selected>Skin.HasSetting(views.discart)</selected>
-			<onclick>Skin.ToggleSetting(views.discart)</onclick>
-			<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
-		</control>
-		<control type="radiobutton" id="9017" description="Animate Discart (513,514)">
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label> - Rotate DiscArt</label>
-			<selected>Skin.HasSetting(AnimateDiscArt)</selected>
-			<onclick>Skin.ToggleSetting(AnimateDiscArt)</onclick>
-			<visible>Control.IsVisible(513) | Control.IsVisible(514)</visible>
-			<visible>Skin.HasSetting(views.discart)</visible>
-		</control>
 		<control type="radiobutton" id="9022" description="Title Overlay (515)">
 			<include>DefContextButton2</include>
 			<align>left</align>

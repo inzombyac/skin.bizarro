@@ -222,7 +222,7 @@
 							<width>330</width>
 							<height>185</height>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
-							<texture background="true" fallback="views/fallbacks/DefaultVideo.png/large.png">$VAR[LandscapeImage]</texture>
+							<texture background="true" fallback="common/opaque.png">$VAR[LandscapeImage]</texture>
 						</control>
 						<control type="image">
 							<centerright>32</centerright>

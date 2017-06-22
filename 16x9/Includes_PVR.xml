@@ -221,7 +221,7 @@
 					<bottom>10</bottom>
 					<fadetime>200</fadetime>
 					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="pvr/background.jpg">$INFO[ListItem.Thumb]</texture>
+					<texture diffuse="diffuse/pvrinfo.png" background="true" fallback="special://skin/extras/backgrounds/Family.jpg">$INFO[ListItem.Thumb]</texture>
 					<visible>!Player.HasVideo</visible>
 				</control>
 			</control>
@@ -1036,13 +1036,6 @@
 	<include name="EpgWideWidthVar">
 		<channellayout height="70" width="380">
 			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>375</width>
-				<height>71</height>
-				<texture border="90,3,90,3">views/list/other/separator.png</texture>
-			</control>
-			<control type="image">
 				<posx>50</posx>
 				<posy>2</posy>
 				<height>68</height>
@@ -1130,13 +1123,6 @@
 		<channellayout height="70" width="200">
 			<control type="image">
 				<posx>0</posx>
-				<posy>0</posy>
-				<width>150</width>
-				<height>71</height>
-				<texture border="90,3,90,3">views/list/other/separator.png</texture>
-			</control>
-			<control type="image">
-				<posx>0</posx>
 				<posy>1</posy>
 				<width>150</width>
 				<height>69</height>
@@ -1154,13 +1140,6 @@
 			</control>
 		</channellayout>
 		<focusedchannellayout height="70" width="150">
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>150</width>
-				<height>71</height>
-				<texture border="90,3,90,3">views/list/other/separator.png</texture>
-			</control>
 			<control type="image">
 				<posx>0</posx>
 				<posy>1</posy>

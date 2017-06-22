@@ -35,7 +35,7 @@
 					<left>SidePad</left>
 					<texture fallback="DefaultAlbumCover.png">$VAR[PlayerPosterOSD]</texture>
 					<aspectratio aligny="center" align="center">scale</aspectratio>
-					<bordertexture border="-90">thumbs/cd_shadow2.png</bordertexture>
+					<bordertexture border="-90">diffuse/cd_shadow2.png</bordertexture>
 				</control>
 				<control type="group">
                     <right>SidePad</right>

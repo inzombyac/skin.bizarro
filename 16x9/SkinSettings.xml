@@ -524,15 +524,6 @@
 						<visible>ControlGroup(9100).HasFocus(9108)</visible>
 					</control>
 				</control>
-				<!-- Lines -->
-				<control type="image">
-					<top>10</top>
-					<left>450</left>
-					<width>1</width>
-					<bottom>10</bottom>
-					<colordiffuse>Black12</colordiffuse>
-					<texture>common/white.png</texture>
-				</control>
 				<!-- Header -->
 				<control type="label">
 					<left>30</left>

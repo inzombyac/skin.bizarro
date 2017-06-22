@@ -343,4 +343,8 @@
 		<value condition="String.IsEqual($INFO[Container.NumItems], $INFO[Container.TotalUnWatched])">flags\sort\sort_watched.png</value>
 		<!--Control.GetLabel(3), Control.GetLabel(28)</value> -->
 	</variable>
+	<variable name="BackgroundFallBack">
+		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
+		<value>special://skin/extras/backgrounds/smoke.png</value>
+	</variable>
 </includes>
