@@ -9,7 +9,7 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<control type="group">
 				<control type="panel" id="58">
-					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(episodes) + !String.StartsWith(Container.FolderPath,plugin://)] | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
 					<top>206</top>
 					<height>760</height>
 					<left>70</left>
@@ -44,6 +44,7 @@
 						<control type="image">
 							<left>10</left>
 							<top>10</top>
+							<bottom>10</bottom>
 							<width>230</width>
 							<height>360</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
@@ -141,7 +142,8 @@
 						<control type="image">
 							<left>14</left>
 							<top>55</top>
-							<height>330</height>
+							<bottom>10</bottom>
+							<height>310</height>
 							<width>520</width>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture diffuse="diffuse/cardthumb.png" background="true">$VAR[FanartImage]</texture>
@@ -173,7 +175,7 @@
 						</control>
 						<control type="label">
 							<left>20</left>
-							<top>15</top>
+							<top>5</top>
 							<height>50</height>
 							<align>left</align>
 							<font>SmallBold</font>
@@ -184,7 +186,7 @@
 						</control>
 						<control type="label">
 							<left>20</left>
-							<top>15</top>
+							<top>5</top>
 							<height>50</height>
 							<align>left</align>
 							<font>SmallBold</font>
@@ -222,7 +224,7 @@
 						<control type="label">
 							<left>400</left>
 							<right>80</right>
-							<top>20</top>
+							<top>10</top>
 							<aligny>center</aligny>
 							<height>38</height>
 							<align>right</align>
@@ -235,7 +237,7 @@
 						<control type="label">
 							<left>400</left>
 							<right>80</right>
-							<top>20</top>
+							<top>10</top>
 							<aligny>center</aligny>
 							<height>38</height>
 							<align>right</align>
@@ -264,6 +266,7 @@
 						<control type="image">
 							<left>10</left>
 							<top>10</top>
+							<bottom>10</bottom>
 							<width>230</width>
 							<height>360</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
@@ -369,8 +372,9 @@
 						<control type="image">
 							<left>14</left>
 							<top>55</top>
-							<height>330</height>
+							<height>310</height>
 							<width>520</width>
+							<bottom>10</bottom>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture diffuse="diffuse/cardthumb.png" background="true">$VAR[FanartImage]</texture>
 						</control>
@@ -401,7 +405,7 @@
 						</control>
 						<control type="label">
 							<left>20</left>
-							<top>15</top>
+							<top>5</top>
 							<height>50</height>
 							<align>left</align>
 							<font>SmallBold</font>
@@ -424,7 +428,7 @@
 						<control type="label">
 							<left>400</left>
 							<right>80</right>
-							<top>20</top>
+							<top>10</top>
 							<aligny>center</aligny>
 							<height>38</height>
 							<align>right</align>

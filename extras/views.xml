@@ -5,14 +5,14 @@
 	<view id="Wall Square" value="505" languageid="31794" type="artists,albums,songs,programs,addons" />
 	<view id="Wall Poster" value="506" languageid="31795" type="artists,albums,songs" />
     <view id="Wall Poster" value="518" languageid="31795" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
-    <view id="Wall Info" value="517" languageid="31003" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
+    <view id="Wall Info" value="517" languageid="31003" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
 	<view id="Media info" value="56" languageid="544" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Extra Info" value="57" languageid="31147" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Big wide" value="516" languageid="540" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,artists,albums,songs,programs" />
     <view id="Big list" value="52" languageid="537" type="all" />
 	<view id="Wide" value="54" languageid="539" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,albums,songs" />
     <view id="Cards" value="58" languageid="31198" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
-	<view id="Banner" value="59" languageid="31741" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
+	<view id="Banner" value="59" languageid="31741" type="movies,tvshows" />
     <view id="Thumbnail" value="500" languageid="21371" type="all" />
     <view id="Poster Row" value="513" languageid="31756" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
     <view id="Poster Shift" value="514" languageid="31757" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,programs" />
