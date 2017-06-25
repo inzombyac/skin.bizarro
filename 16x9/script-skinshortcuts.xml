@@ -165,7 +165,6 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -193,7 +192,6 @@
 						String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),music) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) | 
-						String.IsEqual(Container(211).ListItem.Property(defaultID),channels) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) | 
@@ -219,7 +217,6 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -247,7 +244,6 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -275,7 +271,6 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),movies) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),music) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),channels) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 

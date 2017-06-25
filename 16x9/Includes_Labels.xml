@@ -142,7 +142,6 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Movie Spotlight</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">TV Channels</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">Music Spotlight</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">In Theaters</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),collection)"> Collections</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">Weather</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),programs)">Programs</value>
@@ -278,7 +277,6 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">In Progress Shows</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">Recent Albums</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">Trending Movies</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),programs)">Add-ons</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">Next Up</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">Resume</value>
@@ -317,7 +315,6 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Unwatched</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Unwatched</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">Next Aired</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">Trending Shows</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.unwatched.content))">Unwatched</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recommended.content))">Recommended</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.unwatched.content))">Unwatched</value>
@@ -344,7 +341,6 @@
 		<value condition="[String.IsEqual(Container(300).ListItem.Property(defaultID),movies) | String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)] + !String.IsEmpty(Container(4018).ListItem.Property(similartitle))">$INFO[Container(4018).ListItem.Property(similartitle),Because you watched ,...]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Similar</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Similar</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),channels)">Top Rated Movies</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName.right3))">$INFO[Container(300).ListItem.Property(widgetName.right3)]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">Recent Episodes</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))]">Recent</value>

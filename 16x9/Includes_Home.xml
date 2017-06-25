@@ -574,22 +574,6 @@
 			<include>EmbyHiddenItemLayout</include>
 			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 		</control>
-		<!-- Channels -->
-		<control type="list" id="4019">
-			<preloaditems>6</preloaditems>
-			<orientation>horizontal</orientation>
-			<autoscroll time="10000">!Control.HasFocus(4012)</autoscroll>
-			<scrolltime tween="quadratic">100</scrolltime>
-			<onup>300</onup>
-			<ondown>300</ondown>
-			<onup>300</onup>
-			<onright>300</onright>
-			<onleft>300</onleft>
-			<onfocus>300</onfocus>
-			<content limit="5" sortby="random">$VAR[DefWidgetMainChannels]</content>
-			<include>EmbyHiddenItemLayout</include>
-			<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
-		</control>
 		<!-- Music -->
 		<control type="list" id="4019">
 			<preloaditems>6</preloaditems>
@@ -803,7 +787,6 @@
 				!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + 
 				!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + 
 				!String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
-				!String.IsEqual(Container(300).ListItem.Property(defaultID),channels) + 
 				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 				!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -941,30 +924,6 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="12" target="videos">$VAR[DefWidgetRight1LiveTV]</content>
-					<include>Animation.FadeOut</include>
-					<include>Animation.DelayFadeIn</include>
-				</control>	
-				<!-- Channels  -->
-				<control type="panel" id="4016">
-					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
-					<top>330</top>
-					<left>$PARAM[widget_left]</left>
-					<width>$PARAM[quadruple_widget_width]</width>
-					<height>735</height>
-					<onup>300</onup>
-					<ondown>4016</ondown>
-					<onleft>4012</onleft>
-					<onright condition="Control.IsVisible(4017)">4017</onright>
-					<onright condition="!Control.IsVisible(4017) + Control.IsVisible(4018)">4018</onright>
-					<onright condition="!Control.IsVisible(4017) + !Control.IsVisible(4018)">noop</onright>
-					<include>EmbyHomeInfoActions</include>
-					<preloaditems>6</preloaditems>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="quadratic">0</scrolltime>
-					<include content="EmbyWidget1Content">
-						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
-					</include>
-					<content limit="12" target="videos">$VAR[DefWidgetRight1Channels]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>					
@@ -1210,7 +1169,7 @@
 				</control>
 				<!-- Videos - Everything else or Emby nodes 10+ -->
 				<control type="panel" id="4016">
-					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + !String.IsEqual(Container(300).ListItem.Property(defaultID),channels) + 
+					<visible>!String.IsEqual(Container(300).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(300).ListItem.Property(defaultID),settings) + !String.IsEqual(Container(300).ListItem.Property(defaultID),music) + !String.IsEqual(Container(300).ListItem.Property(defaultID),collection) + !String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + !String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -1474,37 +1433,6 @@
 					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
-					<include>Animation.EmbyRight2Slide</include>
-				</control>
-				<!-- Channels -->
-				<control type="panel" id="4017">
-					<description>Widget</description>
-					<top>330</top>
-					<left>$PARAM[widget_left]</left>
-					<width>$PARAM[quadruple_widget_width]</width>
-					<height>736</height>
-					<onup>300</onup>
-					<ondown>4017</ondown>
-					<onleft condition="Control.IsVisible(4016)">4016</onleft>
-					<onleft condition="!Control.IsVisible(4016)">4012</onleft>
-					<onright condition="Control.IsVisible(4018)">4018</onright>
-					<onright condition="!Control.IsVisible(4018)">noop</onright>
-					<include>EmbyHomeInfoActions</include>
-					<preloaditems>8</preloaditems>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="quadratic">0</scrolltime>
-					<include content="EmbyWidget1Content">
-						<param name="image_type">$VAR[EmbyWidget2Icon]</param>
-						<param name="widget_width">$PARAM[single_widget_width]</param>
-						<param name="item_width">$PARAM[item_width]</param>
-						<param name="widget_height">$PARAM[widget_height]</param>
-						<param name="item_height">$PARAM[item_height]</param>
-						<param name="overlay_bottom">$PARAM[overlay_bottom]</param>
-					</include>
-					<content limit="8" target="videos">$VAR[DefWidgetRight2Channels]</content>
-					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Emby Node 0 -->
@@ -1859,7 +1787,6 @@
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + 
-					!String.IsEqual(Container(300).ListItem.Property(defaultID),channels) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -1956,33 +1883,6 @@
 						<param name="image_type">$VAR[EmbyWidget3Icon]</param>
 					</include>
 					<content limit="12" target="videos">$VAR[DefWidgetRight3Movies]</content>
-					<include>Animation.FadeOut</include>
-					<include>Animation.DelayFadeIn</include>
-					<include>Animation.EmbyRight3Slide</include>
-				</control>
-				<!-- Channels -->
-				<control type="panel" id="4018">
-					<description>Widget</description>
-					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),channels)</visible>
-					<top>330</top>
-					<left>$PARAM[widget_left]</left>
-					<width>$PARAM[quadruple_widget_width]</width>
-					<height>735</height>
-					<onup>300</onup>
-					<ondown>4018</ondown>
-					<pagecontrol>40180</pagecontrol>
-					<onleft condition="Control.IsVisible(4017)">4017</onleft>
-					<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
-					<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
-					<onright>noop</onright>
-					<include>EmbyHomeInfoActions</include>
-					<preloaditems>12</preloaditems>
-					<orientation>horizontal</orientation>
-					<scrolltime tween="quadratic">0</scrolltime>
-					<include content="EmbyWidget1Content">
-						<param name="image_type">$VAR[EmbyWidget3Icon]</param>
-					</include>
-					<content limit="12" target="videos">$VAR[DefWidgetRight3Channels]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight3Slide</include>
@@ -2265,7 +2165,6 @@
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),movies) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),livetv) + 
-					!String.IsEqual(Container(300).ListItem.Property(defaultID),channels) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + 
 					!String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + 
@@ -2757,7 +2656,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar1].png</texture>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2765,7 +2664,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar2].png</texture>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2773,7 +2672,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar3].png</texture>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2781,7 +2680,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar4].png</texture>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos)</visible>
 			</control>
 			<control type="image">
 				<posx>-48</posx>
@@ -2789,7 +2688,7 @@
 				<height>64</height>
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/$VAR[EmbyHomeFlagstar5].png</texture>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos) | String.IsEqual(Container(300).ListItem.Property(type),channels)</visible>
+				<visible>String.IsEqual(Container(300).ListItem.Property(type),movies) | String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Property(type),music) | String.IsEqual(Container(300).ListItem.Property(type),videos)</visible>
 			</control>
 			<control type="grouplist">
 				<centertop>50%</centertop>

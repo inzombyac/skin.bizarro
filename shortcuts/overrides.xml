@@ -7,7 +7,7 @@
             <content>common</content>
             <shortcut label="TV Hub" type="TVHub" grouping="common" icon="special://skin/extras/icons/tv.png">ActivateWindow(1102)</shortcut>
             <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
-            <shortcut label="Channels" type="channels" grouping="common" icon="special://skin/extras/icons/youtube.png">RunScript(script.extendedinfo)</shortcut>
+            <shortcut label="Extended Info" type="extendedinfo" grouping="common" icon="special://skin/extras/icons/youtube.png">RunScript(script.extendedinfo)</shortcut>
         </node>
         <node label="Emby" condition="System.HasAddon(plugin.video.emby)">
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.title))">$INFO[Window(Home).Property(emby.nodes.0.path)]</shortcut>
@@ -150,7 +150,6 @@
     <propertydefault labelID="videos" group="mainmenu" property="type">videos</propertydefault>
     <propertydefault labelID="settings" group="mainmenu" property="type">settings</propertydefault>
     <propertydefault labelID="power" group="mainmenu" property="type">power</propertydefault>
-	<propertydefault labelID="channels" group="mainmenu" property="type">channels</propertydefault>
 	<propertydefault labelID="collection" group="mainmenu" property="type">collection</propertydefault>
 	
 	<propertyfallback property="type">videos</propertyfallback>
@@ -173,7 +172,6 @@
     <backgrounddefault defaultID="videos">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</backgrounddefault>
     <backgrounddefault defaultID="settings">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>
-	<backgrounddefault defaultID="channels">$INFO[Window(Home).Property(SkinHelper.AllVideosBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>
 	
 	<backgrounddefault defaultID="artists" group="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>

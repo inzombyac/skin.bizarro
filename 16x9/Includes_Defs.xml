@@ -1224,9 +1224,6 @@
 		<value>pvr://channels/tv/*</value>
 		<!-- <value>plugin://script.skin.helper.widgets/?action=channels&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
 	</variable>
-	<variable name="DefWidgetMainChannels">
-		<value>plugin://script.extendedinfo?info=incinemamovies</value>
-	</variable>
 	<variable name="DefWidgetMainMusic">
 		<value>special://skin/extras/playlists/RandomAlbums.xsp</value>
 	</variable>
@@ -1271,7 +1268,6 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies)">$VAR[DefWidgetMainMovies]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">$VAR[DefWidgetMainLiveTV]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),music)">$VAR[DefWidgetMainMusic]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),channels)">$VAR[DefWidgetMainChannels]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),programs)">$VAR[DefWidgetMainPrograms]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$VAR[DefWidgetMainEmby0]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$VAR[DefWidgetMainEmby1]</value>
@@ -1295,9 +1291,6 @@
 	</variable>
 	<variable name="DefWidgetRight1LiveTV">
 		<value>pvr://recordings/tv/active</value>
-	</variable>
-	<variable name="DefWidgetRight1Channels">
-		<value>plugin://script.extendedinfo?info=trendingmovies</value>
 	</variable>
 	<variable name="DefWidgetRight1Music">
 		<value>musicdb://recentlyaddedalbums/</value>
@@ -1377,9 +1370,6 @@
 	<variable name="DefWidgetRight2LiveTV">
 		<!-- <value>plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
 		<value>plugin://script.skin.helper.widgets/?action=nextaired&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-	</variable>
-	<variable name="DefWidgetRight2Channels">
-		<value>plugin://script.extendedinfo?info=trendingshows</value>
 	</variable>
 	<!-- <variable name="DefWidgetRight2Music">
 		<value>[CR]</value>
@@ -1462,9 +1452,6 @@
 	<!-- <variable name="DefWidgetRight3LiveTV">
 		<value>[CR]</value>
 	</variable> -->
-	<variable name="DefWidgetRight3Channels">
-		<value>plugin://script.extendedinfo?info=topratedmovies</value>
-	</variable>
 	<!-- <variable name="DefWidgetRight3Music">
 		<value>[CR]</value>
 	</variable> -->
