@@ -1,1 +1,6 @@
-- Added screenshots and version infromation
+1.0.2
+- Added EmbyCon shortcuts
+- Reduced home menu size
+
+1.0.2
+- Added screenshots and version information
