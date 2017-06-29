@@ -208,7 +208,7 @@
 			<name>HomeEmby</name>
 			<style>capitalize bold</style>
 			<filename>segoe-media-center.ttf</filename>
-			<size>36</size>
+			<size>32</size>
 		</font>
 		<font>
 			<name>HomeEmbySemi</name>

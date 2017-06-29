@@ -174,7 +174,9 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)</visible>
 						<onup>8780</onup>
 					</control>
 					<control type="button" id="3122" description="Main Widget">
@@ -201,7 +203,9 @@
 						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) | 
 						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) | 
-						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
+						String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv) | 
+						String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)</visible>
 						<onup>8780</onup>
 					</control>
 					<control type="button" id="8777" description="Right Widget1">
@@ -226,7 +230,9 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right1)</onclick>
@@ -253,7 +259,9 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right2)</onclick>
@@ -280,7 +288,9 @@
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + 
 						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + 
-						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)</visible>
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv) + 
+						!String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)</visible>
 						<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 						<include>DefDialogButtons</include>
 						<onclick>SetProperty(widgetID,right3)</onclick>
@@ -446,48 +456,6 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-				<!-- <control type="button" id="9898" description="Emby Mode">
-					<width>100%</width>
-					<height>66</height>
-					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-					<label>Add Emby Nodes</label>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.path))">Skin.ToggleSetting(menu.ShowEmbyNode0)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.1.path))">Skin.ToggleSetting(menu.ShowEmbyNode1)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.2.path))">Skin.ToggleSetting(menu.ShowEmbyNode2)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.3.path))">Skin.ToggleSetting(menu.ShowEmbyNode3)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.4.path))">Skin.ToggleSetting(menu.ShowEmbyNode4)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.5.path))">Skin.ToggleSetting(menu.ShowEmbyNode5)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.6.path))">Skin.ToggleSetting(menu.ShowEmbyNode6)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.7.path))">Skin.ToggleSetting(menu.ShowEmbyNode7)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.8.path))">Skin.ToggleSetting(menu.ShowEmbyNode8)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(emby.nodes.9.path))">Skin.ToggleSetting(menu.ShowEmbyNode9)</onclick>
-					<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
-					<onclick>Back</onclick>
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-					<visible>Skin.HasSetting(menu.noemby) + String.IsEqual(Window.Property(groupname),mainmenu) + System.HasAddon(plugin.video.emby) + !String.IsEmpty(Container(211).ListItem.Label)</visible>
-				</control> -->
-				<!-- <control type="button" id="9899" description="Emby Mode Off">
-					<width>100%</width>
-					<height>66</height>
-					 <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-					<label>Hide Emby Nodes</label>
-					<onclick>Skin.Reset(menu.ShowEmbyNode0)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode1)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode2)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode3)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode4)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode5)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode6)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode7)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode8)</onclick>
-					<onclick>Skin.Reset(menu.ShowEmbyNode9)</onclick>
-					<onclick>Skin.ToggleSetting(menu.noemby)</onclick>
-					<onclick>Back</onclick>
-					<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-					<visible>!Skin.HasSetting(menu.noemby) + String.IsEqual(Window.Property(groupname),mainmenu) + System.HasAddon(plugin.video.emby) + !String.IsEmpty(Container(211).ListItem.Label)</visible>
-				</control> -->
             </control> 
         </control>
     </controls>

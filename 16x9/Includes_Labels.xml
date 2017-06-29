@@ -156,6 +156,8 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.title)]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.title)]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.title)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Emby TV</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Emby Movies</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
 		
 	</variable>
@@ -181,9 +183,26 @@
 	<variable name="WidgetMainSelectionLabel">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widget))">$INFO[Container(211).ListItem.Property(widget)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),settings)">Kodi Information</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows)">TV Spotlight</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies)">Movie Spotlight</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),music)">Music Spotlight</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),collection)"> Collections</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),programs)">Programs</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),settings)">Kodi Information</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.title)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Emby TV</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Emby Movies</value>
 	</variable>
 	<variable name="WidgetRight1SelectionLabel">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Container(211).ListItem.Property(widgetName.right1))">$INFO[Container(211).ListItem.Property(widgetName.right1)]</value>
@@ -220,6 +239,8 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content))">Next Up</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))">Resume</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content))">Recent</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Next Up</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Resume</value>
 	</variable>
 	<variable name="WidgetRight2SelectionLabel">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName.right2))">$INFO[Container(211).ListItem.Property(widgetName.right2)]</value>
@@ -243,6 +264,8 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recommended.content))">Recommended</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.unwatched.content))">Unwatched</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recommended.content))">Recommended</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Unwatched</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Recently Added</value>
 	</variable>
 	<variable name="WidgetRight3SelectionLabel">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName.right3))">$INFO[Container(211).ListItem.Property(widgetName.right3)]</value>
@@ -266,6 +289,8 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.8.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.8.inprogress.content))]">Recent</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recentepisodes.content))">Recent Episodes</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))]">Recent</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Recently Added</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Unwatched</value>
 	</variable>
 	<variable name="EmbyHomeWidget1Label">
 		<value condition="Container(4016).IsUpdating + System.IdleTime(0)">[CR]</value>
@@ -308,6 +333,8 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content))">Next Up</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))">Resume</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content))">Recent</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Next Up</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Resume</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="Container(4017).IsUpdating + System.IdleTime(0)">[CR]</value>
@@ -335,6 +362,8 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recommended.content))">Recommended</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.unwatched.content))">Unwatched</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recommended.content))">Recommended</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Unwatched</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Recently Added</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
 		<value condition="Container(4018).IsUpdating + System.IdleTime(0)">[CR]</value>
@@ -362,6 +391,8 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.8.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.8.inprogress.content))]">Recent</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recentepisodes.content))">Recent Episodes</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))]">Recent</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Recently Added</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Unwatched</value>
 	</variable>
 	<variable name="EmbyWidget1ContentLabel">
 		<value condition="Container(300).Scrolling">[CR]</value>

@@ -21,6 +21,10 @@
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.8.title)]" type="$INFO[Window(Home).Property(emby.nodes.8.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.8.title))">$INFO[Window(Home).Property(emby.nodes.8.path)]</shortcut>
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.9.title)]" type="$INFO[Window(Home).Property(emby.nodes.9.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.9.title))">$INFO[Window(Home).Property(emby.nodes.9.path)]</shortcut>
         </node>
+        <node label="EmbyCon" condition="System.HasAddon(plugin.video.embycon)">
+            <shortcut label="EmbyCon TV" type="embycontv" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png">ActivateWindow(Videos,"plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Users/%7Buserid%7D/Items%3FFields%3DEpisodeCount%2CSeasonCount%2CPath%2CGenres%2CStudios%2CCumulativeRunTimeTicks%2CEtag%2CMediaStreams%2CPeople%2COverview%26Recursive%3Dtrue%26IncludeItemTypes%3DSeries%26ImageTypeLimit%3D1%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=tvshows", return)</shortcut>
+            <shortcut label="EmbyCon Movies" type="embyconmovies" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png">ActivateWindow(Videos,plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Users/%7Buserid%7D/Items%3FFields%3DEpisodeCount%2CSeasonCount%2CPath%2CGenres%2CStudios%2CCumulativeRunTimeTicks%2CEtag%2CMediaStreams%2CPeople%2COverview%26Recursive%3Dtrue%26IncludeItemTypes%3DMovie%26CollapseBoxSetItems%3Dfalse%26ImageTypeLimit%3D1%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=Movies", return)</shortcut>
+        </node>
         <node label="32030">
             <content>video</content>
             <node label="32040">
@@ -151,6 +155,8 @@
     <propertydefault labelID="settings" group="mainmenu" property="type">settings</propertydefault>
     <propertydefault labelID="power" group="mainmenu" property="type">power</propertydefault>
 	<propertydefault labelID="collection" group="mainmenu" property="type">collection</propertydefault>
+    <propertydefault labelID="embyconmovies" group="mainmenu" property="type">movies</propertydefault>
+    <propertydefault labelID="embycontv" group="mainmenu" property="type">tvshows</propertydefault>
 	
 	<propertyfallback property="type">videos</propertyfallback>
     
@@ -216,6 +222,8 @@
 	<icon labelID="info-window-home-property-emby-nodes-7-title">special://skin/extras/icons/emby_diff.png</icon>
 	<icon labelID="info-window-home-property-emby-nodes-8-title">special://skin/extras/icons/emby_diff.png</icon>
 	<icon labelID="info-window-home-property-emby-nodes-9-title">special://skin/extras/icons/emby_diff.png</icon>
+    <icon labelID="embycontv">special://skin/extras/icons/emby_diff.png</icon>
+    <icon labelID="embyconmovies">special://skin/extras/icons/emby_diff.png</icon>
 	
 	<icon labelID="tvhub">special://skin/extras/icons/tv.png</icon>
     <icon labelID="moviehub">special://skin/extras/icons/film.png</icon>
