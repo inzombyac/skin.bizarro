@@ -1,4 +1,7 @@
-1.0.2
+1.0.4
+- Updates to support advanced launcher emulator
+
+1.0.3
 - Added EmbyCon shortcuts
 - Reduced home menu size
 

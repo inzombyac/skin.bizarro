@@ -21,6 +21,7 @@
 	<include file="View_516_BigWide.xml" />
 	<include file="View_517_WallInfo.xml" />
 	<include file="View_518_WallPoster.xml" />
+	<include file="View_519_GameInfo.xml" />
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_GlobalSearch.xml" />

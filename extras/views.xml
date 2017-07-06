@@ -7,8 +7,9 @@
     <view id="Wall Poster" value="518" languageid="31795" type="movies,setmovies,tvshows,musicvideos,seasons,sets" />
     <view id="Wall Info" value="517" languageid="31003" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
 	<view id="Media info" value="56" languageid="544" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
+    <view id="Game info" value="519" languageid="31799" type="all" />
     <view id="Extra Info" value="57" languageid="31147" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
-    <view id="Big wide" value="516" languageid="540" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,artists,albums,songs,programs" />
+    <view id="Big wide" value="516" languageid="540" type="all" />
     <view id="Big list" value="52" languageid="537" type="all" />
 	<view id="Wide" value="54" languageid="539" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes,albums,songs" />
     <view id="Cards" value="58" languageid="31198" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />

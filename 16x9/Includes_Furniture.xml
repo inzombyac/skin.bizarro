@@ -968,6 +968,7 @@
 				<ondown condition="Control.IsVisible(506)">506</ondown>
 				<ondown condition="Control.IsVisible(517)">517</ondown>
 				<ondown condition="Control.IsVisible(518)">518</ondown>
+				<ondown condition="Control.IsVisible(519)">519</ondown>
 				<ondown condition="Control.IsVisible(300)">300</ondown>
 				<!-- onright -->
 				<onright condition="Player.HasMedia">7788</onright>

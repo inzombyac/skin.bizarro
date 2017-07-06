@@ -781,3 +781,8 @@ msgstr ""
 msgctxt "#31798"
 msgid "Misc Options"
 msgstr ""
+
+# views.xml
+msgctxt "#31799"
+msgid "Game Info"
+msgstr ""
