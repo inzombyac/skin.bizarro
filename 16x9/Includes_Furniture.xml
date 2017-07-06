@@ -365,7 +365,7 @@
 	</variable>
 	<include name="Furniture_Flags">
 		<control type="grouplist">
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
+			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | [String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform))]</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -501,6 +501,7 @@
 				<height>64</height>
 				<visible>!String.IsEmpty(ListItem.Duration)</visible>
 				<visible>!Container.Content(tvshows)</visible>
+				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
 				<control type="image">
 					<height>50</height>
 					<centertop>50%</centertop>
@@ -534,6 +535,7 @@
 				<visible>[String.Contains(ListItem.FilenameAndPath,bluray) | String.Contains(ListItem.FilenameAndPath,bdrip) | String.Contains(ListItem.FilenameAndPath,bd25) | String.Contains(ListItem.FilenameAndPath,bd50)]</visible>
 			</control>
 			<control type="group">
+				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
 				<centertop>70%</centertop>
 				<height>120</height>
 				<width>64</width>
@@ -551,6 +553,31 @@
 					<textcolor>Black700</textcolor>
 					<label>$INFO[ListItem.Top250,#,]</label>
 					<visible>!String.IsEmpty(ListItem.Top250)</visible>
+				</control>
+			</control>
+			<!-- Advanced Launcher -->
+			<control type="group">
+				<centertop>50%</centertop>
+				<left>-150</left>
+				<width>auto</width>
+				<height>64</height>
+				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
+				<control type="image">
+					<width>100</width>
+					<height>64</height>
+					<texture>$VAR[AdvancedLauncherFurnitureIcon]</texture>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+				</control>
+				<control type="label">
+					<width min="128">auto</width>
+					<centertop>50%</centertop>
+					<height>64</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$VAR[AdvancedLauncherLabel]</label>
+					<font>Flag</font>
+					<textcolor>White</textcolor>
+					<left>110</left>
 				</control>
 			</control>
 		</control>
@@ -718,37 +745,6 @@
 				<height>120</height>
 				<texture colordiffuse="Dark1">$VAR[Studio]</texture>
 				<aspectratio align="left" aligny="center">keep</aspectratio>
-			</control>
-		</control>
-	</include>
-	<include name="Furniture_Adv_Launcher">
-		<control type="grouplist">
-			<include>Animation.FadeIn</include>
-			<include>Animation.FadeOut</include>
-			<left>40</left>
-			<centerbottom>40</centerbottom>
-			<width>1920</width>
-			<height>120</height>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<itemgap>10</itemgap>
-			<usecontrolcoords>true</usecontrolcoords>
-			<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-			<control type="image">
-				<centertop>50%</centertop>
-				<width>100</width>
-				<texture>$VAR[AdvancedLauncherFurnitureIcon]</texture>
-				<aspectratio align="left" aligny="center">keep</aspectratio>
-			</control>
-			<control type="label">
-				<width min="128">auto</width>
-				<centertop>50%</centertop>
-				<height>64</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<label>$VAR[AdvancedLauncherLabel]</label>
-				<font>Flag</font>
-				<textcolor>White</textcolor>
 			</control>
 		</control>
 	</include>

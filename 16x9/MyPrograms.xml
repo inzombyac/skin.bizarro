@@ -29,7 +29,6 @@
 		<include>Furniture_Flags</include>
 		<include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
-		<include>Furniture_Adv_Launcher</include>
 		<include>Furniture_Addons</include>
         <control type="group">
             <include>Animation.FadeIn</include>
