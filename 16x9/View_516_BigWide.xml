@@ -18,6 +18,7 @@
 					<top>-8</top>
 					<bottom>-8</bottom>
 					<texture border="15" colordiffuse="White100">common/rounded-shadow8.png</texture>
+					<visible>!String.IsEmpty(Container.NumItems)</visible>
 				</control>
 				<!-- Item -3 -->
 				<control type="group">
@@ -36,6 +37,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="15" colordiffuse="cf000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>44</posx>
@@ -123,6 +125,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="15" colordiffuse="cf000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>44</posx>
@@ -209,6 +212,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="15" colordiffuse="cf000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>44</posx>
@@ -295,6 +299,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="15" colordiffuse="cf000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>44</posx>
@@ -381,6 +386,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="15" colordiffuse="cf000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>44</posx>
@@ -467,6 +473,7 @@
 						<width>100%</width>
 						<height>100%</height>
 						<texture border="15" colordiffuse="cf000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>44</posx>
@@ -543,7 +550,7 @@
 				<right>401</right>
 				<height>620</height>
 				<control type="wraplist" id="516">
-					<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(sets) | Container.Content(albums) | Container.Content(songs) | Container.Content(programs) | Container.Content(addons) | Container.Content(seasons) | Container.Content(programs) | String.IsEmpty(Container.Content)</visible>
+					<visible>Container.Content(musicvideos) | Container.Content(artists) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(sets) | Container.Content(albums) | Container.Content(songs) | Container.Content(programs) | Container.Content(addons) | Container.Content(seasons) | Container.Content(programs) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
 					<left>0</left>
 					<right>0</right>
 					<top>0</top>
@@ -668,6 +675,7 @@
 						<bottom>0</bottom>
 						<height>70</height>
 						<texture border="15" colordiffuse="df000000">common/white.png</texture>
+						<visible>!String.IsEmpty(Container.NumItems)</visible>
 					</control>
 					<control type="label">
 						<posx>30</posx>

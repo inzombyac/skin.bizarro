@@ -65,7 +65,7 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[ListItem.Studio, • ]</value>
 		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[31102]]</value>
-		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre][COLOR gray]$INFO[ListItem.Property(esrb), • ,][/COLOR]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
 		<value>$LOCALIZE[19055]</value>
@@ -913,9 +913,9 @@
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="AdvancedLauncherLabel">
-		<value condition="!String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Property(platform)]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(ListItem.Genre) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Studio)]">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + !String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]$INFO[ListItem.Property(nplayers), • ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Property(platform))">$INFO[ListItem.Property(platform)]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]$INFO[ListItem.Property(nplayers), • ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Studio)]">$INFO[ListItem.Genre,,]$INFO[ListItem.Year, • ,][COLOR gray]$INFO[ListItem.Studio, • ,][/COLOR]$INFO[ListItem.Property(nplayers), • ,]</value>
 	</variable>
 	<variable name="DebugControlLabel2">
 		<value condition="!String.IsEmpty(Player.Filenameandpath)">$INFO[Player.Filenameandpath,Path: ,]</value>

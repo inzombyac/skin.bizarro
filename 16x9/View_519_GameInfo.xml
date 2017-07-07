@@ -160,18 +160,14 @@
 			<width>600</width>
 			<height>PosterW</height>
 			<control type="image">
-				<left>10</left>
-				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(snap)]</texture>
 				<visible>!String.IsEmpty(ListItem.Art(snap))</visible>
 			</control>
 			<control type="image">
-				<left>10</left>
-				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+				<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
 				<texture background="true">$INFO[ListItem.Art(title)]</texture>
 				<visible>String.IsEmpty(ListItem.Art(snap))</visible>
 			</control>

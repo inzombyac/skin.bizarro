@@ -67,10 +67,10 @@
 						<include>DefSettingsButton2</include>
 						<label>250</label>
 					</control>
-					<control type="togglebutton" id="9107" description="Extras">
+					<control type="togglebutton" id="9107" description="Views">
 						<usealttexture>ControlGroup(9100).HasFocus(9107)</usealttexture>
 						<include>DefSettingsButton2</include>
-						<label>31169</label>
+						<label>$LOCALIZE[31194]</label>
 					</control>
 					<control type="togglebutton" id="9108" description="Colors">
 						<usealttexture>ControlGroup(9100).HasFocus(9108)</usealttexture>
@@ -328,6 +328,14 @@
 						<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 						<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 					</control>
+					<control type="radiobutton" id="9028" description="Play Trailer (516)">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<label>$LOCALIZE[31007]</label>
+						<selected>Skin.HasSetting(views.516.trailer)</selected>
+						<onclick>Skin.ToggleSetting(views.516.trailer)</onclick>
+						<visible>ControlGroup(9100).HasFocus(9103)</visible>
+					</control>
 					<!-- Widgets -->
 					<control type="button" id="9246" description="Custom Widget 1">
 						<width>1310</width>
@@ -427,7 +435,64 @@
 						<selected>Skin.HasSetting(furniture.hideresume)</selected>
 						<onclick>Skin.ToggleSetting(furniture.hideresume)</onclick>
 					</control>
-					<!-- Extras -->
+					<!-- View Settings -->
+					<control type="radiobutton" id="6009">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<label>Enable forced views</label>
+						<onclick>Skin.ToggleSetting(SkinHelper.ForcedViews.Enabled)</onclick>
+						<selected>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</selected>
+					</control>
+					<control type="button" id="6010">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=movies)</onclick>
+						<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
+						<label>Forced view for movies: $INFO[Skin.String(SkinHelper.ForcedViews.movies)]</label>
+					</control>
+					<control type="button" id="6011">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=tvshows)</onclick>
+						<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
+						<label>Forced view for tv shows:  $INFO[Skin.String(SkinHelper.ForcedViews.tvshows)]</label>
+					</control>
+					<control type="button" id="6012">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=seasons)</onclick>
+						<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
+						<label>Forced view for seasons:  $INFO[Skin.String(SkinHelper.ForcedViews.seasons)]</label>
+					</control>
+					<control type="button" id="6013">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=episodes)</onclick>
+						<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
+						<label>Forced view for episodes: $INFO[Skin.String(SkinHelper.ForcedViews.episodes)]</label>
+						<font>Reg28</font>
+					</control>
+					<!-- <control type="button" id="6014">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=sets)</onclick>
+						<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
+						<label>Forced view for movie sets: $INFO[Skin.String(SkinHelper.ForcedViews.sets)]</label>
+					</control>
+					<control type="button" id="6015">
+						<include>DefSettingsButton2</include>
+						<width>1310</width>
+						<visible>ControlGroup(9100).HasFocus(9107)</visible>
+						<onclick>RunScript(script.skin.helper.service,action=setforcedview,contenttype=setmovies)</onclick>
+						<visible>Skin.HasSetting(SkinHelper.ForcedViews.Enabled)</visible>
+						<label>Forced view for movies inside set: $INFO[Skin.String(SkinHelper.ForcedViews.setmovies)]</label>
+					</control> -->
 					<control type="radiobutton" id="9272" description="Kiosk Mode">
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9107)</visible>

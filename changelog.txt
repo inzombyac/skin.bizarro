@@ -1,3 +1,6 @@
+1.0.5
+- Add forced views to help EmbyCon
+
 1.0.4
 - Updates to support advanced launcher emulator
 
