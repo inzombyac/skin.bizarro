@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Foundation -->
+<includes>
+	<!-- Game Browser-->
+	<include name="View_520_GameBrowser">
+		<description>Game View (id=520)</description>
+		<control type="group">
+			<include>Animation.Common</include>
+			<visible>Control.IsVisible(520)</visible>
+			<control type="group">
+				<width>705</width>
+				<height>850</height>
+				<left>70</left>
+				<control type="image">
+					<top>160</top>
+					<width>100%</width>
+					<height>100%</height>
+					<texture border="16" colordiffuse="Light2">common/box.png</texture>
+				</control> 
+				<control type="list" id="520">
+					<top>300</top>
+					<onright>5051</onright>
+					<height>700</height>		
+					<onleft condition="Control.IsVisible(60)">60</onleft>
+					<onleft condition="!Control.IsVisible(60)">9000</onleft>
+					<onright>520</onright>
+					<onup condition="Player.HasMedia">7788</onup>
+					<onup condition="!Player.HasMedia">520</onup>
+					<ondown>520</ondown>
+					<pagecontrol>60</pagecontrol>
+					<viewtype label="31008">list</viewtype>
+					<scrolltime tween="quadratic">400</scrolltime>
+					<itemlayout width="700" height="64">
+						<include>520itemlayout</include>
+					</itemlayout>
+					<focusedlayout width="700" height="64">
+						<control type="group">
+							<visible>Control.HasFocus(520)</visible>
+							<include>520focuslayout</include>
+						</control>
+						<control type="group">
+							<visible>!Control.HasFocus(520)</visible>
+							<include>520itemlayout</include>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+			<control type="scrollbar" id="60">
+				<onleft>3634</onleft>
+				<onback>520</onback>
+				<centerleft>55</centerleft>
+				<posy>300</posy>
+				<height>700</height>
+				<width>8</width>
+				<onright>520</onright>
+				<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+				<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+				<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+				<animation effect="slide" end="-30,0" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="group" description="Banner">
+				<width>705</width>
+				<left>70</left>
+				<top>165</top>
+				<control type="image">
+					<height>130</height>
+					<fadetime>100</fadetime>
+					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+					<texture background="true">$VAR[ClearLogoBanner]</texture>
+				</control>
+			</control>
+			<include>520ArtPanel</include>
+			<control type="group">
+				<control type="grouplist">
+					<left>800</left>
+					<right>30</right>
+					<top>660</top>
+					<height>400</height>
+					<width>1040</width>
+					<orientation>vertical</orientation>
+					<control type="label">
+						<top>10</top>
+						<aligny>center</aligny>
+						<height>32</height>
+						<font>MediumBold</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<top>50</top>
+						<aligny>center</aligny>
+						<height>32</height>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelDirector]</label>
+					</control>
+					<control type="label">
+						<height>32</height>
+						<aligny>center</aligny>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelGenre]</label>
+					</control>
+					<control type="textbox">
+						<align>justify</align>
+						<font>TwentyEight</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$VAR[LabelPlotBox]</label>
+						<height>240</height>
+					</control>
+				</control>
+			</control>
+		</control>
+	</include>
+	<include name="520focuslayout">
+		<control type="button">
+			<texturefocus>-</texturefocus>
+			<texturenofocus>-</texturenofocus>
+			<!-- <onfocus>Control.Move(5051,Container(5051).NumItems)</onfocus> -->
+		</control>
+		<control type="image">
+			<width>100%</width>
+			<height>100%</height>
+			<texture border="8" colordiffuse="Dark1">common/box.png</texture>
+			<bordertexture colordiffuse="$VAR[ColorHighlight]">common/white.png</bordertexture>
+			<bordersize>6,0,0,0</bordersize>
+		</control>
+		<control type="image">
+			<left>6</left>
+			<width>1</width>
+			<texture colordiffuse="Light1">common/black.png</texture>
+		</control>
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>Flag</font>
+			<textcolor>Light1</textcolor>
+			<selectedcolor>Light1</selectedcolor>
+			<label>$INFO[ListItem.Label]</label>
+			<scroll>true</scroll>
+		</control>
+	</include>
+	<include name="520itemlayout">
+		<control type="label">
+			<posx>30</posx>
+			<width>auto</width>
+			<aligny>center</aligny>
+			<height>64</height>
+			<font>Flag</font>
+			<label>$INFO[ListItem.Label]</label>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+		</control>
+	</include>
+	<include name="520ArtPanel">
+		<control id="5051" type="panel">	
+			<onleft>520</onleft>
+			<onright>noop</onright>
+			<orientation>horizontal</orientation>
+			<scrolltime easing="inout" tween="sine">300</scrolltime>
+			<animation effect="fade" end="100" start="0" time="300">Visible</animation>
+			<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
+			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
+			<visible>!Container(520).Scrolling</visible>
+			<top>160</top>
+			<left>800</left>
+			<width>1040</width>
+			<height>480</height>
+			<itemlayout height="460" width="620">		
+				<control type="image">
+					<height>400</height>
+					<width>600</width>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				</control>
+				<control type="image">
+					<height>400</height>
+					<width>600</width>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+					<visible>!String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge)</visible>
+				</control>
+				<control type="image">
+					<height>400</height>
+					<width>600</width>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+					<visible>String.StartsWith(ListItem.Label,Box) |  String.StartsWith(ListItem.Label,Cartridge)</visible>
+				</control>
+				<control type="label">
+					<top>420</top>
+					<left>10</left>
+					<right>10</right>
+					<width>600</width>
+					<font>Tiny</font>
+					<align>center</align>
+					<textcolor>Dark1</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout height="460" width="620">
+				<control type="image">
+					<height>400</height>
+					<width>600</width>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture border="15" colordiffuse="Background">common/opaque.png</texture>
+				</control>
+				<control type="image">
+					<height>400</height>
+					<width>600</width>
+					<aspectratio align="center" aligny="top">keep</aspectratio>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
+					<visible>String.StartsWith(ListItem.Label,Box) | String.StartsWith(ListItem.Label,Cartridge) </visible>
+				</control>
+				<control type="image">
+					<height>400</height>
+					<width>600</width>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture background="true">$INFO[ListItem.Icon]</texture>
+					<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
+					<visible>!String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge)</visible>
+				</control>
+				
+				<control type="image">
+					<width>200</width>
+					<height>200</height>
+					<centertop>35%</centertop>
+					<centerleft>50%</centerleft>
+					<aspectratio>keep</aspectratio>
+					<texture colordiffuse="$VAR[ColorHighlight]">common/playring.png</texture>
+					<visible>Container(5051).HasFocus(1)</visible>
+				</control>
+				<control type="label">
+					<top>420</top>
+					<left>10</left>
+					<right>10</right>
+					<width>600</width>
+					<font>Tiny</font>
+					<align>center</align>
+					<textcolor>Dark1</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</focusedlayout>
+			<include>GameArtworkList</include>
+		</control>
+	</include>
+</includes>

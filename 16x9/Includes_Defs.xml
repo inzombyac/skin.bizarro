@@ -1822,6 +1822,68 @@
 			</item>
 		</content>
 	</include>
+	<include name="GameArtworkList">
+		<content>
+			<!--Game artwork list content -->
+			 <item id="1">
+				<label>Trailer</label>
+				<icon>$INFO[Container(520).ListItem.Art(fanart)]</icon>
+				<onclick>PlayMedia($INFO[Container(520).ListItem.Trailer])</onclick>
+				<visible>!String.IsEmpty(Container(520).ListItem.Trailer)</visible>
+			</item>
+			<item id="6">
+				<label>Fanart</label>
+				<icon>$INFO[Container(520).ListItem.Art(fanart)]</icon>
+				<visible>String.IsEmpty(Container(520).ListItem.Trailer)</visible>
+				<onclick>noop</onclick>
+			</item>
+			<item id="2">
+				<label>Title Screen</label>
+				<icon>$INFO[Container(520).ListItem.Art(title)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="3">
+				<label>In Game</label>
+				<icon>$INFO[Container(520).ListItem.Art(snap)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="4">
+				<label>Box Front</label>
+				<icon>$INFO[Container(520).ListItem.Art(boxfront)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="5">
+				<label>Box Back</label>
+				<label2>Art</label2>
+				<icon>$INFO[Container(520).ListItem.Art(boxback)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="7">
+				<label>Cartridge</label>
+				<label2>Art</label2>
+				<icon>$INFO[Container(520).ListItem.Art(cartridge)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="8">
+				<label>Flyer</label>
+				<label2>Art</label2>
+				<icon>$INFO[Container(520).ListItem.Art(flyer)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="9">
+				<label>Map</label>
+				<label2>Art</label2>
+				<icon>$INFO[Container(520).ListItem.Art(map)]</icon>
+				<onclick>noop</onclick>
+			</item>
+			<item id="10">
+				<label>Manual</label>
+				<label2>Art</label2>
+				<icon>$INFO[Container(520).ListItem.Art(manual)]</icon>
+				<onclick>noop</onclick>
+			</item>
+		</content>
+	</include>
 	<variable name="SimilarVideos">
 		<value condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
 		<value condition="!String.IsEmpty(ListItem.DBID) + !String.IsEmpty(ListItem.TvShowTitle)">plugin://script.extendedinfo?info=similartvshows&amp;&amp;name=$INFO[ListItem.TvShowTitle]</value>

@@ -869,6 +869,7 @@
 		<value condition="Window.IsVisible(weather)">$LOCALIZE[8]</value>
 		<value condition="!String.IsEmpty(Container.FolderName) + Window.IsVisible(MyPics.xml)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyPics.xml)">$LOCALIZE[1]</value>
+		<value condition="Window.IsVisible(MyPrograms.xml) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform)) + !String.Contains(ListItem.Label,ROMS)">$INFO[ListItem.Property(platform)]</value>
 		<value condition="Window.IsVisible(MyPrograms.xml) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyPrograms.xml)">$LOCALIZE[0]</value>
 		<value condition="Window.IsVisible(AddonBrowser.xml)">$LOCALIZE[24001]</value>
@@ -965,6 +966,7 @@
 				<ondown condition="Control.IsVisible(517)">517</ondown>
 				<ondown condition="Control.IsVisible(518)">518</ondown>
 				<ondown condition="Control.IsVisible(519)">519</ondown>
+				<ondown condition="Control.IsVisible(520)">520</ondown>
 				<ondown condition="Control.IsVisible(300)">300</ondown>
 				<!-- onright -->
 				<onright condition="Player.HasMedia">7788</onright>

@@ -25,7 +25,7 @@
 					<onleft condition="!Control.IsVisible(60)">9000</onleft>
 					<onright>519</onright>
 					<onup condition="Player.HasMedia">7788</onup>
-					<onup condition="!Player.HasMedia">3634</onup>
+					<onup condition="!Player.HasMedia">519</onup>
 					<ondown>519</ondown>
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="31799">list</viewtype>
@@ -75,24 +75,33 @@
 			<include>519BackViewRight</include>
 			<include>519BigPosterViewRight</include>
 			<control type="group">
-				<control type="group">
+				<control type="grouplist">
+					<orientation>vertical</orientation>
 					<left>800</left>
 					<right>30</right>
-					<top>575</top>
-					<height>435</height>
+					<top>660</top>
+					<height>450</height>
 					<width>600</width>
 					<control type="label">
 						<top>10</top>
 						<aligny>center</aligny>
-						<height>64</height>
+						<height>32</height>
 						<font>MediumBold</font>
+						<textcolor>Dark1</textcolor>
+						<selectedcolor>Dark1</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<top>50</top>
+						<aligny>center</aligny>
+						<height>32</height>
+						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelDirector]</label>
 					</control>
 					<control type="label">
-						<top>50</top>
-						<height>64</height>
+						<height>32</height>
 						<aligny>center</aligny>
 						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
@@ -100,12 +109,12 @@
 						<label>$VAR[LabelGenre]</label>
 					</control>
 					<control type="textbox">
-						<top>125</top>
 						<align>justify</align>
 						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelPlotBox]</label>
+						<height>235</height>
 					</control>
 				</control>
 			</control>
@@ -159,6 +168,7 @@
 			<left>800</left>
 			<width>600</width>
 			<height>PosterW</height>
+			<visible>Control.IsVisible(519)</visible>
 			<control type="image">
 				<fadetime>200</fadetime>
 				<aspectratio align="center" aligny="top" scalediffuse="false">scale</aspectratio>
@@ -179,6 +189,7 @@
 			<right>60</right>
 			<width>400</width>
 			<height>400</height>
+			<visible>Control.IsVisible(519)</visible>
 			<visible>!String.IsEmpty(ListItem.Art(boxback))</visible>
 			<control type="image">
 				<top>400</top>
@@ -212,6 +223,7 @@
 			<width>400</width>
 			<height>400</height>
 			<visible>!String.IsEmpty(ListItem.Art(boxback))</visible>
+			<visible>Control.IsVisible(519)</visible>
  			<!-- <control type="image">
 				<top>400</top>
 				<width>400</width>

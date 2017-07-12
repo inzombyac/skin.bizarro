@@ -22,6 +22,7 @@
 	<include file="View_517_WallInfo.xml" />
 	<include file="View_518_WallPoster.xml" />
 	<include file="View_519_GameInfo.xml" />
+	<include file="View_520_GameBrowser.xml" />
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_GlobalSearch.xml" />

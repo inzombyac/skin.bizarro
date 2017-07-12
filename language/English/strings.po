@@ -56,6 +56,11 @@ msgctxt "#31007"
 msgid "Auto-play trailer in supported views"
 msgstr ""
 
+#: /extras/views.xml
+msgctxt "#31008"
+msgid "Game Browser"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"
