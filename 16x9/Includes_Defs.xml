@@ -1826,60 +1826,64 @@
 		<content>
 			<!--Game artwork list content -->
 			 <item id="1">
-				<label>Trailer</label>
+				<label>Game Trailer</label>
 				<icon>$INFO[Container(520).ListItem.Art(fanart)]</icon>
-				<onclick>PlayMedia($INFO[Container(520).ListItem.Trailer])</onclick>
 				<visible>!String.IsEmpty(Container(520).ListItem.Trailer)</visible>
-			</item>
-			<item id="6">
-				<label>Fanart</label>
-				<icon>$INFO[Container(520).ListItem.Art(fanart)]</icon>
-				<visible>String.IsEmpty(Container(520).ListItem.Trailer)</visible>
-				<onclick>noop</onclick>
+				<onclick>PlayMedia($INFO[Container(520).ListItem.Trailer])</onclick>
 			</item>
 			<item id="2">
 				<label>Title Screen</label>
 				<icon>$INFO[Container(520).ListItem.Art(title)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(title))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="3">
-				<label>In Game</label>
+				<label>Gameplay Snapshot</label>
 				<icon>$INFO[Container(520).ListItem.Art(snap)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(snap))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="4">
 				<label>Box Front</label>
 				<icon>$INFO[Container(520).ListItem.Art(boxfront)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(boxfront))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="5">
 				<label>Box Back</label>
 				<label2>Art</label2>
 				<icon>$INFO[Container(520).ListItem.Art(boxback)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(boxback))</visible>
+				<onclick>noop</onclick>
+			</item>
+			<item id="6">
+				<label>Game Fanart</label>
+				<icon>$INFO[Container(520).ListItem.Art(fanart)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(fanart))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="7">
 				<label>Cartridge</label>
-				<label2>Art</label2>
 				<icon>$INFO[Container(520).ListItem.Art(cartridge)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(cartridge))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="8">
-				<label>Flyer</label>
-				<label2>Art</label2>
+				<label>Game Flyer</label>
 				<icon>$INFO[Container(520).ListItem.Art(flyer)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(flyer))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="9">
-				<label>Map</label>
-				<label2>Art</label2>
+				<label>Game Map</label>
 				<icon>$INFO[Container(520).ListItem.Art(map)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(map))</visible>
 				<onclick>noop</onclick>
 			</item>
 			<item id="10">
-				<label>Manual</label>
-				<label2>Art</label2>
+				<label>Game Manual</label>
 				<icon>$INFO[Container(520).ListItem.Art(manual)]</icon>
+				<visible>!String.IsEmpty(Container(520).ListItem.Art(manual))</visible>
 				<onclick>noop</onclick>
 			</item>
 		</content>
