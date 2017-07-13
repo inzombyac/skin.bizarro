@@ -90,24 +90,14 @@
 				<control type="grouplist">
 					<left>800</left>
 					<right>30</right>
-					<top>660</top>
+					<top>656</top>
 					<height>400</height>
 					<width>1040</width>
 					<orientation>vertical</orientation>
 					<control type="label">
-						<top>10</top>
 						<aligny>center</aligny>
-						<height>34</height>
+						<height>42</height>
 						<font>MediumBold</font>
-						<textcolor>Dark1</textcolor>
-						<selectedcolor>Dark1</selectedcolor>
-						<label>$INFO[ListItem.Label]</label>
-					</control>
-					<control type="label">
-						<top>50</top>
-						<aligny>center</aligny>
-						<height>34</height>
-						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelDirector]</label>
@@ -126,7 +116,7 @@
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelPlotBox]</label>
-						<height>234</height>
+						<height>268</height>
 					</control>
 				</control>
 			</control>

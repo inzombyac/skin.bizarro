@@ -19,14 +19,14 @@
 					<texture border="16" colordiffuse="Light2">common/box.png</texture>
 				</control> 
 				<control type="list" id="56">
-					<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons)</visible>
+					<!-- <visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | String.IsEmpty(Container.Content)</visible> -->
 					<top>300</top>
 					<height>700</height>		
 					<onleft condition="Control.IsVisible(60)">60</onleft>
 					<onleft condition="!Control.IsVisible(60)">9000</onleft>
 					<onright>56</onright>
 					<onup condition="Player.HasMedia">7788</onup>
-					<onup condition="!Player.HasMedia">3634</onup>
+					<!-- <onup condition="!Player.HasMedia">3634</onup> -->
 					<ondown>56</ondown>
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="544">list</viewtype>
@@ -75,42 +75,30 @@
 				<control type="image">
 					<height>130</height>
 					<fadetime>100</fadetime>
-					<aspectratio align="center" aligny="top" scalediffuse="false">keep</aspectratio>
+					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
 					<texture background="true">$VAR[ClearLogoBanner]</texture>
 				</control>
 			</control>
 			<include>56FanartView</include>
 			<include>56PosterViewRight</include>
 			<control type="group">
-				<control type="group">
+				<control type="grouplist">
 					<left>800</left>
 					<right>30</right>
-					<top>475</top>
-					<height>475</height>
-					<width>600</width>
+					<top>600</top>
+					<height>410</height>
+					<width>1040</width>
+					<orientation>vertical</orientation>
 					<control type="label">
-						<top>10</top>
 						<aligny>center</aligny>
-						<height>64</height>
+						<height>44</height>
 						<font>MediumBold</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelDirector]</label>
 					</control>
 					<control type="label">
-						<top>50</top>
-						<align>right</align>
-						<aligny>center</aligny>
-						<height>64</height>
-						<font>TwentyEight</font>
-						<textcolor>Dark1</textcolor>
-						<selectedcolor>Dark1</selectedcolor>
-						<visible>Container.Content(movies)</visible>
-						<label>$INFO[ListItem.Duration,, min]</label>
-					</control>
-					<control type="label">
-						<top>50</top>
-						<height>64</height>
+						<height>42</height>
 						<aligny>center</aligny>
 						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
@@ -118,12 +106,12 @@
 						<label>$VAR[LabelGenre]</label>
 					</control>
 					<control type="textbox">
-						<top>125</top>
 						<align>justify</align>
 						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelPlotBox]</label>
+						<height>310</height>
 					</control>
 				</control>
 			</control>
@@ -298,131 +286,72 @@
 	</include>
 	<include name="56FanartView">
 		<control type="group">
-		<visible>Container.Content(episodes) | Container.Content(movies)</visible>
-			<top>680</top>
-			<right>60</right>
-			<width>PosterW</width>
-			<height>270</height>
+		<visible>!Container.Content(tvshows) + !Container.Content(seasons)+ !Container.Content(movies)</visible>
+			<bottom>490</bottom>
+			<right>70</right>
+			<width>782</width>
+			<height>430</height>
 			<control type="image">
-				<left>10</left>
-				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="right" aligny="top" scalediffuse="false">scale</aspectratio>
+				<aspectratio align="right" aligny="bottom" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[LandscapeImage]</texture>
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			<control type="image">
-				<left>10</left>
-				<right>10</right>
-				<fadetime>200</fadetime>
-				<aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
-				<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-				<visible>Skin.HasSetting(views.56.showfanart)</visible>
-				<visible>!Container.Content(episodes)</visible>
+				<top>432</top>
+				<height>430</height>
+				<fadetime>100</fadetime>
+				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
+				<visible>Skin.HasSetting(show.reflections)+ !Container.Content(episodes)</visible>
 			</control>
 			<control type="image">
-				<left>10</left>
-				<right>10</right>
 				<fadetime>200</fadetime>
-				<aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
-				<texture background="true">$VAR[LandscapeImage]</texture>
-				<visible>!Skin.HasSetting(views.56.showfanart)</visible>
+				<height>430</height>
+				<aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
 				<visible>!Container.Content(episodes)</visible>
-			</control>
-			<control type="group">
-				<visible>Container.Content(episodes)</visible>
-				<control type="image">
-					<right>20</right>
-					<top>5</top>
-					<width>40</width>
-					<height>40</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[PosterPercentWatched]</texture>
-					<visible>!Skin.HasSetting(views.56.showfanart) + !Container.Content(episodes)</visible>
-				</control>
-				<control type="image">
-					<right>20</right>
-					<top>5</top>
-					<width>40</width>
-					<height>40</height>
-					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[PosterPercentWatched]</texture>
-					<visible>Container.Content(episodes) | Skin.HasSetting(views.56.showfanart)</visible>
-				</control>
-				<control type="group">
-					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
-					<visible>!Skin.HasSetting(views.56.showfanart)</visible>
-					<control type="image">
-						<right>20</right>
-						<top>5</top>
-						<height>40</height>
-						<width>40</width>
-						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-					</control>
-					<control type="label">
-						<right>15</right>
-						<top>5</top>
-						<height>40</height>
-						<width>50</width>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$INFO[ListItem.Property(UnwatchedEpisodes)]</label>
-						<font>TwentySix</font>
-						<textcolor>White</textcolor>
-					</control>
-				</control>
 			</control>
 		</control>
 	</include>
 	<include name="56PosterViewRight">
 		<control type="group" description="Poster">
-			<visible>!Container.Content(episodes) + !Container.Content(movies)</visible>
-			<bottom>120</bottom>
-			<right>60</right>
+			<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)</visible>
+			<top>170</top>
+			<right>70</right>
 			<width>PosterW</width>
-			<height>PosterH</height>
+			<height>430</height>
 			<control type="image">
-				<top>PosterH</top>
+				<top>430</top>
 				<width>PosterW</width>
-				<height>PosterH</height>
+				<height>430</height>
 				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
 				<visible>Skin.HasSetting(show.reflections)</visible>
 			</control>
 			<control type="image">
-				<centertop>PosterH</centertop>
-				<width>PosterW</width>
+				<left>100</left>
+				<top>410</top>
+				<width>340</width>
 				<height>48</height>
-				<aspectratio>stretch</aspectratio>
+				<aspectratio align="right" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">diffuse/shadowspot.png</texture>
+				<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(seasons)</visible>
 			</control>
 			<control type="image">
 				<width>PosterW</width>
-				<height>PosterH</height>
-				<texture border="5" colordiffuse="FF181818">common/box.png</texture>
-			</control>
-			<control type="image">
-				<width>PosterW</width>
-				<height>PosterH</height>
+				<height>430</height>
 				<fadetime>100</fadetime>
-				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture diffuse="diffuse/listposter.png" background="true">$VAR[PosterImage]</texture>
-			</control>
-			<control type="image">
-				<left>-24</left>
-				<top>-24</top>
-				<width>PosterShadowW</width>
-				<height>PosterShadowH</height>
-				<texture border="32">common/shadow-24.png</texture>
+				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
+				<texture background="true">$VAR[PosterImage]</texture>
 			</control>
 			<control type="group">
 				<visible>!ListItem.IsParentFolder</visible>
 				<visible>!Container.Content(episodes)</visible>
 				<control type="image">
 					<left>378</left>
-					<centertop>40</centertop>
+					<centertop>30</centertop>
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
@@ -432,7 +361,7 @@
 					<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					<control type="image">
 						<left>378</left>
-						<centertop>40</centertop>
+						<centertop>30</centertop>
 						<height>40</height>
 						<width>40</width>
 						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
@@ -440,7 +369,7 @@
 					</control>
 					<control type="label">
 						<left>373</left>
-						<centertop>40</centertop>
+						<centertop>30</centertop>
 						<height>40</height>
 						<width>50</width>
 						<align>center</align>

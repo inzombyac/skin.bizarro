@@ -56,7 +56,7 @@
 		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Artist]</value>
 		<value condition="Container.Content(episodes) | Container.Content(seasons) | Container.Content(tvshows)">$INFO[ListItem.TvShowTitle]</value>
-		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Studio]</value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Label]</value>
 		<value condition="!String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Director))">$INFO[Window(home).Property(Set.Movies.Director)]</value>
 		<value>$LOCALIZE[19055]</value>
@@ -64,8 +64,10 @@
 	<variable name="LabelGenre">
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[ListItem.Studio, • ]</value>
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[31102]]</value>
-		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre][COLOR gray]$INFO[ListItem.Property(esrb), • ,][/COLOR]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,][COLOR gray]$INFO[ListItem.Duration, • , $LOCALIZE[31102]][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Studio]$INFO[ListItem.Genre, • ,][COLOR gray]$INFO[ListItem.Property(esrb), • ,][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies)">$INFO[ListItem.Genre][COLOR gray]$INFO[ListItem.Duration, • , min][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
 		<value>$LOCALIZE[19055]</value>
