@@ -3,7 +3,7 @@
 <window id="6">
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">55</defaultcontrol>
-	<views>50,550,54,53,516,55,56,57,58,59,52,500,514,513,515,517,518</views>
+	<views>50,550,54,53,516,55,56,57,58,59,52,500,514,513,515,517,518,520</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
@@ -25,6 +25,7 @@
 		<include>View_514_PosterShift</include>
 		<include>View_513_PosterRow</include>
 		<include>View_515_Netflix</include>
+		<include>View_520_GameBrowser</include>
 		<include>Furniture_Header</include>
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_Clock</include>

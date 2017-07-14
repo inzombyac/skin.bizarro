@@ -9,7 +9,7 @@
 			<visible>Control.IsVisible(56)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<control type="group">
-				<width>705</width>
+				<width>855</width>
 				<height>850</height>
 				<left>70</left>
 				<control type="image">
@@ -31,10 +31,10 @@
 					<pagecontrol>60</pagecontrol>
 					<viewtype label="544">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
-					<itemlayout width="700" height="64">
+					<itemlayout width="850" height="64">
 						<include>56itemlayout</include>
 					</itemlayout>
-					<focusedlayout width="700" height="64">
+					<focusedlayout width="850" height="64">
 						<control type="group">
 							<visible>Control.HasFocus(56) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
 							<include>56focuslayout</include>
@@ -61,8 +61,8 @@
 				<animation effect="slide" end="-30,0" time="400" condition="Control.HasFocus(60)">Conditional</animation>
 			</control>
 			<control type="group" description="Banner">
-				<width>705</width>
-				<left>70</left>
+				<width>845</width>
+				<left>75</left>
 				<top>165</top>
 				<control type="label">
 					<font>FakeLogo</font>
@@ -83,22 +83,22 @@
 			<include>56PosterViewRight</include>
 			<control type="group">
 				<control type="grouplist">
-					<left>800</left>
+					<left>940</left>
 					<right>30</right>
-					<top>600</top>
+					<top>680</top>
 					<height>410</height>
-					<width>1040</width>
+					<width>890</width>
 					<orientation>vertical</orientation>
 					<control type="label">
 						<aligny>center</aligny>
-						<height>44</height>
+						<height>36</height>
 						<font>MediumBold</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelDirector]</label>
 					</control>
 					<control type="label">
-						<height>42</height>
+						<height>49</height>
 						<aligny>center</aligny>
 						<font>TwentyEight</font>
 						<textcolor>Dark1</textcolor>
@@ -111,9 +111,10 @@
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelPlotBox]</label>
-						<height>310</height>
+						<height>230</height>
 					</control>
 				</control>
+				
 			</control>
 		</control>
 	</include>
@@ -287,19 +288,18 @@
 	<include name="56FanartView">
 		<control type="group">
 		<visible>!Container.Content(tvshows) + !Container.Content(seasons)+ !Container.Content(movies)</visible>
-			<bottom>490</bottom>
-			<right>70</right>
-			<width>782</width>
-			<height>430</height>
+			<bottom>408</bottom>
+			<right>80</right>
+			<width>907</width>
+			<height>510</height>
 			<control type="image">
-				<fadetime>200</fadetime>
 				<aspectratio align="right" aligny="bottom" scalediffuse="false">stretch</aspectratio>
 				<texture background="true">$VAR[LandscapeImage]</texture>
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			<control type="image">
-				<top>432</top>
-				<height>430</height>
+				<top>507</top>
+				<height>505</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
@@ -307,7 +307,7 @@
 			</control>
 			<control type="image">
 				<fadetime>200</fadetime>
-				<height>430</height>
+				<height>505</height>
 				<aspectratio align="right" aligny="bottom" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>
 				<visible>!Container.Content(episodes)</visible>
@@ -318,13 +318,13 @@
 		<control type="group" description="Poster">
 			<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)</visible>
 			<top>170</top>
-			<right>70</right>
+			<right>80</right>
 			<width>PosterW</width>
-			<height>430</height>
+			<height>500</height>
 			<control type="image">
-				<top>430</top>
+				<top>500</top>
 				<width>PosterW</width>
-				<height>430</height>
+				<height>500</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture flipy="true" diffuse="diffuse/listposter-ref.png" background="true">$VAR[PosterImage]</texture>
@@ -332,7 +332,7 @@
 			</control>
 			<control type="image">
 				<left>100</left>
-				<top>410</top>
+				<top>480</top>
 				<width>340</width>
 				<height>48</height>
 				<aspectratio align="right" scalediffuse="false">stretch</aspectratio>
@@ -341,7 +341,7 @@
 			</control>
 			<control type="image">
 				<width>PosterW</width>
-				<height>430</height>
+				<height>500</height>
 				<fadetime>100</fadetime>
 				<aspectratio align="right" aligny="center" scalediffuse="false">keep</aspectratio>
 				<texture background="true">$VAR[PosterImage]</texture>

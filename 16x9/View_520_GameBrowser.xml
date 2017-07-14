@@ -90,7 +90,7 @@
 				<control type="grouplist">
 					<left>800</left>
 					<right>30</right>
-					<top>656</top>
+					<top>658</top>
 					<height>400</height>
 					<width>1040</width>
 					<orientation>vertical</orientation>
@@ -170,7 +170,7 @@
 			<aspectratio align="center" aligny="top">stretch</aspectratio>
 			<texture background="true">$INFO[ListItem.Icon]</texture>
 			<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-			<visible>!String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge)</visible>
+			<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
 		</control>
 		<control type="image">
 			<height>85%</height>
@@ -178,7 +178,7 @@
 			<aspectratio align="center" aligny="top">keep</aspectratio>
 			<texture background="true">$INFO[ListItem.Icon]</texture>
 			<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-			<visible>String.StartsWith(ListItem.Label,Box) |  String.StartsWith(ListItem.Label,Cartridge)</visible>
+			<visible>String.StartsWith(ListItem.Label,Box) |  String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
 		</control>
 		<control type="image">
 			<description>Title overlay</description>
@@ -204,7 +204,7 @@
 			<aspectratio align="center" aligny="top">stretch</aspectratio>
 			<texture background="true">$INFO[ListItem.Icon]</texture>
 			<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
-			<visible>!String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge)</visible>
+			<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
 		</control>
 		<control type="image">
 			<height>85%</height>
@@ -212,7 +212,7 @@
 			<aspectratio align="center" aligny="top">keep</aspectratio>
 			<texture background="true">$INFO[ListItem.Icon]</texture>
 			<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
-			<visible>String.StartsWith(ListItem.Label,Box) | String.StartsWith(ListItem.Label,Cartridge) </visible>
+			<visible>String.StartsWith(ListItem.Label,Box) | String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
 		</control>
 		<control type="image">
 			<width>200</width>

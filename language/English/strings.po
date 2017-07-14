@@ -58,7 +58,7 @@ msgstr ""
 
 #: /extras/views.xml
 msgctxt "#31008"
-msgid "Game Browser"
+msgid "Gallery"
 msgstr ""
 
 # strings 31000 thru 31999 reserved for skins
@@ -790,9 +790,4 @@ msgstr ""
 # AddonBrowser.xml 34
 msgctxt "#31798"
 msgid "Misc Options"
-msgstr ""
-
-# views.xml
-msgctxt "#31799"
-msgid "Game Info"
 msgstr ""
