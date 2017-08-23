@@ -1,3 +1,9 @@
+1.0.8
+- Fix gallery/media info views imposing over empty lists
+
+1.0.7
+- Gallery view
+
 1.0.6
 - Cleanup combine game views
 

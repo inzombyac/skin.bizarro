@@ -5,8 +5,10 @@
 	<include name="View_520_GameBrowser">
 		<description>Game View (id=520)</description>
 		<control type="group">
+			<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) | Container.Content(addons)</visible>
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(520)</visible>
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
 			<control type="group">
 				<width>705</width>
 				<height>850</height>
@@ -64,11 +66,12 @@
 				<width>705</width>
 				<left>70</left>
 				<top>165</top>
+				<visible>Control.IsVisible(520)</visible>
 				<control type="image">
 					<height>130</height>
 					<fadetime>100</fadetime>
 					<aspectratio align="center" aligny="top" scalediffuse="false">stretch</aspectratio>
-					<texture background="true" fallback="special://skin/extras/banners/AEL.jpg">$VAR[ClearLogoBanner]</texture>
+					<texture background="true">$VAR[ClearLogoBanner]</texture>
 				</control>
 			</control>
 			<control type="button" id="5050">
@@ -164,80 +167,86 @@
 		</control>
 	</include>
 	<include name ="520ArtworkLayout">
-		<control type="image">
-			<height>334</height>
-			<width>500</width>
-			<aspectratio align="center" aligny="top">stretch</aspectratio>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-			<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
-		</control>
-		<control type="image">
-			<height>85%</height>
-			<width>500</width>
-			<aspectratio align="center" aligny="top">keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
-			<visible>String.StartsWith(ListItem.Label,Box) |  String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
-		</control>
-		<control type="image">
-			<description>Title overlay</description>
-			<bottom>0</bottom>
-			<width>500</width>
-			<height>60</height>
-			<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
-		</control>
-		<control type="label">
-			<bottom>0</bottom>
-			<aligny>center</aligny>
-			<align>center</align>
-			<height>64</height>
-			<font>Flag</font>
-			<label>$INFO[ListItem.Label]</label>
-			<textcolor>Dark1</textcolor>
+		<control type="group">
+			<visible>Control.IsVisible(520)</visible>
+			<control type="image">
+				<height>334</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+				<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<height>85%</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="70" condition="true">Conditional</animation>
+				<visible>String.StartsWith(ListItem.Label,Box) |  String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<width>500</width>
+				<height>60</height>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+			</control>
+			<control type="label">
+				<bottom>0</bottom>
+				<aligny>center</aligny>
+				<align>center</align>
+				<height>64</height>
+				<font>Flag</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>Dark1</textcolor>
+			</control>
 		</control>
 	</include>
 	<include name="520FocusedArtworkLayout">
-		<control type="image">
-			<height>334</height>
-			<width>500</width>
-			<aspectratio align="center" aligny="top">stretch</aspectratio>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
-			<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
-		</control>
-		<control type="image">
-			<height>85%</height>
-			<width>500</width>
-			<aspectratio align="center" aligny="top">keep</aspectratio>
-			<texture background="true">$INFO[ListItem.Icon]</texture>
-			<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
-			<visible>String.StartsWith(ListItem.Label,Box) | String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
-		</control>
-		<control type="image">
-			<width>200</width>
-			<height>200</height>
-			<top>80</top>
-			<centerleft>50%</centerleft>
-			<aspectratio>keep</aspectratio>
-			<texture colordiffuse="$VAR[ColorHighlight]">common/playring.png</texture>
-			<visible>Container(5051).HasFocus(1)</visible>
-		</control>
-		<control type="image">
-			<description>Title overlay</description>
-			<bottom>0</bottom>
-			<width>500</width>
-			<height>60</height>
-			<texture border="15" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
-		</control>
-		<control type="label">
-			<bottom>0</bottom>
-			<aligny>center</aligny>
-			<align>center</align>
-			<height>64</height>
-			<font>Flag</font>
-			<label>$INFO[ListItem.Label]</label>
-			<textcolor>Light1</textcolor>
+		<control type="group">
+			<visible>Control.IsVisible(520)</visible>
+			<control type="image">
+				<height>334</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
+				<visible>!String.StartsWith(ListItem.Label,Poster) + !String.StartsWith(ListItem.Label,Box) + !String.StartsWith(ListItem.Label,Cartridge) + !String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<height>85%</height>
+				<width>500</width>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+				<animation effect="fade" start="100" end="40" condition="Container(5051).HasFocus(1)">Conditional</animation>
+				<visible>String.StartsWith(ListItem.Label,Box) | String.StartsWith(ListItem.Label,Cartridge) | String.StartsWith(ListItem.Label,Poster) | String.StartsWith(ListItem.Label,Clear)</visible>
+			</control>
+			<control type="image">
+				<width>200</width>
+				<height>200</height>
+				<top>80</top>
+				<centerleft>50%</centerleft>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="$VAR[ColorHighlight]">common/playring.png</texture>
+				<visible>Container(5051).HasFocus(1)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>0</bottom>
+				<width>500</width>
+				<height>60</height>
+				<texture border="15" colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
+			</control>
+			<control type="label">
+				<bottom>0</bottom>
+				<aligny>center</aligny>
+				<align>center</align>
+				<height>64</height>
+				<font>Flag</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>Light1</textcolor>
+			</control>
 		</control>
 	</include>
 	<include name="520ArtPanel">
@@ -254,6 +263,7 @@
 			<animation effect="fade" end="0" start="100" time="300">Hidden</animation>
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 			<visible>!Container(520).Scrolling</visible>
+			<visible>Control.IsVisible(520)</visible>
 			<top>160</top>
 			<left>800</left>
 			<width>1020</width>
