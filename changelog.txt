@@ -1,3 +1,6 @@
+1.0.9
+- EmbyCon tweaks
+
 1.0.8
 - Fix gallery/media info views imposing over empty lists
 

@@ -929,4 +929,8 @@
 		<value condition="Control.HasFocus(302)">$INFO[Container(302).ListItem.Property(Path),Path: ,]</value>
 		<value condition="Control.HasFocus(300)">$INFO[Container(300).ListItem.Property(Path),Path: ,]</value>
 	</variable>
+	<variable name="VideoHWDecoder">
+        <value condition="Player.Process(videohwdecoder)">HW</value>
+        <value>SW</value>
+    </variable>
 </includes>

@@ -61,6 +61,16 @@ msgctxt "#31008"
 msgid "Gallery"
 msgstr ""
 
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31009"
+msgid "Video Decoder"
+msgstr ""
+
+#: /16x9/DialogPlayerProcessInfo.xml
+msgctxt "#31010"
+msgid "Pixel format"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

@@ -464,13 +464,20 @@
 			</control>
 			<control type="button" id="3122">
 				<include>DefContextButton</include>
+				<label>EmbyCon</label>
+				<onclick>ActivateWindow(10025,"plugin://plugin.video.embycon",return)</onclick>
+				<align>left</align>
+			</control>
+			<control type="button" id="9094">
+				<include>DefContextButton</include>
 				<label>Emby</label>
 				<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
 				<align>left</align>
+				<visible>System.HasAddon(plugin.video.emby)</visible>
 			</control>
 			<control type="button" id="9092" description="Emby Manual sync">
 				<include>DefContextButton</include>
-				<label>$LOCALIZE[653]</label>
+				<label>Manual Sync</label>
 				<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
 				<onclick>right</onclick>
 				<align>left</align>
@@ -1290,6 +1297,7 @@
 		<value>special://skin/extras/playlists/InProgressMovies.xsp</value>
 	</variable>
 	<variable name="DefWidgetRight1LiveTV">
+		<value condition="System.HasAddon(script.skin.helper.widgets)">plugin://script.skin.helper.widgets/?action=recordings&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>pvr://recordings/tv/active</value>
 	</variable>
 	<variable name="DefWidgetRight1Music">
