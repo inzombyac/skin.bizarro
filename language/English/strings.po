@@ -500,7 +500,7 @@ msgid "Double pane list"
 msgstr ""
 
 msgctxt "#31236"
-msgid "Now playing..."
+msgid "Playing..."
 msgstr ""
 
 msgctxt "#31237"

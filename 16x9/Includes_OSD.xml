@@ -94,16 +94,7 @@
 				<texture background="true" colordiffuse="Dark1">flags/$VAR[OSDVideoFlagstar5].png</texture>
 			</control>
 		</control>
-		<control type="label" description="Plot">
-			<width>100%</width>
-			<top>55</top>
-			<height>44</height>
-			<font>Tiny</font>
-			<align>justify</align>
-			<textcolor>Dark1</textcolor>
-			<label>$VAR[PlayerPlotBox]</label>
-			<scroll>false</scroll>
-		</control>
+		
 		<control type="label" description="Elapsed Time">
 			<width>400</width>
 			<bottom>40</bottom>

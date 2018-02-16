@@ -480,6 +480,7 @@
 		<value condition="Player.Seeking + String.IsEmpty(Player.SeekOffset)">$LOCALIZE[773]$INFO[Player.SeekStepSize, ,]</value>
 		<value condition="Player.Paused">$LOCALIZE[112]</value>
 		<value condition="!Player.HasVideo + !String.IsEmpty(MusicPlayer.offset(1).Title)">[B]$LOCALIZE[209]:  [/B]$INFO[MusicPlayer.offset(1).Title]$INFO[MusicPlayer.offset(1).Artist, - ,]</value>
+		<value condition="Window.IsVisible(fullscreeninfo)"></value>
 		<value condition="Player.Playing">$LOCALIZE[31236]</value>
 		<value>$INFO[Player.FinishTime,$LOCALIZE[19127]: ,]</value>
 	</variable>

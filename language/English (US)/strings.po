@@ -574,8 +574,8 @@ msgid "Double pane list"
 msgstr "Double pane list"
 
 msgctxt "#31236"
-msgid "Now playing..."
-msgstr "Now playing..."
+msgid "Playing..."
+msgstr "Playing..."
 
 msgctxt "#31237"
 msgid "Use minimal busy loader in header"
