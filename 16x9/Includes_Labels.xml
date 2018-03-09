@@ -162,7 +162,7 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Emby TV</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Emby Movies</value>
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName))">$INFO[Container(300).ListItem.Property(widgetName)]</value>
-		
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),youtube)">Popular Right Now</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
 		<value condition="Container(300).Scrolling">[CR]</value>
@@ -244,6 +244,7 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content))">Recent</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Next Up</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Resume</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Recommendations</value>
 	</variable>
 	<variable name="WidgetRight2SelectionLabel">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName.right2))">$INFO[Container(211).ListItem.Property(widgetName.right2)]</value>
@@ -338,6 +339,7 @@
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content))">Recent</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Next Up</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Resume</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),youtube)">Recommendations</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
 		<value condition="Container(4017).IsUpdating + System.IdleTime(0)">[CR]</value>

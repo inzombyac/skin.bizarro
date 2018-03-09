@@ -1267,6 +1267,7 @@
 	</variable>
 	<variable name="DefWidgetMainContent">
 		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),youtube)">plugin://plugin.video.youtube/special/popular_right_now/</value>
 	</variable>
 	<variable name="DefWidgetMainSelection">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows)">$VAR[DefWidgetMainTVShows]</value>
@@ -1287,6 +1288,7 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">$VAR[DefWidgetMainEmbyConTV]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">$VAR[DefWidgetMainEmbyConMovies]</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(211).ListItem.Property(widgetPath)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),youtube)">plugin://plugin.video.youtube/special/popular_right_now/</value>
 	</variable>
 	<variable name="DefWidgetRight1TVShows">
 		<!-- <value>plugin://script.skin.helper.service/?action=nextepisodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
@@ -1362,6 +1364,10 @@
 	<variable name="DefWidgetRight1EmbyConMovies">
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Users/%7Buserid%7D/Items%3FLimit%3D20%26Recursive%3Dtrue%26Fields%3DEpisodeCount%2CSeasonCount%2CPath%2CGenres%2CStudios%2CCumulativeRunTimeTicks%2CEtag%2CMediaStreams%2CPeople%2COverview%26Filters%3DIsResumable%26IncludeItemTypes%3DMovie%26ImageTypeLimit%3D1%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=Movies&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
+	<variable name="DefWidgetRight1Videos">
+		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetPath.right1))">$INFO[Container(300).ListItem.Property(widgetPath.right1)]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),youtube)">plugin://plugin.video.youtube/special/recommendations/?reload=$INFO[Window(Home).Property(widgetreload)]</value>
+	</variable>
 	<variable name="DefWidgetRight1Selection">
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$VAR[DefWidgetRight1Emby0]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$VAR[DefWidgetRight1Emby1]</value>
@@ -1376,6 +1382,7 @@
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">$VAR[DefWidgetRight1EmbyConTV]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">$VAR[DefWidgetRight1EmbyConMovies]</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath.right1))">$INFO[Container(211).ListItem.Property(widgetPath.right1)]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),youtube)">plugin://plugin.video.youtube/special/recommendations/?reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
 	<variable name="DefWidgetRight2TVShows">
 		<value>special://skin/extras/playlists/UnwatchedShows.xsp</value>

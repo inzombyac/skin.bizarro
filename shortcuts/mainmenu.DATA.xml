@@ -37,6 +37,14 @@
         <action>ActivateWindow(tvguide)</action>
     </shortcut>
 	<shortcut>
+        <label>YouTube</label>
+        <label2>youtube</label2>
+        <defaultID>youtube</defaultID>
+        <icon>special://skin/extras/icons/youtube.png</icon>
+        <action>ActivateWindow(Videos,plugin://plugin.video.youtube,return)</action>
+        <visible>System.HasAddon(plugin.video.youtube)</visible>
+    </shortcut>
+    <shortcut>
         <label>Programs</label>
         <label2>programs</label2>
         <defaultID>programs</defaultID>

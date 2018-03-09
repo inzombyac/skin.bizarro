@@ -1281,7 +1281,7 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
-					<content limit="12" target="videos">$INFO[Container(300).ListItem.Property(widgetPath.right1)]</content>
+					<content limit="12" target="videos">$VAR[DefWidgetRight1Videos]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 				</control>
