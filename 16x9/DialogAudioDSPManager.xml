@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
+<!-- There are no current audio DSP managers.  Need to review if this is added back to Kodi to add color to header -->
 <window type="dialog">
     <defaultcontrol>9000</defaultcontrol>
     <controls>

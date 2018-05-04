@@ -474,7 +474,8 @@
 					<include>DefOSDUpDown</include>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visual-text.png</texturefocus>
 					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visual-text.png</texturenofocus>
-					<onclick>Skin.ToggleSetting(osd.showvisualtext)</onclick>
+					<onclick condition="!Skin.Skin.HasSetting(osd.showvisualtext)">Skin.ToggleSetting(osd.showvisualtext)</onclick>
+					<onclick condition="Skin.Skin.HasSetting(osd.showvisualtext)">Skin.Reset(osd.showvisualtext)</onclick>
 				</control>
             </control>
 
