@@ -17,6 +17,7 @@
                 <label>13406</label>
                 <font>MediumBold</font>
                 <align>center</align>
+                <textcolor>Light1</textcolor>
             </control>
             <control type="list" id="5">
                 <posx>15</posx>

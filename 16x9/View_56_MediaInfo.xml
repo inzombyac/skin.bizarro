@@ -5,7 +5,7 @@
 	<include name="View_56_MediaInfo">
 		<description>List View (id=56)</description>
 		<control type="group">
-			<visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) | Container.Content(addons)</visible>
+			<!-- <visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) | Container.Content(addons)</visible> -->
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(56)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>

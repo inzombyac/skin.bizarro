@@ -91,6 +91,12 @@
 
                 <control type="label">
                     <include>WindowID</include>
+                    <label>MyPVRGuide.xml</label>
+                    <visible>Window.IsVisible(MyPVRGuide.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
                     <label>MyVideoNav.xml</label>
                     <visible>Window.IsVisible(MyVideoNav.xml)</visible>
                 </control>
@@ -225,6 +231,37 @@
 
                 <control type="label">
                     <include>DialogID</include>
+                    <label>DialogPVRChannelManager.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelManager.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRChannelsOSD.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelsOSD.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRGroupManager.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGroupManager.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRGuideOSD.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRGuideSearch.xml</label>
+                    <visible>Window.IsVisible(DialogPVRGuideSearch.xml)</visible>
+                </control>
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogPVRInfo.xml</label>
+                    <visible>Window.IsVisible(DialogPVRInfo.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
                     <label>DialogSettings.xml (MediaFilter)</label>
                     <visible>Window.IsVisible(mediafilter)</visible>
                 </control>
@@ -353,6 +390,12 @@
                     <include>DialogID</include>
                     <label>DialogVolumeBar.xml</label>
                     <visible>Window.IsVisible(DialogVolumeBar.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogGameControllers.xml</label>
+                    <visible>Window.IsVisible(DialogGameControllers.xml)</visible>
                 </control>
 
                 <control type="label">

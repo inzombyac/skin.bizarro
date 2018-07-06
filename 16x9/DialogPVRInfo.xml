@@ -8,7 +8,7 @@
 			<centerleft>50%</centerleft>
             <posy>210</posy>
             <width>1500</width>
-            <height>600</height>
+            <height>680</height>
             <include>DefDialogInfoPanel</include>
             <control type="label">
                 <description>heading</description>
@@ -17,8 +17,10 @@
                 <label>$INFO[ListItem.Title]</label>
                 <font>MediumBold</font>
                 <align>center</align>
+                <textcolor>Light1</textcolor>
             </control>
 		<control type="group">
+			
 			<!-- Main -->
 			<control type="group">
 				<animation effect="slide" start="1920" end="0" delay="0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
@@ -27,7 +29,7 @@
 				<animation effect="slide" start="0" end="1920" time="300" tween="quadratic" easing="in">Hidden</animation>
 				<!-- Control Buttons -->
 				<control type="grouplist" id="9000">
-					<bottom>40</bottom>
+					<bottom>30</bottom>
 					<left>40</left>
 					<right>40</right>
 					<height>68</height>
@@ -84,8 +86,8 @@
 				<control type="group">
 					<left>40</left>
 					<right>40</right>
-					<bottom>224</bottom>
-					<top>40</top>
+					<bottom>110</bottom>
+					<top>100</top>
 					<control type="grouplist">
 						<left>30</left>
 						<right>30</right>
@@ -248,7 +250,7 @@
 							<height>24</height>
 						</control>
 						<control type="group">
-							<height>auto</height>
+							<height>325</height>
 							<width>100%</width>
 							<control type="textbox">
 								<left>0</left>

@@ -43,4 +43,5 @@
 
 	<color name="DialogFanartFade">FF333333</color>
 	<color name="FloorFade">8F181818</color>
+	<color name="DialogHeader">ffcccccc</color>
 </colors>

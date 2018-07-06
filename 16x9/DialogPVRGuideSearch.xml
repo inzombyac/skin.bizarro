@@ -13,6 +13,7 @@
             <include>DefDialogInfoPanel</include>
                         
             <control type="label">
+                <top>-1</top>
                 <include>DefDialogHeader</include>
                 <label>$LOCALIZE[19142]</label>
             </control>      

@@ -2,7 +2,6 @@
 <!-- Foundation -->
 <window id="605">
 	<defaultcontrol always="true">20</defaultcontrol>
-	
 	<onunload>ClearProperty(Focus)</onunload>
 	<controls>
 		<include>GlobalOverlay</include>
@@ -12,9 +11,9 @@
 			<height>1006</height>
 			<include>DefDialogInfoPanel</include>
 			<control type="label">
+				<top>-1</top>
 				<include>DefDialogHeader</include>
 				<label>$LOCALIZE[19199] • $LOCALIZE[19023]</label>
-				>
 			</control>
 			<control type="group" id="8000">
 				<posx>30</posx>

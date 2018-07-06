@@ -2,14 +2,10 @@
 <!-- Foundation -->
 <window id="106">
     <defaultcontrol always="true">1000</defaultcontrol>
-    
-
     <coordinates>
         <origin x="0" y="0" />
     </coordinates>
-
     <controls>
-
         <include>GlobalOverlay</include>
         <control type="group">
             <include>Animation.ZoomIn</include>
@@ -25,7 +21,6 @@
                 <height>871</height>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
             </control>
-
             <control type="grouplist" id="996">
                 <description>grouplist for context buttons</description>
                 <posx>18</posx>
@@ -39,7 +34,5 @@
                 </control>
             </control>
         </control>
-
     </controls>
-
 </window>

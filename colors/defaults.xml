@@ -57,6 +57,7 @@
 	<color name="HeaderBG">4d000000</color>
 	<color name="Overlay">FF000000</color>
 	<color name="HeaderIconFade">FFdddddd</color>
+	<color name="DialogHeader">FF2dc228</color>
 
 	<!-- other colors -->
 	<color name="whitethemehighlight">ff0385b5</color>

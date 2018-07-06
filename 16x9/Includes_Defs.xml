@@ -72,6 +72,13 @@
 			<bottom>-8</bottom>
 			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
 		</control>
+		 <control type="image">
+            <left>-8</left>
+			<right>-8</right>
+			<top>-8</top>
+            <height>92</height>
+            <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+        </control>
 	</include>
 	<include name="DefDialogInfoHeader">
 		<left>30</left>
@@ -90,7 +97,7 @@
 		<width>990</width>
 		<align>center</align>
 		<font>MediumBold</font>
-		<textcolor>Black70</textcolor>
+		<textcolor>Light1</textcolor>
 	</include>
 	<include name="DefDialogBackground">
 		<include>Animation.ZoomIn</include>
@@ -103,6 +110,11 @@
 			<height>900</height>
 			<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
 		</control>
+		<control type="image">
+           	<width>1080</width>
+            <height>100</height>
+            <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+        </control>
 	</include>
 	<include name="DefPVRDialogButton">
 		<width>600</width>
@@ -220,6 +232,9 @@
 		<height>1080</height>
 		<onleft>9000</onleft>
 		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)]">50</onright>
+		<onright condition="Window.IsVisible(tvguide)">10</onright>
+		<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
 		<onup>9000</onup>
 		<ondown>9000</ondown>
 		<onback>ClearProperty(MediaMenu,Home)</onback>

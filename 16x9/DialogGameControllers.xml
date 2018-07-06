@@ -11,25 +11,29 @@
             <height>915</height>
             <include>Animation.FadeIn.Slide</include>
             <control type="image">
-                <posx>-30</posx>
-                <posy>-30</posy>
-                <width>1860</width>
-                <height>975</height>
+                <width>1800</width>
+                <height>915</height>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+            </control>
+            <control type="image">
+                <width>1800</width>
+                <height>100</height>
+                <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
             </control>
             <control type="label">
                 <description>Header Label</description>
-                <posx>15</posx>
-                <posy>-15</posy>
+                <centerleft>50%</centerleft>
+                <posy>15</posy>
+                <width>990</width>
                 <align>center</align>
                 <font>MediumBold</font>
-                <width>1770</width>
+                <textcolor>Light1</textcolor>
                 <label>35058</label>
             </control>
             <control type="grouplist" id="3">
                 <left>20</left>
                 <width>380</width>
-                <top>20</top>
+                <top>120</top>
                 <height>668</height>
                 <onright>5</onright>
                 <onleft>8000</onleft>
@@ -45,7 +49,7 @@
             <control type="grouplist" id="5">
                 <width>380</width>
                 <right>20</right>
-                <top>20</top>
+                <top>120</top>
                 <height>668</height>
                 <onleft>3</onleft>
                 <onright>8000</onright>
@@ -102,10 +106,10 @@
 			<description>Settings Category</description>
 			<height>60</height>
             <width>380</width>
-            <label>-</label>
             <align>center</align>
             <aligny>center</aligny>
 			<font>SmallBold</font>
+            <textcolor>$VAR[ColorHighlight2]</textcolor>
 		</control>
 		<control type="image" id="9">
 			<description>Settings Category Separator</description>

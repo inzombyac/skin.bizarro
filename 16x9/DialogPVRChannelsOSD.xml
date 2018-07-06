@@ -89,9 +89,9 @@
 						<selectedcolor>$VAR[OSDPanelWhite70]</selectedcolor>
 					</control>
 					<control type="progress">
-						<posx>194</posx>
+						<posx>260</posx>
 						<posy>81</posy>
-						<width>295</width>
+						<width>150</width>
 						<height>19</height>
 						<reveal>true</reveal>
 						<texturebg>pvr/progress-back-wide.png</texturebg>
@@ -176,9 +176,9 @@
 						<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 					</control>
 					<control type="progress">
-						<posx>194</posx>
+						<posx>260</posx>
 						<posy>81</posy>
-						<width>295</width>
+						<width>150</width>
 						<height>19</height>
 						<reveal>true</reveal>
 						<texturebg>pvr/progress-back-wide.png</texturebg>

@@ -16,12 +16,21 @@
 				<height>444</height>
 				<texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
 			</control>
+			<control type="image">
+                <posx>-30</posx>
+                <posy>-30</posy>
+                <width>960</width>
+                <height>100</height>
+                <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+            </control>
 			<control type="label" id="1">
+				<top>-15</top>
 				<description>Heading</description>
 				<centerleft>50%</centerleft>
 				<width>885</width>
 				<font>MediumBold</font>
 				<align>center</align>
+				<textcolor>Light1</textcolor>
 			</control>
 			<control type="textbox" id="9">
 				<description>Line 1</description>

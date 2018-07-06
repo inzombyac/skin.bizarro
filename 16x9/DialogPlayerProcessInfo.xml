@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol>-</defaultcontrol>
-
     <controls>
         <control type="group">
             <include>Animation_FadeIn</include>
@@ -68,12 +67,12 @@
                 </control>
             </control>
             <control type="grouplist">
-                <left>1250</left>
+                <left>1120</left>
                 <top>20</top>
                 <visible>VideoPlayer.Content(livetv)</visible>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="label">
-                    <width>600</width>
+                    <width>500</width>
                     <height>50</height>
                     <aligny>bottom</aligny>
                     <label>$INFO[PVR.ActStreamBer,[COLOR Dark1]$LOCALIZE[19010]:[/COLOR] ]</label>
@@ -81,7 +80,7 @@
                     <textcolor>PanelWhite70</textcolor>
                 </control>
                 <control type="label">
-                    <width>600</width>
+                    <width>500</width>
                     <height>50</height>
                     <aligny>bottom</aligny>
                     <label>$INFO[PVR.ActStreamUnc,[COLOR Dark1]$LOCALIZE[19011]:[/COLOR] ]</label>
@@ -89,7 +88,7 @@
                     <textcolor>PanelWhite70</textcolor>
                 </control>
                 <control type="label">
-                    <width>600</width>
+                    <width>500</width>
                     <height>50</height>
                     <aligny>bottom</aligny>
                     <label>$INFO[PVR.ActStreamMux,[COLOR Dark1]$LOCALIZE[19100]:[/COLOR] ]</label>
@@ -97,7 +96,7 @@
                     <textcolor>PanelWhite70</textcolor>
                 </control>
                 <control type="label">
-                    <width>600</width>
+                    <width>500</width>
                     <height>50</height>
                     <aligny>bottom</aligny>
                     <label>$INFO[PVR.ActStreamSignal,[COLOR Dark1]$LOCALIZE[19008]:[/COLOR] ]</label>
@@ -106,13 +105,13 @@
                 </control>
                 <control type="progress">
                     <top>5</top>
-                    <width>600</width>
+                    <width>480</width>
                     <height>18</height>
                     <info>PVR.ActStreamProgrSignal</info>
                 </control>
                 <control type="label">
                     <top>5</top>
-                    <width>1600</width>
+                    <width>500</width>
                     <height>50</height>
                     <aligny>bottom</aligny>
                     <label>$INFO[PVR.ActStreamSNR,[COLOR Dark1]$LOCALIZE[19009]:[/COLOR] ]</label>
@@ -121,7 +120,7 @@
                 </control>
                 <control type="progress">
                     <top>0</top>
-                    <width>600</width>
+                    <width>480</width>
                     <height>18</height>
                     <info>PVR.ActStreamProgrSNR</info>
                 </control>

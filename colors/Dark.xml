@@ -24,5 +24,6 @@
     
     <color name="Panel">FF333333</color>
     <color name="Overlay">FF000000</color>
+    <color name="DialogHeader">FF12B2E7</color>
     
 </colors>

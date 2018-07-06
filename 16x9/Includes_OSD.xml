@@ -191,11 +191,11 @@
 			<include>DefOSDButtons</include>
 		</control>
 		<control type="button" id="6">
-			<description>TIMELINE</description>
+			<description>TV Guide</description>
 			<align>right</align>
 			<include>DefOSDButtons</include>
-			<label>19032</label>
-			<onclick>ActivateWindow(tvguide,,return)</onclick>
+			<label></label>
+			<onclick>ActivateWindow(tvguide)</onclick>
 		</control>
 	</include>
 	<include name="OSDDVDMenu">

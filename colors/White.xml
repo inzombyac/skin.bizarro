@@ -39,4 +39,5 @@
 
     <color name="Overlay">FFdddddd</color>
     <color name="HeaderIconFade">FFdddddd</color>
+    <color name="DialogHeader">FF555555</color>
 </colors>
