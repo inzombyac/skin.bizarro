@@ -7,43 +7,25 @@
             <posy>95</posy>
             <width>1630</width>
             <height>798</height>
-            <include>DefDialogInfoPanel</include>
-            
+            <include>DefDialogInfoPanel</include>      
             <!-- Header -->
             <control type="label" id="100">
                 <description>Header Label</description>
-                <centerleft>50%</centerleft>
-                <width>1000</width>
-                <align>center</align>
+                <include>DefDialogHeader</include>
                 <label>13388</label>
-                <posy>15</posy>
-                <font>MediumBold</font>
-            </control>
-            
-            <!-- Header Image -->
-            <control type="image" id="110">
-                <posx>15</posx>
-                <posy>15</posy>
-                <width>330</width>
-                <height>60</height>
-                <aspectratio align="left" aligny="top">keep</aspectratio>
-            </control>
-            
-            
-            
-
-            
+                <top>0</top>
+            </control>   
             <!-- Subs List -->
             <control type="list" id="120">
                 <left>15</left>
                 <posy>90</posy>
-                <width>1100</width>
+                <width>1170</width>
                 <height>621</height>
                 <onup>120</onup>
                 <onleft>150</onleft>
                 <onright>150</onright>
                 <ondown>120</ondown>
-                <itemlayout height="69" width="1100">
+                <itemlayout height="69" width="1170">
                     <control type="image">
                         <posx>11</posx>
                         <posy>12</posy>
@@ -93,7 +75,6 @@
                         <colordiffuse>Black70</colordiffuse>
                         <visible>ListItem.property(sync)</visible>
                     </control>
-
                     <control type="label">
                         <posx>227</posx>
                         <right>30</right>
@@ -103,10 +84,8 @@
                         <textcolor>Black70</textcolor>
                         <font>Small</font>
                     </control>
-
                 </itemlayout>
-
-                <focusedlayout height="69" width="1100">
+                <focusedlayout height="69" width="1170">
                     <control type="image">
                         <height>66</height>
                         <width>100%</width>
@@ -171,12 +150,16 @@
                         <font>Small</font>
                         <scroll>true</scroll>
                     </control>
-         
                 </focusedlayout>
-
             </control>
-            
-            
+            <!-- Header Image -->
+            <control type="image" id="110">
+                <left>15</left>
+                <bottom>15</bottom>
+                <width>330</width>
+                <height>60</height>
+                <aspectratio align="left" aligny="top">keep</aspectratio>
+            </control>
             <!-- Search Labels -->
             <control type="label" id="140">
                 <description>Content Picker label</description>
@@ -186,24 +169,23 @@
                 <align>left</align>
                 <textcolor>Black30</textcolor>
                 <visible>false</visible>
+                <font>Tiny</font>
             </control>
-            
             <control type="label">
                 <description>Content Picker label</description>
-                <left>45</left>
+                <left>340</left>
                 <right>30</right>
                 <bottom>15</bottom>
                 <align>left</align>
                 <font>Tiny</font>
                 <textcolor>Black70</textcolor>
-                <label>$INFO[Control.GetLabel(140),,   ]$INFO[Player.FileName]</label>
+                <label>$INFO[Control.GetLabel(140),,     ]$INFO[VideoPlayer.Title]</label>
             </control>
-            
             <!-- Manual Search -->
             <control type="button" id="160">
-                <posx>1130</posx>
+                <posx>1200</posx>
                 <posy>90</posy>
-                <width>485</width>
+                <width>415</width>
                 <height>66</height>
                 <label>413</label>
                 <ondown>150</ondown>
@@ -214,13 +196,12 @@
                 <texturefocus border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texturefocus>
                 <texturenofocus border="5" colordiffuse="Black12">common/box.png</texturenofocus>
             </control>
-            
             <!-- Providers -->
             <control type="list" id="150">
                 <description>Button Area</description>
-                <posx>1130</posx>
+                <posx>1200</posx>
                 <posy>159</posy>
-                <width>485</width>
+                <width>415</width>
                 <height>552</height>
                 <onleft>120</onleft>
                 <onright>120</onright>
@@ -243,9 +224,7 @@
                         <textcolor>Black30</textcolor>
                         <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
                     </control>
-
                 </itemlayout>
-
                 <focusedlayout height="69" width="485">
                     <control type="image">
                         <height>66</height>
@@ -276,18 +255,11 @@
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                         <textcolor>White100</textcolor>
-                        <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
+                        <selectedcolor>Dark1</selectedcolor>
                         <visible>Control.HasFocus(150)</visible>
-                    </control>
-                    
+                    </control>    
                 </focusedlayout>
-            </control>
-            
-            
-            
-                
-            
-            
+            </control>    
         </control>
     </controls>
 </window>

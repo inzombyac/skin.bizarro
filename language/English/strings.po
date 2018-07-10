@@ -71,6 +71,11 @@ msgctxt "#31010"
 msgid "Pixel format"
 msgstr ""
 
+#: /16x9/Includes_OSD.xml
+msgctxt "#31011"
+msgid "3D Mode"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

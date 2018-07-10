@@ -16,6 +16,14 @@
                 <height>1038</height>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
             </control>
+            <control type="image">
+                <description>background image</description>
+                <posx>-30</posx>
+                <posy>-30</posy>
+                <width>1200</width>
+                <height>100</height>
+                <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+            </control>
             <control type="label" id="2">
                 <description>header label</description>
                 <posx>0</posx>
@@ -24,7 +32,7 @@
                 <font>MediumBold</font>
                 <align>center</align>
                 <label>21432</label>
-                <textcolor>Black70</textcolor>
+                <textcolor>Light1</textcolor>
             </control>
             <control type="button" id="12">
                 <description>Name Button</description>

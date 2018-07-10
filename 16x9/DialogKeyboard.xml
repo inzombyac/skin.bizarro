@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="103">
     <defaultcontrol always="true">300</defaultcontrol>
-    <zorder>10</zorder>
+    <zorder>20</zorder>
     <coordinates>
         <origin x="0" y="0" />
     </coordinates>

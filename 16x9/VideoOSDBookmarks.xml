@@ -2,8 +2,6 @@
 <!-- Foundation -->
 <window id="125">
     <defaultcontrol always="true">2</defaultcontrol>
-    
-
     <controls>
         <include>GlobalOverlay</include>
         <control type="group">
@@ -15,11 +13,10 @@
                 <centerleft>50%</centerleft>
                 <width>1000</width>
                 <align>center</align>
-                <posy>15</posy>
+                 <textcolor>Light1</textcolor>
                 <font>MediumBold</font>
-                <label>[UPPERCASE]$LOCALIZE[298][/UPPERCASE] ($INFO[Container(11).NumItems])</label>
+                <label>$LOCALIZE[298]($INFO[Container(11).NumItems])</label>
             </control>
-
             <control type="panel" id="11">
                 <centerleft>50%</centerleft>
                 <posy>90</posy>

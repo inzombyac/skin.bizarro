@@ -8,21 +8,17 @@
         </control>
         <control type="group">
             <animation effect="fade" start="100" end="0" time="400" condition="Window.IsVisible(SliderDialog) | Window.IsVisible(FileBrowser)">Conditional</animation>
-
             <height>866</height>
             <width>1100</width>
-            <include>DefDialogInfoPanel</include>
-            
+            <include>DefDialogInfoPanel</include>         
             <control type="label" id="2">
-                <description>Header Label</description>
+                <description>header label</description>
                 <centerleft>50%</centerleft>
-                <width>1000</width>
+                <width>990</width>
                 <align>center</align>
-				<label>5</label>
-                <posy>15</posy>
                 <font>MediumBold</font>
+                <textcolor>Light1</textcolor>
             </control>
-  
             <control type="grouplist" id="5">
                 <description>Control Area</description>
                 <left>15</left>

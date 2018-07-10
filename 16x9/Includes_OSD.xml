@@ -161,7 +161,7 @@
 		<control type="button" id="5">
 			<description>3D Mode</description>
 			<align>right</align>
-			<label>36501</label>
+			<label>$LOCALIZE[31011]</label>
 			<onclick>StereoMode</onclick>
 			<include>DefOSDButtons</include>
 			<enable>VideoPlayer.IsStereoscopic</enable>
@@ -173,6 +173,7 @@
 			<include>DefOSDButtons</include>
 			<label>298</label>
 			<onclick>ActivateWindow(125)</onclick>
+			<onright>6</onright>
 		</control>
 	</include>
 	<include name="OSDPVRRight">

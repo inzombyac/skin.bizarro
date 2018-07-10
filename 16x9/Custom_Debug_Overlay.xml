@@ -163,6 +163,12 @@
                     <visible>Window.IsVisible(DialogBusy.xml)</visible>
                 </control>
 
+                 <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogConfirm.xml</label>
+                    <visible>Window.IsVisible(DialogConfirm.xml)</visible>
+                </control>
+
                 <control type="label">
                     <include>DialogID</include>
                     <label>DialogButtonMenu.xml</label>
@@ -171,8 +177,20 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (DialogContentSettings)</label>
+                    <label>DialogContentSettings.xml</label>
                     <visible>Window.IsVisible(DialogContentSettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSubtitles.xml</label>
+                    <visible>Window.IsVisible(DialogSubtitles)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>EventLog.xml</label>
+                    <visible>Window.IsVisible(EventLog)</visible>
                 </control>
 
                 <control type="label">
@@ -340,6 +358,12 @@
 
                 <control type="label">
                     <include>DialogID</include>
+                    <label>DialogExtendedProgressBar.xml</label>
+                    <visible>Window.IsVisible(DialogExtendedProgressBar.xml)</visible>
+                </control>
+
+                 <control type="label">
+                    <include>DialogID</include>
                     <label>DialogProgress.xml</label>
                     <visible>Window.IsVisible(DialogProgress.xml)</visible>
                 </control>
@@ -448,7 +472,7 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>PDialogSettings.xml (ProfileSettings)</label>
+                    <label>DialogSettings.xml (ProfileSettings)</label>
                     <visible>Window.IsVisible(ProfileSettings)</visible>
                 </control>
 

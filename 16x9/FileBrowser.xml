@@ -15,6 +15,11 @@
                 <height>900</height>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
             </control>
+            <control type="image">
+                <width>1080</width>
+                <height>100</height>
+                 <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+            </control>
             <control type="label" id="411">
                 <description>Heading</description>
                 <centerleft>50%</centerleft>
@@ -22,7 +27,7 @@
                 <width>990</width>
                 <align>center</align>
                 <font>MediumBold</font>
-                <textcolor>Black70</textcolor>
+                <textcolor>Light1</textcolor>
                 <label>1023</label>
             </control>
             <control type="label" id="412">

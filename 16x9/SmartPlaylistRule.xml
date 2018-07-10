@@ -16,6 +16,14 @@
                 <height>480</height>
                 <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
             </control>
+            <control type="image">
+                <description>background image</description>
+                <posx>-30</posx>
+                <posy>-30</posy>
+                <width>1260</width>
+                <height>100</height>
+                <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+            </control>
             <control type="label">
                 <description>header label</description>
                 <posx>30</posx>
@@ -24,6 +32,7 @@
                 <font>MediumBold</font>
                 <align>center</align>
                 <label>21421</label>
+                <textcolor>Light1</textcolor>
             </control>
             <control type="label">
                 <description>Rule match label</description>
