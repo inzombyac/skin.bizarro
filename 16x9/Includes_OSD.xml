@@ -157,59 +157,6 @@
 		<onup condition="Window.IsVisible(MusicOSD.xml)">3</onup>
 		<ondown condition="Window.IsVisible(MusicOSD.xml)">3</ondown>
 	</include>
-	<include name="OSDVideosRight">
-		<control type="button" id="5">
-			<description>3D Mode</description>
-			<align>right</align>
-			<label>$LOCALIZE[31011]</label>
-			<onclick>StereoMode</onclick>
-			<include>DefOSDButtons</include>
-			<enable>VideoPlayer.IsStereoscopic</enable>
-			<disabledcolor>PanelWhite12</disabledcolor>
-		</control>
-		<control type="button" id="6">
-			<description>BookMarks</description>
-			<align>right</align>
-			<include>DefOSDButtons</include>
-			<label>298</label>
-			<onclick>ActivateWindow(125)</onclick>
-			<onright>6</onright>
-		</control>
-	</include>
-	<include name="OSDPVRRight">
-		<control type="button" id="4">
-			<description>CHANNELS</description>
-			<align>right</align>
-			<label>19019</label>
-			<include>DefOSDButtons</include>
-			<onclick>ActivateWindow(pvrosdchannels)</onclick>
-		</control>
-		<control type="button" id="5">
-			<description>EPG</description>
-			<align>right</align>
-			<label>$LOCALIZE[19030] / $LOCALIZE[19031]</label>
-			<onclick>ActivateWindow(pvrosdguide)</onclick>
-			<include>DefOSDButtons</include>
-		</control>
-		<control type="button" id="6">
-			<description>TV Guide</description>
-			<align>right</align>
-			<include>DefOSDButtons</include>
-			<label></label>
-			<onclick>ActivateWindow(tvguide)</onclick>
-		</control>
-	</include>
-	<include name="OSDDVDMenu">
-		<control type="button" id="4">
-			<description>DVD Menu</description>
-			<label>$LOCALIZE[446] $LOCALIZE[33061]</label>
-			<align>right</align>
-			<include>DefOSDButtons</include>
-			<onclick>PlayerControl(ShowVideoMenu)</onclick>
-			<enable>VideoPlayer.HasMenu</enable>
-			<disabledcolor>White12</disabledcolor>
-		</control>
-	</include>
 	<variable name="OSDPanel">
 		<value condition="[!Window.IsVisible(fullscreenvideo)]">Background</value>
 		<value>OSDBack</value>
@@ -252,6 +199,7 @@
 			<enable>Player.CanRecord</enable>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.CanRecord">Conditional</animation>
+			<onleft>9003</onleft>
 		</control>
 		<control type="button" id="9004">
 			<description>Repeat</description>
@@ -265,6 +213,7 @@
 			<texturenofocus colordiffuse="Dark1">osd/repeat-off.png</texturenofocus>
 			<onclick>XBMC.PlayerControl(Repeat)</onclick>
 			<visible>[Window.IsVisible(MusicOSD.xml) |  Window.IsVisible(MusicVisualisation.xml)]+ Playlist.IsRepeatOne</visible>
+			<onleft>9004</onleft>
 		</control>
 		<control type="button" id="9005">
 			<description>Repeat</description>
@@ -278,6 +227,7 @@
 			<texturenofocus colordiffuse="Dark1">osd/repeat.png</texturenofocus>
 			<onclick>XBMC.PlayerControl(Repeat)</onclick>
 			<visible>[Window.IsVisible(MusicOSD.xml) |  Window.IsVisible(MusicVisualisation.xml)] + Playlist.IsRepeat</visible>
+			<onleft>9005</onleft>
 		</control>
 		<control type="button" id="9006">
 			<description>Repeat</description>
@@ -291,6 +241,7 @@
 			<texturenofocus colordiffuse="Dark1">osd/repeat-all.png</texturenofocus>
 			<onclick>XBMC.PlayerControl(Repeat)</onclick>
 			<visible>[Window.IsVisible(MusicOSD.xml) |  Window.IsVisible(MusicVisualisation.xml)] + !Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+			<onleft>9006</onleft>
 		</control>			
 		<control type="button" id="12">
 			<description>Skip Back</description>
@@ -410,6 +361,29 @@
 			<onclick>PlayerControl(Random)</onclick>
 			<visible>Window.IsVisible(MusicOSD.xml) + Playlist.IsRandom</visible>
 		</control>
+		<control type="button" id="9009">
+			<description>Fullscreen</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/fullscreen.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/fullscreen.png</texturenofocus>
+			<onclick>togglefullscreen</onclick>
+		</control>
+		<control type="button" id="9010">
+			<description>DVD Menu</description>
+			<width>48</width>
+			<height>64</height>
+			<top>12</top>
+			<font>noop</font>
+			<include>DefOSDUpDown</include>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/dvd-menu.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/dvd-menu.png</texturenofocus>
+			<onclick>PlayerControl(ShowVideoMenu)</onclick>
+			<visible>VideoPlayer.HasMenu</visible>
+		</control>
 	</include>
 	<include name="OSDMusicControls">
 		<control type="group">
@@ -444,101 +418,63 @@
 			</control>
             <control type="grouplist" id="101">
                 <top>70</top>
-                <width>100%</width>
+                <left>570</left>
                 <height>72</height>
                 <itemgap>16</itemgap>
                 <orientation>horizontal</orientation>
-                <align>center</align>
-                <onleft>100</onleft>
+                <align>left</align>
+                <onleft condition="Playlist.IsRepeatOne">9004</onleft>
+                <onleft condition="Playlist.IsRepeat">9005</onleft>
+				<onleft condition="!Playlist.IsRepeat + !Playlist.IsRepeatOne">9006</onleft>
                 <onright>102</onright>
                 <include>OSDVideoControls</include>
             </control>
-            <control type="grouplist" id="100">
-                <top>60</top>
-                <left>585</left>
-                <height>72</height>
-                <itemgap>24</itemgap>
-                <orientation>horizontal</orientation>
-                <align>left</align>
-                <onleft>100</onleft>
-                <onright>101</onright>
-                <onup>101</onup>
-                <ondown>101</ondown>
-                <usecontrolcoords>true</usecontrolcoords>
+            <control type="grouplist" id="102">
+				<top>58</top>
+				<left>1400</left>
+				<height>72</height>
+				<itemgap>16</itemgap>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<onleft>101</onleft>
+				<onright>8</onright>
+				<include>DefOSDUpDown</include>
+				<usecontrolcoords>true</usecontrolcoords>
+                <control type="button" id="5">
+					<description>Visualization Preset</description>
+					<width>48</width>
+					<height>64</height>
+					<top>12</top>
+					<label></label>
+					<include>DefOSDUpDown</include>
+					<onclick>ActivateWindow(visualisationpresetlist)</onclick>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visual-preset.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visual-preset.png</texturenofocus>
+					<visible>Visualisation.Enabled + Visualisation.HasPresets</visible>
+				</control>
+                <control type="button" id="500">
+					<description>Visual Text</description>
+					<width>48</width>
+					<height>64</height>
+					<top>12</top>
+					<label></label>
+					<onleft>9010</onleft>
+					<include>DefOSDUpDown</include>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visualization.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visualization.png</texturenofocus>
+				</control>
 				<control type="button" id="8">
 					<description>Visual Text</description>
 					<width>48</width>
 					<height>64</height>
 					<top>12</top>
 					<label></label>
-					<font>noop</font>
 					<include>DefOSDUpDown</include>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visual-text.png</texturefocus>
 					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visual-text.png</texturenofocus>
 					<onclick condition="!Skin.Skin.HasSetting(osd.showvisualtext)">Skin.ToggleSetting(osd.showvisualtext)</onclick>
 					<onclick condition="Skin.Skin.HasSetting(osd.showvisualtext)">Skin.Reset(osd.showvisualtext)</onclick>
 				</control>
-            </control>
-
-            <control type="grouplist" id="102">
-                <top>60</top>
-                <right>SidePad</right>
-                <height>72</height>
-                <itemgap>24</itemgap>
-				<width>100%</width>
-                <orientation>horizontal</orientation>
-                <align>right</align>
-                <onleft>101</onleft>
-                <onright>102</onright>
-                <onup>101</onup>
-                <ondown>101</ondown>
-                <usecontrolcoords>true</usecontrolcoords>
-				<control type="button" id="500">
-					<description>Visual Text</description>
-					<width>48</width>
-					<height>64</height>
-					<top>12</top>
-					<label></label>
-					<font>noop</font>
-					<include>DefOSDUpDown</include>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visualization.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visualization.png</texturenofocus>
-				</control>
-<!--                 <control type="button" id="500">
-                    <description>Vis</description>
-                    <label>250</label>
-                    <align>right</align>
-                    <include>DefOSDButtons</include>
-                    <disabledcolor>PanelWhite12</disabledcolor>
-                </control> -->
-				<control type="button" id="5">
-					<description>Visualization Preset</description>
-					<width>48</width>
-					<height>64</height>
-					<top>12</top>
-					<label></label>
-					<font>noop</font>
-					<include>DefOSDUpDown</include>
-					<onclick>ActivateWindow(visualisationpresetlist)</onclick>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/visual-preset.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1" flipx="true">osd/visual-preset.png</texturenofocus>
-					<visible>Visualisation.Enabled</visible>
-				</control>
-                <!-- <control type="button" id="7" description="Show musc info always">
-                    <width>220</width>
-                    <aligny>center</aligny>
-                    <align>center</align>
-                    <height>48</height>
-                    <font>Tiny</font>
-                    <disabledcolor>$VAR[OSDPanelWhite12]</disabledcolor>
-                    <textcolor>$VAR[MusicOSDPanelWhite30]</textcolor>
-                    <focusedcolor>$VAR[ColorHighlight]</focusedcolor>
-                    <texturefocus>noop</texturefocus>
-                    <width>226</width>
-                    <align>right</align>
-                    <label>Show Info</label>
-                    <onclick>Skin.ToggleSetting(osd.showmusicinfo)</onclick>
-                </control> -->
             </control>
         </control>
 	</include>

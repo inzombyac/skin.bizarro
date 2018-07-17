@@ -14,43 +14,41 @@
 				<posy>-1</posy>
 				<width>668</width>
 				<height>1082</height>
-				<colordiffuse>$VAR[OSDPanel]</colordiffuse>
+				<colordiffuse>HeaderBG</colordiffuse>
 				<texture border="5">common/white.png</texture>
 			</control>
-			<control type="image">
-				<posx>530</posx>
-				<posy>-4</posy>
-				<width>128</width>
-				<height>128</height>
-				<texture>special://skin/extras/icons/livetv.png</texture>
-				<colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
+			<control type="image" description="Background">
+				<posx>-1</posx>
+				<posy>-1</posy>
+				<width>668</width>
+				<height>1082</height>
+				<texture colordiffuse="Background">common/bg.jpg</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			</control>
+			<control type="image">
+				<posx>-10</posx>
+				<posy>-10</posy>
+	           	<width>686</width>
+	            <height>136</height>
+	            <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
+	        </control>
 			<control type="label">
 				<posx>33</posx>
 				<posy>10</posy>
 				<width>400</width>
 				<align>left</align>
-				<textcolor>$VAR[OSDPanelWhite100]</textcolor>
+				<textcolor>Light1</textcolor>
 				<font>MediumBold</font>
 				<label>$INFO[VideoPlayer.ChannelGroup]</label>
 			</control>
 			<control type="label">
 				<posx>33</posx>
-				<posy>43</posy>
+				<posy>48</posy>
 				<width>400</width>
 				<align>left</align>
-				<textcolor>$VAR[OSDPanelWhite70]</textcolor>
+				<textcolor>Light1</textcolor>
 				<font>TinyBold</font>
 				<label>$INFO[Container(11).NumItems,, $LOCALIZE[19019]]</label>
-			</control>
-			<control type="label">
-				<posx>622</posx>
-				<posy>73</posy>
-				<width>128</width>
-				<align>right</align>
-				<textcolor>$VAR[ColorHighlight]</textcolor>
-				<font>TinyBold</font>
-				<label>$INFO[System.Time(hh:mm)]</label>
 			</control>
 			<control type="list" id="11">
 				<posx>0</posx>
@@ -65,7 +63,7 @@
 						<width>667</width>
 						<height>109</height>
 						<texture>common/selected.png</texture>
-						<aspectratio aligny="top">center</aspectratio>
+						<aspectratio aligny="top">stretch</aspectratio>
 						<animation effect="fade" start="100" end="15" condition="true">Conditional</animation>
 						<visible>ListItem.IsPlaying</visible>
 						<colordiffuse>$VAR[OSDPanelWhite100]</colordiffuse>
@@ -75,7 +73,16 @@
 						<posy>12</posy>
 						<width>85</width>
 						<height>85</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="image">
+						<posx>22</posx>
+						<posy>12</posy>
+						<width>85</width>
+						<height>85</height>
+						<texture>special://skin/extras/icons/play.png</texture>
+						<visible>ListItem.IsPlaying</visible>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
@@ -134,9 +141,9 @@
 					<control type="label">
 						<posx>130</posx>
 						<posy>25</posy>
-						<width>400</width>
+						<width>600</width>
 						<align>left</align>
-						<font>Small</font>
+						<font>Tiny</font>
 						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<selectedcolor>$VAR[OSDPanelWhite70]</selectedcolor>
@@ -149,20 +156,20 @@
 						<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 					</control>
 					<control type="image">
-						<width>667</width>
-						<height>109</height>
-						<texture>common/selected.png</texture>
-						<aspectratio aligny="top">center</aspectratio>
-						<animation effect="fade" start="100" end="30" condition="true">Conditional</animation>
-						<visible>ListItem.IsPlaying</visible>
-						<colordiffuse>$VAR[ColourSelected]</colordiffuse>
+						<posx>22</posx>
+						<posy>12</posy>
+						<width>85</width>
+						<height>85</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="image">
 						<posx>22</posx>
 						<posy>12</posy>
 						<width>85</width>
 						<height>85</height>
-						<texture>$INFO[ListItem.Thumb]</texture>
+						<texture>special://skin/extras/icons/play.png</texture>
+						<visible>ListItem.IsPlaying</visible>
 						<aspectratio>keep</aspectratio>
 					</control>
 					<control type="label">
@@ -221,9 +228,9 @@
 					<control type="label">
 						<posx>130</posx>
 						<posy>25</posy>
-						<width>400</width>
+						<width>600</width>
 						<align>left</align>
-						<font>Small</font>
+						<font>Tiny</font>
 						<textcolor>$VAR[ColourSelected]</textcolor>
 						<label>$INFO[ListItem.Title]</label>
 						<selectedcolor>$VAR[ColourSelected]</selectedcolor>

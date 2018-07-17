@@ -76,6 +76,16 @@ msgctxt "#31011"
 msgid "3D Mode"
 msgstr ""
 
+#: /16x9/VideoOSD.xml
+msgctxt "#31012"
+msgid "Audio Settings"
+msgstr ""
+
+#: /16x9/VideoOSD.xml
+msgctxt "#31013"
+msgid "DSP Settings"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

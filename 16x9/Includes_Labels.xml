@@ -936,4 +936,8 @@
         <value condition="Player.Process(videohwdecoder)">HW</value>
         <value>SW</value>
     </variable>
+    <variable name="OSDSubtitleOffest">
+        <value condition="VideoPlayer.SubtitlesEnabled">$INFO[Player.SubtitleDelay,Offset: ,]</value>
+        <value></value>
+    </variable>
 </includes>
