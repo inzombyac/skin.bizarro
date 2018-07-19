@@ -647,8 +647,8 @@ msgid "Show Extra Fanart"
 msgstr "Show Extra Fanart"
 
 msgctxt "#31739"
-msgid "  -- Icon view"
-msgstr "  -- Icon view"
+msgid "Icon view"
+msgstr "Icon view"
 
 msgctxt "#31740"
 msgid "  -- Show Genre Colours"

@@ -1,3 +1,10 @@
+1.1.1
+- PVR mini guide when video is playing
+
+1.1.0
+- Complete dialog updates
+- Video/Music OSD icons
+
 1.0.13
 - Dialog box header color
 

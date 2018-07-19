@@ -97,6 +97,18 @@
 
                 <control type="label">
                     <include>WindowID</include>
+                    <label>MyPVRChannels.xml</label>
+                    <visible>Window.IsVisible(MyPVRChannels.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>MyPVRRecordings.xml</label>
+                    <visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
                     <label>MyVideoNav.xml</label>
                     <visible>Window.IsVisible(MyVideoNav.xml)</visible>
                 </control>

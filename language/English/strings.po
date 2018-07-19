@@ -86,6 +86,16 @@ msgctxt "#31013"
 msgid "DSP Settings"
 msgstr ""
 
+#: /16x9/Includes_PVR.xml
+msgctxt "#31014"
+msgid " -- Show Aired Date"
+msgstr ""
+
+#: /16x9/Includes_PVR.xml
+msgctxt "#31015"
+msgid "Show EPG Art"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

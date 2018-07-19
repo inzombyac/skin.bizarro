@@ -151,17 +151,17 @@
 					<bottom>10</bottom>
 					<width>100</width>
 					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser.gif</texture>
-					<visible>!Player.Paused + !Player.HasVideo</visible>
+					<visible>!Player.Paused + Player.HasAudio</visible>
 				</control>
 				<control type="image">
 					<right>10</right>
 					<bottom>10</bottom>
 					<width>100</width>
 					<texture colordiffuse="$VAR[ColorHighlight2]">special://skin/extras/icons/equaliser_stop.gif</texture>
-					<visible>Player.Paused + !Player.HasVideo</visible>
+					<visible>Player.Paused + Player.HasAudio</visible>
 				</control>
 				<control type="videowindow">
-					<visible>Player.HasVideo</visible>
+					<visible>Player.HasVideo + !Skin.HasSetting(global.showvideo)</visible>
 					<right>10</right>
 					<bottom>10</bottom>
 					<width>180</width>
