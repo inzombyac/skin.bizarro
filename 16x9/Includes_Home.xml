@@ -2541,7 +2541,7 @@
 				<width>32</width>
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
+				<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatchedHome]</texture>
 				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0) + !Container(300).Scrolling </visible>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -2656,7 +2656,7 @@
 				<width>32</width>
 				<height>32</height>
 				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true">$VAR[PosterPercentWatchedHome]</texture>
+				<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatchedHome]</texture>
 				<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 			</control>
 			<control type="image">

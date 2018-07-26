@@ -5,7 +5,6 @@
 	<include name="View_520_GameBrowser">
 		<description>Game View (id=520)</description>
 		<control type="group">
-			<!-- <visible>Container.Content(musicvideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(actors) | Container.Content(sets) | Container.Content(seasons) | String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) | Container.Content(addons)</visible> -->
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(520)</visible>
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)</visible>
@@ -13,12 +12,6 @@
 				<width>705</width>
 				<height>850</height>
 				<left>70</left>
-				<control type="image">
-					<top>160</top>
-					<width>100%</width>
-					<height>100%</height>
-					<texture border="16" colordiffuse="Light2">common/box.png</texture>
-				</control> 
 				<control type="list" id="520">
 					<top>300</top>
 					<onright>5051</onright>
@@ -26,6 +19,7 @@
 					<onleft condition="Control.IsVisible(60)">60</onleft>
 					<onleft condition="!Control.IsVisible(60)">9000</onleft>
 					<!-- <onright condition="String.IsEqual(Container(5051).CurrentItem,2)">Control.Move(5051,-1)</onright> -->
+					<onright>Control.SetFocus(5051,0)</onright>
 					<onright>520</onright>
 					<onup condition="Player.HasMedia">7788</onup>
 					<onup condition="!Player.HasMedia">520</onup>
@@ -48,6 +42,16 @@
 					</focusedlayout>
 				</control>
 			</control>
+			<control type="image">
+				<left>780</left>
+				<right>0</right>
+				<top>160</top>
+				<bottom>80</bottom>
+				<width>1100</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<visible>Control.IsVisible(520)</visible>
+			</control>
 			<control type="scrollbar" id="60">
 				<onleft>3634</onleft>
 				<onback>520</onback>
@@ -63,9 +67,9 @@
 				<animation effect="slide" end="-30,0" time="400" condition="Control.HasFocus(60)">Conditional</animation>
 			</control>
 			<control type="group" description="Banner">
-				<width>705</width>
+				<width>700</width>
 				<left>70</left>
-				<top>165</top>
+				<top>160</top>
 				<visible>Control.IsVisible(520)</visible>
 				<control type="image">
 					<height>130</height>
@@ -93,7 +97,7 @@
 				<control type="grouplist">
 					<left>800</left>
 					<right>30</right>
-					<top>658</top>
+					<top>665</top>
 					<height>400</height>
 					<width>1040</width>
 					<orientation>vertical</orientation>
@@ -119,7 +123,7 @@
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
 						<label>$VAR[LabelPlotBox]</label>
-						<height>268</height>
+						<height>236</height>
 					</control>
 				</control>
 			</control>
@@ -264,7 +268,7 @@
 			<animation effect="fade" end="100" start="0" time="200" delay="400">WindowOpen</animation>
 			<visible>!Container(520).Scrolling</visible>
 			<visible>Control.IsVisible(520)</visible>
-			<top>160</top>
+			<top>170</top>
 			<left>800</left>
 			<width>1020</width>
 			<height>480</height>

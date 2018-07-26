@@ -142,17 +142,6 @@
 			<visible>true</visible>
 		</control>
 	</include>
-	<include name="DefOSDButtons">
-		<aligny>center</aligny>
-		<align>center</align>
-		<height>48</height>
-		<font>Tiny</font>
-		<disabledcolor>Light3</disabledcolor>
-		<textcolor>Dark1</textcolor>
-		<focusedcolor>$VAR[ColorHighlight]</focusedcolor>
-		<texturefocus>noop</texturefocus>
-		<width>226</width>
-	</include>
 	<include name="DefOSDUpDown">
 		<onup condition="Window.IsVisible(MusicOSD.xml)">3</onup>
 		<ondown condition="Window.IsVisible(MusicOSD.xml)">3</ondown>
@@ -166,10 +155,6 @@
 		<value>PanelWhite12</value>
 	</variable>
 	<variable name="OSDPanelWhite30">
-		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
-		<value>PanelWhite30</value>
-	</variable>
-	<variable name="MusicOSDPanelWhite30">
 		<value condition="[!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation)]">Dark2</value>
 		<value>PanelWhite30</value>
 	</variable>

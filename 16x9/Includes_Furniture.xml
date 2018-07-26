@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
-	<include name="Furniture_Tall_Scrollbar">
-		<control type="scrollbar" id="60">
-			<onback>50</onback>
-			<centerright>60</centerright>
-			<posy>PosterPad</posy>
-			<height>730</height>
-			<width>8</width>
-			<onleft>50</onleft>
-			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
-			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<animation effect="slide" end="10,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
-		</control>
-	</include>
 	<include name="Furniture_Scrollbar">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -49,9 +33,62 @@
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
-			<animation effect="slide" start="0" end="0,-70" time="0" condition="Control.IsVisible(516)">Conditional</animation>
 		</control>
 	</include>
+	<include name="Furniture_Scrollbar_Horizontal_Wall_Poster">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<right>70</right>
+			<width>1280</width>
+			<bottom>120</bottom>
+			<orientation>horizontal</orientation>
+			<height>8</height>
+			<onup condition="!Control.IsVisible(65)">50</onup>
+			<onup condition="Control.IsVisible(65)">65</onup>
+			<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+		</control>
+	</include>
+	<include name="Furniture_Scrollbar_Wall">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<left>SidePad</left>
+			<width>1760</width>
+			<bottom>80</bottom>
+			<orientation>horizontal</orientation>
+			<height>8</height>
+			<onup condition="!Control.IsVisible(65)">50</onup>
+			<onup condition="Control.IsVisible(65)">65</onup>
+			<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+		</control>
+	</include>
+	<include name="Furniture_Scrollbar_WallInfo">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<right>70</right>
+			<width>1135</width>
+			<bottom>80</bottom>
+			<orientation>horizontal</orientation>
+			<height>8</height>
+			<onup condition="!Control.IsVisible(65)">50</onup>
+			<onup condition="Control.IsVisible(65)">65</onup>
+			<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
+		</control>
+	</include>			
 	<include name="Furniture_NowPlaying">
 		<!-- Next Recording -->
 		<control type="group">
@@ -61,7 +98,7 @@
 			<height>100</height>
 			<include>Animation.FadeIn.Slide</include>
 			<include>Animation.FadeOut</include>
-			<visible>Player.HasMedia + ![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
+			<visible>Player.HasMedia</visible>
 			<!-- <animation effect="zoom" start="100" end="85" condition="true">Conditional</animation> -->
 			<control type="image">
 				<description>background image</description>
@@ -253,42 +290,6 @@
 		<value condition="Integer.IsGreater(Container(9500).ListItem.UserRating,8) + !String.IsEmpty(Container(9500).ListItem.UserRating)">star5</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,9)">star10</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.Rating,8)">star5</value>
-		<value>star0</value>
-	</variable>
-	<!-- MusicFlags -->
-	<variable name="MusicFlagstar5">
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,9)">star10</value>
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,8)">star5</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,9)">star10</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,8)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MusicFlagstar4">
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,7)">star10</value>
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,6)">star5</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,7)">star10</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,6)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MusicFlagstar3">
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,5)">star10</value>
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,4)">star5</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,5)">star10</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,4)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MusicFlagstar2">
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,3)">star10</value>
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,2)">star5</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,3)">star10</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,2)">star5</value>
-		<value>star0</value>
-	</variable>
-	<variable name="MusicFlagstar1">
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,1)">star10</value>
-		<value condition="!String.IsEmpty(ListItem.UserRating) + Integer.IsGreater(ListItem.UserRating,0)">star5</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,1)">star10</value>
-		<value condition="Integer.IsGreater(ListItem.Rating,0)">star5</value>
 		<value>star0</value>
 	</variable>
 	<!-- MusicOSDFlags -->
@@ -849,7 +850,6 @@
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		
-		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(seasons) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
@@ -887,7 +887,6 @@
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.TrackNumber,, • ]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Album, • ,]$INFO[MusicPlayer.Year, (,)]$INFO[MusicPlayer.Genre, • ,]</value>
 		<value condition="Window.IsVisible(Settings.xml)">$INFO[System.CurrentControl]</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">[COLOR=Dark1]$INFO[ListItem.AddonVersion,Version: ,][/COLOR] by $INFO[ListItem.AddonCreator] $INFO[ListItem.Artist, • ]$INFO[ListItem.AddonType, • ,]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + Control.HasFocus(515) + Container.Content(movies)">$INFO[ListItem.Year]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.AlbumArtist]$INFO[ListItem.Genre, • ,]</value>
 		<value condition="Window.IsVisible(1102)">$INFO[System.CurrentControl]</value>
@@ -950,23 +949,14 @@
 				<itemgap>24</itemgap>
 				<onleft condition="!Skin.HasSetting(global.kioskmode)">9000</onleft>
 				<ondown condition="Control.IsVisible(50)">50</ondown>
-				<ondown condition="Control.IsVisible(516)">516</ondown>
 				<ondown condition="Control.IsVisible(52)">52</ondown>
 				<ondown condition="Control.IsVisible(53)">53</ondown>
-				<ondown condition="Control.IsVisible(54)">54</ondown>
 				<ondown condition="Control.IsVisible(55)">55</ondown>
 				<ondown condition="Control.IsVisible(56)">56</ondown>
-				<ondown condition="Control.IsVisible(57)">57</ondown>
-				<ondown condition="Control.IsVisible(58)">58</ondown>
-				<ondown condition="Control.IsVisible(59)">59</ondown>
 				<ondown condition="Control.IsVisible(500)">500</ondown>
-				<ondown condition="Control.IsVisible(513)">513</ondown>
-				<ondown condition="Control.IsVisible(514)">514</ondown>
-				<ondown condition="Control.IsVisible(515)">515</ondown>
 				<ondown condition="Control.IsVisible(505)">505</ondown>
 				<ondown condition="Control.IsVisible(506)">506</ondown>
 				<ondown condition="Control.IsVisible(517)">517</ondown>
-				<ondown condition="Control.IsVisible(518)">518</ondown>
 				<ondown condition="Control.IsVisible(520)">520</ondown>
 				<ondown condition="Control.IsVisible(300)">300</ondown>
 				<!-- onright -->

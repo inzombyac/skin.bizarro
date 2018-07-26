@@ -12,15 +12,16 @@
 				<right>70</right>
 				<width>1135</width>
 				<height>766</height>
-				<onleft>3634</onleft>
-				<onright>60</onright>
+				<onleft>9000</onleft>
+				<onright>517</onright>
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">3634</onup>
-				<ondown>517</ondown>
+				<ondown>60</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31003">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
+				<orientation>horizontal</orientation>
 				<itemlayout height="380" width="252">
 					<control type="image">
 						<width>100%</width>
@@ -54,7 +55,7 @@
 						<width>32</width>
 						<height>32</height>
 						<aspectratio aligny="top">keep</aspectratio>
-						<texture background="true">$VAR[PosterPercentWatched]</texture>
+						<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatched]</texture>
 						<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 					</control>
 					<control type="group">
@@ -122,7 +123,7 @@
 							<width>32</width>
 							<height>32</height>
 							<aspectratio aligny="top">keep</aspectratio>
-							<texture background="true">$VAR[PosterPercentWatched]</texture>
+							<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatched]</texture>
 							<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 						</control>
 						<control type="group">
@@ -166,19 +167,23 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<include>Furniture_Tall_Scrollbar</include>
+			<include>Furniture_Scrollbar_WallInfo</include>
+			<control type="image">
+				<left>0</left>
+				<right>0</right>
+				<top>154</top>
+				<bottom>80</bottom>
+				<width>690</width>
+				<texture colordiffuse="HeaderBG">common/white.png</texture>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+			</control>
 			<control type="group" description="Fanart Info">
-				<left>70</left>
-				<width>587</width>
-				<top>206</top>
-				<height>766</height>
+				<left>50</left>
+				<width>590</width>
+				<top>180</top>
+				<height>790</height>
 				<control type="group">
-					<height>330</height>
-					<control type="image">
-						<width>100%</width>
-						<height>100%</height>
-						<texture border="10">common/nofocus-shadow10.png</texture>
-					</control>
+					<height>360</height>
 					<control type="image">
 						<left>10</left>
 						<top>10</top>
@@ -187,24 +192,13 @@
 						<fadetime>300</fadetime>
 						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 						<texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[LandscapeImage]</texture>
-						<visible>!Skin.HasSetting(views.517.showfanart)</visible>
-					</control>
-					<control type="image">
-						<left>10</left>
-						<top>10</top>
-						<right>10</right>
-						<bottom>10</bottom>
-						<fadetime>300</fadetime>
-						<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-						<texture diffuse="diffuse/pvrinfo.png" background="true">$VAR[FanartImage]</texture>
-						<visible>Skin.HasSetting(views.517.showfanart)</visible>
 					</control>
 				</control>
 				<control type="group">
 					<left>20</left>
 					<right>20</right>
-					<posy>330</posy>
-					<height>500</height>
+					<posy>340</posy>
+					<height>400</height>
 					<control type="label">
 						<top>10</top>
 						<aligny>center</aligny>
@@ -221,11 +215,10 @@
 						<font>TwentySix</font>
 						<textcolor>Dark1</textcolor>
 						<selectedcolor>Dark1</selectedcolor>
-						<label>$INFO[ListItem.Genre]</label>
+						<label>$INFO[ListItem.Genre,[I],[/I]]</label>
 					</control>
 					<control type="textbox">
-						<top>125</top>
-						<bottom>19</bottom>
+						<top>105</top>
 						<align>justify</align>
 						<font>TwentySix</font>
 						<textcolor>Dark1</textcolor>

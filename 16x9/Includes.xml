@@ -4,23 +4,13 @@
 	<include file="Defaults.xml" />
 	<!-- Views -->
 	<include file="View_50_List.xml" />
-	<include file="View_52_BigList.xml" />
 	<include file="View_53_Poster.xml" />
-	<include file="View_54_Banner.xml" />
 	<include file="View_55_Wall.xml" />
-	<include file="View_56_MediaInfo.xml" />
-	<include file="View_57_ExtraInfo.xml" />
-	<include file="View_58_Cards.xml" />
-	<include file="View_59_BannerPlex.xml" />
+	<include file="View_56_Panel.xml" />
 	<include file="View_500_Thumbnails.xml" />
 	<include file="View_505_Wall_Square.xml" />
 	<include file="View_506_Wall_Poster.xml" />
-	<include file="View_514_PosterShift.xml" />
-	<include file="View_513_PosterRow.xml" />
-	<include file="View_515_Netflix.xml" />
-	<include file="View_516_BigWide.xml" />
 	<include file="View_517_WallInfo.xml" />
-	<include file="View_518_WallPoster.xml" />
 	<include file="View_520_GameBrowser.xml" />
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
@@ -169,18 +159,15 @@
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
 			<texture colordiffuse="Background">common/bg.jpg</texture>
-			<visible>![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 		</control>
 		<control type="image" description="Background">
 			<include>Dimensions_Fullscreen</include>
 			<texture colordiffuse="Black">common/white.png</texture>
 			<visible>Player.HasVideo + Skin.HasSetting(global.showvideo)</visible>
-			<visible>![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 		</control>
 		<control type="videowindow">
 			<visible>Skin.HasSetting(global.showvideo)</visible>
 			<include>Dimensions_Fullscreen</include>
-			<visible>![Skin.HasSetting(views.516.trailer) + Control.IsVisible(516)]</visible>
 		</control>
 	</include>
 	<include name="GlobalVisualisation">

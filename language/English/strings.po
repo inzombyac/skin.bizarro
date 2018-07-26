@@ -96,6 +96,86 @@ msgctxt "#31015"
 msgid "Show EPG Art"
 msgstr ""
 
+#: /extras/views.xml
+msgctxt "#31016"
+msgid "Panel"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31017"
+msgid "DialogSettings.xml (MediaFilter)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31018"
+msgid "DialogSettings.xml (OSDAudioDSPSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31019"
+msgid "DialogSettings.xml (OSDCMSSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31020"
+msgid "DialogSettings.xml (PVRTimerSetting)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31021"
+msgid "DialogSettings.xml (OSDVideoSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31022"
+msgid "DialogSettings.xml (OSDAudioSettings)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31023"
+msgid "DialogMusicScan.xml<"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31024"
+msgid "DialogSettings.xml (NetworkSetup)"
+msgstr ""
+
+#: /16x9/Custom_Debug_Overlay.xml
+msgctxt "#31025"
+msgid "DialogNumeric.xml"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31026"
+msgid "Select Opacity"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31027"
+msgid "Darkest"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31028"
+msgid "Dark"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31029"
+msgid "Bright"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31030"
+msgid "Brighter"
+msgstr ""
+
+#: /16x9/Custom_Opacity_Selector.xml
+msgctxt "#31031"
+msgid "Brightest"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"
@@ -104,7 +184,7 @@ msgstr ""
 
 # Custom_Hub_Movies.xml: 108, Custom_Hub_TV.xml: 108
 # Includes_Furniture.xml:700, Includes_Labels.xml: 58, 70, 72, 74, 355, 356, 357
-# View_56_MediaInfo.xml: 162
+# View_56_Panel.xml: 162
 msgctxt "#31102"
 msgid "min"
 msgstr ""
@@ -465,7 +545,7 @@ msgid "Next Aired"
 msgstr ""
 
 msgctxt "#31221"
-msgid "Select a custom widget to set as this path"
+msgid "Select a custom widget to set as this path:"
 msgstr ""
 
 msgctxt "#31222"

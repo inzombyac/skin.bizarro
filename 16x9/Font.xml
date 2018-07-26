@@ -95,7 +95,7 @@
 		<font>
 			<name>FakeLogo</name>
 			<filename>RobotoCondensed-Bold.ttf</filename>
-			<size>100</size>
+			<size>80</size>
 		</font>
 		<font>
 			<name>Medium</name>
@@ -496,7 +496,7 @@
 		<font>
 			<name>FakeLogo</name>
 			<filename>RobotoCondensed-Bold.ttf</filename>
-			<size>100</size>
+			<size>80</size>
 		</font>
 		<font>
 			<name>DurationFont</name>

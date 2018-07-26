@@ -49,7 +49,7 @@
 
                 <control type="label">
                     <include>WindowID</include>
-                    <label>LoginScreen.xml: $INFO[System.ProfileName]</label>
+                    <label>$INFO[System.ProfileName,LoginScreen.xml: ,]</label>
                     <visible>Window.IsVisible(LoginScreen.xml)</visible>
                 </control>
 
@@ -292,55 +292,55 @@
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (MediaFilter)</label>
+                    <label>$LOCALIZE[31017]</label>
                     <visible>Window.IsVisible(mediafilter)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (OSDCMSSettings)</label>
+                    <label>$LOCALIZE[31019]</label>
                     <visible>Window.IsVisible(osdcmssettings)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (OSDAudioDSPSettings)</label>
+                    <label>$LOCALIZE[31018]</label>
                     <visible>Window.IsVisible(osdaudiodspsettings)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (PVRTimerSetting)</label>
+                    <label>$LOCALIZE[31020]</label>
                     <visible>Window.IsVisible(pvrtimersetting)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (OSDVideoSettings)</label>
+                    <label>$LOCALIZE[31021]</label>
                     <visible>Window.IsVisible(osdvideosettings)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (OSDAudioSettings)</label>
+                    <label>$LOCALIZE[31022]</label>
                     <visible>Window.IsVisible(osdaudiosettings)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogMusicScan.xml</label>
+                    <label>$LOCALIZE[31023]</label>
                     <visible>Window.IsVisible(DialogMusicScan.xml)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogSettings.xml (NetworkSetup)</label>
+                    <label>$LOCALIZE[31024]</label>
                     <visible>Window.IsVisible(NetworkSetup)</visible>
                 </control>
 
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogNumeric.xml</label>
+                    <label>$LOCALIZE[31025]</label>
                     <visible>Window.IsVisible(DialogNumeric.xml)</visible>
                 </control>
 

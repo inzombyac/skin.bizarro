@@ -1114,46 +1114,6 @@
 			</control>
 		</focusedchannellayout>
 	</include>
-	<include name="EpgSmallWidthVar">
-		<channellayout height="70" width="200">
-			<control type="image">
-				<posx>0</posx>
-				<posy>1</posy>
-				<width>150</width>
-				<height>69</height>
-				<texture>common/selected.png</texture>
-				<aspectratio aligny="top">center</aspectratio>
-				<animation effect="fade" start="100" end="10" condition="true">Conditional</animation>
-				<visible>ListItem.IsPlaying</visible>
-			</control>
-			<control type="image">
-				<left>55</left>
-				<width>145</width>
-				<height>70</height>
-				<texture>$INFO[ListItem.Icon]</texture>
-				<aspectratio>keep</aspectratio>
-			</control>
-		</channellayout>
-		<focusedchannellayout height="70" width="150">
-			<control type="image">
-				<posx>0</posx>
-				<posy>1</posy>
-				<width>150</width>
-				<height>69</height>
-				<texture>common/selected.png</texture>
-				<aspectratio aligny="top">center</aspectratio>
-				<animation effect="fade" start="100" end="20" condition="true">Conditional</animation>
-				<visible>ListItem.IsPlaying</visible>
-			</control>
-			<control type="image">
-				<left>55</left>
-				<width>145</width>
-				<height>70</height>
-				<texture>$INFO[ListItem.Icon]</texture>
-				<aspectratio>keep</aspectratio>
-			</control>
-		</focusedchannellayout>
-	</include>
 	<include name="PVRView_52">
 		<control type="group">
 			<visible>Control.IsVisible(52)</visible>

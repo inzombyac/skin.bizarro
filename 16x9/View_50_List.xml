@@ -150,7 +150,7 @@
 					<width>40</width>
 					<height>40</height>
 					<aspectratio aligny="top">keep</aspectratio>
-					<texture background="true">$VAR[PosterPercentWatched]</texture>
+					<texture background="true" colordiffuse="$VAR[ColorHighlight2]">$VAR[PosterPercentWatched]</texture>
 					<visible>!Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				</control>
 				<control type="group">

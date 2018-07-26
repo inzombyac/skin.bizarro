@@ -3,26 +3,15 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-    <views>50,52,53,54,55,56,57,58,59,500,505,513,515,516,517,518,520</views>
+    <views>50,53,55,56,505,517,520</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>View_50_List</include>
-		<include condition="Skin.HasSetting(52biglist.singlepane)">View_52_BigList_SinglePane</include>
-		<include condition="!Skin.HasSetting(52biglist.singlepane)">View_52_BigList_DoublePane</include>
 		<include>View_53_Poster</include>
-        <include>View_500_Thumbnails</include>
 		<include>View_505_Wall_No_Poster</include>
 		<include>View_517_Wall_Info</include>
-		<include>View_518_Wall_Poster</include>
 		<include>View_55_Wall</include>
-		<include>View_56_MediaInfo</include>
-		<include>View_57_ExtraInfo</include>
-		<include>View_58_Cards</include>
-		<include>View_59_BannerPlex</include>
-		<include>View_54_Banner</include>
-		<include>View_513_PosterRow</include>
-		<include>View_515_Netflix</include>
-		<include>View_516_BigWide</include>
+		<include>View_56_Panel</include>
 		<include>View_520_GameBrowser</include>
         <include>Furniture_Header</include>
 		<include>Furniture_NowPlaying</include>

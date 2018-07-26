@@ -10,17 +10,18 @@
 				<top>206</top>
 				<right>70</right>
 				<left>70</left>
-				<height>766</height>
+				<height>900</height>
 				<width>1780</width>
-				<onleft>3634</onleft>
-				<onright>60</onright>
+				<onleft>9000</onleft>
+				<onright>505</onright>
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">3634</onup>
-				<ondown>505</ondown>
+				<ondown>60</ondown>
 				<preloaditems>2</preloaditems>
 				<pagecontrol>60</pagecontrol>
 				<viewtype label="31794">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
+				<orientation>horizontal</orientation>
 				<itemlayout height="400" width="296">
 					<control type="image">
 						<left>0</left>
@@ -120,7 +121,7 @@
 					</control>
 				</focusedlayout>
 			</control>
-			<include>Furniture_Scrollbar</include>
+			<include>Furniture_Scrollbar_Wall</include>
 		</control>
 	</include>
 </includes>

@@ -2,8 +2,7 @@
 <!-- Foundation -->
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
-	<menucontrol>9000</menucontrol>
-    
+	<menucontrol>9000</menucontrol> 
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
@@ -12,11 +11,9 @@
         <control type="label" id="12">
             <visible>false</visible>
         </control>
-        
         <control type="label" id="101">
             <visible>false</visible>
         </control>
-        
         <control type="group">
             <include>Animation.Common</include>
             <control type="group">

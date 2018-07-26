@@ -1,3 +1,6 @@
+1.1.2
+- Removed unused views and added new panel view.
+
 1.1.1
 - PVR mini guide when video is playing
 

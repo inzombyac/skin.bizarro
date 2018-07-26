@@ -3,8 +3,8 @@
     <defaultcontrol>-</defaultcontrol>
     <controls>
         <control type="group">
-            <include>Animation_FadeIn</include>
-            <include>Animation_FadeOut</include>
+            <include>Animation.FadeIn</include>
+            <include>Animation.FadeOut</include>
             <left>150</left>
             <top>75</top>
             <width>1620</width>
