@@ -44,8 +44,8 @@
 						<info>ListItem.PercentPlayed</info>
 						<overlaytexture>-</overlaytexture>
 						<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-						<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-						<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+						<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+						<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
 						<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 						<visible>ListItem.IsResumable</visible>
 					</control>
@@ -65,7 +65,7 @@
 							<centertop>32</centertop>
 							<height>32</height>
 							<width>32</width>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="label">
@@ -112,8 +112,8 @@
 							<info>ListItem.PercentPlayed</info>
 							<overlaytexture>-</overlaytexture>
 							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-							<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-							<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+							<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+							<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
 							<righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
 							<visible>ListItem.IsResumable</visible>
 						</control>
@@ -133,7 +133,7 @@
 							<centertop>32</centertop>
 							<height>32</height>
 							<width>32</width>
-							<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+							<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
 							<aspectratio align="center" aligny="center">keep</aspectratio>
 						</control>
 						<control type="label">

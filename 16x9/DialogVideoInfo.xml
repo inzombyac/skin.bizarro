@@ -61,9 +61,9 @@
 					<info>ListItem.PercentPlayed</info>
 					<overlaytexture>-</overlaytexture>
 					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-					<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-					<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
-					<righttexture colordiffuse="EmbyGreen">osd/progress-end.png</righttexture>
+					<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+					<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
+					<righttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</righttexture>
 					<visible>ListItem.IsResumable</visible>
 					<animation condition="Control.HasFocus(50) | Control.HasFocus(5051)  | Control.HasFocus(5050)" effect="fade" end="0" start="100" time="0">Conditional</animation>
 					<animation condition="!Control.HasFocus(50) + !Control.HasFocus(5051)" delay="200" effect="fade" end="100" start="0" time="80">Conditional</animation>
@@ -77,7 +77,7 @@
 						<top>10</top>
 						<height>40</height>
 						<width>40</width>
-						<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+						<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 					</control>
 					<control type="label">

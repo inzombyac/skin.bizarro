@@ -410,8 +410,8 @@
 				<info>Container(4019).ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
 				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<visible>Container(4019).ListItem.IsResumable</visible>
 				<visible>!Container(300).Scrolling</visible>
@@ -477,9 +477,9 @@
 				<posy>42</posy>
 				<reveal>true</reveal>
 				<texturebg>pvr/progress-back.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">pvr/progress-mid.png</midtexture>
-				<righttexture colordiffuse="EmbyGreen">pvr/progress-leftright.png</righttexture>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
+				<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
 				<info>Container(4019).ListItem.Progress</info>
 				<colordiffuse>Dark1</colordiffuse>
 				<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
@@ -2580,8 +2580,8 @@
 				<info>ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
 				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<include>Animation.LongDelayFadeIn</include>
 				<include>Animation.FadeOut</include>
@@ -2605,7 +2605,7 @@
 					<centertop>30</centertop>
 					<height>30</height>
 					<width>30</width>
-					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>
 				<control type="label">
@@ -2687,8 +2687,8 @@
 				<info>ListItem.PercentPlayed</info>
 				<overlaytexture>-</overlaytexture>
 				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
-				<lefttexture colordiffuse="EmbyGreen">osd/progress-end.png</lefttexture>
-				<midtexture colordiffuse="EmbyGreen">osd/progress-end.png</midtexture>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
 				<righttexture colordiffuse="Dark1">osd/progress-end.png</righttexture>
 				<visible>ListItem.IsResumable</visible>
 			</control>
@@ -2699,7 +2699,7 @@
 					<centertop>30</centertop>
 					<height>30</height>
 					<width>30</width>
-					<texture colordiffuse="EmbyGreen">common/circle.png</texture>
+					<texture colordiffuse="$VAR[ColorHighlight2]">common/circle.png</texture>
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>
 				<control type="label">
