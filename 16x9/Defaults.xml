@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
-
     <constant name="NavBarPad">112</constant>
     <constant name="SidePad">80</constant>
     <constant name="TopPad">60</constant>
@@ -10,11 +9,16 @@
     <constant name="PosterW">428</constant>
     <constant name="PosterShadowH">688</constant>
     <constant name="PosterShadowW">475</constant>
-    <constant name="ListX">540</constant>
-    <constant name="ListW">1088</constant>
+    <constant name="PosterPanel">750</constant>
+    <constant name="ListX">800</constant>
+    <constant name="ListW">1000</constant>
     <constant name="ListSquareX">752</constant>
-    <constant name="ListSquareW">1088</constant>
-
+    <constant name="ListSquareW">1048</constant>
+    <constant name="ListPosterPad">220</constant>
+    <constant name="ListPosterH">500</constant>
+    <constant name="ListPosterW">345</constant>
+    <constant name="ListPosterShadowH">384</constant>
+    <constant name="ListPosterShadowW">387</constant>
     <default type="label">
         <height>66</height>
         <aligny>center</aligny>
@@ -24,7 +28,6 @@
         <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
         <disabledcolor>Black30</disabledcolor>
     </default>
-
     <default type="edit">
         <height>66</height>
         <align>center</align>
@@ -38,7 +41,6 @@
         <texturefocus colordiffuse="White30">common/white.png</texturefocus>
         <pulseonselect>false</pulseonselect>
     </default>
-
     <default type="fadelabel">
         <height>66</height>
         <align>left</align>
@@ -51,10 +53,7 @@
         <scrollout>false</scrollout>
         <pauseatend>2000</pauseatend>
     </default>
-
-    <default type="image">
-    </default>
-
+    <default type="image"></default>
     <default type="button">
         <height>66</height>
         <align>center</align>
@@ -68,7 +67,6 @@
         <texturefocus colordiffuse="White12">common/white.png</texturefocus>
         <pulseonselect>false</pulseonselect>
     </default>
-
     <default type="togglebutton">
         <height>66</height>
         <align>center</align>
@@ -83,7 +81,6 @@
         <alttexturefocus colordiffuse="White12">common/white.png</alttexturefocus>
         <pulseonselect>false</pulseonselect>
     </default>
-
     <default type="radiobutton">
         <height>66</height>
         <align>center</align>
@@ -105,7 +102,6 @@
         <textoffsetx>30</textoffsetx>
         <pulseonselect>false</pulseonselect>
     </default>
-
     <default type="spincontrolex">
         <height>66</height>
         <font>Small</font>
@@ -127,7 +123,6 @@
         <aligny>center</aligny>
         <pulseonselect>false</pulseonselect>
     </default>
-
     <default type="spincontrol">
         <height>66</height>
         <font>Small</font>
@@ -155,7 +150,6 @@
         <midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
         <righttexture colordiffuse="PanelWhite70">osd/progress-end.png</righttexture>
     </default>
-
     <default type="slider">
         <width>100%</width>
         <height>20</height>
@@ -164,7 +158,6 @@
         <textureslidernibfocus>osd/progress-mid.png</textureslidernibfocus>
         <orientation>horizontal</orientation>
     </default>
-    
     <default type="sliderex">
         <height>66</height>
         <selectedcolor>$VAR[ColorHighlight2]</selectedcolor>
@@ -181,7 +174,6 @@
         <textoffsetx>30</textoffsetx>
         <textoffsety>0</textoffsety>
     </default>
-
     <default type="scrollbar">
         <width>8</width>
         <texturesliderbackground colordiffuse="White12">common/white.png</texturesliderbackground>
@@ -190,9 +182,6 @@
         <showonepage>false</showonepage>
         <orientation>vertical</orientation>
     </default>
-    
-    
-
     <default type="textbox">
         <font>Small</font>
         <textcolor>Black70</textcolor>
@@ -200,5 +189,4 @@
         <pagecontrol>61</pagecontrol>
         <autoscroll delay="5000" time="1000" repeat="5000"/>
     </default>
-
 </includes>

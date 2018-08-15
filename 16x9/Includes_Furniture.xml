@@ -8,13 +8,309 @@
 			<posy>PosterPad</posy>
 			<height>PosterH</height>
 			<width>8</width>
-			<onleft>50</onleft>
-			<onright condition="!Skin.HasSetting(global.kioskmode)">9000</onright>
+			<onleft condition="Control.IsVisible(50)">50</onleft>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
 			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
 			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<animation effect="slide" end="10,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
+			<animation effect="slide" end="5,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation>
+		</control>
+	</include>
+	<include name="Furniture_Scrollbar_List">
+		<control type="scrollbar" id="60">
+			<onback>50</onback>
+			<centerright>60</centerright>
+			<posy>170</posy>
+			<height>810</height>
+			<width>8</width>
+			<onleft condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onleft>
+			<onleft condition="!String.IsEqual(Container.SortMethod, $LOCALIZE[369]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[551]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">50</onleft>
+			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
+			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
+			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
+			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
+			<!-- <animation effect="slide" end="5,0" time="400" condition="!Control.HasFocus(60)">Conditional</animation> -->
+		</control>
+		<control type="grouplist" id="61">
+			<centerright>80</centerright>
+			<posy>170</posy>
+			<height>810</height>
+			<width>60</width>
+			<onback>50</onback>
+			<onleft>50</onleft>
+			<onright>60</onright>
+			<align>justify</align>
+			<visible>String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])</visible>
+			<visible>Control.IsVisible(60)</visible>
+			<animation effect="fade" start="100" end="0" time="0" condition="String.IsEmpty(ListItem.Label)">Conditional</animation>
+			<control type="button" id="9600">
+				<label>#</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
+			</control>
+			<control type="button" id="9601">
+				<label>A</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
+			</control>
+			<control type="button" id="9602">
+				<label>B</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
+			</control>
+			<control type="button" id="9603">
+				<label>C</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>Action(JumpSMS2)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
+			</control>
+			<control type="button" id="9604">
+				<label>D</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
+			</control>
+			<control type="button" id="9605">
+				<label>E</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
+			</control>
+			<control type="button" id="9606">
+				<label>F</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>Action(JumpSMS3)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
+			</control>
+			<control type="button" id="9607">
+				<label>G</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
+			</control>
+			<control type="button" id="9608">
+				<label>H</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
+			</control>
+			<control type="button" id="9609">
+				<label>I</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>Action(JumpSMS4)</onclick>
+				<onclick>right</onclick>	
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
+			</control>
+			<control type="button" id="9610">
+				<label>J</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
+			</control>
+			<control type="button" id="9611">
+				<label>K</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
+			</control>
+			<control type="button" id="9612">
+				<label>L</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>Action(JumpSMS5)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
+			</control>
+			<control type="button" id="9613">
+				<label>M</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
+			</control>
+			<control type="button" id="9614">
+				<label>N</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
+			</control>
+			<control type="button" id="9615">
+				<label>O</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>Action(JumpSMS6)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
+			</control>
+			<control type="button" id="9616">
+				<label>P</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
+			</control>
+			<control type="button" id="9617">
+				<label>Q</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
+			</control>
+			<control type="button" id="9618">
+				<label>R</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
+			</control>
+			<control type="button" id="9619">
+				<label>S</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>Action(JumpSMS7)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
+			</control>
+			<control type="button" id="9620">
+				<label>T</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
+			</control>
+			<control type="button" id="9621">
+				<label>U</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
+			</control>
+			<control type="button" id="9622">
+				<label>V</label>
+				<onclick>left</onclick>
+				<onclick>Action(FirstPage)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>Action(JumpSMS8)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
+			</control>		
+			<control type="button" id="9623">
+				<label>W</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
+			</control>
+			<control type="button" id="9624">
+				<label>X</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
+			</control>		
+			<control type="button" id="9625">
+				<label>Y</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
+			</control>
+			<control type="button" id="9626">
+				<label>Z</label>
+				<onclick>left</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>Action(JumpSMS9)</onclick>
+				<onclick>right</onclick>
+				<include>DefJumpKeys</include>
+				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
+			</control>										
 		</control>
 	</include>
 	<include name="Furniture_Scrollbar_Horizontal">
@@ -366,7 +662,7 @@
 	</variable>
 	<include name="Furniture_Flags">
 		<control type="grouplist">
-			<visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | [String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform))]</visible>
+			<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | [String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform))]</visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -442,7 +738,7 @@
 				<centertop>50%</centertop>
 				<texture colordiffuse="Dark1">flags/airing.png</texture>
 				<aspectratio align="left">scale</aspectratio>
-				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 			</control>
 			<control type="label">
 				<width min="128">auto</width>
@@ -453,7 +749,7 @@
 				<label>$VAR[LabelNextAiredDetails]</label>
 				<font>Flag</font>
 				<textcolor>Dark2</textcolor>
-				<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
 			</control>
 			<include>lib_Rating_TV</include>
 			<include>lib_Rating_MPAA</include>
@@ -852,8 +1148,8 @@
 		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(seasons) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
-		<value condition="Window.IsVisible(MyVideoNav.xml) + String.IsEqual(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>
+		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/)">$INFO[Container.FolderName]</value>
 		
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/)">$INFO[Container.FolderName]</value>
@@ -903,7 +1199,8 @@
 		<value condition="Window.IsVisible(LoginScreen.xml)">$LOCALIZE[10029]</value>
 		<value condition="[Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)]">[COLOR=$VAR[ColorHighlight]]$INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]$INFO[Control.GetLabel(3), • ,]$INFO[Control.GetLabel(28), • ,]</value>
 		<!-- <value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]] [COLOR=$VAR[ColorHighlight2]]$INFO[Control.GetLabel(3), • ,][/COLOR]</value> -->
-		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml) + !Container.Content(seasons) + !Container.Content(episodes)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101] • [COLOR=$VAR[ColorHighlight]]$INFO[Container.TotalUnWatched,, [/COLOR] $LOCALIZE[31215]]</value>
+		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems][/COLOR] $LOCALIZE[31101]</value>
 		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home) + Window.IsVisible(MyVideoNav.xml) + !Integer.IsGreater(Container.TotalUnWatched,0) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
 		<value condition="!String.IsEmpty(Container.NumItems) + !Window.IsVisible(home)  + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container.NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
 		<value condition="!String.IsEmpty(Container(9500).NumItems) + !Window.IsVisible(home) + !Window.IsVisible(DialogVideoInfo.xml)">[COLOR=$VAR[ColorHighlight]]$INFO[Container.CurrentItem] / $INFO[Container(9500).NumItems,,[/COLOR] $LOCALIZE[31101]]</value>
@@ -953,11 +1250,11 @@
 				<ondown condition="Control.IsVisible(53)">53</ondown>
 				<ondown condition="Control.IsVisible(55)">55</ondown>
 				<ondown condition="Control.IsVisible(56)">56</ondown>
+				<ondown condition="Control.IsVisible(59)">59</ondown>
 				<ondown condition="Control.IsVisible(500)">500</ondown>
 				<ondown condition="Control.IsVisible(505)">505</ondown>
 				<ondown condition="Control.IsVisible(506)">506</ondown>
 				<ondown condition="Control.IsVisible(517)">517</ondown>
-				<ondown condition="Control.IsVisible(520)">520</ondown>
 				<ondown condition="Control.IsVisible(300)">300</ondown>
 				<!-- onright -->
 				<onright condition="Player.HasMedia">7788</onright>
@@ -976,16 +1273,8 @@
 						<visible>!Control.HasFocus(3635) + !Control.HasFocus(3636)</visible>
 						<onup>300</onup>
 					</control>
-					<control type="button" id="3635">
-						<description>back button</description>
-						<width>80</width>
-						<height>80</height>
-						<onclick>Back</onclick>
-						<font>Button</font>
-						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
-						<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
-						<visible>!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]</visible>
-					</control>
+					<include>Furniture_Back_Button</include>
+					<!-- <include>Furniture_Home_Button</include> -->
 					<control type="button" id="3636">
 						<width>80</width>
 						<height>80</height>
@@ -1135,6 +1424,30 @@
 			</control>
 		</control>
 	</include>
+	<include name="Furniture_Back_Button">
+		<control type="button" id="3635">
+			<description>back button</description>
+			<width>80</width>
+			<height>80</height>
+			<onclick>Back</onclick>
+			<font>Button</font>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+			<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+		</control>
+	</include>
+	<!-- <include name="Furniture_Home_Button">
+		<control type="button" id="3635">
+			<description>Home button</description>
+			<width>80</width>
+			<height>80</height>
+			<onclick>ActivateWindow(home,return)</onclick>
+			<font>Button</font>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/home.png</texturefocus>
+			<texturenofocus>special://skin/extras/icons/home.png</texturenofocus>
+			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+		</control>
+	</include> -->
 	<include name="Furniture_Clock">
 		<control type="group">
 			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>
@@ -1195,7 +1508,7 @@
 			</control>
 			<visible>![Container.Content(songs) | Container.Content(albums)]</visible>
 			<visible>![!system.getbool(videolibrary.showunwatchedplots) + Container.Content(episodes) + [String.IsEqual(ListItem.Overlay,OverlayUnWatched.png) | ListItem.IsResumable]]</visible>
-			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo)] | Control.HasFocus(9601) | [System.IdleTime(5) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
+			<visible>[!Window.IsVisible(DialogVideoInfo.xml) + System.IdleTime(5) + Skin.HasSetting(furniture.overlayinfo)] | [System.IdleTime(5) + Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(132)]</visible>
 			<visible>![Window.IsVisible(script-skinshortcuts.xml) | Window.IsVisible(DialogSongInfo.xml) | Window.IsVisible(DialogPictureInfo.xml) | Window.IsVisible(FileBrowser.xml) | Window.IsVisible(DialogProgress.xml) | Window.IsVisible(DialogYesNo.xml) | Window.IsVisible(DialogOK.xml) | Window.IsVisible(DialogSelect.xml) | Window.IsVisible(DialogContextMenu.xml) | Window.IsVisible(DialogButtonMenu.xml) | ControlGroup(9000).HasFocus()]</visible>
 			<visible>[!String.IsEmpty(Window(home).Property(SkinHelper.MovieSet.ExtendedPlot)) + [Container.Content(Sets) | String.StartsWith(ListItem.Path,videodb://movies/sets)]] | !String.IsEmpty(ListItem.Plot)</visible>
 			<include>Animation.FadeIn.Slide</include>

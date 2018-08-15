@@ -6,12 +6,12 @@
 	<include file="View_50_List.xml" />
 	<include file="View_53_Poster.xml" />
 	<include file="View_55_Wall.xml" />
-	<include file="View_56_Panel.xml" />
+	<include file="View_56_Detail.xml" />
+	<include file="View_59_GameBrowser.xml" />
 	<include file="View_500_Thumbnails.xml" />
 	<include file="View_505_Wall_Square.xml" />
 	<include file="View_506_Wall_Poster.xml" />
 	<include file="View_517_WallInfo.xml" />
-	<include file="View_520_GameBrowser.xml" />
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_GlobalSearch.xml" />

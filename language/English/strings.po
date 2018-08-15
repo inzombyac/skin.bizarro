@@ -98,7 +98,7 @@ msgstr ""
 
 #: /extras/views.xml
 msgctxt "#31016"
-msgid "Panel"
+msgid "Detail"
 msgstr ""
 
 #: /16x9/Custom_Debug_Overlay.xml
@@ -184,7 +184,7 @@ msgstr ""
 
 # Custom_Hub_Movies.xml: 108, Custom_Hub_TV.xml: 108
 # Includes_Furniture.xml:700, Includes_Labels.xml: 58, 70, 72, 74, 355, 356, 357
-# View_56_Panel.xml: 162
+# View_56_Detail.xml: 162
 msgctxt "#31102"
 msgid "min"
 msgstr ""

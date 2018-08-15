@@ -13,7 +13,8 @@
 					<width>1780</width>
 					<height>660</height>
 					<onleft>3634</onleft>
-					<onright>60</onright>
+					<onright condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onright>
+					<onright condition="!String.IsEqual(Container.SortMethod, $LOCALIZE[369]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[551]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) + !String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onright>
 					<onup condition="Player.HasMedia">7788</onup>
 					<onup condition="!Player.HasMedia">500</onup>
 					<ondown>500</ondown>

@@ -12,7 +12,7 @@
         <include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
-        <include>View_50_List_Square</include>
+        <include>View_50_List</include>
 		<include condition="!Skin.HasSetting(506wall.bigposter)">View_506_Wall_Poster</include>
 		<include condition="Skin.HasSetting(506wall.bigposter)">View_506_Wall_Big_Poster</include>
 		<include>View_505_Wall_No_Poster</include>

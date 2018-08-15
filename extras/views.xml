@@ -5,7 +5,7 @@
 	<view id="Wall Square" value="505" languageid="31794" type="artists,albums,songs,programs,addons" />
 	<view id="Wall Poster" value="506" languageid="31795" type="artists,albums,songs" />
     <view id="Wall Info" value="517" languageid="31003" type="movies,setmovies,tvshows,musicvideos,seasons,sets,episodes" />
-	<view id="Panel" value="56" languageid="31016" type="all" />
-    <view id="Game Browser" value="520" languageid="31008" type="all" />
+	<view id="Detail" value="56" languageid="31016" type="all" />
+    <view id="Gallery" value="59" languageid="31008" type="all,!pictures,!addons" />
     <view id="Thumbnail" value="500" languageid="21371" type="pictures" />
 </views>

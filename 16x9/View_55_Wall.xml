@@ -13,7 +13,7 @@
 				<left>75</left>
 				<height>766</height>
 				<onleft>9000</onleft>
-				<onright>55</onright>
+				<onright>noop</onright>
 				<onup condition="Player.HasMedia">7788</onup>
 				<onup condition="!Player.HasMedia">3634</onup>
 				<ondown>60</ondown>

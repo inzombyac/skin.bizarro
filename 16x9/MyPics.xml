@@ -3,16 +3,16 @@
 <window id="2">
     <defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-    <views>50,53,56,520,500</views>
+    <views>50,53,56,59,500</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
         <include>Furniture_NowPlaying</include>
         <include>Furniture_Clock</include>
-        <include>View_50_List_Square</include>
+        <include>View_50_List</include>
         <include>View_53_Poster</include>
-        <include>View_56_Panel</include>
-        <include>View_520_GameBrowser</include>
+        <include>View_56_Detail</include>
+        <include>View_59_GameBrowser</include>
         <include>View_500_Thumbnails</include>
         <control type="group">
             <include>Animation.FadeIn</include>
@@ -33,11 +33,6 @@
                     <textcolor>$VAR[ColorHighlight]</textcolor>
                     <aligny>center</aligny>
                 </control>
-                <!-- <control type="button" id="2">
-                    <description>View</description>
-                    <include>DefContextButton</include>
-                    <align>left</align>
-                </control> -->
                 <control type="button" id="9326">
                     <description>View</description>
                     <include>DefContextButton2</include>

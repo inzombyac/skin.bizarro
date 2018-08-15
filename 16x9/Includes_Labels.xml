@@ -53,7 +53,7 @@
 		<value condition="!String.IsEmpty(ListItem.Director)">$INFO[ListItem.Director]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Director))">$INFO[Window(home).Property(Set.Movies.Director)]</value>
 		<value condition="Window.IsVisible(DialogBusy.xml)"></value>
-		<value>$INFO[Container.FolderName]</value>
+		<!-- <value condition="!String.IsEmpty(Container.Content)">$INFO[Container.FolderName]</value> -->
 		<!-- <value>$LOCALIZE[19055]</value> -->
 	</variable>
 	<variable name="LabelGenre">
@@ -124,6 +124,18 @@
 		<value condition="Window.IsActive(videossettings)">$LOCALIZE[157]</value>
 		<value condition="Window.IsActive(servicesettings)">$LOCALIZE[14036]</value>
 		<value>$LOCALIZE[480]</value>
+	</variable>
+	<variable name="LabelListDetails">
+		<value condition="Container.IsUpdating"></value>
+		<value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]</value>
+		<!-- <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,,]</value> -->
+		<value condition="Container.Content(episodes)"></value>
+		<value condition="Container.Content(addons)"></value>
+		<value condition="Container.Content(movies)">$INFO[ListItem.Year]</value>
+		<value condition="Container.Content(sets)"></value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Year]</value>
+		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	<variable name="EmbyWidgetLabel">
 		<value condition="Container(300).Scrolling |[Container(4019).IsUpdating + System.IdleTime(0)]">[CR]</value>
@@ -501,6 +513,7 @@
 		<value>$INFO[VideoPlayer.Plot]</value>
 	</variable>
 	<variable name="LabelNextAiredDetails">
+		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Premiered)">[COLOR=Dark1][B]$LOCALIZE[20416]:[/B][/COLOR] $INFO[ListItem.Premiered,,   ]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.NextTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
 		<value condition="String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.LatestTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
 	</variable>
@@ -924,6 +937,7 @@
         <value condition="Container.Content(tvshows)">Play Next</value>
         <value condition="Container.Content(seasons)">Play Next</value>
         <value condition="Container.Content(movies)">Play</value>
+        <value condition="Container.Content(sets)">Play All</value>
         <value condition="Container.Content(videos)">Play</value>
         <value condition="Container.Content(songs)">Play</value>
         <value condition="Container.Content(albums)">Play</value>

@@ -3,7 +3,7 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
-    <views>50,53,55,56,505,517,520</views>
+    <views>50,53,55,56,505,517,59</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>View_50_List</include>
@@ -11,8 +11,8 @@
 		<include>View_505_Wall_No_Poster</include>
 		<include>View_517_Wall_Info</include>
 		<include>View_55_Wall</include>
-		<include>View_56_Panel</include>
-		<include>View_520_GameBrowser</include>
+		<include>View_56_Detail</include>
+		<include>View_59_GameBrowser</include>
         <include>Furniture_Header</include>
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_Clock</include>

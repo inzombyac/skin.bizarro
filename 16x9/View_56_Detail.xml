@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
-	<include name="View_56_Panel">
+	<include name="View_56_Detail">
 		<description>Panel View (id=56)</description>
 		<control type="group">
 			<width>100%</width>
@@ -81,6 +81,7 @@
 				<texture colordiffuse="HeaderBG">common/white.png</texture>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 				<visible>Control.IsVisible(56)</visible>
+				<visible>!String.IsEmpty(ListItem.Label)</visible>
 			</control>
 			<include>56PosterViewRight</include>
 			<include>56PanelRight</include>
@@ -290,6 +291,7 @@
 	</include>
 	<include name="56PosterViewRight">
 		<control type="group" description="Poster">
+			<visible>Control.IsVisible(56)</visible>
 			<top>170</top>
 			<left>1000</left>
 			<width>PosterW</width>
@@ -334,6 +336,7 @@
 	</include>
 	<include name="56PanelRight">
 		<control type="grouplist" id="65">
+			<visible>Control.IsVisible(56)</visible>
 			<visible>![Container(56).OnNext | Container(56).OnPrevious]</visible>
 			<visible>Control.IsVisible(56) + [[container.content(movies) | container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
 			<visible>!String.IsEmpty(ListItem.Label) + !String.IsEqual(ListItem.Label,..)</visible>

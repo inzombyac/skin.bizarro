@@ -3,7 +3,7 @@
 <window id="502">
     <menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">50</defaultcontrol>
-    <views>50,53,505,506,520,56</views>
+    <views>50,53,505,506,59,56</views>
     <controls>
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
@@ -12,13 +12,13 @@
         <include>Furniture_Logo</include>
 		<include>Furniture_OverlayInfo</include>
         <include>Furniture_NowPlaying</include>
-        <include>View_50_List_Square</include>
+        <include>View_50_List</include>
         <include>View_53_Poster</include>
-        <include>View_56_Panel</include>
+        <include>View_56_Detail</include>
 		<include condition="!Skin.HasSetting(506wall.bigposter)">View_506_Wall_Poster</include>
 		<include condition="Skin.HasSetting(506wall.bigposter)">View_506_Wall_Big_Poster</include>
 		<include>View_505_Wall_No_Poster</include>
-		<include>View_520_GameBrowser</include>
+		<include>View_59_GameBrowser</include>
         <control type="group">
             <include>Animation.FadeIn</include>
             <include>Animation.FadeOut</include>
