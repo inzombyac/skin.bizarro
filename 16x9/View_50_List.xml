@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <includes>
 	<include name="View_50_List">
-		<description>List View (id=50)</description>
+		<description>Default View (id=50)</description>
 		<control type="group">
 			<include>Animation.Common</include>
 			<visible>Control.IsVisible(50)</visible>
@@ -21,7 +21,7 @@
 					<onup condition="!Player.HasMedia">50</onup>
 					<ondown>50</ondown>
 					<pagecontrol>60</pagecontrol>
-					<viewtype label="535">list</viewtype>
+					<viewtype label="31032">list</viewtype>
 					<scrolltime tween="quadratic">400</scrolltime>
 					<itemlayout width="ListW" height="64">
 						<include>50itemlayout</include>

@@ -6,7 +6,6 @@
 	<include file="View_50_List.xml" />
 	<include file="View_53_Poster.xml" />
 	<include file="View_55_Wall.xml" />
-	<include file="View_56_Detail.xml" />
 	<include file="View_59_GameBrowser.xml" />
 	<include file="View_500_Thumbnails.xml" />
 	<include file="View_505_Wall_Square.xml" />

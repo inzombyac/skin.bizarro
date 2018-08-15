@@ -176,6 +176,11 @@ msgctxt "#31031"
 msgid "Brightest"
 msgstr ""
 
+#: /extras/views.xml
+msgctxt "#31032"
+msgid "Default"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

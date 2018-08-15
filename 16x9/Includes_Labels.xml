@@ -946,8 +946,4 @@
         <value condition="Container.Content(episodes)">Play</value>
         <value>Select</value>
     </variable>
-    <variable name="PanelWatchLabel">
-        <!-- <value condition="String.Contains(Container(56).ListItem.Overlay, unwatched)">Mark Watched</value> -->
-        <value>Watched</value>
-    </variable>
 </includes>
