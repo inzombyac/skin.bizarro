@@ -409,8 +409,10 @@
 				<font>Button</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-				<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-				<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+				<onclick condition="!String.IsEmpty(ListItem.Trailer)">PlayMedia($INFO[ListItem.Trailer])</onclick>
+				<onclick condition="String.IsEmpty(ListItem.Trailer)">ActivateWindow(videos,$INFO[ListItem.Label,plugin://plugin.video.youtube/kodion/search/query/?q=,trailer])</onclick>
+				<!-- <onclick condition="String.IsEmpty(ListItem.Trailer)">RunScript(script.skin.helper.service,action=searchyoutube,title=$INFO[ListItem.Label],header=Trailers for $INFO[ListItem.Label])</onclick> -->
+				<visible>!String.IsEmpty(ListItem.Trailer) | Container.Content(movies)</visible>
 			</control>
 			<control type="button" id="7010">		
 				<label>•••</label>
