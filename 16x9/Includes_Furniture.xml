@@ -359,7 +359,8 @@
 			<onup condition="Control.IsVisible(65)">65</onup>
 			<onup condition="!Control.IsVisible(65) + Control.IsVisible(53)">53</onup>
 			<onup condition="!Control.IsVisible(65) + Control.IsVisible(55)">55</onup>
-			<onup condition="!Control.IsVisible(65) + Control.IsVisible(505)">55</onup>
+			<onup condition="!Control.IsVisible(65) + Control.IsVisible(505)">505</onup>
+			<onup condition="!Control.IsVisible(65) + Control.IsVisible(500)">500</onup>
 			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
 			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
 			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
@@ -374,6 +375,7 @@
 			<ondown condition="Control.IsVisible(53)">53</ondown>
 			<ondown condition="Control.IsVisible(55)">55</ondown>
 			<ondown condition="Control.IsVisible(505)">505</ondown>
+			<ondown condition="Control.IsVisible(500)">500</ondown>
 			<onup condition="Player.HasMedia">7788</onup>
 			<onup condition="!Player.HasMedia">3634</onup>
 			<onright>noop</onright>
@@ -1534,8 +1536,9 @@
 						<visible>!Control.HasFocus(3635) + !Control.HasFocus(3636)</visible>
 						<onup>300</onup>
 					</control>
-					<include>Furniture_Back_Button</include>
+					<!-- <include>Furniture_Back_Button</include> -->
 					<!-- <include>Furniture_Home_Button</include> -->
+					<include>Furniture_Menu_Button</include>
 					<control type="button" id="3636">
 						<width>80</width>
 						<height>80</height>
@@ -1697,7 +1700,7 @@
 			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
 		</control>
 	</include>
-	<!-- <include name="Furniture_Home_Button">
+	<include name="Furniture_Home_Button">
 		<control type="button" id="3635">
 			<description>Home button</description>
 			<width>80</width>
@@ -1708,7 +1711,19 @@
 			<texturenofocus>special://skin/extras/icons/home.png</texturenofocus>
 			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
 		</control>
-	</include> -->
+	</include>
+	<include name="Furniture_Menu_Button">
+		<control type="button" id="3635">
+			<description>Home button</description>
+			<width>80</width>
+			<height>80</height>
+			<onclick>Menu</onclick>
+			<font>Button</font>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/menu.png</texturefocus>
+			<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
+			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+		</control>
+	</include>
 	<include name="Furniture_Clock">
 		<control type="group">
 			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>

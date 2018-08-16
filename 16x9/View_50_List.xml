@@ -304,8 +304,8 @@
 	</include>
 	<include name="50PosterView">
 		<control type="group" description="Poster">
-			<visible>Control.IsVisible(50)</visible>
-			<left>30</left>
+			<visible>Control.IsVisible(50) | Control.IsVisible(517)</visible>
+			<left>10</left>
 			<width>PosterPanel</width>
 			<top>160</top>
 			<bottom>80</bottom>
@@ -315,13 +315,13 @@
 				<bottom>0</bottom>
 				<texture colordiffuse="HeaderBG">common/white.png</texture>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-				<visible>Control.IsVisible(50)</visible>
+				<visible>Control.IsVisible(50) | Control.IsVisible(517)</visible>
 				<visible>!String.IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="group">
-				<left>50</left>
+				<left>70</left>
 				<top>10</top>
-				<animation effect="slide" start="0" end="55,0" time="0" condition="!Control.IsVisible(65)">Conditional</animation>
+				<animation effect="slide" start="0" end="45,0" time="0" condition="!Control.IsVisible(65)">Conditional</animation>
 				<control type="image">
 					<left>10</left>
 					<bottom>483</bottom>
@@ -368,8 +368,7 @@
 	</include>
 	<include name="50PanelButtons">
 		<control type="grouplist" id="65">
-			<visible>Control.IsVisible(50)</visible>
-			<visible>Control.IsVisible(50) + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
+			<visible>[Control.IsVisible(50) | Control.IsVisible(517)] + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
 			<visible>!String.IsEmpty(ListItem.Label) + !String.IsEqual(ListItem.Label,..) + !String.IsEqual(ListItem.Label,Update all)</visible>
 			<animation effect="fade" start="25" end="100" delay="25" time="150" reversible="false">Visible</animation>
 			<animation effect="slide" start="0" end="-30,50" time="0" condition="container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons)">Conditional</animation>
@@ -377,7 +376,7 @@
 			<visible>!String.IsEqual(ListItem.Label, * All Seasons)</visible>
 			<visible>!String.IsEqual(ListItem.Label, * All Artists)</visible>
 			<top>170</top>
-			<left>560</left>
+			<left>550</left>
 			<height>400</height>
 			<width>180</width>
 			<orientation>vertical</orientation>
@@ -437,8 +436,9 @@
 			</control> -->
 		</control>
 		<control type="group">
+			<visible>[Control.IsVisible(50) | Control.IsVisible(517)]</visible>
 			<control type="grouplist">
-				<left>50</left>
+				<left>30</left>
 				<top>690</top>
 				<height>390</height>
 				<width>700</width>

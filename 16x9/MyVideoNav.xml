@@ -3,7 +3,7 @@
 <window id="6">
 	<menucontrol>9000</menucontrol>
 	<defaultcontrol always="true">55</defaultcontrol>
-	<views>50,53,55,517,59</views>
+	<views>50,53,55,517,59,500</views>
 	<onload condition="System.HasAddon(script.tv.show.next.aired)">RunScript(script.tv.show.next.aired,backend=True)</onload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
@@ -12,6 +12,7 @@
 		<include>View_55_Wall</include>
 		<include>View_517_Wall_Info</include>
 		<include>View_59_GameBrowser</include>
+		<include>View_500_Thumbnails</include>
 		<include>Furniture_Header</include>
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_Clock</include>
