@@ -97,7 +97,7 @@
 			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
-			<right>5</right>
+			<right>10</right>
 			<width>500</width>
 			<aligny>center</aligny>
 			<height>64</height>
@@ -217,7 +217,7 @@
 			<visible>Container.Content(episodes)</visible>
 		</control>
 		<control type="label">
-			<right>5</right>
+			<right>10</right>
 			<width>500</width>
 			<aligny>center</aligny>
 			<height>64</height>
@@ -319,15 +319,18 @@
 				<visible>!String.IsEmpty(ListItem.Label)</visible>
 			</control>
 			<control type="group">
-				<left>20</left>
+				<left>50</left>
 				<top>10</top>
+				<animation effect="slide" start="0" end="55,0" time="0" condition="!Control.IsVisible(65)">Conditional</animation>
 				<control type="image">
+					<left>10</left>
 					<bottom>483</bottom>
-					<width>510</width>
+					<width>470</width>
 					<height>500</height>
 					<aspectratio align="left" aligny="bottom" scalediffuse="false">keep</aspectratio>
 					<texture background="true">$VAR[LandscapeImage]</texture>
 					<visible>Container.Content(episodes)</visible>
+					<animation effect="slide" start="0" end="-40,0" time="0" condition="true">Conditional</animation>
 				</control>
 				<control type="image">
 					<left>40</left>
@@ -366,53 +369,33 @@
 	<include name="50PanelButtons">
 		<control type="grouplist" id="65">
 			<visible>Control.IsVisible(50)</visible>
-			<visible>![Container(50).OnNext | Container(50).OnPrevious]</visible>
 			<visible>Control.IsVisible(50) + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
 			<visible>!String.IsEmpty(ListItem.Label) + !String.IsEqual(ListItem.Label,..) + !String.IsEqual(ListItem.Label,Update all)</visible>
 			<animation effect="fade" start="25" end="100" delay="25" time="150" reversible="false">Visible</animation>
-			<animation effect="slide" start="0" end="-50,50" time="0" condition="container.content(movies)">Conditional</animation>
-			<animation effect="slide" start="0" end="-50,50" time="0" condition="container.content(tvshows) | container.content(seasons)">Conditional</animation>
-			<animation effect="slide" start="0" end="0,70" time="0" condition="container.content(albums) | container.content(artists) | container.content(songs)">Conditional</animation>
+			<animation effect="slide" start="0" end="-30,50" time="0" condition="container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons)">Conditional</animation>
+			<animation effect="slide" start="0" end="15,70" time="0" condition="container.content(albums) | container.content(artists) | container.content(songs) | Container.content(programs) | Container.content(addons)">Conditional</animation>
 			<visible>!String.IsEqual(ListItem.Label, * All Seasons)</visible>
 			<visible>!String.IsEqual(ListItem.Label, * All Artists)</visible>
 			<top>170</top>
-			<left>580</left>
+			<left>560</left>
 			<height>400</height>
 			<width>180</width>
 			<orientation>vertical</orientation>
 			<align>center</align>
 			<onright>50</onright>
 			<onleft>9000</onleft>
-			<onup>65</onup>
-			<ondown>65</ondown>
 			<itemgap>10</itemgap>
-			<control type="button" id="706">		
+			<defaultcontrol always="false">7006</defaultcontrol>
+			<control type="button" id="7006">		
 				<label>$VAR[PanelPlayLabel]</label>
 				<font>Button</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
 				<onclick>right</onclick>
-				<onclick>Action(select)</onclick>
-				<visible>!Container.content(movies) + !Container.content(sets) + !Container.content(episodes) + !Container.content(tvshows) + !Container.content(seasons) + !Container.content(albums) + !Container.content(songs) + !Container.content(artists) + !Container.content(musicvideos)</visible>
+				<onclick condition="!Container.content(movies) + !Container.content(sets) + !Container.content(episodes) + !Container.content(tvshows) + !Container.content(seasons) + !Container.content(albums) + !Container.content(songs) + !Container.content(artists) + !Container.content(musicvideos)">Action(select)</onclick>
+				<onclick condition="Container.content(movies) | Container.content(sets) | Container.content(episodes) | Container.content(tvshows) | Container.content(seasons) | Container.content(albums) | Container.content(artists) | Container.content(songs) | Container.content(musicvideos) | Container.content(videos)">Action(PlayPause)</onclick>
 			</control>
-			<control type="button" id="707">		
-				<label>$VAR[PanelPlayLabel]</label>
-				<font>Button</font>
-				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-				<onclick>right</onclick>
-				<onclick>Action(PlayPause)</onclick>
-				<visible>Container.content(movies) | Container.content(sets) | Container.content(episodes) | Container.content(tvshows) | Container.content(seasons) | Container.content(albums) | Container.content(artists) | Container.content(songs) | Container.content(musicvideos) | Container.content(videos)</visible>
-			</control>
-			<control type="button" id="708">		
-				<label>Trailer</label>
-				<font>Button</font>
-				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
-				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-				<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
-				<visible>!String.IsEmpty(ListItem.Trailer)</visible>
-			</control>
-			<control type="button" id="709">		
+			<control type="button" id="7009">		
 				<label>29915</label>
 				<font>Button</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
@@ -421,7 +404,15 @@
 				<onclick>Action(info)</onclick>
 				<visible>!String.IsEqual(ListItem.Label, * All Albums) + !Container.content(sets)</visible>
 			</control>
-			<control type="button" id="710">		
+			<control type="button" id="7008">		
+				<label>$LOCALIZE[20410]</label>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+				<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+				<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+				<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+			</control>
+			<control type="button" id="7010">		
 				<label>•••</label>
 				<font>LargeBold</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
@@ -430,7 +421,7 @@
 				<onclick>Action(contextmenu)</onclick>
 				<visible>!String.IsEqual(ListItem.Label, * All Albums)</visible>
 			</control>
-			<!-- <control type="radiobutton" id="711">		
+			<!-- <control type="radiobutton" id="7011">		
 				<label></label>
 				<font>Button</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
