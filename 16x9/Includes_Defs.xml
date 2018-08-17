@@ -743,6 +743,13 @@
 			<selected>Skin.HasSetting(furniture.overlayinfo)</selected>
 			<onclick>Skin.ToggleSetting(furniture.overlayinfo)</onclick>
 		</control>
+		<control type="radiobutton" id="9033" description="Hide Panel Buttons">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>$LOCALIZE[31033]</label>
+			<selected>Skin.HasSetting(furniture.hidemediabuttons)</selected>
+			<onclick>Skin.ToggleSetting(furniture.hidemediabuttons)</onclick>
+		</control>
 		<control type="radiobutton" id="9009" description="Show Plot List (50)">
 			<include>DefContextButton2</include>
 			<align>left</align>
@@ -943,6 +950,13 @@
 			<onclick>AlarmClock(RefreshHome,ReloadSkin(),00:01,silent)</onclick>
 			<visible>Container.HasParent</visible>
 			<selected>true</selected>
+		</control>
+		<control type="radiobutton" id="9033" description="Hide Panel Buttons">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>$LOCALIZE[31033]</label>
+			<selected>Skin.HasSetting(furniture.hidemediabuttons)</selected>
+			<onclick>Skin.ToggleSetting(furniture.hidemediabuttons)</onclick>
 		</control>
 		<control type="radiobutton" id="9002" description="No Wrap (53)">
 			<include>DefContextButton2</include>

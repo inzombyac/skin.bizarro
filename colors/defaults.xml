@@ -11,12 +11,12 @@
 	<color name="SelectedOrange">ffD6A51E</color>
 	<!-- <color name="Highlight">ffee7b0a</color>
 	<color name="Highlight2">FFF507B9</color> -->
-	<color name="Highlight">FF52B54B</color>
-	<color name="Highlight2">ff4285F4</color>
+	<color name="Highlight">FF12A0C7</color>
+	<color name="Highlight2">FF24CA7A</color>
 	<color name="Selected">FF000000</color>
 	<color name="OSDBack">df000000</color>
 	<color name="OSDBackSolid">ff000000</color>
-	<color name="Panel">FF222222</color>
+	<color name="Panel">FF000000</color>
 	<color name="PanelWhite100">FFdddddd</color>
 	<color name="PanelWhite70">B3dddddd</color>
 	<color name="PanelWhite30">4Ddddddd</color>
@@ -28,7 +28,7 @@
 	<color name="Black700">B3dddddd</color>
 	<color name="Black300">4Ddddddd</color>
 	<color name="Black12">1F000000</color>
-	<color name="White100">FF333333</color>
+	<color name="White100">FF303030</color>
 	<color name="White95">F3333333</color>
 	<color name="White70">B3333333</color>
 	<color name="White30">4D333333</color>
@@ -41,8 +41,8 @@
 	<color name="Light2">b3333333</color>
 	<color name="Light3">4d333333</color>
 	<color name="Light4">1f333333</color>
-	<color name="Background">ff1A1A1A</color>
-	<color name="FanartFade">3Fffffff</color> <!--default -->
+	<color name="Background">FF082235</color>
+	<color name="FanartFade">2Fffffff</color> <!--default -->
 	<color name="FanartFade2">6Fffffff</color>  <!-- brighter -->
 	<color name="FanartFade3">9Fffffff</color>  <!--more  brighter -->
 	<color name="FanartFade4">CFffffff</color>  <!-- even brighter -->
@@ -50,14 +50,14 @@
 	<color name="FanartFade6">3f555555</color>   <!-- even dimmer -->
 
 	<color name="DialogFanartFade">FF333333</color>
-	<color name="FloorFade">8F181818</color>
+	<color name="FloorFade">BF181818</color>
 	<color name="EmbyLeft">ff26619c</color>
 	<color name="EmbyCenter">ff50c878</color>
 	<color name="EmbyRight">ffe62020</color>
-	<color name="HeaderBG">4d000000</color>
+	<color name="HeaderBG">FF000000</color>
 	<color name="Overlay">FF000000</color>
 	<color name="HeaderIconFade">FFdddddd</color>
-	<color name="DialogHeader">FF2dc228</color>
+	<color name="DialogHeader">FF12B2E7</color>
 
 	<!-- other colors -->
 	<color name="whitethemehighlight">ff0385b5</color>

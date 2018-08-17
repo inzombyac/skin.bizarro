@@ -11,8 +11,7 @@
 		<include>Furniture_NowPlaying</include>
 		<include>View_50_List</include>
 		<include>View_53_Poster</include>
-		<include condition="!Skin.HasSetting(506wall.bigposter)">View_506_Wall_Poster</include>
-		<include condition="Skin.HasSetting(506wall.bigposter)">View_506_Wall_Big_Poster</include>
+		<include>View_506_Wall_Info_Square</include>
 		<include>View_505_Wall_No_Poster</include>
 		<include>View_517_Wall_Info</include>
 		<include>Furniture_Addons</include>

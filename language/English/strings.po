@@ -181,6 +181,11 @@ msgctxt "#31032"
 msgid "Default"
 msgstr ""
 
+#: /16x9/Includes_Defs.xml
+msgctxt "#31033"
+msgid "Hide media buttons"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"

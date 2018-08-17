@@ -9,7 +9,8 @@
 		<onup condition="String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])">61</onup>
 		<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + Player.HasMedia">7788</onup>
 		<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + !Player.HasMedia">3634</onup>
-		<ondown>65</ondown>
+		<ondown condition="Control.IsVisible(65)">65</ondown>
+		<ondown condition="!Control.IsVisible(65)">60</ondown>
 		<onleft>9000</onleft>
 		<onright>noop</onright>
 		<focusposition>1</focusposition>
@@ -287,6 +288,7 @@
 				<visible>![Container(53).OnNext | Container(53).OnPrevious]</visible>
 				<visible>Control.IsVisible(53) + ![container.content(movies) | !String.IsEmpty(ListItem.Trailer)]</visible>
 				<visible>!String.IsEmpty(ListItem.Label) + !ListItem.IsParentFolder</visible>
+				<visible>!Skin.HasSetting(furniture.hidemediabuttons)</visible>
 				<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
 				<top>780</top>
 				<left>174</left>

@@ -370,6 +370,7 @@
 		<control type="grouplist" id="65">
 			<visible>[Control.IsVisible(50) | Control.IsVisible(517)] + [[container.content(movies) | container.content(sets)| container.content(tvshows) | container.content(seasons) | container.content(albums) | container.content(artists) | container.content(songs) | Container.content(episodes) | Container.content(programs) | Container.content(addons)] | !String.IsEmpty(ListItem.Trailer)]</visible>
 			<visible>!String.IsEmpty(ListItem.Label) + !String.IsEqual(ListItem.Label,..) + !String.IsEqual(ListItem.Label,Update all)</visible>
+			<visible>!Skin.HasSetting(furniture.hidemediabuttons)</visible>
 			<animation effect="fade" start="25" end="100" delay="25" time="150" reversible="false">Visible</animation>
 			<animation effect="slide" start="0" end="-30,50" time="0" condition="container.content(movies) | container.content(sets) | container.content(tvshows) | container.content(seasons)">Conditional</animation>
 			<animation effect="slide" start="0" end="15,70" time="0" condition="container.content(albums) | container.content(artists) | container.content(songs) | Container.content(programs) | Container.content(addons)">Conditional</animation>

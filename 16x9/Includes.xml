@@ -9,7 +9,7 @@
 	<include file="View_59_GameBrowser.xml" />
 	<include file="View_500_Thumbnails.xml" />
 	<include file="View_505_Wall_Square.xml" />
-	<include file="View_506_Wall_Poster.xml" />
+	<include file="View_506_Wall_Info_Square.xml" />
 	<include file="View_517_WallInfo.xml" />
 	<include file="Includes_Furniture.xml" />
 	<include file="Includes_Home.xml" />
