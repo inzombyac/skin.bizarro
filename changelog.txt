@@ -1,3 +1,7 @@
+1.1.4
+- Fix user and power icons
+- Live TV Home widget changes
+
 1.1.3
 - List view becomes default and combines list and Panel.
 - Poster and list get alpha jump
