@@ -1318,6 +1318,7 @@
 	<variable name="DefWidgetRight1LiveTV">
 		<value condition="System.HasAddon(script.skin.helper.widgets)">plugin://script.skin.helper.widgets/?action=recordings&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
 		<value>pvr://recordings/tv/active</value>
+		<!-- <value>pvr://channels/tv/*</value> -->
 	</variable>
 	<variable name="DefWidgetRight1Music">
 		<value>musicdb://recentlyaddedalbums/</value>
@@ -1409,7 +1410,8 @@
 	</variable>
 	<variable name="DefWidgetRight2LiveTV">
 		<!-- <value>plugin://script.skin.helper.service/?action=nextairedtvshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
-		<value>plugin://script.skin.helper.widgets/?action=nextaired&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
+		<!-- <value>plugin://script.skin.helper.widgets/?action=nextaired&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
+		<value></value>
 	</variable>
 	<!-- <variable name="DefWidgetRight2Music">
 		<value>[CR]</value>
@@ -1499,9 +1501,9 @@
 	<variable name="DefWidgetRight3Movies">
 		<value>plugin://script.skin.helper.widgets/?action=similar&amp;mediatype=movies&amp;imdbid=$INFO[Container(9004).ListItem.IMDBNumber]&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
 	</variable>
-	<!-- <variable name="DefWidgetRight3LiveTV">
-		<value>[CR]</value>
-	</variable> -->
+	<variable name="DefWidgetRight3LiveTV">
+		<value>pvr://channels/tv/*</value>
+	</variable>
 	<!-- <variable name="DefWidgetRight3Music">
 		<value>[CR]</value>
 	</variable> -->

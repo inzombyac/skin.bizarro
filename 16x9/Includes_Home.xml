@@ -1487,7 +1487,7 @@
 					<include>Animation.EmbyRight2Slide</include>
 				</control>
 				<!-- Live TV -->
-				<control type="panel" id="4017">
+				<!-- <control type="panel" id="4017">
 					<description>Widget</description>
 					<top>330</top>
 					<left>$PARAM[widget_left]</left>
@@ -1517,7 +1517,7 @@
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight2Slide</include>
-				</control>
+				</control> -->
 				<!-- Emby Node 0 -->
 				<control type="panel" id="4017">
 					<description>Widget</description>
@@ -2037,6 +2037,34 @@
 					<include>Animation.FadeOut</include>
 					<include>Animation.DelayFadeIn</include>
 					<include>Animation.EmbyRight3Slide</include>
+				</control>
+				<!-- Live TV -->
+				<control type="panel" id="4018">
+					<description>Widget</description>
+					<visible>String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)</visible>
+					<top>330</top>
+					<left>$PARAM[widget_left]</left>
+					<width>$PARAM[quadruple_widget_width]</width>
+					<height>735</height>
+					<onup>300</onup>
+					<ondown>4018</ondown>
+					<pagecontrol>40180</pagecontrol>
+					<onleft condition="Control.IsVisible(4017)">4017</onleft>
+					<onleft condition="!Control.IsVisible(4017) + Control.IsVisible(4016)">4016</onleft>
+					<onleft condition="!Control.IsVisible(4017) + !Control.IsVisible(4016)">4012</onleft>
+					<onright>noop</onright>
+					<include>EmbyHomeInfoActions</include>
+					<preloaditems>12</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="quadratic">0</scrolltime>
+					<include content="EmbyLiveTVWidgetContent">
+						<param name="image_type">$VAR[EmbyWidget3Icon]</param>
+					</include>
+					<content limit="12" sortby="random">$VAR[DefWidgetRight3LiveTV]</content>
+					<include>Animation.FadeOut</include>
+					<include>Animation.DelayFadeIn</include>
+					<include>Animation.EmbyRight3Slide</include>
+					<autoscroll time="10000">!Control.HasFocus(4018)</autoscroll>
 				</control>
 				<!-- Emby Node 0 -->
 				<control type="panel" id="4018">
@@ -2713,6 +2741,273 @@
 					<font>Micro</font>
 					<textcolor>White</textcolor>
 				</control>
+			</control>
+			<control type="image">
+				<left>10</left>
+				<width>$PARAM[item_width]</width>
+				<height>$PARAM[item_height]</height>
+				<texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
+				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
+			</control>
+		</focusedlayout>
+		</definition>
+	</include>
+	<include name="EmbyLiveTVWidgetContent">
+	  <param name="widget_width" default="350"/>
+	  <param name="item_width" default="335"/>
+	  <param name="widget_height" default="245"/>
+	  <param name="item_height" default="230"/>
+	  <param name="overlay_bottom" default="15"/>
+	  <definition>
+		<scrolltime tween="quadratic">400</scrolltime>
+		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Channels.jpg</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<include>Animation.FadeOut</include>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
+				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<include>Animation.FadeOut</include>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="label">
+				<top>22</top>
+				<height>20</height>
+				<width>300</width>
+				<left>10</left>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyWidget1ContentLabel]</label>
+				<visible>!Container(300).Scrolling + String.IsEmpty(ListItem.Icon) </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[ListItem.Icon]</texture>
+				<height>100</height>
+				<width>100</width>
+				<left>20</left>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="label">
+				<top>22</top>
+				<height>20</height>
+				<left>230</left>
+				<width>$PARAM[item_width]</width>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<visible>!Container(300).Scrolling </visible>
+				<label>$INFO[ListItem.ChannelNumber]</label>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="progress">
+				<right>10</right>
+				<width>60</width>
+				<height>20</height>
+				<top>22</top>
+				<reveal>true</reveal>
+				<texturebg>pvr/progress-back.png</texturebg>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
+				<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
+				<info>Container(4019).ListItem.Progress</info>
+				<colordiffuse>Dark1</colordiffuse>
+				<visible>IntegerGreaterThan(Container(4018).ListItem.Progress,0)</visible>
+				<include>Animation.FadeIn</include>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>$PARAM[overlay_bottom]</bottom>
+				<height>40</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="label">
+				<bottom>$PARAM[overlay_bottom]</bottom>
+				<left>20</left>
+				<align>left</align>
+				<height>40</height>
+				<width>$PARAM[item_width]</width>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+			<control type="label">
+				<left>15</left>
+				<top>80</top>
+				<right>15</right>
+				<align>left</align>
+				<font>Tiny</font>
+				<height>20</height>
+				<width>$PARAM[item_width]</width>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]</label>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+			</control>
+			<control type="textbox">
+				<left>15</left>
+				<top>110</top>
+				<right>15</right>
+				<bottom>55</bottom>
+				<align>left</align>
+				<font>Micro</font>
+				<height>80</height>
+				<width>$PARAM[item_width]</width>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Plot]</label>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<autoscroll time="10000">false</autoscroll>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
+				<texture diffuse="diffuse/home-fanart.png">common/null.png</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<visible>!Container(300).Scrolling </visible>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
+			</control>
+		</itemlayout>
+		<focusedlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
+			<control type="image">
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Channels.jpg</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+			</control>
+			<control type="image">
+				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+			</control>
+			<control type="label">
+				<top>22</top>
+				<height>20</height>
+				<width>300</width>
+				<left>10</left>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$VAR[EmbyWidget1ContentLabel]</label>
+				<visible>String.IsEmpty(ListItem.Icon) </visible>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">keep</aspectratio>
+				<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[ListItem.Icon]</texture>
+				<height>100</height>
+				<width>100</width>
+				<left>20</left>
+			</control>
+			<control type="label">
+				<top>22</top>
+				<height>20</height>
+				<left>230</left>
+				<width>$PARAM[item_width]</width>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.ChannelNumber]</label>
+			</control>
+			<control type="progress">
+				<right>10</right>
+				<width>60</width>
+				<height>20</height>
+				<top>22</top>
+				<reveal>true</reveal>
+				<texturebg>pvr/progress-back.png</texturebg>
+				<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
+				<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
+				<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
+				<info>Container(4019).ListItem.Progress</info>
+				<colordiffuse>Dark1</colordiffuse>
+				<visible>IntegerGreaterThan(Container(4018).ListItem.Progress,0)</visible>
+			</control>
+			<control type="image">
+				<description>Title overlay</description>
+				<bottom>$PARAM[overlay_bottom]</bottom>
+				<height>40</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
+			</control>
+			<control type="label">
+				<bottom>$PARAM[overlay_bottom]</bottom>
+				<left>20</left>
+				<align>left</align>
+				<height>40</height>
+				<width>$PARAM[item_width]</width>
+				<font>Tiny</font>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
+			</control>
+			<control type="label">
+				<left>15</left>
+				<top>80</top>
+				<right>15</right>
+				<align>left</align>
+				<font>Tiny</font>
+				<height>20</height>
+				<width>330</width>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]</label>
+			</control>
+			<control type="textbox">
+				<left>15</left>
+				<top>110</top>
+				<right>15</right>
+				<bottom>55</bottom>
+				<align>left</align>
+				<font>Micro</font>
+				<height>80</height>
+				<width>330</width>
+				<textcolor>Dark1</textcolor>
+				<selectedcolor>Dark1</selectedcolor>
+				<label>$INFO[ListItem.Plot]</label>
+			</control>
+			<control type="image">
+				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
+				<texture diffuse="diffuse/home-fanart.png">common/null.png</texture>
+				<height>$PARAM[item_height]</height>
+				<width>$PARAM[item_width]</width>
+				<left>10</left>
+				<visible>!Container(300).Scrolling </visible>
 			</control>
 			<control type="image">
 				<left>10</left>

@@ -20,8 +20,8 @@
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.7.title)]" type="$INFO[Window(Home).Property(emby.nodes.7.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.7.title))">$INFO[Window(Home).Property(emby.nodes.7.path)]</shortcut>
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.8.title)]" type="$INFO[Window(Home).Property(emby.nodes.8.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.8.title))">$INFO[Window(Home).Property(emby.nodes.8.path)]</shortcut>
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.9.title)]" type="$INFO[Window(Home).Property(emby.nodes.9.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.9.title))">$INFO[Window(Home).Property(emby.nodes.9.path)]</shortcut>
+            <shortcut label="EmbyCon" type="32010" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="System.HasAddon(plugin.video.embycon)">||BROWSE||plugin.video.embycon/?mode=</shortcut>
         </node>
-        <shortcut label="EmbyCon" type="32010" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="System.HasAddon(plugin.video.embycon)">||BROWSE||plugin.video.embycon/?mode=</shortcut>
         <node label="32030">
             <content>video</content>
             <node label="32040">

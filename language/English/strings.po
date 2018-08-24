@@ -186,6 +186,11 @@ msgctxt "#31033"
 msgid "Hide media buttons"
 msgstr ""
 
+#: /shortcuts/overrides.xml
+msgctxt "#31034"
+msgid "commands"
+msgstr ""
+
 # strings 31000 thru 31999 reserved for skins
 # Includes_Furniture.xml: 914, 920, 921, 922, 923, 924
 msgctxt "#31101"
