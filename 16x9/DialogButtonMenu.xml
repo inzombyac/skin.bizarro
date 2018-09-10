@@ -11,13 +11,14 @@
             <right>0</right>
             <width>455</width>
             <height>1080</height>
-            <control type="image">
-                <description>background image</description>
+            <control type="button">
                 <right>-10</right>
                 <top>-12</top>
                 <width>475</width>
                 <height>1104</height>
-                <texture border="16" colordiffuse="White100">common/rounded-shadow8.png</texture>
+                <texturefocus border="12">diffuse/sideblade.png</texturefocus>
+                <texturenofocus border="12">diffuse/sideblade.png</texturenofocus>
+                <colordiffuse>SideBlade</colordiffuse>
             </control>
             <control type="group">
                 <control type="image">
@@ -68,6 +69,14 @@
                     <textcolor>$VAR[ColorHighlight]</textcolor>
                     <aligny>center</aligny>
                     <align>left</align>
+                </control>
+                <control type="button" id="9212" description="Customize Home">
+                    <include>DefContextButton</include>
+                    <label>$LOCALIZE[21435] $LOCALIZE[10000] $LOCALIZE[13398]</label>
+                    <onclick>right</onclick>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+                    <align>left</align>
+                    <visible>Window.IsVisible(Home.xml)</visible>
                 </control>
                 <control type="button" id="3120">
                     <include>DefContextButton</include>

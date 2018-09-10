@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="10000">
-	<defaultcontrol always="true">9945</defaultcontrol>
+	<defaultcontrol always="true">5050</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<onload condition="System.HasAddon(script.favourites)">RunScript(script.favourites)</onload>
 	<onload condition="String.IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
@@ -10,29 +10,25 @@
 	<onload condition="Pvr.HasTimer">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
-		<control type="button" id="9945">
-			<!-- Workaround -->
-			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:05,silent)</onfocus>
-			<onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus>
-			<onfocus>Skin.reset(login.reset)</onfocus>
-			<!-- Workaround -->
-			<onfocus condition="String.IsEmpty(System.CurrentControl)">AlarmClock(UpdateDelay,SetFocus(300),00:01,silent)</onfocus>
-        </control>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<control type="group" description="Emby Home Menu">
+			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+			<include>HomeEmbyWidgetInfo</include>
+			<control type="button" id="5050">
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onfocus>SetFocus(4000)</onfocus>
+			</control>
+		</control>
 		<include>Furniture_Header</include>
 		<include>Furniture_Clock</include>
 		<include>Furniture_NowPlaying</include>
 		<include>Furniture_RSS</include>
 		<include>DebugGridHome</include>
-		<control type="group" description="Emby Home Menu">
-			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
-			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyRow</include>
-			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
-		</control>
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<visible>ControlGroup(9000).HasFocus()</visible>
+			<visible>ControlGroup(9000).HasFocus() | ControlGroup(300).HasFocus()</visible>
 			<include>GlobalOverlay</include>
 		</control>
 		<control type="group" description="Side Menu">
@@ -41,8 +37,9 @@
 				<left>20</left>
 				<top>100</top>
 				<height>1080</height>
-				<onright>300</onright>
-				<onleft>SetFocus(300,$INFO[Container(300).NumItems])</onleft>
+				<onright>4000</onright>
+				<onup>9091</onup>
+				<onleft>9000</onleft>
 				<include>Def9000HomeMenuTop</include>
 			</control>
 		</control>

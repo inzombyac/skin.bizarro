@@ -149,46 +149,27 @@
 		<value condition="!String.IsEmpty(Container(4019).ListItem.Thumb) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Thumb]</value>
 		<value>$INFO[Container(4019).ListItem.Icon]</value>
 	</variable>
-	<!-- Center Widget Selection -->
-	<variable name="EmbyFocusedWidgetIcon">
-		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes) + String.IsEqual(Container(300).ListItem.Label2,tvshows) + system.getbool(videolibrary.showunwatchedplots) ">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4012)">$VAR[EmbyWidget2Icon]</value>
-		<value condition="Control.HasFocus(4016)">$VAR[EmbyWidget1Icon]</value>
-		<value condition="Control.HasFocus(4017)">$VAR[EmbyWidget2Icon]</value>
-		<value condition="Control.HasFocus(4018)">$VAR[EmbyWidget3Icon]</value>
-		<value>$VAR[FanartImage]</value>
-	</variable>
 	<variable name="EmbyWidget1Icon">
-		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="String.Contains(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes)">$VAR[FanartImage]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<!-- Not needed until there is a good nextup plugin again -->
-		<!-- <value condition="system.getbool(videolibrary.showunwatchedplots)  +  String.IsEqual(Container(300).ListItem.Property(type),tvshows)">$VAR[ThumbImage]</value> -->
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>
-	<variable name="EmbyWidget2Icon">
-		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value>$VAR[ThumbImage]</value>
-	</variable>
-	<variable name="EmbyWidget3Icon">
-		<value condition="Container(300).Scrolling">common/null.png</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$VAR[FanartImage]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),tvshows) | String.IsEqual(Container(300).ListItem.Label2,tvshows)">$VAR[ThumbImage]</value>
-		<value condition="String.IsEqual(Container(4018).ListItem.Property(DBTYPE),episode)">$INFO[ListItem.Icon]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$VAR[ThumbImage]</value>
-		<value>$VAR[FanartImage]</value>
-	</variable>	
 	<variable name="EmbySubMenuImage">
-		<value condition="Container(300).Scrolling">common/null.png</value>
 		<value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),homevideos) | String.IsEqual(Container(300).ListItem.Label2,homevideos)">special://skin/extras/backgrounds/video.jpg</value>
+		<value condition="String.IsEqual(Container(4000).ListItem.Property(type),homevideos) | String.IsEqual(Container(4000).ListItem.Label2,homevideos)">special://skin/extras/backgrounds/video.jpg</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>common/null.png</value>
 	</variable>
 	<variable name="SystemAvatar">
-		<value condition="Control.HasFocus(9265)">common/black.png</value>
+		<value condition="Control.HasFocus(9265) | Control.HasFocus(9267)">common/black.png</value>
 		<value condition="System.HasAddon(plugin.video.emby) + !String.IsEmpty(Window(Home).Property(EmbyUserImage))">$INFO[Window(Home).Property(EmbyUserImage)]</value>
 		<value condition="!String.IsEqual(System.ProfileThumb,DefaultUser.png)">$INFO[System.ProfileThumb]</value>
 		<value>special://skin/extras/icons/kodi.png</value>
@@ -204,11 +185,6 @@
 		<value condition="!String.IsEmpty(Container(211).ListItem.Thumb)">$INFO[Container(211).ListItem.Thumb]</value>		
 	</variable>
 	<variable name="SkinShortcutsBackground">
-		<value condition="Control.HasFocus(312)">special://skin/extras/shortcutthumbs/Main.png</value>
-		<value condition="Control.HasFocus(405)">special://skin/extras/shortcutthumbs/Submenu.png</value>
-		<value condition="Control.HasFocus(8777)">special://skin/extras/shortcutthumbs/Right1.png</value>
-		<value condition="Control.HasFocus(8778)">special://skin/extras/shortcutthumbs/Right2.png</value>
-		<value condition="Control.HasFocus(8779)">special://skin/extras/shortcutthumbs/Right3.png</value>
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(background)]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>

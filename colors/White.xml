@@ -17,6 +17,7 @@
     <color name="FanartFade">2Fffffff</color>
     <color name="DialogFanartFade">2Fffffff</color>
     <color name="FloorFade">BBdddddd</color>
+    <color name="SideBlade">F3dddddd</color>
     
     <color name="White100">FFdddddd</color>
 	<color name="White95">F3dddddd</color>

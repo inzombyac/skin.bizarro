@@ -107,7 +107,7 @@
 			<selectedcolor>Light1</selectedcolor>
 			<label>$VAR[LabelListDetails]</label>
 			<animation effect="slide" start="0" end="-70" time="0" condition="Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
-			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies)">Conditional</animation>
+			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files)">Conditional</animation>
 		</control>
 		<control type="progress">
 			<centerright>36</centerright>
@@ -227,7 +227,7 @@
 			<selectedcolor>Dark1</selectedcolor>
 			<label>$VAR[LabelListDetails]</label>
 			<animation effect="slide" start="0" end="-70" time="0" condition="Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
-			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies)">Conditional</animation>
+			<animation effect="slide" start="0" end="-100" time="0" condition="Container.Content(movies) | Container.Content(files)">Conditional</animation>
 		</control>
 		<control type="progress">
 			<centerright>36</centerright>

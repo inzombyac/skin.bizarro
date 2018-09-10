@@ -1478,13 +1478,13 @@
 				<height>150</height>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
 			</control>
-			<control type="image">
+			<!-- <control type="image">
 				<top>150</top>
 				<texture colordiffuse="HeaderBG">common/white.png</texture>
 				<height>90</height>
 				<visible>Window.IsVisible(Home) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
-			</control>
+			</control> -->
 			<control type="image" description="Background">
 				<width>100%</width>
 				<height>150</height>
@@ -1518,45 +1518,17 @@
 				<ondown condition="Control.IsVisible(505) + !Control.IsVisible(61)">505</ondown>
 				<ondown condition="Control.IsVisible(506)">506</ondown>
 				<ondown condition="Control.IsVisible(517)">517</ondown>
-				<ondown condition="Control.IsVisible(300)">300</ondown>
+				<ondown condition="Control.IsVisible(4000)">4000</ondown>
 				<!-- onright -->
 				<onright condition="Player.HasMedia">7788</onright>
-				<control type="grouplist">
-					<orientation>horizontal</orientation>
-					<itemgap>0</itemgap>
+				<control type="button" id="3634">
 					<width>80</width>
 					<height>80</height>
-					<!-- Dummy to always set focus to first visible button -->
-					<control id="3634" type="button">
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<onfocus>Right</onfocus>
-						<include>NoTextures</include>
-						<visible>!Control.HasFocus(3635) + !Control.HasFocus(3636)</visible>
-						<onup>300</onup>
-					</control>
-					<!-- <include>Furniture_Back_Button</include> -->
-					<!-- <include>Furniture_Home_Button</include> -->
-					<include>Furniture_Menu_Button</include>
-					<control type="button" id="3636">
-						<width>80</width>
-						<height>80</height>
-						<ondown>300</ondown>
-						<onfocus>Menu</onfocus>
-						<onclick>Menu</onclick>
-						<font>Button</font>
-						<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
-						<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
-						<visible>Window.IsActive(Home.xml) + !Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
-					</control>
-					<control id="3637" type="button">
-						<width>0</width>
-						<height>0</height>
-						<label>-</label>
-						<onfocus>Down</onfocus>
-						<include>NoTextures</include>
-					</control>
+					<onclick>Menu</onclick>
+					<font>Button</font>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
+					<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 				</control>
 				<control type="group" description="iconbox">
 					<width>80</width>
@@ -1713,7 +1685,7 @@
 		</control>
 	</include>
 	<include name="Furniture_Menu_Button">
-		<control type="button" id="3635">
+		<control type="button" id="3634">
 			<description>Home button</description>
 			<width>80</width>
 			<height>80</height>
@@ -1721,7 +1693,7 @@
 			<font>Button</font>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/menu.png</texturefocus>
 			<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
-			<visible>[!Window.IsActive(Home.xml) | [Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
+			<visible>[[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
 		</control>
 	</include>
 	<include name="Furniture_Clock">

@@ -574,7 +574,12 @@
             <control type="label">
                 <include>ControlID</include>
                 <label>Folder Path: $INFO[Container.FolderPath]</label>
-                <visible>!Window.IsVisible(VideoFullScreen.xml)</visible>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID</include>
+                <label>$INFO[System.CurrentControlID, Control ID: ]</label>
+                <visible>Window.IsVisible(Home.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID2</include>
@@ -612,7 +617,6 @@
                 <label>$INFO[Container.TotalUnWatched] $INFO[Control.GetLabel(3), • ,]</label>
 				<visible>Window.IsVisible(MyVideoNav.xml)  | Window.IsVisible(DialogVideoInfo.xml)</visible>
             </control>
-			
         </control>
     </controls>
 </window>

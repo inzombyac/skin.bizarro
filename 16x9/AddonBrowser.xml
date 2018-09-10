@@ -24,6 +24,7 @@
 		<control type="group">
 			<include>Def9000SideBladeLeft</include>
 			<control type="grouplist" id="9000">
+				<onup>9091</onup>
 				<include>Def9000AddonSide</include>
 				<control type="label" id="201">
 					<height>42</height>

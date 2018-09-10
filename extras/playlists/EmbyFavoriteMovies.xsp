@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<smartplaylist type="movies">
+    <name>Emby Favorite Movies</name>
+	<rule field="tag" operator="is">
+		<value>Favorite movies</value>
+	 </rule>
+    <match>all</match>
+    <limit>1</limit>
+    <order direction="ascending">random</order>
+</smartplaylist>

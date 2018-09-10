@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <includes>
 	<variable name="LabelYear">
@@ -12,14 +12,14 @@
     <variable name="LabelEpisodeZero2">
         <value condition="Control.HasFocus(301) + !Integer.IsGreater(Container(301).ListItem.Episode,9) + !String.Contains(Container(301).ListItem.Episode,S) + !String.IsEmpty(Container(301).ListItem.Episode)">E$NUMBER[0]</value>
         <value condition="Control.HasFocus(9500) + !Integer.IsGreater(Container(9500).ListItem.Episode,9) + !String.Contains(Container(9500).ListItem.Episode,S) + !String.IsEmpty(Container(9500).ListItem.Episode)">E$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4016) + !Integer.IsGreater(Container(4016).ListItem.Episode,9) + !String.Contains(Container(4016).ListItem.Episode,S) + !String.IsEmpty(Container(4016).ListItem.Episode) +  !String.Contains(Container(4016).ListItem.Episode,E)">E$NUMBER[0]</value>		
-		<value condition="Control.HasFocus(4017) + !Integer.IsGreater(Container(4017).ListItem.Episode,9) + !String.Contains(Container(4017).ListItem.Episode,S) + !String.IsEmpty(Container(4017).ListItem.Episode) +  !String.Contains(Container(4017).ListItem.Episode,E)">E$NUMBER[0]</value>	
-		<value condition="Control.HasFocus(4018) + !Integer.IsGreater(Container(4018).ListItem.Episode,9) + !String.Contains(Container(4018).ListItem.Episode,S) + !String.IsEmpty(Container(4018).ListItem.Episode) +  !String.Contains(Container(4018).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4001).ListItem.Episode,9) + !String.Contains(Container(4001).ListItem.Episode,S) + !String.IsEmpty(Container(4001).ListItem.Episode) +  !String.Contains(Container(4001).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + Integer.IsGreater(Container(4001).ListItem.Episode,9) + !String.Contains(Container(4001).ListItem.Episode,S) + !String.IsEmpty(Container(4001).ListItem.Episode) +  !String.Contains(Container(4001).ListItem.Episode,E)">E</value>	
+		<value condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4002).ListItem.Episode,9) + !String.Contains(Container(4002).ListItem.Episode,S) + !String.IsEmpty(Container(4002).ListItem.Episode) +  !String.Contains(Container(4002).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4002).ListItem.Episode,9) + !String.Contains(Container(4002).ListItem.Episode,S) + !String.IsEmpty(Container(4002).ListItem.Episode) +  !String.Contains(Container(4002).ListItem.Episode,E)">E</value>	
+		<value condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4003).ListItem.Episode,9) + !String.Contains(Container(4003).ListItem.Episode,S) + !String.IsEmpty(Container(4003).ListItem.Episode) +  !String.Contains(Container(4003).ListItem.Episode,E)">E$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4003).ListItem.Episode,9) + !String.Contains(Container(4003).ListItem.Episode,S) + !String.IsEmpty(Container(4003).ListItem.Episode) +  !String.Contains(Container(4003).ListItem.Episode,E)">E</value>
 		 <value condition="Control.HasFocus(301) + Integer.IsGreater(Container(301).ListItem.Episode,9) + !String.Contains(Container(301).ListItem.Episode,S) + !String.IsEmpty(Container(301).ListItem.Episode)">E</value>
         <value condition="Control.HasFocus(9500) + Integer.IsGreater(Container(9500).ListItem.Episode,9) + !String.Contains(Container(9500).ListItem.Episode,S) + !String.IsEmpty(Container(9500).ListItem.Episode)">E</value>
-		<value condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).ListItem.Episode,9) + !String.Contains(Container(4016).ListItem.Episode,S) + !String.IsEmpty(Container(4016).ListItem.Episode) +  !String.Contains(Container(4016).ListItem.Episode,E)">E</value>		
-		<value condition="Control.HasFocus(4017) + Integer.IsGreater(Container(4017).ListItem.Episode,9) + !String.Contains(Container(4017).ListItem.Episode,S) + !String.IsEmpty(Container(4017).ListItem.Episode) +  !String.Contains(Container(4017).ListItem.Episode,E)">E</value>	
-		<value condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4018).ListItem.Episode,9) + !String.Contains(Container(4018).ListItem.Episode,S) + !String.IsEmpty(Container(4018).ListItem.Episode) +  !String.Contains(Container(4018).ListItem.Episode,E)">E</value>
 		<value condition="!VideoPlayer.HasInfo + !Integer.IsGreater(ListItem.Episode,9) + !String.Contains(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">E$NUMBER[0]</value>
         <value condition="VideoPlayer.HasInfo + !Integer.IsGreater(VideoPlayer.Episode,9) + !String.Contains(VideoPlayer.Episode,S) + !String.IsEmpty(VideoPlayer.Episode)">E$NUMBER[0]</value>
 		<value condition="!VideoPlayer.HasInfo + Integer.IsGreater(ListItem.Episode,9) + !String.Contains(ListItem.Episode,S) + !String.IsEmpty(ListItem.Episode)">E</value>
@@ -29,14 +29,13 @@
         <value condition="!VideoPlayer.HasInfo + !Integer.IsGreater(ListItem.Season,9) + !String.Contains(ListItem.Season,S) + !String.IsEmpty(ListItem.Season)">S$NUMBER[0]</value>
         <value condition="Control.HasFocus(301) + !Integer.IsGreater(Container(301).ListItem.Season,9) + !String.Contains(Container(301).ListItem.Season,S) + !String.IsEmpty(Container(301).ListItem.Season)">S$NUMBER[0]</value>
         <value condition="Control.HasFocus(9500) + !Integer.IsGreater(Container(9500).ListItem.Season,9) + !String.Contains(Container(9500).ListItem.Season,S) + !String.IsEmpty(Container(9500).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4016) + !Integer.IsGreater(Container(4016).ListItem.Season,9) + !String.Contains(Container(4016).ListItem.Season,S) + !String.IsEmpty(Container(4016).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4016) + Integer.IsGreater(Container(4016).ListItem.Season,9) + !String.Contains(Container(4016).ListItem.Season,S) + !String.IsEmpty(Container(4016).ListItem.Season)">S</value>
-        <value condition="Control.HasFocus(4017) + !Integer.IsGreater(Container(4017).ListItem.Season,9) + !String.Contains(Container(4017).ListItem.Season,S) + !String.IsEmpty(Container(4017).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4017) + Integer.IsGreater(Container(4017).ListItem.Season,9) + !String.Contains(Container(4017).ListItem.Season,S) + !String.IsEmpty(Container(4017).ListItem.Season)">S</value>
-		<value condition="Control.HasFocus(4018) + !Integer.IsGreater(Container(4018).ListItem.Season,9) + !String.Contains(Container(4018).ListItem.Season,S) + !String.IsEmpty(Container(4018).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4018) + Integer.IsGreater(Container(4018).ListItem.Season,9) + !String.Contains(Container(4018).ListItem.Season,S) + !String.IsEmpty(Container(4018).ListItem.Season)">S</value>
-		<value condition="Control.HasFocus(4012) + !Integer.IsGreater(Container(4019).ListItem.Season,9) + !String.Contains(Container(4019).ListItem.Season,S) + !String.IsEmpty(Container(4019).ListItem.Season)">S$NUMBER[0]</value>
-		<value condition="Control.HasFocus(4019) + Integer.IsGreater(Container(4019).ListItem.Season,9) + !String.Contains(Container(4019).ListItem.Season,S) + !String.IsEmpty(Container(4019).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4001).ListItem.Season,9) + !String.Contains(Container(4001).ListItem.Season,S) + !String.IsEmpty(Container(4001).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4001) + Integer.IsGreater(Container(4001).ListItem.Season,9) + !String.Contains(Container(4001).ListItem.Season,S) + !String.IsEmpty(Container(4001).ListItem.Season)">S</value>
+        <value condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4002).ListItem.Season,9) + !String.Contains(Container(4002).ListItem.Season,S) + !String.IsEmpty(Container(4002).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4002).ListItem.Season,9) + !String.Contains(Container(4002).ListItem.Season,S) + !String.IsEmpty(Container(4002).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4003).ListItem.Season,9) + !String.Contains(Container(4003).ListItem.Season,S) + !String.IsEmpty(Container(4003).ListItem.Season)">S$NUMBER[0]</value>
+		<value condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4003).ListItem.Season,9) + !String.Contains(Container(4003).ListItem.Season,S) + !String.IsEmpty(Container(4003).ListItem.Season)">S</value>
+		<value condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4004).ListItem.Season,9) + !String.Contains(Container(4004).ListItem.Season,S) + !String.IsEmpty(Container(4004).ListItem.Season)">S$NUMBER[0]</value>
 		<value condition="Integer.IsGreater(ListItem.Season,9) + !String.Contains(ListItem.Season,S) + !String.IsEmpty(ListItem.Season)">S</value>
         <value condition="VideoPlayer.HasInfo + !Integer.IsGreater(VideoPlayer.Season,9) + !String.Contains(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S$NUMBER[0]</value>
 		 <value condition="VideoPlayer.HasInfo + Integer.IsGreater(VideoPlayer.Season,9) + !String.Contains(VideoPlayer.Season,S) + !String.IsEmpty(VideoPlayer.Season)">S</value>
@@ -78,12 +77,12 @@
 		<value condition="String.IsEqual(Container.SortMethod,$LOCALIZE[567])">$INFO[ListItem.PlayCount]</value>
 		<value condition="!String.IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(episodes)">$VAR[LabelYear]</value>
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Duration)">$INFO[Container(4019).ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4019).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4019).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
-		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),livetv) + String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4019).ListItem.Property(Rating)]</value>
-		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),videos)">$INFO[Container(4019).ListItem.Year]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4000).ListItem.Duration)">$INFO[Container(4000).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4000).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4000).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4000).ListItem.Duration)">$INFO[Container(4000).ListItem.Duration,, $LOCALIZE[31102]]</value>
+		<value condition="Window.IsVisible(Home) + !String.IsEmpty(Container(4000).ListItem.Property(UnWatchedEpisodes))">$INFO[Container(4000).ListItem.Property(UnWatchedEpisodes)] unwatched</value>
+		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),livetv) + String.IsEmpty(Container(300).ListItem.Property(widgetPath))">$INFO[Container(4000).ListItem.Property(Rating)]</value>
+		<value condition="Window.IsVisible(Home) + String.IsEqual(Container(300).ListItem.Property(type),videos)">$INFO[Container(4000).ListItem.Year]</value>
 		<value></value>
 	</variable>
 	<variable name="LabelPlotBox">
@@ -138,7 +137,8 @@
 		<value>$INFO[ListItem.Label2]</value>
 	</variable>
 	<variable name="EmbyWidgetLabel">
-		<value condition="Container(300).Scrolling |[Container(4019).IsUpdating + System.IdleTime(0)]">[CR]</value>
+		<value condition="Container(300).Scrolling |[Container(4000).IsUpdating + System.IdleTime(0)]">[CR]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),library)">$LOCALIZE[14211]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">TV Spotlight</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Movie Spotlight</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">TV Channels</value>
@@ -164,239 +164,38 @@
 	</variable>
 	<variable name="EmbyWidgetContentLabel">
 		<value condition="Container(300).Scrolling">[CR]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(4019).ListItem.Title]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">$INFO[Container(4000).ListItem.Title]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),collection)">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">Kodi $INFO[System.BuildVersion]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4019).ListItem.TVShowTitle,,]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4019).ListItem.Artist,, • ]$INFO[Container(4019).ListItem.Label]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">$INFO[Container(4000).ListItem.TVShowTitle,,]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">$INFO[Container(4000).ListItem.Artist,, • ]$INFO[Container(4000).ListItem.Label]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
-		<value condition="!String.IsEmpty(Container(4019).ListItem.Label)">$INFO[Container(4019).ListItem.Label]</value>
-		<value>$INFO[Container(4019).ListItem.Label]</value>
+		<value condition="!String.IsEmpty(Container(4000).ListItem.Label)">$INFO[Container(4000).ListItem.Label]</value>
+		<value>$INFO[Container(4000).ListItem.Label]</value>
 	</variable>
 	<variable name="EmbyWidgetContentLabel2">
 		<value condition="Container(300).Scrolling">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),weather)">[CR]</value>
 		<value condition="String.IsEqual(Container(300).ListItem.Property(type),collection)">[CR]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(4019).ListItem.Year]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$INFO[Container(4019).ListItem.Label2]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),music)">$INFO[Container(4000).ListItem.Year]</value>
+		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv)">$INFO[Container(4000).ListItem.Label2]</value>
 		<value condition="!String.IsEqual(Container(300).ListItem.Property(type),livetv)">$VAR[LabelDuration]</value>
 	</variable>
-	<variable name="WidgetMainSelectionLabel">
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widget))">$INFO[Container(211).ListItem.Property(widget)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows)">TV Spotlight</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies)">Movie Spotlight</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),music)">Music Spotlight</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),collection)"> Collections</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),programs)">Programs</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),settings)">Kodi Information</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$INFO[Window(Home).Property(emby.nodes.0.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$INFO[Window(Home).Property(emby.nodes.1.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$INFO[Window(Home).Property(emby.nodes.2.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$INFO[Window(Home).Property(emby.nodes.3.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$INFO[Window(Home).Property(emby.nodes.4.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$INFO[Window(Home).Property(emby.nodes.5.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$INFO[Window(Home).Property(emby.nodes.6.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$INFO[Window(Home).Property(emby.nodes.7.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$INFO[Window(Home).Property(emby.nodes.8.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$INFO[Window(Home).Property(emby.nodes.9.title)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Emby TV</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Emby Movies</value>
-	</variable>
-	<variable name="WidgetRight1SelectionLabel">
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Container(211).ListItem.Property(widgetName.right1))">$INFO[Container(211).ListItem.Property(widgetName.right1)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),settings)">Kodi Information</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Next Up</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Resume</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Recommendations</value>
-	</variable>
-	<variable name="WidgetRight2SelectionLabel">
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName.right2))">$INFO[Container(211).ListItem.Property(widgetName.right2)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Unwatched</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Recently Added</value>
-	</variable>
-	<variable name="WidgetRight3SelectionLabel">
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetName.right3))">$INFO[Container(211).ListItem.Property(widgetName.right3)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.3.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.3.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.4.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.4.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.5.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.5.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.6.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.6.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.7.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.7.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.8.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.8.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">Recently Added</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">Unwatched</value>
-	</variable>
 	<variable name="EmbyHomeWidget1Label">
-		<value condition="Container(4016).IsUpdating + System.IdleTime(0)">[CR]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName.right1))">$INFO[Container(300).ListItem.Property(widgetName.right1)]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),settings)">System Status</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),weather)">Extended Forecast</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">Recordings</value>
-		<!-- <value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Next Up</value> -->
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">In Progress Shows</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),music)">Recent Albums</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),programs)">Add-ons</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content))">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content))">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Next Up</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Resume</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),youtube)">Recommendations</value>
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(1).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(1).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(1).Label]</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Label">
-		<value condition="Container(4017).IsUpdating + System.IdleTime(0)">[CR]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName.right2))">$INFO[Container(300).ListItem.Property(widgetName.right2)]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">[CR]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.unwatched.content))">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recommended.content))">Recommended</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Unwatched</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Recently Added</value>
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(2).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(2).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(2).Label]</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Label">
-		<value condition="Container(4018).IsUpdating + System.IdleTime(0)">[CR]</value>
-		<value condition="[String.IsEqual(Container(300).ListItem.Property(defaultID),movies) | String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)] + !String.IsEmpty(Container(4018).ListItem.Property(similartitle))">$INFO[Container(4018).ListItem.Property(similartitle),Because you watched ,...]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),movies)">Similar</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),tvshows)">Similar</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),livetv)">Channels</value>
-		<value condition="!String.IsEmpty(Container(300).ListItem.Property(widgetName.right3))">$INFO[Container(300).ListItem.Property(widgetName.right3)]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.0.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.0.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.1.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.1.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.1.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.2.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.2.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.2.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.3.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.3.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.3.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.4.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.4.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.4.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.5.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.5.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.5.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.6.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.6.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.6.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.7.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.7.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.7.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.8.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.8.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.8.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recentepisodes.content))">Recent Episodes</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title) + !String.IsEmpty(Window(Home).Property(emby.nodes.9.recent.content)) + [!String.IsEmpty(Window(Home).Property(emby.nodes.9.nextepisodes.content)) | !String.IsEmpty(Window(Home).Property(emby.nodes.9.inprogress.content))]">Recent</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embycontv)">Recently Added</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),embyconmovies)">Unwatched</value>
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(3).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(3).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(3).Label]</value>
+	</variable>
+	<variable name="EmbyHomeWidget4Label">
+		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(4).Property(widgetName))">$INFO[Container(300).ListItemAbsolute(4).Property(widgetName)]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(4).Label]</value>
 	</variable>
 	<variable name="EmbyWidget1ContentLabel">
 		<value condition="Container(300).Scrolling">[CR]</value>
@@ -414,45 +213,110 @@
 		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Label2,tvshows)">$INFO[Window(Home).Property(TVShows.Count)] shows • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(TVShows.UnWatched)] unwatched[/COLOR] • $INFO[Window(Home).Property(Episodes.Count)] episodes  • [COLOR=$VAR[ColorHighlight]]$INFO[Window(Home).Property(Episodes.UnWatched)] unwatched[/COLOR]</value>
 		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Property(type),movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColorHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
 		<value condition="String.Contains(Container(300).ListItem.Property(Path),library://video/Emby) + String.IsEqual(Container(300).ListItem.Label2,movies)">$INFO[Window(Home).Property(Movies.Count)] movies • [COLOR=$VAR[ColorHighlight]] $INFO[Window(Home).Property(Movies.UnWatched)] unwatched[/COLOR]</value>
-		<value condition="Integer.IsGreater(Container(4019).NumItems,0) + String.Contains(Container(300).ListItem.Property(Path),emby)">$INFO[Container(300).ListItem.Label2]</value>
+		<value condition="Integer.IsGreater(Container(4000).NumItems,0) + String.Contains(Container(300).ListItem.Property(Path),emby)">$INFO[Container(300).ListItem.Label2]</value>
 		<value></value>
 	</variable>
 	<variable name="EmbyHomeSelectedTitle">
-		<value condition="Control.HasFocus(4012) + String.IsEqual(Container(300).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
-		<value condition="Control.HasFocus(4012) + String.IsEqual(Container(300).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
-		<!-- Tv Shows -->
-		<value condition="Control.HasFocus(4012) + String.IsEqual(Container(300).ListItem.Property(type),tvshows) + String.IsEqual(Container(4019).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4019).ListItem.Label,,][/COLOR]$INFO[Container(4019).ListItem.Season, • , Seasons]$INFO[Container(4019).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4012) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4019).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4019).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4019).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4019).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4019).ListItem.Title][/COLOR]</value>
-		<!-- Emby Next Up Widget -->
-		<value condition="Control.HasFocus(4016)  + String.IsEqual(Container(300).ListItem.Label2,tvshows) + String.StartsWith(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4016).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4016).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4016).ListItem.Title][/COLOR]</value>
-		<value condition="Control.HasFocus(4016) + String.IsEqual(Container(300).ListItem.Property(type),tvshows) + String.IsEqual(Container(4016).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4016) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4016).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4016).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4016).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4016).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4016).ListItem.Title][/COLOR]</value>
-		<value condition="Control.HasFocus(4017) + String.IsEqual(Container(300).ListItem.Property(type),tvshows) + String.IsEqual(Container(4017).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4017) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4017).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4017).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4017).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4017).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4017).ListItem.Title][/COLOR]</value>
-		<value condition="Control.HasFocus(4018) + String.IsEqual(Container(300).ListItem.Property(type),tvshows) + String.IsEqual(Container(4018).ListItem.DBTYPE,tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4018).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4018) + String.IsEqual(Container(300).ListItem.Property(type),tvshows)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4018).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4018).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4018).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4018).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4018).ListItem.Title][/COLOR]</value>
-		<!-- Emby Latest Episodes -->
-		<value condition="Control.HasFocus(4018)  + String.IsEqual(Container(300).ListItem.Label2,tvshows) + String.StartsWith(Container(300).ListItem.Property(defaultID),info-window-home-property-emby-nodes)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4018).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4018).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4018).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4018).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4018).ListItem.Title][/COLOR]</value>
-		<!-- Movies -->
-		<value condition="Control.HasFocus(4012) + String.IsEqual(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4019).ListItem.Label,, •][/COLOR] $INFO[Container(4019).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4016) + String.IsEqual(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4016).ListItem.Label,, •][/COLOR] $INFO[Container(4016).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4017) + String.IsEqual(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4017).ListItem.Label,, •][/COLOR] $INFO[Container(4017).ListItem.Year]</value>
-		<value condition="Control.HasFocus(4018) + String.IsEqual(Container(300).ListItem.Property(type),movies)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4018).ListItem.Label,, •][/COLOR] $INFO[Container(4018).ListItem.Year]</value>
-		<!-- Music -->
-		<value condition="Control.HasFocus(4012) + String.Contains(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4019).ListItem.Artist,, •][/COLOR] $INFO[Container(4019).ListItem.Label,,]$INFO[Container(4019).ListItem.Year, • ,]</value>
-		<value condition="Control.HasFocus(4017) + String.Contains(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4017).ListItem.Artist,, •][/COLOR] $INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
-		<value condition="Control.HasFocus(4016) + String.Contains(Container(300).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4016).ListItem.Artist,, •][/COLOR] $INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
-		<!-- Live TV -->
-		<value condition="Control.HasFocus(4018) + String.Contains(Container(300).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4018).ListItem.Label]$INFO[Container(4018).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4018).ListItem.Title, • ,]</value>
-		<!-- Default -->
-		<value condition="Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4019).ListItem.Label,,][/COLOR]$INFO[Container(4019).ListItem.Season, • , Seasons]$INFO[Container(4019).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Label,,]$INFO[Container(4019).ListItem.Year, • ,]</value>
-		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4016).ListItem.Label,,][/COLOR]$INFO[Container(4016).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Label,,]$INFO[Container(4016).ListItem.Year, • ,]</value>
-		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4017).ListItem.Label,,][/COLOR]$INFO[Container(4017).ListItem.Season, • , Seasons]$INFO[Container(4017).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Label,,]$INFO[Container(4017).ListItem.Year, • ,]</value>
-		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4018).ListItem.Label,,][/COLOR]$INFO[Container(4018).ListItem.Season, • , Seasons]$INFO[Container(4016).ListItem.Episode, • , Episodes]</value>
-		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Label,,]$INFO[Container(4018).ListItem.Year, • ,]</value>
+		<!-- Widget 1 -->
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,,][/COLOR]$INFO[Container(4001).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4001).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4001).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4001).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4001).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4001).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4001).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,, •][/COLOR] $INFO[Container(4001).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(4001).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Artist,, •][/COLOR] $INFO[Container(4001).ListItem.Label,,]$INFO[Container(4001).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(4001).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label]$INFO[Container(4001).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4001).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4001) + String.Contains(Container(4001).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label]$INFO[Container(4001).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4001) + !String.IsEmpty(Container(4001).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4001).ListItem.Label,,][/COLOR]$INFO[Container(4001).ListItem.Season, • , Seasons]$INFO[Container(4001).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 2 -->
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,,][/COLOR]$INFO[Container(4002).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4002).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4002).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4002).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4002).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4002).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4002).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,, •][/COLOR] $INFO[Container(4002).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(4002).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Artist,, •][/COLOR] $INFO[Container(4002).ListItem.Label,,]$INFO[Container(4002).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(4002).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label]$INFO[Container(4002).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4002).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4002) + String.Contains(Container(4002).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label]$INFO[Container(4002).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4002) + !String.IsEmpty(Container(4002).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4002).ListItem.Label,,][/COLOR]$INFO[Container(4002).ListItem.Season, • , Seasons]$INFO[Container(4002).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 3 -->
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,,][/COLOR]$INFO[Container(4003).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4003).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4003).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4003).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4003).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4003).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4003).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,, •][/COLOR] $INFO[Container(4003).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(4003).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Artist,, •][/COLOR] $INFO[Container(4003).ListItem.Label,,]$INFO[Container(4003).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(4003).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label]$INFO[Container(4003).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4003).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4003) + String.Contains(Container(4003).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label]$INFO[Container(4003).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4003) + !String.IsEmpty(Container(4003).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4003).ListItem.Label,,][/COLOR]$INFO[Container(4003).ListItem.Season, • , Seasons]$INFO[Container(4003).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 4 -->
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,,][/COLOR]$INFO[Container(4004).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4004).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4004).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4004).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4004).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4004).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4004).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,, •][/COLOR] $INFO[Container(4004).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(4004).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Artist,, •][/COLOR] $INFO[Container(4004).ListItem.Label,,]$INFO[Container(4004).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(4004).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label]$INFO[Container(4004).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4004).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4004) + String.Contains(Container(4004).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label]$INFO[Container(4004).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4004) + !String.IsEmpty(Container(4004).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4004).ListItem.Label,,][/COLOR]$INFO[Container(4004).ListItem.Season, • , Seasons]$INFO[Container(4004).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 5 -->
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,,][/COLOR]$INFO[Container(4005).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4005).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4005).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4005).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4005).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4005).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4005).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,, •][/COLOR] $INFO[Container(4005).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(4005).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Artist,, •][/COLOR] $INFO[Container(4005).ListItem.Label,,]$INFO[Container(4005).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(4005).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label]$INFO[Container(4005).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4005).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4005) + String.Contains(Container(4005).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label]$INFO[Container(4005).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4005) + !String.IsEmpty(Container(4005).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4005).ListItem.Label,,][/COLOR]$INFO[Container(4005).ListItem.Season, • , Seasons]$INFO[Container(4005).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 6 -->
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,,][/COLOR]$INFO[Container(4006).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4006).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4006).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4006).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4006).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4006).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4006).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,, •][/COLOR] $INFO[Container(4006).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(4006).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Artist,, •][/COLOR] $INFO[Container(4006).ListItem.Label,,]$INFO[Container(4006).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(4006).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label]$INFO[Container(4006).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4006).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4006) + String.Contains(Container(4006).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label]$INFO[Container(4006).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4006) + !String.IsEmpty(Container(4006).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4006).ListItem.Label,,][/COLOR]$INFO[Container(4006).ListItem.Season, • , Seasons]$INFO[Container(4006).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 7 -->
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,,][/COLOR]$INFO[Container(4007).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4007).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4007).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4007).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4007).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4007).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4007).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,, •][/COLOR] $INFO[Container(4007).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(4007).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Artist,, •][/COLOR] $INFO[Container(4007).ListItem.Label,,]$INFO[Container(4007).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(4007).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label]$INFO[Container(4007).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4007).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4007) + String.Contains(Container(4007).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label]$INFO[Container(4007).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4007) + !String.IsEmpty(Container(4007).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4007).ListItem.Label,,][/COLOR]$INFO[Container(4007).ListItem.Season, • , Seasons]$INFO[Container(4007).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 8 -->
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,,][/COLOR]$INFO[Container(4008).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4008).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4008).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4008).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4008).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4008).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4008).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,, •][/COLOR] $INFO[Container(4008).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(4008).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Artist,, •][/COLOR] $INFO[Container(4008).ListItem.Label,,]$INFO[Container(4008).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(4008).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label]$INFO[Container(4008).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4008).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4008) + String.Contains(Container(4008).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label]$INFO[Container(4008).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4008) + !String.IsEmpty(Container(4008).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4008).ListItem.Label,,][/COLOR]$INFO[Container(4008).ListItem.Season, • , Seasons]$INFO[Container(4008).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 9 -->
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,,][/COLOR]$INFO[Container(4009).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4009).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4009).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4009).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4009).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4009).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4009).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,, •][/COLOR] $INFO[Container(4009).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(4009).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Artist,, •][/COLOR] $INFO[Container(4009).ListItem.Label,,]$INFO[Container(4009).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(4009).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label]$INFO[Container(4009).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4009).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4009) + String.Contains(Container(4009).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label]$INFO[Container(4009).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4009) + !String.IsEmpty(Container(4009).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4009).ListItem.Label,,][/COLOR]$INFO[Container(4009).ListItem.Season, • , Seasons]$INFO[Container(4009).ListItem.Episode, • , Episodes]</value>
+		<!-- Widget 10 -->
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),weather)">[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR] High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),settings)">$INFO[System.FriendlyName] / $INFO[System.BuildVersion] / $INFO[System.BuildDate]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),tvshow)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,,][/COLOR]$INFO[Container(4010).ListItem.Property(TotalSeasons), • , Seasons]$INFO[Container(4010).ListItem.Property(TotalEpisodes), • , Episodes][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4010).ListItem.Premiered, • ][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),episode)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.TVShowTitle,,][/COLOR] $INFO[Container(4010).ListItem.Premiered, • , •] $VAR[LabelSeasonZero]$INFO[Container(4010).ListItem.Season]$VAR[LabelEpisodeZero2]$INFO[Container(4010).ListItem.Episode,, • ][COLOR=$VAR[ColorHighlight2]]$INFO[Container(4010).ListItem.Title][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),movie)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,, •][/COLOR] $INFO[Container(4010).ListItem.Year]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(4010).ListItem.Property(type),music)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Artist,, •][/COLOR] $INFO[Container(4010).ListItem.Label,,]$INFO[Container(4010).ListItem.Year, • ,]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(4010).ListItem.Property(type),livetv)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label]$INFO[Container(4010).ListItem.ChannelNumber, (,) ][/COLOR]$INFO[Container(4010).ListItem.Title, • ,]</value>
+		<value condition="Control.HasFocus(4010) + String.Contains(Container(4010).ListItem.Property(type),recording)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label]$INFO[Container(4010).ListItem.ChannelNumber, (,) ][/COLOR]</value>
+		<value condition="Control.HasFocus(4010) + !String.IsEmpty(Container(4010).ListItem.TVShowTitle)">[COLOR=$VAR[ColorHighlight]]$INFO[Container(4010).ListItem.Label,,][/COLOR]$INFO[Container(4010).ListItem.Season, • , Seasons]$INFO[Container(4010).ListItem.Episode, • , Episodes]</value>
 	</variable>
 	<variable name="EmbyHomeSelectedMenu">
 		<value>$INFO[Container(300).ListItem.label]</value>
@@ -858,11 +722,16 @@
 	</variable>
 	<variable name="EmbyEndTimeLabel">
 		<value condition="[!String.IsEmpty(Container(3012).ListItem.EndTime) + !String.IsEmpty(Container(3012).ListItem..Duration)+ Control.HasFocus(3012)]">$INFO[Container(3012).ListItem.EndTime(hh:mm)]</value>
-		<value condition="[!String.IsEmpty(Container(4019).ListItem.EndTime) + !String.IsEmpty(Container(4019).ListItem..Duration) + Control.HasFocus(4012)]">$INFO[Container(4019).ListItem.EndTime(hh:mm)]</value>
-		<value condition="[!String.IsEmpty(Container(4016).ListItem.EndTime) + !String.IsEmpty(Container(4016).ListItem..Duration)+ Control.HasFocus(4016)]">$INFO[Container(4016).ListItem.EndTime(hh:mm)]</value>
-		<value condition="[!String.IsEmpty(Container(4017).ListItem.EndTime) + !String.IsEmpty(Container(4017).ListItem..Duration)+ Control.HasFocus(4017)]">$INFO[Container(4017).ListItem.EndTime(hh:mm)]</value>
-		<value condition="[!String.IsEmpty(Container(4018).ListItem.EndTime) + !String.IsEmpty(Container(4018).ListItem..Duration) + Control.HasFocus(4018)]">$INFO[Container(4018).ListItem.EndTime(hh:mm)]</value>
-		<value condition="[!String.IsEmpty(Container(301).ListItem.EndTime) + !String.IsEmpty(Container(301).ListItem..Duration) + Control.HasFocus(301)]">$INFO[Container(301).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4001).ListItem.EndTime) + !String.IsEmpty(Container(4001).ListItem..Duration) + Control.HasFocus(4001)]">$INFO[Container(4001).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4002).ListItem.EndTime) + !String.IsEmpty(Container(4002).ListItem..Duration)+ Control.HasFocus(4002)]">$INFO[Container(4002).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4003).ListItem.EndTime) + !String.IsEmpty(Container(4003).ListItem..Duration)+ Control.HasFocus(4003)]">$INFO[Container(4003).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4004).ListItem.EndTime) + !String.IsEmpty(Container(4004).ListItem..Duration) + Control.HasFocus(4004)]">$INFO[Container(4004).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4005).ListItem.EndTime) + !String.IsEmpty(Container(4005).ListItem..Duration) + Control.HasFocus(4005)]">$INFO[Container(4005).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4006).ListItem.EndTime) + !String.IsEmpty(Container(4006).ListItem..Duration) + Control.HasFocus(4006)]">$INFO[Container(4006).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4007).ListItem.EndTime) + !String.IsEmpty(Container(4007).ListItem..Duration) + Control.HasFocus(4007)]">$INFO[Container(4007).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4008).ListItem.EndTime) + !String.IsEmpty(Container(4008).ListItem..Duration) + Control.HasFocus(4008)]">$INFO[Container(4008).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4009).ListItem.EndTime) + !String.IsEmpty(Container(4009).ListItem..Duration) + Control.HasFocus(4009)]">$INFO[Container(4009).ListItem.EndTime(hh:mm)]</value>
+		<value condition="[!String.IsEmpty(Container(4010).ListItem.EndTime) + !String.IsEmpty(Container(4010).ListItem..Duration) + Control.HasFocus(4010)]">$INFO[Container(4010).ListItem.EndTime(hh:mm)]</value>
 		<value condition="!container.content(tvshows) + !container.content(seasons) + !String.IsEmpty(ListItem.EndTime) + !String.IsEmpty(ListItem.Duration)">$INFO[ListItem.EndTime(hh:mm)]</value>
 		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(VideoPlayer.EndTime)">$INFO[VideoPlayer.EndTime(hh:mm)]</value>
 		<value condition="Window.IsActive(VideoFullScreen.xml) + !String.IsEmpty(Player.FinishTime)">$INFO[Player.FinishTime(hh:mm)]</value>
@@ -881,22 +750,24 @@
 		<value>$INFO[ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="EmbyDurationHomeLong">
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration]</value>
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration]</value>
-		<!-- <value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration]</value> -->
-		<value condition="String.IsEqual(Container(300).ListItem.Property(type),livetv) + Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)">$INFO[Container(4019).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4018) + !String.IsEmpty(Container(4018).ListItem.Duration) + !String.IsEqual(Container(4018).ListItem.Duration,0)">$INFO[Container(4018).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4017) + !String.IsEmpty(Container(4017).ListItem.Duration) + !String.IsEqual(Container(4017).ListItem.Duration,0)">$INFO[Container(4017).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4016) + !String.IsEmpty(Container(4016).ListItem.Duration) + !String.IsEqual(Container(4016).ListItem.Duration,0)">$INFO[Container(4016).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4012) + !String.IsEmpty(Container(4019).ListItem.Duration) + !String.IsEqual(Container(4019).ListItem.Duration,0)">$INFO[Container(4019).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(type),livetv) + !String.IsEmpty(Container(4001).ListItem.Duration) + !String.IsEqual(Container(4001).ListItem.Duration,0)">$INFO[Container(4001).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(4001) + !String.IsEmpty(Container(4001).ListItem.Duration) + !String.IsEqual(Container(4001).ListItem.Duration,0)">$INFO[Container(4001).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(type),livetv) + !String.IsEmpty(Container(4002).ListItem.Duration) + !String.IsEqual(Container(4002).ListItem.Duration,0)">$INFO[Container(4002).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(4002) + !String.IsEmpty(Container(4002).ListItem.Duration) + !String.IsEqual(Container(4002).ListItem.Duration,0)">$INFO[Container(4002).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(type),livetv) + !String.IsEmpty(Container(4002).ListItem.Duration) + !String.IsEqual(Container(4003).ListItem.Duration,0)">$INFO[Container(4003).ListItem.Duration]</value>
+		<value condition="Control.HasFocus(4003) + !String.IsEmpty(Container(4003).ListItem.Duration) + !String.IsEqual(Container(4003).ListItem.Duration,0)">$INFO[Container(4003).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4004) + !String.IsEmpty(Container(4004).ListItem.Duration) + !String.IsEqual(Container(4004).ListItem.Duration,0)">$INFO[Container(4004).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4005) + !String.IsEmpty(Container(4005).ListItem.Duration) + !String.IsEqual(Container(4005).ListItem.Duration,0)">$INFO[Container(4005).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4006) + !String.IsEmpty(Container(4006).ListItem.Duration) + !String.IsEqual(Container(4006).ListItem.Duration,0)">$INFO[Container(4006).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4007) + !String.IsEmpty(Container(4007).ListItem.Duration) + !String.IsEqual(Container(4007).ListItem.Duration,0)">$INFO[Container(4007).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4008) + !String.IsEmpty(Container(4008).ListItem.Duration) + !String.IsEqual(Container(4008).ListItem.Duration,0)">$INFO[Container(4008).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4009) + !String.IsEmpty(Container(4009).ListItem.Duration) + !String.IsEqual(Container(4009).ListItem.Duration,0)">$INFO[Container(4009).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="Control.HasFocus(4010) + !String.IsEmpty(Container(4010).ListItem.Duration) + !String.IsEqual(Container(4010).ListItem.Duration,0)">$INFO[Container(4010).ListItem.Duration,,$LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="SkinShortcutPath">
-		<value condition="Control.HasFocus(312) | Control.HasFocus(3122)">$VAR[WidgetMainSelectionLabel]: $VAR[DefWidgetMainSelection]</value>
+		<value condition="Control.HasFocus(312)">$VAR[EmbyHomeWidgetSelection]</value>
 		<value condition="Control.HasFocus(310) + !String.IsEqual(Window.Property(groupname),mainmenu)">$VAR[SkinShortcutsSubMenuThumb]</value>
 		<value condition="Control.HasFocus(310)">$VAR[SkinShortcutsBackground]</value>
-		<value condition="Control.HasFocus(8777)">$VAR[WidgetRight1SelectionLabel]: $VAR[DefWidgetRight1Selection]</value>
-		<value condition="Control.HasFocus(8778)">$VAR[WidgetRight2SelectionLabel]: $VAR[DefWidgetRight2Selection]</value>
-		<value condition="Control.HasFocus(8779)">$VAR[WidgetRight3SelectionLabel]: $VAR[DefWidgetRight3Selection]</value>
 		<value>$INFO[Container(211).ListItem.Property(path)]</value>
 	</variable>
 	<variable name="MusicInfoListLabel">
@@ -921,11 +792,11 @@
 	<variable name="DebugControlLabel2">
 		<value condition="!String.IsEmpty(Player.Filenameandpath)">$INFO[Player.Filenameandpath,Path: ,]</value>
 		<value condition="!String.IsEmpty(Container.ListItem.FileNameAndPath)">$INFO[Container.ListItem.FileNameAndPath,Path: ,]</value>
-		<value condition="Control.HasFocus(4012)">$INFO[Container(4019).ListItem.Path,Path: ,]</value>
-		<value condition="Control.HasFocus(4016)">$INFO[Container(4016).ListItem.Path,Path: ,]</value>
-		<value condition="Control.HasFocus(4017)">$INFO[Container(4017).ListItem.Path,Path: ,]</value>
-		<value condition="Control.HasFocus(4018)">$INFO[Container(4018).ListItem.Path,Path: ,]</value>
-		<value condition="Control.HasFocus(302)">$INFO[Container(302).ListItem.Property(Path),Path: ,]</value>
+		<value condition="Control.HasFocus(4000)">$INFO[Container(4000).ListItem.Label2,]</value>
+		<value condition="Control.HasFocus(4001)">$INFO[Container(4001).ListItem.Path,Path: ,]</value>
+		<value condition="Control.HasFocus(4002)">$INFO[Container(4002).ListItem.Path,Path: ,]</value>
+		<value condition="Control.HasFocus(4003)">$INFO[Container(4003).ListItem.Path,Path: ,]</value>
+		<value condition="Control.HasFocus(4000)">$INFO[Container(4000).ListItem.Property(Path),Path: ,]</value>
 		<value condition="Control.HasFocus(300)">$INFO[Container(300).ListItem.Property(Path),Path: ,]</value>
 	</variable>
 	<variable name="VideoHWDecoder">
