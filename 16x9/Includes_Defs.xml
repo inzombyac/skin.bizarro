@@ -326,7 +326,7 @@
 		</control>
 	</include>
 	<include name="Def9000SideBladeLeft">
-		<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | ControlGroup(9096).HasFocus() | Control.HasFocus(9091) | Control.HasFocus(9095)</visible>
+		<!-- <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | ControlGroup(9096).HasFocus() | Control.HasFocus(9091) | Control.HasFocus(9095)</visible> -->
 		<include>Animation.SideSlide</include>
 		<control type="button" id="9095">
 			<left>-10</left>
@@ -394,6 +394,10 @@
 				<onclick>RunScript(script.globalsearch,tvshows=true&amp;movies=true&amp;episodes=true&amp;actors=true;artists=true&amp;albums=true&amp;songs=true)</onclick>
 				<ondown>9000</ondown>
 				<onup>9091</onup>
+				<onright condition="Window.IsVisible(Home.xml)">3999</onright>
+				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)] + !Window.IsVisible(Home.xml)">50</onright>
+				<onright condition="Window.IsVisible(tvguide)">10</onright>
+				<onright condition="Window.IsActive(SettingsCategory.xml)">3</onright>
 				<font>Button</font>
 				<texturefocus colordiffuse="$VAR[ColorHighlight]">common/search.png</texturefocus>
 				<texturenofocus>special://skin/extras/icons/search.png</texturenofocus>
@@ -420,77 +424,6 @@
 			<itemgap>0</itemgap>
 			<orientation>vertical</orientation>
 			<defaultcontrol>300</defaultcontrol>
-			<!-- <control type="button" id="3122">
-				<include>DefContextButton</include>
-				<label>EmbyCon</label>
-				<onclick>ActivateWindow(10025,"plugin://plugin.video.embycon",return)</onclick>
-				<align>left</align>
-			</control>
-			<control type="button" id="9094">
-				<include>DefContextButton</include>
-				<label>Emby</label>
-				<onclick>ActivateWindow(10025,"plugin://plugin.video.emby",return)</onclick>
-				<align>left</align>
-				<visible>System.HasAddon(plugin.video.emby)</visible>
-			</control>
-			<control type="button" id="9092" description="Emby Manual sync">
-				<include>DefContextButton</include>
-				<label>Manual Sync</label>
-				<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
-				<onclick>right</onclick>
-				<align>left</align>
-				<visible>System.HasAddon(plugin.video.emby)</visible>
-			</control>
-			<control type="button" id ="9093" description="Update library">
-				<include>DefContextButton</include>
-				<label>$LOCALIZE[653]</label>
-				<onclick>UpdateLibrary(video)</onclick>
-				<onclick>right</onclick>
-				<align>left</align>
-				<visible>!System.HasAddon(plugin.video.emby)</visible>
-			</control>
-			<control type="button" id="3123">
-				<include>DefContextButton</include>
-				<label>$LOCALIZE[10003]</label>
-				<align>left</align>
-				<onclick>right</onclick>
-				<onclick>ActivateWindow(filemanager)</onclick>
-			</control>   
-			<control type="label" id="9259">
-				<textoffsetx>15</textoffsetx>
-				<font>Home</font>
-				<label>Home Options</label>
-				<textcolor>$VAR[ColorHighlight]</textcolor>
-				<aligny>center</aligny>
-			</control> 
-			<control type="button" id="9212" description="Customize Home">
-				<include>DefContextButton</include>
-				<label>$LOCALIZE[21435] $LOCALIZE[10000] $LOCALIZE[13398]</label>
-				<onclick>right</onclick>
-				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-				<align>left</align>
-			</control>
-			<control type="label"  id="9263">
-				<textoffsetx>15</textoffsetx>
-				<font>Home</font>
-				<label>Other</label>
-				<textcolor>$VAR[ColorHighlight]</textcolor>
-				<aligny>center</aligny>
-			</control>
-			<control type="button" id="3121">
-				<include>DefContextButton</include>
-				<label>5</label>
-				<align>left</align>
-				<onclick>right</onclick>
-				<onclick>ActivateWindow(settings)</onclick>
-			</control>
-			<control type="button"  id="9264">
-				<include>DefContextButton</include>
-				<label>$LOCALIZE[31195]</label>
-				<onclick>ReloadSkin()</onclick>
-				<align>left</align>
-			</control>
-			  -->
 			<control type="list" id="300">
 				<include>Animation.FadeOut</include>
 				<include>Animation.FadeIn.Slide</include>
@@ -499,11 +432,34 @@
 				<right>SidePad</right>
 				<top>120</top>
 				<onleft>300</onleft>
-				<onright>3999</onright>
+				<onright>Control.SetFocus(300,0)</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,0)">4000</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,1) + Control.IsVisible(4001)">4001</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,1) + !Control.IsVisible(4001)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,2) + Control.IsVisible(4002)">4002</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,2) + !Control.IsVisible(4002)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,3) + Control.IsVisible(4003)">4003</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,3) + !Control.IsVisible(4003)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,4) + Control.IsVisible(4004)">4004</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,4) + !Control.IsVisible(4004)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,5) + Control.IsVisible(4005)">4005</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,5) + !Control.IsVisible(4005)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,6) + Control.IsVisible(4006)">4006</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,6) + !Control.IsVisible(4006)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,7) + Control.IsVisible(4007)">4007</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,7) + !Control.IsVisible(4007)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,8) + Control.IsVisible(4008)">4008</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,8) + !Control.IsVisible(4008)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,9) + Control.IsVisible(4009)">4009</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,9) + !Control.IsVisible(4009)">3999</onright>
+				<onright condition="Integer.IsGreater(Container(300).Position,9) + Control.IsVisible(4010)">4010</onright>
+				<onright condition="Integer.IsGreater(Container(300).Position,9) + !Control.IsVisible(4010)">3999</onright>
+				<!-- Figure out list position -->
 				<orientation>vertical</orientation>
 				<scrolltime>200</scrolltime>
 				<height>700</height>
 				<width>470</width>
+				<!-- <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | ControlGroup(9096).HasFocus() | Control.HasFocus(9091) | Control.HasFocus(9095)</visible> -->
 				<itemlayout width="470" height="70">
 					<control type="label">
 						<font>Tiny</font>
@@ -541,6 +497,13 @@
 					<include>skinshortcuts-mainmenu</include>
 				</content>
 			</control>
+			<control type="button" id="9212" description="Customize Home">
+                <include>DefContextButton</include>
+                <label>$LOCALIZE[31035]</label>
+                <onclick>3999</onclick>
+                <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+                <align>left</align>
+            </control>
 			<control type="button" id="9265">
 				<onclick>System.LogOff</onclick>
 				<include>DefContextButton</include>
@@ -599,39 +562,6 @@
 			<include>DefContextButtonToggle</include>
 			<align>left</align>
 		</control>
-		<!-- <control type="group" id="9090">
-			<height>70</height>
-			<control type="button" id="9091">
-				<description>Global Search</description>
-				<include>DefContextButton</include>
-				<align>left</align>
-				<label>137</label>
-				<onclick>RunScript(script.globalsearch,tvshows=true&amp;movies=true&amp;episodes=true&amp;actors=true)</onclick>
-				<onup>10</onup>
-				<ondown>19</ondown>
-				<onright>300</onright>
-			</control>
-			<control type="image">
-				<right>20</right>
-				<top>10</top>
-				<width>50</width>
-				<height>50</height>
-				<aligny>center</aligny>
-				<texture background="true" colordiffuse="Dark1">special://skin/extras/icons/search.png</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>!Control.HasFocus(9091)</visible>
-			</control>
-			<control type="image">
-				<right>20</right>
-				<top>10</top>
-				<width>50</width>
-				<height>50</height>
-				<aligny>center</aligny>
-				<texture background="true" colordiffuse="Light1">special://skin/extras/icons/search.png</texture>
-				<aspectratio>keep</aspectratio>
-				<visible>Control.HasFocus(9091)</visible>
-			</control>
-		</control> -->
 		<control type="edit" id="19">
 			<label>587</label>
 			<description>Filter (hidden)</description>
@@ -849,13 +779,6 @@
 			<visible>Window.IsVisible(MyMusicSongs.xml)</visible>
 			<visible>!String.IsEqual(Container.FolderPath,special://musicplaylists/)</visible>
 		</control>
-		<!-- <control type="button" id="9091">
-			<description>Global Search</description>
-			<include>DefContextButton2</include>
-			<align>left</align>
-			<label>137</label>
-			<onclick>RunScript(script.globalsearch,artists=true&amp;albums=true&amp;songs=true)</onclick>
-		</control> -->
 		<control type="radiobutton" id="16">
 			<description>PartyMode</description>
 			<include>DefContextButton2</include>

@@ -67,6 +67,8 @@
 			<effect type="fade" start="100" end="00" time="300" tween="sine" easing="in" />
 			<effect type="slide" start="0" end="-466" time="300" center="auto" tween="quadratic" easing="out" />
 		</animation>
+		<!-- Use to keep visible but hidden -->
+		<animation condition="!ControlGroup(9000).HasFocus() + !ControlGroup(9096).HasFocus() + !Control.HasFocus(9091) + !Control.HasFocus(9095)" effect="slide" start="0" end="-466" time="300" center="auto" tween="quadratic" easing="out">Conditional</animation>
 	</include>
 	<include name="Animation.SideSlideRight">
 		<animation type="WindowOpen" reversible="false">
@@ -134,8 +136,8 @@
 		<animation effect="zoom" end="107" time="50" center="auto">Focus</animation>
 	</include>
 	<include name="Animation.EmbyHomeSlide">
-		<animation condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-220" start="0,0" time="200">Conditional</animation>
-		<animation condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>
-		<animation condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>	
+		<animation condition="[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-220" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>	
 	</include>
 </includes>

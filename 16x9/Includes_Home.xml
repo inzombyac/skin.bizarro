@@ -55,8 +55,8 @@
             <control type="label">
                 <include>ControlID5</include>
               <!--   <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label> -->
-              <label>$INFO[Container(300).ListItem.FileNameAndPath]</label>
-              <visible>Control.HasFocus(300)</visible>
+              <label>$INFO[Container(300).Position]</label>
+              <!-- <visible>Control.HasFocus(300)</visible> -->
             </control>
 		</control>
 	</include>
@@ -73,7 +73,6 @@
 				<include>EmbyWidgetPanel2</include>
 				<include>EmbyWidgetPanel1</include>
 				<include>EmbyLibraryPanel</include>
-				<include>EmbyTestIncludeContent</include>
 			</control>
 		</control>
 		<include>EmbyFooter</include>
@@ -87,7 +86,7 @@
 			<control type="group">
 				<control type="panel" id="4000">
 					<onup>3464</onup>
-					<onleft>Menu</onleft>
+					<onleft>Control.SetFocus(300,0)</onleft>
 					<ondown condition="Integer.IsGreater(Container(4001).NumItems,0)">4001</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4001).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
@@ -137,6 +136,7 @@
 					<label>$VAR[EmbyHomeWidget1Label]</label>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
+					<visible>Integer.IsGreater(Container(4001).NumItems,0) + [Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)]</visible>
 				</control>
 				<!-- Content Panel -->
 				<control type="panel" id="4001">
@@ -149,7 +149,8 @@
 					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
-					<onleft>9000</onleft>
+					<!-- <onfocus>Control.SetFocus(300,1)</onfocus> -->
+					<onleft>Control.SetFocus(300,1)</onleft>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
@@ -171,7 +172,7 @@
 					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
-					<onleft>9000</onleft>
+					<onleft>Control.SetFocus(300,1)</onleft>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
@@ -206,6 +207,7 @@
 					<label>$VAR[EmbyHomeWidget2Label]</label>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
+					<visible>Integer.IsGreater(Container(4002).NumItems,0) + [Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)]</visible>
 				</control>
 				<!-- Content Panel -->
 				<control type="panel" id="4002">
@@ -219,7 +221,7 @@
 					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
-					<onleft>9000</onleft>
+					<onleft>Control.SetFocus(300,2)</onleft>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
@@ -242,7 +244,7 @@
 					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
-					<onleft>9000</onleft>
+					<onleft>Control.SetFocus(300,2)</onleft>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
@@ -266,7 +268,7 @@
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 				<animation condition="Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,280" start="0,0" time="200">Conditional</animation>
 				<animation condition="Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,280" start="0,0" time="200">Conditional</animation>
-				<visible>!Integer.IsGreater(Container(4001).NumItems,0) | Control.HasFocus(4002) | Control.HasFocus(4003) | Control.HasFocus(4004) | Control.HasFocus(4005) | Control.HasFocus(4006) | Control.HasFocus(4007) | Control.HasFocus(4008) | Control.HasFocus(4009) | Control.HasFocus(4010) | Control.HasFocus(4011)</visible>
+				<visible>!Integer.IsGreater(Container(4001).NumItems,0) | [Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] | [Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] | [Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] | [Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | [Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | [Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | [Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | [Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | [Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]</visible>
 				<control type="label">
 					<left>100</left>
 					<top>$PARAM[label_top]</top>
@@ -279,6 +281,7 @@
 					<label>$VAR[EmbyHomeWidget3Label]</label>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
+					<visible>Integer.IsGreater(Container(4003).NumItems,0) + [Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)]</visible>
 				</control>
 				<!-- Content Panel -->
 				<control type="panel" id="4003">
@@ -293,7 +296,7 @@
 					<ondown condition="!Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
-					<onleft>9000</onleft>
+					<onleft>Control.SetFocus(300,3)</onleft>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
@@ -317,7 +320,7 @@
 					<ondown condition="!Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
 					<ondown condition="!Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
-					<onleft>9000</onleft>
+					<onleft>Control.SetFocus(300,3)</onleft>
 					<preloaditems>6</preloaditems>
 					<orientation>horizontal</orientation>
 					<scrolltime easing="inout" tween="sine">300</scrolltime>

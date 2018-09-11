@@ -17,6 +17,7 @@
 			<control type="button" id="5050">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
+				<onfocus>Control.SetFocus(300,0)</onfocus>
 				<onfocus>SetFocus(4000)</onfocus>
 			</control>
 		</control>
@@ -28,7 +29,7 @@
 		<control type="group">
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
-			<visible>ControlGroup(9000).HasFocus() | ControlGroup(300).HasFocus()</visible>
+			<visible>ControlGroup(9000).HasFocus() | ControlGroup(9096).HasFocus() | Control.HasFocus(9091) | Control.HasFocus(9095)</visible>
 			<include>GlobalOverlay</include>
 		</control>
 		<control type="group" description="Side Menu">
@@ -37,10 +38,12 @@
 				<left>20</left>
 				<top>100</top>
 				<height>1080</height>
+				<onright>Control.SetFocus(300,0)</onright>
 				<onright>4000</onright>
 				<onup>9091</onup>
 				<onleft>9000</onleft>
 				<include>Def9000HomeMenuTop</include>
+				<defaultcontrol always="true">300</defaultcontrol>
 			</control>
 		</control>
 	</controls>

@@ -70,14 +70,6 @@
                     <aligny>center</aligny>
                     <align>left</align>
                 </control>
-                <control type="button" id="9212" description="Customize Home">
-                    <include>DefContextButton</include>
-                    <label>$LOCALIZE[21435] $LOCALIZE[10000] $LOCALIZE[13398]</label>
-                    <onclick>right</onclick>
-                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
-                    <align>left</align>
-                    <visible>Window.IsVisible(Home.xml)</visible>
-                </control>
                 <control type="button" id="3120">
                     <include>DefContextButton</include>
                     <label>20183</label>
@@ -174,6 +166,24 @@
                     <textcolor>$VAR[ColorHighlight]</textcolor>
                     <aligny>center</aligny>
                      <align>left</align>
+                </control>
+                <control type="button" id="9092" description="Emby Manual sync">
+                    <include>DefContextButton</include>
+                    <label>Manual Sync</label>
+                    <onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
+                    <onclick>left</onclick>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <visible>System.HasAddon(plugin.video.emby)</visible>
+                </control>
+                <control type="button" id ="9093" description="Update library">
+                    <include>DefContextButton</include>
+                    <label>$LOCALIZE[653]</label>
+                    <onclick>UpdateLibrary(video)</onclick>
+                    <onclick>left</onclick>
+                    <aligny>center</aligny>
+                    <align>left</align>
+                    <visible>!System.HasAddon(plugin.video.emby)</visible>
                 </control>    
                 <control type="button" id="3121">
                     <include>DefContextButton</include>
