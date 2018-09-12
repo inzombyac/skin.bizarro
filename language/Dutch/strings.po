@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Arctic: Zephyr
-# Addon id: skin.arctic.zephyr
-# Addon Provider: jurialmunkey
+# Addon Name: Bizarro
+# Addon id: skin.bizarro
+# Addon Provider: inzombyac
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
@@ -566,126 +566,13 @@ msgctxt "#31237"
 msgid "Use minimal busy loader in header"
 msgstr "Gebruik kleine bezigheids animatie in header "
 
-msgctxt "#31241"
-msgid "Info"
-msgstr "Extra informatie"
-
 msgctxt "#31242"
-msgid ""
+msgid "Extended informatie"
 msgstr ""
 
 msgctxt "#31243"
 msgid "pages"
 msgstr "pagina's"
-
-msgctxt "#31244"
-msgid "Banner Wall"
-msgstr "Banner muur"
-
-msgctxt "#31245"
-msgid "Classic Style"
-msgstr "Klassieke stijl"
-
-#, fuzzy
-msgctxt "#31246"
-msgid "Show icon media flags"
-msgstr "Toon Media iconen"
-
-msgctxt "#31247"
-msgid "Home menu style"
-msgstr "Startmenu stijl"
-
-msgctxt "#31248"
-msgid "Normal"
-msgstr "Normaal"
-
-msgctxt "#31249"
-msgid "Classic"
-msgstr "Klassiek"
-
-msgctxt "#31250"
-msgid "Vertical"
-msgstr "Verticaal "
-
-msgctxt "#31730"
-msgid "Show Extra Fanart"
-msgstr "Toon Extra Fan-Art"
-
-msgctxt "#31731"
-msgid "BBC Popular"
-msgstr "BBC Popular"
-
-msgctxt "#31732"
-msgid "BBC Sport"
-msgstr "BBC Sport"
-
-msgctxt "#31733"
-msgid "BBC SciFi"
-msgstr "BBC SciFi"
-
-msgctxt "#31734"
-msgid "BBC Documentaries"
-msgstr "BBC Documentaries"
-
-msgctxt "#31735"
-msgid "BBC Music"
-msgstr "BBC Music"
-
-msgctxt "#31736"
-msgid "Eurogamer"
-msgstr "Eurogamer"
-
-msgctxt "#31737"
-msgid "Engadget"
-msgstr "Engadget"
-
-msgctxt "#31738"
-msgid "Mobile TechReview"
-msgstr "Mobile TechReview"
-
-msgctxt "#31739"
-msgid "  -- Icon view"
-msgstr "  -- Icoon weergave"
-
-msgctxt "#31740"
-msgid "  -- Show Genre Colours"
-msgstr "  -- Toon Genre Kleuren"
-
-msgctxt "#31741"
-msgid "Banner"
-msgstr "Banner"
-
-msgctxt "#31742"
-msgid "Gallery"
-msgstr "Gallerij"
-
-msgctxt "#31744"
-msgid "Show Logo"
-msgstr "Toon Logo"
-
-msgctxt "#31753"
-msgid "Motion picture rating country"
-msgstr "Instellen Kijkwijzer/MPAA waardering"
-
-msgctxt "#31754"
-msgid "Select motion picture rating country"
-msgstr "Selecteer land voor Kijkwijzer/MPAA waardering"
-
-msgctxt "#31755"
-msgid "Show Disc Art and Studio Logos"
-msgstr "Toon Disc-Art en Studio Logo's"
-
-msgctxt "#31756"
-msgid "Poster Row"
-msgstr "Poster Rij"
-
-msgctxt "#31757"
-msgid "Poster Shift"
-msgstr "Poster verschuiving"
-
-msgctxt "#31758"
-msgid "Netflix"
-msgstr "Netflix"
 
 msgctxt "#31759"
 msgid "Widget 1"

@@ -49,13 +49,14 @@
             </control>
 			<control type="label">
                 <include>ControlID4</include>
-				<label>$INFO[Container(300).ListItem.Label2,Type: ]</label>
-				<visible>Control.HasFocus(300)</visible>
+				<label>$INFO[Container(300).Position,Menu Position: ,]</label>
+				
             </control>
             <control type="label">
                 <include>ControlID5</include>
               <!--   <label>DBID: $INFO[ListItem.DBID],$INFO[ListItem.Property(DBID)]</label> -->
-              <label>$INFO[Container(300).Position]</label>
+              <label>$VAR[EmbyHomeSelectedTitle]</label>
+              <!-- <visible>Control.HasFocus(300)</visible> -->
               <!-- <visible>Control.HasFocus(300)</visible> -->
             </control>
 		</control>
@@ -136,7 +137,7 @@
 					<label>$VAR[EmbyHomeWidget1Label]</label>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4001).NumItems,0) + [Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)]</visible>
+					<visible>Integer.IsGreater(Container(4001).NumItems,0) + [Control.IsVisible(4001) | Integer.IsEqual(Container(300).Position,1)]</visible>
 				</control>
 				<!-- Content Panel -->
 				<control type="panel" id="4001">
@@ -160,8 +161,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),sysinfo) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)</visible>
 				</control>
+				<!-- Live TV -->
 				<control type="panel" id="4001">
 					<top>$PARAM[top]</top>
 					<left>$PARAM[left]</left>
@@ -181,6 +183,52 @@
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)</visible>
+				</control>
+				<!-- Settings / System Info -->
+				<control type="panel" id="4001">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<onup>4000</onup>
+					<ondown condition="Integer.IsGreater(Container(4002).NumItems,0)">4002</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+					<onleft>Control.SetFocus(300,1)</onleft>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<include>SysInfoWidget</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),sysinfo)</visible>
+				</control>
+				<!-- Weather -->
+				<control type="panel" id="4001">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<onup>4000</onup>
+					<ondown condition="Integer.IsGreater(Container(4002).NumItems,0)">4002</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+					<onleft>Control.SetFocus(300,1)</onleft>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<include>WeatherWidget</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)</visible>
 				</control>
 			</control>
 		</definition>
@@ -207,7 +255,7 @@
 					<label>$VAR[EmbyHomeWidget2Label]</label>
 					<include>Animation.FadeIn</include>
 					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4002).NumItems,0) + [Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)]</visible>
+					<visible>Integer.IsGreater(Container(4002).NumItems,0) + [Control.IsVisible(4002) | Integer.IsEqual(Container(300).Position,2)]</visible>
 				</control>
 				<!-- Content Panel -->
 				<control type="panel" id="4002">
@@ -231,8 +279,9 @@
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),sysinfo) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)</visible>
 				</control>
+				<!-- Live TV -->
 				<control type="panel" id="4002">
 					<top>$PARAM[top]</top>
 					<left>$PARAM[left]</left>
@@ -254,6 +303,54 @@
 					<include>Animation.FadeIn</include>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)</visible>
 				</control>
+				<!-- Settings -->
+				<control type="panel" id="4002">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<onup condition="Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+					<onup condition="!Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+					<ondown condition="Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+					<onleft>Control.SetFocus(300,2)</onleft>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<include>SysInfoWidget</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),sysinfo)</visible>
+				</control>
+				<!-- Weather -->
+				<control type="panel" id="4002">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<onup condition="Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+					<onup condition="!Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+					<ondown condition="Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+					<ondown condition="!Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+					<onleft>Control.SetFocus(300,2)</onleft>
+					<preloaditems>6</preloaditems>
+					<orientation>horizontal</orientation>
+					<scrolltime easing="inout" tween="sine">300</scrolltime>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+					</include>
+					<include>WeatherWidget</include>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)</visible>
+				</control>
 			</control>
 		</definition>
 	</include>
@@ -268,6 +365,8 @@
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
 				<animation condition="Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,280" start="0,0" time="200">Conditional</animation>
 				<animation condition="Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,280" start="0,0" time="200">Conditional</animation>
+				<include>Animation.FadeIn</include>
+				<include>Animation.FadeOut</include>
 				<visible>!Integer.IsGreater(Container(4001).NumItems,0) | [Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] | [Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] | [Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] | [Control.HasFocus(4005) | Integer.IsEqual(Container(300).Position,5)] | [Control.HasFocus(4006) | Integer.IsEqual(Container(300).Position,6)] | [Control.HasFocus(4007) | Integer.IsEqual(Container(300).Position,7)] | [Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | [Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | [Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]</visible>
 				<control type="label">
 					<left>100</left>
@@ -279,9 +378,7 @@
 					<textcolor>Dark1</textcolor>
 					<selectedcolor>Dark1</selectedcolor>
 					<label>$VAR[EmbyHomeWidget3Label]</label>
-					<include>Animation.FadeIn</include>
-					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4003).NumItems,0) + [Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)]</visible>
+					<visible>Integer.IsGreater(Container(4003).NumItems,0) + [Control.IsVisible(4003) | Integer.IsEqual(Container(300).Position,3)]</visible>
 				</control>
 				<!-- Content Panel -->
 				<control type="panel" id="4003">
@@ -304,8 +401,6 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)</visible>
 				</control>
 				<control type="panel" id="4003">
@@ -326,8 +421,6 @@
 					<scrolltime easing="inout" tween="sine">300</scrolltime>
 					<include content="EmbyLiveTVWidgetContent"></include>
 					<content limit="25" target="videos" sortby="random">$VAR[EmbyHomeWidget3Content]</content>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)</visible>
 				</control>
 			</control>
@@ -469,7 +562,7 @@
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
 				<left>10</left>
-				<visible>String.IsEqual(Container(300).ListItem.Property(type),weather)</visible>
+				<visible>String.IsEqual(ListItem.Property(type),weather)</visible>
 			</control>
 			<control type="image">
 				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
@@ -825,35 +918,40 @@
 		<content type="static">
 			<!--weather widgets -->
 			<item>
-				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR]</label>
+				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day0.Title)]:[/UPPERCASE] [COLOR=$VAR[ColorHighlight]]$INFO[Window(Weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits][/COLOR]  ($INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits])</label>
 				<label2>High: $INFO[Window(Weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits] / Low: $INFO[Window(Weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label2>
 				<thumb>$VAR[HomeWeatherToday]</thumb>
 				<property name="plot">Outlook: $INFO[Window(Weather).Property(Day0.Outlook)][CR]Current Condition: $INFO[Window(Weather).Property(Current.Condition)][CR]Feels Like: $INFO[Window(Weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits][CR]Humidity:  $INFO[Window(Weather).Property(Current.Humidity)][CR]Wind: $INFO[Window(Weather).Property(Current.Wind)][CR]Dew Point:  $INFO[Window(Weather).Property(Current.DewPoint)][CR]Provided By: $INFO[Window(Weather).Property(WeatherProvider)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<property name="type">weather</property>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day1.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
 				<thumb>$VAR[HomeWeather1]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day1.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<property name="type">weather</property>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day2.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
 				<thumb>$VAR[HomeWeather2]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day2.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<property name="type">weather</property>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day3.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
 				<thumb>$VAR[HomeWeather3]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day3.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<property name="type">weather</property>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day4.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day4.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day4.LowTemp)] $INFO[System.TemperatureUnits]</label>
 				<thumb>$VAR[HomeWeather4]</thumb>
 				<property name="plot">$INFO[Window(Weather).Property(Day4.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
+				<property name="type">weather</property>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day5.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day5.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day5.LowTemp)] $INFO[System.TemperatureUnits]</label>
@@ -861,6 +959,7 @@
 				<property name="plot">$INFO[Window(Weather).Property(Day5.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 				<visible>!String.IsEmpty(Window(Weather).Property(Day5.Title))</visible>
+				<property name="type">weather</property>
 			</item>
 			<item>
 				<label>[UPPERCASE]$INFO[Window(Weather).Property(Day6.Title)][/UPPERCASE]: $INFO[Window(Weather).Property(Day6.HighTemp)] $INFO[System.TemperatureUnits] / $INFO[Window(Weather).Property(Day6.LowTemp)] $INFO[System.TemperatureUnits]</label>
@@ -868,6 +967,7 @@
 				<property name="plot">$INFO[Window(Weather).Property(Day6.Outlook)]</property>
 				<onclick>ActivateWindow(weather)</onclick>
 				<visible>!String.IsEmpty(Window(Weather).Property(Day6.Title))</visible>
+				<property name="type">weather</property>
 			</item>
 		</content>		
 	</include>
@@ -1163,18 +1263,18 @@
 	<include name="SysInfoWidget">
 		<content>
 			<item>
-				<label>Kodi $INFO[System.BuildVersion]</label>
-				<thumb background="true">special://skin/extras/backgrounds/krypton.png</thumb>
-				<property name="episodethumb" background="true">special://skin/extras/backgrounds/krypton.png</property>
-				<property name="poster" background="true">special://skin/extras/backgrounds/krypton.png</property>
+				<label>Kodi $INFO[Window(home).Property(kodiversion_main)]$VAR[KodiSubVersion,.,]$INFO[System.AddonTitle(skin.bizarro), • ,]$INFO[System.AddonVersion(skin.bizarro), (,)]</label>
+				<thumb>special://skin/extras/defaulticonswide/kodi.png</thumb>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/kodi.png</property>
+				<property name="poster">special://skin/extras/defaulticonswide/kodi.png</property>
 				<property name="special">systeminfo</property>
-				<property name="fanart" background="true">special://skin/extras/backgrounds/krypton.png</property>
+				<property name="fanart">special://skin/extras/defaulticonswide/kodi.png</property>
 				<onclick>ActivateWindow(systeminfo)</onclick>
 			</item>
 			<item>
 				<label>$LOCALIZE[155]: $INFO[System.UsedSpacePercent]</label>
 				<thumb>special://skin/extras/defaulticonswide/disk.png</thumb>
-				<property name="episodethumb">special://skin/extras/defaulticonswide/disk2.png</property>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/disk.png</property>
 				<property name="poster">special://skin/extras/defaulticonswide/disk.png</property>
 				<property name="special">systeminfo</property>
 				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
@@ -1185,7 +1285,7 @@
 				<label>CPU: $INFO[System.CpuUsage] • $INFO[System.CpuFrequency]</label>
 				<thumb>special://skin/extras/defaulticonswide/cpu.png</thumb>
 				<property name="poster">special://skin/extras/defaulticonswide/cpu.png</property>
-				<property name="episodethumb">special://skin/extras/defaulticonswide/cpu2.png</property>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/cpu.png</property>
 				<property name="special">systeminfo</property>
 				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$LOCALIZE[401]: $INFO[System.CPUTemperature] • $LOCALIZE[13300]: $INFO[System.FanSpeed][CR]$LOCALIZE[12390]: $INFO[System.Uptime]</property>
@@ -1195,7 +1295,7 @@
 				<label>RAM: $INFO[System.Memory(used.percent)]</label>
 				<thumb>special://skin/extras/defaulticonswide/memory.png</thumb>
 				<property name="poster">special://skin/extras/defaulticonswide/memory.png</property>
-				<property name="episodethumb">special://skin/extras/defaulticonswide/memory2.png</property>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/memory.png</property>
 				<property name="special">systeminfo</property>
 				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$LOCALIZE[22012]: $INFO[System.Memory(total)] • $LOCALIZE[158]: $INFO[System.Memory(free)]</property>
@@ -1206,7 +1306,7 @@
 				<label2></label2>
 				<thumb>special://skin/extras/defaulticonswide/network.png</thumb>
 				<property name="poster">special://skin/extras/defaulticonswide/network.png</property>
-				<property name="episodethumb">special://skin/extras/defaulticonswide/network2.png</property>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/network.png</property>
 				<property name="special">systeminfo</property>
 				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">$INFO[Network.LinkState][CR]$LOCALIZE[443]: $INFO[System.InternetState]</property>
@@ -1216,7 +1316,7 @@
 				<label>$LOCALIZE[131]: $INFO[System.ScreenWidth]x$INFO[System.ScreenHeight]</label>
 				<thumb>special://skin/extras/defaulticonswide/display.png</thumb>
 				<property name="poster">special://skin/extras/defaulticonswide/display.png</property>
-				<property name="episodethumb">special://skin/extras/defaulticonswide/display2.png</property>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/display.png</property>
 				<property name="special">systeminfo</property>
 				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$INFO[System.ScreenResolution]</property>
@@ -1226,7 +1326,7 @@
 				<label>FPS: $INFO[System.FPS]</label>
 				<thumb>special://skin/extras/defaulticonswide/fps.png</thumb>
 				<property name="poster">special://skin/extras/defaulticonswide/fps.png</property>
-				<property name="episodethumb">special://skin/extras/defaulticonswide/fps2.png</property>
+				<property name="episodethumb">special://skin/extras/defaulticonswide/fps.png</property>
 				<property name="special">systeminfo</property>
 				<property name="fanart">special://skin/extras/backgrounds/settings.jpg</property>
 				<property name="plot">[CR]$INFO[System.FPS]</property>

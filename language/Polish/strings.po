@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Arctic: Zephyr
-# Addon id: skin.arctic.zephyr
-# Addon Provider: jurialmunkey
+# Addon Name: Bizarro
+# Addon id: skin.bizarro
+# Addon Provider: inzombyac
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"

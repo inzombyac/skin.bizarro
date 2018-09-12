@@ -1406,7 +1406,7 @@
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(albums)">$INFO[ListItem.Title] ($INFO[ListItem.Year])</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml) + Container.Content(songs)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(DialogMusicInfo.xml)">$INFO[ListItem.Label]</value>
-		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[31241]</value>		
+		<value condition="Window.IsVisible(script-ExtendedInfo Script-VideoList.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogVideoInfo.xml) | Window.IsVisible(script-ExtendedInfo Script-DialogInfo.xml)">$LOCALIZE[29915]</value>		
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(seasons) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + Container.Content(episodes) + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]$INFO[ListItem.Season, - Season ,]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]</value>

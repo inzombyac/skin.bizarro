@@ -194,7 +194,7 @@
 					<font>Button</font>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
 					<texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
-					<label>$LOCALIZE[31005]</label>
+					<label>YouTube</label>
 					<visible>String.IsEmpty(ListItem.Trailer)</visible>
 					<visible>!Container.Content(tvshows)+ !Container.Content(episodes)+ !String.IsEmpty(ListItem.DBID)</visible>
 				</control>

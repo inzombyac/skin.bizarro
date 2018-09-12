@@ -1,7 +1,7 @@
 # Kodi Media Center language file
-# Addon Name: Arctic: Zephyr
-# Addon id: skin.arctic.zephyr
-# Addon Provider: jurialmunkey
+# Addon Name: Bizarro
+# Addon id: skin.bizarro
+# Addon Provider: inzombyac
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
@@ -112,10 +112,6 @@ msgstr "Orçamento"
 msgctxt "#31141"
 msgid "Youtube"
 msgstr "Youtube"
-
-msgctxt "#31142"
-msgid "Use low list"
-msgstr "Usar lista simples"
 
 msgctxt "#31143"
 msgid "Set weather fanart"

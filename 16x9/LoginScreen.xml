@@ -3,6 +3,7 @@
 <window>
     <defaultcontrol always="true">52</defaultcontrol>
     <backgroundcolor>0</backgroundcolor>
+    <onload>Skin.SetBool(login.reset)</onload>
     <controls>
 		<control type="group">
             <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
@@ -18,7 +19,6 @@
 						<width>650</width>
                         <height>120</height>
 						<texture colordiffuse="Light3" border="5" background="true">common/white.png</texture>
-						<!-- <visible>!String.IsEqual(ListItem.Label,Master User) | Skin.HasSetting(home.masteruser)</visible> -->
 					</control>
 					<control type="label">
                         <posx>140</posx>

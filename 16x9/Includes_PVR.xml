@@ -99,23 +99,6 @@
 					<altlabel>585</altlabel>
 					<visible>Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRTimes.xml)</visible>
 				</control>
-				<!-- <control type="radiobutton" id="123">
-					<include>DefContextButton2</include>
-					<label>31739</label>
-					<selected>Skin.HasSetting(ShowIconViewEpg)</selected>
-					<onclick>Skin.ToggleSetting(ShowIconViewEpg)</onclick>
-					<onclick>ReloadSkin()</onclick>
-					<align>left</align>
-					<visible>Window.IsVisible(MyPVRGuide.xml)</visible>
-				</control> -->
-				<!-- <control type="radiobutton" id="125">
-					<include>DefContextButton2</include>
-					<label>$LOCALIZE[31014]</label>
-					<selected>Skin.HasSetting(Airdate.Enabled)</selected>
-					<onclick>Skin.ToggleSetting(Airdate.Enabled)</onclick>
-					<align>left</align>
-					<visible>Window.IsVisible(MyPVRGuide.xml)</visible>
-				</control> -->
 				<control type="radiobutton" id="126">
 					<include>DefContextButton2</include>
 					<label>$LOCALIZE[31015]</label>

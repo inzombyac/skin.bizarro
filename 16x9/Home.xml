@@ -8,15 +8,27 @@
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">SetProperty(SkinHelper.WidgetContainer,300)</onload>
 	<onload condition="Pvr.HasTimer">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
+	<onload>RunScript(script.skin.helper.service,action=stripstring,splitchar=.,string=$INFO[System.BuildVersion],output=kodiversion_main)</onload>
+	<onload>RunScript(script.skin.helper.service,action=stripstring,splitchar=.,string=$INFO[System.BuildVersion],output=kodiversion_point,index=1)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
+		<control type="image">
+			<include>Dimensions_Fullscreen</include>
+			<texture colordiffuse="HeaderBG" border="2">diffuse/home-loading.png</texture>
+			<visible>!Control.IsVisible(4000)</visible>
+		</control>
 		<control type="group" description="Emby Home Menu">
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
-			<include>HomeEmbyWidgetInfo</include>
+			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
 			<control type="button" id="5050">
 				<texturefocus>-</texturefocus>
 				<texturenofocus>-</texturenofocus>
+				<!-- Localized strings workaround when using login screen-->
+				<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
+				<!-- <onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus> -->
+				<onfocus>Skin.reset(login.reset)</onfocus>
+				<!-- Set default control -->
 				<onfocus>Control.SetFocus(300,0)</onfocus>
 				<onfocus>SetFocus(4000)</onfocus>
 			</control>

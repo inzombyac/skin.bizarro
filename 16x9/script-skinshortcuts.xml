@@ -44,7 +44,7 @@
                 <align>center</align>
                 <font>MediumBold</font>
                 <textcolor>Light1</textcolor>
-                <label>Customize Home Shortcuts</label>
+                <label>$LOCALIZE[31035]</label>
             </control>
 			<control type="label">
                 <description>Current Path</description>
@@ -299,6 +299,7 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+                    <visible>Integer.IsGreater(Container(211).Position, 1)</visible>
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>100%</width>

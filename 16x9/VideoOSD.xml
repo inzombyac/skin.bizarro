@@ -131,7 +131,7 @@
 						<height>60</height>
 						<textcolor>Dark1</textcolor>
 						<include>DefContextButton</include>
-						<label>$LOCALIZE[31013]</label>
+						<label>$LOCALIZE[201]</label>
 						<onclick>ActivateWindow(AudioDSPManager)</onclick>
 						<enable>ADSP.HasModes</enable>
 					</control>
@@ -181,7 +181,7 @@
 						<height>60</height>
 						<textcolor>Dark1</textcolor>
 						<include>DefContextButton</include>
-						<label>$LOCALIZE[31011]</label>
+						<label>$LOCALIZE[14232]</label>
 						<onclick>StereoMode</onclick>
 						<enable>VideoPlayer.IsStereoscopic</enable>
 					</control>
