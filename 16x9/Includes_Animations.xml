@@ -136,8 +136,14 @@
 		<animation effect="zoom" end="107" time="50" center="auto">Focus</animation>
 	</include>
 	<include name="Animation.EmbyHomeSlide">
-		<animation condition="[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-220" start="0,0" time="200">Conditional</animation>
+		<!-- Widget 2 -->
+		<animation condition="[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>
+		<!-- Widget 3 -->
 		<animation condition="[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>
 		<animation condition="[Control.HasFocus(4003) | Integer.IsEqual(Container(300).Position,3)] + Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>	
+		<!-- Widget 4 -->
+		<animation condition="[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>
+		<animation condition="[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>	
+		<animation condition="[Control.HasFocus(4004) | Integer.IsEqual(Container(300).Position,4)] + Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-240" start="0,0" time="200">Conditional</animation>	
 	</include>
 </includes>

@@ -142,7 +142,7 @@
 			<control type="group">
 				<height>860</height>
 				<right>15</right>
-				<width>420</width>
+				<width>460</width>
 				<top>95</top>			
 				<control type="button" id="308" description="Reset">
                     <width>300</width>
@@ -195,23 +195,76 @@
 						<font>SmallBold</font>
 						<align>center</align>
 						<textcolor>Black70</textcolor>
-						<label>Background</label>
+						<label>$VAR[SkinShortcutsImageLabel]</label>
 						<visible>!String.IsEmpty(Container(211).ListItem.Label)</visible>
 					</control>
-					<!-- background -->
+					<!-- Widget -->
+                    <control type="list" id="6000">
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>40</left>
+                        <width>390</width>
+                        <include content="EmbyWidget1Content">
+                            <param name="image_type">$VAR[FanartImage]</param>
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_widget_height">220</param>
+                        </include>
+                        <content limit="10" target="videos">$INFO[Container(211).ListItem.Property(widgetPath)]</content>                        
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)</visible>
+                    </control>
+                    <control type="list" id="6001">
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>40</left>
+                        <width>390</width>
+                        <include content="EmbyWidget1Content">
+                            <param name="image_type">$VAR[FanartImage]</param>
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_widget_height">220</param>
+                        </include>
+                        <include>WeatherWidget</include>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),weather)</visible>
+                    </control>
+                    <control type="list" id="6002">
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>40</left>
+                        <width>390</width>
+                        <include content="EmbyWidget1Content">
+                            <param name="image_type">$VAR[FanartImage]</param>
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_widget_height">220</param>
+                        </include>
+                        <include>SysInfoWidget</include>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)</visible>
+                    </control>
+                    <control type="list" id="6003">
+                        <autoscroll time="5000">true</autoscroll>
+                        <top>69</top>
+                        <left>40</left>
+                        <width>390</width>
+                        <include content="EmbyLiveTVWidgetContent">
+                            <param name="widget_width">390</param>
+                            <param name="item_width">380</param>
+                            <param name="widget_height">245</param>
+                            <param name="item_widget_height">220</param>
+                        </include>
+                        <content limit="10" target="videos">pvr://channels/tv/*</content>                        
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</visible>
+                    </control>
+                    <!-- background -->
 					<control type="image">
 						<top>69</top>
 						<height>220</height>
 						<aspectratio>keep</aspectratio>
 						<texture>$VAR[SkinShortcutsBackground]</texture>
-						<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-					</control>
-					<control type="image">
-						<top>69</top>
-						<height>220</height>
-						<aspectratio>keep</aspectratio>
-						<texture>$VAR[SkinShortcutsSubMenuThumb]</texture>
-						<visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+						<visible>!String.IsEqual(Window.Property(groupname),mainmenu) | !Integer.IsGreater(Container(211).Position,0)</visible>
 					</control>
 				</control>
 			</control>
@@ -224,11 +277,20 @@
                 <ondown>9100</ondown>
                 <left>675</left>
                 <top>95</top>
-                <width>420</width>
+                <width>400</width>
                 <height>759</height>
                 <orientation>vertical</orientation>
                 <itemgap>3</itemgap>       
-				<control type="button" id="401" description="Alt chooser">
+				<control type="button" id="9300" description="Set Library Items">
+                    <width>100%</width>
+                    <height>66</height>
+                    <label>Change Library Items</label>
+                    <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Label2,library)</visible>
+                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
+                    <include>DefDialogButtons</include>
+                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=library)</onclick>
+                </control>
+                <control type="button" id="401" description="Alt chooser">
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
@@ -251,7 +313,7 @@
                     <width>100%</width>
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label)</visible>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + [[String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsGreater(Container(211).Position,0)] | !String.IsEqual(Window.Property(groupname),mainmenu)]</visible>
                     <include>DefDialogButtons</include>
                 </control>
                 <!-- Main widget -->
@@ -260,7 +322,7 @@
 					<height>66</height>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 					<include>DefDialogButtons</include>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Label,Library)</visible>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</visible>
 					<visible>Integer.IsLessOrEqual(Container(211).Position,10)</visible>
 					<onup>8780</onup>
 				</control>
@@ -283,15 +345,6 @@
                     <include>DefDialogButtons</include>
                     <visible>String.IsEqual(Container(211).ListItem.Label2,TVHub)</visible>
                     <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=episodeshub)</onclick>
-                </control>
-                <control type="button" id="9300" description="Set Library Items">
-                    <width>100%</width>
-                    <height>66</height>
-                    <label>Library Items</label>
-                    <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Label2,library)</visible>
-                    <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
-                    <include>DefDialogButtons</include>
-                    <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=library)</onclick>
                 </control>
                 <control type="button" id="303" description="Up">
                     <width>100%</width>

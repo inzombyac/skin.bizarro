@@ -160,6 +160,16 @@
 		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
 		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
 		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
+		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
 		<value>$VAR[FanartImage]</value>
 	</variable>
 	<variable name="EmbySubMenuImage">
@@ -179,22 +189,9 @@
 		<value condition="!Integer.IsGreater(Window(Home).Property(SkinHelper.RottenTomatoesMeter),59)">flags/rottentomatoesrotten.png</value>
 		<value>flags/rottentomatoes.png</value>
 	</variable>
-	<variable name="SkinShortcutsSubMenuThumb">
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(background))">$INFO[Container(211).ListItem.Property(background)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
-		<value condition="!String.IsEmpty(Container(211).ListItem.Thumb)">$INFO[Container(211).ListItem.Thumb]</value>		
-	</variable>
 	<variable name="SkinShortcutsBackground">
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(Background))">$INFO[Container(211).ListItem.Property(background)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),photos)">special://skin/extras/backgrounds/Photos.jpg</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),homevideos)">special://skin/extras/backgrounds/video.jpg</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),movies)">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),tvshows)">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),music)">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(type),weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
-		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
-		<value>$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
+		<value condition="!String.IsEmpty(Container(211).ListItem.Property(background))">$INFO[Container(211).ListItem.Property(background)]</value>
+		<value condition="!String.IsEmpty(Container(211).ListItem.Thumb)">$INFO[Container(211).ListItem.Thumb]</value>	
 	</variable>
 	<variable name="AdvancedLauncherFurnitureIcon">
 		<value condition="String.IsEqual(ListItem.Property(platform),Nintendo NES)">flags/game/NES.png</value>

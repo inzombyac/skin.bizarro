@@ -1115,132 +1115,33 @@
 	<!-- Shortcut widget selections -->
 	<variable name="EmbyHomeWidgetSelection">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(211).ListItem.Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">pvr://channels/tv/*</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),recordings)">pvr://recordings/tv/active</value>
-		<!-- <value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),recordings) + System.HasAddon(script.skin.helper.widgets)">plugin://script.skin.helper.widgets/?action=recordings&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value> -->
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),recent)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),continue)">plugin://script.skin.helper.widgets/?action=inprogressandrecommended&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),nextupembycon)">plugin://script.skin.helper.widgets/?action=inprogressandrecommended&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),nextup)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies)">plugin://script.skin.helper.widgets/?action=recommended&amp;mediatype=movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),tvshows)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),music)">musicdb://recentlyaddedalbums/</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),programs)">addons://sources/executable</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-0-title)">$VAR[DefWidget1Emby0]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-1-title)">$VAR[DefWidget1Emby1]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-2-title)">$VAR[DefWidget1Emby2]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-3-title)">$VAR[DefWidget1Emby3]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-4-title)">$VAR[DefWidget1Emby4]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-5-title)">$VAR[DefWidget1Emby5]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-6-title)">$VAR[DefWidget1Emby6]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-7-title)">$VAR[DefWidget1Emby7]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-8-title)">$VAR[DefWidget1Emby8]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),info-window-home-property-emby-nodes-9-title)">$VAR[DefWidget1Emby9]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embycontv)">$VAR[DefWidgetEmbyConTV]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),embyconmovies)">$VAR[DefWidgetEmbyConMovies]</value>
-		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),youtube)">plugin://plugin.video.youtube/special/popular_right_now/</value>
-		<!-- <value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),youtube)">plugin://plugin.video.youtube/special/recommendations/?reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">[CR]</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)">[CR]</value>
-		<value>$INFO[Container(211).ListItem.FileNameAndPath]</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)">System Info</value>
 	</variable>
 	<!-- New Emby widgets -->
 	<variable name="EmbyHomeWidget1Content">
-		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(1).Property(widgetPath))">$INFO[Container(300).ListItemAbsolute(1).Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),episodeshub)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=episode&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)">pvr://channels/tv/*</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),recordings)">pvr://recordings/tv/active</value>
-		<!-- <value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),recordings) + System.HasAddon(script.skin.helper.widgets)">plugin://script.skin.helper.widgets/?action=recordings&amp;mediatype=pvr&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value> -->
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),nextupembycon)">plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Shows/NextUp/%3FUserid%3D%7Buserid%7D%26Limit%3D%7BItemLimit%7D%26Recursive%3Dtrue%26Fields%3D%7Bfield_filters%7D%26Filters%3DIsUnplayed%2CIsNotFolder%26IsVirtualUnaired%3Dfalse%26IsMissing%3DFalse%26IncludeItemTypes%3DEpisode%26ImageTypeLimit%3D1%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=Episodes&amp;name_format=Episode%7Cepisode_name_format&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),latestembycon)">plugin://plugin.video.embycon/?media_type=Movies&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fLimit%3d%7bItemLimit%7d%26Recursive%3dtrue%26SortBy%3dDateCreated%26Fields%3d%7bfield_filters%7d%26SortOrder%3dDescending%26Filters%3d%7bIsUnplayed%2c%7dIsNotFolder%26IncludeItemTypes%3dMovie%26ImageTypeLimit%3d1%26format%3djson&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),nextup)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),continue)">plugin://script.skin.helper.widgets/?action=inprogress&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),recent)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),movies)">plugin://script.skin.helper.widgets/?action=recommended&amp;mediatype=movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),tvshows)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=tvshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)">musicdb://recentlyaddedalbums/</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),programs)">addons://sources/executable</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-0-title)">$VAR[DefWidgetEmby0]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-1-title)">$VAR[DefWidgetEmby1]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-2-title)">$VAR[DefWidgetEmby2]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-3-title)">$VAR[DefWidgetEmby3]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-4-title)">$VAR[DefWidgetEmby4]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-5-title)">$VAR[DefWidgetEmby5]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-6-title)">$VAR[DefWidgetEmby6]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-7-title)">$VAR[DefWidgetEmby7]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-8-title)">$VAR[DefWidgetEmby8]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),info-window-home-property-emby-nodes-9-title)">$VAR[DefWidgetEmby9]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),embycontv)">$VAR[DefWidgetEmbyConTV]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),embyconmovies)">$VAR[DefWidgetEmbyConMovies]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(1).Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),youtube)">plugin://plugin.video.youtube/special/popular_right_now/</value>
-		<!-- <value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),youtube)">plugin://plugin.video.youtube/special/recommendations/?reload=$INFO[Window(Home).Property(widgetreload)]</value> -->
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)">[CR]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),sysinfo)">[CR]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(1).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget2Content">
-		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(2).Property(widgetPath))">$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),episodeshub)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=episode&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)">pvr://channels/tv/*</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),recordings)">pvr://recordings/tv/active</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),nextup)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),nextupembycon)">plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Shows/NextUp/%3FUserid%3D%7Buserid%7D%26Limit%3D%7BItemLimit%7D%26Recursive%3Dtrue%26Fields%3D%7Bfield_filters%7D%26Filters%3DIsUnplayed%2CIsNotFolder%26IsVirtualUnaired%3Dfalse%26IsMissing%3DFalse%26IncludeItemTypes%3DEpisode%26ImageTypeLimit%3D2%26format%3Djson&amp;mode=GET_CONTENT&amp;media_type=Episodes&amp;name_format=Episode%7Cepisode_name_format&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),latestembycon)">plugin://plugin.video.embycon/?media_type=Movies&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fLimit%3d%7bItemLimit%7d%26Recursive%3dtrue%26SortBy%3dDateCreated%26Fields%3d%7bfield_filters%7d%26SortOrder%3dDescending%26Filters%3d%7bIsUnplayed%2c%7dIsNotFolder%26IncludeItemTypes%3dMovie%26ImageTypeLimit%3d1%26format%3djson&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),continue)">plugin://script.skin.helper.widgets/?action=inprogress&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),recent)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload2)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),movies)">plugin://script.skin.helper.widgets/?action=recommended&amp;mediatype=movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),tvshows)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=tvshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)">musicdb://recentlyaddedalbums/</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),programs)">addons://sources/executable</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-0-title)">$VAR[DefWidgetEmby0]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-2-title)">$VAR[DefWidgetEmby2]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-2-title)">$VAR[DefWidgetEmby2]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-3-title)">$VAR[DefWidgetEmby3]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-4-title)">$VAR[DefWidgetEmby4]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-5-title)">$VAR[DefWidgetEmby5]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-6-title)">$VAR[DefWidgetEmby6]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-7-title)">$VAR[DefWidgetEmby7]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-8-title)">$VAR[DefWidgetEmby8]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),info-window-home-property-emby-nodes-9-title)">$VAR[DefWidgetEmby9]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),embycontv)">$VAR[DefWidgetEmbyConTV]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),embyconmovies)">$VAR[DefWidgetEmbyConMovies]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(2).Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),youtube)">plugin://plugin.video.youtube/special/popular_right_now/</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)">[CR]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),sysinfo)">[CR]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Content">
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + [Control.HasFocus(4000)]">[CR]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(3).Property(widgetPath))">$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),episodeshub)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=episode&amp;reload=$INFO[Window(Home).Property(widgetreload3)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)">pvr://channels/tv/*</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),recordings)">pvr://recordings/tv/active</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),nextup)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=episodes&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),nextupembycon)">plugin://plugin.video.embycon/?url=%7Bserver%7D/emby/Shows/NextUp/%3FUserid%3D%7Buserid%7D%36Limit%3D%7BItemLimit%7D%36Recursive%3Dtrue%36Fields%3D%7Bfield_filters%7D%36Filters%3DIsUnplayed%3CIsNotFolder%36IsVirtualUnaired%3Dfalse%36IsMissing%3DFalse%36IncludeItemTypes%3DEpisode%36ImageTypeLimit%3D3%36format%3Djson&amp;mode=GET_CONTENT&amp;media_type=Episodes&amp;name_format=Episode%7Cepisode_name_format&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),latestembycon)">plugin://plugin.video.embycon/?media_type=Movies&amp;mode=GET_CONTENT&amp;url=%7bserver%7d%2femby%2fUsers%2f%7buserid%7d%2fItems%3fLimit%3d%7bItemLimit%7d%26Recursive%3dtrue%26SortBy%3dDateCreated%26Fields%3d%7bfield_filters%7d%26SortOrder%3dDescending%26Filters%3d%7bIsUnplayed%2c%7dIsNotFolder%26IncludeItemTypes%3dMovie%26ImageTypeLimit%3d1%26format%3djson&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),continue)">plugin://script.skin.helper.widgets/?action=inprogress&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload)]reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),recent)">plugin://script.skin.helper.widgets/?action=recent&amp;mediatype=media&amp;reload=$INFO[Window(Home).Property(widgetreload3)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),movies)">plugin://script.skin.helper.widgets/?action=recommended&amp;mediatype=movies&amp;reload=$INFO[Window(Home).Property(widgetreload-movies)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),tvshows)">plugin://script.skin.helper.widgets/?action=next&amp;mediatype=tvshows&amp;reload=$INFO[Window(Home).Property(widgetreload)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)">musicdb://recentlyaddedalbums/</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),programs)">addons://sources/executable</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-0-title)">$VAR[DefWidgetEmby0]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-3-title)">$VAR[DefWidgetEmby3]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-3-title)">$VAR[DefWidgetEmby3]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-3-title)">$VAR[DefWidgetEmby3]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-4-title)">$VAR[DefWidgetEmby4]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-5-title)">$VAR[DefWidgetEmby5]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-6-title)">$VAR[DefWidgetEmby6]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-7-title)">$VAR[DefWidgetEmby7]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-8-title)">$VAR[DefWidgetEmby8]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),info-window-home-property-emby-nodes-9-title)">$VAR[DefWidgetEmby9]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),embycontv)">$VAR[DefWidgetEmbyConTV]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),embyconmovies)">$VAR[DefWidgetEmbyConMovies]</value>
-		<value condition="!String.IsEmpty(Container(300).ListItemAbsolute(3).Property(widgetPath))">$INFO[Container(300).ListItem.Property(widgetPath)]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),youtube)">plugin://plugin.video.youtube/special/popular_right_now/</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather)">[CR]</value>
-		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),sysinfo)">[CR]</value>
+		<!-- Hide when not needed -->
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget3Content">
+		<!-- Hide when not needed -->
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + [Control.HasFocus(4000) | Control.HasFocus(4001)]">[CR]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget4Content">
+		<!-- Hide when not needed -->
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + [Control.HasFocus(4000) | Control.HasFocus(4001)]">[CR]</value>
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0) + [Control.HasFocus(4000) | Control.HasFocus(4001) | Control.HasFocus(4002)]">[CR]</value>
+		<value>$INFO[Container(300).ListItemAbsolute(4).Property(widgetPath)]</value>
 	</variable>
 	<variable name="DefWidgetEmby0">
 		<value condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
@@ -1654,6 +1555,68 @@
 				<onclick>noop</onclick>
 			</item>
 		</content>
+	</include>
+	<include name="EmbyHomeWidgetDirections">
+		<!-- Widget 1 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4001)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4001) + Integer.IsGreater(Container(4002).NumItems,0)">4002</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4001) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4001)">Control.SetFocus(300,1)</onleft>
+		<!-- Widget 2 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4002) + Integer.IsGreater(Container(4003).NumItems,0)">4003</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4002) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4002)">Control.SetFocus(300,2)</onleft>
+		<!-- Widget 3 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4003) + Integer.IsGreater(Container(4004).NumItems,0)">4004</ondown>
+		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4003) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0)  + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4003)">Control.SetFocus(300,3)</onleft>
+		<!-- Widget 4 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4004) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4004) + Integer.IsGreater(Container(4005).NumItems,0)">4005</ondown>
+		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4004)">Control.SetFocus(300,4)</onleft>
 	</include>
 	<variable name="SimilarVideos">
 		<value condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
