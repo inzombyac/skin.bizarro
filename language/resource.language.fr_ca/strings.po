@@ -142,7 +142,7 @@ msgid "Set slideshow path"
 msgstr "Définir le chemin du diaporama"
 
 msgctxt "#31132"
-msgid "Reset home menu shortcuts to defaults"
+msgid "Reset home to default"
 msgstr "Réinitialiser les raccourcis du menu d'accueil aux valeurs par défaut"
 
 msgctxt "#31133"

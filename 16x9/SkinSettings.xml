@@ -201,7 +201,7 @@
 						<width>1310</width>
 						<visible>ControlGroup(9100).HasFocus(9101)</visible>
 						<include>DefSettingsButton2</include>
-						<label>$LOCALIZE[21435] $LOCALIZE[10000] $LOCALIZE[13398]</label>
+						<label>$LOCALIZE[31035]</label>
 						<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
 					</control>
 					<control type="button" id="9213" description="Reset Home to Defaults">

@@ -762,7 +762,6 @@
 				</control>
 				<control type="button" id="7788">
 					<top>-5</top>
-					<ondown>300</ondown>
 					<left>-100</left>
 					<width>792</width>
 					<height>90</height>
@@ -774,6 +773,19 @@
 					<onclick>FullScreen</onclick>
 					<onup>3634</onup>
 					<onleft>3634</onleft>
+					<ondown condition="Window.IsVisible(Home.xml)">4000</ondown>
+					<ondown condition="Control.IsVisible(50)">50</ondown>
+ 	 				<ondown condition="Control.IsVisible(52)">52</ondown>
+ 	 				<ondown condition="Control.IsVisible(53) + Control.IsVisible(61)">61</ondown>
+ 	 				<ondown condition="Control.IsVisible(53) + !Control.IsVisible(61)">53</ondown>
+ 	 				<ondown condition="Control.IsVisible(55) + Control.IsVisible(61)">61</ondown>
+ 	 				<ondown condition="Control.IsVisible(55) + !Control.IsVisible(61)">55</ondown>
+ 	 				<ondown condition="Control.IsVisible(59)">59</ondown>
+ 	 				<ondown condition="Control.IsVisible(500)">500</ondown>
+ 	 				<ondown condition="Control.IsVisible(505) + Control.IsVisible(61)">61</ondown>
+ 	 				<ondown condition="Control.IsVisible(505) + !Control.IsVisible(61)">505</ondown>
+ 	 				<ondown condition="Control.IsVisible(506)">506</ondown>
+	 				<ondown condition="Control.IsVisible(517)">517</ondown>
 				</control>
 			</control>
 		</control>
@@ -1439,7 +1451,7 @@
 		<value>$LOCALIZE[10000]</value>
 	</variable>
 	<variable name="SubHeaderLabel">
-		<value condition="Window.IsVisible(home)">$VAR[EmbyFooterLabel]</value>
+		<value condition="Window.IsVisible(Home.xml)">$VAR[EmbyFooterLabel]</value>
 		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerTitle]</value>
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.TrackNumber,, • ]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Album, • ,]$INFO[MusicPlayer.Year, (,)]$INFO[MusicPlayer.Genre, • ,]</value>
 		<value condition="Window.IsVisible(Settings.xml)">$INFO[System.CurrentControl]</value>

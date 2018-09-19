@@ -363,7 +363,7 @@
 				<width>70</width>
 				<height>70</height>
 				<aligny>center</aligny>
-				<texture colordiffuse="$VAR[ColorHighlight]" border="0">special://skin/extras/icons/logout.png</texture>
+				<texture colordiffuse="$VAR[ColorHighlight]" border="0">special://skin/extras/icons/settings.png</texture>
 				<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
 				<aspectratio>keep</aspectratio>
 				<align>left</align>
@@ -432,7 +432,7 @@
 				<right>SidePad</right>
 				<top>120</top>
 				<onleft>300</onleft>
-				<onright>Control.SetFocus(300,0)</onright>
+				<!-- <onright>Control.SetFocus(300,0)</onright> -->
 				<onright condition="Integer.IsEqual(Container(300).Position,0)">4000</onright>
 				<onright condition="Integer.IsEqual(Container(300).Position,1) + Control.IsVisible(4001)">4001</onright>
 				<onright condition="Integer.IsEqual(Container(300).Position,1) + !Control.IsVisible(4001)">3999</onright>
@@ -505,17 +505,17 @@
                 <align>left</align>
             </control>
 			<control type="button" id="9265">
-				<onclick>System.LogOff</onclick>
+				<onclick>ActivateWindow(settings)</onclick>
 				<include>DefContextButton</include>
-				<label>20126</label>
+				<label>5</label>
 				<align>left</align>
 			</control>				
 			<control type="button" id="9267">
-				<description>Exit XBMC button</description>
+				<description>Power Menu</description>
 				<include>DefContextButton</include>
-				<label>$LOCALIZE[13012]</label>
-				<onclick>Quit()</onclick>
-				<visible>System.ShowExitButton</visible>
+				<label>13005</label>
+				<onclick>ActivateWindow(shutdownmenu)</onclick>
+				<!-- <visible>System.ShowExitButton</visible> -->
 				<align>left</align>
 			</control>
 			<control type="button" id ="9269">
@@ -1126,22 +1126,32 @@
 		<value>$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Content">
-		<!-- Hide when not needed -->
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
-		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
-	</variable>
-	<variable name="EmbyHomeWidget3Content">
-		<!-- Hide when not needed -->
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + [Control.HasFocus(4000) | Control.HasFocus(4001)]">[CR]</value>
 		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
 	</variable>
 	<variable name="EmbyHomeWidget4Content">
 		<!-- Hide when not needed -->
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + [Control.HasFocus(4000) | Control.HasFocus(4001)]">[CR]</value>
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0) + [Control.HasFocus(4000) | Control.HasFocus(4001) | Control.HasFocus(4002)]">[CR]</value>
+		<!-- <value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
+		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
+		<value condition="Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0) + Control.HasFocus(4000)">[CR]</value> -->
 		<value>$INFO[Container(300).ListItemAbsolute(4).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget5Content">
+		<value>$INFO[Container(300).ListItemAbsolute(5).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget6Content">
+		<value>$INFO[Container(300).ListItemAbsolute(6).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget7Content">
+		<value>$INFO[Container(300).ListItemAbsolute(7).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget8Content">
+		<value>$INFO[Container(300).ListItemAbsolute(8).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget9Content">
+		<value>$INFO[Container(300).ListItemAbsolute(9).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget10Content">
+		<value>$INFO[Container(300).ListItemAbsolute(10).Property(widgetPath)]</value>
 	</variable>
 	<variable name="DefWidgetEmby0">
 		<value condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.nextepisodes.content))">$INFO[Window(Home).Property(emby.nodes.0.nextepisodes.content)]</value>
@@ -1617,6 +1627,36 @@
 		<ondown condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4004)">Control.SetFocus(300,4)</onleft>
+		<!-- Widget 5 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4005) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
+		<onup   condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4005) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
+		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4005)">Control.SetFocus(300,5)</onleft>
+		<!-- Widget 6 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4006) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
+		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
+		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4006) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
+		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4006)">Control.SetFocus(300,6)</onleft>
 	</include>
 	<variable name="SimilarVideos">
 		<value condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>

@@ -2,6 +2,7 @@
 <shortcuts>
     <shortcut>
         <label>TV Shows</label>
+        <defaultID>tvshows</defaultID>
         <label2>Common Shortcut</label2>
         <icon>special://skin/extras/icons/tv.png</icon>
         <action>ActivateWindow(Videos,TVShowTitles,return)</action>
@@ -11,6 +12,7 @@
     <shortcut>
         <label>Movies</label>
         <label2>movies</label2>
+        <defaultID>movies</defaultID>
         <icon>special://skin/extras/icons/film.png</icon>
         <action>ActivateWindow(Videos,MovieTitles,return)</action>
         <thumb>$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</thumb>
@@ -157,6 +159,7 @@
     <shortcut>
         <label>Music</label>
         <label2>music</label2>
+        <defaultID>music</defaultID>
         <icon>special://skin/extras/icons/songs.png</icon>
         <thumb>$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</thumb>
         <action>ActivateWindow(Music,musicdb://songs/)</action>

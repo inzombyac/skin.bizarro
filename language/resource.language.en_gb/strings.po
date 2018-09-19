@@ -208,7 +208,7 @@ msgstr ""
 
 #: SkinSettings.xml 211
 msgctxt "#31132"
-msgid "Reset all home shortcuts to default"
+msgid "Reset home to default"
 msgstr ""
 
 msgctxt "#31142"

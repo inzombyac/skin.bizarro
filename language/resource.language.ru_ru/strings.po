@@ -142,7 +142,7 @@ msgid "Set slideshow path"
 msgstr "Указать путь к слайд-шоу"
 
 msgctxt "#31132"
-msgid "Reset home menu shortcuts to defaults"
+msgid "Reset home to default"
 msgstr "Сбросить ярлыки главного меню к значениям по умолчанию"
 
 msgctxt "#31133"

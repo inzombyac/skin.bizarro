@@ -142,7 +142,7 @@ msgid "Set slideshow path"
 msgstr "Ustaw ścieżkę folderu z obrazami pokazu slajdów"
 
 msgctxt "#31132"
-msgid "Reset home menu shortcuts to defaults"
+msgid "Reset home to default"
 msgstr "Przywróć domyślne pozycje menu startowego"
 
 msgctxt "#31133"

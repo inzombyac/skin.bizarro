@@ -143,7 +143,7 @@ msgid "Set slideshow path"
 msgstr "Locatie instellen van diavoorstelling "
 
 msgctxt "#31132"
-msgid "Reset home menu shortcuts to defaults"
+msgid "Reset home to default"
 msgstr "Herstel start menu snelkoppelingen naar hun standaardwaarden"
 
 msgctxt "#31133"

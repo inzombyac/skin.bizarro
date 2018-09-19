@@ -62,12 +62,13 @@
                 <top>100</top>
                 <onleft>dialog.close(all)</onleft>
                 <control type="label" id="200">
-                    <height>42</height>
+                    <top>200</top>
+                    <height>48</height>
                     <width>455</width>
                     <font>Home</font>
-                    <label>Power Menu</label>
+                    <label>$LOCALIZE[33060] $LOCALIZE[14230]</label>
                     <textcolor>$VAR[ColorHighlight]</textcolor>
-                    <aligny>center</aligny>
+                    <aligny>top</aligny>
                     <align>left</align>
                 </control>
                 <control type="button" id="3120">
@@ -98,7 +99,7 @@
                 </control>   
                 <control type="button" id="3111">
                     <description>Exit XBMC button</description>
-                    <include>DefContextButton2</include>
+                    <include>DefContextButton</include>
                     <label>13012</label>
                     <onclick>Quit()</onclick>
                     <visible>System.ShowExitButton</visible>

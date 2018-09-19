@@ -31,6 +31,10 @@
 				<!-- Set default control -->
 				<onfocus>Control.SetFocus(300,0)</onfocus>
 				<onfocus>SetFocus(4000)</onfocus>
+				<onright>4000</onright>
+				<onleft>4000</onleft>
+				<onup>4000</onup>
+				<ondown>4000</ondown>
 			</control>
 		</control>
 		<include>Furniture_Header</include>
