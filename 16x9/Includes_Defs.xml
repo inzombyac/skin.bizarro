@@ -432,28 +432,28 @@
 				<right>SidePad</right>
 				<top>120</top>
 				<onleft>300</onleft>
-				<!-- <onright>Control.SetFocus(300,0)</onright> -->
+				<onright>Control.SetFocus(300,0)</onright>
 				<onright condition="Integer.IsEqual(Container(300).Position,0)">4000</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,1) + Control.IsVisible(4001)">4001</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,1) + !Control.IsVisible(4001)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,2) + Control.IsVisible(4002)">4002</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,2) + !Control.IsVisible(4002)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,3) + Control.IsVisible(4003)">4003</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,3) + !Control.IsVisible(4003)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,4) + Control.IsVisible(4004)">4004</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,4) + !Control.IsVisible(4004)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,5) + Control.IsVisible(4005)">4005</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,5) + !Control.IsVisible(4005)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,6) + Control.IsVisible(4006)">4006</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,6) + !Control.IsVisible(4006)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,7) + Control.IsVisible(4007)">4007</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,7) + !Control.IsVisible(4007)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,8) + Control.IsVisible(4008)">4008</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,8) + !Control.IsVisible(4008)">3999</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,9) + Control.IsVisible(4009)">4009</onright>
-				<onright condition="Integer.IsEqual(Container(300).Position,9) + !Control.IsVisible(4009)">3999</onright>
-				<onright condition="Integer.IsGreater(Container(300).Position,9) + Control.IsVisible(4010)">4010</onright>
-				<onright condition="Integer.IsGreater(Container(300).Position,9) + !Control.IsVisible(4010)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,1) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,1) + !Integer.IsGreater(Container(4001).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,2) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,2) + !Integer.IsGreater(Container(4002).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,3) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,3) + !Integer.IsGreater(Container(4003).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,4) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,4) + !Integer.IsGreater(Container(4004).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,5) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,5) + !Integer.IsGreater(Container(4005).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,6) + Integer.IsGreater(Container(4006).NumItems,0)">4006</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,6) + !Integer.IsGreater(Container(4006).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,7) + Integer.IsGreater(Container(4007).NumItems,0)">4007</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,7) + !Integer.IsGreater(Container(4007).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,8) + Integer.IsGreater(Container(4008).NumItems,0)">4008</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,8) + !Integer.IsGreater(Container(4008).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,9) + Integer.IsGreater(Container(4009).NumItems,0)">4009</onright>
+				<onright condition="Integer.IsEqual(Container(300).Position,9) + !Integer.IsGreater(Container(4009).NumItems,0)">3999</onright>
+				<onright condition="Integer.IsGreater(Container(300).Position,9) + Integer.IsGreater(Container(4010).NumItems,0)">4010</onright>
+				<onright condition="Integer.IsGreater(Container(300).Position,9) + !Integer.IsGreater(Container(4010).NumItems,0)">3999</onright>
 				<!-- Figure out list position -->
 				<orientation>vertical</orientation>
 				<scrolltime>200</scrolltime>

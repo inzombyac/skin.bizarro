@@ -90,7 +90,7 @@
 	</include>
 	<include name="EmbyLibraryPanel">
 		<param name="width" default="1774"/>
-		<param name="top" default="190"/>
+		<param name="top" default="200"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
@@ -129,8 +129,8 @@
 	</include>
 	<include name="EmbyWidgetPanel1">
 		<param name="width" default="1760"/>
-		<param name="top" default="420"/>
-		<param name="label_top" default="380"/>
+		<param name="top" default="440"/>
+		<param name="label_top" default="400"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
@@ -218,15 +218,15 @@
 	</include>
 	<include name="EmbyWidgetPanel2">
 		<param name="width" default="1760"/>
-		<param name="top" default="700"/>
-		<param name="label_top" default="660"/>
+		<param name="top" default="740"/>
+		<param name="label_top" default="700"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
 				<control type="label">
 					<left>100</left>
 					<top>$PARAM[label_top]</top>
@@ -306,19 +306,19 @@
 	</include>
 	<include name="EmbyWidgetPanel3">
 		<param name="width" default="1760"/>
-		<param name="top" default="980"/>
-		<param name="label_top" default="940"/>
+		<param name="top" default="1040"/>
+		<param name="label_top" default="1000"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-				<visible>
+				<!-- <visible>
 					[!Integer.IsGreater(Container(4001).NumItems,0) | !Integer.IsGreater(Container(4002).NumItems,0)] | 
 					[Control.HasFocus(4001) | Integer.IsEqual(Container(300).Position,1)] | 
 					[Control.HasFocus(4002) | Integer.IsEqual(Container(300).Position,2)] | 
@@ -330,7 +330,7 @@
 					[Control.HasFocus(4008) | Integer.IsEqual(Container(300).Position,8)] | 
 					[Control.HasFocus(4009) | Integer.IsEqual(Container(300).Position,9)] | 
 					[Control.HasFocus(4010) | Integer.IsEqual(Container(300).Position,10)]
-				</visible>
+				</visible> -->
 				<control type="label">
 					<left>100</left>
 					<top>$PARAM[label_top]</top>
@@ -409,17 +409,17 @@
 	</include>
 	<include name="EmbyWidgetPanel4">
 		<param name="width" default="1760"/>
-		<param name="top" default="1260"/>
-		<param name="label_top" default="1220"/>
+		<param name="top" default="1340"/>
+		<param name="label_top" default="1300"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -516,18 +516,18 @@
 	</include>
 	<include name="EmbyWidgetPanel5">
 		<param name="width" default="1760"/>
-		<param name="top" default="1540"/>
-		<param name="label_top" default="1500"/>
+		<param name="top" default="1640"/>
+		<param name="label_top" default="1600"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -628,19 +628,19 @@
 	</include>
 	<include name="EmbyWidgetPanel6">
 		<param name="width" default="1760"/>
-		<param name="top" default="1820"/>
-		<param name="label_top" default="1780"/>
+		<param name="top" default="1940"/>
+		<param name="label_top" default="1900"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-280" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
