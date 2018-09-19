@@ -1632,8 +1632,8 @@
 		<onup   condition="Control.HasFocus(4005) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
 		<onup   condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
 		<onup   condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
-		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
-		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<onup   condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
 		<!-- Down -->
 		<ondown condition="Control.HasFocus(4005) + Integer.IsGreater(Container(4006).NumItems,0)">4006</ondown>
 		<ondown condition="Control.HasFocus(4005) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
@@ -1647,9 +1647,9 @@
 		<onup   condition="Control.HasFocus(4006) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
 		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
 		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
-		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
-		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
-		<onup   condition="Control.HasFocus(4004) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
 		<!-- Down -->
 		<ondown condition="Control.HasFocus(4006) + Integer.IsGreater(Container(4007).NumItems,0)">4007</ondown>
 		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
@@ -1657,6 +1657,67 @@
 		<ondown condition="Control.HasFocus(4006) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
 		<!-- Left -->
 		<onleft condition="Control.HasFocus(4006)">Control.SetFocus(300,6)</onleft>
+		<!-- Widget 7 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4007) + Integer.IsGreater(Container(4006).NumItems,0)">4006</onup>
+		<onup   condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
+		<onup   condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
+		<onup   condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4007) + Integer.IsGreater(Container(4008).NumItems,0)">4008</ondown>
+		<ondown condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4007) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4007)">Control.SetFocus(300,7)</onleft>
+		<!-- Widget 8 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4008) + Integer.IsGreater(Container(4007).NumItems,0)">4007</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4008) + Integer.IsGreater(Container(4009).NumItems,0)">4009</ondown>
+		<ondown condition="Control.HasFocus(4008) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4008)">Control.SetFocus(300,8)</onleft>
+		<!-- Widget 9 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4009) + Integer.IsGreater(Container(4008).NumItems,0)">4008</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4009) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown condition="Control.HasFocus(4009) + Integer.IsGreater(Container(4010).NumItems,0)">4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4009)">Control.SetFocus(300,9)</onleft>
+		<!-- Widget 10 -->
+		<!-- Up -->
+		<onup   condition="Control.HasFocus(4010) + Integer.IsGreater(Container(4009).NumItems,0)">4009</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + Integer.IsGreater(Container(4008).NumItems,0)">4008</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + Integer.IsGreater(Container(4007).NumItems,0)">4007</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + Integer.IsGreater(Container(4006).NumItems,0)">4006</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + Integer.IsGreater(Container(4005).NumItems,0)">4005</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + Integer.IsGreater(Container(4004).NumItems,0)">4004</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0)">4003</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0)">4002</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4001).NumItems,0)">4001</onup>
+		<onup   condition="Control.HasFocus(4010) + !Integer.IsGreater(Container(4009).NumItems,0) + !Integer.IsGreater(Container(4008).NumItems,0) + !Integer.IsGreater(Container(4007).NumItems,0) + !Integer.IsGreater(Container(4006).NumItems,0) + !Integer.IsGreater(Container(4005).NumItems,0) + !Integer.IsGreater(Container(4004).NumItems,0) + !Integer.IsGreater(Container(4003).NumItems,0) + !Integer.IsGreater(Container(4002).NumItems,0) + !Integer.IsGreater(Container(4001).NumItems,0)">4000</onup>
+		<!-- Down -->
+		<ondown>4010</ondown>
+		<!-- Left -->
+		<onleft condition="Control.HasFocus(4010)">Control.SetFocus(300,10)</onleft>
 	</include>
 	<variable name="SimilarVideos">
 		<value condition="!String.IsEmpty(ListItem.DBID) + Container.Content(movies)">plugin://script.extendedinfo?info=similarmovies&amp;&amp;id=$INFO[ListItem.DBID]</value>
