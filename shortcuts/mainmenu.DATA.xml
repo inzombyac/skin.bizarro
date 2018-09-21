@@ -70,11 +70,4 @@
         <icon>special://skin/extras/icons/sun.png</icon>
         <action>ActivateWindow(Weather)</action>
     </shortcut>
-    <shortcut>
-        <label>System Info</label>
-        <label2>sysinfo</label2>
-        <defaultID>sysinfo</defaultID>
-        <icon>special://skin/extras/icons/settings.png</icon>
-        <action>ActivateWindow(systeminfo)</action>
-    </shortcut>
 </shortcuts>

@@ -168,7 +168,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),sysinfo) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4001">
@@ -194,7 +194,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4001">
@@ -258,7 +258,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),sysinfo) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4002">
@@ -282,7 +282,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4002">
@@ -360,7 +360,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),sysinfo) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4003">
@@ -384,7 +384,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4003">
@@ -467,7 +467,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4004">
@@ -491,7 +491,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4004">
@@ -579,7 +579,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4005">
@@ -603,7 +603,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4005">
@@ -701,7 +701,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4006">
@@ -725,7 +725,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4006">
@@ -829,7 +829,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4007">
@@ -853,7 +853,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4007">
@@ -966,7 +966,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4008">
@@ -990,7 +990,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4008">
@@ -1113,7 +1113,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4009">
@@ -1137,7 +1137,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4009">
@@ -1269,7 +1269,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),sysinfo)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4010">
@@ -1293,7 +1293,7 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<include>SysInfoWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),sysinfo)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),$LOCALIZE[10007])</visible>
 				</control>
 				<!-- Weather -->
 				<control type="panel" id="4010">

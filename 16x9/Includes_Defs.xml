@@ -1116,7 +1116,7 @@
 	<variable name="EmbyHomeWidgetSelection">
 		<value condition="!String.IsEmpty(Container(211).ListItem.Property(widgetPath))">$INFO[Container(211).ListItem.Property(widgetPath)]</value>
 		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather</value>
-		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)">System Info</value>
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])">System Info</value>
 	</variable>
 	<!-- New Emby widgets -->
 	<variable name="EmbyHomeWidget1Content">

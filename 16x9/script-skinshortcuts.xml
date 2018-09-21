@@ -212,7 +212,7 @@
                             <param name="item_widget_height">220</param>
                         </include>
                         <content limit="10" target="videos">$INFO[Container(211).ListItem.Property(widgetPath)]</content>                        
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)</visible>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])</visible>
                     </control>
                     <control type="list" id="6001">
                         <autoscroll time="5000">true</autoscroll>
@@ -242,7 +242,7 @@
                             <param name="item_widget_height">220</param>
                         </include>
                         <include>SysInfoWidget</include>
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo)</visible>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])</visible>
                     </control>
                     <control type="list" id="6003">
                         <autoscroll time="5000">true</autoscroll>
@@ -322,7 +322,7 @@
 					<height>66</height>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
 					<include>DefDialogButtons</include>
-					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),sysinfo) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</visible>
+					<visible>!String.IsEmpty(Container(211).ListItem.Label) + String.IsEqual(Window.Property(groupname),mainmenu) + !String.IsEqual(Container(211).ListItem.Property(defaultID),Library) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</visible>
 					<visible>Integer.IsLessOrEqual(Container(211).Position,10)</visible>
 					<onup>8780</onup>
 				</control>

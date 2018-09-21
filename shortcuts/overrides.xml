@@ -188,7 +188,7 @@
     <propertydefault labelID="pictures" property="type">photos</propertydefault>
     <propertydefault labelID="programs" property="type">programs</propertydefault>
     <propertydefault labelID="videos" property="type">videos</propertydefault>
-    <propertydefault labelID="sysinfo" property="type">sysinfo</propertydefault>
+    <propertydefault labelID="$LOCALIZE[10007]" property="type">sysinfo</propertydefault>
     <propertydefault labelID="power" property="type">power</propertydefault>
 	<propertydefault labelID="collection" property="type">collection</propertydefault>
     <propertydefault labelID="embyconmovies" property="type">movie</propertydefault>
@@ -243,7 +243,7 @@
     <backgrounddefault defaultID="pictures">special://skin/extras/backgrounds/Photos.jpg</backgrounddefault>
     <backgrounddefault defaultID="programs">special://skin/extras/backgrounds/programs.jpg</backgrounddefault>
     <backgrounddefault defaultID="videos">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</backgrounddefault>
-    <backgrounddefault defaultID="sysinfo">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
+    <backgrounddefault defaultID="$LOCALIZE[10007]">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>
 	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>
 	
@@ -308,7 +308,7 @@
     <icon labelID="livetv">special://skin/extras/icons/livetv.png</icon>
     <icon labelID="radio">special://skin/extras/icons/radio.png</icon>
     <icon labelID="weather">special://skin/extras/icons/sun.png</icon>
-    <icon labelID="sysinfo">special://skin/extras/icons/settings.png</icon>
+    <icon labelID="$LOCALIZE[10007]">special://skin/extras/icons/settings.png</icon>
     <icon labelID="13200">special://skin/extras/icons/actor.png</icon>
     <icon labelID="10007">special://skin/extras/icons/sysinfo.png</icon>
     <icon labelID="1036">special://skin/extras/icons/favourites.png</icon>
