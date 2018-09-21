@@ -181,7 +181,7 @@
 	<propertydefault labelID="movies" property="type">movie</propertydefault>
     <propertydefault labelID="tvshows" property="type">tvshows</propertydefault>
     <propertydefault labelID="livetv" property="type">livetv</propertydefault>
-    <propertydefault labelID="music" property="type">music</propertydefault>
+    <propertydefault labelID="music" property="type">song</propertydefault>
 	<propertydefault labelID="radio" property="type">music</propertydefault>
     <propertydefault labelID="musicvideos" property="type">music</propertydefault>
     <propertydefault labelID="weather" property="type">weather</propertydefault>

@@ -64,10 +64,19 @@
         <action>ActivateWindow(tvrecordings)</action>
     </shortcut>
 	<shortcut>
+        <label>Music</label>
+        <label2>music</label2>
+        <defaultID>music</defaultID>
+        <icon>special://skin/extras/icons/songs.png</icon>
+        <action>ActivateWindow(Music,musicdb://songs/)</action>
+        <visible>Integer.IsGreater(Window(Home).Property(Music.SongsCount),0)</visible>
+    </shortcut>
+    <shortcut>
         <label>Weather</label>
         <label2>weather</label2>
         <defaultID>weather</defaultID>
         <icon>special://skin/extras/icons/sun.png</icon>
         <action>ActivateWindow(Weather)</action>
+        <visible>!String.IsEmpty(Weather.Temperature)</visible>
     </shortcut>
 </shortcuts>
