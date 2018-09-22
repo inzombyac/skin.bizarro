@@ -225,8 +225,8 @@
     <widgetdefaultnode labelID="info-window-home-property-emby-nodes-7-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.7.title)]" type="video" path="$INFO[Window(Home).Property(emby.nodes.7.path)]" target="">$INFO[Window(Home).Property(emby.nodes.7.title)]</widgetdefaultnode>
     <widgetdefaultnode labelID="info-window-home-property-emby-nodes-8-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.8.title)]" type="video" path="$INFO[Window(Home).Property(emby.nodes.8.path)]" target="">$INFO[Window(Home).Property(emby.nodes.8.title)]</widgetdefaultnode>
     <widgetdefaultnode labelID="info-window-home-property-emby-nodes-9-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.9.title)]" type="video" path="$INFO[Window(Home).Property(emby.nodes.9.path)]" target="">$INFO[Window(Home).Property(emby.nodes.9.title)]</widgetdefaultnode>
+     <widgetdefaultnode labelID="info-window-home-property-emby-nodes-10-title" group="mainmenu" label="$INFO[Window(Home).Property(emby.nodes.10.title)]" type="video" path="$INFO[Window(Home).Property(emby.nodes.10.path)]" target="">$INFO[Window(Home).Property(emby.nodes.10.title)]</widgetdefaultnode>
 
-    
     <!-- Browse for Backgrounds -->
     <!-- <background label="::PLAYLIST::">playlistBackground</background> -->
     <background label="smartshortcuts">||BROWSE||plugin://script.skin.helper.service/?action=backgrounds</background>

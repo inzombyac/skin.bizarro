@@ -137,18 +137,6 @@
 		<value condition="!String.IsEmpty(Skin.String(weathericons.path))">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day6.FanartCode),,.png]</value>
         <value>$INFO[Window(weather).Property(Day6.OutlookIcon)]</value>
 	</variable>
-	<variable name="EmbyMainWidgetIcon">
-		<value condition="String.IsEqual(Container(300).ListItem.Property(defaultID),$LOCALIZE[10007])">special://skin/extras/backgrounds/krypton.png</value>
-		<!-- <value condition="Container(4019).IsUpdating + System.IdleTime(0)">common/null.png</value> -->
-		<value condition="Container(4019).Content(episodes) + [system.getbool(videolibrary.showunwatchedplots)  | [!system.getbool(videolibrary.showunwatchedplots)  + String.IsEqual(Container(4019).ListItem.Overlay,OverlayWatched.png)]]">$INFO[Container(4019).ListItem.Icon]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + Container(4019).Content(episodes) + [String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) | Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + Container(4019).Content(episodes) + ![String.IsEqual(Container(4019).ListItem.Overlay,OverlayUnWatched.png) + Container(4019).ListItem.IsResumable]">$INFO[Container(4019).ListItem.Icon]</value>
-		<value condition="!String.IsEmpty(Container(4019).ListItem.Art(landscape)) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Art(landscape)]</value>
-		<value condition="!String.IsEmpty(Container(4019).ListItem.Art(tvshow.landscape)) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Art(tvshow.landscape)]</value>
-		<value condition="!String.IsEmpty(Container(4019).ListItem.Art(fanart)) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(Container(4019).ListItem.Thumb) + !Container(4019).Content(episodes)">$INFO[Container(4019).ListItem.Thumb]</value>
-		<value>$INFO[Container(4019).ListItem.Icon]</value>
-	</variable>
 	<variable name="EmbyWidget1Icon">
 		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
 		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),music)">$VAR[ThumbImage]</value>

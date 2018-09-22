@@ -50,6 +50,36 @@
                 <label>Widget 4 type: $INFO[Container(4004).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(4).Property(defaultID)]</label>
                 <visible>Control.HasFocus(4004)</visible>
             </control>
+            <control type="label">
+                <include>ControlID3</include>
+                <label>Widget 5 type: $INFO[Container(4005).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(5).Property(defaultID)]</label>
+                <visible>Control.HasFocus(4005)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID3</include>
+                <label>Widget 6 type: $INFO[Container(4006).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(6).Property(defaultID)]</label>
+                <visible>Control.HasFocus(4006)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID3</include>
+                <label>Widget 7 type: $INFO[Container(4007).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(7).Property(defaultID)]</label>
+                <visible>Control.HasFocus(4007)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID3</include>
+                <label>Widget 8 type: $INFO[Container(4008).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(8).Property(defaultID)]</label>
+                <visible>Control.HasFocus(4008)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID3</include>
+                <label>Widget 9 type: $INFO[Container(4009).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(9).Property(defaultID)]</label>
+                <visible>Control.HasFocus(4009)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID3</include>
+                <label>Widget 10 type: $INFO[Container(4010).ListItem.Property(type)]/$INFO[Container(300).ListItemAbsolute(10).Property(defaultID)]</label>
+                <visible>Control.HasFocus(4010)</visible>
+            </control>
 			<control type="label">
                 <include>ControlID4</include>
 				<label>$INFO[Container(4003).CurrentItem,4003 Position: ,]$INFO[Container(4003).NumItems, of ,]</label>
@@ -168,7 +198,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4001">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget1Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4001">
@@ -217,7 +263,18 @@
 					<width>355</width>
 					<right>14</right>
 					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4001).NumItems,5) + !String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4001).NumItems,5) + !String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4001).NumItems,7) + !String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -258,7 +315,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4002">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget2Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4002">
@@ -305,7 +378,18 @@
 					<width>355</width>
 					<right>14</right>
 					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4002).NumItems,5) + !String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4002).NumItems,5) + !String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4002).NumItems,7) + !String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -360,7 +444,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather)</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4003">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget3Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4003">
@@ -408,7 +508,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4003).NumItems,5) + !String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4003).NumItems,5) + !String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4003).NumItems,7) + !String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -467,7 +578,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4004">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget4Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4004">
@@ -515,7 +642,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4004).NumItems,5) + !String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4004).NumItems,5) + !String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4004).NumItems,7) + !String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -579,7 +717,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4005">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget5Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4005">
@@ -627,7 +781,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4005).NumItems,5) + !String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4005).NumItems,5) + !String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4005).NumItems,7) + !String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -701,7 +866,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4006">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget6Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4006">
@@ -749,7 +930,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4006).NumItems,5) + !String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4006).NumItems,5) + !String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4006).NumItems,7) + !String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -829,7 +1021,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4007">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget7Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4007">
@@ -877,7 +1085,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4007).NumItems,5) + !String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4007).NumItems,5) + !String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4007).NumItems,7) + !String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -966,7 +1185,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4008">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget8Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4008">
@@ -1014,7 +1249,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4008).NumItems,5) + !String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4008).NumItems,5) + !String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4008).NumItems,7) + !String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -1113,7 +1359,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4009">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget9Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4009">
@@ -1161,7 +1423,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4009).NumItems,5) + !String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4009).NumItems,5) + !String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4009).NumItems,7) + !String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -1269,7 +1542,23 @@
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10Content]</content>
-					<visible>!String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),$LOCALIZE[10007])</visible>
+					<visible>!String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
+				</control>
+				<!-- Music Panel -->
+				<control type="panel" id="4010">
+					<top>$PARAM[top]</top>
+					<left>$PARAM[left]</left>
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<include>EmbyHomeWidgetDirections</include>
+					<include content="EmbyWidget1Content">
+						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="item_width">230</param>
+						<param name="widget_width">250</param>
+						<param name="scale">center</param>
+					</include>
+					<content limit="25" target="songs">$VAR[EmbyHomeWidget10Content]</content>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
 				</control>
 				<!-- Live TV -->
 				<control type="panel" id="4010">
@@ -1317,7 +1606,18 @@
 					<right>14</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4010).NumItems,5) + !String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems)</visible>
+					<visible>Integer.IsGreater(Container(4010).NumItems,5) + !String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
+				</control>
+				<control type="image">
+					<aspectratio>scale</aspectratio>
+					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
+					<top>$PARAM[top]</top>
+					<height>230</height>
+					<width>355</width>
+					<right>20</right>
+					<include>Animation.FadeOut</include>
+					<include>Animation.FadeIn</include>
+					<visible>Integer.IsGreater(Container(4010).NumItems,7) + !String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
 				</control>
 			</control>
 		</definition>
@@ -2253,7 +2553,7 @@
 			</item>
 		</content>
 	</include>
-	<include name="EmbyHiddenItemLayout">
+	<!-- <include name="EmbyHiddenItemLayout">
 		<itemlayout width="1" height="1">
 			<control type="button">
 				<onfocus>SetFocus(3999)</onfocus>
@@ -2286,5 +2586,5 @@
 				<label>$INFO[ListItem.Duration]</label>
 			</control>
 		</focusedlayout>
-	</include>
+	</include> -->
 </includes>

@@ -313,41 +313,6 @@
 			</control>										
 		</control>
 	</include>
-	<include name="Furniture_Scrollbar_Horizontal">
-		<control type="scrollbar" id="60">
-			<onback>50</onback>
-			<left>SidePad</left>
-			<width>1760</width>
-			<bottom>120</bottom>
-			<orientation>horizontal</orientation>
-			<height>8</height>
-			<onup condition="!Control.IsVisible(65)">50</onup>
-			<onup condition="Control.IsVisible(65)">65</onup>
-			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
-		</control>
-	</include>
-	<include name="Furniture_Scrollbar_Horizontal_Wall_Poster">
-		<control type="scrollbar" id="60">
-			<onback>50</onback>
-			<right>70</right>
-			<width>1280</width>
-			<bottom>120</bottom>
-			<orientation>horizontal</orientation>
-			<height>8</height>
-			<onup condition="!Control.IsVisible(65)">50</onup>
-			<onup condition="Control.IsVisible(65)">65</onup>
-			<ondown condition="!Skin.HasSetting(global.kioskmode)">9000</ondown>
-			<texturesliderbackground border="4" colordiffuse="Dark4">scrollbar/scrollv.png</texturesliderbackground>
-			<texturesliderbar border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbar>
-			<texturesliderbarfocus border="4" colordiffuse="$VAR[ColorHighlight]">scrollbar/scrollv.png</texturesliderbarfocus>
-			<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
-			<animation effect="slide" start="0" end="0,-10" time="400" condition="Control.HasFocus(60)">Conditional</animation>
-		</control>
-	</include>
 	<include name="Furniture_Scrollbar_Wall">
 		<control type="scrollbar" id="60">
 			<onback>50</onback>
@@ -1672,7 +1637,7 @@
 			</control>
 		</control>
 	</include>
-	<include name="Furniture_Back_Button">
+	<!-- <include name="Furniture_Back_Button">
 		<control type="button" id="3635">
 			<description>back button</description>
 			<width>80</width>
@@ -1707,7 +1672,7 @@
 			<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
 			<visible>[[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(DialogMusicInfo.xml) | Window.IsVisible(DialogAddonInfo.xml)]]</visible>
 		</control>
-	</include>
+	</include> -->
 	<include name="Furniture_Clock">
 		<control type="group">
 			<visible>!Window.IsVisible(VideoFullScreen.xml) | [ Window.IsVisible(DialogFullScreenInfo.xml) | Player.Paused | !Integer.IsGreater(Player.Time,3) | Window.IsVisible(VideoOSD.xml)]</visible>
