@@ -162,7 +162,8 @@
 	</variable>
 	<variable name="EmbySubMenuImage">
 		<value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
-		<value condition="String.IsEqual(Container(4000).ListItem.Property(type),homevideos) | String.IsEqual(Container(4000).ListItem.Label2,homevideos)">special://skin/extras/backgrounds/video.jpg</value>
+		<value condition="String.IsEqual(ListItem.Property(type),homevideos) | String.IsEqual(ListItem.Label2,homevideos)">special://skin/extras/backgrounds/video.jpg</value>
+		<value condition="String.IsEqual(ListItem.Label,Home Videos)">special://skin/extras/backgrounds/video.jpg</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>common/null.png</value>
 	</variable>
