@@ -1,3 +1,9 @@
+1.2.1
+- Fix library actions for Emby
+
+1.2.0
+- New home menu
+
 1.1.4
 - Fix user and power icons
 - Live TV Home widget changes
