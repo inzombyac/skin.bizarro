@@ -145,7 +145,7 @@
 				<width>460</width>
 				<top>95</top>			
 				<control type="button" id="308" description="Reset">
-                    <width>300</width>
+                    <width>350</width>
 					<height>66</height>
 					<left>60</left>
 					<bottom>180</bottom>
@@ -162,7 +162,7 @@
 					<onleft>9100</onleft>
 					<bottom>104</bottom>
 					<label>OK</label>
-					<width>300</width>
+					<width>350</width>
 					<height>66</height>
 					<left>60</left>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
@@ -177,7 +177,7 @@
 					<onleft>9100</onleft>
 					<bottom>104</bottom>
 					<label>Back</label>
-					<width>300</width>
+					<width>350</width>
 					<height>66</height>
 					<left>60</left>
 					<texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
@@ -352,7 +352,7 @@
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                     <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                    <visible>Integer.IsGreater(Container(211).Position, 1)</visible>
+                   <!--  <visible>Integer.IsGreater(Container(211).Position, 1)</visible> -->
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>100%</width>
