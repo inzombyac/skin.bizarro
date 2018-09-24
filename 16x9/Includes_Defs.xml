@@ -220,14 +220,14 @@
 				<onback condition="Window.IsVisible(SettingsCategory.xml)">3</onback>
 				<onback condition="!Window.IsVisible(SettingsCategory.xml)">9101</onback>
 				<include>Def9000GroupList</include>
-				<control type="button" id="9500" description="Back">
+				<!-- <control type="button" id="9500" description="Back">
 					<include>DefContextButton2</include>
 					<align>left</align>
 					<label>Back</label>
 					<onclick>Back</onclick>
 					<onclick>Back</onclick>
 					<visible>!Container.HasParent</visible>
-				</control>
+				</control> -->
 				<control type="label" id="200">
 					<height>42</height>
 					<textoffsetx>15</textoffsetx>
@@ -393,7 +393,8 @@
 				<height>70</height>
 				<onclick>RunScript(script.globalsearch,tvshows=true&amp;movies=true&amp;episodes=true&amp;actors=true;artists=true&amp;albums=true&amp;songs=true)</onclick>
 				<ondown>9000</ondown>
-				<onup>9091</onup>
+				<onup condition="Window.IsVisible(Home.xml)">9267</onup>
+				<onup condition="!Window.IsVisible(Home.xml)">9091</onup>
 				<onright condition="Window.IsVisible(Home.xml)">3999</onright>
 				<onright condition="![Window.IsVisible(tvguide) | Window.IsActive(SettingsCategory.xml)] + !Window.IsVisible(Home.xml)">50</onright>
 				<onright condition="Window.IsVisible(tvguide)">10</onright>
@@ -515,7 +516,6 @@
 				<include>DefContextButton</include>
 				<label>13005</label>
 				<onclick>ActivateWindow(shutdownmenu)</onclick>
-				<!-- <visible>System.ShowExitButton</visible> -->
 				<align>left</align>
 			</control>
 			<control type="button" id ="9269">
@@ -541,14 +541,14 @@
 		<onback>50</onback>
 		<itemgap>0</itemgap>
 		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-		<control type="button" id="9500" description="Back">
+		<!-- <control type="button" id="9500" description="Back">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Back</label>
 			<onclick>Back</onclick>
 			<onclick>Back</onclick>
 			<visible>!Container.HasParent</visible>
-		</control>
+		</control> -->
 		<control type="label" id="200">
 			<height>42</height>
 			<textoffsetx>15</textoffsetx>
@@ -736,14 +736,14 @@
 		<onback>50</onback>
 		<itemgap>0</itemgap>
 		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-		<control type="button" id="9500" description="Back">
+		<!-- <control type="button" id="9500" description="Back">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Back</label>
 			<onclick>Back</onclick>
 			<onclick>Back</onclick>
 			<visible>!Container.HasParent</visible>
-		</control>
+		</control> -->
 		<control type="label" id="201">
 			<width>455</width>
 			<height>42</height>
@@ -913,14 +913,14 @@
 		<onback>50</onback>
 		<itemgap>0</itemgap>
 		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-		<control type="button" id="9500" description="Back">
+		<!-- <control type="button" id="9500" description="Back">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Back</label>
 			<onclick>Back</onclick>
 			<onclick>Back</onclick>
 			<visible>!Container.HasParent</visible>
-		</control>
+		</control> -->
 		<control type="label" id="201">
 			<width>455</width>
 			<height>42</height>
@@ -1039,14 +1039,14 @@
 		<onback>50</onback>
 		<itemgap>0</itemgap>
 		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
-		<control type="button" id="9500" description="Back">
+		<!-- <control type="button" id="9500" description="Back">
 			<include>DefContextButton2</include>
 			<align>left</align>
 			<label>Back</label>
 			<onclick>Back</onclick>
 			<onclick>Back</onclick>
 			<visible>!Container.HasParent</visible>
-		</control>
+		</control> -->
 		<control type="label" id="200">
 			<height>42</height>
 			<textoffsetx>15</textoffsetx>
