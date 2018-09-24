@@ -9,7 +9,7 @@
             <shortcut label="Movie Hub" type="MovieHub" grouping="common" icon="special://skin/extras/icons/film.png">ActivateWindow(1101)</shortcut>
             <shortcut label="Extended Info" type="extendedinfo" grouping="common" icon="special://skin/extras/icons/youtube.png">RunScript(script.extendedinfo)</shortcut>
         </node>
-        <node label="Emby" condition="System.HasAddon(plugin.video.emby)">
+       <!--  <node label="Emby" condition="System.HasAddon(plugin.video.emby)">
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.0.title)]" type="$INFO[Window(Home).Property(emby.nodes.0.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.0.title))">$INFO[Window(Home).Property(emby.nodes.0.path)]</shortcut>
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.1.title)]" type="$INFO[Window(Home).Property(emby.nodes.1.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.1.title))">$INFO[Window(Home).Property(emby.nodes.1.path)]</shortcut>
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.2.title)]" type="$INFO[Window(Home).Property(emby.nodes.2.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.2.title))">$INFO[Window(Home).Property(emby.nodes.2.path)]</shortcut>
@@ -21,7 +21,7 @@
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.8.title)]" type="$INFO[Window(Home).Property(emby.nodes.8.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.8.title))">$INFO[Window(Home).Property(emby.nodes.8.path)]</shortcut>
             <shortcut label="$INFO[Window(Home).Property(emby.nodes.9.title)]" type="$INFO[Window(Home).Property(emby.nodes.9.type)]" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="!String.IsEmpty(Window(Home).Property(emby.nodes.9.title))">$INFO[Window(Home).Property(emby.nodes.9.path)]</shortcut>
             <shortcut label="EmbyCon" type="32010" icon="special://skin/extras/icons/emby_diff.png" thumbnail="special://skin/extras/icons/emby_diff.png" condition="System.HasAddon(plugin.video.embycon)">||BROWSE||plugin.video.embycon/?mode=</shortcut>
-        </node>
+        </node> -->
         <node label="32030">
             <content>video</content>
             <node label="32040">
@@ -243,39 +243,29 @@
     <backgrounddefault defaultID="pictures">special://skin/extras/backgrounds/Photos.jpg</backgrounddefault>
     <backgrounddefault defaultID="programs">special://skin/extras/backgrounds/programs.jpg</backgrounddefault>
     <backgrounddefault defaultID="videos">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</backgrounddefault>
+    <backgrounddefault defaultID="videoaddons">special://skin/extras/backgrounds/orbs.jpg</backgrounddefault>
     <backgrounddefault defaultID="$LOCALIZE[10007]">special://skin/extras/backgrounds/Motherboard.jpg</backgrounddefault>
     <backgrounddefault defaultID="power">special://skin/extras/backgrounds/kodi.jpg</backgrounddefault>
 	<backgrounddefault defaultID="collection" group="movies">special://skin/extras/backgrounds/sets.jpg</backgrounddefault>
-	
 	<backgrounddefault defaultID="artists" group="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="albums" group="music">$INFO[Window(Home).Property(SkinHelper.RecentMusicBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="addons" group="music">special://skin/extras/backgrounds/Settings.jpg</backgrounddefault>
-	
 	<backgrounddefault defaultID="tvguide" group="livetv">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</backgrounddefault>
-	
 	<backgrounddefault defaultID="episodeshub" group="tvshows">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
-
 	<backgrounddefault defaultID="nextup" group="tvshows">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	
 	<backgrounddefault defaultID="inprogressshows" group="tvshows">$INFO[Window(Home).Property(SkinHelper.InProgressShowsBackground)]</backgrounddefault>
-	
 	<backgrounddefault defaultID="recentepisodes" group="tvshows">$INFO[Window(Home).Property(SkinHelper.RecentEpisodesBackground)]</backgrounddefault>
-	
 	<backgrounddefault defaultID="nextaired" group="tvshows" condition="!String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">$INFO[Window.Property(NextAired.1.Art(fanart))]</backgrounddefault>	
 	<backgrounddefault defaultID="nextaired" group="tvshows" condition="String.IsEmpty(Window.Property(NextAired.1.Art(fanart)))">special://skin/extras/backgrounds/Airing.jpg</backgrounddefault>	
 		
 	<!-- Not available: unwatchedshows, recommendedshows, randomepisode, nextaired -->
-	
 	<backgrounddefault defaultID="recentmovies" group="movies">$INFO[Window(Home).Property(SkinHelper.RecentMoviesBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="unwatchedmovies" group="movies">$INFO[Window(Home).Property(SkinHelper.UnwatchedMoviesBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="movieshub" group="movies">$INFO[Window(Home).Property(SkinHelper.AllMoviesBackground)]</backgrounddefault>
-	
-	<!-- Emby Nodes -->
-	
 	<backgrounddefault defaultID="random" group="tvshows">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
 	<backgrounddefault defaultID="random" group="movies">special://skin/extras/backgrounds/Splash.jpg</backgrounddefault>
-
-    <!-- <backgrounddefault defaultID="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.image)]</backgrounddefault>
+    <!-- Emby Nodes -->
+    <backgrounddefault defaultID="info-window-home-property-emby-nodes-0-title">$INFO[Window(Home).Property(emby.nodes.0.image)]</backgrounddefault>
     <backgrounddefault defaultID="info-window-home-property-emby-nodes-1-title">$INFO[Window(Home).Property(emby.nodes.1.image)]</backgrounddefault>
     <backgrounddefault defaultID="info-window-home-property-emby-nodes-2-title">$INFO[Window(Home).Property(emby.nodes.2.image)]</backgrounddefault>
     <backgrounddefault defaultID="info-window-home-property-emby-nodes-3-title">$INFO[Window(Home).Property(emby.nodes.3.image)]</backgrounddefault>
@@ -284,7 +274,7 @@
     <backgrounddefault defaultID="info-window-home-property-emby-nodes-6-title">$INFO[Window(Home).Property(emby.nodes.6.image)]</backgrounddefault>
     <backgrounddefault defaultID="info-window-home-property-emby-nodes-7-title">$INFO[Window(Home).Property(emby.nodes.7.image)]</backgrounddefault>
     <backgrounddefault defaultID="info-window-home-property-emby-nodes-8-title">$INFO[Window(Home).Property(emby.nodes.8.image)]</backgrounddefault>
-    <backgrounddefault defaultID="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.image)]</backgrounddefault> -->
+    <backgrounddefault defaultID="info-window-home-property-emby-nodes-9-title">$INFO[Window(Home).Property(emby.nodes.9.image)]</backgrounddefault>
 
     <!-- Warning to Remove Settings -->
     <warn heading="31176" message="31177">ActivateWindow(Settings)</warn>
