@@ -49,7 +49,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
 			</control>
 			<control type="button" id="9601">
 				<label>A</label>
@@ -58,7 +58,7 @@
 				<onclick>Action(JumpSMS2)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
 			</control>
 			<control type="button" id="9602">
 				<label>B</label>
@@ -68,7 +68,7 @@
 				<onclick>Action(JumpSMS2)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
 			</control>
 			<control type="button" id="9603">
 				<label>C</label>
@@ -79,7 +79,7 @@
 				<onclick>Action(JumpSMS2)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
 			</control>
 			<control type="button" id="9604">
 				<label>D</label>
@@ -88,7 +88,7 @@
 				<onclick>Action(JumpSMS3)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
 			</control>
 			<control type="button" id="9605">
 				<label>E</label>
@@ -98,7 +98,7 @@
 				<onclick>Action(JumpSMS3)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
 			</control>
 			<control type="button" id="9606">
 				<label>F</label>
@@ -109,7 +109,7 @@
 				<onclick>Action(JumpSMS3)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
 			</control>
 			<control type="button" id="9607">
 				<label>G</label>
@@ -118,7 +118,7 @@
 				<onclick>Action(JumpSMS4)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
 			</control>
 			<control type="button" id="9608">
 				<label>H</label>
@@ -128,7 +128,7 @@
 				<onclick>Action(JumpSMS4)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
 			</control>
 			<control type="button" id="9609">
 				<label>I</label>
@@ -139,7 +139,7 @@
 				<onclick>Action(JumpSMS4)</onclick>
 				<onclick>right</onclick>	
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
 			</control>
 			<control type="button" id="9610">
 				<label>J</label>
@@ -148,7 +148,7 @@
 				<onclick>Action(JumpSMS5)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
 			</control>
 			<control type="button" id="9611">
 				<label>K</label>
@@ -158,7 +158,7 @@
 				<onclick>Action(JumpSMS5)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
 			</control>
 			<control type="button" id="9612">
 				<label>L</label>
@@ -169,7 +169,7 @@
 				<onclick>Action(JumpSMS5)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
 			</control>
 			<control type="button" id="9613">
 				<label>M</label>
@@ -178,7 +178,7 @@
 				<onclick>Action(JumpSMS6)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
 			</control>
 			<control type="button" id="9614">
 				<label>N</label>
@@ -188,7 +188,7 @@
 				<onclick>Action(JumpSMS6)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
 			</control>
 			<control type="button" id="9615">
 				<label>O</label>
@@ -199,7 +199,7 @@
 				<onclick>Action(JumpSMS6)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
 			</control>
 			<control type="button" id="9616">
 				<label>P</label>
@@ -208,7 +208,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
 			</control>
 			<control type="button" id="9617">
 				<label>Q</label>
@@ -218,7 +218,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
 			</control>
 			<control type="button" id="9618">
 				<label>R</label>
@@ -229,7 +229,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
 			</control>
 			<control type="button" id="9619">
 				<label>S</label>
@@ -241,7 +241,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
 			</control>
 			<control type="button" id="9620">
 				<label>T</label>
@@ -250,7 +250,7 @@
 				<onclick>Action(JumpSMS8)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
 			</control>
 			<control type="button" id="9621">
 				<label>U</label>
@@ -260,7 +260,7 @@
 				<onclick>Action(JumpSMS8)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
 			</control>
 			<control type="button" id="9622">
 				<label>V</label>
@@ -271,7 +271,7 @@
 				<onclick>Action(JumpSMS8)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
 			</control>		
 			<control type="button" id="9623">
 				<label>W</label>
@@ -279,7 +279,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
 			</control>
 			<control type="button" id="9624">
 				<label>X</label>
@@ -288,7 +288,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
 			</control>		
 			<control type="button" id="9625">
 				<label>Y</label>
@@ -298,7 +298,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
 			</control>
 			<control type="button" id="9626">
 				<label>Z</label>
@@ -309,7 +309,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>right</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
 			</control>										
 		</control>
 	</include>
@@ -356,7 +356,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>DefOSDUpDown</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9600)">Conditional</animation>
 			</control>
 			<control type="button" id="9601">
 				<label>A</label>
@@ -364,7 +364,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS2)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9601)">Conditional</animation>
 			</control>
 			<control type="button" id="9602">
 				<label>B</label>
@@ -373,7 +373,7 @@
 				<onclick>Action(JumpSMS2)</onclick>
 				<onclick>Action(JumpSMS2)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9602)">Conditional</animation>
 			</control>
 			<control type="button" id="9603">
 				<label>C</label>
@@ -383,7 +383,7 @@
 				<onclick>Action(JumpSMS2)</onclick>
 				<onclick>Action(JumpSMS2)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9603)">Conditional</animation>
 			</control>
 			<control type="button" id="9604">
 				<label>D</label>
@@ -391,7 +391,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS3)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9604)">Conditional</animation>
 			</control>
 			<control type="button" id="9605">
 				<label>E</label>
@@ -400,7 +400,7 @@
 				<onclick>Action(JumpSMS3)</onclick>
 				<onclick>Action(JumpSMS3)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9605)">Conditional</animation>
 			</control>
 			<control type="button" id="9606">
 				<label>F</label>
@@ -410,7 +410,7 @@
 				<onclick>Action(JumpSMS3)</onclick>
 				<onclick>Action(JumpSMS3)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9606)">Conditional</animation>
 			</control>
 			<control type="button" id="9607">
 				<label>G</label>
@@ -418,7 +418,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS4)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9607)">Conditional</animation>
 			</control>
 			<control type="button" id="9608">
 				<label>H</label>
@@ -427,7 +427,7 @@
 				<onclick>Action(JumpSMS4)</onclick>
 				<onclick>Action(JumpSMS4)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9608)">Conditional</animation>
 			</control>
 			<control type="button" id="9609">
 				<label>I</label>
@@ -437,7 +437,7 @@
 				<onclick>Action(JumpSMS4)</onclick>
 				<onclick>Action(JumpSMS4)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9609)">Conditional</animation>
 			</control>
 			<control type="button" id="9610">
 				<label>J</label>
@@ -445,7 +445,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS5)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9610)">Conditional</animation>
 			</control>
 			<control type="button" id="9611">
 				<label>K</label>
@@ -454,7 +454,7 @@
 				<onclick>Action(JumpSMS5)</onclick>
 				<onclick>Action(JumpSMS5)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9611)">Conditional</animation>
 			</control>
 			<control type="button" id="9612">
 				<label>L</label>
@@ -464,7 +464,7 @@
 				<onclick>Action(JumpSMS5)</onclick>
 				<onclick>Action(JumpSMS5)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9612)">Conditional</animation>
 			</control>
 			<control type="button" id="9613">
 				<label>M</label>
@@ -472,7 +472,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS6)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9613)">Conditional</animation>
 			</control>
 			<control type="button" id="9614">
 				<label>N</label>
@@ -481,7 +481,7 @@
 				<onclick>Action(JumpSMS6)</onclick>
 				<onclick>Action(JumpSMS6)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9614)">Conditional</animation>
 			</control>
 			<control type="button" id="9615">
 				<label>O</label>
@@ -491,7 +491,7 @@
 				<onclick>Action(JumpSMS6)</onclick>
 				<onclick>Action(JumpSMS6)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9615)">Conditional</animation>
 			</control>
 			<control type="button" id="9616">
 				<label>P</label>
@@ -499,7 +499,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS7)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9616)">Conditional</animation>
 			</control>
 			<control type="button" id="9617">
 				<label>Q</label>
@@ -508,7 +508,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>Action(JumpSMS7)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9617)">Conditional</animation>
 			</control>
 			<control type="button" id="9618">
 				<label>R</label>
@@ -518,7 +518,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>Action(JumpSMS7)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9618)">Conditional</animation>
 			</control>
 			<control type="button" id="9619">
 				<label>S</label>
@@ -529,7 +529,7 @@
 				<onclick>Action(JumpSMS7)</onclick>
 				<onclick>Action(JumpSMS7)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9619)">Conditional</animation>
 			</control>
 			<control type="button" id="9620">
 				<label>T</label>
@@ -537,7 +537,7 @@
 				<onclick>Action(FirstPage)</onclick>
 				<onclick>Action(JumpSMS8)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9620)">Conditional</animation>
 			</control>
 			<control type="button" id="9621">
 				<label>U</label>
@@ -546,7 +546,7 @@
 				<onclick>Action(JumpSMS8)</onclick>
 				<onclick>Action(JumpSMS8)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9621)">Conditional</animation>
 			</control>
 			<control type="button" id="9622">
 				<label>V</label>
@@ -556,14 +556,14 @@
 				<onclick>Action(JumpSMS8)</onclick>
 				<onclick>Action(JumpSMS8)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9622)">Conditional</animation>
 			</control>		
 			<control type="button" id="9623">
 				<label>W</label>
 				<onclick>down</onclick>
 				<onclick>Action(JumpSMS9)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9623)">Conditional</animation>
 			</control>
 			<control type="button" id="9624">
 				<label>X</label>
@@ -571,7 +571,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>Action(JumpSMS9)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9624)">Conditional</animation>
 			</control>		
 			<control type="button" id="9625">
 				<label>Y</label>
@@ -580,7 +580,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>Action(JumpSMS9)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9625)">Conditional</animation>
 			</control>
 			<control type="button" id="9626">
 				<label>Z</label>
@@ -590,7 +590,7 @@
 				<onclick>Action(JumpSMS9)</onclick>
 				<onclick>Action(JumpSMS9)</onclick>
 				<include>DefJumpKeys</include>
-				<animation effect="fade" start="100" end="33" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
+				<animation effect="fade" start="100" end="11" time="400" condition="!Control.HasFocus(9626)">Conditional</animation>
 			</control>										
 		</control>
 	</include>
