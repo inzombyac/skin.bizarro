@@ -381,6 +381,21 @@
 				<align>left</align>
 				<visible>Control.HasFocus(9267)</visible>
 			</control>
+			<control type="button" id="9094">
+				<left>40</left>
+				<top>25</top>
+				<width>70</width>
+				<height>70</height>
+				<aligny>center</aligny>
+				<onclick>Back</onclick>
+				<ondown>9000</ondown>
+				<onup>9094</onup>
+				<onright>9091</onright>
+				<font>Button</font>
+				<texturefocus colordiffuse="$VAR[ColorHighlight]">special://skin/extras/icons/back.png</texturefocus>
+				<texturenofocus></texturenofocus>
+				<visible>!Window.IsVisible(Home.xml)</visible>
+			</control>
 			<control type="label">
 				<label>$INFO[System.ProfileName]</label>
 				<left>120</left>
