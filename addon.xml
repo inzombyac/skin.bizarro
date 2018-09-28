@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addon id="skin.bizarro" version="1.2.1" name="Bizarro" provider-name="inzombyac">
+<addon id="skin.bizarro" version="1.2.2" name="Bizarro" provider-name="inzombyac">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="script.skinshortcuts" version="0.4.0"/>
@@ -19,8 +19,8 @@
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="16x9"/>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Emby friendly Artic Zephyr mod for Kodi Krypton.</summary>
-		<description lang="en">Emby friendly Artic Zephyr mod for Kodi Krypton.  Supports views for Advanced Launcher and other enhancements.</description>
+		<summary lang="en">Artic Zephyr mod for Kodi Krypton. Designed for use with Emby</summary>
+		<description lang="en">An Artic Zephyr mod with an Emby inspired home screen.  Supports views for games and other enhancements.</description>
 		<platform>all</platform>
 		<assets>
 			<icon>icon.png</icon>
