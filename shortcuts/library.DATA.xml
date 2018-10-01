@@ -56,7 +56,7 @@
         <defaultID>recordings</defaultID>
         <icon>special://skin/extras/icons/livetv.png</icon>
         <thumb>special://skin/extras/backgrounds/Channels.jpg</thumb>
-        <action>ActivateWindow(tvguide)</action>
+        <action>ActivateWindow(tvrecordings)</action>
     </shortcut>
     <shortcut>
         <label>Video Add-ons</label>
