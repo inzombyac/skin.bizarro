@@ -59,12 +59,12 @@
         <action>ActivateWindow(tvrecordings)</action>
     </shortcut>
     <shortcut>
-        <label>Video Add-ons</label>
-        <label2>videoaddons</label2>
-        <defaultID>videoaddons</defaultID>
+        <label>Videos</label>
+        <label2>videos</label2>
+        <defaultID>videos</defaultID>
         <thumb>special://skin/extras/backgrounds/orbs.jpg</thumb>
         <icon>special://skin/extras/icons/addons.png</icon>
-        <action>ActivateWindow(Videos,addons://sources/video/,return)</action>
+        <action>ActivateWindow(Videos)</action>
     </shortcut>
     <shortcut>
         <label>Programs</label>

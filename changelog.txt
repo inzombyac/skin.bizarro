@@ -1,3 +1,8 @@
+1.2.3
+
+- Remove recordings from continue watching list
+- Replace video add-ons library with videos
+
 1.2.2
 
 - Fix home down actions

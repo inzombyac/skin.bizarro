@@ -12,7 +12,7 @@
         <label2>Continue</label2>
         <defaultID>continue</defaultID>
         <icon>special://skin/extras/icons/kodi.png</icon>
-        <action>ActivateWindow(Videos,plugin://script.skin.helper.widgets/?action=inprogress&amp;mediatype=media,return)</action>
+        <action>ActivateWindow(Videos,plugin://script.skin.helper.widgets/?action=inprogressshowsandmovies&amp;mediatype=media,return)</action>
         <visible>Integer.IsGreater(Window(Home).Property(Movies.Count),0) | Integer.IsGreater(Window(Home).Property(TVShows.Count),0)</visible>
     </shortcut>
     <shortcut>
