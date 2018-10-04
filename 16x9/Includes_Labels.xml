@@ -524,7 +524,8 @@
     </variable>	
     <variable name="SkinShortcutsImageLabel">
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather Forecast</value>
-    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])">$LOCALIZE[10007]</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
+    	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),10007)">$LOCALIZE[10007]</value>
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0)">Widget</value>
     	<value>$LOCALIZE[19190]</value>

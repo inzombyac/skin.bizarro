@@ -179,8 +179,8 @@
 	</include>
 	<include name="EmbyWidgetPanel1">
 		<param name="width" default="1760"/>
-		<param name="top" default="440"/>
-		<param name="label_top" default="400"/>
+		<param name="top" default="435"/>
+		<param name="label_top" default="395"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
@@ -210,6 +210,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget1Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
@@ -224,8 +225,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget1Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
@@ -265,45 +266,35 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4001).NumItems,5) + !String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4001).NumItems,7) + !String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4001).CurrentItem,Container(4001).NumItems) + [[Integer.IsGreater(Container(4001).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)] | [Integer.IsGreater(Container(4001).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel2">
 		<param name="width" default="1760"/>
-		<param name="top" default="740"/>
-		<param name="label_top" default="700"/>
+		<param name="top" default="730"/>
+		<param name="label_top" default="690"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<control type="label">
 					<left>100</left>
 					<top>$PARAM[label_top]</top>
@@ -327,6 +318,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget2Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
@@ -341,8 +333,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget2Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
@@ -380,46 +372,36 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
-					<visible>Integer.IsGreater(Container(4002).NumItems,5) + !String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4002).NumItems,7) + !String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4002).CurrentItem,Container(4002).NumItems) + [[Integer.IsGreater(Container(4002).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)] | [Integer.IsGreater(Container(4002).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel3">
 		<param name="width" default="1760"/>
-		<param name="top" default="1040"/>
-		<param name="label_top" default="1000"/>
+		<param name="top" default="1025"/>
+		<param name="label_top" default="985"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -456,6 +438,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget3Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
@@ -470,8 +453,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget3Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
@@ -509,48 +492,38 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4003).NumItems,5) + !String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4003).NumItems,7) + !String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4003).CurrentItem,Container(4003).NumItems) + [[Integer.IsGreater(Container(4003).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)] | [Integer.IsGreater(Container(4003).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel4">
 		<param name="width" default="1760"/>
-		<param name="top" default="1340"/>
-		<param name="label_top" default="1300"/>
+		<param name="top" default="1320"/>
+		<param name="label_top" default="1280"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -590,6 +563,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget4Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
@@ -604,8 +578,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget4Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
@@ -643,49 +617,39 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4004).NumItems,5) + !String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4004).NumItems,7) + !String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4004).CurrentItem,Container(4004).NumItems) + [[Integer.IsGreater(Container(4004).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)] | [Integer.IsGreater(Container(4004).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel5">
 		<param name="width" default="1760"/>
-		<param name="top" default="1640"/>
-		<param name="label_top" default="1600"/>
+		<param name="top" default="1615"/>
+		<param name="label_top" default="1575"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -729,6 +693,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget5Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
@@ -743,8 +708,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget5Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
@@ -782,50 +747,40 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4005).NumItems,5) + !String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4005).NumItems,7) + !String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4005).CurrentItem,Container(4005).NumItems) + [[Integer.IsGreater(Container(4005).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)] | [Integer.IsGreater(Container(4005).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel6">
 		<param name="width" default="1760"/>
-		<param name="top" default="1940"/>
-		<param name="label_top" default="1900"/>
+		<param name="top" default="1910"/>
+		<param name="label_top" default="1870"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -878,6 +833,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget6Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),$LOCALIZE[10007])</visible>
@@ -892,8 +848,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget6Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
@@ -931,51 +887,41 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4006).NumItems,5) + !String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4006).NumItems,7) + !String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4006).CurrentItem,Container(4006).NumItems) + [[Integer.IsGreater(Container(4006).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)] | [Integer.IsGreater(Container(4006).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel7">
 		<param name="width" default="1760"/>
-		<param name="top" default="2240"/>
-		<param name="label_top" default="2200"/>
+		<param name="top" default="2205"/>
+		<param name="label_top" default="2165"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -1033,6 +979,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget7Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
@@ -1047,8 +994,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget7Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
@@ -1086,52 +1033,42 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4007).NumItems,5) + !String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4007).NumItems,7) + !String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4007).CurrentItem,Container(4007).NumItems) + [[Integer.IsGreater(Container(4007).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)] | [Integer.IsGreater(Container(4007).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel8">
 		<param name="width" default="1760"/>
-		<param name="top" default="2540"/>
-		<param name="label_top" default="2500"/>
+		<param name="top" default="2500"/>
+		<param name="label_top" default="2460"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -1197,6 +1134,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget8Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
@@ -1211,8 +1149,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget8Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
@@ -1250,53 +1188,43 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4008).NumItems,5) + !String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4008).NumItems,7) + !String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4008).CurrentItem,Container(4008).NumItems) + [[Integer.IsGreater(Container(4008).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)] | [Integer.IsGreater(Container(4008).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel9">
 		<param name="width" default="1760"/>
-		<param name="top" default="2840"/>
-		<param name="label_top" default="2800"/>
+		<param name="top" default="2795"/>
+		<param name="label_top" default="2755"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -1371,6 +1299,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget9Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
@@ -1385,8 +1314,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget9Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
@@ -1424,54 +1353,44 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4009).NumItems,5) + !String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4009).NumItems,7) + !String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4009).CurrentItem,Container(4009).NumItems) + [[Integer.IsGreater(Container(4009).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)] | [Integer.IsGreater(Container(4009).NumItems,9) +  String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
 	</include>
 	<include name="EmbyWidgetPanel10">
 		<param name="width" default="1760"/>
-		<param name="top" default="3140"/>
-		<param name="label_top" default="3100"/>
+		<param name="top" default="3090"/>
+		<param name="label_top" default="3050"/>
 		<param name="left" default="SidePad"/>
 		<param name="height" default="240"/>
 		<definition>
 			<control type="group">
 				<width>1840</width>
 				<animation effect="fade" end="100" start="0" time="500" delay="500" tween="cubic" easing="inout" reversible="false">WindowOpen</animation>
-				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
-				<animation condition="!Integer.IsGreater(Container(4009).NumItems,0)" effect="slide" end="0,-300" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4001).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4002).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4003).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4004).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4005).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4006).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4007).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4008).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
+				<animation condition="!Integer.IsGreater(Container(4009).NumItems,0)" effect="slide" end="0,-290" start="0,0" time="0">Conditional</animation>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 				<visible>
@@ -1554,6 +1473,7 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="badge_right">60</param>
 					</include>
 					<content limit="25" target="videos">$VAR[EmbyHomeWidget10Content]</content>
 					<visible>!String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),$LOCALIZE[10007]) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
@@ -1568,8 +1488,8 @@
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
 						<param name="item_width">230</param>
-						<param name="widget_width">250</param>
-						<param name="scale">center</param>
+						<param name="widget_width">303</param>
+						<param name="aspect">scale</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget10Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
@@ -1607,31 +1527,21 @@
 					<include>EmbyHomeWidgetDirections</include>
 					<include content="EmbyWidget1Content">
 						<param name="image_type">$VAR[EmbyWidget1Icon]</param>
+						<param name="aspect">center</param>
 					</include>
 					<include>WeatherWidget</include>
-					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather)</visible>
+					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),weather) + !String.IsEmpty(Weather.Conditions)</visible>
 				</control>
 				<control type="image">
 					<aspectratio>scale</aspectratio>
 					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
 					<top>$PARAM[top]</top>
-					<height>230</height>
+					<height>240</height>
 					<width>355</width>
-					<right>14</right>
+					<right>4</right>
 					<include>Animation.FadeOut</include>
 					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4010).NumItems,5) + !String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
-				</control>
-				<control type="image">
-					<aspectratio>scale</aspectratio>
-					<texture background="true" colordiffuse="HeaderBG">diffuse\embywidgetmore.png</texture>
-					<top>$PARAM[top]</top>
-					<height>230</height>
-					<width>355</width>
-					<right>20</right>
-					<include>Animation.FadeOut</include>
-					<include>Animation.FadeIn</include>
-					<visible>Integer.IsGreater(Container(4010).NumItems,7) + !String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
+					<visible>!String.IsEqual(Container(4010).CurrentItem,Container(4010).NumItems) + [[Integer.IsGreater(Container(4010).NumItems,4) + !String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)] | [Integer.IsGreater(Container(4010).NumItems,6) +  String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)]]</visible>
 				</control>
 			</control>
 		</definition>
@@ -1645,11 +1555,12 @@
 	<param name="scroll_left" default="1734"/>
 	<param name="scroll_left_2" default="1680"/> -->
 	<include name="EmbyWidget1Content">
-	  <param name="widget_width" default="350"/>
-	  <param name="item_width" default="335"/>
-	  <param name="widget_height" default="245"/>
-	  <param name="item_height" default="230"/>
+	  <param name="widget_width" default="450"/>
+	  <param name="item_width" default="395"/>
+	  <param name="widget_height" default="255"/>
+	  <param name="item_height" default="240"/>
 	  <param name="overlay_bottom" default="15"/>
+	  <param name="badge_right" default="15"/>
 	  <param name="image_type" default="$VAR[FanartImage]"/>
 	  <param name="aspect" default="scale"/>
 	  <param name="defaultID" default="videos"/>
@@ -1678,7 +1589,7 @@
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="image">
-				<centerright>32</centerright>
+				<right>$PARAM[badge_right]</right>
 				<centertop>32</centertop>
 				<width>32</width>
 				<height>32</height>
@@ -1739,7 +1650,7 @@
 			<control type="group">
 				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<control type="image">
-					<right>15</right>
+					<right>$PARAM[badge_right]</right>
 					<centertop>30</centertop>
 					<height>30</height>
 					<width>30</width>
@@ -1747,7 +1658,7 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>
 				<control type="label">
-					<right>15</right>
+					<right>$PARAM[badge_right]</right>
 					<centertop>30</centertop>
 					<height>30</height>
 					<width>30</width>
@@ -1779,7 +1690,7 @@
 				<left>10</left>
 			</control>
 			<control type="image">
-				<centerright>32</centerright>
+				<right>$PARAM[badge_right]</right>
 				<centertop>32</centertop>
 				<width>32</width>
 				<height>32</height>
@@ -1830,7 +1741,7 @@
 			<control type="group">
 				<visible>Integer.IsGreater(ListItem.Property(UnwatchedEpisodes),0)</visible>
 				<control type="image">
-					<right>15</right>
+					<right>$PARAM[badge_right]</right>
 					<centertop>30</centertop>
 					<height>30</height>
 					<width>30</width>
@@ -1838,7 +1749,7 @@
 					<aspectratio align="center" aligny="center">keep</aspectratio>
 				</control>
 				<control type="label">
-					<right>15</right>
+					<right>$PARAM[badge_right]</right>
 					<centertop>30</centertop>
 					<height>30</height>
 					<width>30</width>
@@ -1861,10 +1772,10 @@
 		</definition>
 	</include>
 	<include name="EmbyLiveTVWidgetContent">
-	  <param name="widget_width" default="350"/>
-	  <param name="item_width" default="335"/>
-	  <param name="widget_height" default="245"/>
-	  <param name="item_height" default="230"/>
+	  <param name="widget_width" default="450"/>
+	  <param name="item_width" default="395"/>
+	  <param name="widget_height" default="255"/>
+	  <param name="item_height" default="240"/>
 	  <param name="overlay_bottom" default="15"/>
 	  <definition>
 		<include>Animation.FadeIn</include>
@@ -1894,8 +1805,9 @@
 				<top>22</top>
 				<height>20</height>
 				<width>300</width>
-				<right>10</right>
+				<right>60</right>
 				<font>Tiny</font>
+				<align>right</align>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
@@ -1909,7 +1821,7 @@
 				<top>5</top>
 				<height>100</height>
 				<width>100</width>
-				<right>20</right>
+				<right>60</right>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
 			</control>
@@ -1950,7 +1862,7 @@
 				<include>Animation.FadeOut</include>
 			</control>
 			<control type="progress">
-				<right>10</right>
+				<right>60</right>
 				<width>60</width>
 				<height>20</height>
 				<bottom>22</bottom>
@@ -1983,12 +1895,12 @@
 			<control type="textbox">
 				<left>15</left>
 				<top>110</top>
-				<right>15</right>
+				<right>60</right>
 				<bottom>55</bottom>
 				<align>left</align>
 				<font>Micro</font>
-				<height>80</height>
-				<width>$PARAM[item_width]</width>
+				<height>76</height>
+				<width>380</width>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Plot]</label>
@@ -2024,8 +1936,9 @@
 				<top>22</top>
 				<height>20</height>
 				<width>300</width>
-				<right>10</right>
+				<right>60</right>
 				<font>Tiny</font>
+				<align>right</align>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$VAR[EmbyWidget1ContentLabel]</label>
@@ -2036,7 +1949,7 @@
 				<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[ListItem.Icon]</texture>
 				<height>100</height>
 				<width>100</width>
-				<right>20</right>
+				<right>60</right>
 				<top>5</top>
 			</control>
 			<control type="label">
@@ -2070,7 +1983,7 @@
 				<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
 			</control>
 			<control type="progress">
-				<right>10</right>
+				<right>60</right>
 				<width>60</width>
 				<height>20</height>
 				<bottom>22</bottom>
@@ -2086,11 +1999,11 @@
 			<control type="label">
 				<left>15</left>
 				<top>80</top>
-				<right>15</right>
+				<right>60</right>
 				<align>left</align>
 				<font>Tiny</font>
 				<height>20</height>
-				<width>330</width>
+				<width>$PARAM[item_width]</width>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]</label>
@@ -2098,12 +2011,12 @@
 			<control type="textbox">
 				<left>15</left>
 				<top>110</top>
-				<right>15</right>
+				<right>60</right>
 				<bottom>55</bottom>
 				<align>left</align>
 				<font>Micro</font>
-				<height>80</height>
-				<width>330</width>
+				<height>76</height>
+				<width>380</width>
 				<textcolor>Dark1</textcolor>
 				<selectedcolor>Dark1</selectedcolor>
 				<label>$INFO[ListItem.Plot]</label>
@@ -2121,6 +2034,7 @@
 				<height>$PARAM[item_height]</height>
 				<texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
 				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
+				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
 			</control>
 		</focusedlayout>
 		</definition>
