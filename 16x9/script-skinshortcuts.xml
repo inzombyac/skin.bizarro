@@ -371,8 +371,7 @@
                     <height>66</height>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
-                    <visible>!String.IsEqual(Container(211).ListItem.Label2,library) | !String.IsEqual(Window.Property(groupname),mainmenu)</visible>
-                   <!--  <visible>Integer.IsGreater(Container(211).Position, 1)</visible> -->
+                   <visible>!String.IsEqual(Window.Property(groupname),mainmenu) | [String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,1)]</visible>
                 </control>
                 <control type="button" id="304" description="Down">
                     <width>100%</width>
