@@ -1,3 +1,6 @@
+1.2.4
+- Movie poster widgets and better widget spacing.
+
 1.2.3
 
 - Remove recordings from continue watching list
