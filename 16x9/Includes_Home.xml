@@ -246,6 +246,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget1Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),music)</visible>
@@ -373,6 +374,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget2Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),music)</visible>
@@ -512,6 +514,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget3Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),music)</visible>
@@ -656,6 +659,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget4Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),music)</visible>
@@ -805,6 +809,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget5Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),music)</visible>
@@ -964,6 +969,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget6Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),music)</visible>
@@ -1129,6 +1135,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget7Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),music)</visible>
@@ -1303,6 +1310,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget8Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),music)</visible>
@@ -1487,6 +1495,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget9Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),music)</visible>
@@ -1680,6 +1689,7 @@
 						<param name="item_width">230</param>
 						<param name="widget_width">303</param>
 						<param name="aspect">scale</param>
+						<param name="badge_right">73</param>
 					</include>
 					<content limit="25" target="music">$VAR[EmbyHomeWidget10Content]</content>
 					<visible>String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),music)</visible>
