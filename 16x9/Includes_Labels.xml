@@ -322,6 +322,7 @@
 		<value condition="ListItem.HasTimer"> • $LOCALIZE[19058]</value>
 	</variable>
 	<variable name="PlayerStatus">
+		<value condition="Window.IsActive(GameOSD.xml)">$LOCALIZE[112] - $INFO[Player.Time] / $INFO[Player.Duration]</value>
 		<value condition="Player.Caching">$LOCALIZE[439] $INFO[Player.CacheLevel,,%]</value>
 		<value condition="Player.Forwarding32x">FF 32x</value>
 		<value condition="Player.Forwarding16x">FF 16x</value>
@@ -533,11 +534,12 @@
     	<value condition="String.StartsWith(Window(home).Property(kodiversion_point),9)">9</value>
     </variable>	
     <variable name="SkinShortcutsImageLabel">
+    	<!-- <value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),library)">Library</value> -->
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),weather)">Weather Forecast</value>
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">TV Channels</value>
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),10007)">$LOCALIZE[10007]</value>
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEmpty(Container(211).ListItem.Property(widgetName))">$INFO[Container(211).ListItem.Property(widgetName)]</value>
     	<value condition="String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0)">Widget</value>
-    	<value>$LOCALIZE[19190]</value>
+    	<value>$LOCALIZE[33068]</value>
     </variable>
 </includes>

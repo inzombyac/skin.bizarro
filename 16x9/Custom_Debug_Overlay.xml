@@ -524,6 +524,12 @@
                     <visible>Window.IsVisible(VideoOSD.xml)</visible>
                 </control>
 
+                 <control type="label">
+                    <include>DialogID</include>
+                    <label>GameOSD.xml</label>
+                    <visible>Window.IsVisible(GameOSD.xml)</visible>
+                </control>
+
                 <control type="label">
                     <include>DialogID</include>
                     <label>VideoOSDBookmarks.xml</label>

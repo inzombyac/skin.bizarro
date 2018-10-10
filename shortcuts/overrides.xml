@@ -88,6 +88,13 @@
                 <shortcut label="1038" type="32019" icon="DefaultAddonMusic.png">ActivateWindow(MusicLibrary,Addons,return)</shortcut>
                 <content>addon-audio</content>
             </node>
+            <node label="Game Add-On">
+                <shortcut label="Game add-ons" type="games" icon="DefaultGameAddons.png">ActivateWindow(addonbrowser,addons://user/category.gameaddons,return)</shortcut>
+                <shortcut label="Controller Profiles" type="addons" icon="DefaultGameAddons.png">ActivateWindow(addonbrowser,addons://user/kodi.game.controller,return)</shortcut>
+                <shortcut label="Game Providers" type="addons" icon="DefaultGameAddons.png">ActivateWindow(addonbrowser,addons://user/category.gameproviders,return)</shortcut>
+                <shortcut label="Standalone Games" type="addons" icon="DefaultGameAddons.png">ActivateWindow(addonbrowser,addons://user/category.standalonegames,return)</shortcut>
+                <shortcut label="Game Support" type="addons" icon="DefaultGameAddons.png">ActivateWindow(addonbrowser,addons://user/category.gamesupport,return)</shortcut>
+            </node>
             <node label="32012">
                 <shortcut label="1039" type="32020" icon="DefaultAddonPicture.png">ActivateWindow(Pictures,Addons,return)</shortcut>
                 <content>addon-image</content>

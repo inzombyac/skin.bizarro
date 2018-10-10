@@ -1363,6 +1363,7 @@
 		<value condition="Window.IsVisible(FileManager.xml)">special://skin/extras/icons/database.png</value>
 		<value condition="Window.IsVisible(EventLog.xml)">special://skin/extras/icons/warning.png</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml)">special://skin/extras/icons/video-addons.png</value>
+		<value condition="Window.IsVisible(GameOSD.xml)">special://skin/extras/icons/games.png</value>
 		<value>special://skin/extras/icons/artist.png</value>
 	</variable>
 	<variable name="MainHeaderLabel">
