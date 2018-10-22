@@ -149,6 +149,12 @@
                     <visible>Window.IsVisible(VideoFullScreen.xml)</visible>
                 </control>
 
+                <control type="label">
+                    <include>WindowID</include>
+                    <label>script-globalsearch.xml</label>
+                    <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+                </control>
+
                 <!-- Dialog labels -->
 
                 <control type="label">
@@ -580,32 +586,42 @@
             <control type="label">
                 <include>ControlID</include>
                 <label>Folder Path: $INFO[Container.FolderPath]</label>
-                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml)</visible>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
             </control>
             <control type="label">
                 <include>ControlID</include>
                 <label>$INFO[System.CurrentControlID, Control ID: ]</label>
                 <visible>Window.IsVisible(Home.xml)</visible>
             </control>
+            <control type="label">
+                <include>ControlID</include>
+                <label>$INFO[Container(9000).Content,Group content: ]</label>
+                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
 			<control type="label">
                 <include>ControlID2</include>
+                <label>$INFO[Container(50).Content,List content: ]</label>
+                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+            </control>
+            <control type="label">
+                <include>ControlID2</include>
                 <label>Path: $INFO[Container.ListItem.FileNameAndPath]</label>
-                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml)</visible>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
             </control>
             <control type="label">
                 <include>ControlID2</include>
                 <label>Path: $INFO[Player.Filenameandpath]</label>
-                <visible>Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml)</visible>
+                <visible>Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID3</include>
                 <label>Content: $INFO[Container.Content]</label>
-                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml)</visible>
+                <visible>!Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID4</include>
                 <label>Poster: $VAR[PlayerPosterOSD] / $INFO[Skin.String(LastIcon)]</label>
-				<visible>Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml)</visible>
+				<visible>Window.IsVisible(VideoFullScreen.xml) + !Window.IsVisible(Home.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
             </control>
 			<control type="label">
                 <include>ControlID4</include>

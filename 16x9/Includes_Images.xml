@@ -235,4 +235,10 @@
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>special://skin/extras/backgrounds/smoke.png</value>
 	</variable>
+	<variable name="GlobalSearchCategoryIcon">
+		<value condition="String.IsEqual(Container(9000).ListItem.Icon,globalsearch-icon-actors.png)">DefaultActor.png</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Icon,globalsearch-icon-albums.png)">DefaultAlbumCover.png</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Icon,globalsearch-icon-movies.png)">DefaultMovies.png</value>
+		<value>DefaultVideo.png</value>
+	</variable>
 </includes>

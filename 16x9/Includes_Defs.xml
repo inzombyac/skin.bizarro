@@ -406,7 +406,7 @@
 				<top>25</top>
 				<width>70</width>
 				<height>70</height>
-				<onclick>RunScript(script.globalsearch,tvshows=true&amp;movies=true&amp;episodes=true&amp;actors=true;artists=true&amp;albums=true&amp;songs=true)</onclick>
+				<onclick>RunScript(script.globalsearch)</onclick>
 				<ondown>9000</ondown>
 				<onup condition="Window.IsVisible(Home.xml)">9267</onup>
 				<onup condition="!Window.IsVisible(Home.xml)">9091</onup>

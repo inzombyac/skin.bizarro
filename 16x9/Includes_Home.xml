@@ -2560,18 +2560,7 @@
 					<centertop>50%</centertop>
 					<width>220</width>
 					<height>64</height>
-					<visible>
-						[Control.HasFocus(4001) + !String.IsEmpty(Container(4001).ListItem.Duration) + !String.IsEqual(Container(4001).ListItem.Duration,0)] | 
-						[Control.HasFocus(4002) + !String.IsEmpty(Container(4002).ListItem.Duration) + !String.IsEqual(Container(4002).ListItem.Duration,0)] | 
-						[Control.HasFocus(4003) + !String.IsEmpty(Container(4003).ListItem.Duration) + !String.IsEqual(Container(4003).ListItem.Duration,0)] | 
-						[Control.HasFocus(4004) + !String.IsEmpty(Container(4004).ListItem.Duration) + !String.IsEqual(Container(4004).ListItem.Duration,0)] | 
-						[Control.HasFocus(4005) + !String.IsEmpty(Container(4005).ListItem.Duration) + !String.IsEqual(Container(4005).ListItem.Duration,0)] | 
-						[Control.HasFocus(4006) + !String.IsEmpty(Container(4006).ListItem.Duration) + !String.IsEqual(Container(4006).ListItem.Duration,0)] | 
-						[Control.HasFocus(4007) + !String.IsEmpty(Container(4007).ListItem.Duration) + !String.IsEqual(Container(4007).ListItem.Duration,0)] | 
-						[Control.HasFocus(4008) + !String.IsEmpty(Container(4008).ListItem.Duration) + !String.IsEqual(Container(4008).ListItem.Duration,0)] | 
-						[Control.HasFocus(4009) + !String.IsEmpty(Container(4009).ListItem.Duration) + !String.IsEqual(Container(4009).ListItem.Duration,0)] | 
-						[Control.HasFocus(4010) + !String.IsEmpty(Container(4010).ListItem.Duration) + !String.IsEqual(Container(4010).ListItem.Duration,0)]
-					</visible>
+					<visible>!String.IsEmpty(ListItem.Duration)</visible>
 					<control type="image">
 						<height>50</height>
 						<centertop>50%</centertop>
@@ -2585,7 +2574,7 @@
 						<height>64</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>$VAR[EmbyDurationHomeLong]</label>
+						<label>$VAR[DurationLong]</label>
 						<font>DurationFontSmall</font>
 						<textcolor>Dark1</textcolor>
 					</control>

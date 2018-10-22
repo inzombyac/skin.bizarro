@@ -1232,7 +1232,7 @@
 					<height>50</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label>$INFO[Container(9500).ListItem.Duration,, $LOCALIZE[31102]]</label>
+					<label>$INFO[Container(9500).ListItem.Duration]</label>
 					<font>DurationFontSmall</font>
 					<textcolor>Dark1</textcolor>
 					<visible>!String.IsEmpty(Container(9500).ListItem.Duration)</visible>
@@ -1317,6 +1317,7 @@
 		</control>
 	</include>
 	<variable name="HeaderIcon">
+		<value condition="Window.IsVisible(script-globalsearch.xml)">special://skin/extras/icons/search.png</value>
 		<value condition="Window.IsVisible(Home)">$VAR[SystemAvatar]</value>
 		<value condition="Player.Muted">special://skin/extras/icons/mute.png</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">special://skin/extras/icons/power.png</value>
@@ -1367,10 +1368,11 @@
 		<value>special://skin/extras/icons/artist.png</value>
 	</variable>
 	<variable name="MainHeaderLabel">
+		<value condition="Window.IsVisible(script-globalsearch.xml)">Search Results $INFO[Container.NumItems,(,)]</value>
 		<value condition="Window.IsVisible(DialogAddonInfo.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerBigTitle]</value>
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.Artist]</value>
-		<value condition="Window.IsVisible(ColorPicker.xml)">Pick a Colour</value>
+		<value condition="Window.IsVisible(ColorPicker.xml)">Select a Color</value>
 		<value condition="Window.IsVisible(MyMusicPlaylistEditor.xml)">$LOCALIZE[20011]</value>
 		<value condition="Window.IsVisible(DialogButtonMenu.xml)">$LOCALIZE[33060]</value>
 		<value condition="Window.IsVisible(DialogFavourites.xml)">$LOCALIZE[1036]</value>
@@ -1417,6 +1419,8 @@
 		<value>$LOCALIZE[10000]</value>
 	</variable>
 	<variable name="SubHeaderLabel">
+		<value condition="Window.IsActive(script-globalsearch.xml) + Control.HasFocus(9000)">$INFO[Container(9000).ListItem.Label]</value>
+		<value condition="Window.IsActive(script-globalsearch.xml)">$INFO[ListItem.Label]</value>
 		<value condition="Window.IsVisible(Home.xml)">$VAR[EmbyFooterLabel]</value>
 		<value condition="Window.IsVisible(DialogSeekBar.xml)">$VAR[PlayerTitle]</value>
 		<value condition="Window.IsVisible(MusicVisualisation.xml)">$INFO[MusicPlayer.TrackNumber,, • ]$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Album, • ,]$INFO[MusicPlayer.Year, (,)]$INFO[MusicPlayer.Genre, • ,]</value>
@@ -1506,8 +1510,18 @@
 					<font>Button</font>
 					<texturefocus colordiffuse="$VAR[ColorHighlight]">common/menu.png</texturefocus>
 					<texturenofocus>special://skin/extras/icons/menu.png</texturenofocus>
-					<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
+					<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml) + !Window.IsVisible(DialogAddonInfo.xml) + !Window.IsVisible(script-globalsearch.xml)</visible>
 				</control>
+				<control type="button" id="3634">
+	                <width>80</width>
+					<height>80</height>
+					<onclick>Back</onclick>
+					<font>Button</font>
+					<ondown>990</ondown>
+	                <texturefocus colordiffuse="$VAR[ColorHighlight]">common/back.png</texturefocus>
+					<texturenofocus>special://skin/extras/icons/back.png</texturenofocus>
+	                <visible>Window.IsVisible(script-globalsearch.xml)</visible>
+	            </control>
 				<control type="group" description="iconbox">
 					<width>80</width>
 					<height>80</height>
@@ -1566,14 +1580,14 @@
 							<width>32</width>
 							<aspectratio aligny="center">keep</aspectratio>
 							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon1]</texture>
-							<visible>!String.IsEmpty(Container.SortOrder)</visible>
+							<visible>!String.IsEmpty(Container.SortOrder) + !Window.IsActive(script-globalsearch.xml)</visible>
 						</control>
 						<control type="image">
 							<height>32</height>
 							<width>32</width>
 							<aspectratio aligny="center">keep</aspectratio>
 							<texture colordiffuse="Dark1">$VAR[SubHeaderIcon2]</texture>
-							<visible>!String.IsEmpty(Container.SortMethod)</visible>
+							<visible>!String.IsEmpty(Container.SortMethod) + !Window.IsActive(script-globalsearch.xml)</visible>
 						</control>
 						<!-- <control type="image">
 							<height>52</height>
@@ -1590,7 +1604,7 @@
 							<font>Button</font>
 							<texturefocus colordiffuse="Dark1">flags\sort\sort_unwatched.png</texturefocus>
 							<texturenofocus colordiffuse="Dark1">flags\sort\sort_unwatched.png</texturenofocus>
-							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101])</visible>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16101]) + !Window.IsActive(script-globalsearch.xml)</visible>
 						</control>
 						<control type="button" id="9875">
 							<width>32</width>
@@ -1600,7 +1614,7 @@
 							<font>Button</font>
 							<texturefocus colordiffuse="Dark1">flags\sort\sort_watched.png</texturefocus>
 							<texturenofocus colordiffuse="Dark1">flags\sort\sort_watched.png</texturenofocus>
-							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102])</visible>
+							<visible>String.IsEqual(Control.GetLabel(10),$LOCALIZE[16102]) + !Window.IsActive(script-globalsearch.xml)</visible>
 						</control>
 						<control type="button" id="9876">
 							<width>32</width>
@@ -1610,14 +1624,14 @@
 							<font>Button</font>
 							<texturefocus colordiffuse="Dark1">flags\sort\filtered.png</texturefocus>
 							<texturenofocus colordiffuse="Dark1">flags\sort\filtered.png</texturenofocus>
-							<visible>Container.Filtered</visible>
+							<visible>Container.Filtered + !Window.IsActive(script-globalsearch.xml)</visible>
 						</control>
 						<control type="image">
 							<height>10</height>
 							<width>10</width>
 							<aspectratio>keep</aspectratio>
 							<texture>common\null.png</texture>
-							<visible>!String.IsEmpty(Container.SortOrder) | Container.Filtered</visible>
+							<visible>[!String.IsEmpty(Container.SortOrder) | Container.Filtered] + !Window.IsActive(script-globalsearch.xml)</visible>
 						</control>
 						<control type="label">
 							<height>32</height>
@@ -1633,6 +1647,7 @@
 						<width>1350</width>
 						<textcolor>$VAR[ColorHighlight2]</textcolor>
 						<label>$VAR[EmbyEndTimeLabel,$LOCALIZE[19127]: ,]</label>
+						<visible>!Window.IsActive(script-globalsearch.xml) | [Window.IsActive(script-globalsearch.xml) + Control.HasFocus(50)]</visible>
 					</control>
 				</control>
 			</control>

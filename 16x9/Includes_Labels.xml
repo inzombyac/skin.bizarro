@@ -51,10 +51,10 @@
 		<value condition="Container.IsUpdating"></value>
 		<value condition="Container.Content(albums)">$INFO[ListItem.Album]</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), • , $LOCALIZE[16101]]$INFO[ListItem.Studio, • ]</value>
-		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,][COLOR gray]$INFO[ListItem.Duration, • , $LOCALIZE[31102]][/COLOR]</value>
+		<value condition="Container.Content(episodes)">$INFO[ListItem.Season,$LOCALIZE[20373] ,]$INFO[ListItem.Episode, • $LOCALIZE[20359] ,]$INFO[ListItem.Premiered, • ,][COLOR gray][/COLOR]</value>
 		<value condition="!String.IsEmpty(ListItem.Genre) + String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Studio]$INFO[ListItem.Genre, • ,][COLOR gray]$INFO[ListItem.Property(esrb), • ,][/COLOR]</value>
-		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies) + !String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year,(,) • ]$INFO[ListItem.Genre][COLOR gray]$INFO[ListItem.Duration, • , min][/COLOR]</value>
-		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies)">$INFO[ListItem.Genre][COLOR gray]$INFO[ListItem.Duration, • , min][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies) + !String.IsEmpty(ListItem.Year)">$INFO[ListItem.Year,(,) • ]$INFO[ListItem.Genre][COLOR gray][/COLOR]</value>
+		<value condition="!String.IsEmpty(ListItem.Genre) + Container.Content(movies)">$INFO[ListItem.Genre][COLOR gray][/COLOR]</value>
 		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
 		<value condition="!String.IsEmpty(Window(home).Property(Set.Movies.Genre))">$INFO[Window(home).Property(Set.Movies.Genre)]</value>
 		<value condition="!String.IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
@@ -436,31 +436,9 @@
 		<value>$INFO[ListItem.Episode]</value>
 	</variable>
 	<variable name="DurationLong">
-        <value condition="String.IsEqual(ListItem.DBTYPE,song)">$INFO[ListItem.Duration,, $LOCALIZE[31102]]</value>
-		<value condition="!String.IsEqual(Window(Home).Property(SkinHelper.ListItemDuration.Hours),0) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItemDuration.Hours))">$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Hours),,h]$INFO[Window(Home).Property(SkinHelper.ListItemDuration.Minutes), ,$LOCALIZE[31102]]</value>
-		<value>$INFO[ListItem.Duration,,$LOCALIZE[31102]]</value>
-	</variable>
-	<variable name="EmbyDurationHomeLong">
-		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(300).ListItemAbsolute(1).Property(type),livetv) + !String.IsEmpty(Container(4001).ListItem.Duration) + !String.IsEqual(Container(4001).ListItem.Duration,0)">$INFO[Container(4001).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4001) + !String.IsEmpty(Container(4001).ListItem.Duration) + !String.IsEqual(Container(4001).ListItem.Duration,0)">$INFO[Container(4001).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(300).ListItemAbsolute(2).Property(type),livetv) + !String.IsEmpty(Container(4002).ListItem.Duration) + !String.IsEqual(Container(4002).ListItem.Duration,0)">$INFO[Container(4002).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4002) + !String.IsEmpty(Container(4002).ListItem.Duration) + !String.IsEqual(Container(4002).ListItem.Duration,0)">$INFO[Container(4002).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(300).ListItemAbsolute(3).Property(type),livetv) + !String.IsEmpty(Container(4003).ListItem.Duration) + !String.IsEqual(Container(4003).ListItem.Duration,0)">$INFO[Container(4003).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4003) + !String.IsEmpty(Container(4003).ListItem.Duration) + !String.IsEqual(Container(4003).ListItem.Duration,0)">$INFO[Container(4003).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(300).ListItemAbsolute(4).Property(type),livetv) + !String.IsEmpty(Container(4004).ListItem.Duration) + !String.IsEqual(Container(4004).ListItem.Duration,0)">$INFO[Container(4004).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4004) + !String.IsEmpty(Container(4004).ListItem.Duration) + !String.IsEqual(Container(4004).ListItem.Duration,0)">$INFO[Container(4004).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(300).ListItemAbsolute(5).Property(type),livetv) + !String.IsEmpty(Container(4005).ListItem.Duration) + !String.IsEqual(Container(4005).ListItem.Duration,0)">$INFO[Container(4005).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4005) + !String.IsEmpty(Container(4005).ListItem.Duration) + !String.IsEqual(Container(4005).ListItem.Duration,0)">$INFO[Container(4005).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(300).ListItemAbsolute(6).Property(type),livetv) + !String.IsEmpty(Container(4006).ListItem.Duration) + !String.IsEqual(Container(4006).ListItem.Duration,0)">$INFO[Container(4006).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4006) + !String.IsEmpty(Container(4006).ListItem.Duration) + !String.IsEqual(Container(4006).ListItem.Duration,0)">$INFO[Container(4006).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(300).ListItemAbsolute(7).Property(type),livetv) + !String.IsEmpty(Container(4007).ListItem.Duration) + !String.IsEqual(Container(4007).ListItem.Duration,0)">$INFO[Container(4007).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4007) + !String.IsEmpty(Container(4007).ListItem.Duration) + !String.IsEqual(Container(4007).ListItem.Duration,0)">$INFO[Container(4007).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(300).ListItemAbsolute(8).Property(type),livetv) + !String.IsEmpty(Container(4008).ListItem.Duration) + !String.IsEqual(Container(4008).ListItem.Duration,0)">$INFO[Container(4008).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4008) + !String.IsEmpty(Container(4008).ListItem.Duration) + !String.IsEqual(Container(4008).ListItem.Duration,0)">$INFO[Container(4008).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(300).ListItemAbsolute(9).Property(type),livetv) + !String.IsEmpty(Container(4009).ListItem.Duration) + !String.IsEqual(Container(4009).ListItem.Duration,0)">$INFO[Container(4009).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4009) + !String.IsEmpty(Container(4009).ListItem.Duration) + !String.IsEqual(Container(4009).ListItem.Duration,0)">$INFO[Container(4009).ListItem.Duration,,$LOCALIZE[31102]]</value>
-		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(300).ListItemAbsolute(10).Property(type),livetv) + !String.IsEmpty(Container(4010).ListItem.Duration) + !String.IsEqual(Container(4010).ListItem.Duration,0)">$INFO[Container(4010).ListItem.Duration]</value>
-		<value condition="Control.HasFocus(4010) + !String.IsEmpty(Container(4010).ListItem.Duration) + !String.IsEqual(Container(4010).ListItem.Duration,0)">$INFO[Container(4010).ListItem.Duration,,$LOCALIZE[31102]]</value>
+		<value condition="!String.IsEqual(ListItem.Duration(h),0) + !String.IsEqual(ListItem.Duration(m),0)">$INFO[ListItem.Duration(h),,h ]$INFO[ListItem.Duration(m),, $LOCALIZE[31102]]</value>
+		<value condition="!String.IsEqual(ListItem.Duration(h),0)">$INFO[ListItem.Duration(h),, h]</value>
+		<value condition="!String.IsEmpty(ListItem.Duration(m))">$INFO[ListItem.Duration(m),, $LOCALIZE[31102]]</value>
 	</variable>
 	<variable name="SkinShortcutPath">
 		<value condition="Control.HasFocus(312)">$VAR[EmbyHomeWidgetSelection]</value>

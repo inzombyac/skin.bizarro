@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Foundation -->
 <window id="10140">
-    <defaultcontrol always="true">9</defaultcontrol>
+    <defaultcontrol always="true">3</defaultcontrol>
     <controls>
         <include>GlobalOverlay</include>
         <control type="group">
@@ -22,7 +22,7 @@
                 <height>100</height>
                 <texture border="16" colordiffuse="DialogHeader">common/rounded-shadow8.png</texture>
             </control>
-            <control type="label" id="20">
+            <control type="label" id="2">
                 <description>Header Label</description>
                 <posx>15</posx>
                 <posy>-15</posy>
@@ -32,63 +32,69 @@
                 <label>-</label>
                 <textcolor>Light1</textcolor>
             </control>
-            <control type="grouplist" id="9">
+            <control type="grouplist" id="3">
                 <description>button area</description>
                 <posx>15</posx>
                 <posy>114</posy>
                 <width>387</width>
-                <height>342</height>
+                <height>580</height>
                 <itemgap>3</itemgap>
                 <onleft>30</onleft>
-                <onright>2</onright>
-                <onup>9</onup>
-                <ondown>9</ondown>
+                <onright>5</onright>
+                <onup>3</onup>
+                <ondown>3</ondown>
             </control>
-            <control type="grouplist" id="2">
+            <control type="grouplist" id="5">
                 <description>control area</description>
                 <posx>458</posx>
                 <posy>114</posy>
                 <width>969</width>
                 <height>687</height>
                 <itemgap>3</itemgap>
-                <onup>9001</onup>
+                <onup>5</onup>
                 <ondown>9001</ondown>
-                <onleft>9</onleft>
-                <onright>9</onright>
+                <onleft>3</onleft>
+                <onright>3</onright>
             </control>
-            <control type="togglebutton" id="13">
+            <control type="togglebutton" id="10">
                 <description>Default Category Button</description>
                 <width>387</width>
                 <align>left</align>
                 <texturefocus colordiffuse="Dark1" border="8">common/box.png</texturefocus>
                 <alttexturefocus colordiffuse="Dark1" border="8">common/box.png</alttexturefocus>
             </control>
-            <control type="button" id="3">
+            <control type="button" id="7">
                 <description>Default Button</description>
                 <align>left</align>
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
-            <control type="radiobutton" id="4">
+            <control type="radiobutton" id="8">
                 <description>Default RadioButton</description>
                 <align>left</align>
                 <radioposx>910</radioposx>
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
-            <control type="spincontrolex" id="5">
+            <control type="spincontrolex" id="9">
                 <description>Default spincontrolex</description>
                 <align>left</align>
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
-            <control type="label" id="7">
+            <control type="label" id="14">
                 <label>-</label>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
             </control>
-            <control type="image" id="6">
+            <control type="image" id="11">
                 <description>Default Seperator</description>
                 <height>-3</height>
                 <texture>-</texture>
             </control>
-            <control type="sliderex" id="8">
+            <control type="edit" id="12">
+                <align>left</align>
+                <!-- <font>Button</font> -->
+                <textcolor>Black70</textcolor>
+                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+            </control>
+            <control type="sliderex" id="13">
                 <description>Default Slider</description>
                 <width>969</width>
                 <align>left</align>
@@ -96,53 +102,53 @@
             </control>
             <control type="image">
                 <posx>15</posx>
-                <posy>513</posy>
-                <width>383</width>
-                <height>383</height>
+                <posy>700</posy>
+                <width>200</width>
+                <height>200</height>
                 <texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
             </control>
             <control type="group" id="9001">
                 <posx>458</posx>
                 <posy>828</posy>
-                <control type="button" id="10">
+                <control type="button" id="28">
                     <description>OK Button</description>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>300</width>
                     <label>186</label>
-                    <onleft>12</onleft>
-                    <onright>11</onright>
-                    <onup>2</onup>
-                    <ondown>2</ondown>
+                    <onleft>3</onleft>
+                    <onright>29</onright>
+                    <onup>5</onup>
+                    <ondown>5</ondown>
                     <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-                <control type="button" id="11">
+                <control type="button" id="29">
                     <description>Cancel Button</description>
                     <posx>335</posx>
                     <posy>0</posy>
                     <width>300</width>
                     <label>222</label>
-                    <onleft>10</onleft>
-                    <onright>12</onright>
-                    <onup>2</onup>
-                    <ondown>2</ondown>
+                    <onleft>28</onleft>
+                    <onright>30</onright>
+                    <onup>5</onup>
+                    <ondown>5</ondown>
                     <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>
                 </control>
-                <control type="button" id="12">
+                <control type="button" id="30">
                     <description>Defaults Button</description>
                     <posx>669</posx>
                     <posy>0</posy>
                     <width>300</width>
                     <label>409</label>
-                    <onleft>11</onleft>
-                    <onright>10</onright>
-                    <onup>2</onup>
-                    <ondown>2</ondown>
+                    <onleft>29</onleft>
+                    <onright>30</onright>
+                    <onup>5</onup>
+                    <ondown>5</ondown>
                     <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
                     <texturenofocus colordiffuse="Black12" border="5">common/box.png</texturenofocus>
                     <include>DefDialogButtons</include>

@@ -125,7 +125,7 @@
 				</control>
 				<control type="image"> <!--focused background left edge -->
 					<top>350</top>
-					<width>5</width>
+					<width>6</width>
 					<height>70</height>
 					<texture colordiffuse="$VAR[ColorHighlight]">common/white.png</texture>
 					<visible>ControlGroup(9100).HasFocus(9106)</visible>
