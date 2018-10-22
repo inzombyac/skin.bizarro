@@ -2,7 +2,7 @@
 <!-- Foundation -->
 <window id="109">
     <defaultcontrol always="true">21</defaultcontrol>
-    <zorder>10</zorder>
+    <zorder>30</zorder>
     <controls>
         <include>GlobalOverlay</include>
         <control type="group">
@@ -27,7 +27,7 @@
                 <width>450</width>
                 <height>75</height>
                 <aspectratio>stretch</aspectratio>
-                <texture border="5" colordiffuse="Dark1">common/box.png</texture>
+                <texture border="5" colordiffuse="Light1">common/box.png</texture>
             </control>
             <control type="label" id="4">
                 <description>Edit Text</description>
@@ -37,7 +37,7 @@
                 <width>450</width>
                 <height>75</height>
                 <align>center</align>
-                <textcolor>Light1</textcolor>
+                <textcolor>$VAR[ColorHighlight]</textcolor>
             </control>
             <control type="group">
                 <top>220</top>
