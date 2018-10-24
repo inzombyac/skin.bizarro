@@ -42,6 +42,7 @@
 		<value condition="!String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<!-- <value condition="!String.IsEmpty(VideoPlayer.Cover)">$INFO[VideoPlayer.Cover]</value> -->
 		<value condition="!String.IsEmpty(MusicPlayer.Cover) + !Player.HasVideo">$INFO[MusicPlayer.Cover]</value>
+		<value condition="!String.IsEmpty(Player.Art(thumb))">$INFO[Player.Art(thumb)]</value>
 		<!-- <value condition="!String.IsEmpty(Player.Icon)">$INFO[Player.Icon]</value> -->
 		<value>$INFO[Skin.String(LastIcon)]</value>
 	</variable>

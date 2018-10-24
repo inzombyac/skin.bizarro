@@ -1977,7 +1977,6 @@
 	  <param name="item_width" default="395"/>
 	  <param name="widget_height" default="255"/>
 	  <param name="item_height" default="240"/>
-	  <param name="overlay_bottom" default="15"/>
 	  <definition>
 		<include>Animation.FadeIn</include>
 		<include>Animation.FadeOut</include>
@@ -1985,260 +1984,124 @@
 		<orientation>horizontal</orientation>
 		<scrolltime easing="inout" tween="sine">300</scrolltime>
 		<itemlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Channels.jpg</texture>
+			<control type="group">
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
-				<left>10</left>
 				<include>Animation.FadeIn</include>
 				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
-				<height>$PARAM[item_height]</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<top>22</top>
-				<height>20</height>
-				<width>300</width>
-				<right>60</right>
-				<font>Tiny</font>
-				<align>right</align>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyWidget1ContentLabel]</label>
-				<visible>String.IsEmpty(ListItem.Icon)</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[ListItem.Icon]</texture>
-				<top>5</top>
-				<height>100</height>
-				<width>100</width>
-				<right>60</right>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<top>22</top>
-				<height>20</height>
-				<left>30</left>
-				<width>$PARAM[item_width]</width>
-				<font>TwentyEight</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.ChannelNumber]</label>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>$PARAM[overlay_bottom]</bottom>
-				<height>40</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
-				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<bottom>$PARAM[overlay_bottom]</bottom>
-				<left>20</left>
-				<align>left</align>
-				<height>40</height>
-				<width>$PARAM[item_width]</width>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="progress">
-				<right>60</right>
-				<width>60</width>
-				<height>20</height>
-				<bottom>22</bottom>
-				<reveal>true</reveal>
-				<texturebg>pvr/progress-back.png</texturebg>
-				<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
-				<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
-				<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
-				<info>ListItem.Progress</info>
-				<colordiffuse>Dark1</colordiffuse>
-				<visible>IntegerGreaterThan(ListItem.Progress,0)</visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="label">
-				<left>15</left>
-				<top>80</top>
-				<right>15</right>
-				<align>left</align>
-				<font>Tiny</font>
-				<height>20</height>
-				<width>$PARAM[item_width]</width>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]</label>
-				<visible>!Container(300).Scrolling </visible>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-			</control>
-			<control type="textbox">
-				<left>15</left>
-				<top>110</top>
-				<right>60</right>
-				<bottom>55</bottom>
-				<align>left</align>
-				<font>Micro</font>
-				<height>76</height>
-				<width>380</width>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Plot]</label>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
-				<autoscroll time="10000">false</autoscroll>
-			</control>
-			<control type="image">
-				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture diffuse="diffuse/home-fanart.png">common/null.png</texture>
-				<height>$PARAM[item_height]</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-				<include>Animation.FadeIn</include>
-				<include>Animation.FadeOut</include>
+				<include>EmbyLiveTVWidgetLayout</include>
 			</control>
 		</itemlayout>
 		<focusedlayout width="$PARAM[widget_width]" height="$PARAM[widget_height]">
-			<control type="image">
-				<aspectratio>stretch</aspectratio>
-				<texture background="true" diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Channels.jpg</texture>
+			<control type="group">
 				<height>$PARAM[item_height]</height>
 				<width>$PARAM[item_width]</width>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
-				<height>$PARAM[item_height]</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-			</control>
-			<control type="label">
-				<top>22</top>
-				<height>20</height>
-				<width>300</width>
-				<right>60</right>
-				<font>Tiny</font>
-				<align>right</align>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$VAR[EmbyWidget1ContentLabel]</label>
-				<visible>String.IsEmpty(ListItem.Icon) </visible>
-			</control>
-			<control type="image">
-				<aspectratio aligny="top">keep</aspectratio>
-				<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[ListItem.Icon]</texture>
-				<height>100</height>
-				<width>100</width>
-				<right>60</right>
-				<top>5</top>
-			</control>
-			<control type="label">
-				<top>22</top>
-				<height>20</height>
-				<left>30</left>
-				<width>$PARAM[item_width]</width>
-				<font>TwentyEight</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.ChannelNumber]</label>
-			</control>
-			<control type="image">
-				<description>Title overlay</description>
-				<bottom>$PARAM[overlay_bottom]</bottom>
-				<height>40</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-				<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
-				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
-			</control>
-			<control type="label">
-				<bottom>$PARAM[overlay_bottom]</bottom>
-				<left>20</left>
-				<align>left</align>
-				<height>40</height>
-				<width>$PARAM[item_width]</width>
-				<font>Tiny</font>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
-			</control>
-			<control type="progress">
-				<right>60</right>
-				<width>60</width>
-				<height>20</height>
-				<bottom>22</bottom>
-				<reveal>true</reveal>
-				<texturebg>pvr/progress-back.png</texturebg>
-				<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
-				<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
-				<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
-				<info>ListItem.Progress</info>
-				<colordiffuse>Dark1</colordiffuse>
-				<visible>IntegerGreaterThan(ListItem.Progress,0)</visible>
-			</control>
-			<control type="label">
-				<left>15</left>
-				<top>80</top>
-				<right>60</right>
-				<align>left</align>
-				<font>Tiny</font>
-				<height>20</height>
-				<width>$PARAM[item_width]</width>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]</label>
-			</control>
-			<control type="textbox">
-				<left>15</left>
-				<top>110</top>
-				<right>60</right>
-				<bottom>55</bottom>
-				<align>left</align>
-				<font>Micro</font>
-				<height>76</height>
-				<width>380</width>
-				<textcolor>Dark1</textcolor>
-				<selectedcolor>Dark1</selectedcolor>
-				<label>$INFO[ListItem.Plot]</label>
-			</control>
-			<control type="image">
-				<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
-				<texture diffuse="diffuse/home-fanart.png">common/null.png</texture>
-				<height>$PARAM[item_height]</height>
-				<width>$PARAM[item_width]</width>
-				<left>10</left>
-			</control>
-			<control type="image">
-				<left>10</left>
-				<width>$PARAM[item_width]</width>
-				<height>$PARAM[item_height]</height>
-				<texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
-				<visible>!String.IsEqual(ListItem.Label, Get more...)</visible>
-				<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
+				<include>EmbyLiveTVWidgetLayout</include>
+				<control type="image">
+					<texture colordiffuse="$VAR[ColorHighlight]" border="15" diffuse="diffuse/home-fanart.png">common/selectbox.png</texture>
+					<visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
+				</control>
 			</control>
 		</focusedlayout>
 		</definition>
+	</include>
+	<include name="EmbyLiveTVWidgetLayout">
+		<control type="image">
+			<aspectratio>stretch</aspectratio>
+			<texture background="true" diffuse="diffuse/home-fanart.png">special://skin/extras/backgrounds/Channels.jpg</texture>
+		</control>
+		<control type="image">
+			<texture border="15" colordiffuse="Overlay" diffuse="diffuse/home-fanart.png">common/opaque.png</texture>
+		</control>
+		<control type="label">
+			<top>22</top>
+			<height>20</height>
+			<width>80%</width>
+			<right>20</right>
+			<font>Tiny</font>
+			<align>right</align>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$INFO[ListItem.ChannelName]</label>
+			<visible>String.IsEmpty(ListItem.Icon)</visible>
+		</control>
+		<control type="image">
+			<aspectratio aligny="top">keep</aspectratio>
+			<texture background="true" diffuse="diffuse/home-fanart.png">$INFO[ListItem.Icon]</texture>
+			<top>10</top>
+			<height>70</height>
+			<width>100</width>
+			<right>10</right>
+		</control>
+		<control type="label">
+			<aligny>center</aligny>
+			<height>70</height>
+			<left>10</left>
+			<font>TwentyEight</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$INFO[ListItem.ChannelNumber]</label>
+		</control>
+		<control type="image">
+			<description>Title overlay</description>
+			<bottom>0</bottom>
+			<height>40</height>
+			<texture border="15" colordiffuse="Overlay">common/opaque.png</texture>
+		</control>
+		<control type="label">
+			<bottom>0</bottom>
+			<left>10</left>
+			<align>left</align>
+			<height>40</height>
+			<font>Tiny</font>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - , ]</label>
+		</control>
+		<control type="progress">
+			<right>10</right>
+			<width>60</width>
+			<height>20</height>
+			<bottom>22</bottom>
+			<reveal>true</reveal>
+			<texturebg>pvr/progress-back.png</texturebg>
+			<lefttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</lefttexture>
+			<midtexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-mid.png</midtexture>
+			<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
+			<info>ListItem.Progress</info>
+			<colordiffuse>Dark1</colordiffuse>
+			<visible>!String.IsEmpty(ListItem.Progress)</visible>
+		</control>
+		<control type="label">
+			<left>10</left>
+			<top>80</top>
+			<right>10</right>
+			<align>left</align>
+			<font>Tiny</font>
+			<height>20</height>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$INFO[ListItem.Title,[B],[/B]]$INFO[ListItem.EpisodeName, (,)]</label>
+		</control>
+		<control type="textbox">
+			<left>10</left>
+			<top>110</top>
+			<right>10</right>
+			<bottom>55</bottom>
+			<align>left</align>
+			<font>Micro</font>
+			<height>76</height>
+			<textcolor>Dark1</textcolor>
+			<selectedcolor>Dark1</selectedcolor>
+			<label>$INFO[ListItem.Plot]</label>
+			<include>Animation.FadeIn</include>
+			<include>Animation.FadeOut</include>
+			<autoscroll time="10000">false</autoscroll>
+		</control>
+		<control type="image">
+			<aspectratio aligny="top">$PARAM[aspect]</aspectratio>
+			<texture diffuse="diffuse/home-fanart.png">common/null.png</texture>
+		</control>
 	</include>
 	<include name="WeatherWidget">
 		<content type="static">
