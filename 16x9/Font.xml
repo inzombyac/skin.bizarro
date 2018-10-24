@@ -54,12 +54,6 @@
 			<size>38</size>
 		</font>
 		<font>
-			<name>ArtistTtile</name>
-			<filename>segoe-media-center.ttf</filename>
-			<size>68</size>
-			<style>capitalize</style>
-		</font>
-		<font>
 			<name>NetflixSmall</name>
 			<filename>segoe-media-center.ttf</filename>
 			<size>23</size>
@@ -273,6 +267,12 @@
 			<size>220</size>
 			<style>bold</style>
 		</font>
+		<font>
+			<name>ThreeHundred</name>
+			<filename>segoe-media-center.ttf</filename>
+			<size>300</size>
+			<style>bold</style>
+		</font>
 	</fontset>
 	<fontset id="Original" unicode="true">
 		<font>
@@ -307,12 +307,6 @@
 			<name>MusicTitle</name>
 			<filename>Gotham-Light.ttf</filename>
 			<size>38</size>
-		</font>
-		<font>
-			<name>ArtistTtile</name>
-			<filename>Gotham-Light.ttf</filename>
-			<size>68</size>
-			<style>capitalize</style>
 		</font>
 		<font>
 			<name>NetflixSmall</name>
@@ -525,6 +519,11 @@
 			<filename>alaska_thin.ttf</filename>
 			<size>220</size>
 			<style>bold</style>
+		</font>
+		<font>
+			<name>ThreeHundred</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>300</size>
 		</font>
 	</fontset>
 	

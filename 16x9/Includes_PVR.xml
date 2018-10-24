@@ -1486,4 +1486,16 @@
 		<value condition="!Integer.IsGreater(ListItem.ChannelNumber,9)">$NUMBER[0]$NUMBER[0]</value>
 		<value condition="!Integer.IsGreater(ListItem.ChannelNumber,99)">$NUMBER[0]</value>
 	</variable>
+	<include name="PVRChannelNumberInput">
+		<control type="label">
+			<include>Dimensions_Fullscreen</include>
+			<label>$INFO[PVR.ChannelNumberInput]</label>
+			<shadowcolor>black</shadowcolor>
+			<align>center</align>
+			<font>ThreeHundred</font>
+			<aligny>center</aligny>
+			<textcolor>Dark1</textcolor>.
+			<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+		</control>
+	</include>
 </includes>
