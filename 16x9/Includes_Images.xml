@@ -47,6 +47,7 @@
 		<value>$INFO[Skin.String(LastIcon)]</value>
 	</variable>
 	<variable name="FanartImage">
+		<value condition="Window.IsVisible(Home.xml) + !String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
 		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,nextup)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="!system.getbool(videolibrary.showunwatchedplots)  + String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + String.Contains(Container.FolderPath,episode)">$INFO[ListItem.Art(tvshow.landscape)]</value>
 		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)">$INFO[ListItem.Icon]</value>
@@ -56,9 +57,11 @@
 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb)) + !Container.Content(episodes)">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(ListItem.Thumb) + !Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyVideoNav.xml)">resource://resource.images.moviegenreicons.coloured/$INFO[Listitem.Label,,.jpg]</value>
 		<value condition="Container.Content(genres) + Window.IsVisible(MyMusicNav.xml)">resource://resource.images.musicgenreicons.text/$INFO[Listitem.Label,,.jpg]</value>
+		<value condition="Window.IsVisible(Home.xml)">common/null.png</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 	<variable name="LandscapeImage">
@@ -139,29 +142,6 @@
 		<value condition="!String.IsEmpty(Skin.String(weathericons.path))">$INFO[Skin.String(weathericons.path)]$INFO[Window(weather).Property(Day6.FanartCode),,.png]</value>
         <value>$INFO[Window(weather).Property(Day6.OutlookIcon)]</value>
 	</variable>
-	<variable name="EmbyWidget1Icon">
-		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(type),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4001) + String.IsEqual(Container(4001).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4002) + String.IsEqual(Container(4002).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4003) + String.IsEqual(Container(4003).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4004) + String.IsEqual(Container(4004).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4005) + String.IsEqual(Container(4005).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4006) + String.IsEqual(Container(4006).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4007) + String.IsEqual(Container(4007).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4008) + String.IsEqual(Container(4008).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4009) + String.IsEqual(Container(4009).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value condition="Control.HasFocus(4010) + String.IsEqual(Container(4010).ListItem.Property(defaultid),music)">$VAR[ThumbImage]</value>
-		<value>$VAR[FanartImage]</value>
-	</variable>
 	<variable name="EmbySubMenuImage">
 		<value condition="!String.IsEmpty(ListItem.Property(background))">$INFO[ListItem.Property(background)]</value>
 		<value condition="String.IsEqual(ListItem.Property(type),homevideos) | String.IsEqual(ListItem.Label2,homevideos)">special://skin/extras/backgrounds/video.jpg</value>
@@ -235,11 +215,5 @@
 	<variable name="BackgroundFallBack">
 		<value condition="!String.IsEmpty(Skin.String(fanart.fallback))">$INFO[Skin.String(fanart.fallback)]</value>
 		<value>special://skin/extras/backgrounds/smoke.png</value>
-	</variable>
-	<variable name="GlobalSearchCategoryIcon">
-		<value condition="String.IsEqual(Container(9000).ListItem.Icon,globalsearch-icon-actors.png)">DefaultActor.png</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Icon,globalsearch-icon-albums.png)">DefaultAlbumCover.png</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Icon,globalsearch-icon-movies.png)">DefaultMovies.png</value>
-		<value>DefaultVideo.png</value>
 	</variable>
 </includes>

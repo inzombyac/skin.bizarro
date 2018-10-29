@@ -244,6 +244,7 @@
     <backgrounddefault defaultID="tvshows">$INFO[Window(Home).Property(SkinHelper.AllTvShowsBackground)]</backgrounddefault>
     <backgrounddefault defaultID="livetv">$INFO[Window(Home).Property(SkinHelper.PvrBackground)]</backgrounddefault>
     <backgrounddefault defaultID="music">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
+    <backgrounddefault defaultID="songs">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="radio">$INFO[Window(Home).Property(SkinHelper.AllMusicBackground)]</backgrounddefault>
     <backgrounddefault defaultID="musicvideos">$INFO[Window(Home).Property(SkinHelper.AllMusicVideosBackground)]</backgrounddefault>
 	<backgrounddefault defaultID="weather">special://skin/extras/backgrounds/space.jpg</backgrounddefault>

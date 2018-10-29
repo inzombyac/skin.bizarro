@@ -186,7 +186,7 @@
 					<visible>!String.IsEqual(Window.Property(groupname),mainmenu)</visible>
 				</control>
 				<control type="group">
-					<height>299</height>
+					<height>480</height>
 					<control type="label">
 						<description>header label</description>
 						<left>22</left>
@@ -200,83 +200,54 @@
 					</control>
 					<!-- Widget -->
                     <control type="list" id="6000">
+                        <animation effect="slide" start="0,0" end="65,0" time="0" condition="String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | String.IsEqual(Container(211).ListItem.Property(defaultID),recent) | String.IsEqual(Container(211).ListItem.Property(defaultID),latestembycon)">Conditional</animation>
                         <autoscroll time="5000">true</autoscroll>
                         <top>69</top>
                         <left>45</left>
                         <width>390</width>
-                        <include content="EmbyWidget1Content">
-                            <param name="image_type">$VAR[FanartImage]</param>
+                        <content>
+                            <include content="WeatherWidget">
+                                <param name="is_weather">String.IsEqual(Container(211).ListItem.Property(defaultID),weather)</param>
+                            </include>
+                        </content>
+                        <content>
+                            <include content="SysInfoWidget">
+                                <param name="is_sys_info">String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])</param>
+                            </include>
+                        </content>
+                        <content limit="25" target="videos" sortby="random">$VAR[SkinShortcutsContent]</content>
+                        <include content="EmbyHomeLayout">
                             <param name="widget_width">390</param>
                             <param name="item_width">380</param>
                             <param name="widget_height">245</param>
-                            <param name="item_height">220</param>
+                            <param name="item_height">230</param>
+                            <param name="widget_movie_height">430</param>
+                            <param name="item_movie_height">430</param>
+                            <param name="widget_movie_width">390</param>
+                            <param name="item_movie_width">240</param>
+                            <param name="widget_square_width">390</param>
+                            <param name="item_square_width">380</param>
+                            <param name="widget_square_height">390</param>
+                            <param name="item_square_height">380</param>
+                            <param name="movie_view">String.IsEqual(Container(211).ListItem.Property(defaultID),movies) | String.IsEqual(Container(211).ListItem.Property(defaultID),recent) | String.IsEqual(Container(211).ListItem.Property(defaultID),latestembycon)</param>
+                            <param name="square_view">String.IsEqual(Container(211).ListItem.Property(defaultID),music) | String.IsEqual(Container(211).ListItem.Property(defaultID),songs) | String.IsEqual(Container(211).ListItem.Property(defaultID),albums)</param>
+                            <param name="channel_view">String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</param>
                         </include>
-                        <content limit="10" target="videos">$INFO[Container(211).ListItem.Property(widgetPath)]</content>                        
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + !String.IsEqual(Container(211).ListItem.Property(defaultID),livetv) + !String.IsEqual(Container(211).ListItem.Property(defaultID),music) + !String.IsEqual(Container(211).ListItem.Property(defaultID),weather) + !String.IsEqual(Container(211).ListItem.Property(defaultID),$LOCALIZE[10007])</visible>
                     </control>
-                    <!-- Music -->
-                    <control type="list" id="6004">
-                        <autoscroll time="5000">true</autoscroll>
-                        <top>69</top>
-                        <left>105</left>
-                        <width>390</width>
-                        <include content="EmbyWidget1Content">
-                            <param name="image_type">$VAR[FanartImage]</param>
-                            <param name="item_width">245</param>
-                            <param name="widget_width">390</param>
-                            <param name="widget_height">245</param>
-                            <param name="item_height">220</param>
-                            <param name="aspect">scale</param>
-                        </include>
-                        <content limit="10" target="videos">$INFO[Container(211).ListItem.Property(widgetPath)]</content>                        
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + Integer.IsGreater(Container(211).Position,0) + String.IsEqual(Container(211).ListItem.Property(defaultID),music)</visible>
-                    </control>
-                    <!-- Weather -->
+                    <!-- Library Items -->
                     <control type="list" id="6001">
                         <autoscroll time="5000">true</autoscroll>
                         <top>69</top>
                         <left>45</left>
                         <width>390</width>
-                        <include content="EmbyWidget1Content">
-                            <param name="image_type">$VAR[FanartImage]</param>
+                        <content>
+                            <include>skinshortcuts-group-library</include>
+                        </content>
+                        <include content="EmbyHomeLayout">
                             <param name="widget_width">390</param>
                             <param name="item_width">380</param>
-                            <param name="widget_height">245</param>
-                            <param name="item_height">220</param>
                         </include>
-                        <include>WeatherWidget</include>
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),weather)</visible>
-                    </control>
-                    <!-- System Information -->
-                    <control type="list" id="6002">
-                        <autoscroll time="5000">true</autoscroll>
-                        <top>69</top>
-                        <left>45</left>
-                        <width>390</width>
-                        <include content="EmbyWidget1Content">
-                            <param name="image_type">$VAR[FanartImage]</param>
-                            <param name="widget_width">390</param>
-                            <param name="item_width">380</param>
-                            <param name="widget_height">245</param>
-                            <param name="item_widget_height">220</param>
-                        </include>
-                        <include>SysInfoWidget</include>
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),10007)</visible>
-                    </control>
-                    <!-- Live TV -->
-                    <control type="list" id="6003">
-                        <autoscroll time="5000">true</autoscroll>
-                        <top>69</top>
-                        <left>45</left>
-                        <width>390</width>
-                        <include content="EmbyLiveTVWidgetContent">
-                            <param name="widget_width">390</param>
-                            <param name="item_width">380</param>
-                            <param name="widget_height">245</param>
-                            <param name="item_height">220</param>
-                        </include>
-                        <content limit="10" target="videos">pvr://channels/tv/*</content>                        
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</visible>
+                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsGreater(Container(211).Position,0)</visible>
                     </control>
                     <!-- background -->
 					<control type="image">

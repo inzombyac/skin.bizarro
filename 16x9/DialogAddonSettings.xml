@@ -60,7 +60,7 @@
                 <description>Default Category Button</description>
                 <width>387</width>
                 <align>left</align>
-                <texturefocus colordiffuse="Dark1" border="8">common/box.png</texturefocus>
+                <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
                 <alttexturefocus colordiffuse="Dark1" border="8">common/box.png</alttexturefocus>
             </control>
             <control type="button" id="7">

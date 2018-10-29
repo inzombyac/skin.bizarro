@@ -119,7 +119,6 @@
 		<value condition="Window.IsActive(home) + !String.IsEmpty(Container(300).ListItemAbsolute(0).Property(Background))">$INFO[Container(300).ListItemAbsolute(0).Property(Background)]</value>
 		<value condition="Window.IsActive(home)">$INFO[Window(Home).Property(SkinHelper.GlobalFanartBackground)]</value>
 		<!-- Other windows -->
-		<value condition="Window.IsActive(script-globalsearch-infodialog.xml) | Window.IsActive(script-globalsearch-main.xml)">$VAR[GlobalSearchArtInfo]</value>
 		<value condition="Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRSearch.xml) | Window.IsVisible(MyPVRTimers.xml) | Window.IsVisible(MyPVRGuide.xml) | Window.IsVisible(MyPVRRecordings.xml)">special://skin/extras/backgrounds/Family.jpg</value>
 		<value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]/</value>
 		<value condition="Window.IsVisible(weather) + !String.IsEmpty(Skin.String(weatherfanart.path)) + !Skin.HasSetting(weatherfanart.multi)">$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$INFO[Skin.String(weatherfanart.ext)]</value>

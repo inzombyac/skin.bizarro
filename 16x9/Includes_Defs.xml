@@ -1137,36 +1137,66 @@
 	<variable name="EmbyHomeWidget1Content">
 		<value>$INFO[Container(300).ListItemAbsolute(1).Property(widgetPath)]</value>
 	</variable>
+	<variable name="EmbyHomeWidget1LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(1).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+	</variable>
 	<variable name="EmbyHomeWidget2Content">
 		<value>$INFO[Container(300).ListItemAbsolute(2).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget2LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(2).Property(defaultID),livetv)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget3Content">
 		<value>$INFO[Container(300).ListItemAbsolute(3).Property(widgetPath)]</value>
 	</variable>
+	<variable name="EmbyHomeWidget3LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(3).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+	</variable>
 	<variable name="EmbyHomeWidget4Content">
-		<!-- Hide when not needed -->
-		<!-- <value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4002).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
-		<value condition="Integer.IsGreater(Container(4001).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0) + Control.HasFocus(4000)">[CR]</value>
-		<value condition="Integer.IsGreater(Container(4002).NumItems,0) + Integer.IsGreater(Container(4003).NumItems,0) + Control.HasFocus(4000)">[CR]</value> -->
 		<value>$INFO[Container(300).ListItemAbsolute(4).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget4LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(4).Property(defaultID),livetv)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget5Content">
 		<value>$INFO[Container(300).ListItemAbsolute(5).Property(widgetPath)]</value>
 	</variable>
+	<variable name="EmbyHomeWidget5LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(5).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+	</variable>
 	<variable name="EmbyHomeWidget6Content">
 		<value>$INFO[Container(300).ListItemAbsolute(6).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget6LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(6).Property(defaultID),livetv)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget7Content">
 		<value>$INFO[Container(300).ListItemAbsolute(7).Property(widgetPath)]</value>
 	</variable>
+	<variable name="EmbyHomeWidget7LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(7).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+	</variable>
 	<variable name="EmbyHomeWidget8Content">
 		<value>$INFO[Container(300).ListItemAbsolute(8).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget8LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(8).Property(defaultID),livetv)">pvr://channels/tv/*</value>
 	</variable>
 	<variable name="EmbyHomeWidget9Content">
 		<value>$INFO[Container(300).ListItemAbsolute(9).Property(widgetPath)]</value>
 	</variable>
+	<variable name="EmbyHomeWidget9LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(9).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+	</variable>
 	<variable name="EmbyHomeWidget10Content">
 		<value>$INFO[Container(300).ListItemAbsolute(10).Property(widgetPath)]</value>
+	</variable>
+	<variable name="EmbyHomeWidget10LiveTVContent">
+		<value condition="String.IsEqual(Container(300).ListItemAbsolute(10).Property(defaultID),livetv)">pvr://channels/tv/*</value>
+	</variable>
+	<variable name="SkinShortcutsContent">
+		<value condition="String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)">pvr://channels/tv/*</value>
+		<value>$INFO[Container(211).ListItem.Property(widgetPath)]</value>
 	</variable>
 	<include name="MusicInfoTracklist">
 		<content type="static">
