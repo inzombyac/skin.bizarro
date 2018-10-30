@@ -234,21 +234,6 @@
                             <param name="channel_view">String.IsEqual(Container(211).ListItem.Property(defaultID),livetv)</param>
                         </include>
                     </control>
-                    <!-- Library Items -->
-                    <control type="list" id="6001">
-                        <autoscroll time="5000">true</autoscroll>
-                        <top>69</top>
-                        <left>45</left>
-                        <width>390</width>
-                        <content>
-                            <include>skinshortcuts-group-library</include>
-                        </content>
-                        <include content="EmbyHomeLayout">
-                            <param name="widget_width">390</param>
-                            <param name="item_width">380</param>
-                        </include>
-                        <visible>String.IsEqual(Window.Property(groupname),mainmenu) + !Integer.IsGreater(Container(211).Position,0)</visible>
-                    </control>
                     <!-- background -->
 					<control type="image">
 						<top>69</top>
