@@ -99,14 +99,6 @@
 					<altlabel>585</altlabel>
 					<visible>Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRTimes.xml)</visible>
 				</control>
-				<control type="radiobutton" id="126">
-					<include>DefContextButton2</include>
-					<label>$LOCALIZE[31015]</label>
-					<selected>Skin.HasSetting(EPGArt.Enabled)</selected>
-					<onclick>Skin.ToggleSetting(EPGArt.Enabled)</onclick>
-					<align>left</align>
-					<visible>Window.IsVisible(MyPVRGuide.xml)</visible>
-				</control>
 				<control type="label" id="202">
 					<height>42</height>
 					<textoffsetx>15</textoffsetx>
@@ -1483,8 +1475,8 @@
 		<height>300</height>
 	</include>		
 	<variable name="PVRChannelZero">
-		<value condition="!Integer.IsGreater(ListItem.ChannelNumber,9)">$NUMBER[0]$NUMBER[0]</value>
-		<value condition="!Integer.IsGreater(ListItem.ChannelNumber,99)">$NUMBER[0]</value>
+		<value condition="!Integer.IsGreater(ListItem.ChannelNumberLabel,9)">$NUMBER[0]$NUMBER[0]</value>
+		<value condition="!Integer.IsGreater(ListItem.ChannelNumberLabel,99)">$NUMBER[0]</value>
 	</variable>
 	<include name="PVRChannelNumberInput">
 		<control type="label">

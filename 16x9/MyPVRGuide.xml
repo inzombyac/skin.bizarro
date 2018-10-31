@@ -38,7 +38,7 @@
 						<height>170</height>
 						<texture>$INFO[Container(10).ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>!Skin.HasSetting(EPGArt.Enabled)</visible>
+						<visible>String.IsEmpty(Container(10).ListItem.Icon)</visible>
 					</control>
 					<control type="image">
 						<top>0</top>
@@ -47,7 +47,7 @@
 						<height>200</height>
 						<texture >$INFO[ListItem.Icon]</texture>
 						<aspectratio>keep</aspectratio>
-						<visible>Skin.HasSetting(EPGArt.Enabled)</visible>
+						<visible>!String.IsEmpty(Container(10).ListItem.Icon)</visible>
 					</control>
 					<control type="label">
 						<top>-10</top>

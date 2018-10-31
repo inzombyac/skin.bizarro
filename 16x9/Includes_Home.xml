@@ -1376,7 +1376,7 @@
 			<font>TwentyEight</font>
 			<textcolor>Dark1</textcolor>
 			<selectedcolor>Dark1</selectedcolor>
-			<label>$INFO[ListItem.ChannelNumber]</label>
+			<label>$INFO[ListItem.ChannelNumberLabel]</label>
 		</control>
 		<control type="image">
 			<description>Title overlay</description>
@@ -1406,7 +1406,6 @@
 			<righttexture colordiffuse="$VAR[ColorHighlight]">pvr/progress-leftright.png</righttexture>
 			<info>ListItem.Progress</info>
 			<colordiffuse>Dark1</colordiffuse>
-			<visible>!String.IsEmpty(ListItem.Progress)</visible>
 		</control>
 		<control type="label">
 			<left>10</left>

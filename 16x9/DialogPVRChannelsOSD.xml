@@ -92,7 +92,7 @@
 						<align>left</align>
 						<textcolor>$VAR[OSDPanelWhite70]</textcolor>
 						<font>LargeBold</font>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<selectedcolor>$VAR[OSDPanelWhite70]</selectedcolor>
 					</control>
 					<control type="progress">
@@ -179,7 +179,7 @@
 						<align>left</align>
 						<textcolor>$VAR[ColourSelected]</textcolor>
 						<font>LargeBold</font>
-						<label>$INFO[ListItem.ChannelNumber]</label>
+						<label>$INFO[ListItem.ChannelNumberLabel]</label>
 						<selectedcolor>$VAR[ColourSelected]</selectedcolor>
 					</control>
 					<control type="progress">
