@@ -80,8 +80,8 @@
 				</control>
 			</control>
 			<control type="button" id="5050">
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
 				<onfocus>Skin.ToggleSetting(59game.resetpanel)</onfocus>
 				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,2)">Control.Move(5051,-1)</onfocus>
 				<onfocus condition="String.IsEqual(Container(5051).CurrentItem,3)">Control.Move(5051,-2)</onfocus>
@@ -132,8 +132,8 @@
 	</include>
 	<include name="59focuslayout">
 		<control type="button">
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
+			<texturefocus></texturefocus>
+			<texturenofocus></texturenofocus>
 		</control>
 		<control type="image">
 			<width>100%</width>

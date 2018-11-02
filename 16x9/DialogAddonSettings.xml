@@ -29,7 +29,7 @@
                 <align>center</align>
                 <font>MediumBold</font>
                 <width>1410</width>
-                <label>-</label>
+                <label></label>
                 <textcolor>Light1</textcolor>
             </control>
             <control type="grouplist" id="3">
@@ -80,13 +80,13 @@
                 <texturefocus colordiffuse="$VAR[ColorHighlight]" border="8">common/box.png</texturefocus>
             </control>
             <control type="label" id="14">
-                <label>-</label>
+                <label></label>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
             </control>
             <control type="image" id="11">
                 <description>Default Seperator</description>
                 <height>-3</height>
-                <texture>-</texture>
+                <texture></texture>
             </control>
             <control type="edit" id="12">
                 <align>left</align>

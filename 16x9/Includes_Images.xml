@@ -94,7 +94,10 @@
 		<value condition="Container.Content(albums)">flags/audio/albums.png</value>
 		<value condition="Container.Content(artists)">flags/audio/artists.png</value>
 		<value condition="Container.Content(tvshows) | Container.Content(seasons)"></value>
+		<value condition="Integer.IsGreater(ListItem.VideoResolution,8000)">flags/resolution/8k.png</value>
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
+		<value condition="Integer.IsGreater(Container(9500).ListItem.VideoResolution,8000)">flags/resolution/8k.png</value>
+		<value condition="Integer.IsGreater(Container(301).ListItem.VideoResolution,8000)">flags/resolution/8k.png</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
 		<value condition="Integer.IsGreater(Container(301).ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
 		<value condition="Integer.IsGreater(Container(9500).ListItem.VideoResolution,1079)">flags/resolution/1080.png</value>
@@ -107,6 +110,7 @@
 		<value condition="Integer.IsGreater(Container(301).ListItem.VideoResolution,539)">flags/resolution/540.png</value>
 		<value condition="!String.IsEmpty(Container(301).ListItem.VideoResolution)">flags/resolution/480.png</value>
 		<value condition="!String.IsEmpty(Container(9500).ListItem.VideoResolution)">flags/resolution/480.png</value>
+		<value condition="Integer.IsGreater(ListItem.VideoResolution,8000)">flags/resolution/8k.png</value>
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,4016)">flags/resolution/4k.png</value>
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,1079)">flags/resolution/1080.png</value>
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,719)">flags/resolution/720.png</value>

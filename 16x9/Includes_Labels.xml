@@ -456,7 +456,7 @@
 	</variable>
 	<variable name="MusicInfoContentLabel">
 		<value condition="Container.Content(songs)">$INFO[ListItem.Label2]</value>
-		<value condition="Container.Content(artists) + IntegerGreaterThan(ListItem.Label2,1000)">$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</value>
+		<value condition="Container.Content(artists) + Integer.IsGreater(ListItem.Label2,1000)">$INFO[ListItem.Label]$INFO[ListItem.Label2, (,)]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="AdvancedLauncherLabel">

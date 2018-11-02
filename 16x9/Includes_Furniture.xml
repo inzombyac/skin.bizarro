@@ -343,8 +343,6 @@
 			<ondown condition="Control.IsVisible(500)">500</ondown>
 			<onup condition="Player.HasMedia">7788</onup>
 			<onup condition="!Player.HasMedia">3634</onup>
-			<onright>noop</onright>
-			<onleft>noop</onleft>
 			<align>justify</align>
 			<visible>String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])</visible>
 			<visible>Control.IsVisible(60)</visible>
@@ -668,10 +666,10 @@
 					<visible>Player.Muted + !Player.Paused</visible>
 				</control>
 				<control type="progress" id="9666">
-					<texturebg>-</texturebg>
-					<lefttexture>-</lefttexture>
-					<midtexture>-</midtexture>
-					<righttexture>-</righttexture>
+					<texturebg></texturebg>
+					<lefttexture></lefttexture>
+					<midtexture></midtexture>
+					<righttexture></righttexture>
 					<info>Player.Progress</info>
 					<visible>false</visible>
 				</control>
@@ -1364,6 +1362,7 @@
 		<value condition="Window.IsVisible(FileManager.xml)">special://skin/extras/icons/database.png</value>
 		<value condition="Window.IsVisible(EventLog.xml)">special://skin/extras/icons/warning.png</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml)">special://skin/extras/icons/video-addons.png</value>
+		<value condition="Window.IsVisible(MyGames.xml)">special://skin/extras/icons/games.png</value>
 		<value condition="Window.IsVisible(GameOSD.xml)">special://skin/extras/icons/games.png</value>
 		<value>special://skin/extras/icons/artist.png</value>
 	</variable>
@@ -1396,6 +1395,7 @@
 		<value condition="Window.IsVisible(MyVideoNav.xml) + String.StartsWith(Container.FolderPath,videodb://tvshows/)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.FolderName)">$INFO[Container.FolderName]</value>
 		<value condition="Window.IsVisible(MyVideoNav.xml)">$LOCALIZE[3]</value>
+		<value condition="Window.IsVisible(MyGames.xml)">$LOCALIZE[15016]</value>
 		<value condition="Window.IsVisible(MyPVRChannels.xml)">$LOCALIZE[19019]</value>
 		<value condition="Window.IsVisible(MyPVRGuide.xml)">$LOCALIZE[4]</value>
 		<value condition="Window.IsVisible(MyPVRRecordings.xml)">$LOCALIZE[19017]</value>

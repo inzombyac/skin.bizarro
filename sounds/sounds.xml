@@ -47,8 +47,8 @@
         </window>
         <window>
           <name>home</name>
-          <activate>-</activate>
-          <deactivate>-</deactivate>
+          <activate></activate>
+          <deactivate></deactivate>
         </window>
         <window>
           <name>notification</name>

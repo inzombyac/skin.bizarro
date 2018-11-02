@@ -85,6 +85,14 @@
         <visible>System.Platform.Android</visible>
     </shortcut>
     <shortcut>
+        <label>Games</label>
+        <label2>games</label2>
+        <defaultID>games</defaultID>
+        <thumb>special://skin/extras/backgrounds/Gamesystems.jpg</thumb>
+        <icon>special://skin/extras/icons/games.png</icon>
+        <action>ActivateWindow(Games)</action>
+    </shortcut>
+    <shortcut>
         <label>Weather</label>
         <label2>Common Shortcut</label2>
         <defaultID>weather</defaultID>

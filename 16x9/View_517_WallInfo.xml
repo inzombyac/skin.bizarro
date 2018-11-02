@@ -50,7 +50,7 @@
 				<width>207</width>
 				<bottom>10</bottom>
 				<info>ListItem.PercentPlayed</info>
-				<overlaytexture>-</overlaytexture>
+				<overlaytexture></overlaytexture>
 				<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 				<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
 				<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
@@ -93,8 +93,8 @@
 		<focusedlayout height="380" width="252">
 			<control type="group">
 				<control type="button">
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
 					<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 					<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
 					<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
@@ -118,7 +118,7 @@
 					<width>207</width>
 					<bottom>10</bottom>
 					<info>ListItem.PercentPlayed</info>
-					<overlaytexture>-</overlaytexture>
+					<overlaytexture></overlaytexture>
 					<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 					<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
 					<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>

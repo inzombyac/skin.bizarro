@@ -486,8 +486,8 @@
 				</itemlayout>
 				<focusedlayout width="470" height="70">
 					<control type="button">
-						<texturefocus>-</texturefocus>
-						<texturenofocus>-</texturenofocus>
+						<texturefocus></texturefocus>
+						<texturenofocus></texturenofocus>
 					</control>
 					<control type="image">
 						<texture colordiffuse="Dark1" border="16">common/white.png</texture>
@@ -724,6 +724,157 @@
 			<onclick>RunPlugin("plugin://plugin.video.emby/?mode=manualsync")</onclick>
 			<align>left</align>
 			<visible>System.HasAddon(plugin.video.emby)</visible>
+		</control>
+		<control type="radiobutton" id="11">
+			<description>Unlock Shares</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>20336</label>
+			<onclick>xbmc.mastermode</onclick>
+			<selected>system.ismaster</selected>
+			<visible>system.haslocks</visible>
+		</control>
+	</include>
+	<include name="Def9000GameSide">
+		<left>20</left>
+		<top>115</top>
+		<width>455</width>
+		<height>1080</height>
+		<onleft>9000</onleft>
+		<onright>ClearProperty(MediaMenu,Home)</onright>
+		<onright>50</onright>
+		<onup>9000</onup>
+		<ondown>9000</ondown>
+		<onback>ClearProperty(MediaMenu,Home)</onback>
+		<onback>50</onback>
+		<itemgap>0</itemgap>
+		<animation effect="slide" start="-440,0" end="0,0" time="400" tween="quadratic" easing="out">Visible</animation>
+		<control type="label" id="200">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Game Options</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="edit" id="19">
+			<label>587</label>
+			<description>Filter (hidden)</description>
+			<include>DefContextButton2</include>
+			<visible>!Container.CanFilterAdvanced</visible>
+		</control>
+		<control type="radiobutton" id="98">
+			<visible>Container.CanFilterAdvanced</visible>
+			<description>Filter</description>
+			<include>DefContextButton2</include>
+			<label>587</label>
+			<align>left</align>
+			<onclick>SetFocus(50)</onclick>
+			<onclick>Filter</onclick>
+			<selected>Container.Filtered</selected>
+		</control>
+		<control type="label" id="201">
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>View Options</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="9326">
+			<description>View</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>View: $INFO[Container.Viewmode]</label>
+			<onclick>XBMC.RunScript(script.skin.helper.service,action=setview)</onclick>
+		</control>
+		<control type="button" id="3">
+			<description>Sort</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+		</control>
+		<control type="togglebutton" id="4">
+			<description>Ascending</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>584</label>
+			<altlabel>585</altlabel>
+		</control>
+		<control type="label" id="202">
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Misc Options</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<!-- Other Options -->
+		<control type="radiobutton" id="9031" description="Show parent items">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>13306</label>
+			<onclick>RunScript(script.skin.helper.service,action=togglekodisetting,setting=filelists.showparentdiritems)</onclick>
+			<onclick>AlarmClock(RefreshHome,ReloadSkin(),00:01,silent)</onclick>
+			<visible>!Container.HasParent</visible>
+			<selected>false</selected>
+		</control>
+		<control type="radiobutton" id="9032" description="Hide parent items">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>13306</label>
+			<onclick>RunScript(script.skin.helper.service,action=togglekodisetting,setting=filelists.showparentdiritems)</onclick>
+			<onclick>AlarmClock(RefreshHome,ReloadSkin(),00:01,silent)</onclick>
+			<visible>Container.HasParent</visible>
+			<selected>true</selected>
+		</control>
+		<control type="radiobutton" id="9033" description="Hide Panel Buttons">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>$LOCALIZE[31033]</label>
+			<selected>Skin.HasSetting(furniture.hidemediabuttons)</selected>
+			<onclick>Skin.ToggleSetting(furniture.hidemediabuttons)</onclick>
+		</control>
+		<control type="radiobutton" id="9009" description="Show Plot List (50)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31214</label>
+			<selected>Skin.HasSetting(50list.showplot)</selected>
+			<onclick>Skin.ToggleSetting(50list.showplot)</onclick>
+			<visible>Control.IsVisible(50) + !Skin.HasSetting(50list.low)</visible>
+		</control>
+		<control type="radiobutton" id="9002" description="No Wrap (53)">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31148</label>
+			<selected>!Skin.HasSetting(53poster.nowrap)</selected>
+			<onclick>Skin.ToggleSetting(53poster.nowrap)</onclick>
+			<onclick>ReloadSkin()</onclick>
+			<visible>Control.IsVisible(53)</visible>
+		</control>
+		<control type="label" id="203">
+			<width>455</width>
+			<height>42</height>
+			<textoffsetx>15</textoffsetx>
+			<font>Home</font>
+			<label>Actions</label>
+			<textcolor>$VAR[ColorHighlight]</textcolor>
+			<aligny>center</aligny>
+		</control>
+		<control type="button" id="624">
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>$LOCALIZE[10140]</label>
+			<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+			<visible>!String.IsEmpty(Container.PluginName)</visible>
+		</control>
+		<control type="button" id="9092">
+			<description>Set Custom Widget</description>
+			<include>DefContextButton2</include>
+			<align>left</align>
+			<label>31222</label>
+			<onclick>Back</onclick>
+			<onclick>ActivateWindow(1106)</onclick>
 		</control>
 		<control type="radiobutton" id="11">
 			<description>Unlock Shares</description>
@@ -1468,84 +1619,62 @@
 				<label>Title Screen</label>
 				<icon>$INFO[Container(59).ListItem.Art(title)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(title))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="3">
 				<label>Gameplay Snapshot</label>
 				<icon>$INFO[Container(59).ListItem.Art(snap)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(snap))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="4">
 				<label>Box Front</label>
 				<icon>$INFO[Container(59).ListItem.Art(boxfront)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(boxfront))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="4">
 				<label>Poster</label>
 				<icon>$VAR[PosterImage]</icon>
 				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="5">
 				<label>Box Back</label>
 				<icon>$INFO[Container(59).ListItem.Art(boxback)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(boxback))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="6">
 				<label>Fanart</label>
 				<icon>$INFO[Container(59).ListItem.Art(fanart)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(fanart))</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="7">
 				<label>Clear Logo</label>
 				<icon>$INFO[Container(59).ListItem.Art(clearlogo)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(clearlogo))</visible>
-				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="7">
 				<label>Cartridge</label>
 				<property name="aspect">keep</property>
 				<icon>$INFO[Container(59).ListItem.Art(cartridge)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(cartridge))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="8">
 				<label>Clear Art</label>
 				<icon>$INFO[Container(59).ListItem.Art(clearart)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(clearart))</visible>
-				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="8">
 				<label>Game Flyer</label>
 				<icon>$INFO[Container(59).ListItem.Art(flyer)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(flyer))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="9">
 				<label>Game Map</label>
 				<icon>$INFO[Container(59).ListItem.Art(map)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(map))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 			<item id="10">
 				<label>Game Manual</label>
 				<icon>$INFO[Container(59).ListItem.Art(manual)]</icon>
 				<visible>!String.IsEmpty(Container(59).ListItem.Art(manual))</visible>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
-				<onclick>noop</onclick>
 			</item>
 		</content>
 	</include>

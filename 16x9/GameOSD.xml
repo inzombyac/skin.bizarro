@@ -56,7 +56,6 @@
 				<align>left</align>
 				<onleft>12</onleft>
 				<onright>100</onright>
-				<ondown>noop</ondown>
 				<left>425</left>
 				<include>OSDGameControls</include>
 			</control>

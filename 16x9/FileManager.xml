@@ -2,15 +2,11 @@
 <!-- Foundation -->
 <window id="3">
     <defaultcontrol always="true">20</defaultcontrol>
-    
-
     <controls>
-
         <include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
         <include>Furniture_Header</include>
         <include>Furniture_Clock</include>
         <include>Furniture_NowPlaying</include>
-        
         <control type="group">
             <include>Animation.Common</include>
             <control type="group">
@@ -24,7 +20,6 @@
                     <height>100%</height>
                     <texture border="5" colordiffuse="Panel">common/box.png</texture>
                 </control>
-
                 <control type="label" id="101">
                     <description>Header Label</description>
                     <top>5</top>
@@ -34,7 +29,6 @@
                     <font>TinyBold</font>
                     <textcolor>PanelWhite70</textcolor>
                 </control>
-
                 <control type="list" id="20">
                     <description>Left File List</description>
                     <left>15</left>
@@ -45,11 +39,7 @@
                     <onright>21</onright>
                     <onup>20</onup>
                     <ondown>20</ondown>
-
                     <itemlayout height="69" width="840">
-
-                        
-
                         <control type="label">
                             <posx>30</posx>
                             <width>720</width>
@@ -57,7 +47,6 @@
                             <textcolor>PanelWhite70</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <right>30</right>
                             <width>150</width>
@@ -66,18 +55,14 @@
                             <textcolor>PanelWhite70</textcolor>
                             <info>ListItem.Label2</info>
                         </control>
-
                     </itemlayout>
-
                     <focusedlayout height="69" width="840">
-
                         <control type="image">
                             <width>100%</width>
                             <height>66</height>
                             <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(20)">Conditional</animation>
                         </control>
-
                         <control type="label">
                             <posx>30</posx>
                             <width>720</width>
@@ -85,7 +70,6 @@
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <right>30</right>
                             <width>720</width>
@@ -94,35 +78,28 @@
                             <font>Tiny</font>
                             <info>ListItem.Label2</info>
                         </control>
-
                     </focusedlayout>
-
                 </control>
-
                 <control type="label" id="12">
                     <description>Header Label</description>
                     <posx>23</posx>
                     <posy>882</posy>
                     <width>480</width>
                     <align>left</align>
-                    <label>-</label>
+                    <label></label>
                 </control>
-
             </control>
-            
             <control type="group">
                 <description>Right panel</description>
                 <right>SidePad</right>
                 <top>PosterPad</top>
                 <height>640</height>
                 <width>870</width>
-            
                 <control type="image">
                     <width>100%</width>
                     <height>100%</height>
                     <texture border="5" colordiffuse="Panel">common/box.png</texture>
                 </control>
-
                 <control type="label" id="102">
                     <description>Header Label</description>
                     <top>5</top>
@@ -132,7 +109,6 @@
                     <font>TinyBold</font>
                     <textcolor>PanelWhite70</textcolor>
                 </control>
-
                 <control type="list" id="21">
                     <description>Left File List</description>
                     <left>15</left>
@@ -143,11 +119,7 @@
                     <onright>20</onright>
                     <onup>21</onup>
                     <ondown>21</ondown>
-
                     <itemlayout height="69" width="840">
-
-                        
-
                         <control type="label">
                             <posx>30</posx>
                             <width>720</width>
@@ -155,7 +127,6 @@
                             <textcolor>PanelWhite70</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <right>30</right>
                             <width>150</width>
@@ -164,18 +135,14 @@
                             <textcolor>PanelWhite70</textcolor>
                             <info>ListItem.Label2</info>
                         </control>
-
                     </itemlayout>
-
                     <focusedlayout height="69" width="840">
-
                         <control type="image">
                             <width>100%</width>
                             <height>66</height>
                             <texture border="5" colordiffuse="$VAR[ColorHighlight]">common/box.png</texture>
                             <animation effect="fade" start="100" end="50" condition="!Control.HasFocus(21)">Conditional</animation>
                         </control>
-
                         <control type="label">
                             <posx>30</posx>
                             <width>720</width>
@@ -183,7 +150,6 @@
                             <textcolor>$VAR[ColourSelected]</textcolor>
                             <info>ListItem.Label</info>
                         </control>
-
                         <control type="label">
                             <right>30</right>
                             <width>720</width>
@@ -192,24 +158,17 @@
                             <font>Tiny</font>
                             <info>ListItem.Label2</info>
                         </control>
-
                     </focusedlayout>
-
                 </control>
-
                 <control type="label" id="22">
                     <description>Header Label</description>
                     <posx>23</posx>
                     <posy>882</posy>
                     <width>480</width>
                     <align>left</align>
-                    <label>-</label>
+                    <label></label>
                 </control>
-
             </control>
-            
         </control>
-        
     </controls>
-
 </window>

@@ -13,8 +13,9 @@
 			<!-- Workaround -->
 			<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
 			<onfocus>ReplaceWindow($INFO[System.StartupWindow])</onfocus>
-			<texturenofocus>-</texturenofocus>
-			<texturefocus>-</texturefocus>
+			<onfocus>Skin.reset(recording.shown)</onfocus>
+			<texturenofocus></texturenofocus>
+			<texturefocus></texturefocus>
         </control>
     </controls>
 </window>

@@ -7,9 +7,9 @@
 	<onload condition="String.IsEmpty(Skin.String(focuscolor.name))">Skin.SetString(focuscolor.name,FF0fd39e)</onload>
 	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=300&amp;group=mainmenu|movieshub|episodeshub)</onload>
 	<onload condition="System.HasAddon(script.skin.helper.service)">SetProperty(SkinHelper.WidgetContainer,300)</onload>
-	<onload condition="Pvr.HasTimer">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
 	<onload>RunScript(script.skin.helper.service,action=stripstring,splitchar=.,string=$INFO[System.BuildVersion],output=kodiversion_main)</onload>
 	<onload>RunScript(script.skin.helper.service,action=stripstring,splitchar=.,string=$INFO[System.BuildVersion],output=kodiversion_point,index=1)</onload>
+	<onload condition="Pvr.HasTimer + !Skin.HasSetting(recording.shown) + !Skin.HasSetting(login.reset)">Notification(Next Recording,$VAR[LabelNextRecording],1500,indicator/recording.png)</onload>
 	<onunload>ClearProperty(SkinHelper.WidgetContainer)</onunload>
 	<controls>
 		<include condition="!Skin.HasSetting(lights.out)">GlobalBackground</include>
@@ -22,12 +22,13 @@
 			<visible>!Window.IsVisible(DialogVideoInfo.xml) + !Window.IsVisible(DialogMusicInfo.xml)+ !Window.IsVisible(service-OpenELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-OpenELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-OpenELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-getPasskey.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(service-LibreELEC-Settings-wizard.xml) + !Window.IsVisible(service-LibreELEC-Settings-mainWindow.xml) + !Window.IsVisible(DialogAddonInfo.xml)</visible>
 			<include condition="!Skin.HasSetting(login.reset)">HomeEmbyWidgetInfo</include>
 			<control type="button" id="5050">
-				<texturefocus>-</texturefocus>
-				<texturenofocus>-</texturenofocus>
+				<texturefocus></texturefocus>
+				<texturenofocus></texturenofocus>
 				<!-- Localized strings workaround when using login screen-->
 				<onfocus condition="Skin.HasSetting(login.reset)">AlarmClock(RefreshHome,ReloadSkin(),00:02,silent)</onfocus>
-				<!-- <onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus> -->
+				<onfocus condition="Skin.HasSetting(login.reset)">ActivateWindow(busydialog)</onfocus>
 				<onfocus>Skin.reset(login.reset)</onfocus>
+				<onfocus>AlarmClock(ClearRecording,Skin.SetBool(recording.shown),00:15,silent)</onfocus>
 				<!-- Set default control -->
 				<onfocus>Control.SetFocus(300,0)</onfocus>
 				<onfocus>SetFocus(3999)</onfocus>

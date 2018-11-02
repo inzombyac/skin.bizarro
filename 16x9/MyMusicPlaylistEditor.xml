@@ -230,7 +230,6 @@
             <onleft>100</onleft>
             <onright>90</onright>
             <onup>50</onup>
-            <ondown>noop</ondown>
             <orientation>vertical</orientation>
             <control type="button" id="6">
                 <label>502</label>

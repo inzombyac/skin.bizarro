@@ -1197,8 +1197,8 @@
 				<height>$PARAM[item_movie_height]</height>
 				<width>$PARAM[item_movie_width]</width>
 				<control type="button">
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
 					<onfocus>Skin.SetString(LastIcon,$PARAM[image_type])</onfocus>
 				</control>
 				<include>EmbyMovieWidgetLayout</include>
@@ -1214,8 +1214,8 @@
 				<width>$PARAM[item_square_width]</width>
 				<include>EmbyStandardWidgetLayout</include>
 				<control type="button">
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
 					<onfocus>Skin.SetString(LastIcon,$PARAM[image_type])</onfocus>
 				</control>
 				<include>EmbyStandardWidgetLayout</include>
@@ -1231,8 +1231,8 @@
 				<width>$PARAM[item_width]</width>
 				<visible>!$PARAM[channel_view] + !$PARAM[movie_view] + !$PARAM[channel_view]</visible>
 				<control type="button">
-					<texturefocus>-</texturefocus>
-					<texturenofocus>-</texturenofocus>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
 					<onfocus>Skin.SetString(LastIcon,$PARAM[image_type])</onfocus>
 				</control>
 				<include>EmbyStandardWidgetLayout</include>
@@ -1280,7 +1280,7 @@
 			<bottom>40</bottom>
 			<height>8</height>
 			<info>ListItem.PercentPlayed</info>
-			<overlaytexture>-</overlaytexture>
+			<overlaytexture></overlaytexture>
 			<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 			<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
 			<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
@@ -1332,7 +1332,7 @@
 			<bottom>0</bottom>
 			<height>8</height>
 			<info>ListItem.PercentPlayed</info>
-			<overlaytexture>-</overlaytexture>
+			<overlaytexture></overlaytexture>
 			<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 			<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
 			<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>

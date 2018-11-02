@@ -64,7 +64,7 @@
 				<control id="9009" type="button">
 					<width>-10</width>
 					<height>0</height>
-					<label>-</label>
+					<label></label>
 					<onfocus>Right</onfocus>
 					<include>NoTextures</include>
 					<visible>!Control.HasFocus(1) + !Control.HasFocus(2) + !Control.HasFocus(6) + !Control.HasFocus(10) + !Control.HasFocus(7)</visible>

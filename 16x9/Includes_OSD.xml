@@ -182,15 +182,14 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1" flipx="true">osd/record.png</texturenofocus>
-			<usealttexture>Player.Recording</usealttexture>
+			<usealttexture>PVR.IsRecordingPlayingChannel</usealttexture>
 			<alttexturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/record-on.png</alttexturefocus>
 			<alttexturenofocus colordiffuse="Dark1" flipx="true">osd/record-on.png</alttexturenofocus>
-			<onclick>PlayerControl(Record)</onclick>
-			<enable>Player.CanRecord</enable>
+			<onclick>PVR.ToggleRecordPlayingChannel</onclick>
+			<enable>PVR.CanRecordPlayingChannel</enable>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 			<animation effect="fade" start="100" end="33" time="100" condition="!Player.CanRecord">Conditional</animation>
 			<onleft>9003</onleft>
@@ -201,7 +200,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-off.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat-off.png</texturenofocus>
@@ -215,7 +213,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat.png</texturenofocus>
@@ -229,7 +226,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat-all.png</texturenofocus>
@@ -243,7 +239,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/next.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1" flipx="true">osd/next.png</texturenofocus>
@@ -255,7 +250,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]" flipx="true">osd/ff.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1" flipx="true">osd/ff.png</texturenofocus>
@@ -270,7 +264,6 @@
 			<bottom>12</bottom>
 			<label></label>
 			<altlabel></altlabel>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
 			<texturenofocus colordiffuse="$VAR[ColorHighlight2]">osd/pause.png</texturenofocus>
@@ -288,7 +281,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stop.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/stop.png</texturenofocus>
@@ -300,7 +292,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/ff.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/ff.png</texturenofocus>
@@ -314,7 +305,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/next.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/next.png</texturenofocus>
@@ -324,7 +314,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/eject.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/eject.png</texturenofocus>
@@ -336,7 +325,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/shuffle.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/shuffle.png</texturenofocus>
@@ -348,7 +336,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/unshuffle.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/unshuffle.png</texturenofocus>
@@ -360,7 +347,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/fullscreen.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/fullscreen.png</texturenofocus>
@@ -371,7 +357,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/dvd-menu.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/dvd-menu.png</texturenofocus>
@@ -385,7 +370,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/repeat.png</texturenofocus>
@@ -398,7 +382,6 @@
 			<bottom>12</bottom>
 			<label></label>
 			<altlabel></altlabel>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/pause.png</texturefocus>
 			<texturenofocus colordiffuse="$VAR[ColorHighlight2]">osd/pause.png</texturenofocus>
@@ -415,7 +398,6 @@
 			<height>64</height>
 			<top>12</top>
 			<label></label>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stop.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/stop.png</texturenofocus>
@@ -426,7 +408,6 @@
 			<width>48</width>
 			<height>64</height>
 			<top>12</top>
-			<font>noop</font>
 			<include>DefOSDUpDown</include>
 			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/fullscreen.png</texturefocus>
 			<texturenofocus colordiffuse="Dark1">osd/fullscreen.png</texturenofocus>

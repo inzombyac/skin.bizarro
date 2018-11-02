@@ -17,7 +17,6 @@
 					<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + Player.HasMedia">7788</onup>
 					<onup condition="![String.IsEqual(Container.SortMethod, $LOCALIZE[369]) | String.IsEqual(Container.SortMethod, $LOCALIZE[551]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36918]) | String.IsEqual(Container.SortMethod, $LOCALIZE[36916])] + !Player.HasMedia">3634</onup>
 					<ondown>60</ondown>
-					<onright>noop</onright>
 					<preloaditems>2</preloaditems>
 					<pagecontrol>60</pagecontrol>
 					<orientation>horizontal</orientation>
@@ -70,7 +69,7 @@
 							<left>20</left>
 							<bottom>55</bottom>
 							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
+							<overlaytexture></overlaytexture>
 							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>
@@ -112,8 +111,8 @@
 					</itemlayout>
 					<focusedlayout height="330" width="445">
 						<control type="button">
-							<texturefocus>-</texturefocus>
-							<texturenofocus>-</texturenofocus>
+							<texturefocus></texturefocus>
+							<texturenofocus></texturenofocus>
 							<onfocus condition="Container.Content(movies)">ClearProperty(TVShowID,home)</onfocus>
 							<onfocus>Skin.SetString(LastIcon,$VAR[PosterImage])</onfocus>
 							<onfocus condition="Container.Content(tvshows)">SetProperty(TVShowID,$INFO[ListItem.DBID],home)</onfocus>
@@ -164,7 +163,7 @@
 							<left>20</left>
 							<bottom>55</bottom>
 							<info>ListItem.PercentPlayed</info>
-							<overlaytexture>-</overlaytexture>
+							<overlaytexture></overlaytexture>
 							<texturebg colordiffuse="2f5f5f5f">osd/progress-bg.png</texturebg>
 							<lefttexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</lefttexture>
 							<midtexture colordiffuse="$VAR[ColorHighlight]">osd/progress-end.png</midtexture>

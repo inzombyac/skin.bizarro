@@ -76,7 +76,6 @@
                 <onright>5000</onright>
                 <onup>312</onup>
                 <ondown>300</ondown>
-                <onback>noop</onback>
                 <orientation>vertical</orientation>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <itemlayout height="80" width="325">

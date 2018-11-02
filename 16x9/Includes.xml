@@ -190,18 +190,18 @@
 	</include>
 	<!-- No textures -->
 	<include name="NoTextures">
-		<texturefocus>-</texturefocus>
-		<texturenofocus>-</texturenofocus>
-		<alttexturenofocus>-</alttexturenofocus>
-		<alttexturefocus>-</alttexturefocus>
-		<textureradioonfocus>-</textureradioonfocus>
-		<textureradioonnofocus>-</textureradioonnofocus>
-		<textureradioofffocus>-</textureradioofffocus>
-		<textureradiooffnofocus>-</textureradiooffnofocus>
-		<textureup>-</textureup>
-		<texturedown>-</texturedown>
-		<textureupfocus>-</textureupfocus>
-		<texturedownfocus>-</texturedownfocus>
+		<texturefocus></texturefocus>
+		<texturenofocus></texturenofocus>
+		<alttexturenofocus></alttexturenofocus>
+		<alttexturefocus></alttexturefocus>
+		<textureradioonfocus></textureradioonfocus>
+		<textureradioonnofocus></textureradioonnofocus>
+		<textureradioofffocus></textureradioofffocus>
+		<textureradiooffnofocus></textureradiooffnofocus>
+		<textureup></textureup>
+		<texturedown></texturedown>
+		<textureupfocus></textureupfocus>
+		<texturedownfocus></texturedownfocus>
 	</include>
 	<!-- MPAA Ratings -->
 	<include name="lib_Rating_MPAA">

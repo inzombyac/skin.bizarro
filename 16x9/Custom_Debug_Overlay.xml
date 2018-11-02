@@ -115,6 +115,12 @@
 
                 <control type="label">
                     <include>WindowID</include>
+                    <label>MyGames.xml</label>
+                    <visible>Window.IsVisible(MyGames.xml)</visible>
+                </control>
+
+                <control type="label">
+                    <include>WindowID</include>
                     <label>MyVideoPlaylist.xml</label>
                     <visible>Window.IsVisible(MyVideoPlaylist.xml)</visible>
                 </control>
