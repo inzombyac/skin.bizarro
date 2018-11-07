@@ -137,11 +137,11 @@
                         <icon>special://skin/extras/icons/livetv.png</icon>
                         <onclick>activatewindow(pvrsettings)</onclick>
                     </item>
-					<item id="5">
-                        <label>10003</label>
-                        <label2>31160</label2>
-                        <icon>special://skin/extras/icons/files.png</icon>
-                        <onclick>activatewindow(filemanager)</onclick>
+					<item id="13">
+                        <label>15016</label>
+                        <label2>$LOCALIZE[31006]</label2>
+                        <icon>special://skin/extras/icons/games.png</icon>
+                        <onclick>activatewindow(gamesettings)</onclick>
                     </item>
 				   <item id="4">
                         <label>24001</label>
@@ -172,7 +172,13 @@
                         <label2>31167</label2>
                         <icon>special://skin/extras/icons/sysinfo.png</icon>
                         <onclick>activatewindow(7)</onclick>
-                    </item>    
+                    </item> 
+                    <item id="5">
+                        <label>10003</label>
+                        <label2>31160</label2>
+                        <icon>special://skin/extras/icons/files.png</icon>
+                        <onclick>activatewindow(filemanager)</onclick>
+                    </item>   
                 </content>
             </control>
         </control>

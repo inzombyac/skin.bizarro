@@ -38,12 +38,12 @@
 			</control>
         </control>
 		<!-- Controls -->
-		<control type="gamecontroller" id="1102">
+		<!-- <control type="gamecontroller" id="1102">
 			<bottom>0</bottom>
 			<right>30</right>
 			<width>200</width>
 			<height>200</height>
-		</control>
+		</control> -->
 		<control type="group">
 			<height>94</height>
 			<bottom>0</bottom>
@@ -76,8 +76,8 @@
 					<width>48</width>
 					<height>64</height>
 					<onclick>ActivateWindow(GameStretchMode)</onclick>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/fullscreen.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1">osd/fullscreen.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/stretch.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/stretch.png</texturenofocus>
 				</control>
 				<control type="button" id="14106">
 					<description>Video rotation button</description>
@@ -85,8 +85,8 @@
 					<width>48</width>
 					<height>64</height>
 					<onclick>ActivateWindow(GameVideoRotation)</onclick>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat-all.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1">osd/repeat-all.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/rotate.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/rotate.png</texturenofocus>
 				</control>
 				<control type="button" id="14104">
 					<description>Volume button</description>
@@ -94,8 +94,8 @@
 					<width>48</width>
 					<height>64</height>
 					<onclick>ActivateWindow(GameVolume)</onclick>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/audio.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1">osd/audio.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/visual-preset.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/visual-preset.png</texturenofocus>
 				</control>
 				<control type="button" id="14103">
 					<description>Controller settings button</description>
@@ -103,8 +103,8 @@
 					<width>48</width>
 					<height>64</height>
 					<onclick>ActivateWindow(GameControllers)</onclick>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/livetv.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1">osd/livetv.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/controller.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/controller.png</texturenofocus>
 				</control>
 				<control type="button" id="14105">
 					<description>Advanced settings</description>
@@ -112,8 +112,8 @@
 					<width>48</width>
 					<height>64</height>
 					<onclick>ActivateWindow(GameAdvancedSettings)</onclick>
-					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/video.png</texturefocus>
-					<texturenofocus colordiffuse="Dark1">osd/video.png</texturenofocus>
+					<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/settings.png</texturefocus>
+					<texturenofocus colordiffuse="Dark1">osd/settings.png</texturenofocus>
 				</control>
 			</control>
 		</control>

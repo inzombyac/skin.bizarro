@@ -759,6 +759,7 @@
 		<value condition="Integer.IsGreater(ListItem.UserRating,0) + !String.IsEmpty(ListItem.UserRating)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,1)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,0)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar2">
@@ -766,6 +767,7 @@
 		<value condition="Integer.IsGreater(ListItem.UserRating,2) + !String.IsEmpty(ListItem.UserRating)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,3)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,2)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar3">
@@ -773,6 +775,7 @@
 		<value condition="Integer.IsGreater(ListItem.UserRating,4) + !String.IsEmpty(ListItem.UserRating)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,5)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,4)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar4">
@@ -780,6 +783,7 @@
 		<value condition="Integer.IsGreater(ListItem.UserRating,6) + !String.IsEmpty(ListItem.UserRating)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,7)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,6)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
 		<value>star0</value>
 	</variable>
 	<variable name="Flagstar5">
@@ -787,6 +791,7 @@
 		<value condition="Integer.IsGreater(ListItem.UserRating,8) + !String.IsEmpty(ListItem.UserRating)">star5</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,9)">star10</value>
 		<value condition="Integer.IsGreater(ListItem.Rating,8)">star5</value>
+		<value condition="Integer.IsEqual(ListItem.Rating,0)"></value>
 		<value>star0</value>
 	</variable>
 	<variable name="HubFlagstar1">
@@ -898,7 +903,7 @@
 	</variable>
 	<include name="Furniture_Flags">
 		<control type="grouplist">
-			<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | [String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform))]</visible>
+			<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs) | [String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) + !String.IsEmpty(ListItem.Property(platform))] | Container.Content(games) | [Container.Content(addons) + Window.IsActive(games)] </visible>
 			<visible>!ListItem.IsParentFolder</visible>
 			<include>Animation.FadeIn</include>
 			<include>Animation.FadeOut</include>
@@ -1068,7 +1073,7 @@
 				<visible>[String.Contains(ListItem.FilenameAndPath,bluray) | String.Contains(ListItem.FilenameAndPath,bdrip) | String.Contains(ListItem.FilenameAndPath,bd25) | String.Contains(ListItem.FilenameAndPath,bd50)]</visible>
 			</control>
 			<control type="group">
-				<visible>!String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
+				<visible>!String.IsEmpty(ListItem.Top250)</visible>
 				<centertop>70%</centertop>
 				<height>120</height>
 				<width>64</width>
@@ -1076,7 +1081,6 @@
 					<width>73</width>
 					<height>55</height>
 					<texture colordiffuse="Dark1">flags/imdb.png</texture>
-					<visible>!String.IsEmpty(ListItem.Top250)</visible>
 				</control>
 				<control type="label">
 					<top>24</top>
@@ -1085,7 +1089,6 @@
 					<align>center</align>
 					<textcolor>Black700</textcolor>
 					<label>$INFO[ListItem.Top250,#,]</label>
-					<visible>!String.IsEmpty(ListItem.Top250)</visible>
 				</control>
 			</control>
 			<!-- Advanced Launcher -->
@@ -1094,7 +1097,7 @@
 				<left>-150</left>
 				<width>auto</width>
 				<height>64</height>
-				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.)</visible>
+				<visible>String.StartsWith(Container.FolderPath,plugin://plugin.program.advanced.) | Container.Content(games) | [Container.Content(addons) + Window.IsActive(games)]</visible>
 				<control type="image">
 					<width>100</width>
 					<height>64</height>

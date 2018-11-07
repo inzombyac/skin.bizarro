@@ -191,7 +191,7 @@
 			<onclick>PVR.ToggleRecordPlayingChannel</onclick>
 			<enable>PVR.CanRecordPlayingChannel</enable>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
-			<animation effect="fade" start="100" end="33" time="100" condition="!Player.CanRecord">Conditional</animation>
+			<animation effect="fade" start="100" end="33" time="100" condition="!PVR.CanRecordPlayingChannel">Conditional</animation>
 			<onleft>9003</onleft>
 		</control>
 		<control type="button" id="9004">
@@ -371,8 +371,8 @@
 			<height>64</height>
 			<top>12</top>
 			<include>DefOSDUpDown</include>
-			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/repeat.png</texturefocus>
-			<texturenofocus colordiffuse="Dark1">osd/repeat.png</texturenofocus>
+			<texturefocus colordiffuse="$VAR[ColorHighlight]">osd/eject.png</texturefocus>
+			<texturenofocus colordiffuse="Dark1">osd/eject.png</texturenofocus>
 			<onclick>PlayerControl(Reset)</onclick>
 		</control>
 		<control type="togglebutton" id="14">

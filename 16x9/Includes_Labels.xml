@@ -98,6 +98,7 @@
 		<value condition="Window.IsActive(profiles)">$LOCALIZE[13200]</value>
 		<value condition="Window.IsActive(videossettings)">$LOCALIZE[157]</value>
 		<value condition="Window.IsActive(servicesettings)">$LOCALIZE[14036]</value>
+		<value condition="Window.IsActive(gamesettings)">$LOCALIZE[15016]</value>
 		<value>$LOCALIZE[480]</value>
 	</variable>
 	<variable name="LabelListDetails">
@@ -374,6 +375,7 @@
 	</variable>
 	<variable name="LabelNextAiredDetails">
 		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Premiered)">[COLOR=Dark1][B]$LOCALIZE[20416]:[/B][/COLOR] $INFO[ListItem.Premiered,,   ]</value>
+		<value condition="!String.IsEmpty(ListItem.Premiered)">[COLOR=Dark1][B]$LOCALIZE[31007]:[/B][/COLOR] $INFO[ListItem.Premiered,,   ]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(NextAired.NextDate))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.NextTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate)]</value>
 		<value condition="String.IsEmpty(Window(Home).Property(NextAired.NextDate)) + !String.IsEmpty(Window(Home).Property(NextAired.LatestTitle))">[COLOR=Dark1][B]$INFO[Window(Home).Property(NextAired.LatestTitle),, ][/B][/COLOR]$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</value>
 	</variable>

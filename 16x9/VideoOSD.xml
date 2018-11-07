@@ -24,6 +24,7 @@
 					<action>seek</action>
 					<orientation>horizontal</orientation>
 				</control>
+				<visible>!Player.FrameAdvance</visible>
 			</control>
 			<!-- Sub Menu -->
 			<control type="group">
@@ -176,6 +177,15 @@
 					<itemgap>0</itemgap>
 					<orientation>vertical</orientation>
 					<scrolltime>200</scrolltime>
+					<control type="button" id="9503">
+						<width>100%</width>
+						<height>60</height>
+						<textcolor>Dark1</textcolor>
+						<include>DefContextButton</include>
+						<label>$LOCALIZE[21805]</label>
+						<onclick>PlayerResolutionSelect</onclick>
+						<visible>Player.HasResolutions</visible>
+					</control>
 					<control type="togglebutton" id="9502" description="3D Mode">
 						<width>100%</width>
 						<height>60</height>

@@ -287,6 +287,13 @@
 					<label>19191</label>
 					<align>left</align>
 				</control>
+				<control type="button" id="9013">
+					<onclick>ReplaceWindow(GameSettings)</onclick>
+					<onclick>SetFocus(3)</onclick>
+					<include>DefContextButton</include>
+					<label>$LOCALIZE[31005]</label>
+					<align>left</align>
+				</control>
 				<control type="button" id="9004">
 					<onclick>ReplaceWindow(AddonBrowser)</onclick>
 					<onclick>SetFocus(3)</onclick>
