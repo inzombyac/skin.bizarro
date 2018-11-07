@@ -6,12 +6,12 @@
         <!-- <include>GlobalOverlay</include> -->
 		<control type="group">
 			<left>SidePad</left>
-			<top>180</top>
+			<top>160</top>
 			<width>400</width>
 			<animation effect="fade" end="100" start="0" time="200">WindowOpen</animation>
 			<control type="image">
-				<centertop>400</centertop>
-				<width>400</width>
+				<centertop>340</centertop>
+				<width>340</width>
 				<height>48</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>diffuse/shadowspot.png</texture>
@@ -19,16 +19,16 @@
 			</control>
 			<!-- Icon -->
 			<control type="image">
-				<width>400</width>
-				<height>400</height>
+				<width>340</width>
+				<height>340</height>
 				<fadetime>200</fadetime>
 				<texture>$INFO[ListItem.Icon]</texture>
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="grouplist" id="9000">
-                <top>410</top>
-				<width>400</width>
-                <height>423</height>
+                <top>360</top>
+				<width>340</width>
+                <height>500</height>
                 <itemgap>3</itemgap>
                 <onup>50</onup>
                 <ondown>9000</ondown>
@@ -84,7 +84,17 @@
                     <label>24069</label>
                     <visible>!Skin.HasSetting(global.kioskmode)</visible>
                 </control>
-				<control type="radiobutton" id="13">
+				<control type="button" id="10">
+                    <description>Dependencies</description>
+                    <width>100%</width>
+                    <height>68</height>
+                    <texturenofocus colordiffuse="Light1" border="5">common/box.png</texturenofocus>
+                    <texturefocus colordiffuse="$VAR[ColorHighlight]" border="5">common/box.png</texturefocus>
+                    <include>DefDialogButtons</include>
+                    <label>$LOCALIZE[31011]</label>
+                    <visible>!Skin.HasSetting(global.kioskmode)</visible>
+                </control>
+                <control type="radiobutton" id="13">
                     <description>Auto-Update button</description>
                     <radioposx>360</radioposx>
 					<width>100%</width>
@@ -98,9 +108,9 @@
             </control>
 		</control>
         <control type="group">
-			<left>600</left>
+			<left>540</left>
 			<top>230</top>
-			<width>1240</width>
+			<width>1300</width>
 			<control type="image">
 				<width>450</width>
 				<height>274</height>

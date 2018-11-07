@@ -288,8 +288,8 @@
                 </control>
                 <control type="label">
                     <include>DialogID</include>
-                    <label>DialogPVRGuideOSD.xml</label>
-                    <visible>Window.IsVisible(DialogPVRGuideOSD.xml)</visible>
+                    <label>DialogPVRChannelGuide.xml</label>
+                    <visible>Window.IsVisible(DialogPVRChannelGuide.xml)</visible>
                 </control>
                 <control type="label">
                     <include>DialogID</include>
@@ -336,6 +336,12 @@
                     <include>DialogID</include>
                     <label>$LOCALIZE[31022]</label>
                     <visible>Window.IsVisible(osdaudiosettings)</visible>
+                </control>
+
+                <control type="label">
+                    <include>DialogID</include>
+                    <label>DialogSettings.xml (osdsubtitlesettings)</label>
+                    <visible>Window.IsVisible(osdsubtitlesettings)</visible>
                 </control>
 
                 <control type="label">

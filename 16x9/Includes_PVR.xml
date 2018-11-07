@@ -85,6 +85,19 @@
 					<align>left</align>
 					<visible>Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(MyPVRChannels.xml) | Window.IsVisible(MyPVRTimes.xml)</visible>
 				</control>
+				<control type="button" id="28">
+					<description>Group</description>
+					<include>DefContextButton2</include>
+					<align>left</align>
+					<visible>Window.IsVisible(MyPVRGuide.xml)</visible>
+				</control>
+				<control type="button" id="10">
+					<description>Watched recording toggle</description>
+					<label>20367</label>
+					<visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
+					<include>DefContextButton2</include>
+					<align>left</align>
+				</control>
 				<control type="button" id="3">
 					<description>Sort</description>
 					<include>DefContextButton2</include>
@@ -107,12 +120,6 @@
 					<textcolor>$VAR[ColorHighlight]</textcolor>
 					<aligny>center</aligny>
 				</control>
-				<control type="button" id="28">
-					<description>Group</description>
-					<include>DefContextButton2</include>
-					<align>left</align>
-					<visible>Window.IsVisible(MyPVRGuide.xml)</visible>
-				</control>
 				<control type="radiobutton" id="6">
 					<description>Show Hidden Channels</description>
 					<label>19051</label>
@@ -127,14 +134,6 @@
 					<include>DefContextButton2</include>
 					<align>left</align>
 				</control>
-				<!-- Kodi Leia -->
-				<!-- <control type="button" id="10">
-					<label>20367</label>
-					<description>Watched/Unwatched Toggle</description>
-					<include>DefContextButton2</include>
-					<align>left</align>
-					<visible>Window.IsVisible(MyPVRRecordings.xml)</visible>
-				</control> -->
 				<control type="button" id="31">
 					<description>Filter</description>
 					<label>587</label>
@@ -142,14 +141,6 @@
 					<align>left</align>
 					<visible>Window.IsVisible(MyPVRChannels.xml)</visible>
 				</control>
-				<!-- <control type="button" id="9092">
-					<description>Set Custom Widget</description>
-					<include>DefContextButton2</include>
-					<align>left</align>
-					<label>31222</label>
-					<onclick>Back</onclick>
-					<onclick>ActivateWindow(1106)</onclick>
-				</control> -->
 			</control>
 		</control>
 	</include>

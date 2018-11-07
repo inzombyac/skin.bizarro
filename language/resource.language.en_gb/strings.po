@@ -71,6 +71,11 @@ msgctxt "#31010"
 msgid "Pixel format"
 msgstr ""
 
+#: /16x9/DialogAddonInfo.xml
+msgctxt "#31011"
+msgid "Dependencies"
+msgstr ""
+
 #: /16x9/Includes_PVR.xml
 msgctxt "#31014"
 msgid " -- Show Aired Date"
